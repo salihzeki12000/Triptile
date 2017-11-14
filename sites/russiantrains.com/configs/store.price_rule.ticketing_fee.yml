@@ -1,0 +1,12 @@
+uuid: aea21664-05fa-4109-b076-dbfc2e7df131
+langcode: en
+status: true
+dependencies: {  }
+id: ticketing_fee
+label: 'Ticketing fee'
+price_rule_type: order
+condition: 'true'
+tax_type: rate
+tax_value: 1.1
+tax_value_currency: USD
+weight: '0'

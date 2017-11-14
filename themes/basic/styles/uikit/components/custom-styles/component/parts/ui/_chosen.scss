@@ -1,0 +1,88 @@
+$multiplier: 0.6;
+
+@mixin chosen-inside {
+  .chosen-single {
+    display: flex;
+    align-items: center;
+    height: $input-min-height;
+    @include side-padding($input-h-padding);
+    @include border-radius(0);
+    @include box-shadow(none);
+    border: $input-border;
+    background: $input-bg;
+    color: $input-color;
+    font-size: 1rem;
+
+    span {
+      margin: 0;
+    }
+
+    div {
+      width: 30px;
+      display: flex;
+
+      b {
+        background: transparent url("#{$path-to-images}/#{$misc-icons}") no-repeat 0 0 !important;
+        width: 13px;
+        height: 9px;
+        margin: auto;
+      }
+    }
+  }
+
+  .chosen-drop {
+    @include border-radius(0);
+    @include box-shadow(none);
+    border: $input-border;
+    background: $input-bg;
+    color: $input-color;
+    font-size: 1rem;
+
+    .chosen-search {
+      padding: $drop-v-padding $drop-h-padding;
+
+      input[type="text"] {
+        padding: $input-v-padding*$multiplier $drop-element-h-padding;
+        min-height: 0;
+        color: $input-color;
+        font-size: 1rem;
+        @include border-radius(0);
+        @include box-shadow(none);
+        border: $input-border;
+        background: $input-bg url("#{$path-to-images}/magnifying-glass.png") no-repeat right 8px center !important;
+        background-size: 1rem !important;
+      }
+    }
+
+    .chosen-results {
+      margin: 0;
+      padding: 0;
+
+      li {
+        padding: $input-v-padding*$multiplier $drop-element-h-padding;
+        line-height: 120%;
+        font-size: 1rem;
+
+        &.highlighted {
+          background: $active-item-bg;
+          color: $active-text-color;
+        }
+
+        &.no-results {
+          background: $active-item-bg;
+          color: $active-text-color;
+        }
+      }
+    }
+  }
+}
+
+.chosen-container {
+  @include chosen-inside;
+
+  &.chosen-container-active {
+    &.chosen-with-drop {
+      @include chosen-inside;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+uuid: eb6e1423-e294-45dc-8f52-04ba2b8d5c41
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration
+_core:
+  default_config_hash: McxqNJQ3FxKju4i-k9HIecRPEL2z3tluiGHEj8hPxuU
+id: blog
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - russian_trains_light
+migration_group: content_page
+label: Blog
+source:
+  plugin: blog
+  key: travelallrussia
+process:
+  type:
+    plugin: default_value
+    default_value: blog
+  title: title
+  body/value: content
+  body/summary: summary
+  body/format:
+    plugin: default_value
+    default_value: full_html_for_administrator
+  blog_image/target_id:
+    plugin: migration_lookup
+    migration: blog_image
+    no_stub: true
+    source: blog_id
+  blog_image/alt: slug
+  blog_categories:
+    plugin: migration_lookup
+    migration: blog_taxonomy
+    source: category_slug
+  published: is_published
+  uid:
+    plugin: default_value
+    default_value: 1
+destination:
+  plugin: 'entity:node'
+  bundle: blog
+migration_dependencies: {  }

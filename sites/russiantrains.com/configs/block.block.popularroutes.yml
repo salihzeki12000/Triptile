@@ -1,0 +1,28 @@
+uuid: f244b4e1-0c5e-43e3-b369-03d6db0dcc09
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.popular-routes
+  module:
+    - rn_content
+    - system
+  theme:
+    - russiantrains
+third_party_settings:
+  rn_content:
+    classes: 'non-mobile x3-padding t-x2-padding small-size'
+id: popularroutes
+theme: russiantrains
+region: leaderboard
+weight: -15
+provider: null
+plugin: 'system_menu_block:popular-routes'
+settings:
+  id: 'system_menu_block:popular-routes'
+  label: 'Popular links'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

@@ -1,0 +1,30 @@
+store.price_rule.*:
+  type: config_entity
+  label: 'Price rule config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    price_rule_type:
+      type: string
+      label: 'Price rule type'
+    condition:
+      type: string
+      label: 'Condition'
+    tax_type:
+      type: string
+      label: 'Tax Type'
+    tax_value:
+      type: float
+      label: 'Tax value'
+    tax_value_currency:
+      type: string
+      label: 'Tax value currency'
+    weight:
+      type: int
+      label: 'Weight'
+    uuid:
+      type: string

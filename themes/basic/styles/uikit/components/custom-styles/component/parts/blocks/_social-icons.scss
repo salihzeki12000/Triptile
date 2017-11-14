@@ -1,0 +1,60 @@
+$icon-size: 36px;
+
+.social-icons-block {
+
+  .block__inner {
+    padding: 0 !important;
+  }
+
+  .social-icons-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .social-icon {
+    width: $icon-size;
+    height: $icon-size;
+    position: relative;
+    margin-left: 10px;
+    @include transition;
+
+    &.facebook {
+      background: transparent url("#{$path-to-images}/facebook.svg") no-repeat 0 0;
+      background-size: $icon-size;
+
+      &:hover {
+        background: transparent url("#{$path-to-images}/facebook-active.svg") no-repeat 0 0;
+        background-size: $icon-size;
+      }
+    }
+
+    &.twitter {
+      background: transparent url("#{$path-to-images}/twitter.svg") no-repeat 0 0;
+      background-size: $icon-size;
+
+      &:hover {
+        background: transparent url("#{$path-to-images}/twitter-active.svg") no-repeat 0 0;
+        background-size: $icon-size;
+      }
+    }
+
+    &.google {
+      background: transparent url("#{$path-to-images}/google.svg") no-repeat 0 0;
+      background-size: $icon-size;
+
+      &:hover {
+        background: transparent url("#{$path-to-images}/google-active.svg") no-repeat 0 0;
+        background-size: $icon-size;
+      }
+    }
+
+    a {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+    }
+  }
+}

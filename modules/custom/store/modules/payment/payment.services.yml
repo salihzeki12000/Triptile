@@ -1,0 +1,13 @@
+services:
+  plugin.manager.payment.payment_method:
+    class: Drupal\payment\Plugin\PaymentMethodManager
+    parent: default_plugin_manager
+    arguments: ['@config.factory']
+
+  plugin.manager.payment.payment_adapter:
+    class: Drupal\payment\Plugin\PaymentAdapterManager
+    parent: default_plugin_manager
+
+  payment.api:
+    class: Drupal\payment\API\PaymentAPIFactory
+    arguments: ['@http_client', '@request_stack']

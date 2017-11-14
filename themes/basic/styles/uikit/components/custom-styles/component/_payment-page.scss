@@ -1,0 +1,98 @@
+.train-bookingpayment-form {
+
+  #main-content {
+    .block {
+      @media #{$mobile} {
+        @include side-padding(0);
+      }
+    }
+  }
+
+  .train-booking-payment-form {
+    margin: $v-padding auto;
+    @include flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    font-family: $base-font-family;
+    font-size: 1rem;
+
+    @media #{$tablet-portrait} {
+      margin: 20px auto;
+    }
+
+    @media #{$mobile} {
+      margin: 0 auto;
+    }
+
+    .route-legs-wrapper {
+      flex-basis: 100% - $pas-sidebar-width - $row-gap;
+
+      @media #{$tablet-portrait} {
+        flex-basis: 100%;
+      }
+
+      @media #{$mobile} {
+        flex-basis: 100%;
+      }
+    }
+
+    .sidebar {
+      flex-basis: $pas-sidebar-width;
+
+      @media #{$tablet-portrait} {
+        display: none;
+      }
+
+      @media #{$mobile} {
+        display: none;
+      }
+    }
+
+    .additional-sidebar-wrapper {
+      display: none;
+
+      @media #{$tablet-portrait} {
+        display: flex;
+        flex-basis: 100%;
+      }
+
+      @media #{$mobile} {
+        display: flex;
+        flex-basis: 100%;
+        flex-flow: row wrap;
+        @include side-padding($pas-mobile-h-padding);
+      }
+
+      .sidebar {
+        @media #{$tablet-portrait} {
+          display: flex;
+          flex-flow: row wrap;
+          flex-basis: 100%;
+
+          .container {
+            display: flex;
+            flex-flow: row wrap;
+            flex-basis: 100%;
+          }
+        }
+
+        @media #{$mobile} {
+          display: flex;
+          flex-basis: 100%;
+          flex-flow: row wrap;
+
+          .container {
+            display: flex;
+            flex-flow: row wrap;
+            flex-basis: 100%;
+          }
+        }
+      }
+    }
+
+    @import "payment_page_parts/leg_info";
+    @import "payment_page_parts/sidebar";
+    @import "payment_page_parts/payment_form";
+    @import "payment_page_parts/passenger_info";
+  }
+}

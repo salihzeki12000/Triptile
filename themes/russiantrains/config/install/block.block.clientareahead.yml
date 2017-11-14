@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+    - rn_user
+    - system
+  theme:
+    - russiantrains
+third_party_settings:
+  rn_content:
+    classes: ''
+id: clientareahead
+theme: russiantrains
+region: content
+weight: -15
+provider: null
+plugin: clientareahead
+settings:
+  id: clientareahead
+  label: 'Client area head'
+  provider: rn_user
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '/user/*'
+    negate: false
+    context_mapping: {  }

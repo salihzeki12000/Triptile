@@ -1,0 +1,35 @@
+uuid: bbb54ce4-5df4-4ba2-bd18-710a23cb7b82
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+  theme:
+    - railninja
+third_party_settings:
+  rn_content:
+    classes: ''
+id: footertel
+theme: railninja
+region: footer
+weight: -15
+provider: null
+plugin: footer_tel
+settings:
+  id: footer_tel
+  label: 'Talk to us'
+  provider: rn_content
+  label_display: visible
+  title_field: 'Talk to us'
+  field_subtitle: 'Get travel advice from our experts'
+  field_contacts:
+    -
+      country: 'US & CA toll-free:'
+      phone: '+1 (888) 295 5545'
+    -
+      country: 'EU countries'
+      phone: '+43 (720) 88 34 68'
+    -
+      country: Norway
+      phone: '+47 (23) 96 64 37'
+visibility: {  }

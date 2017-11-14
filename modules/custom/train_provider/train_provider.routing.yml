@@ -1,0 +1,31 @@
+train_provider.searchpage:
+  path: '/searchpage/{session_id}'
+  defaults:
+    _title: 'Timetable'
+    _controller: '\Drupal\train_provider\Controller\SearchPage::getPage'
+    session_id: ''
+  requirements:
+    _permission: 'access content'
+
+train_provider.config.train_providers:
+  path: /admin/config/rail-ninja-config/train-providers
+  defaults:
+    _form: '\Drupal\train_provider\Form\TrainProvidersForm'
+    _title: Train providers
+  requirements:
+    _permission: administer train providers
+
+train_provider.config.train_provider:
+  path: /admin/config/rail-ninja-config/train-providers/{train_provider}/configure
+  defaults:
+    _form: '\Drupal\train_provider\Form\TrainProviderConfigurationForm'
+    _title_callback: '\Drupal\train_provider\Form\TrainProviderConfigurationForm::title'
+  requirements:
+    _permission: administer train providers
+
+train_provider.route_data.train_provider:
+  path: /admin/config/rail-ninja-config/train-providers/{train_provider}/route_data
+  defaults:
+    _form: '\Drupal\train_provider\Form\TrainProviderRouteDataForm'
+  requirements:
+    _permission: administer train providers

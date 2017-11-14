@@ -1,0 +1,10 @@
+uuid: bdd957aa-85c0-4b3f-b51e-2f629a5f9072
+langcode: en
+status: true
+dependencies:
+  module:
+    - store
+id: base_product.token
+label: Token
+targetEntityType: base_product
+cache: true

@@ -1,0 +1,10 @@
+uuid: c799036f-ff34-4aec-ab8a-3208a8cf9871
+langcode: en
+status: true
+dependencies:
+  module:
+    - trip_base
+id: hub.token
+label: Token
+targetEntityType: hub
+cache: true

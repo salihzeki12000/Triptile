@@ -1,0 +1,19 @@
+uuid: 4a067e59-1006-4d42-88c2-4ae0153d6a09
+langcode: ru
+status: true
+dependencies:
+  module:
+    - field_collection
+    - node
+id: node.field_collection_group
+field_name: field_collection_group
+entity_type: node
+type: field_collection
+settings: {  }
+module: field_collection
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

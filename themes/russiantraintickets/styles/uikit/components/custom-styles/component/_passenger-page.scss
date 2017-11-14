@@ -1,0 +1,43 @@
+&.train-bookingpassenger-form {
+  .all-passengers-wrapper {
+    .passenger-form-header-wrapper {
+      .passenger-info {
+        &::before {
+          display: none;
+        }
+      }
+
+      &.adult, &.child, &.infant {
+        .passenger-info {
+          &.accepted {
+            &::before {
+              background: url("#{$path-to-images}/tick.svg") no-repeat 0 0;
+              background-size: 21px;
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .service-title {
+    .title {
+      &::before {
+        display: none;
+      }
+    }
+
+    &.selected {
+      .title {
+        &::before {
+          background: url("#{$path-to-images}/tick.svg") no-repeat 0 0;
+          background-size: 21px;
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  @import "page_parts/price-sidebar";
+}

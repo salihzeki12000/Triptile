@@ -1,0 +1,25 @@
+id: station
+migration_group: train_base
+migration_tags:
+  - russian_trains_light
+label: Station
+source:
+  plugin: station
+  key: travelallrussia
+process:
+  langcode: lang
+  name: name
+  status: enabled
+  'address/country_code': country
+  'geolocation/lat': latitude
+  'geolocation/lng': longitude
+  timezone: timezone
+  'supplier_mapping/target_id': supplier_id
+  'supplier_mapping/code': code
+destination:
+  plugin: entity:station
+migration_dependencies: {}
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+    - system
+  theme:
+    - russiantrains
+third_party_settings:
+  rn_content:
+    classes: ''
+id: searchformawards
+theme: russiantrains
+region: search
+weight: -12
+provider: null
+plugin: searchformawards
+settings:
+  id: searchformawards
+  label: 'Search form awards'
+  provider: rn_content
+  label_display: '0'
+  field_awards:
+    value: "<div class=\"d-flex f-j-center f-items-center text-center full-width \">\r\n<div class=\"text-center x1-padding\"><img alt=\"cnn.png\" data-entity-type=\"\" data-entity-uuid=\"\" src=\"/sites/default/files/cnn.png\" /></div>\r\n<div class=\"text-center x1-padding\"><img alt=\"ft.png\" data-entity-type=\"\" data-entity-uuid=\"\" src=\"/sites/default/files/ft.png\" /></div>\r\n<div class=\"text-center x1-padding\"><img alt=\"ng.png\" data-entity-type=\"\" data-entity-uuid=\"\" src=\"/sites/default/files/ng.png\" /></div>\r\n<div class=\"text-center x1-padding\"><img alt=\"tg.png\" data-entity-type=\"\" data-entity-uuid=\"\" src=\"/sites/default/files/tg.png\" /></div>\r\n<div class=\"text-center x1-padding\"><img alt=\"ut.png\" data-entity-type=\"\" data-entity-uuid=\"\" src=\"/sites/default/files/ut.png\" /></div>\r\n<div class=\"text-center x1-padding\"><img alt=\"wta.png\" data-entity-type=\"\" data-entity-uuid=\"\" src=\"/sites/default/files/wta.png\" /></div>\r\n</div>\r\n"
+    format: full_html_for_administrator
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

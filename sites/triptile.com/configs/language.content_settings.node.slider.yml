@@ -1,0 +1,11 @@
+uuid: ee434f80-88fb-42d8-a79c-669b933dfa2b
+langcode: ru
+status: true
+dependencies:
+  config:
+    - node.type.slider
+id: node.slider
+target_entity_type_id: node
+target_bundle: slider
+default_langcode: site_default
+language_alterable: false

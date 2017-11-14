@@ -1,0 +1,15 @@
+uuid: 99607eb7-d39a-4cca-921c-f6161f712fd2
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration
+_core:
+  default_config_hash: 4XBFZLp9BaWcY6nQ9LRcWixeSuSUd14T3UMco64d_qo
+id: salesforce
+label: Salesforce
+description: 'Migrate entities, which declared in salesforce module.'
+source_type: 'RussianTrains database'
+module: null
+shared_configuration: null

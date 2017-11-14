@@ -1,0 +1,41 @@
+uuid: 2868bbd5-ce0d-4acb-a1f9-ae84987b163c
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration
+_core:
+  default_config_hash: hpZc3quYFfMHNHobGsRBCJ2tue0WEfFCt0RhusEux-0
+id: redirect
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: content_page
+label: Redirect
+source:
+  plugin: redirect
+  path: 'public://migrated/redirect/rt_migration_url.csv'
+  header_row_count: 1
+  keys:
+    - external_link
+  column_names:
+    -
+      external_link: 'External link'
+    -
+      alias_path: 'Alias path'
+process:
+  type:
+    plugin: default_value
+    default_value: redirect
+  language: language
+  redirect_source/path: redirect_source
+  redirect_redirect/uri: redirect_uri
+  status_code:
+    plugin: default_value
+    default_value: 301
+destination:
+  plugin: 'entity:redirect'
+  bundle: redirect
+migration_dependencies: {  }

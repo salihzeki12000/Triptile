@@ -1,0 +1,12 @@
+uuid: bf89e568-8145-467c-8821-e974b90d42d2
+langcode: en
+status: true
+dependencies: {  }
+id: cp_kids
+label: 'CP kids'
+price_rule_type: ticket
+condition: 'supplier == ''CP'' and age >= 3 and age <= 13'
+tax_type: rate
+tax_value: 0.6
+tax_value_currency: USD
+weight: '0'

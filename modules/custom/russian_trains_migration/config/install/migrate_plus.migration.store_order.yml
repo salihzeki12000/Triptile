@@ -1,0 +1,42 @@
+id: store_order
+migration_group: store
+label: Order
+source:
+  plugin: store_order
+  key: travelallrussia
+process:
+  type:
+    plugin: default_value
+    default_value: train_order
+  number: reference
+  'order_total/number': amount
+  'order_total/currency_code': currency
+  owner: destination_user_id
+  ticket:
+    plugin: iterator
+    source: train_ticket
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: train_ticket
+        source: train_ticket_id
+  status: status
+  site:
+    plugin: default_value
+    default_value: 'RT'
+  data: data
+  trip_type: trip_type
+  langcode: lang
+  created: created
+  changed: changed
+destination:
+  plugin: entity:store_order
+  bundle: train_order
+migration_dependencies:
+  optional:
+    - train_ticket
+    - user
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

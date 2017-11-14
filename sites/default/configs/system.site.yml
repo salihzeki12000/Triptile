@@ -1,0 +1,15 @@
+uuid: 575a8d4f-1ce5-42e1-9221-18bbb66b4f75
+name: Rail.Ninja
+mail: info@rail.ninja
+slogan: ''
+page:
+  403: ''
+  404: /node/4
+  front: /front
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: AyT9s8OUcclfALRE_imByOMgtZ19eOlqdF6zI3p7yqo
+mail_notification: ''

@@ -1,0 +1,20 @@
+uuid: dd63e86d-17b0-4dcf-9153-6646937346c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - store.base_product_type.optional_service
+_core:
+  default_config_hash: Np8M4d8sFUPOWLLz55cuicUVXu7SBgqfI1jocYmHVKE
+id: base_product.optional_service.description
+field_name: description
+entity_type: base_product
+bundle: optional_service
+label: Description
+description: 'The description of the base product entity.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

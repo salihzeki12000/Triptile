@@ -1,0 +1,22 @@
+uuid: 53454a73-f64d-4ddb-8dc9-36379db2f4a4
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - store
+_core:
+  default_config_hash: 3KnE06G9VPl3ekl4eHeGNfBuYPXORdKz61QRJQyzWAY
+id: store_order.ticket_issue_date
+field_name: ticket_issue_date
+entity_type: store_order
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,26 @@
+uuid: 375218ec-dc33-4f5f-9e6d-59a76539875b
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - russiantraintickets
+_core:
+  default_config_hash: kaH5HizTq1uF7MNFd8wRay-4uXpHZZzg3lun7_B4Ojs
+id: russiantrains_main_menu
+theme: russiantraintickets
+region: header_second
+weight: -14
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main menu'
+  provider: system
+  label_display: '1'
+  level: 1
+  depth: 0
+visibility: {  }

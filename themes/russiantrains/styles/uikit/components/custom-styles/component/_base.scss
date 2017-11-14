@@ -1,0 +1,30 @@
+@import "../init";
+@import "../custom_mixins";
+
+body {
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+
+  a {
+    @include transition;
+    color: $color-dark-warm-grey;
+
+    &:hover {
+      color: lighten($color-dark-warm-grey, 10%);
+    }
+  }
+
+  details {
+    color: $color-dark-warm-grey;
+
+    &:hover {
+      color: $details-hover-color;
+
+      &[open] {
+        color: $details-hover-color;
+      }
+    }
+  }
+}
+
+@import "partials/messages";

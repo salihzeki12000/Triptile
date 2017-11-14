@@ -1,0 +1,252 @@
+$sign-width: 15%;
+
+.user-block {
+  flex-direction: column;
+  font-family: $mobile-menu-font-family;
+
+  &::before {
+    width: 100%;
+    height: 8px;
+    background: $menu-h-line-bg;
+    border-top: $menu-h-line-border;
+    border-bottom: $menu-h-line-border;
+    content: '';
+    display: block;
+    opacity: 0.5;
+  }
+
+  .block__inner {
+    @include v-padding($menu-v-padding);
+    @include side-padding($dialog-mobile-h-padding);
+  }
+
+  .user-blocks {
+    position: inherit;
+    padding: 0;
+    max-width: 100%;
+    @include box-shadow(none);
+    flex-flow: row wrap;
+    width: 100%;
+    height: auto;
+    display: flex !important;
+
+    > .block {
+      width: 100%;
+      padding: 0;
+
+      &:first-of-type {
+        background: $user-block-bg;
+      }
+    }
+
+    .block__title {
+      margin: 0;
+      padding: 0 0 $menu-v-padding;
+      font-size: 1.5rem;
+      color: $menu-color;
+    }
+
+    .block__content {
+      display: block;
+      overflow-y: visible !important;
+      height: auto !important;
+    }
+
+    .block__inner {
+      @include side-padding(0);
+      @include v-padding(0);
+    }
+
+    .currency-item {
+      .sign {
+        text-align: left;
+        flex-basis: $sign-width;
+      }
+
+      .label {
+        flex-basis: 100% - $sign-width;
+      }
+    }
+
+    @import "../language-swither";
+
+    .language-switcher {
+      
+      .block__content {
+        flex-basis: 100%;
+        height: auto;
+      }
+
+      li {
+        flex-basis: 50%;
+      }
+    }
+  }
+
+  .user-settings {
+    & > .icon {
+      display: none;
+    }
+
+    .current-lang-currency {
+      position: initial;
+      color: $menu-color;
+    }
+  }
+
+  .block__content {
+    .block__inner {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      &:not(.opened-settings) {
+
+        .block__title, .block__content {
+          flex-basis: 50%;
+        }
+
+        .block__inner {
+          justify-content: flex-end;
+        }
+
+        .language-switcher {
+          .block__content {
+            flex-basis: 100%;
+            overflow-y: auto;
+          }
+        }
+
+        .links {
+          margin: 0;
+
+          li {
+            @include v-padding(0);
+            margin-top: 0;
+            margin-bottom: 0;
+
+            &:not(.is-active) {
+              display: none;
+            }
+
+            a {
+              font-size: 1.25rem;
+              color: $mobile-menu-3rd-level-color;
+              pointer-events: none;
+              cursor: default;
+            }
+          }
+        }
+
+
+        .currency-list {
+          justify-content: flex-end;
+
+          .currency-item {
+            flex-basis: 100%;
+            width: 100%;
+            text-align: right;
+            justify-content: flex-end;
+            align-items: center;
+            margin: 5px 0;
+
+            &:not(.active) {
+              display: none;
+            }
+
+            &.active {
+              display: flex;
+              justify-content: flex-start;
+
+              a {
+                pointer-events: none;
+                cursor: default;
+              }
+            }
+
+            .sign {
+              flex-basis: auto;
+              width: auto;
+              text-align: left;
+              margin-right: 7px;
+            }
+
+            .label {
+              flex-basis: auto;
+              width: auto;
+              text-align: left;
+            }
+          }
+        }
+      }
+
+      $sign-width: 35%;
+
+      .currency-list {
+        .currency-item {
+
+          a {
+            font-size: 1.25rem;
+            color: $mobile-menu-3rd-level-color;
+          }
+
+          .sign {
+            width: $sign-width;
+            flex-basis: $sign-width;
+          }
+
+          .label {
+            width: 100% - $sign-width;
+            flex-basis: 100% - $sign-width;
+          }
+        }
+      }
+
+      &.opened-settings {
+        .block__title, .block__content {
+          flex-basis: 100%;
+        }
+
+        .links {
+          padding-bottom: $mobile-menu-v-padding/2;
+          justify-content: space-between;
+
+          li {
+            padding-bottom: $mobile-menu-v-padding/2;
+
+            &:not(.is-active) {
+              display: inline-flex;
+            }
+
+            a {
+              pointer-events: auto;
+              cursor: default;
+            }
+
+            &.is-active {
+              a {
+                color: $mobile-menu-active-link-color;
+              }
+            }
+          }
+        }
+
+        .currency-list {
+          justify-content: space-between;
+
+          .currency-item {
+            flex-basis: 35%;
+            width: 35%;
+
+            &.active {
+              a {
+                color: $mobile-menu-active-link-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

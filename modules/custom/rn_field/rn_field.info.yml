@@ -1,0 +1,7 @@
+name: RN Field
+type: module
+description: Contains custom field types, field widgets, field formatters and related logic
+core: 8.x
+package: Custom
+dependencies:
+  - master

@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+  theme:
+    - russiantrains
+third_party_settings:
+  rn_content:
+    classes: ''
+id: footerlanguage
+theme: russiantrains
+region: footer
+weight: -10
+provider: null
+plugin: footerlanguage
+settings:
+  id: footerlanguage
+  label: 'Footer language'
+  provider: rn_content
+  label_display: '0'
+  title_field: Language
+  field_subtitle: 'Select your language preferences'
+visibility: {  }

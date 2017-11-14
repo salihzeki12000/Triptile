@@ -1,0 +1,12 @@
+uuid: 606d3719-e5dc-440f-b625-3779e3019748
+langcode: en
+status: true
+dependencies: {  }
+id: vr_kids
+label: 'VR kids'
+price_rule_type: ticket
+condition: 'supplier == ''FR'' and age >= 6 and age <= 15'
+tax_type: rate
+tax_value: 0.3
+tax_value_currency: USD
+weight: '0'

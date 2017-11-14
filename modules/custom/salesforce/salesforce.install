@@ -1,0 +1,77 @@
+<?php
+
+use Drupal\Core\Field\BaseFieldDefinition;
+
+/**
+ * Add new field to salesforce mapping object entity.
+ */
+function salesforce_update_8101(&$sandbox) {
+  $mappingFieldDefinition = BaseFieldDefinition::create('list_string')
+    ->setLabel('Mapping plugin')
+    ->setSetting('allowed_values_function', '\Drupal\salesforce\Entity\SalesforceMappingObject::mappingOptions')
+    ->setRequired(true)
+    ->setDisplayOptions('view', array(
+      'label' => 'above',
+      'weight' => -1,
+    ))
+    ->setDisplayOptions('form', array(
+      'weight' => -1,
+    ))
+    ->setDisplayConfigurable('form', TRUE)
+    ->setDisplayConfigurable('view', TRUE);
+
+  \Drupal::entityDefinitionUpdateManager()->installFieldStorageDefinition('mapping', 'salesforce_mapping_object', 'salesforce', $mappingFieldDefinition);
+}
+
+/**
+ * Set value on field mapping on existing mapping objects.
+ */
+function salesforce_update_8102(&$sandbox) {
+  $salesforceObjects = $entityTypes = [];
+  foreach (\Drupal::service('plugin.manager.salesforce_mapping')->getDefinitions() as $pluginId => $definition) {
+    $query = \Drupal::database()->update('salesforce_mapping_object');
+    $query->fields(['mapping' => $pluginId]);
+    $query->condition('salesforce_object', $definition['salesforce_object']);
+    $query->condition('entity_type_id', $definition['entity_type_id']);
+    $query->execute();
+
+    if (isset($salesforceObjects[$definition['salesforce_object']])) {
+      $salesforceObjects[$definition['salesforce_object']]['count']++;
+    }
+    else {
+      $salesforceObjects[$definition['salesforce_object']] = [
+        'plugin_id' => $pluginId,
+        'count' => 1
+      ];
+    }
+    if (isset($entityTypes[$definition['entity_type_id']])) {
+      $entityTypes[$definition['entity_type_id']]['count']++;
+    }
+    else {
+      $entityTypes[$definition['entity_type_id']] = [
+        'plugin_id' => $pluginId,
+        'count' => 1
+      ];
+    }
+  }
+
+  foreach ($salesforceObjects as $salesforceObject => $data) {
+    if ($data['count'] == 1) {
+      $query = \Drupal::database()->update('salesforce_mapping_object');
+      $query->fields(['mapping' => $data['plugin_id']]);
+      $query->condition('salesforce_object', $salesforceObject);
+      $query->isNull('entity_type_id');
+      $query->execute();
+    }
+  }
+
+  foreach ($entityTypes as $entityType => $data) {
+    if ($data['count'] == 1) {
+      $query = \Drupal::database()->update('salesforce_mapping_object');
+      $query->fields(['mapping' => $data['plugin_id']]);
+      $query->condition('entity_type_id', $entityType);
+      $query->isNull('salesforce_object');
+      $query->execute();
+    }
+  }
+}

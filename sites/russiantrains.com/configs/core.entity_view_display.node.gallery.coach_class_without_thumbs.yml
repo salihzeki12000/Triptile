@@ -1,0 +1,35 @@
+uuid: 8c4df314-e84c-4089-a065-8ddae19ac412
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.coach_class_without_thumbs
+    - field.field.node.gallery.gallery_image
+    - image.style.train_class_gallery
+    - node.type.gallery
+  module:
+    - flexslider_fields
+    - user
+id: node.gallery.coach_class_without_thumbs
+targetEntityType: node
+bundle: gallery
+mode: coach_class_without_thumbs
+content:
+  gallery_image:
+    weight: 102
+    label: hidden
+    settings:
+      optionset: flexslider_with_dots
+      image_style: train_class_gallery
+      caption: '0'
+      image_link: ''
+    third_party_settings: {  }
+    type: flexslider
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

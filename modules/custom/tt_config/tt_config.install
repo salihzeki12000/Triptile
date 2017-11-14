@@ -1,0 +1,22 @@
+<?php
+/**
+ * @file
+ * Install, update and uninstall functions.
+ */
+
+/**
+ * Implements hook_uninstall().
+ *
+ * Perform actions to set up the site for this profile.
+ *
+ * @see system_uninstall()
+ */
+function tt_config_uninstall() {
+  $config = \Drupal::configFactory();
+  $config->getEditable('views.view.connections')->delete();
+  $config->getEditable('views.view.hotels')->delete();
+  $config->getEditable('views.view.hubs')->delete();
+  $config->getEditable('views.view.transfers')->delete();
+  $config->getEditable('views.view.activities')->delete();
+  $config->getEditable('views.view.prices')->delete();
+}

@@ -1,0 +1,18 @@
+uuid: 12092137-7eb1-498a-896a-e3a21cfc70bf
+langcode: en
+status: true
+dependencies:
+  module:
+    - train_base
+id: coach_class.coach_class.name
+field_name: name
+entity_type: coach_class
+bundle: coach_class
+label: Name
+description: 'The name of the Coach class entity.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

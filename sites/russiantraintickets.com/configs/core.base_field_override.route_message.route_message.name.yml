@@ -1,0 +1,18 @@
+uuid: 2207273e-13d6-4e65-9dd1-0b1987a6f5de
+langcode: en
+status: true
+dependencies:
+  module:
+    - train_base
+id: route_message.route_message.name
+field_name: name
+entity_type: route_message
+bundle: route_message
+label: Name
+description: 'The name of the Route message entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

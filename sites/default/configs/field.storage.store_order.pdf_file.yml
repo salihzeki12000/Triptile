@@ -1,0 +1,25 @@
+uuid: a9c269f8-ee29-477a-9f26-79349a066d04
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - store
+_core:
+  default_config_hash: _qQyJ67y_xIDqlCKpTVdZyrjNsH0uQBiug97yK9YNIs
+id: store_order.pdf_file
+field_name: pdf_file
+entity_type: store_order
+type: file
+settings:
+  display_field: false
+  display_default: false
+  uri_scheme: public
+  target_type: file
+module: file
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

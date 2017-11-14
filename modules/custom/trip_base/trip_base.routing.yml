@@ -1,0 +1,6 @@
+trip_base.lists:
+  path: '/admin/trips'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+  requirements:
+    _permission: 'access administration pages'

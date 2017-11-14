@@ -1,0 +1,15 @@
+uuid: 2a7aa6ae-8a8a-44dc-b588-d835f4bb5689
+langcode: en
+status: true
+dependencies: {  }
+name: width_980
+label: width_980
+effects:
+  652ccee0-80d5-4a73-a5c4-bbdbb2f8bc1f:
+    uuid: 652ccee0-80d5-4a73-a5c4-bbdbb2f8bc1f
+    id: image_scale
+    weight: 1
+    data:
+      width: 980
+      height: null
+      upscale: false

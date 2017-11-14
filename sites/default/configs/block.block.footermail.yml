@@ -1,0 +1,25 @@
+uuid: ce923e8a-f517-4855-a843-eb8d9ae6bd93
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+  theme:
+    - railninja
+third_party_settings:
+  rn_content:
+    classes: non-mobile
+id: footermail
+theme: railninja
+region: footer
+weight: -14
+provider: null
+plugin: footer_mail
+settings:
+  id: footer_mail
+  label: 'Talk to us'
+  provider: rn_content
+  label_display: visible
+  title_field: 'Talk to us'
+  field_subtitle: 'Get travel advice from our experts'
+visibility: {  }

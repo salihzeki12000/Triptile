@@ -1,0 +1,32 @@
+uuid: e4a56505-6bb6-4e0e-bbfe-611c7ded882a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.gallery.gallery_image
+    - image.style.train_class_gallery
+    - node.type.gallery
+  module:
+    - image
+    - user
+id: node.gallery.default
+targetEntityType: node
+bundle: gallery
+mode: default
+content:
+  gallery_image:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: train_class_gallery
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

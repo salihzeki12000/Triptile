@@ -1,0 +1,79 @@
+.left {
+  max-width: 475px;
+}
+
+.hiya-text {
+  color: $thp-title-color;
+  font-size: 2.875rem;
+  line-height: 100%;
+
+  @media #{$mobile} {
+    font-size: 2.3rem;
+  }
+}
+
+.order-status-text {
+  @include v-padding($thp-v-padding);
+  font-size: 1.875rem;
+  color: $thp-title-color;
+  line-height: 120%;
+
+  @media #{$mobile} {
+    @include v-padding($thp-v-padding/2);
+    font-size: 1.5rem;
+  }
+}
+
+.order-text, .terms-text {
+  @include v-padding($thp-v-padding/2);
+  font-size: 1.375rem;
+  line-height: 2.5rem;
+
+  @media #{$mobile} {
+    font-size: 1.125rem;
+    line-height: 2rem;
+    padding-bottom: 0;
+  }
+}
+
+.buttons-wrapper {
+  @include v-padding($thp-v-padding*2 + $thp-button-v-padding);
+
+  @media #{$mobile} {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    @include v-padding($thp-v-padding, $thp-v-padding*1.5);
+    font-size: 1.125rem;
+  }
+
+  a {
+    @media #{$mobile} {
+      @include side-padding(0);
+      flex-basis: 100%;
+    }
+
+    &:hover, &:focus, &:visited {
+      color: $color-white;
+    }
+  }
+}
+
+.home-link {
+  @include colored-btn($color-white, $thp-button-color);
+  padding: 19px 54px;
+  font-size: 1.25rem;
+  line-height: 100%;
+}
+
+.common-info {
+  @include v-padding($thp-v-padding/2);
+  font-size: 1.375rem;
+  line-height: 2.5rem;
+
+  @media #{$mobile} {
+    font-size: 1.125rem;
+    line-height: 2rem;
+    padding-bottom: 0;
+  }
+}

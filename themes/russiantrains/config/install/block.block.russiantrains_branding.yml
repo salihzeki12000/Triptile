@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+    - system
+  theme:
+    - russiantrains
+third_party_settings:
+  rn_content:
+    classes: ''
+id: russiantrains_branding
+theme: russiantrains
+region: header_first
+weight: -14
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

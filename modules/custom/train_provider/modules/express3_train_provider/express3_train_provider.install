@@ -1,0 +1,9 @@
+<?php
+
+/**
+ * Install new entity - Express3Station.
+ */
+function express3_train_provider_update_8101(&$sandbox) {
+  $express3Station = \Drupal::service('entity_type.manager')->getStorage('express3_station')->getEntityType();
+  \Drupal::entityDefinitionUpdateManager()->installEntityType($express3Station);
+}

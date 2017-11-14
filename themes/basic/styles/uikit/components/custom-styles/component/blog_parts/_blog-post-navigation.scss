@@ -1,0 +1,136 @@
+$navigation-icon-width: 32px;
+
+.blog-post-navigation-wrapper {
+  @include v-padding($v-padding/2);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  @media #{$mobile} {
+    @include v-padding($blog-v-padding);
+    justify-content: center;
+  }
+}
+
+.blog-post-navigation {
+  display: flex;
+  align-items: center;
+  width: auto;
+
+  @media #{$mobile} {
+    flex-flow: row wrap;
+    width: 100%;
+  }
+
+  a {
+    color: $blog-post-navigation-color;
+    @include transition;
+
+    &:hover {
+      color: $blog-text-color;
+    }
+  }
+}
+
+.back-link {
+  color: $blog-post-navigation-color;
+  font-size: 1.25rem;
+
+  &.back {
+    margin-right: $blog-v-padding;
+    padding-left: $blog-v-padding;
+
+    @media #{$mobile} {
+      flex-basis: 100%;
+      width: 100%;
+      order: 2;
+      margin-top: $v-padding;
+      margin-right: 0;
+      padding-left: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    a {
+      background: transparent url("#{$path-to-images}/pager-prev.png") no-repeat left center;
+      padding-left: 22px;
+
+      @media #{$mobile} {
+        padding-left: 25px;
+        line-height: 2.375rem;
+      }
+    }
+  }
+}
+
+.next-prev-links {
+  display: flex;
+  align-items: center;
+
+  @media #{$mobile} {
+    flex-basis: 100%;
+    width: 100%;
+    order: 1;
+  }
+
+  .back-link {
+    width: $navigation-icon-width;
+    height: $navigation-icon-width;
+    border: 1px solid $blog-post-navigation-color;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media #{$mobile} {
+      flex-basis: 50%;
+      width: 50%;
+      height: 42px;
+    }
+
+    &.no-prev-link, &.no-next-link {
+      @media #{$mobile} {
+        flex-basis: 100%;
+        width: 100%;
+      }
+    }
+
+    &:hover {
+      border: 1px solid $blog-post-navigation-active-color;
+    }
+
+    &.prev {
+      background: url("#{$path-to-images}/pager-prev.png") no-repeat center center;
+    }
+
+    &.next {
+      background: url("#{$path-to-images}/pager-next.png") no-repeat center center;
+    }
+  }
+
+  a {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+
+  &.has-next-link {
+    .prev {
+      border-right-color: transparent;
+    }
+
+    &:hover {
+      &.has-next-link {
+        .prev {
+          border-right-color: $blog-post-navigation-color;
+
+          &:hover {
+            border-right-color: $blog-post-navigation-active-color;
+          }
+        }
+      }
+    }
+  }
+}

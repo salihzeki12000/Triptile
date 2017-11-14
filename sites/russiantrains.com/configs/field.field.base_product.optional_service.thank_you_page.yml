@@ -1,0 +1,25 @@
+uuid: 83f6b122-a8fb-4385-8301-37bb61873a86
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.base_product.thank_you_page
+    - store.base_product_type.optional_service
+_core:
+  default_config_hash: 6KhRtAcHWj-ozjOXKfd96fuJPhXG7TmHBrDucJxeAtw
+id: base_product.optional_service.thank_you_page
+field_name: thank_you_page
+entity_type: base_product
+bundle: optional_service
+label: 'Thank you page'
+description: 'Enabled on Thank you page'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

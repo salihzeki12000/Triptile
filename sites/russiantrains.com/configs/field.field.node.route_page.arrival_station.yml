@@ -1,0 +1,25 @@
+uuid: 84b91fbc-1cc0-423f-9e89-e159aedc906b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.arrival_station
+    - node.type.route_page
+id: node.route_page.arrival_station
+field_name: arrival_station
+entity_type: node
+bundle: route_page
+label: 'Arrival station'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: only_enabled
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

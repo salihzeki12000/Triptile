@@ -1,0 +1,18 @@
+uuid: 397ecf7e-fc06-428c-bec1-0adcc3b7f643
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.train_review
+id: comment.train_review.homepage
+field_name: homepage
+entity_type: comment
+bundle: train_review
+label: Homepage
+description: 'The comment author''s home page address.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: uri

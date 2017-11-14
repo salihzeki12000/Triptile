@@ -1,0 +1,22 @@
+salesforce.authorization_callback:
+  path: '/salesforce/oauth-callback'
+  defaults:
+    _controller: '\Drupal\salesforce\Controller\Admin::callback'
+    _title: 'Authorization'
+  requirements:
+    _permission: 'administer salesforce'
+
+salesforce.admin_configuration:
+  path: '/admin/configuration/salesforce'
+  defaults:
+    _form: '\Drupal\salesforce\Form\ConfigurationForm'
+    _title: 'Salesforce configuration'
+  requirements:
+    _permission: 'administer salesforce'
+
+salesforce.base:
+  path: '/admin/salesforce'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+  requirements:
+    _permission: 'access administration pages'

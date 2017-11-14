@@ -1,0 +1,14 @@
+alternativeSigns: {  }
+currencyCode: HKD
+currencyNumber: '344'
+label: HKD
+roundingStep: 0.01
+sign: $
+subunits: 100
+status: true
+usages:
+  -
+    start: '1895-02-02'
+    end: null
+    countryCode: HK
+uuid: e109a8bd-7c36-47e2-b79b-c05081a386ee

@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:503eb195-3701-41cd-af20-a01d0bacb58b'
+  module:
+    - block_content
+    - rn_content
+    - system
+  theme:
+    - russiantrains
+third_party_settings:
+  rn_content:
+    classes: ''
+id: helpuscreatethebestservice
+theme: russiantrains
+region: content
+weight: -8
+provider: null
+plugin: 'block_content:503eb195-3701-41cd-af20-a01d0bacb58b'
+settings:
+  id: 'block_content:503eb195-3701-41cd-af20-a01d0bacb58b'
+  label: 'Help us create the best service'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

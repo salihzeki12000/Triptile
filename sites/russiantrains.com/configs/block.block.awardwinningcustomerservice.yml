@@ -1,0 +1,35 @@
+uuid: 579459d5-f99e-4c86-b768-cf1a311b24ea
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:118397f2-d57b-4122-9814-32fe93c211b6'
+  module:
+    - block_content
+    - rn_content
+    - system
+  theme:
+    - russiantrains
+third_party_settings:
+  rn_content:
+    classes: ''
+id: awardwinningcustomerservice
+theme: russiantrains
+region: content
+weight: -9
+provider: null
+plugin: 'block_content:118397f2-d57b-4122-9814-32fe93c211b6'
+settings:
+  id: 'block_content:118397f2-d57b-4122-9814-32fe93c211b6'
+  label: 'Fast & Easy Online Booking'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

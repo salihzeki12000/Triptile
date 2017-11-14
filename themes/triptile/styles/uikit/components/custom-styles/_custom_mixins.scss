@@ -1,0 +1,56 @@
+@mixin transform($deg: rotate(45deg)) {
+  -webkit-transform: $deg;
+  -moz-transform: $deg;
+  -ms-transform: $deg;
+  -o-transform: $deg;
+  transform: $deg;
+}
+
+@mixin transition($time: .4s linear) {
+  -o-transition: $time;
+  -moz-transition: $time;
+  -webkit-transition: $time;
+  transition: $time;
+}
+
+@mixin border-radius($radius: 50%) {
+  -o-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin colored-btn ($btn-color, $btn-bg-color, $btn-active-bg-color: darken($btn-bg-color, 5%), $btn-active-color: $btn-color, $has-borders: false, $btn-border-width: 1px, $btn-border-color: $btn-bg-color, $btn-border-style: solid) {
+  color: $btn-color;
+  background-color: $btn-bg-color;
+  cursor: pointer;
+  text-decoration: none;
+  @include transition;
+  font-weight: normal;
+
+  @if $has-borders == true {
+    border: $btn-border-width $btn-border-color $btn-border-style;
+  }
+
+  a {
+    color: $btn-color;
+    text-decoration: none;
+    font-weight: normal;
+  }
+
+  &:hover {
+    background: $btn-active-bg-color;
+    color: $btn-active-color;
+    text-decoration: none;
+    @include transition;
+
+    a {
+      color: $btn-active-color;
+      text-decoration: none;
+    }
+  }
+}
+
+@mixin btn-grey {
+  @include colored-btn(#fff,#777)
+}

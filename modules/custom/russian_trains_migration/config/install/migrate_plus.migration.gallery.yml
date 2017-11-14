@@ -1,0 +1,34 @@
+id: gallery
+migration_group: content_page
+migration_tags:
+  - russian_trains_light
+label: Gallery
+source:
+  plugin: gallery
+  key: travelallrussia
+process:
+  title: name
+  type:
+    plugin: default_value
+    default_value: gallery
+  gallery_image:
+    plugin: iterator
+    source: gallery_image
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: gallery_image
+        source: gallery_image_id
+      title: title
+      alt: alt
+  uid:
+    plugin: default_value
+    default_value: 1
+destination:
+  plugin: entity:node
+  bundle: gallery
+migration_dependencies: {}
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

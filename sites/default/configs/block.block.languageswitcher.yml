@@ -1,0 +1,24 @@
+uuid: 5cb355b1-fd2f-4106-a5e5-e26b9564f55f
+langcode: en
+status: false
+dependencies:
+  module:
+    - language
+    - rn_content
+  theme:
+    - railninja
+third_party_settings:
+  rn_content:
+    classes: language-switcher
+id: languageswitcher
+theme: railninja
+region: leaderboard
+weight: -14
+provider: null
+plugin: 'language_block:language_interface'
+settings:
+  id: 'language_block:language_interface'
+  label: 'Language switcher'
+  provider: language
+  label_display: '0'
+visibility: {  }

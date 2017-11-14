@@ -1,0 +1,19 @@
+<?php
+
+/*
+ * Implements hook_theme().
+ */
+function tt_front_theme($existing, $type, $theme, $path) {
+  return array(
+    'front_search' => array(
+      'variables' => array(
+        'language' => NULL,
+      ),
+    ),
+    'front_subscribe' => array(
+      'variables' => array(
+        'language' => NULL,
+      ),
+    ),
+  );
+}

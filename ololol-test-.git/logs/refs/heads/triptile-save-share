@@ -1,0 +1,2 @@
+0000000000000000000000000000000000000000 5af5c6ddcfbb9d1c4a224d5937e68ad5696e002e deweb-ss <sergey.shumskiy@scbali.com> 1502267465 +0300	branch: Created from HEAD
+5af5c6ddcfbb9d1c4a224d5937e68ad5696e002e d659713659478cda0a9b20307500f54ea8e4df76 deweb-ss <sergey.shumskiy@scbali.com> 1502267592 +0300	commit: [triptile-save-share] : Hotel get "Access denied for Hotels" since no SS with Triptile publish = True

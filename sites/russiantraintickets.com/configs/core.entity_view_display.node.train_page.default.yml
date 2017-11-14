@@ -1,0 +1,72 @@
+uuid: 86300ef7-35c8-413c-9e7c-9d019e175310
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.train_review.default
+    - field.field.node.train_page.body
+    - field.field.node.train_page.field_brand
+    - field.field.node.train_page.field_gallery
+    - field.field.node.train_page.field_image
+    - field.field.node.train_page.field_reviews
+    - field.field.node.train_page.field_text_below_map
+    - field.field.node.train_page.field_text_on_image
+    - node.type.train_page
+  module:
+    - comment
+    - image
+    - text
+    - user
+id: node.train_page.default
+targetEntityType: node
+bundle: train_page
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_image:
+    weight: 2
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_reviews:
+    weight: 5
+    label: hidden
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    type: comment_default
+    region: content
+  field_text_below_map:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_text_on_image:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_brand: true
+  field_gallery: true
+  langcode: true

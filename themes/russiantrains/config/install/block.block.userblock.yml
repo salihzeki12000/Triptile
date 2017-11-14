@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+    - rn_user
+  theme:
+    - russiantrains
+third_party_settings:
+  rn_content:
+    classes: ''
+id: userblock
+theme: russiantrains
+region: header_second
+weight: -12
+provider: null
+plugin: user_block
+settings:
+  id: user_block
+  label: 'User block'
+  provider: rn_user
+  label_display: '0'
+visibility: {  }

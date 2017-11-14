@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains booking.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function booking_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the booking module.
+    case 'help.page.booking':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Booking pages and logic') . '</p>';
+      return $output;
+
+    default:
+  }
+}

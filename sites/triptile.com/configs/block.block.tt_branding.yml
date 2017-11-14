@@ -1,0 +1,25 @@
+uuid: 6cb6401b-c6f9-46e2-bb55-ab6d93f892d4
+langcode: ru
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - tt
+_core:
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+id: tt_branding
+theme: tt
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Брендинг сайта'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

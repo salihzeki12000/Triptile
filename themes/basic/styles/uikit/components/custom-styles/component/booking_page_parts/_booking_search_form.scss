@@ -1,0 +1,43 @@
+.train-search-form-block {
+  max-height: 100%;
+  background-image: none !important;
+  background-color: $booking-form-bg;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+
+  @media #{$tablet-portrait} {
+    display: none;
+  }
+
+  @media #{$mobile} {
+    display: none;
+  }
+
+  .block__inner {
+    padding: 0;
+
+    .block__title {
+      display: none;
+    }
+
+    .block__content {
+      padding: 25px 75px;
+      max-width: $container-width;
+      @include side-padding(0);
+      background: transparent;
+      @include box-shadow(none);
+    }
+  }
+
+  #train-booking-search-form {
+
+    .search-form-switcher {
+      position: inherit;
+      @include v-padding(10px);
+      display: none;
+    }
+
+    @media #{$mobile-portrait} {
+      @include side-padding($tt-mobile-h-padding);
+    }
+  }
+}

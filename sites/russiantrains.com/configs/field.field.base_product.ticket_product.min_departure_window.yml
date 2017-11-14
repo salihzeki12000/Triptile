@@ -1,0 +1,25 @@
+uuid: 8daed25a-bf6b-43d0-9ae7-69bb1949919f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.base_product.min_departure_window
+    - store.base_product_type.ticket_product
+_core:
+  default_config_hash: _7js5cqLv-578L84PFQtjfUJosZXaYMbuSJWS-L7DJk
+id: base_product.ticket_product.min_departure_window
+field_name: min_departure_window
+entity_type: base_product
+bundle: ticket_product
+label: 'Minimal departure window'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

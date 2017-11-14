@@ -1,0 +1,30 @@
+id: order_item_ticket
+migration_group: store
+label: OrderItem ticket
+source:
+  plugin: order_item_ticket
+  key: travelallrussia
+process:
+  type:
+    plugin: default_value
+    default_value: ticket
+  quantity: quantity
+  'original_price/number': supplier_price
+  'original_price/currency_code': supplier_currency
+  'price/number': price
+  'price/currency_code': currency
+  order_reference:
+    plugin: migration_lookup
+    migration: store_order
+    source: order_id
+  leg_number: leg
+destination:
+  plugin: entity:order_item
+  bundle: ticket
+migration_dependencies:
+  optional:
+    - store_order
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

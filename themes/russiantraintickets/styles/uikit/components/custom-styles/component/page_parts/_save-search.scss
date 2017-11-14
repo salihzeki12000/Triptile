@@ -1,0 +1,14 @@
+$icon-size: 20px;
+
+.save-search {
+  a {
+    background: transparent url("#{$path-to-images}/heart-in-like.svg") no-repeat center right;
+    background-size: $icon-size;
+    padding-right: $icon-size+ 10px;
+
+    &:hover {
+      background: transparent url("#{$path-to-images}/heart-in-like-active.svg") no-repeat center right;
+      background-size: $icon-size;
+    }
+  }
+}

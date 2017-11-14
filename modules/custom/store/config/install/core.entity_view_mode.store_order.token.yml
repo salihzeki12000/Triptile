@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - store
+id: store_order.token
+label: Token
+targetEntityType: store_order
+cache: true

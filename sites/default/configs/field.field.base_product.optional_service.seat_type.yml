@@ -1,0 +1,27 @@
+uuid: 12b1eb7a-dd24-41ea-a10f-1c913c8a815b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.base_product.seat_type
+    - store.base_product_type.optional_service
+_core:
+  default_config_hash: h6tPK7dmmkofGwq7dy19Oyb11J8DBt8dTLXlLRb1xg0
+id: base_product.optional_service.seat_type
+field_name: seat_type
+entity_type: base_product
+bundle: optional_service
+label: 'Seat type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: with_supplier
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

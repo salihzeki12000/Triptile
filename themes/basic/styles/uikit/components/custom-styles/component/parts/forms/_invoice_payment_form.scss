@@ -1,0 +1,44 @@
+$ipf-sidebar-width: $sidebar-width;
+$row-gap: $row-gap-width;
+
+.invoice-payment-form {
+  width: 100%;
+  max-width: $container-width;
+  margin: $invoice-v-padding auto;
+  @include flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  font-family: $base-font-family;
+  font-size: 1rem;
+
+  .main {
+    flex-basis: 100% - $ipf-sidebar-width - $row-gap;
+
+    @media #{$tablet-portrait} {
+      flex-basis: 100%;
+      order: 1;
+    }
+
+    @media #{$mobile} {
+      flex-basis: 100%;
+      order: 1;
+    }
+  }
+
+  .sidebar {
+    flex-basis: $ipf-sidebar-width;
+
+    @media #{$tablet-portrait} {
+      flex-basis: 100%;
+      order: 0;
+    }
+
+    @media #{$mobile} {
+      flex-basis: 100%;
+      order: 0;
+    }
+  }
+
+  @import "../price_sidebar";
+  @import "invoice_form_parts/invoice_sidebar";
+}

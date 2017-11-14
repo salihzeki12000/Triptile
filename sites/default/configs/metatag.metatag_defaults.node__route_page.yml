@@ -1,0 +1,9 @@
+uuid: a8bd54f7-39ce-4d98-bc74-30f7bf7a2d1b
+langcode: en
+status: true
+dependencies: {  }
+id: node__route_page
+label: 'Content: Route page'
+tags:
+  title: '[node:title]: Timetable & Tickets | [site:name]'
+  description: '[node:summary]'

@@ -1,0 +1,38 @@
+uuid: 87ebb4c3-6524-4e72-9565-0f15f1edd508
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+    - rn_user
+    - system
+  theme:
+    - russiantraintickets
+third_party_settings:
+  rn_content:
+    classes: ''
+_core:
+  default_config_hash: CX4CPGgz4QVHAfxxqYdZdZP97wwgO7vHhOybSYvKdoU
+id: useroverviewtext
+theme: russiantraintickets
+region: content
+weight: -15
+provider: null
+plugin: useroverviewtext
+settings:
+  id: useroverviewtext
+  label: 'User overview text'
+  provider: rn_user
+  label_display: '0'
+  client_area_text:
+    value: "<p style=\"font-size: 1rem;\">Hello [user:full_name].</p>\r\n<p>Welcome to your Client Area! This is a secure place where we store all information about your trips with us. Please, make sure to read our policies and FAQs before departure.</p>"
+    format: full_html_for_administrator
+  field_overview_text:
+    value: "<p style=\"font-size: 1rem;\">Dear [user:full_name].</p><p>Welcome to your Client Area! This is a secure place where we store all information about your trips with us. Please, make sure to read our policies and FAQs before departure.</p>\r\n"
+    format: full_html_for_administrator
+visibility:
+  request_path:
+    id: request_path
+    pages: /user/%user
+    negate: false
+    context_mapping: {  }

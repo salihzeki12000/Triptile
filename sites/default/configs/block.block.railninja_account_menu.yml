@@ -1,0 +1,26 @@
+uuid: ff55bd98-239b-43d2-b5eb-2f12d8205a7c
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - railninja
+_core:
+  default_config_hash: AkFs7gaI7WiU5dsyFapTduWBgVwrLTeWCw1U0wJf31g
+id: railninja_account_menu
+theme: railninja
+region: leaderboard
+weight: -7
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+visibility: {  }

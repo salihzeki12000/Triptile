@@ -1,0 +1,87 @@
+tt_constructor.content:
+  path: '/constructor'
+  defaults:
+    _controller: '\Drupal\tt_constructor\Controller\ConstructorPage::content'
+    _title: 'Tour constructor'
+  requirements:
+    _permission: 'access content'
+
+tt_constructor.itinerary:
+  path: '/itinerary/{order_hash}'
+  defaults:
+    _controller: '\Drupal\tt_constructor\Controller\ConstructorPage::itinerary'
+    _title: 'Tour itinerary'
+  requirements:
+    _permission: 'access content'
+
+tt_constructor.itinerary_map:
+  path: '/show/itinerary-map'
+  defaults:
+    _controller: '\Drupal\tt_constructor\Controller\ConstructorPage::itineraryMap'
+    _title: 'Tour itinerary map'
+  requirements:
+    _permission: 'access content'
+
+tt_constructor.edit_step:
+  path: '/edit/step'
+  defaults:
+    _controller: '\Drupal\tt_constructor\Controller\ConstructorPage::editStepPopup'
+    _title: 'Edit Step'
+  requirements:
+    _permission: 'access content'
+
+tt_constructor.edit_hub:
+  path: '/edit/hub'
+  defaults:
+    _controller: '\Drupal\tt_constructor\Controller\ConstructorPage::editHubPopup'
+    _title: 'Edit Hub'
+  requirements:
+    _permission: 'access content'
+
+tt_constructor.edit_hotel:
+  path: '/edit/hotel'
+  defaults:
+    _controller: '\Drupal\tt_constructor\Controller\ConstructorPage::editHotelPopup'
+    _title: 'Edit Hotel'
+  requirements:
+    _permission: 'access content'
+
+tt_constructor.edit_transfer:
+  path: '/edit/transfer'
+  defaults:
+    _controller: '\Drupal\tt_constructor\Controller\ConstructorPage::editTransferPopup'
+    _title: 'Edit Transfer'
+  requirements:
+    _permission: 'access content'
+
+tt_constructor.edit_activity:
+  path: '/edit/activity'
+  defaults:
+    _controller: '\Drupal\tt_constructor\Controller\ConstructorPage::editActivityPopup'
+    _title: 'Edit Activity'
+  requirements:
+    _permission: 'access content'
+
+tt_constructor.edit_connection:
+  path: '/edit/connection'
+  defaults:
+    _controller: '\Drupal\tt_constructor\Controller\ConstructorPage::editConnectionPopup'
+    _title: 'Edit Connection'
+  requirements:
+    _permission: 'access content'
+
+tt_constructor.save_share_itinerary:
+  path: '/edit/save-share'
+  defaults:
+    _controller: '\Drupal\tt_constructor\Controller\ConstructorPage::editSaveSharePopup'
+    _title: 'Save & Share'
+  requirements:
+    _permission: 'access content'
+
+tt_constructor.book_now_itinerary:
+  path: '/edit/book-now'
+  defaults:
+    _controller: '\Drupal\tt_constructor\Controller\ConstructorPage::editBookNowPopup'
+    _title: 'Book now'
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,33 @@
+uuid: 6824f734-fe1c-4b2d-86d2-8af9bfd2a075
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+    - rn_user
+    - system
+  theme:
+    - railninja
+third_party_settings:
+  rn_content:
+    classes: ''
+id: userinvoicestext
+theme: railninja
+region: content
+weight: -14
+provider: null
+plugin: userinvoicestext
+settings:
+  id: userinvoicestext
+  label: 'User invoices text'
+  provider: rn_user
+  label_display: '0'
+  client_area_text:
+    value: "<p>This page shows all of your Ninja invoices, paid and unpaid. Click on the invoice to pay it or to download a receipt.</p>\r\n"
+    format: full_html
+visibility:
+  request_path:
+    id: request_path
+    pages: /user/%user/invoices
+    negate: false
+    context_mapping: {  }

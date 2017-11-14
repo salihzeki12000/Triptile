@@ -1,0 +1,12 @@
+uuid: e1fde491-2f46-4e67-8b52-3e03789c8d0f
+langcode: en
+status: true
+dependencies: {  }
+id: sj_depth_less_than30_days
+label: 'SJ depth less than30 days'
+price_rule_type: before_display
+condition: 'supplier == ''SJ'' and order_depth >= 0 and order_depth <= 30'
+tax_type: fixed
+tax_value: !!float 18
+tax_value_currency: USD
+weight: '0'

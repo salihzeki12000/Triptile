@@ -1,0 +1,19 @@
+uuid: e36665ea-a06f-4b0e-a0ab-e8697915052d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_text_below_map
+field_name: field_text_below_map
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,22 @@
+uuid: c9171a16-cda6-489c-99bb-c38790ec0dc9
+langcode: en
+status: true
+dependencies:
+  module:
+    - store
+    - train_base
+_core:
+  default_config_hash: hOhvsA0iUtMdLdo8rGr1RFkBBfNuB68gVPGa9AUhLIw
+id: base_product.train
+field_name: train
+entity_type: base_product
+type: entity_reference
+settings:
+  target_type: train
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file
+ * Contains payment.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function payment_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the payment module.
+    case 'help.page.payment':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provides payment functionality') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+function payment_form_payment_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $form['#attached']['library'][] = 'payment/change-number';
+}

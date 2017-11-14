@@ -1,0 +1,8 @@
+uuid: 5879a9da-1770-4fb8-be6b-2fa1003ef1ad
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: pTTd8EuqlsM8NncNl2-BigBRQjPVYAYD8prTihqxKU4
+id: optional_service
+label: 'Optional service'

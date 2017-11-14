@@ -1,0 +1,97 @@
+.ui-dialog {
+  margin: 0;
+  padding: 0;
+  background: $dialog-bg;
+  color: $dialog-header-bg;
+  font-family: $base-font-family;
+  font-size: 1rem;
+  border: none;
+  @include border-radius(0);
+  @include box-shadow(0 1px 1px rgba(0, 0, 0, 0.3));
+  z-index: 99999;
+  -webkit-transform: translate3d(0,0,3px);
+  position: fixed !important;
+
+  .ui-dialog-titlebar {
+    background: $dialog-header-bg;
+    color: $dialog-header-color;
+    @include v-padding(20px);
+    @include side-padding($dialog-h-padding);
+    @include border-radius(0);
+    border: none;
+    font-size: 1.6rem;
+    font-weight: normal;
+
+    @media #{$mobile} {
+      @include side-padding($dialog-mobile-h-padding);
+    }
+  }
+
+  .ui-dialog-title {
+    float: none;
+    overflow: inherit;
+    white-space: normal;
+    margin: 0;
+  }
+
+  .ui-dialog-titlebar-close {
+    background: transparent url("#{$path-to-images}/close-icon-white.svg") no-repeat 0 0;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    @include transition;
+    border: none;
+    @include border-radius(0);
+    right: $dialog-h-padding;
+    @include box-shadow(none);
+
+    @media #{$mobile} {
+      right: $dialog-mobile-h-padding;
+    }
+
+    & > span {
+      display: none;
+    }
+  }
+
+  & > .ui-widget-content {
+    @include border-radius(0);
+    border: none;
+    margin: 0;
+    @include side-padding($dialog-h-padding);
+
+    @media #{$mobile} {
+      @include side-padding($dialog-mobile-h-padding);
+
+      &.ui-dialog-buttonpane {
+        @include v-padding($dialog-v-padding/2);
+      }
+    }
+  }
+
+  .ui-dialog-buttonpane {
+    .ui-dialog-buttonset {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-end;
+      align-items: center;
+      float: none;
+
+      button {
+        @include btn-yellow;
+        @include border-radius(0);
+        border: none;
+        background-image: none;
+        padding: 15px 30px;
+        margin: 0;
+        height: auto;
+      }
+    }
+  }
+}
+
+.ui-widget-overlay {
+  background: $color-black;
+  opacity: 0.4;
+  cursor: pointer;
+}

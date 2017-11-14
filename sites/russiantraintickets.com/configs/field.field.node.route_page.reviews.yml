@@ -1,0 +1,21 @@
+uuid: 333bd9c4-a51b-4563-ab1c-823961d9e004
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.reviews
+    - node.type.route_page
+  module:
+    - text
+id: node.route_page.reviews
+field_name: reviews
+entity_type: node
+bundle: route_page
+label: Reviews
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

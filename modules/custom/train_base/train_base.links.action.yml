@@ -1,0 +1,71 @@
+entity.supplier.add_form:
+  route_name: entity.supplier.add_form
+  title: 'Add Supplier'
+  appears_on:
+    - entity.supplier.collection
+entity.train.add_form:
+  route_name: entity.train.add_form
+  title: 'Add Train'
+  appears_on:
+    - entity.train.collection
+entity.train_brand.add_form:
+  route_name: entity.train_brand.add_form
+  title: 'Add Train brand'
+  appears_on:
+    - entity.train_brand.collection
+entity.train_class.add_form:
+  route_name: entity.train_class.add_form
+  title: 'Add Train class'
+  appears_on:
+    - entity.train_class.collection
+entity.station.add_form:
+  route_name: entity.station.add_form
+  title: 'Add Station'
+  appears_on:
+    - entity.station.collection
+entity.station.add_form.parent:
+  route_name: entity.station.add_form
+  title: 'Add Parent Station'
+  class: '\Drupal\train_base\Plugin\Menu\LocalAction\AddParentStation'
+  appears_on:
+    - entity.station.collection
+entity.coach_class.add_form:
+  route_name: entity.coach_class.add_form
+  title: 'Add Coach class'
+  appears_on:
+    - entity.coach_class.collection
+entity.coach_scheme.add_form:
+  route_name: entity.coach_scheme.add_form
+  title: 'Add Coach scheme'
+  appears_on:
+    - entity.coach_scheme.collection
+entity.car_service.add_form:
+  route_name: entity.car_service.add_form
+  title: 'Add Car service'
+  appears_on:
+    - entity.car_service.collection
+entity.seat_type.add_form:
+  route_name: entity.seat_type.add_form
+  title: 'Add Seat type'
+  appears_on:
+    - entity.seat_type.collection
+entity.train_ticket.add_form:
+  route_name: entity.train_ticket.add_form
+  title: 'Add Train ticket'
+  appears_on:
+    - entity.train_ticket.collection
+entity.passenger.add_form:
+  route_name: entity.passenger.add_form
+  title: 'Add Passenger'
+  appears_on:
+    - entity.passenger.collection
+entity.seat_preference.add_form:
+  route_name: entity.seat_preference.add_form
+  title: 'Add Seat preference'
+  appears_on:
+    - entity.seat_preference.collection
+entity.route_message.add_form:
+  route_name: entity.route_message.add_form
+  title: 'Add Route message'
+  appears_on:
+    - entity.route_message.collection

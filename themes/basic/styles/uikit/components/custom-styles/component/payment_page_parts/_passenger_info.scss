@@ -1,0 +1,15 @@
+@import "../parts/passenger_info";
+
+.passengers-info-wrapper {
+  @include v-padding($payment-v-padding);
+  @include side-padding($payment-h-padding);
+  border: $payment-border;
+
+  @media #{$mobile} {
+    @include side-padding(0);
+  }
+
+  & + .leg-info-wrapper {
+    margin-top: $payment-v-padding;
+  }
+}

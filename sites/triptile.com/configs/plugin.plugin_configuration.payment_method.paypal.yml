@@ -1,0 +1,8 @@
+label: Paypal
+status: true
+weight: 1
+dependencies:
+  module:
+    - payment
+_core:
+  default_config_hash: uftaDEiOwHfWW59f1BtguN6IsveJCRubVZszikNfF7Q

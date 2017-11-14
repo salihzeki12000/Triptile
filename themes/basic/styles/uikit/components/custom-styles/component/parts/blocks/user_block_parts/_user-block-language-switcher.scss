@@ -1,0 +1,82 @@
+.language-switcher {
+  margin-top: $user-block-v-padding*(-1)/2;
+
+  li {
+    flex-basis: calc(100%/3);
+    margin-top: $user-block-v-padding/2;
+    margin-bottom: $user-block-v-padding/2;
+
+    &::before {
+      @include box-shadow(0 0 2px rgba(0,0,0,0.3));
+      background-size: 30px;
+      width: 30px;
+      height: 20px;
+    }
+
+    &.en {
+      &::before {
+        background-position: 0 0;
+      }
+    }
+
+    &.ru {
+      &::before {
+        background-position: 0 -26px;
+      }
+    }
+
+    &.fr {
+      &::before {
+        background-position: 0 -130px;
+      }
+    }
+
+    &.de {
+      &::before {
+        background-position: 0 -156px;
+      }
+    }
+
+    &.zh-hans {
+      &::before {
+        background-position: 0 -234px;
+      }
+    }
+
+    &.ja {
+      &::before {
+        background-position: 0 -208px;
+      }
+    }
+
+    &.es {
+      &::before {
+        background-position: 0 -52px;
+      }
+    }
+
+    &.it {
+      &::before {
+        background-position: 0 -104px;
+      }
+    }
+
+    &.tr {
+      &::before {
+        background-position: 0 -260px;
+      }
+    }
+
+    &.pl {
+      &::before {
+        background-position: 0 -182px;
+      }
+    }
+
+    &.pt-br, &.pt-pt {
+      &::before {
+        background-position: 0 -78px;
+      }
+    }
+  }
+}

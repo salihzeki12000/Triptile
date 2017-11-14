@@ -1,0 +1,11 @@
+uuid: 7356b7b4-6193-494f-9fc7-db83b5c10821
+langcode: en
+status: true
+dependencies:
+  module:
+    - store
+id: customer_profile.customer_profile
+target_entity_type_id: customer_profile
+target_bundle: customer_profile
+default_langcode: site_default
+language_alterable: false

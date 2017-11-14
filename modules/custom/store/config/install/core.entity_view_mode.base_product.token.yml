@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - store
+id: base_product.token
+label: Token
+targetEntityType: base_product
+cache: true

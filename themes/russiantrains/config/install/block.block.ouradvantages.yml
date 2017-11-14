@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:b6a69c92-432c-49bc-83dd-7fbb4a833ccb'
+  module:
+    - block_content
+    - rn_content
+    - system
+  theme:
+    - russiantrains
+third_party_settings:
+  rn_content:
+    classes: ''
+id: ouradvantages
+theme: russiantrains
+region: content
+weight: -9
+provider: null
+plugin: 'block_content:b6a69c92-432c-49bc-83dd-7fbb4a833ccb'
+settings:
+  id: 'block_content:b6a69c92-432c-49bc-83dd-7fbb4a833ccb'
+  label: 'Our Advantages'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

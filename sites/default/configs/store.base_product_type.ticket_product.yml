@@ -1,0 +1,8 @@
+uuid: e187a8c3-63f2-45d5-a0c0-d053bfe026af
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: '-GHpfjM21EQo_agRFu4qUkI8-141d4IrGUcnMZGJFuA'
+id: ticket_product
+label: 'Ticket Product'

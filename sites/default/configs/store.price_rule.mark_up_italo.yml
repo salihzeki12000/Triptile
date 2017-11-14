@@ -1,0 +1,12 @@
+uuid: 1c40fd0b-079a-4435-8360-506a28e5bb87
+langcode: en
+status: true
+dependencies: {  }
+id: mark_up_italo
+label: 'Mark-up ITALO <= 94'
+price_rule_type: before_display
+condition: 'supplier == ''IT'' and order_depth <= 94'
+tax_type: fixed
+tax_value: !!float 10
+tax_value_currency: USD
+weight: '0'

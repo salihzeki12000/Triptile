@@ -1,0 +1,76 @@
+access booking:
+  title: 'Access to booking functionality'
+add failed search entities:
+  title: 'Create new Failed search entities'
+
+administer failed search entities:
+  title: 'Administer Failed search entities'
+  description: 'Allow to access the administration form to configure Failed search entities.'
+  restrict access: true
+
+delete failed search entities:
+  title: 'Delete Failed search entities'
+
+edit failed search entities:
+  title: 'Edit Failed search entities'
+
+access failed search overview:
+  title: 'Access the Failed search overview page'
+
+view published failed search entities:
+  title: 'View published Failed search entities'
+
+view unpublished failed search entities:
+  title: 'View unpublished Failed search entities'
+
+access train booking config:
+  title: 'Access to train booking config'
+  description: 'Allow to change popular stations and minimal departure window.'
+
+add detailed success search entities:
+  title: 'Create new Detailed success search entities'
+
+administer detailed success search entities:
+  title: 'Administer Detailed success search entities'
+  description: 'Allow to access the administration form to configure Detailed success search entities.'
+  restrict access: true
+
+delete detailed success search entities:
+  title: 'Delete Detailed success search entities'
+
+edit detailed success search entities:
+  title: 'Edit Detailed success search entities'
+
+access detailed success search overview:
+  title: 'Access the Detailed success search overview page'
+
+view published detailed success search entities:
+  title: 'View published Detailed success search entities'
+
+view unpublished detailed success search entities:
+  title: 'View unpublished Detailed success search entities'
+add booking stat entities:
+  title: 'Create new Booking stat entities'
+
+administer booking stat entities:
+  title: 'Administer Booking stat entities'
+  description: 'Allow to access the administration form to configure Booking stat entities.'
+  restrict access: true
+
+delete booking stat entities:
+  title: 'Delete Booking stat entities'
+
+edit booking stat entities:
+  title: 'Edit Booking stat entities'
+
+access booking stat overview:
+  title: 'Access the Booking stat overview page'
+
+view published booking stat entities:
+  title: 'View published Booking stat entities'
+
+view unpublished booking stat entities:
+  title: 'View unpublished Booking stat entities'
+
+access search url generator:
+  title: 'Access to generate search url'

@@ -1,0 +1,11 @@
+{# set region in child template #}
+
+{% for key, files in include_templates %}
+    {% if(key == region) %}
+        {% for template in files %}
+            {% if theme_custom_templates[template.name] %}
+                {% include template.path ~ '/' ~ template.name %}
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endfor %}

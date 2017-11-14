@@ -1,0 +1,100 @@
+$gallery-width: 500px;
+$gallery-height: 320px;
+$dot-big: 16px;
+$dot-small: 10px;
+
+.page-node-type--train-page {
+  .page {
+    #main-content {
+
+      article {
+        margin: 0;
+        max-width: 100%;
+      }
+
+      .block {
+        @media #{$tablet} {
+          @include side-padding(0);
+        }
+
+        @media #{$mobile} {
+          @include side-padding(0);
+        }
+      }
+
+      .node__container {
+        max-width: $container-width;
+        margin: $v-padding*2 auto;
+
+        @media #{$mobile} {
+          margin: $v-padding auto;
+        }
+      }
+
+      .node__title {
+        margin: 0 auto $v-padding*2;
+        text-align: center;
+        font-size: 1.875rem;
+
+        @media #{$mobile} {
+          margin-bottom: $v-padding;
+        }
+      }
+
+      .content-text {
+        color: $tp-body-color;
+
+        @media #{$tablet} {
+          @include side-padding($tablet-h-padding);
+        }
+
+        @media #{$mobile} {
+          @include side-padding($mobile-h-padding);
+        }
+      }
+
+      .text-block {
+        padding-top: $v-padding*2;
+
+        @media #{$tablet} {
+          @include side-padding($tablet-h-padding);
+        }
+
+        @media #{$mobile} {
+          @include side-padding($mobile-h-padding);
+          padding-top: $v-padding;
+        }
+      }
+
+      .text-block-title {
+        text-align: center;
+        font-size: 1.875rem;
+        padding-bottom: $v-padding * 1.5;
+
+        @media #{$mobile} {
+          padding-bottom: $v-padding;
+        }
+      }
+
+      .text-below-map {
+        max-width: $container-width;
+        margin: 0 auto $v-padding*2;
+
+        @media #{$mobile} {
+          padding-top: 0;
+        }
+      }
+
+      .map-container {
+        @media #{$mobile} {
+          display: none;
+        }
+      }
+
+      @import "train_page_parts/coach_classes";
+      @import "parts/forms/info-page-search-form";
+      @import "train_page_parts/train_info";
+    }
+  }
+
+}

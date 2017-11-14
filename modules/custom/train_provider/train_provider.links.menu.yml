@@ -1,0 +1,14 @@
+train_provider.config.train_providers:
+  title: 'Train Providers config'
+  description: 'Train Providers config'
+  route_name: train_provider.config.train_providers
+  parent: rail_ninja.config_list
+  weight: -10
+
+# Booking stat menu items definition
+entity.train_provider_request.collection:
+  title: 'Train Provider request'
+  description: 'List train provider request statistic'
+  route_name: entity.train_provider_request.collection
+  parent: train_booking.stats
+  weight: 100

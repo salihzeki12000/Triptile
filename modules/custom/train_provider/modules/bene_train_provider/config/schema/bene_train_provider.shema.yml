@@ -1,0 +1,31 @@
+plugin.plugin_configuration.train_provider.bene_train_provider:
+  type: plugin.plugin_configuration.train_provider.train_provider_base
+  mapping:
+    live:
+      label: Use live server
+      type: boolean
+    log:
+      label: Log requests to file
+      type: boolean
+    available_routes:
+      type: sequence
+      label: 'Available routes'
+      sequence:
+        departure_station:
+          type: integer
+          label: 'Departure station'
+        arrival_station:
+          type: integer
+          label: 'Arrival station'
+    max_nbr_connections:
+      label: Maximum number of connections
+      type: integer
+    username:
+      label: username
+      type: string
+    password:
+      label: Password
+      type: string
+    distributor:
+      label: Distributor
+      type: string

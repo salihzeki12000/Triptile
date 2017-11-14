@@ -1,0 +1,8 @@
+label: Invoice
+status: false
+weight: 2
+dependencies:
+  module:
+    - payment
+_core:
+  default_config_hash: 3_IDoviGTtftoOY-pWi7ODdEpZw_dzRkW21cNJwQj24

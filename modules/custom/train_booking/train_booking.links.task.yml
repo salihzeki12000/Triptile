@@ -1,0 +1,66 @@
+# Failed search routing definition
+failed_search.settings_tab:
+  route_name: failed_search.settings
+  title: 'Settings'
+  base_route: failed_search.settings
+
+entity.failed_search.canonical:
+  route_name: entity.failed_search.canonical
+  base_route: entity.failed_search.canonical
+  title: 'View'
+
+entity.failed_search.edit_form:
+  route_name: entity.failed_search.edit_form
+  base_route: entity.failed_search.canonical
+  title: 'Edit'
+
+entity.failed_search.delete_form:
+  route_name:  entity.failed_search.delete_form
+  base_route:  entity.failed_search.canonical
+  title: Delete
+  weight: 10
+
+# Detailed success search routing definition
+success_search_detailed.settings_tab:
+  route_name: entity.success_search_detailed.settings
+  title: 'Settings'
+  base_route: entity.success_search_detailed.settings
+
+entity.success_search_detailed.canonical:
+  route_name: entity.success_search_detailed.canonical
+  base_route: entity.success_search_detailed.canonical
+  title: 'View'
+
+entity.success_search_detailed.edit_form:
+  route_name: entity.success_search_detailed.edit_form
+  base_route: entity.success_search_detailed.canonical
+  title: 'Edit'
+
+entity.success_search_detailed.delete_form:
+  route_name:  entity.success_search_detailed.delete_form
+  base_route:  entity.success_search_detailed.canonical
+  title: Delete
+  weight: 10
+
+# Booking stat routing definition
+booking_stat.settings_tab:
+  route_name: entity.booking_stat.settings
+  title: 'Settings'
+  base_route: entity.booking_stat.settings
+
+entity.booking_stat.canonical:
+  route_name: entity.booking_stat.canonical
+  base_route: entity.booking_stat.canonical
+  title: 'View'
+
+entity.booking_stat.edit_form:
+  route_name: entity.booking_stat.edit_form
+  base_route: entity.booking_stat.canonical
+  title: 'Edit'
+
+entity.booking_stat.delete_form:
+  route_name:  entity.booking_stat.delete_form
+  base_route:  entity.booking_stat.canonical
+  title: Delete
+  weight: 10
+

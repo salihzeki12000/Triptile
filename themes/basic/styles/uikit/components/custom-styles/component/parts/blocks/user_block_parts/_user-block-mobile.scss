@@ -1,0 +1,55 @@
+.mobile-settings {
+  display: none;
+}
+
+@media #{$mobile} {
+  .user-triangle,
+  .user-settings {
+    display: none;
+  }
+
+  .mobile-settings {
+    @include flex;
+    font-family: $mobile-menu-font-family;
+
+    .mobile-settings-menu {
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        padding-right: 0;
+        flex-basis: 100%;
+        padding-bottom: $menu-v-padding;
+        color: $menu-color;
+        text-transform: capitalize;
+        font-size: 1.5rem;
+
+        &:hover, &:focus, &.menu__item--active-trail {
+          color: $menu-hover-color;
+          border-bottom: 2px solid $menu-hover-color;
+
+          a {
+            color: $menu-hover-color;
+            border-bottom: 2px solid $menu-hover-color;
+          }
+        }
+
+        a {
+          color: $menu-color;
+          text-transform: capitalize;
+          font-size: 1.875rem;
+
+          &:hover {
+            color: $menu-hover-color;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

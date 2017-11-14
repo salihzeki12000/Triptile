@@ -1,0 +1,119 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.base_product.ticket_product.coach_class
+    - field.field.base_product.ticket_product.min_departure_window
+    - field.field.base_product.ticket_product.seat_type
+    - store.base_product_type.ticket_product
+id: base_product.ticket_product.default
+targetEntityType: base_product
+bundle: ticket_product
+mode: default
+content:
+  coach_class:
+    weight: 10
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  code:
+    type: string_textfield
+    weight: -9
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  currency:
+    type: string_textfield
+    weight: -7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  description:
+    type: string_textarea
+    weight: -7
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  max_quantity:
+    type: number
+    weight: -5
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  min_departure_window:
+    weight: 11
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  name:
+    type: string_textfield
+    weight: -8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  price:
+    type: number
+    weight: -4
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  quantity_max:
+    weight: 9
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  seat_type:
+    weight: 8
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  site:
+    type: options_select
+    weight: -4
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  status:
+    type: boolean_checkbox
+    weight: -4
+    settings:
+      display_label: false
+    third_party_settings: {  }
+    region: content
+  translation:
+    weight: 10
+    region: content
+  weight:
+    type: number
+    weight: -5
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

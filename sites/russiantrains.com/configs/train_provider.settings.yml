@@ -1,0 +1,2 @@
+common_min_days_before_departure: 0
+common_min_hours_before_departure: !!float 10

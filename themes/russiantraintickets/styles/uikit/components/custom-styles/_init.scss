@@ -1,0 +1,109 @@
+@import "../../../../../../themes/basic/styles/uikit/components/custom-styles/media";
+@import "../../../../../../themes/basic/styles/uikit/components/custom-styles/init";
+
+// path
+
+$path-to-fonts: "../../../custom-fonts";
+$path-to-images: "../../../../images";
+$misc-icons: "misc-icons.svg";
+
+// fonts
+
+@font-face{
+  font-family: Helvetica Neue;
+  src: url("#{$path-to-fonts}/HelveticaNeueLt.ttf");
+}
+
+@font-face{
+  font-family: HelveticaLight;
+  src: url("#{$path-to-fonts}/HelveticaLight.ttf");
+}
+
+@font-face{
+  font-family: Myriad Pro;
+  src: url("#{$path-to-fonts}/MyriadPro-Regular.otf");
+}
+
+@font-face{
+  font-family: Reducto Light;
+  src: url("#{$path-to-fonts}/Reducto-Light-SSi-Light.ttf");
+}
+
+$helvetica-family: "Helvetica Neue", Arial, sans-serif;
+$helvetica-light-family: "HelveticaLight", Arial, sans-serif;
+$myriad-pro-family: "Myriad Pro", Arial, sans-serif;
+$reducto-family: "Reducto Light", Arial, sans-serif;
+
+// colors
+
+$color-white: #ffffff;
+$color-yellow: #ffae00;
+$color-red: #ca0d03;
+$color-dark-red: #c10017;
+$color-green: #319069;
+$color-very-light-grey: #fafafa;
+$color-light-warm-grey: #eaeaea;
+$color-light-neutral-grey: #afacac;
+$color-grey: #909090;
+$color-warm-grey: #cacaca;
+$color-dark-warm-grey: #4b4b4b;
+$color-dark-neutral-grey: #2a262d;
+$color-lightblack: #070707;
+$color-black: #000000;
+
+
+// base
+$base-font-family: $helvetica-family;
+$title-font-family: $helvetica-light-family;
+$base-font-size: 16px;
+$page-bg: $color-white;
+$small-font-size: 0.875rem;
+$very-small-font-size: 0.75rem;
+$h-padding: 1rem;
+$v-padding: 30px;
+$tablet-h-padding: 1rem;
+$mobile-h-padding: 1rem;
+$container-width: 1024px;
+$details-hover-color: $color-dark-warm-grey;
+
+// header
+
+$header-bg: $color-white;
+$header-v-padding: 10px;
+$header-huge-h-padding: 40px;
+$header-h-padding: 30px;
+$header-narrow-h-padding: 20px;
+
+// menu
+
+$menu-color: $color-lightblack;
+$menu-hover-color: $color-dark-neutral-grey;
+$menu-bg: #efefef;
+$menu-v-padding: 30px;
+$menu-h-padding: 30px;
+$menu-hover-border-width: 2px;
+$menu-hover-border-color: #ca0002;
+$menu-3rd-level-color: #777;
+$mobile-menu-v-padding: 35px;
+$mobile-menu-h-padding: 25px;
+$mobile-menu-3rd-level-color: #6c6c6c;
+$mobile-menu-light-note-color: #999999;
+$mobile-menu-border-color: #cacaca;
+$mobile-menu-btn-color: #fff;
+
+// user block
+
+$user-block-color: #afacac;
+$user-block-font-family: $myriad-pro-family;
+$user-block-h-padding: 10px;
+$user-block-flag-width: 16px;
+
+// search form
+
+$fp-awards-block-v-padding: 25px;
+$fp-sf-height: 77px;
+$fp-sf-title-font-family: $reducto-family;
+$fp-sf-switcher-color: #fff;
+$search-form-max-height: 500px;
+$search-form-label-color: #a3a3a3;
+$search-form-font-family: $myriad-pro-family;

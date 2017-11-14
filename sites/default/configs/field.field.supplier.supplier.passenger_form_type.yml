@@ -1,0 +1,23 @@
+uuid: 3007a8a6-9f94-43c1-8341-531e4e91cc85
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.supplier.passenger_form_type
+  module:
+    - plugin
+    - train_base
+_core:
+  default_config_hash: 3TUv49DK6DjSXmv6ChT5ZIFFDww1R-bDhNlPI4D0HTw
+id: supplier.supplier.passenger_form_type
+field_name: passenger_form_type
+entity_type: supplier
+bundle: supplier
+label: 'Passenger form type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: 'plugin:field_form_type'

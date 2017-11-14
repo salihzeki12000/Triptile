@@ -1,0 +1,13 @@
+display:
+  default:
+    display_options:
+      fields:
+        title:
+          label: Título
+      filters:
+        title:
+          expose:
+            label: Título
+        langcode:
+          expose:
+            label: Idioma

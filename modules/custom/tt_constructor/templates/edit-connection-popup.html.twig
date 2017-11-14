@@ -1,0 +1,52 @@
+<div class="mobile-return" ng-click="closeThisDialog()">{{'Return'|t}}</div>
+
+<div class="step">
+  <div class="city step-hub">
+    <label>{{'Connection'|t}}</label>
+    <div class="price entity-total-price" ng-cloak>
+      [[connectionTotal()]]
+    </div>
+    <h2 class="choose-connection choose" ng-click="isChooseConnectionPriceOpen = 0;">
+       [[connectionName()]]
+    </h2>
+
+    <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="wheelSpeed" on-scroll="onScroll(scrollTop, scrollHeight)" ng-show="true">
+      <div class="connections" ng-repeat="connection in currentStep.connections | filterConnectionByNextHub:order:activeStepNum | orderByObject:'name'">
+        <div class="price-line choose-checkbox" ng-click="setConnection(connection.id)" ng-class="isConnectionActive(connection.id)">
+          [[connection.name]]
+        </div>
+      </div>
+    </perfect-scrollbar>
+
+    <div class="price-options" style="position: relative">
+      <div class="price-edit-wrapper" ng-show="!isChooseConnectionPriceOpen">
+        <div class="price-option-selected">[[priceName()]]</div>
+        <div class="edit" ng-click="isChooseConnectionPriceOpen = !isChooseConnectionPriceOpen; isChooseConnectionOpen = 0;"
+             ng-show="currentStep.connection.price_options.length > 1"></div>
+      </div>
+      <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="wheelSpeed" on-scroll="onScroll(scrollTop, scrollHeight)" ng-show="isChooseConnectionPriceOpen">
+        <div class="price-line choose-checkbox" ng-repeat="price in getPricesForConnections()" ng-click="setPrice(price.id);"
+             ng-class="isPriceActive(price.id)">
+          <span class="price-name">[[price.name]]</span>
+          <span class="price">
+            [[price|formatPriceObject]]
+          </span>
+        </div>
+      </perfect-scrollbar>
+    </div>
+
+  </div>
+</div>
+
+<div class="total">
+  <div class="actions" ng-show="!currentStep.delete">
+    {#<span class="delete" ng-click="currentStep.delete = 1">{{'Delete connection'|t}}</span>#}
+    <span class="cancel" ng-click="cancel()">{{'Cancel'|t}}</span>
+    <button class="orange-button" ng-click="saveOrder()">{{'Save changes'|t}}</button>
+  </div>
+  <div class="actions-delete" ng-if="currentStep.delete">
+    <div class="text">{{'Delete connection?'|t}}</div>
+    <button class="gray-button" ng-click="currentStep.delete = 0">{{'Cancel'|t}}</button>
+    <button class="orange-button" ng-click="deleteConnection()">{{'Delete connection'|t}}</button>
+  </div>
+</div>

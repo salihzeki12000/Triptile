@@ -1,0 +1,8 @@
+uuid: 734e0286-7ef4-47be-8b2d-7412d097af66
+langcode: en
+status: true
+dependencies: {  }
+name: 'Full html for administrator'
+format: full_html_for_administrator
+weight: 0
+filters: {  }

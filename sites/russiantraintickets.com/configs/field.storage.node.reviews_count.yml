@@ -1,0 +1,20 @@
+uuid: f25fb4c7-c587-4c2b-97e0-68ae188c3726
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.reviews_count
+field_name: reviews_count
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

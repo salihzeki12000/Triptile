@@ -1,0 +1,30 @@
+id: salesforce_mapping_object_invoice
+migration_group: salesforce
+label: SalesforceMappingObject Invoice
+source:
+  plugin: salesforce_mapping_object_invoice
+  key: travelallrussia
+process:
+  record_id: sforce_id
+  salesforce_object: sforce_type
+  entity_id:
+    plugin: migration_lookup
+    migration: invoice
+    source: invoice_id
+  entity_type_id:
+    plugin: default_value
+    default_value: invoice
+  tries:
+    plugin: default_value
+    default_value: 0
+  created: changed
+  changed: changed
+destination:
+  plugin: entity:salesforce_mapping_object
+migration_dependencies:
+  optional:
+    - invoice
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

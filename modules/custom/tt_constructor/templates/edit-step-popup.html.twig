@@ -1,0 +1,71 @@
+<div class="mobile-return" ng-click="closeThisDialog()">{{'Return'|t}}</div>
+<div id="top"></div>
+<div class="step">
+  <div class="step-hub">
+    <div class="region-icon region-[[hubRegion()]]-europe"></div>
+    <label>{{'City'|t}}:</label>
+    <h2>
+      <span class="hub-name">[[hubName()]]</span>
+      <span class="hub-country">[[hubCountry()]]</span>
+    </h2>
+    <div class="edit" ng-click="editHub(activeStepNum)"></div>
+    <div class="description">
+      <span class="small-minus" ng-dblclick="" ng-click="stepMinusDays()"></span>
+      <span class="hub-duration-days">[[hubDuration('days')]]</span>
+      <span class="duration-days">[[getDuration('days', 0)]]</span>
+      <span class="delimiter" ng-show="hubDuration('nights')"> </span>
+      <span class="duration-nights">[[getDuration('nights')]]</span>
+      <span class="small-plus" ng-dblclick="" ng-click="stepPlusDays()"></span>
+
+    </div>
+  </div>
+
+  <div class="step-hub">
+    <label>{{'Hotel'|t}}:</label>
+    <div class="edit" ng-click="editHotel(activeStepNum)" ng-if="hotelPriceOptions(activeStepNum)" ng-show="getLength(load[activeStepNum].hotels)"></div>
+    <h2 class="hotel-name">[[hotelName()]]</h2>
+    <div class="description">
+      <span class="star" ng-repeat="star in getHotelStars(activeStepNum, order.steps[activeStepNum].hotel.id)"></span>
+      [[hotelDescription(activeStepNum)]]
+    </div>
+    <div class="description">[[hotelPriceName(activeStepNum)]]</div>
+    <div class="price">[[hotelTotal(activeStepNum)]]</div>
+  </div>
+
+  <div class="step-hub">
+    <label>{{ 'Transfer'|t }}:</label>
+    <div class="edit" ng-click="editTransfer(activeStepNum)" ng-show="getLength(load[activeStepNum].transfers)"></div>
+    <div class="description">[[transferDescription(activeStepNum)]]</div>
+    <div class="price">[[transferTotal(activeStepNum)]]</div>
+  </div>
+
+  <div class="step-hub">
+    <label>{{ 'Activities'|t }}:</label>
+    <div class="edit" ng-click="editActivity(activeStepNum)" ng-show="getLength(load[activeStepNum].activities)"></div>
+    <div class="description">
+      <div ng-repeat="description in activityDescription(activeStepNum)">
+        [[description]]
+      </div>
+    </div>
+    <div class="price">[[activityTotal(activeStepNum)]]</div>
+  </div>
+</div>
+
+<div class="total">
+  <div class="delete-hub" ng-click="currentStep.delete = 1" ng-show="!currentStep.delete">{{'delete city'|t}}</div>
+  <div class="actions" ng-show="!currentStep.delete">
+    <span class="price">
+      {% set total = '[[stepTotal(activeStepNum)]]' %}
+      {% trans %}
+        Total {{ total }}
+      {% endtrans %}
+    </span>
+    <span class="total-days">[[getDuration('days', 1)]]</span>
+    <button class="orange-button" ng-click="closeDialog()">{{'Finish edtiting'|t}}</button>
+  </div>
+  <div class="actions-delete" ng-show="currentStep.delete">
+    <div class="text">{{'If you delete this city, all your further itineary will be deleted as well. Delete it anyway?'|t}}</div>
+    <button class="gray-button" ng-click="currentStep.delete = 0">{{'Cancel'|t}}</button>
+    <button class="orange-button" ng-click="deleteHub()">{{'Delete city'|t}}</button>
+  </div>
+</div>

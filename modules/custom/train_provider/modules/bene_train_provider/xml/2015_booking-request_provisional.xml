@@ -1,0 +1,149 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://bene-ws.b-rail.be/rail1/2007-06-13/types">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <booking-request>
+         <user-data>
+            <user-name>XXX_BENEUSER</user-name>
+            <password>XXX_BENEUSER</password>
+            <language code="nl_BE">Nederlands</language>
+            <distributor>BS</distributor>
+            <user-related-data>Training</user-related-data>
+         </user-data>
+         <booking-type>provisional</booking-type>
+         <booking-info>
+            <delivery-info>
+               <delivery-method code="ST"/>
+            </delivery-info>
+            <ticket-language code="nl_BE"/>
+            <seat-info-requested>true</seat-info-requested>
+         </booking-info>
+         <typ:passenger-list-reply xmlns:typ="http://bene-ws.b-rail.be/rail1/2007-06-13/types">
+            <typ:passenger-reply>
+               <typ:last-name>Janssen</typ:last-name>
+               <typ:first-name>Jan</typ:first-name>
+               <typ:gender code="H">Dhr.</typ:gender>
+               <typ:passenger-id>AA</typ:passenger-id>
+            </typ:passenger-reply>
+            <typ:passenger-reply>
+               <typ:last-name>Janssen</typ:last-name>
+               <typ:first-name>Jenny</typ:first-name>
+               <typ:gender code="D">Mevr.</typ:gender>
+               <typ:passenger-id>AB</typ:passenger-id>
+            </typ:passenger-reply>
+            <typ:passenger-reply>
+               <typ:last-name>Janssen</typ:last-name>
+               <typ:first-name>Kobe</typ:first-name>
+               <typ:gender code="H">Dhr.</typ:gender>
+               <typ:passenger-id>AC</typ:passenger-id>
+            </typ:passenger-reply>
+         </typ:passenger-list-reply>
+         <booking-request-list>
+         		<typ:proposed-price xmlns:typ="http://bene-ws.b-rail.be/rail1/2007-06-13/types">
+               <typ:price-offer>
+                  <typ:used-tacos>
+                     <typ:taco domain="I" tariff-group="EUR" tic="HWAA1">Semi flex (HW) - Std Premier</typ:taco>
+                     <typ:unit-price>
+                        <typ:amount>149.0</typ:amount>
+                        <typ:currency>EUR</typ:currency>
+                     </typ:unit-price>
+                     <typ:number-of-passengers>2</typ:number-of-passengers>
+                     <typ:passenger-list>
+                        <typ:passenger-id>AA</typ:passenger-id>
+                        <typ:passenger-id>AB</typ:passenger-id>
+                     </typ:passenger-list>
+                  </typ:used-tacos>
+                  <typ:used-tacos>
+                     <typ:taco domain="I" tariff-group="EUR" tic="HWAC1">Semi flex Kind (HW) - Std Premier</typ:taco>
+                     <typ:unit-price>
+                        <typ:amount>105.0</typ:amount>
+                        <typ:currency>EUR</typ:currency>
+                     </typ:unit-price>
+                     <typ:passenger-type>C</typ:passenger-type>
+                     <typ:number-of-passengers>1</typ:number-of-passengers>
+                     <typ:passenger-list>
+                        <typ:passenger-id>AC</typ:passenger-id>
+                     </typ:passenger-list>
+                  </typ:used-tacos>
+               </typ:price-offer>
+               <typ:product-feature>
+                  <typ:comfort-class>1</typ:comfort-class>
+                  <typ:is-refundable>N</typ:is-refundable>
+                  <typ:is-changeable>Y</typ:is-changeable>
+                  <typ:product-group>offer_19</typ:product-group>
+                  <typ:carrier-description supplier="EUR">EUROSTAR</typ:carrier-description>
+                  <typ:EBS>false</typ:EBS>
+                  <typ:ESN>false</typ:ESN>
+                  <typ:single-indication>false</typ:single-indication>
+               </typ:product-feature>
+               <typ:origin-station code="BEBMI">BRUSSEL-ZUID</typ:origin-station>
+               <typ:destination-station code="GBSPX">LONDON ST. PANCRAS INTERNATIONAL</typ:destination-station>
+               <typ:train-number>9161</typ:train-number>
+               <typ:departure-time>19:52:00</typ:departure-time>
+               <typ:travel-duration>02:11:00</typ:travel-duration>
+               <typ:departure-date>2015-02-23</typ:departure-date>
+               <typ:proposed-price-id>20</typ:proposed-price-id>
+               <typ:route-summary-id>1</typ:route-summary-id>
+               <typ:segment-id>1</typ:segment-id>
+               <typ:segment-type>marketprice</typ:segment-type>
+               <typ:availability>
+                  <typ:class-of-service>HW</typ:class-of-service>
+                  <typ:availability-level>7</typ:availability-level>
+               </typ:availability>
+               <typ:one-ticket-indicator>true</typ:one-ticket-indicator>
+            </typ:proposed-price>
+	    		<typ:proposed-price xmlns:typ="http://bene-ws.b-rail.be/rail1/2007-06-13/types">
+               <typ:price-offer>
+                  <typ:used-tacos>
+                     <typ:taco domain="I" tariff-group="EUR" tic="HWAA1">Semi flex (HW) - Std Premier</typ:taco>
+                     <typ:unit-price>
+                        <typ:amount>149.0</typ:amount>
+                        <typ:currency>EUR</typ:currency>
+                     </typ:unit-price>
+                     <typ:number-of-passengers>2</typ:number-of-passengers>
+                     <typ:passenger-list>
+                        <typ:passenger-id>AA</typ:passenger-id>
+                        <typ:passenger-id>AB</typ:passenger-id>
+                     </typ:passenger-list>
+                  </typ:used-tacos>
+                  <typ:used-tacos>
+                     <typ:taco domain="I" tariff-group="EUR" tic="HWAC1">Semi flex Kind (HW) - Std Premier</typ:taco>
+                     <typ:unit-price>
+                        <typ:amount>105.0</typ:amount>
+                        <typ:currency>EUR</typ:currency>
+                     </typ:unit-price>
+                     <typ:passenger-type>C</typ:passenger-type>
+                     <typ:number-of-passengers>1</typ:number-of-passengers>
+                     <typ:passenger-list>
+                        <typ:passenger-id>AC</typ:passenger-id>
+                     </typ:passenger-list>
+                  </typ:used-tacos>
+               </typ:price-offer>
+               <typ:product-feature>
+                  <typ:comfort-class>1</typ:comfort-class>
+                  <typ:is-refundable>N</typ:is-refundable>
+                  <typ:is-changeable>Y</typ:is-changeable>
+                  <typ:product-group>offer_263</typ:product-group>
+                  <typ:carrier-description supplier="EUR">EUROSTAR</typ:carrier-description>
+                  <typ:EBS>false</typ:EBS>
+                  <typ:ESN>false</typ:ESN>
+                  <typ:single-indication>false</typ:single-indication>
+               </typ:product-feature>
+               <typ:origin-station code="GBSPX">LONDON ST. PANCRAS INTERNATIONAL</typ:origin-station>
+               <typ:destination-station code="BEBMI">BRUSSEL-ZUID</typ:destination-station>
+               <typ:train-number>9126</typ:train-number>
+               <typ:departure-time>10:58:00</typ:departure-time>
+               <typ:travel-duration>02:07:00</typ:travel-duration>
+               <typ:departure-date>2015-03-03</typ:departure-date>
+               <typ:proposed-price-id>226</typ:proposed-price-id>
+               <typ:route-summary-id>10</typ:route-summary-id>
+               <typ:segment-id>1</typ:segment-id>
+               <typ:segment-type>marketprice</typ:segment-type>
+               <typ:availability>
+                  <typ:class-of-service>HW</typ:class-of-service>
+                  <typ:availability-level>4</typ:availability-level>
+               </typ:availability>
+               <typ:one-ticket-indicator>true</typ:one-ticket-indicator>
+            </typ:proposed-price></booking-request-list>
+      </booking-request>
+   </soapenv:Body>
+</soapenv:Envelope>

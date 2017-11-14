@@ -1,0 +1,12 @@
+uuid: 155dfd70-077c-4061-831f-decc0b95781d
+langcode: en
+status: true
+dependencies: {  }
+id: flat_fee_3_10_days
+label: 'Flat fee 3-10 days'
+price_rule_type: before_display
+condition: ' order_depth >= 4 and order_depth <= 10 and supplier != ''IT'''
+tax_type: fixed
+tax_value: !!float 20
+tax_value_currency: USD
+weight: '0'

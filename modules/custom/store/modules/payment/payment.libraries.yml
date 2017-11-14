@@ -1,0 +1,22 @@
+change-number:
+  version: 1.x
+  js:
+    js/change-number.js: {}
+  dependencies:
+    - core/jquery
+
+billing-profile:
+  version: 1.x
+  js:
+    js/billing-profile.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+
+autosubmit-form:
+  version: 1.x
+  js:
+    js/autosubmit-form.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

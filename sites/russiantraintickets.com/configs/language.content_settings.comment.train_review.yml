@@ -1,0 +1,16 @@
+uuid: 2bd2c451-2b73-45e9-9f79-50fc428b14c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.train_review
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+id: comment.train_review
+target_entity_type_id: comment
+target_bundle: train_review
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,15 @@
+uuid: 24698bd1-bcf5-4ea1-9530-f69ba4546a75
+langcode: en
+status: true
+dependencies:
+  module:
+    - content_translation
+    - train_base
+third_party_settings:
+  content_translation:
+    enabled: true
+id: coach_class.coach_class
+target_entity_type_id: coach_class
+target_bundle: coach_class
+default_langcode: site_default
+language_alterable: true

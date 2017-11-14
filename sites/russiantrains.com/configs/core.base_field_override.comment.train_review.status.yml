@@ -1,0 +1,22 @@
+uuid: 6f2a49e0-6a3a-459c-acba-66805cec779a
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.train_review
+id: comment.train_review.status
+field_name: status
+entity_type: comment
+bundle: train_review
+label: 'Publishing status'
+description: 'A boolean indicating the published state.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

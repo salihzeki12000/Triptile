@@ -1,0 +1,18 @@
+uuid: 70e862c6-1efc-42b8-bd84-8a87252e1d1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - store.base_product_type.ticket_product
+id: base_product.ticket_product.name
+field_name: name
+entity_type: base_product
+bundle: ticket_product
+label: Name
+description: 'The name of the base product entity.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,15 @@
+uuid: 77d124ed-4ce8-4808-b2fc-659e1dfa64c4
+langcode: en
+status: true
+dependencies:
+  module:
+    - content_translation
+    - train_base
+third_party_settings:
+  content_translation:
+    enabled: true
+id: seat_preference.seat_preference
+target_entity_type_id: seat_preference
+target_bundle: seat_preference
+default_langcode: site_default
+language_alterable: false

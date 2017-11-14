@@ -1,0 +1,11 @@
+uuid: 9a7a326b-de5f-4206-9513-ac147beebc5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - store.store_order_type.train_order
+id: store_order.train_order
+target_entity_type_id: store_order
+target_bundle: train_order
+default_langcode: site_default
+language_alterable: false

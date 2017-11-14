@@ -1,0 +1,25 @@
+uuid: d99818fd-9ffa-4315-be00-27ac41572115
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.order_item.leg_number
+    - store.order_item_type.ticket
+_core:
+  default_config_hash: PyFAqLH8JBEkUAHmmZsjbJ19ouQ7dyeew6kWJwl39Pg
+id: order_item.ticket.leg_number
+field_name: leg_number
+entity_type: order_item
+bundle: ticket
+label: 'Leg number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

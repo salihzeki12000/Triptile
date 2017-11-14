@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - store.order_item_type.tax
+id: order_item.tax.name
+field_name: name
+entity_type: order_item
+bundle: tax
+label: Name
+description: 'The order item name.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

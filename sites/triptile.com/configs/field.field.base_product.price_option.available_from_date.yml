@@ -1,0 +1,21 @@
+uuid: e4e867cc-690b-4016-b6b6-dad65ddf9857
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.base_product.available_from_date
+    - store.base_product_type.price_option
+  module:
+    - datetime
+id: base_product.price_option.available_from_date
+field_name: available_from_date
+entity_type: base_product
+bundle: price_option
+label: 'Available from'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

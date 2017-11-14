@@ -1,0 +1,10 @@
+uuid: 7b899192-c5ce-49f0-a7dc-26d7dee466e6
+langcode: en
+status: true
+dependencies:
+  module:
+    - store
+id: customer_profile.token
+label: Token
+targetEntityType: customer_profile
+cache: true

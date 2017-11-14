@@ -1,0 +1,25 @@
+uuid: 0a3f099c-230f-4119-b71f-14115123d124
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+  theme:
+    - russiantraintickets
+third_party_settings:
+  rn_content:
+    classes: ''
+id: footermail
+theme: russiantraintickets
+region: footer
+weight: -17
+provider: null
+plugin: footer_mail
+settings:
+  id: footer_mail
+  label: 'Talk to us'
+  provider: rn_content
+  label_display: visible
+  title_field: 'Talk to us'
+  field_subtitle: '&ensp;Get travel advice from our experts'
+visibility: {  }

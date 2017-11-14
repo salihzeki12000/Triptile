@@ -1,0 +1,38 @@
+<div class="mobile-return" ng-click="closeThisDialog()">{{'Return'|t}}</div>
+
+<div class="step">
+  <div class="city step-hub">
+    <label>{{'Transfer'|t}}</label>
+    <div class="price entity-total-price" ng-cloak>
+      [[transferPrice(currentStep.transfer.id)]]
+    </div>
+    <h2 class="choose-transfer choose">
+       [[getTransferName()]]
+    </h2>
+
+    <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="wheelSpeed"
+                       on-scroll="onScroll(scrollTop, scrollHeight)"
+                       ng-show="true">
+      <div class="transfers" ng-repeat="transfer in currentStep.transfers | orderByObject:'name'">
+        <div class="price-line choose-checkbox" ng-click="setTransfer(transfer.id)" ng-class="isTransferActive(transfer.id)">
+          [[transfer.name]]
+          <span class="price">[[transferPrice(transfer.id)]]</span>
+        </div>
+      </div>
+    </perfect-scrollbar>
+
+  </div>
+</div>
+
+<div class="total">
+  <div class="actions" ng-show="!currentStep.delete">
+    <span class="delete" ng-click="currentStep.delete = 1">{{'Delete transfer'|t}}</span>
+    <span class="cancel" ng-click="cancel()">{{'Cancel'|t}}</span>
+    <button class="orange-button" ng-click="saveOrder()">{{'Save changes'|t}}</button>
+  </div>
+  <div class="actions-delete" ng-show="currentStep.delete">
+    <div class="text">{{'Delete transfer?'|t}}</div>
+    <button class="gray-button" ng-click="currentStep.delete = 0">{{'Cancel'|t}}</button>
+    <button class="orange-button" ng-click="deleteTransfer()">{{'Delete transfer'|t}}</button>
+  </div>
+</div>

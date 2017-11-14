@@ -1,0 +1,22 @@
+uuid: 7e175f4c-383f-4dda-9fea-6b83b747479f
+langcode: en
+status: true
+dependencies:
+  module:
+    - store
+    - train_base
+_core:
+  default_config_hash: kJsq6jK2HWkaelO4ehTRsJd_0dkvlY3ADeeSs53ug2E
+id: base_product.supplier
+field_name: supplier
+entity_type: base_product
+type: entity_reference
+settings:
+  target_type: supplier
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

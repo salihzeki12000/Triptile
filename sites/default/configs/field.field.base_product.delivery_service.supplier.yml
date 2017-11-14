@@ -1,0 +1,27 @@
+uuid: 8fb1f172-caba-4711-989f-9db94d5e899d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.base_product.supplier
+    - store.base_product_type.delivery_service
+_core:
+  default_config_hash: hGTfoE5j2-ghjKSWEYvO99IkKKyFCLbiaWPqvylDi6g
+id: base_product.delivery_service.supplier
+field_name: supplier
+entity_type: base_product
+bundle: delivery_service
+label: Supplier
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: only_enabled
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

@@ -1,0 +1,24 @@
+uuid: 739e7a5b-7404-4804-b525-49022a2d578c
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+  theme:
+    - railninja
+third_party_settings:
+  rn_content:
+    classes: ''
+id: mobilelogo
+theme: railninja
+region: header_second
+weight: 0
+provider: null
+plugin: mobilelogo
+settings:
+  id: mobilelogo
+  label: 'Mobile logo'
+  provider: rn_content
+  label_display: '0'
+  image: '1'
+visibility: {  }

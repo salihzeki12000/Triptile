@@ -1,0 +1,22 @@
+uuid: 0f5be3b6-350f-4e3d-953d-0f9bac9bd7e6
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - russiantrains
+_core:
+  default_config_hash: HH3F8jw7K7HonUXVED7UfbRUPWToywEOO1CIfmTbVbc
+id: russiantrains_messages
+theme: russiantrains
+region: highlighted
+weight: -14
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

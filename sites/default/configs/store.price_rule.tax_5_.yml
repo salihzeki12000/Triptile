@@ -1,0 +1,12 @@
+uuid: a907529d-6dda-437b-b430-93453b21de4c
+langcode: en
+status: true
+dependencies: {  }
+id: tax_5_
+label: 'Tax 5%'
+price_rule_type: order
+condition: 'true'
+tax_type: rate
+tax_value: 1.05
+tax_value_currency: USD
+weight: '0'

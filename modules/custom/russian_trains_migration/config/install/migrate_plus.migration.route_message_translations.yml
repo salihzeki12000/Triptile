@@ -1,0 +1,25 @@
+id: route_message_translations
+migration_group: train_base
+migration_tags:
+  - translations
+label: RouteMessage translations
+source:
+  plugin: route_message_translations
+  key: travelallrussia
+process:
+  id:
+    plugin: migration_lookup
+    source: id
+    migration: route_message
+  langcode: lang
+  message: note
+destination:
+  plugin: entity:route_message
+  translations: true
+migration_dependencies:
+  required:
+    - route_message
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

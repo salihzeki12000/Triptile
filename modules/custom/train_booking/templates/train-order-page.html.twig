@@ -1,0 +1,199 @@
+<div class="order-page">
+
+  <h1 class="title">{% trans with {'context': 'Booking Order Page'} %}Order{% endtrans %} {{ store_order.number}}</h1>
+
+  <div class="order-page-inside">
+    <div class="order-main">
+      {% if pdf_files is not empty %}
+        <div class="border-container container pdf-container">
+          <div class="order-details pdf-head">
+            {% trans with {'context': 'Order ticket'} %}Please download and print your e-ticket{% endtrans %}
+          </div>
+
+          <div class="pdf-body">
+
+            <div class="note-wrapper">
+              <div class="note-text">
+                {% trans with {'context': 'Order ticket'} %}Your e-ticket is in the PDF attachment. Please click on the link to print your e-tickets and use them for boarding on the train.{% endtrans %}
+              </div>
+              <div class="agreement">
+                <input type="checkbox" id="agreement" name="agreement" value="1" class="form-checkbox required" required="required" aria-required="true">
+                <label for="agreement" class="option js-form-required form-required">
+                  {% trans with {'context': 'Order ticket'} %}I agree with terms of service{% endtrans %}
+                </label>
+              </div>
+            </div>
+
+            <div class="files-wrapper">
+              {% for file in pdf_files %}
+                {% if loop.first %} {% set class = 'first' %} {% endif %}
+                {% if loop.last %} {% set class = 'last' %} {% endif %}
+                <div class="pdf-file {{ class }}">
+                  <div class="filename">{{ file.title }}</div>
+                  {{ file.link }}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+      
+      {% for train in trains %}
+        <div class="order-info-wrapper border-container container">
+          <div class="order-info-header">
+            <div class="order-info-header-left">
+              <div class="stations">
+                <span class="departure value">{{ train.departure_station_city }}</span>
+                <span class="arrival value">{{ train.arrival_station_city }}</span>
+              </div>
+              <div class="train">
+                #{{ train.train_number }} {{ train.train_name }} - {{ train.train_class }}
+              </div>
+            </div>
+            <div class="order-info-header-right">
+              <div class="count">
+                {% trans with {'context': 'Booking Order Page'} %}
+                  {{ train.tickets_count }} ticket
+                {% plural train.tickets_count %}
+                  {{train.tickets_count }} tickets
+                {% endtrans %}
+              </div>
+              <div class="coach-class">
+                {{ train.coach_class }} {{ train.seat_type }}
+              </div>
+            </div>
+          </div>
+
+          <div class="order-info-body">
+            <div class="column dates">
+              <div class="info-title">
+                {% trans with {'context': 'Booking Order Page'} %}Departure / Arrival date{% endtrans %}
+              </div>
+              {% if train.departure_arrival_dates and train.departure_arrival_weekdays %}
+                <div class="middle">
+              <span class="number">
+                {{ train.departure_arrival_dates }}
+              </span>
+                </div>
+                <div class="bottom">
+              <span class="text">
+                {{ train.departure_arrival_weekdays }}
+              </span>
+                </div>
+              {% elseif train.departure_date and train.arrival_date %}
+                <div class="middle">
+              <span class="number">
+                {{ train.departure_date }}
+              </span>
+                </div>
+                <div class="bottom">
+              <span class="number">
+                {{ train.arrival_date }}
+              </span>
+                </div>
+              {% endif %}
+            </div>
+
+            <div class="column time departure-info">
+              <div class="info-title">
+                {% trans with {'context': 'Booking Order Page'} %}Departure time / Station{% endtrans %}
+              </div>
+              <div class="middle">
+            <span class="number">
+              {{ train.departure_time }}
+            </span>
+              </div>
+              <div class="bottom">
+            <span class="text">
+              {{ train.departure_station }}
+            </span>
+              </div>
+            </div>
+
+            <div class="column time arrival-info">
+              <div class="info-title">
+                {% trans with {'context': 'Booking Order Page'} %}Arrival time / Station{% endtrans %}
+              </div>
+              <div class="middle">
+            <span class="number">
+              {{ train.arrival_time }}
+            </span>
+              </div>
+              <div class="bottom">
+            <span class="text">
+              {{ train.arrival_station }}
+            </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% if train.passengers %}
+          <div class="border-container container travelers">
+            <div class="order-details travelers-head">{% trans with {'context': 'Booking Order Page'} %}Travelers{% endtrans %}:</div>
+            <div class="travelers-body">
+              {% for passenger in train.passengers %}
+                <div class="passenger">
+                  <div class="name-with-wrapper">
+                    <div class="name-with-title">
+                      {% if passenger.title %}
+                        <div class="title">{{ passenger.title }}</div>
+                      {% endif %}
+                      <div class="name">{{ passenger.name }}</div>
+                    </div>
+                  </div>
+
+                  {% if passenger.dob or passenger.citizenship or passenger.passport %}
+                    <div class="doc-info-wrapper">
+                      <div class="doc-info">
+                        {% if passenger.dob %}
+                          <div class="dob">{{ passenger.dob }}</div>
+                        {% endif %}
+                        {% if passenger.citizenship %}
+                          <div class="citizenship">{{ passenger.citizenship }}</div>
+                        {% endif %}
+                        {% if passenger.passport %}
+                          <div class="passport">{{ passenger.passport }}</div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  {% endif %}
+
+                  {% if passenger.gender and not passenger.title %}
+                    <div class="gender">{{ passenger.gender }}</div>
+                  {% endif %}
+
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+
+      <div class="container buttons-wrapper">{{ search_button }}</div>
+
+    </div>
+
+    <div class="order-sidebar sidebar">
+
+      <div class="order-details-wrapper container sidebar-container">
+        <div class="order-details sidebar-item order-number sidebar-label">{% trans with {'context': 'Booking Order Page'} %}Order details{% endtrans %}</div>
+        <div class="order-details sidebar-item last order-status">
+          <div>{% trans with {'context': 'Booking Order Page'} %}Order status{% endtrans %}</div>
+          {% set statusClasses = ['status', store_order.status_class] %}
+          <div {{ attributes.addClass(statusClasses) }}>{{ store_order.status }}</div>
+        </div>
+      </div>
+
+      <div class="container order-total-wrapper">
+        <div class="order-details sidebar-label sidebar-item last order-total">
+          <div>{% trans with {'context': 'Booking Order Page'} %}Total paid{% endtrans %}</div>
+          <div>{{ store_order.total | raw }} </div>
+        </div>
+      </div>
+
+      <div class="container status-description">{{ store_order.status_description }}</div>
+
+    </div>
+  </div>
+
+</div>

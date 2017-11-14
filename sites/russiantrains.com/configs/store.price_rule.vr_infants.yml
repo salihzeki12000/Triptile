@@ -1,0 +1,12 @@
+uuid: 550cb77f-4718-4891-8ff7-b2a158a7ec9e
+langcode: en
+status: true
+dependencies: {  }
+id: vr_infants
+label: 'VR infants'
+price_rule_type: ticket
+condition: 'supplier == ''FR'' and age >= 0 and age <= 5'
+tax_type: fixed
+tax_value: !!float 0
+tax_value_currency: USD
+weight: '0'

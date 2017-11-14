@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * Set weight of the rn_user module to 9.
+ */
+function rn_user_update_8301(&$sandbox) {
+  module_set_weight('rn_user', 9);
+}

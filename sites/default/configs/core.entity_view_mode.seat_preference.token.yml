@@ -1,0 +1,10 @@
+uuid: c4ce88b0-a009-4ba3-9f84-949f32fbd751
+langcode: en
+status: true
+dependencies:
+  module:
+    - train_base
+id: seat_preference.token
+label: Token
+targetEntityType: seat_preference
+cache: true

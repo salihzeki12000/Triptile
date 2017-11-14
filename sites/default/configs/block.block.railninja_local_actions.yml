@@ -1,0 +1,20 @@
+uuid: b6ad0d72-22df-40a0-9ddb-b91640bc17e1
+langcode: en
+status: true
+dependencies:
+  theme:
+    - railninja
+_core:
+  default_config_hash: AVfnrR8D94VqPa-RtndeXxw4aGZyALUf2r9d0LgAL6Y
+id: railninja_local_actions
+theme: railninja
+region: content
+weight: -12
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

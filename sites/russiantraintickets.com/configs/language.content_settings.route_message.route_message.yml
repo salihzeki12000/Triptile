@@ -1,0 +1,15 @@
+uuid: 6673f388-29a9-462d-a34c-2a7423a52e3a
+langcode: en
+status: true
+dependencies:
+  module:
+    - content_translation
+    - train_base
+third_party_settings:
+  content_translation:
+    enabled: false
+id: route_message.route_message
+target_entity_type_id: route_message
+target_bundle: route_message
+default_langcode: site_default
+language_alterable: false

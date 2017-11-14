@@ -1,0 +1,36 @@
+<div class="mobile-return" ng-click="closeThisDialog()">{{'Return'|t}}</div>
+<div class="step">
+  <div class="city step-hub">
+    <label>{{'Activity'|t}}</label>
+    <div class="price entity-total-price" ng-cloak>
+      [[getActivityTotalPrice()]]
+    </div>
+    <h2 class="choose-activity choose">
+       [[getActivityName()]]
+    </h2>
+
+    <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="wheelSpeed"
+                       on-scroll="onScroll(scrollTop, scrollHeight)" ng-show="true">
+      <div ng-repeat="activity in currentStep.activities | orderByObject:'name'">
+        <div class="price-line choose-checkbox" ng-click="setActivity(activity.id)" ng-class="isActivityActive(activity.id)">
+          [[activity.name]]
+          <span class="price">[[getActivityPrice(activity.id)]]</span>
+        </div>
+      </div>
+    </perfect-scrollbar>
+
+  </div>
+</div>
+
+<div class="total">
+  <div class="actions" ng-show="!currentStep.delete">
+    <span class="delete" ng-click="currentStep.delete = 1">{{'Delete activity'|t}}</span>
+    <span class="cancel" ng-click="cancel()">{{'Cancel'|t}}</span>
+    <button class="orange-button" ng-click="saveOrder()">{{'Save changes'|t}}</button>
+  </div>
+  <div class="actions-delete" ng-show="currentStep.delete">
+    <div class="text">{{'Delete activity?'|t}}</div>
+    <button class="gray-button" ng-click="currentStep.delete = 0">{{'Cancel'|t}}</button>
+    <button class="orange-button" ng-click="deleteActivity()">{{'Delete activity'|t}}</button>
+  </div>
+</div>

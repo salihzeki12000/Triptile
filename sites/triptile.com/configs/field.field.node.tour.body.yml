@@ -1,0 +1,22 @@
+uuid: 5adc1299-44b1-4e30-acb2-e43414f5b895
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.tour
+  module:
+    - text
+id: node.tour.body
+field_name: body
+entity_type: node
+bundle: tour
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

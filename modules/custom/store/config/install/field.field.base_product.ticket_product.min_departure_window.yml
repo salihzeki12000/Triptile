@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.base_product.min_departure_window
+    - store.base_product_type.ticket_product
+id: base_product.ticket_product.min_departure_window
+field_name: min_departure_window
+entity_type: base_product
+bundle: ticket_product
+label: 'Minimal departure window'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

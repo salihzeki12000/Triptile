@@ -1,0 +1,35 @@
+uuid: 6de2733e-0091-4fc8-94a0-cc3b396108dd
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:c11d8fe2-c732-4d72-ad1d-275c730f4abb'
+  module:
+    - block_content
+    - rn_content
+    - system
+  theme:
+    - railninja
+third_party_settings:
+  rn_content:
+    classes: ''
+id: alltickets.oneplatform.
+theme: railninja
+region: content
+weight: -24
+provider: null
+plugin: 'block_content:c11d8fe2-c732-4d72-ad1d-275c730f4abb'
+settings:
+  id: 'block_content:c11d8fe2-c732-4d72-ad1d-275c730f4abb'
+  label: 'All tickets. One platform.'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /front
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,30 @@
+uuid: 39c26efd-60de-40ae-9d80-5edfbacaf7cd
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.header-right
+  module:
+    - rn_content
+    - system
+  theme:
+    - russiantrains
+third_party_settings:
+  rn_content:
+    classes: ''
+_core:
+  default_config_hash: mKgd58DwmlehV9u080BEjZgJXEZ_2MtCB8HQTK0Kkag
+id: headerright
+theme: russiantrains
+region: leaderboard
+weight: -16
+provider: null
+plugin: 'system_menu_block:header-right'
+settings:
+  id: 'system_menu_block:header-right'
+  label: 'Header right'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

@@ -1,0 +1,10 @@
+uuid: cdcca228-21ad-4354-a1b3-0fb196067b49
+langcode: en
+status: true
+dependencies:
+  module:
+    - train_base
+id: coach_class.token
+label: Token
+targetEntityType: coach_class
+cache: true

@@ -1,0 +1,18 @@
+uuid: a9fd3619-88c6-4871-bac8-619d954ccef8
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
+id: anonymous
+label: 'Anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access booking'
+  - 'access comments'
+  - 'access content'
+  - payment.access_payment_page
+  - 'search content'
+  - 'view published invoice entities'
+  - 'view published store order entities'

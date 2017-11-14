@@ -1,0 +1,25 @@
+uuid: 6a7e6ec4-5bc3-475b-8342-0bc8e2059f44
+langcode: ru
+status: true
+dependencies:
+  config:
+    - block_content.type.basic
+    - field.field.block_content.basic.body
+  module:
+    - text
+_core:
+  default_config_hash: zCrrHAjrsQgWjBXBsshAZjND21czBy8sH_L5v_xDKSA
+id: block_content.basic.default
+targetEntityType: block_content
+bundle: basic
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

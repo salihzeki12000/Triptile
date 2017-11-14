@@ -1,0 +1,57 @@
+$tt-sidebar-width: 28%;
+$row-gap: 2%;
+
+.train-booking-timetable-form {
+  margin: $v-padding auto;
+  @include flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  font-family: $base-font-family;
+  font-size: 1rem;
+
+  .main-trains {
+    flex-basis: 100% - $tt-sidebar-width - $row-gap;
+    width: 100% - $tt-sidebar-width - $row-gap;
+  }
+
+  #edit-sidebar {
+    flex-basis: $tt-sidebar-width;
+    width: $tt-sidebar-width;
+  }
+}
+
+.train-booking-timetable-form {
+  @import "timetable/timetable_head";
+  @import "timetable/timetable_table";
+  @import "timetable/timetable_filters";
+  @import "timetable/timetable_leg_info";
+}
+
+@media #{$tablet-portrait} {
+  .train-booking-timetable-form {
+    margin: 20px auto;
+
+    .main-trains {
+      flex-basis: 100%;
+    }
+
+    #edit-sidebar {
+      display: none;
+    }
+  }
+}
+
+@media #{$mobile} {
+  .train-booking-timetable-form {
+    margin: 0 auto;
+
+    .main-trains {
+      flex-basis: 100%;
+      border: none;
+    }
+
+    #edit-sidebar {
+      display: none;
+    }
+  }
+}

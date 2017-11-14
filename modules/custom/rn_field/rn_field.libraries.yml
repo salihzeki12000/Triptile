@@ -1,0 +1,5 @@
+pdf-cutter-template:
+  version: VERSION
+  css:
+    theme:
+      css/pdf-cutter-template.css: {}

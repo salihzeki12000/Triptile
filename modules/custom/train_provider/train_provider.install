@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * Add search statistic entity.
+ */
+function train_provider_update_8101(&$sandbox) {
+  drupal_flush_all_caches();
+  $entity_type_manager = \Drupal::service('entity_type.manager');
+  $storage = $entity_type_manager->getStorage('train_provider_request');
+  $interface = $entity_type_manager->getDefinition('train_provider_request');
+  $storage->onEntityTypeCreate($interface);
+}

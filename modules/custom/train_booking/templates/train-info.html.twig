@@ -1,0 +1,55 @@
+<div class="time-row">
+  <div class="train-col">
+    <div class="train-time">
+      <div class="dep-time-col">
+        <div class="time">{{ data.departure_time }}</div>
+      </div>
+      <div class="arrow"></div>
+      <div class="run-time-col">
+        <div class="run-time">{{ data.running_time }}</div>
+      </div>
+      <div class="arrow"></div>
+      <div class="arr-time-col">
+        <div class="time">{{ data.arrival_time }}</div>
+      </div>
+    </div>
+    <div class="train-info-row">
+      {% if not data.supplier_logo is empty %}
+        {{ data.supplier_logo }}
+      {% endif %}
+      <span class="train-category">{{ data.train_class_name }}</span> {{ data.train_number }} {{ data.train_name }}
+      <span class="arrival-note">{{  data.arrival_note }}</span>
+    </div>
+    {% if data.average_rating > 0 %}
+      <dev class="rating-popup-trigger">
+        <div class="rating-row">
+          <div class="rating-stars">
+            <div class="active-stars" style="width:{{ data.average_rating | round * 10 }}%"></div>
+          </div>
+            <span class="rating-phrase">{{ data.average_rating }} {{ data.rating_phrase }}
+              {% if not data.count_of_reviews is empty %}
+                ({{ data.count_of_reviews }})
+              {% endif %}
+          </span>
+        </div>
+      </dev>
+    {% else %}
+      <div class="rating-row">
+        <span class="rating-phrase">
+          {{ data.rating_phrase }}
+        </span>
+      </div>
+    {% endif %}
+  </div>
+  <div class="right-column">
+    <div class="price-col">
+      <div class="price-from"><span class="label">{% trans with {'context': 'Timetable Form Train Info'} %}Price from{% endtrans %}</span><span class="price">{{ data
+          .price_from | raw }}</span></div>
+    </div>
+    <div class="train-select-col">
+      <div class="select-btn">
+        <div class="select-seat btn-yellow">{% trans with {'context': 'Timetable Form Train Info'} %}Select Seats{% endtrans %}</div>
+      </div>
+    </div>
+  </div>
+</div>

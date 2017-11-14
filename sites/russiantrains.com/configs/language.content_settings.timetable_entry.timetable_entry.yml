@@ -1,0 +1,11 @@
+uuid: 26e0fc5f-4b05-45bf-be89-18d296da5ef7
+langcode: en
+status: true
+dependencies:
+  module:
+    - local_train_provider
+id: timetable_entry.timetable_entry
+target_entity_type_id: timetable_entry
+target_bundle: timetable_entry
+default_langcode: site_default
+language_alterable: false

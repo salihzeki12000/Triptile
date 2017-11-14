@@ -1,0 +1,24 @@
+uuid: febf3b0d-6eea-41c0-8a97-8a777a250928
+langcode: en
+status: false
+dependencies:
+  module:
+    - rn_content
+    - system
+  theme:
+    - railninja
+third_party_settings:
+  rn_content:
+    classes: ''
+id: breadcrumbs
+theme: railninja
+region: content_prefix
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

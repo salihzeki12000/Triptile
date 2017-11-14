@@ -1,0 +1,12 @@
+# Timetable entry menu items definition
+entity.timetable_entry.collection:
+  title: 'Timetable entries'
+  route_name: entity.timetable_entry.collection
+  description: 'List Timetable entries'
+  parent: train_base.train_lists
+
+timetable_entry.admin.structure.settings:
+  title: Timetable entry settings
+  description: 'Configure Timetable entry entities'
+  route_name: entity.timetable_entry.settings
+  parent: master.entity_configs

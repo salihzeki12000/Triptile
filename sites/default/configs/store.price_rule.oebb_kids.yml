@@ -1,0 +1,12 @@
+uuid: f90b6972-fe13-463e-933c-9f1ac79b83ec
+langcode: en
+status: true
+dependencies: {  }
+id: oebb_kids
+label: 'Oebb kids'
+price_rule_type: ticket
+condition: 'supplier == ''OEBB'' and age >= 6 and age <= 15'
+tax_type: rate
+tax_value: 0.6
+tax_value_currency: USD
+weight: '0'

@@ -1,0 +1,12 @@
+uuid: 68d64238-f74d-4cbc-8e46-a843ce52cbb0
+langcode: en
+status: true
+dependencies: {  }
+id: ufs_infant_
+label: 'UFS infant '
+price_rule_type: ticket
+condition: 'supplier == ''E3'' and age >= 0 and age <= 5'
+tax_type: rate
+tax_value: !!float 0
+tax_value_currency: EUR
+weight: '0'

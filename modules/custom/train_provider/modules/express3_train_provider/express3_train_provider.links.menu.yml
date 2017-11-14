@@ -1,0 +1,13 @@
+# Express3station menu items definition
+entity.express3_station.collection:
+  title: 'Express3station list'
+  route_name: entity.express3_station.collection
+  description: 'List Express3station entities'
+  parent: train_base.train_lists
+  weight: 100
+
+express3_station.admin.structure.settings:
+  title: Express3station settings
+  description: 'Configure Express3station entities'
+  route_name: entity.express3_station.settings
+  parent: master.entity_configs

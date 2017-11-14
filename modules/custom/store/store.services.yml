@@ -1,0 +1,28 @@
+services:
+  store.price:
+    class: Drupal\store\PriceFactory
+    arguments: ['@currency.exchange_rate_provider', '@plugin.manager.currency.amount_formatter', '@entity_type.manager']
+  store.price_rule:
+    class: Drupal\store\PriceRule
+    arguments: ['@entity_type.manager', '@store.price', '@master.expression_language']
+  store.currency_fixed_rate_updater:
+    class: Drupal\store\CurrencyFixedRateUpdater
+    arguments: ['@plugin.manager.currency.exchange_rate_provider', '@currency.form_helper']
+  store.default_currency:
+    class: Drupal\store\DefaultCurrency
+    arguments: ["@config.factory", "@request_stack"]
+  store.param_converter:
+    class: Drupal\store\ParamConverter\StoreParamConverter
+    tags:
+      - { name: paramconverter }
+  cache_context.user_currency:
+    class: Drupal\store\UserCurrencyCacheContext
+    arguments: ["@store.default_currency"]
+    tags:
+      - { name: cache.context }
+  store.order_verification:
+    class: Drupal\store\OrderVerification
+    arguments: ['@config.factory', '@master.maxmind', '@master.expression_language']
+  plugin.manager.order_renderer:
+    class: Drupal\store\OrderRendererManager
+    parent: default_plugin_manager

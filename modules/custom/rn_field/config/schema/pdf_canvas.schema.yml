@@ -1,0 +1,35 @@
+rn_field.pdf_cutter_template.*:
+  type: config_entity
+  label: 'Pdf cutter_template config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string
+    canvases:
+      type: sequence
+      sequence:
+        - type: mapping
+          mapping:
+            page:
+              type: int
+              label: 'Page number'
+            x:
+              type: int
+              label: 'X coordinate'
+            y:
+              type: int
+              label: 'Y coordinate'
+            width:
+              type: int
+              label: 'Width'
+            height:
+              type: int
+              label: 'Height'
+            color:
+              type: string
+              label: 'Color'

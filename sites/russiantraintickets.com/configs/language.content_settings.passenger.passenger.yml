@@ -1,0 +1,11 @@
+uuid: b4acdfa7-e150-499a-9c03-53a4e32427ca
+langcode: en
+status: true
+dependencies:
+  module:
+    - train_base
+id: passenger.passenger
+target_entity_type_id: passenger
+target_bundle: passenger
+default_langcode: site_default
+language_alterable: false

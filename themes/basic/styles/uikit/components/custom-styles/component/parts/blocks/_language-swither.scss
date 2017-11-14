@@ -1,0 +1,99 @@
+.language-switcher .block__content {
+  ul {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    @include flex;
+    flex-flow: row wrap;
+    align-items: center;
+
+    li {
+      padding: 10px;
+      padding-left: 0;
+      list-style: none;
+      flex-basis: 50%;
+      display: inline-flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      a {
+        background: transparent url("#{$path-to-images}/flags-foot.svg") no-repeat 0 0 scroll;
+        background-size: 41px;
+        padding-left: 50px;
+        @include v-padding(5px);
+      }
+
+      &.en {
+        a {
+          background-position: 0 0;
+        }
+      }
+
+      &.ru {
+        a {
+          background-position: 0 -35px;
+        }
+      }
+
+      &.fr {
+        a {
+          background-position: 0 -177px;
+        }
+      }
+
+      &.de {
+        a {
+          background-position: 0 -213px;
+        }
+      }
+
+      &.zh-hans {
+        a {
+          background-position: 0 -320px;
+        }
+      }
+
+      &.ja {
+        a {
+          background-position: 0 -284px;
+        }
+      }
+
+      &.es {
+        a {
+          background-position: 0 -71px;
+        }
+      }
+
+      &.it {
+        a {
+          background-position: 0 -142px;
+        }
+      }
+
+      &.tr {
+        a {
+          background-position: 0 -355px;
+        }
+      }
+
+      &.pl {
+        a {
+          background-position: 0 -249px;
+        }
+      }
+
+      &.pt-br, &.pt-pt, &.pt {
+        a {
+          background-position: 0 -107px;
+        }
+      }
+    }
+  }
+}
+
+.gb .language-switcher .block__content ul li.en {
+  a {
+    background-position: 0 -390px;
+  }
+}

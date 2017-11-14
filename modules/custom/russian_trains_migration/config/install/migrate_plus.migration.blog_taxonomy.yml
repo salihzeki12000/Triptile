@@ -1,0 +1,21 @@
+id: blog_taxonomy
+migration_group: content_page
+migration_tags:
+  - russian_trains_light
+label: Blog Taxonomy
+source:
+  plugin: blog_taxonomy
+  key: travelallrussia
+process:
+  vid:
+    plugin: default_value
+    default_value: blog_categories
+  name: title
+  description: meta_description
+destination:
+  plugin: entity:taxonomy_term
+migration_dependencies: {}
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

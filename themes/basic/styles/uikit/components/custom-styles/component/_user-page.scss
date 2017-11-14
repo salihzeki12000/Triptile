@@ -1,0 +1,82 @@
+.path-user {
+  font-family: $up-font-family;
+
+  #main-content {
+    .pr-main__content {
+
+      main {
+        padding-bottom: $v-padding*2;
+      }
+
+      article {
+        margin: 0;
+
+        .block__inner {
+          padding: 0;
+        }
+
+        .block__title {
+          margin-bottom: $v-padding/2;
+          @include v-padding($v-padding/2);
+        }
+      }
+
+      a {
+        color: $up-ui-link-color;
+      }
+
+      details {
+        color: $up-details-hover-color;
+
+        &:hover {
+          summary {
+            color: $up-details-hover-color;
+          }
+
+          &[open] {
+            color: $up-details-hover-color;
+          }
+        }
+
+        .form-item {
+          width: 100%;
+        }
+      }
+
+      .block-plugin-id--page-title-block {
+        .block__inner {
+          padding: $v-padding 0 0;
+        }
+
+        h1 {
+          margin: 0;
+          font-family: $up-title-font-family;
+        }
+      }
+
+      .block {
+        background: $up-block-bg;
+        font-family: $up-font-family;
+
+        &.block-plugin-id--userinfoblock, &.user-text-block {
+          display: none;
+        }
+
+        @import "parts/blocks/client-area-head";
+      }
+    }
+
+    .block-main-content {
+      margin: 0 auto;
+      max-width: $container-width;
+    }
+
+    @import "parts/blocks/local-tasks";
+    @import "user_page_parts/tables";
+    @import "parts/blocks/user_info-block";
+    @import "parts/blocks/client-area-text";
+    @import "user_page_parts/views-blocks";
+    @import "user_page_parts/profile_page";
+  }
+}
+

@@ -1,0 +1,13 @@
+services:
+  salesforce_api:
+    class: Drupal\salesforce\SalesforceApi
+    arguments: ['@http_client', '@config.factory', '@state']
+
+  plugin.manager.salesforce_mapping:
+    class: Drupal\salesforce\Plugin\SalesforceMappingManager
+    parent: default_plugin_manager
+    arguments: ['@service_container']
+
+  salesforce_sync:
+    class: Drupal\salesforce\SalesforceSync
+    arguments: ['@logger.factory', '@entity_type.manager', '@entity.query', '@salesforce_api', '@plugin.manager.salesforce_mapping', '@state', '@current_user']

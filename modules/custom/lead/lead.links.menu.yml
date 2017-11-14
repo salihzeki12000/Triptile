@@ -1,0 +1,14 @@
+
+# Lead menu items definition
+entity.lead.collection:
+  title: 'Lead list'
+  route_name: entity.lead.collection
+  description: 'List Lead entities'
+  parent: entity.user.collection
+  weight: 100
+
+lead.admin.structure.settings:
+  title: Lead settings
+  description: 'Configure Lead entities'
+  route_name: entity.lead.settings
+  parent: master.entity_configs

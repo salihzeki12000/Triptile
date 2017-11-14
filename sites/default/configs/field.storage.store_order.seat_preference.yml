@@ -1,0 +1,22 @@
+uuid: 3ede6cd1-6f94-403f-b390-7a12d9ae034b
+langcode: en
+status: true
+dependencies:
+  module:
+    - store
+    - train_base
+_core:
+  default_config_hash: q1kdzmHeuuzMQvS7hq91y1G5wAKesnEguqUFJRcg2zo
+id: store_order.seat_preference
+field_name: seat_preference
+entity_type: store_order
+type: entity_reference
+settings:
+  target_type: seat_preference
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.store_order.coach_scheme
+    - store.store_order_type.train_order
+id: store_order.train_order.coach_scheme
+field_name: coach_scheme
+entity_type: store_order
+bundle: train_order
+label: 'Coach scheme'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:coach_scheme'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

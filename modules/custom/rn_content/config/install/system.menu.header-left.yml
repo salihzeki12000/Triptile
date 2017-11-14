@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+id: header-left
+label: 'Header left'
+description: ''
+locked: false

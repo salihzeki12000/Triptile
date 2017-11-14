@@ -1,0 +1,10 @@
+uuid: 98d1ab4c-2f56-4213-82ed-825b48b789e5
+langcode: en
+status: true
+dependencies:
+  module:
+    - store
+id: invoice.token
+label: Token
+targetEntityType: invoice
+cache: true

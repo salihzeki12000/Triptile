@@ -1,0 +1,2 @@
+plugin.plugin_configuration.train_provider.local_train_provider:
+  type: plugin.plugin_configuration.train_provider.train_provider_base

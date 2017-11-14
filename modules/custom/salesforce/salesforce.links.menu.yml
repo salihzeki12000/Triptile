@@ -1,0 +1,26 @@
+# Salesforce main admin page.
+salesforce.base:
+  route_name: salesforce.base
+  parent: system.admin
+  description: 'Provide menu for salesforce.'
+  title: Salesforce
+  weight: -8
+
+# Mapping object list
+entity.salesforce_mapping_object.collection:
+  title: Salesforce mapping objects
+  route_name: entity.salesforce_mapping_object.collection
+  description: 'List Salesforce mapping objects'
+  parent: salesforce.base
+  weight: 100
+
+# Mapping object settings
+salesforce.salesforce_mapping_object.settings:
+  title: 'Salesforce mapping object settings'
+  route_name: entity.salesforce_mapping_object.settings
+  parent: salesforce.base
+
+salesforce.admin_configuration:
+  title: Configuration
+  route_name: salesforce.admin_configuration
+  parent: salesforce.base

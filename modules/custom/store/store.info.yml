@@ -1,0 +1,11 @@
+name: Store
+type: module
+description: Store products, orders, invoices, payments, price rule.
+core: 8.x
+package: Custom
+dependencies:
+  - content_translation
+  - currency
+  - views
+  - salesforce
+  - master

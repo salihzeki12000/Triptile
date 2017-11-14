@@ -1,0 +1,476 @@
+<?php
+
+/**
+ * @file
+ * Contains train_base.module..
+ */
+use Drupal\Core\Entity\Query\QueryInterface;
+use Drupal\Core\Entity\Query\Sql\QueryAggregate;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\train_base\Entity\Station;
+use Drupal\train_base\Entity\Train;
+use Drupal\train_base\Entity\TrainBrand;
+use Drupal\train_base\Entity\TrainTicket;
+use Drupal\block\Entity\Block;
+
+/**
+ * Implements hook_help()
+ *
+ * @param string              $routeName
+ * @param RouteMatchInterface $routeMatch
+ * @return string | void
+ */
+function train_base_help(string $routeName, RouteMatchInterface $routeMatch) {
+  switch ($routeName) {
+    // Main module help for the train_base module.
+    case 'help.page.train_base':
+      $output = '';
+      $output .= '<h3>'.t('About').'</h3>';
+      $output .= '<p>'.t('Store all base classes for trains').'</p>';
+
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_entity_insert()
+ *
+ * @param \Drupal\train_base\Entity\Station $station
+ * @return void
+ */
+function train_base_station_insert(Station $station) {
+  train_base_station_create_update($station);
+}
+
+/**
+ * Implements hook_entity_update()
+ *
+ * @param \Drupal\train_base\Entity\Station $station
+ * @return void
+ */
+function train_base_station_update(Station $station) {
+  train_base_station_create_update($station);
+}
+
+/**
+ * @param \Drupal\train_base\Entity\Station $station
+ * @return void
+ */
+function train_base_station_create_update(Station $station) {
+  Drupal::service('train_base.route_page')
+    ->createRoutePages($station->id(), $station->getPopularRoutes());
+}
+
+/**
+ * Implements hook_preprocess()
+ *
+ * @param array $variables
+ * @return void
+ */
+function train_base_preprocess_node(array &$variables) {
+  /* @var \Drupal\node\Entity\Node $node */
+  $node = $variables['node'];
+
+  if ($node->getType() === 'route_page') {
+    /* @var \Drupal\train_base\Entity\Station $station */
+    $station = $node->get('departure_station')->first()->entity;
+
+    /* @var \Drupal\train_base\Entity\Station $destination */
+    $destination = $node->get('arrival_station')->first()->entity;
+
+    if ($station && $destination) {
+      $average_rating = _get_average_rating($station, $destination);
+
+      $variables['departure_station'] = $station->getName();
+      $variables['arrival_station'] = $destination->getName();
+      $variables['fastest_travel_time'] = _seconds_to_string(_get_fastest_travel_time($station, $destination));
+      $variables['longest_travel_time'] = _seconds_to_string(_get_longest_travel_time($station, $destination));
+      $variables['average_rating'] = round($average_rating, 1);
+      $variables['rating_phrase'] = Train::getRatingPhrase($average_rating);
+      $variables['active_stars'] = round($average_rating) * 10;
+      $variables['train_classes_available'] = _get_train_classes_available($station, $destination);
+      $variables['trains_number'] = _get_trains_number($station, $destination);
+      $variables['reviews_count'] = $node->get('reviews_count')->first()->value;
+      $variables['map'] = [
+        '#theme' => 'map',
+        '#routes' => [
+          [
+            'departure_station' => _get_params($station),
+            'arrival_station' => _get_params($destination),
+          ]
+        ],
+      ];
+    }
+  }
+
+  if ($node->getType() === 'train_page') {
+    // @todo: add cache tags
+
+    /**
+     * @var TrainBrand $trainBrand
+     */
+    $trainBrand = $node->get('field_brand')->first()->entity;
+    $orderNumber = Drupal::request()->query->get('order_number');
+  
+    if ($trainBrand) {
+      $coachClasses = $trainBrand->getCoachClasses();
+      $brandCoachClasses = [];
+      /** @var \Drupal\train_base\Entity\CoachClass $coachClass */
+      foreach ($coachClasses as $key => $coachClass) {
+        $brandCoachClasses[$key] = [
+          'name'        => $coachClass->getName(),
+          'description' => $coachClass->getDescription(),
+        ];
+    
+        if ($gallery = $coachClass->getGallery()) {
+          $brandCoachClasses[$key]['gallery'] = $gallery->get('gallery_image')
+            ->view('coach_class_without_thumbs');
+        }
+      }
+  
+      $variables['coach_classes'] = $brandCoachClasses;
+      $variables['train_route_short_info'] = getTrainRouteShortInfo($trainBrand->id());
+      $variables['show_review_form'] = empty($orderNumber) ? FALSE : showReviewForm($orderNumber, $trainBrand);
+      $variables['map'] = [
+        '#theme'  => 'map',
+        '#routes' => get_only_stations_data_from_train_route_short_info(getTrainRouteShortInfo($trainBrand->id())),
+      ];
+    }
+
+    $fieldImage = $node->get('field_image');
+    $variables['bg_image'] = empty($fieldImage->first()) ? 'none' : 'url("' . $fieldImage->entity->url() . '")';
+
+    /** @var \Drupal\block\Entity\Block $block */
+    if ($block = Block::load('searchrouteblock_2')) {
+      $variables['search_form'] = \Drupal::entityTypeManager()
+        ->getViewBuilder('block')
+        ->view($block);
+    }
+  }
+}
+
+/**
+ * Gets only needed data for map theme.
+ *
+ * @param $info
+ * @return array
+ */
+function get_only_stations_data_from_train_route_short_info($info) {
+  $routes = [];
+  foreach ($info as $routeKey => $route) {
+    $routes[$routeKey] = [
+      'departure_station' => $route['departure_station'],
+      'arrival_station' => $route['arrival_station'],
+    ];
+  }
+
+  return $routes;
+}
+
+/**
+ * Проверяет, нужно ли показывать форму для ревью
+ *
+ * @param string     $orderNumber
+ * @param TrainBrand $trainBrand
+ * @return bool
+ */
+function showReviewForm(string $orderNumber, TrainBrand $trainBrand): bool {
+  /**
+   * @var \Drupal\store\Entity\StoreOrder $storeOrder
+   */
+  $storeOrder = Drupal::entityTypeManager()
+    ->getStorage('store_order')
+    ->loadByProperties(['number' => $orderNumber]);
+
+  if (empty($storeOrder)) {
+    return false;
+  }
+
+  $trainBrandNumbers = array_map(function (Train $train) {
+    return $train->getNumber();
+  }, $trainBrand->getTrains());
+
+  if (empty($trainBrandNumbers)) {
+    return false;
+  }
+
+  return !empty(array_intersect(array_map(function (TrainTicket $trainTicket) {
+    return $trainTicket->getTrainNumber();
+  }, $storeOrder->getTickets()), $trainBrandNumbers));
+}
+
+/**
+ * Возвращает краткую информацию о маршрутах,
+ * по которым ходят поезда данного бренда
+ *
+ * @param int $trainBrandId
+ * @return array
+ */
+function getTrainRouteShortInfo(int $trainBrandId): array {
+  $query = Drupal::entityQueryAggregate('timetable_entry')
+    ->condition('train.entity.train_brand', $trainBrandId)
+    ->condition('status', 1)
+    ->groupBy('departure_station')
+    ->groupBy('arrival_station');
+
+  $runningMinTime = (clone $query)->aggregate('running_time', 'MIN')->execute();
+  $timetableEntryAmount = (clone $query)->aggregate('id', 'COUNT')->execute();
+
+  $stationIdList = [];
+
+  foreach ($runningMinTime as $itemMinTime) {
+    $stationIdList[] = $itemMinTime['departure_station'];
+    $stationIdList[] = $itemMinTime['arrival_station'];
+  }
+
+  /**
+   * @var Station[] $stations
+   */
+  $stations = [];
+  $trainRoutes = [];
+
+  $stationStorage = Drupal::entityTypeManager()->getStorage('station');
+
+  foreach ($stationStorage->loadMultiple($stationIdList) as $station) {
+    $stations[$station->id()] = $station;
+  }
+
+  foreach ($runningMinTime as $itemMinTime) {
+    $departureStationId = $itemMinTime['departure_station'];
+    $arrivalStationId = $itemMinTime['arrival_station'];
+
+    $departureStation = $stations[$departureStationId]->getParentStation() ?? $stations[$departureStationId];
+    $arrivalStation = $stations[$arrivalStationId]->getParentStation() ?? $stations[$arrivalStationId];
+
+    $trainRoute = [
+      'departure_station' => _get_params($departureStation),
+      'arrival_station' => _get_params($arrivalStation),
+      'distance' => $departureStation->getDistanceTo($arrivalStation),
+      'running_time_min' => _seconds_to_string($itemMinTime['running_time_min']),
+      'count_trains' => 0,
+    ];
+
+    foreach ($timetableEntryAmount as $itemAmount) {
+      if ($itemAmount['departure_station'] == $departureStationId &&
+        $itemAmount['arrival_station'] == $arrivalStationId
+      ) {
+        $trainRoute['count_trains'] = $itemAmount['id_count'];
+        break;
+      }
+    }
+
+    $trainRoutes[] = $trainRoute;
+  }
+
+  return $trainRoutes;
+}
+
+/**
+ * Возвращает данные о станции, которые нужно
+ * передать в шаблон для рендера страницы
+ *
+ * @param \Drupal\train_base\Entity\Station $station
+ * @return array
+ */
+function _get_params(Station $station): array {
+  return [
+    'id' => $station->id(),
+    'name' => $station->getName(),
+    'lat' => $station->getLatitude(),
+    'lng' => $station->getLongitude(),
+  ];
+}
+
+/**
+ * Ищет маршрут с минимальным временем пути от одной станции к другой
+ *
+ * @param \Drupal\train_base\Entity\Station $station
+ * @param \Drupal\train_base\Entity\Station $destination
+ * @return int - количество секунд
+ */
+function _get_fastest_travel_time(Station $station, Station $destination): int {
+  return _get_timetable_aggregate_query($station, $destination)
+      ->aggregate('running_time', 'MIN')
+      ->execute()[0]['running_time_min'] ?? 0;
+}
+
+/**
+ * Ищет маршрут с максимальным временем пути от одной станции к другой
+ *
+ * @param \Drupal\train_base\Entity\Station $station
+ * @param \Drupal\train_base\Entity\Station $destination
+ * @return int - количество секунд
+ */
+function _get_longest_travel_time(Station $station, Station $destination): int {
+  return _get_timetable_aggregate_query($station, $destination)
+      ->aggregate('running_time', 'MAX')
+      ->execute()[0]['running_time_max'] ?? 0;
+}
+
+/**
+ * Возвращает средний рейтинг поездов, ходящих по данному маршруту
+ *
+ * @param \Drupal\train_base\Entity\Station $station
+ * @param \Drupal\train_base\Entity\Station $destination
+ * @return float
+ */
+function _get_average_rating(Station $station, Station $destination): float {
+  if (!empty($trains = _get_trains($station, $destination))) {
+    return array_reduce($trains, function (float $carry, Train $train): float {
+        return $carry + $train->getAverageRating();
+      }, 0) / count($trains);
+  }
+
+  return 0;
+}
+
+/**
+ * Возвращает количество поездов, ходящих по данному маршруту
+ *
+ * @param \Drupal\train_base\Entity\Station $station
+ * @param \Drupal\train_base\Entity\Station $destination
+ * @return int
+ */
+function _get_trains_number(Station $station, Station $destination): int {
+  if (!empty($train_ids = _get_train_ids($station, $destination))) {
+    return _get_train_aggregate_query($train_ids)
+        ->aggregate('id', 'COUNT')
+        ->execute()[0]['id_count'] ?? 0;
+  }
+
+  return 0;
+}
+
+function _get_train_classes_available(Station $station, Station $destination): array {
+  $results = [];
+  if (!empty($train_ids = _get_train_ids($station, $destination))) {
+    $results = _get_train_aggregate_query($train_ids)
+      ->groupBy('train_class')
+      ->execute();
+
+    foreach ($results as &$result) {
+      $trainClass = Drupal::entityTypeManager()
+        ->getStorage('train_class')
+        ->load($result['train_class']);
+
+      /** @var \Drupal\train_base\Entity\TrainClass $trainClass */
+      $result['name'] = $trainClass->getName();
+      $result['description'] = $trainClass->getDescription();
+    }
+  }
+  return $results;
+}
+
+/**
+ * Возвращает массив id поездов, ходящих между двумя станциями
+ *
+ * @param \Drupal\train_base\Entity\Station $station
+ * @param \Drupal\train_base\Entity\Station $destination
+ * @return array
+ */
+function _get_train_ids(Station $station, Station $destination): array {
+  return array_map(function (Train $train) {
+    return $train->id();
+  }, _get_trains($station, $destination));
+}
+
+/**
+ * Возвращает массив сущностей поездов, ходящих между двумя станциями
+ *
+ * @param \Drupal\train_base\Entity\Station $station
+ * @param \Drupal\train_base\Entity\Station $destination
+ * @return \Drupal\train_base\Entity\Train[]
+ */
+function _get_trains(Station $station, Station $destination): array {
+  $timetable_entry_ids = _get_timetable_query($station, $destination)->execute();
+
+  /** @var \Drupal\local_train_provider\Entity\TimetableEntry[] $entries */
+  $entries = Drupal::entityTypeManager()
+    ->getStorage('timetable_entry')
+    ->loadMultiple($timetable_entry_ids);
+
+  $trains = [];
+  $train_ids = [];
+
+  foreach ($entries as $entry) {
+    if (!empty($train = $entry->getTrain())) {
+      $train_id = $train->id();
+
+      if (!in_array($train_id, $train_ids)) {
+        $trains[] = $train;
+        $train_ids[] = $train_id;
+      }
+    }
+  }
+
+  return $trains;
+}
+
+function _get_train_aggregate_query($train_ids): QueryAggregate {
+  return _get_train_query_conditions(Drupal::entityQueryAggregate('train'), $train_ids);
+}
+
+function _get_train_query_conditions(QueryAggregate $query, $train_ids): QueryAggregate {
+  $trains = $query->orConditionGroup();
+
+  foreach ($train_ids as $id) {
+    $trains->condition('id', $id);
+  }
+  $query->condition($trains);
+
+  return $query;
+}
+
+function _get_timetable_query(Station $station, Station $destination): QueryInterface {
+  return _get_query_conditions(Drupal::entityQuery('timetable_entry'), $station, $destination);
+}
+
+function _get_timetable_aggregate_query(Station $station, Station $destination): QueryAggregate {
+  return _get_query_conditions(Drupal::entityQueryAggregate('timetable_entry'), $station, $destination);
+}
+
+function _get_query_conditions(QueryInterface $query, Station $station, Station $destination): QueryInterface {
+  $departureStations = $query->orConditionGroup();
+
+  foreach ($station->getStationWithChildrenIds() as $id) {
+    $departureStations->condition('departure_station.target_id', $id);
+  }
+  $query->condition($departureStations);
+
+  $arrivalStations = $query->orConditionGroup();
+
+  foreach ($destination->getStationWithChildrenIds() as $id) {
+    $arrivalStations->condition('arrival_station.target_id', $id);
+  }
+  $query->condition($arrivalStations);
+
+  return $query;
+}
+
+/**
+ * @param float $seconds
+ * @return string
+ */
+function _seconds_to_string(float $seconds): string {
+  $dtF = new \DateTime('@0');
+  $dtT = new \DateTime("@$seconds");
+
+  if ($seconds > 60 * 60 * 24) {
+    $format = t('@days d @hours hrs @mins min', [
+      '@days' => '%a',
+      '@hours' => '%h',
+      '@mins' => '%i',
+    ]);
+  } elseif ($seconds > 60 * 60) {
+    $format = t('@hours hrs @mins min', [
+      '@hours' => '%h',
+      '@mins' => '%i',
+    ]);
+  } else {
+    $format = t('@mins min', ['@mins' => '%i']);
+  }
+
+  return $dtF->diff($dtT)->format($format);
+}

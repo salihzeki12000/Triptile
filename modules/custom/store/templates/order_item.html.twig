@@ -1,0 +1,22 @@
+{#
+/**
+ * @file order_item.html.twig
+ * Default theme implementation to present Order item data.
+ *
+ * This template is used when viewing Order item pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_order_item()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('order_item') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

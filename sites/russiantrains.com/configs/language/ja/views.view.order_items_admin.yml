@@ -1,0 +1,26 @@
+display:
+  default:
+    display_title: マスター
+    display_options:
+      exposed_form:
+        options:
+          submit_button: 適用
+          reset_button_label: リセット
+          exposed_sorts_label: 並び替え基準
+          sort_asc_label: 昇順
+          sort_desc_label: 降順
+      fields:
+        name:
+          separator: ', '
+        price__number:
+          separator: ', '
+        quantity:
+          separator: ', '
+        price_components:
+          separator: ', '
+      arguments:
+        id:
+          exception:
+            title: すべて
+  block_1:
+    display_title: ブロック

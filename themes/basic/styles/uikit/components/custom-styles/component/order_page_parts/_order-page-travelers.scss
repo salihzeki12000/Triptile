@@ -1,0 +1,105 @@
+.travelers {
+  .travelers-head {
+    background: $op-head-bg-color;
+    border-bottom: $op-border;
+    padding: $op-v-padding/2 $op-h-padding;
+  }
+
+  .travelers-body {
+    padding: $op-v-padding $op-h-padding;
+    display: table;
+    width: 100%;
+
+    @media #{$mobile} {
+      display: block;
+    }
+  }
+
+  .travelers-head,
+  .travelers-body {
+    @media #{$mobile} {
+      @include side-padding($op-mobile-h-padding);
+    }
+
+    @media #{$mobile-portrait} {
+      @include v-padding($op-v-padding/2);
+    }
+  }
+
+  .passenger {
+    width: 100%;
+    display: table-row;
+
+    @media #{$mobile} {
+      display: block;
+    }
+
+    &:not(:last-of-type) {
+      border-bottom: $op-border;
+      margin-bottom: $op-v-padding/2;
+    }
+
+    & > div {
+      display: table-cell;
+      padding-bottom: $op-v-padding/2;
+      color: $op-dark-note-color;
+      font-size: $op-small-size;
+
+      @media #{$mobile} {
+        display: flex;
+        width: 100%;
+      }
+    }
+  }
+
+  .name-with-title {
+    display: flex;
+    font-size: 1rem;
+    color: $op-text-color;
+  }
+
+  .title {
+    margin-bottom: 0;
+    margin-right: 7px;
+  }
+
+  .doc-info {
+    display: flex;
+    justify-content: space-between;
+    @include side-padding($op-h-padding);
+
+    @media #{$mobile} {
+      width: 100%;
+      @include side-padding(0);
+    }
+
+    div {
+      &:not(:last-of-type) {
+        margin-right: 7px;
+      }
+    }
+  }
+
+  .dob {
+    flex-basis: 30%;
+  }
+
+  .citizenship {
+    text-align: center;
+    flex-basis: 15%;
+
+    & + .passport {
+      @media #{$mobile} {
+        text-align: right;
+      }
+    }
+  }
+
+  .passport {
+    flex-basis: 45%;
+  }
+
+  .gender {
+    text-align: right;
+  }
+}

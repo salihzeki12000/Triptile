@@ -1,0 +1,23 @@
+uuid: 4953fb5f-3671-4e38-8287-4c4a5b9ee6bb
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+  theme:
+    - railninja
+third_party_settings:
+  rn_content:
+    classes: ''
+id: footericons
+theme: railninja
+region: footer
+weight: -9
+provider: null
+plugin: footer_icons
+settings:
+  id: footer_icons
+  label: 'Footer icons'
+  provider: rn_content
+  label_display: '0'
+visibility: {  }

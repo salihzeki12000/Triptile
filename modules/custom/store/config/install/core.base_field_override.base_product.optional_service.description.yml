@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - store.base_product_type.optional_service
+id: base_product.optional_service.description
+field_name: description
+entity_type: base_product
+bundle: optional_service
+label: Description
+description: 'The description of the base product entity.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,208 @@
+uuid: 685d72fd-2691-4dc8-9b0f-3845f20d6eca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.base_product.optional_service.available_from_date
+    - field.field.base_product.optional_service.available_until_date
+    - field.field.base_product.optional_service.coach_class
+    - field.field.base_product.optional_service.form
+    - field.field.base_product.optional_service.price_title
+    - field.field.base_product.optional_service.seat_type
+    - field.field.base_product.optional_service.supplier
+    - field.field.base_product.optional_service.thank_you_page
+    - field.field.base_product.optional_service.third_step
+    - field.field.base_product.optional_service.train
+    - field.field.base_product.optional_service.train_class
+    - field.field.base_product.optional_service.train_station
+    - store.base_product_type.optional_service
+  module:
+    - datetime
+    - options
+    - plugin
+    - store
+_core:
+  default_config_hash: S6G_dWmKqIk2f8qXUnw1SQheABLy9-4OUBKU2JljdQQ
+id: base_product.optional_service.default
+targetEntityType: base_product
+bundle: optional_service
+mode: default
+content:
+  available_from_date:
+    weight: 18
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  available_until_date:
+    weight: 19
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  coach_class:
+    weight: 13
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  code:
+    label: above
+    type: string
+    weight: 0
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  currency:
+    label: above
+    type: string
+    weight: -7
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  description:
+    label: above
+    type: basic_string
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  form:
+    weight: 10
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: plugin_label
+    region: content
+  max_quantity:
+    label: above
+    type: number_integer
+    weight: 4
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    region: content
+  name:
+    label: above
+    type: string
+    weight: 1
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  price:
+    label: above
+    type: price_default
+    weight: 6
+    settings:
+      strip_trailing_zeroes: false
+      display_currency_code: false
+    third_party_settings: {  }
+    region: content
+  price_title:
+    weight: 7
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  seat_type:
+    weight: 14
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  site:
+    label: above
+    type: list_default
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  status:
+    label: above
+    type: boolean
+    weight: 8
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    region: content
+  supplier:
+    weight: 17
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  thank_you_page:
+    weight: 11
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  third_step:
+    weight: 9
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  train:
+    weight: 16
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  train_class:
+    weight: 12
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  train_station:
+    weight: 15
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  weight:
+    label: above
+    type: number_integer
+    weight: 3
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

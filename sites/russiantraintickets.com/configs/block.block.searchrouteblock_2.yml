@@ -1,0 +1,25 @@
+uuid: f81c01ff-98f7-49a7-8034-7e6f1d6b8f60
+langcode: en
+status: false
+dependencies:
+  module:
+    - rn_content
+    - train_booking
+  theme:
+    - russiantraintickets
+third_party_settings:
+  rn_content:
+    classes: ''
+id: searchrouteblock_2
+theme: russiantraintickets
+region: content
+weight: -3
+provider: null
+plugin: search_route_block
+settings:
+  id: search_route_block
+  label: 'Book Train Tickets Online'
+  provider: train_booking
+  label_display: '0'
+  image: null
+visibility: {  }

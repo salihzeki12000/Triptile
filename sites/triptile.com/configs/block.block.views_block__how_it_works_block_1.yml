@@ -1,0 +1,30 @@
+uuid: 4aebcb72-0c3c-4a13-b774-665e483e3b27
+langcode: ru
+status: true
+dependencies:
+  config:
+    - views.view.how_it_works
+  module:
+    - system
+    - views
+  theme:
+    - tt
+id: views_block__how_it_works_block_1
+theme: tt
+region: content
+weight: -5
+provider: null
+plugin: 'views_block:how_it_works-block_1'
+settings:
+  id: 'views_block:how_it_works-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

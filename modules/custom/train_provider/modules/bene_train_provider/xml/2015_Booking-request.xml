@@ -1,0 +1,143 @@
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://bene-ws.b-rail.be/rail1/2007-06-13/types">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <booking-request>
+         <user-data>
+            <user-name>XXX_BENEUSER</user-name>
+            <password>XXX_BENEUSER</password>
+            <language code="nl_NL">Nederlands</language>
+            <distributor>XX</distributor>
+            <user-related-data>Training</user-related-data>
+         </user-data>
+         <booking-type>ticket</booking-type>
+         <booking-info>
+            <delivery-info>
+               <delivery-method code="MA"/>
+               <delivery-address>
+                  <last-name>Peeters</last-name>
+                  <street1>Syntigosesteenweg</street1>
+                  <house-number>1</house-number>
+                  <zipcode>1000</zipcode>
+                  <city>BRUSSSEL</city>
+                  <country>BELGIUM</country>
+               </delivery-address>
+            </delivery-info>
+            <ticket-language code="nl_NL"/>
+            <to-po-number>077912134</to-po-number>
+            <client-name>Vandevelde</client-name>
+            <seat-info-requested>true</seat-info-requested>
+         </booking-info>
+         	<typ:passenger-list-reply xmlns:typ="http://bene-ws.b-rail.be/rail1/2007-06-13/types">
+            <typ:passenger-reply>
+               <typ:last-name>Janssen</typ:last-name>
+               <typ:first-name>Jan</typ:first-name>
+               <typ:gender code="H">Dhr.</typ:gender>
+               <typ:passenger-id>AA</typ:passenger-id>
+            </typ:passenger-reply>
+            <typ:passenger-reply>
+               <typ:last-name>Janssen</typ:last-name>
+               <typ:first-name>Jenny</typ:first-name>
+               <typ:gender code="D">Mevr.</typ:gender>
+               <typ:passenger-id>AB</typ:passenger-id>
+            </typ:passenger-reply>
+         </typ:passenger-list-reply>
+         <booking-request-list>
+			<typ:proposed-price xmlns:typ="http://bene-ws.b-rail.be/rail1/2007-06-13/types">
+               <typ:price-offer>
+                  <typ:used-tacos>
+                     <typ:taco domain="I" tariff-group="THA" tic="MFEA1">Semi Flex 5 (AY) Comfort 1</typ:taco>
+                     <typ:unit-price>
+                        <typ:amount>79.0</typ:amount>
+                        <typ:currency>EUR</typ:currency>
+                     </typ:unit-price>
+                     <typ:number-of-passengers>2</typ:number-of-passengers>
+                     <typ:passenger-list>
+                        <typ:passenger-id>AA</typ:passenger-id>
+                        <typ:passenger-id>AB</typ:passenger-id>
+                     </typ:passenger-list>
+                     <typ:production-mode-list>
+                        <typ:production-mode>PDF_DT_BC</typ:production-mode>
+                        <typ:production-mode>PDF_DT</typ:production-mode>
+                        <typ:production-mode>ATB</typ:production-mode>
+                        <typ:production-mode>TL</typ:production-mode>
+                     </typ:production-mode-list>
+                  </typ:used-tacos>
+               </typ:price-offer>
+               <typ:product-feature>
+                  <typ:comfort-class>1</typ:comfort-class>
+                  <typ:is-refundable>Y</typ:is-refundable>
+                  <typ:is-changeable>Y</typ:is-changeable>
+                  <typ:product-group>offer_14</typ:product-group>
+                  <typ:carrier-description supplier="THA">Thalys</typ:carrier-description>
+                  <typ:EBS>false</typ:EBS>
+                  <typ:ESN>false</typ:ESN>
+                  <typ:single-indication>true</typ:single-indication>
+               </typ:product-feature>
+               <typ:origin-station code="NLASC">AMSTERDAM C.</typ:origin-station>
+               <typ:destination-station code="FRPNO">PARIS NORD</typ:destination-station>
+               <typ:train-number>9310</typ:train-number>
+               <typ:departure-time>06:17:00</typ:departure-time>
+               <typ:travel-duration>03:27:00</typ:travel-duration>
+               <typ:departure-date>2015-02-24</typ:departure-date>
+               <typ:proposed-price-id>10</typ:proposed-price-id>
+               <typ:route-summary-id>4</typ:route-summary-id>
+               <typ:segment-id>1</typ:segment-id>
+               <typ:segment-type>marketprice</typ:segment-type>
+               <typ:availability>
+                  <typ:class-of-service>AY</typ:class-of-service>
+                  <typ:availability-level>2</typ:availability-level>
+               </typ:availability>
+               <typ:one-ticket-indicator>true</typ:one-ticket-indicator>
+            </typ:proposed-price>
+	        	<typ:proposed-price xmlns:typ="http://bene-ws.b-rail.be/rail1/2007-06-13/types">
+               <typ:price-offer>
+                  <typ:used-tacos>
+                     <typ:taco domain="I" tariff-group="THA" tic="MFEA1">Semi Flex 5 (AY) Comfort 1</typ:taco>
+                     <typ:unit-price>
+                        <typ:amount>79.0</typ:amount>
+                        <typ:currency>EUR</typ:currency>
+                     </typ:unit-price>
+                     <typ:number-of-passengers>2</typ:number-of-passengers>
+                     <typ:passenger-list>
+                        <typ:passenger-id>AA</typ:passenger-id>
+                        <typ:passenger-id>AB</typ:passenger-id>
+                     </typ:passenger-list>
+                     <typ:production-mode-list>
+                        <typ:production-mode>PDF_DT_BC</typ:production-mode>
+                        <typ:production-mode>TL</typ:production-mode>
+                        <typ:production-mode>PDF_DT</typ:production-mode>
+                        <typ:production-mode>ATB</typ:production-mode>
+                     </typ:production-mode-list>
+                  </typ:used-tacos>
+               </typ:price-offer>
+               <typ:product-feature>
+                  <typ:comfort-class>1</typ:comfort-class>
+                  <typ:is-refundable>Y</typ:is-refundable>
+                  <typ:is-changeable>Y</typ:is-changeable>
+                  <typ:product-group>offer_64</typ:product-group>
+                  <typ:carrier-description supplier="THA">Thalys</typ:carrier-description>
+                  <typ:EBS>false</typ:EBS>
+                  <typ:ESN>false</typ:ESN>
+                  <typ:single-indication>true</typ:single-indication>
+               </typ:product-feature>
+               <typ:origin-station code="FRPNO">PARIS NORD</typ:origin-station>
+               <typ:destination-station code="NLASC">AMSTERDAM C.</typ:destination-station>
+               <typ:train-number>9327</typ:train-number>
+               <typ:departure-time>10:22:00</typ:departure-time>
+               <typ:travel-duration>03:20:00</typ:travel-duration>
+               <typ:departure-date>2015-03-03</typ:departure-date>
+               <typ:proposed-price-id>39</typ:proposed-price-id>
+               <typ:route-summary-id>14</typ:route-summary-id>
+               <typ:segment-id>1</typ:segment-id>
+               <typ:segment-type>marketprice</typ:segment-type>
+               <typ:availability>
+                  <typ:class-of-service>AY</typ:class-of-service>
+                  <typ:availability-level>1</typ:availability-level>
+               </typ:availability>
+               <typ:one-ticket-indicator>true</typ:one-ticket-indicator>
+            </typ:proposed-price>
+	</booking-request-list>
+      </booking-request>
+   </soapenv:Body>
+</soapenv:Envelope>

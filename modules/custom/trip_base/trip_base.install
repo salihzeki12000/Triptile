@@ -1,0 +1,70 @@
+<?php
+
+use Drupal\Core\Field\BaseFieldDefinition;
+
+/**
+ * Add 'region' field to hub entity.
+ */
+function trip_base_update_8101(&$sandbox) {
+  $region_field_definition = BaseFieldDefinition::create('list_string')
+    ->setLabel(t('Region'))
+    ->setDescription(t('A region the Hub is located in.'))
+    ->setRequired(true)
+    ->setSettings(['allowed_values' => \Drupal::service('country_manager')->getRegions()])
+    ->setDisplayOptions('view', array(
+      'label' => 'above',
+      'type' => 'list_default',
+      'weight' => -5,
+    ))
+    // No widget
+    ->setDisplayConfigurable('form', TRUE)
+    ->setDisplayConfigurable('view', TRUE);
+
+  \Drupal::entityDefinitionUpdateManager()->installFieldStorageDefinition('region', 'hub', 'trip_base', $region_field_definition);
+}
+
+/**
+ * Remove all test data from database.
+ */
+function trip_base_update_8301(&$sandbox) {
+  if (!isset($sandbox['current_type'])) {
+    $sandbox['current_type'] = 0;
+  }
+  $entityTypes = ['activity', 'connection', 'hotel', 'hub', 'transfer', 'trip', 'salesforce_mapping_object', 'base_product'];
+  $type = $entityTypes[$sandbox['current_type']];
+  if (!isset($sandbox['current_' . $type])) {
+    $sandbox['processed_' . $type] = 0;
+    $sandbox[$type . '_total'] = \Drupal::entityTypeManager()
+      ->getStorage($type)
+      ->getQuery()
+      ->count()
+      ->execute();
+  }
+
+  $ids = [];
+  $sandbox['#finished'] = $sandbox['current_type'] / count($entityTypes);
+  if ($sandbox[$type . '_total'] > 0) {
+    $ids = \Drupal::entityTypeManager()
+      ->getStorage($type)
+      ->getQuery()
+      ->range(0, 100)
+      ->execute();
+
+    if (!empty($ids)) {
+      $entities = \Drupal::entityTypeManager()
+        ->getStorage($type)
+        ->loadMultiple($ids);
+
+      \Drupal::entityTypeManager()
+        ->getStorage($type)
+        ->delete($entities);
+    }
+
+    $sandbox['processed_' . $type] += count($ids);
+    $sandbox['#finished'] += $sandbox['processed_' . $type] / (count($entityTypes) * $sandbox[$type . '_total']);
+  }
+
+  if (count($ids) < 100) {
+    $sandbox['current_type']++;
+  }
+}

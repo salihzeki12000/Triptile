@@ -1,0 +1,7 @@
+.payment-form {
+  @media #{$mobile} {
+    margin: 0 auto $payment-v-padding;
+    @include side-padding($payment-mobile-h-padding);
+  }
+
+}

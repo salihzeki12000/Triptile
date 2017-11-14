@@ -1,0 +1,8 @@
+id: content_page
+label: Content page
+description: Migrate content entities.
+source_type: RussianTrains database
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

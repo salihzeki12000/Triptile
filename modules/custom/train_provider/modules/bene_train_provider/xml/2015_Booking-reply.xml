@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Body>
+      <booking-reply xmlns="http://bene-ws.b-rail.be/rail1/2007-06-13/types">
+         <user-data>
+            <user-name>XXX_BENEUSER</user-name>
+            <password/>
+            <language code="nl_NL">Nederlands</language>
+            <distributor>XX</distributor>
+            <user-related-data>Training</user-related-data>
+         </user-data>
+         <dossier-id>QNTHHBL</dossier-id>
+         <total-dossier-price>
+            <amount>316.0</amount>
+            <currency>EUR</currency>
+         </total-dossier-price>
+         <pin-code>5475</pin-code>
+         <pnr>ROOBOE</pnr>
+      </booking-reply>
+   </soapenv:Body>
+</soapenv:Envelope>

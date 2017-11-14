@@ -1,0 +1,35 @@
+uuid: da4be97d-5d3c-4896-bc62-0efb6ea2e586
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.user_invoices
+  module:
+    - rn_content
+    - system
+    - views
+  theme:
+    - russiantraintickets
+third_party_settings:
+  rn_content:
+    classes: ''
+id: views_block__user_invoices_user_invoices_block
+theme: russiantraintickets
+region: content
+weight: -4
+provider: null
+plugin: 'views_block:user_invoices-user_invoices_block'
+settings:
+  id: 'views_block:user_invoices-user_invoices_block'
+  label: 'My invoices'
+  provider: views
+  label_display: visible
+  views_label: 'My invoices'
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: /user/%user
+    negate: false
+    context_mapping: {  }

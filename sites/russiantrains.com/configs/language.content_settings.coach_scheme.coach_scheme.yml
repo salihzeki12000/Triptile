@@ -1,0 +1,11 @@
+uuid: 9b4a29a0-0ad4-4e9b-a05c-9e1da6f3f40f
+langcode: en
+status: true
+dependencies:
+  module:
+    - train_base
+id: coach_scheme.coach_scheme
+target_entity_type_id: coach_scheme
+target_bundle: coach_scheme
+default_langcode: site_default
+language_alterable: false

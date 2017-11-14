@@ -1,0 +1,26 @@
+uuid: e53cf11a-ea60-4184-96fc-d13f125bc46c
+langcode: en
+status: false
+dependencies:
+  module:
+    - rn_content
+  theme:
+    - russiantrains
+third_party_settings:
+  rn_content:
+    classes: ''
+id: socialicons
+theme: russiantrains
+region: content
+weight: -20
+provider: null
+plugin: social_icons
+settings:
+  id: social_icons
+  label: 'Social icons'
+  provider: rn_content
+  label_display: '0'
+  facebook: 'https://www.facebook.com/RussianRail'
+  twitter: 'https://twitter.com/travelallrussia'
+  google: 'https://plus.google.com/+Russiantrains'
+visibility: {  }

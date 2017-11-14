@@ -1,0 +1,22 @@
+uuid: baadb38d-03dd-42a9-8c0a-927de4b78761
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - railninja
+_core:
+  default_config_hash: Pa9os3nFTXPln3o7NRen0JbH-7M7YXVIw7TQraxE4Bk
+id: railninja_content
+theme: railninja
+region: content
+weight: -11
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

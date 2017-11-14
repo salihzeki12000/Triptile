@@ -1,0 +1,115 @@
+global_currency: USD
+country_currency:
+  -
+    country_code: US
+    currency_code: USD
+  -
+    country_code: GB
+    currency_code: GBP
+  -
+    country_code: DE
+    currency_code: EUR
+  -
+    country_code: RU
+    currency_code: USD
+  -
+    country_code: AT
+    currency_code: EUR
+  -
+    country_code: BE
+    currency_code: EUR
+  -
+    country_code: GR
+    currency_code: EUR
+  -
+    country_code: IE
+    currency_code: EUR
+  -
+    country_code: ES
+    currency_code: EUR
+  -
+    country_code: IT
+    currency_code: EUR
+  -
+    country_code: LV
+    currency_code: EUR
+  -
+    country_code: LT
+    currency_code: EUR
+  -
+    country_code: LU
+    currency_code: EUR
+  -
+    country_code: NL
+    currency_code: EUR
+  -
+    country_code: PT
+    currency_code: EUR
+  -
+    country_code: SK
+    currency_code: EUR
+  -
+    country_code: SI
+    currency_code: EUR
+  -
+    country_code: FI
+    currency_code: EUR
+  -
+    country_code: FR
+    currency_code: EUR
+  -
+    country_code: EE
+    currency_code: EUR
+  -
+    country_code: AU
+    currency_code: AUD
+  -
+    country_code: BG
+    currency_code: EUR
+  -
+    country_code: CA
+    currency_code: CAD
+  -
+    country_code: CN
+    currency_code: CNY
+  -
+    country_code: CZ
+    currency_code: EUR
+  -
+    country_code: HK
+    currency_code: HKD
+  -
+    country_code: HU
+    currency_code: EUR
+  -
+    country_code: JP
+    currency_code: JPY
+  -
+    country_code: MX
+    currency_code: MXN
+  -
+    country_code: NZ
+    currency_code: NZD
+  -
+    country_code: ES
+    currency_code: EUR
+  -
+    country_code: BR
+    currency_code: USD
+opportunity_id_for_payable_invoices: ''
+order_verification_condition: 'false'
+visible_currencies:
+  AUD: true
+  CAD: true
+  CHF: true
+  CNY: true
+  EUR: true
+  GBP: true
+  HKD: true
+  JPY: true
+  MXN: true
+  NZD: true
+  RUB: true
+  SEK: true
+  SGD: true
+  USD: true

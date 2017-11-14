@@ -1,0 +1,18 @@
+uuid: 84f9390a-6f09-42ee-91fd-99cb47a9a9e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - store.order_item_type.tax
+id: order_item.tax.name
+field_name: name
+entity_type: order_item
+bundle: tax
+label: Name
+description: 'The order item name.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

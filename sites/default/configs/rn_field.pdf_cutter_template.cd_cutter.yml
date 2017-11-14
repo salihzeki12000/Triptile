@@ -1,0 +1,84 @@
+uuid: 5f5bd199-0549-406a-90d5-6ec255f532a1
+langcode: en
+status: true
+dependencies: {  }
+id: cd_cutter
+label: 'CD cutter'
+canvases:
+  -
+    page: '1'
+    x: '435'
+    'y': '593'
+    width: '135'
+    height: '42'
+    color: '#ffffff'
+  -
+    page: '1'
+    x: '435'
+    'y': '593'
+    width: '135'
+    height: '42'
+    color: '#ffffff'
+  -
+    page: '1'
+    x: '435'
+    'y': '593'
+    width: '135'
+    height: '42'
+    color: '#ffffff'
+  -
+    page: '1'
+    x: '435'
+    'y': '593'
+    width: '135'
+    height: '42'
+    color: '#ffffff'
+  -
+    page: '1'
+    x: '435'
+    'y': '593'
+    width: '135'
+    height: '42'
+    color: '#ffffff'
+  -
+    page: '1'
+    x: '435'
+    'y': '593'
+    width: '135'
+    height: '42'
+    color: '#ffffff'
+  -
+    page: '1'
+    x: '435'
+    'y': '593'
+    width: '135'
+    height: '42'
+    color: '#ffffff'
+  -
+    page: '1'
+    x: '435'
+    'y': '593'
+    width: '135'
+    height: '42'
+    color: '#ffffff'
+  -
+    page: '1'
+    x: '435'
+    'y': '593'
+    width: '135'
+    height: '42'
+    color: '#ffffff'
+  -
+    page: '1'
+    x: '435'
+    'y': '593'
+    width: '135'
+    height: '42'
+    color: '#ffffff'
+  -
+    page: '1'
+    x: '435'
+    'y': '593'
+    width: '135'
+    height: '42'
+    color: '#ffffff'

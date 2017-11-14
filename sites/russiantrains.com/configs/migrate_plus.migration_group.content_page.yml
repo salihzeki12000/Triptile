@@ -1,0 +1,15 @@
+uuid: 93759eac-d300-4656-8d53-4bda0547c8b6
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration
+_core:
+  default_config_hash: 3QIRNa9QaRZWrxamuO9ynP61VnyBmiH1lC8HS0juDJk
+id: content_page
+label: 'Content page'
+description: 'Migrate content entities.'
+source_type: 'RussianTrains database'
+module: null
+shared_configuration: null

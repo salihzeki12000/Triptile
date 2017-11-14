@@ -1,0 +1,14 @@
+{
+  "name": "drupal/train_base",
+  "type": "drupal-module",
+  "description": "Store all base classes for trains",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/train_base",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/train_base",
+    "source": "http://cgit.drupalcode.org/train_base"
+  },
+  "require": { }
+}

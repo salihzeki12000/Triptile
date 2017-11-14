@@ -1,0 +1,31 @@
+// path
+
+$path-to-fonts: "../../../custom-fonts";
+$path-to-images: "../../../images";
+
+// fonts
+
+@font-face{
+  font-family: Helvetica Neue;
+  src: url(#{$path-to-fonts}/HelveticaNeueLt.ttf);
+}
+
+$helvetica-family: "Helvetica Neue", Arial, sans-serif;
+
+$base-font-family: Arial, sans-serif;
+$title-font-family: $helvetica-family;
+$base-font-size: 16px;
+
+// colors
+
+$color-white: #ffffff;
+$color-yellow: #ffae00;
+$color-red: #c10017;
+$color-light-warm-grey: #eaeaea;
+$color-light-neutral-grey: #acacad;
+$color-grey: #909090;
+$color-warm-grey: #cacaca;
+$color-dark-warm-grey: #4b4b4b;
+$color-dark-neutral-grey: #777777;
+$color-lightblack: #222222;
+$color-black: #000000;

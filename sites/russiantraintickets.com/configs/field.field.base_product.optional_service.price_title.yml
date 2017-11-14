@@ -1,0 +1,21 @@
+uuid: 2797d248-affa-4996-8aad-a02bebc95941
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.base_product.price_title
+    - store.base_product_type.optional_service
+_core:
+  default_config_hash: xaU3N5WS1l-eWfCBrxWtBKOlz2olITVbGZALUWDGgZI
+id: base_product.optional_service.price_title
+field_name: price_title
+entity_type: base_product
+bundle: optional_service
+label: 'Price title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

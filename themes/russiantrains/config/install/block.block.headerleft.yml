@@ -1,0 +1,27 @@
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.header-left
+  module:
+    - rn_content
+    - system
+  theme:
+    - russiantrains
+third_party_settings:
+  rn_content:
+    classes: ''
+id: headerleft
+theme: russiantrains
+region: leaderboard
+weight: -11
+provider: null
+plugin: 'system_menu_block:header-left'
+settings:
+  id: 'system_menu_block:header-left'
+  label: 'Header left'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

@@ -1,0 +1,29 @@
+id: coach_class_translations
+migration_group: train_base
+migration_tags:
+  - translations
+label: CoachClass translations
+source:
+  plugin: coach_class_translations
+  key: travelallrussia
+process:
+  id:
+    plugin: migration_lookup
+    source: id
+    migration: coach_class
+  langcode: lang
+  'description/value': descr
+  'description/format':
+    plugin: default_value
+    default_value: basic_html
+  name: name
+destination:
+  plugin: entity:coach_class
+  translations: true
+migration_dependencies:
+  required:
+    - coach_class
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

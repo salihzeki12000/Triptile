@@ -1,0 +1,26 @@
+.mobile-menu-block {
+  display: none;
+}
+
+.mobile-menu {
+  font-family: $mobile-menu-font-family;
+
+  @media #{$mobile} {
+    @import "mobile_menu_parts/mobile-menu-inline";
+    @import "mobile_menu_parts/mobile-menu-user-block";
+  }
+
+  .ca-btn {
+    &.logged-in {
+      width: 100%;
+      padding: 0;
+
+      a {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
+

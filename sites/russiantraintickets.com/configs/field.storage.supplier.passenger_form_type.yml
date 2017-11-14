@@ -1,0 +1,21 @@
+uuid: 4b7b6974-19e6-4f13-b683-5304aaed71a5
+langcode: en
+status: true
+dependencies:
+  module:
+    - plugin
+    - train_base
+_core:
+  default_config_hash: fCFMYrK5dpgv3oCly-E8N3rc-O92ttKoBe_7-fwNiOk
+id: supplier.passenger_form_type
+field_name: passenger_form_type
+entity_type: supplier
+type: 'plugin:field_form_type'
+settings: {  }
+module: plugin
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

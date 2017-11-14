@@ -1,0 +1,21 @@
+uuid: 22aeae29-3e02-44a8-a254-f9782e8b442a
+langcode: en
+status: true
+dependencies:
+  module:
+    - store
+_core:
+  default_config_hash: q8Cry-2m1nvqeyKuF8XbfCxiX0Uv3eMu78cNdqkx46c
+id: store_order.user_note
+field_name: user_note
+entity_type: store_order
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

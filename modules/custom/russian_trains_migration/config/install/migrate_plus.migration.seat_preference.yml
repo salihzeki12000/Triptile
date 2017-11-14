@@ -1,0 +1,48 @@
+id: seat_preference
+migration_group: train_base
+migration_tags:
+  - russian_trains_light
+label: SeatPreference
+source:
+  plugin: seat_preference
+  key: travelallrussia
+process:
+  langcode: lang
+  name: name
+  weight: sort_order
+  status: enabled
+  seat_type:
+    plugin: iterator
+    source: seat_type
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: seat_type
+        source: seat_class_id
+  car_service:
+    plugin: iterator
+    source: car_service
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: car_service
+        source: car_service_id
+  supplier:
+      plugin: iterator
+      source: supplier
+      process:
+        target_id:
+          plugin: migration_lookup
+          migration: supplier
+          source: supplier_id
+destination:
+  plugin: entity:seat_preference
+migration_dependencies:
+  required:
+    - supplier
+    - seat_type
+    - car_service
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

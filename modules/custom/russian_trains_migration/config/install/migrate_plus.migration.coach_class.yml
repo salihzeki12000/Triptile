@@ -1,0 +1,45 @@
+id: coach_class
+migration_group: train_base
+migration_tags:
+  - russian_trains_light
+label: CoachClass
+source:
+  plugin: coach_class
+  key: travelallrussia
+process:
+  langcode: lang
+  code: code
+  name: name
+  status: enabled
+  weight: sort_order
+  'description/value': descr
+  'description/format':
+    plugin: default_value
+    default_value: basic_html
+  supplier:
+    plugin: migration_lookup
+    migration: supplier
+    source: supplier_id
+  gallery:
+      plugin: migration_lookup
+      migration: gallery
+      source: gallery_id
+  car_service:
+    plugin: iterator
+    source: car_service
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: car_service
+        source: car_service_id
+destination:
+  plugin: entity:coach_class
+migration_dependencies:
+  required:
+    - supplier
+    - car_service
+    - gallery
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

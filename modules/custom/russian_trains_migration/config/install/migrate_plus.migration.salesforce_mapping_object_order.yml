@@ -1,0 +1,30 @@
+id: salesforce_mapping_object_order
+migration_group: salesforce
+label: SalesforceMappingObject Order
+source:
+  plugin: salesforce_mapping_object_order
+  key: travelallrussia
+process:
+  record_id: sforce_id
+  salesforce_object: sforce_type
+  entity_id:
+    plugin: migration_lookup
+    migration: store_order
+    source: order_id
+  entity_type_id:
+    plugin: default_value
+    default_value: store_order
+  tries:
+    plugin: default_value
+    default_value: 0
+  created: changed
+  changed: changed
+destination:
+  plugin: entity:salesforce_mapping_object
+migration_dependencies:
+  optional:
+    - order
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

@@ -1,0 +1,52 @@
+entity.base_product.add_form:
+  route_name: 'entity.base_product.add_page'
+  title: 'Add Base product'
+  appears_on:
+    - entity.base_product.collection
+entity.base_product.add_form.type_specific:
+  deriver: '\Drupal\store\Plugin\Derivative\AddBaseProductLocalAction'
+entity.base_product_type.add_form:
+  route_name: 'entity.base_product_type.add_form'
+  title: 'Add Base product type'
+  appears_on:
+    - entity.base_product_type.collection
+
+entity.store_order.add_form:
+  route_name: 'entity.store_order.add_page'
+  title: 'Add Store order'
+  appears_on:
+    - entity.store_order.collection
+entity.store_order_type.add_form:
+  route_name: 'entity.store_order_type.add_form'
+  title: 'Add Store order type'
+  appears_on:
+    - entity.store_order_type.collection
+
+entity.invoice.add_form:
+  route_name: entity.invoice.add_form
+  title: 'Add Invoice'
+  appears_on:
+    - entity.invoice.collection
+
+entity.order_item.add_form:
+  route_name: 'entity.order_item.add_page'
+  title: 'Add Order item'
+  appears_on:
+    - entity.order_item.collection
+entity.order_item_type.add_form:
+  route_name: 'entity.order_item_type.add_form'
+  title: 'Add Order item type'
+  appears_on:
+    - entity.order_item_type.collection
+
+entity.customer_profile.add_form:
+  route_name: entity.customer_profile.add_form
+  title: 'Add Customer profile'
+  appears_on:
+    - entity.customer_profile.collection
+
+entity.price_rule.add_form:
+  route_name: 'entity.price_rule.add_form'
+  title: 'Add Price rule'
+  appears_on:
+    - entity.price_rule.collection

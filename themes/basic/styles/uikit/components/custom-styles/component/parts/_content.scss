@@ -1,0 +1,64 @@
+.page {
+  #main-content {
+    .block {
+      margin: 0;
+      width: 100%;
+      font-family: $title-font-family;
+
+      &:nth-of-type(odd) {
+        background: $light-block-bg;
+      }
+
+      &:nth-of-type(even) {
+        background: $dark-block-bg;
+      }
+
+      .block__inner{
+        max-width: $container-width;
+        margin: 0 auto;
+        padding: 45px 0 60px;
+      }
+
+      .field {
+        margin: 0;
+      }
+    }
+
+    article {
+      width: 100%;
+      max-width: $container-width;
+      margin: $v-padding auto;
+
+      h1 {
+        margin: $v-padding/2 0 $v-padding;
+      }
+
+      ul {
+        padding-left: $h-padding;
+      }
+    }
+
+    .container {
+      max-width: 100%;
+    }
+
+    @media #{$tablet} {
+      .block {
+        @include side-padding($tablet-h-padding);
+      }
+    }
+
+    @media #{$mobile} {
+      .block {
+        @include side-padding($mobile-h-padding);
+      }
+    }
+  }
+
+  .node {
+    @include border-radius(0);
+    box-shadow: none;
+    background: transparent;
+    padding: 0;
+  }
+}

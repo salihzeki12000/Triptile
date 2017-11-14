@@ -1,0 +1,51 @@
+uuid: 0aaf2054-85f4-478f-9ca1-1eef91d5b02b
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration
+_core:
+  default_config_hash: W6dFU8B-5kdV0rtOvu9Xx4LGBkUeYUcYOTIx-bTpzcM
+id: store_order
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: store
+label: Order
+source:
+  plugin: store_order
+  key: travelallrussia
+process:
+  type:
+    plugin: default_value
+    default_value: train_order
+  number: reference
+  order_total/number: amount
+  order_total/currency_code: currency
+  owner: destination_user_id
+  ticket:
+    plugin: iterator
+    source: train_ticket
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: train_ticket
+        source: train_ticket_id
+  status: status
+  site:
+    plugin: default_value
+    default_value: RT
+  data: data
+  trip_type: trip_type
+  langcode: lang
+  created: created
+  changed: changed
+destination:
+  plugin: 'entity:store_order'
+  bundle: train_order
+migration_dependencies:
+  optional:
+    - train_ticket
+    - user

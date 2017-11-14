@@ -1,0 +1,12 @@
+uuid: c993952d-9862-46b1-9cd3-a50da8f32289
+langcode: en
+status: true
+dependencies: {  }
+id: ufs_kids_6_10
+label: 'UFS kids 6-10'
+price_rule_type: ticket
+condition: 'supplier == ''E3'' and age >= 6 and age <= 9'
+tax_type: rate
+tax_value: 0.7
+tax_value_currency: USD
+weight: '0'

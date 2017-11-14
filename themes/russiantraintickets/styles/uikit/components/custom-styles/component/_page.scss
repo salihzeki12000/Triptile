@@ -1,0 +1,11 @@
+@import "../init";
+@import "../../../../../../../themes/basic/styles/uikit/components/custom-styles/custom_mixins";
+@import "../custom_mixins";
+
+.page {
+  @import "page_parts/header";
+  @import "page_parts/footer-top";
+}
+
+@import "page_parts/popup-menu";
+

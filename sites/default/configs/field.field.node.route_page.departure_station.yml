@@ -1,0 +1,25 @@
+uuid: e01de707-864d-4d61-9a65-54eeecc2152d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.departure_station
+    - node.type.route_page
+id: node.route_page.departure_station
+field_name: departure_station
+entity_type: node
+bundle: route_page
+label: 'Departure station'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: only_enabled
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

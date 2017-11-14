@@ -1,0 +1,70 @@
+@import "../parts/price_sidebar";
+
+$filename-width: 47%;
+$note-width: 50%;
+$icon-size: 50px;
+
+.border-container {
+  border: $op-border;
+}
+
+.container {
+  @include flex;
+  flex-flow: row wrap;
+  align-items: center;
+  margin-bottom: $sidebar-v-padding;
+
+  & > div {
+    flex-basis: 100%;
+  }
+}
+
+.note-wrapper {
+  @include custom-checkbox($pp-light-note-color, $pp-title-color);
+
+  padding-bottom: $op-v-padding;
+
+  @media #{$mobile-portrait} {
+    padding-bottom: $op-v-padding/2;
+  }
+
+  & > div {
+    display: block;
+    width: 100%;
+  }
+
+  .note-description {
+    color: $op-light-note-color;
+    font-size: $op-very-small-size;
+  }
+
+  .agreement {
+    input[type=checkbox] {
+      margin-top: 5px;
+      margin-right: 5px;
+
+      & + label {
+        margin-left: 20px;
+      }
+    }
+
+    label {
+      white-space: normal;
+      color: $pp-light-note-color;
+      cursor: pointer;
+    }
+
+    display: flex;
+    flex-flow: row nowrap;
+  }
+}
+
+.home-link {
+  @include btn-grey;
+  padding: $op-v-padding/2 $op-h-padding;
+
+  @media #{$mobile-portrait} {
+    width: 100%;
+  }
+}
+

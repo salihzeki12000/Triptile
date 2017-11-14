@@ -1,0 +1,10 @@
+langcode: und
+status: true
+dependencies:
+  module:
+    - rn_content
+name: 'Blog categories'
+vid: blog_categories
+description: ''
+hierarchy: 0
+weight: 0

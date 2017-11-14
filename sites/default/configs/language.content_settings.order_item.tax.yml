@@ -1,0 +1,16 @@
+uuid: 18e8dba3-5f27-46f8-8d97-d88f67d19cc6
+langcode: en
+status: true
+dependencies:
+  config:
+    - store.order_item_type.tax
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+id: order_item.tax
+target_entity_type_id: order_item
+target_bundle: tax
+default_langcode: site_default
+language_alterable: false

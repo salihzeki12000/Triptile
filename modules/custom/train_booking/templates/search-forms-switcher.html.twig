@@ -1,0 +1,20 @@
+<div class="search-form-switcher js-form-wrapper form-wrapper" data-drupal-selector="edit-form-switcher" id="edit-form-switcher">
+  {% if roundtrip %}
+    <span class="basic">
+      {% trans with {'context': 'Search Form switcher'} %}One way trip{% endtrans %}
+    </span>
+    <span class="roundtrip active">
+      {% trans with {'context': 'Search Form switcher'} %}Round trip{% endtrans %}
+    </span>
+  {% else %}
+    <span class="basic active">
+      {% trans with {'context': 'Search Form switcher'} %}One way trip{% endtrans %}
+    </span>
+    <span class="roundtrip">
+      {% trans with {'context': 'Search Form switcher'} %}Round trip{% endtrans %}
+    </span>
+  {% endif %}
+  <span class="complex">
+    {% trans with {'context': 'Search Form switcher'} %}Multi-leg trip{% endtrans %}
+  </span>
+</div>

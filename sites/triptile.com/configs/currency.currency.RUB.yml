@@ -1,0 +1,15 @@
+alternativeSigns:
+  - руб
+currencyCode: RUB
+currencyNumber: '643'
+label: 'Russian ruble'
+roundingStep: 0.01
+sign: ''
+subunits: 100
+status: true
+usages:
+  -
+    start: '1999-01-01'
+    end: null
+    countryCode: RU
+uuid: e0b37ad5-ebb2-4f37-897e-945c2d4c50fc

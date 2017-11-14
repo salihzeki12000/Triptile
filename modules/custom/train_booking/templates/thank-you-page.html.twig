@@ -1,0 +1,106 @@
+{% set one_way = trains|length > 1 ? false : true %}
+{% set show_travelers_class = one_way ? 'show-travelers' : 'hide-travelers' %}
+
+<div class="thank-you-page">
+  <div class="content-wrapper">
+    <div class="left">
+      <div class="hiya-text">{% trans with {'context': 'Thank You Page'} %}Thank you!{% endtrans %}</div>
+      <div class="order-status-text">{% trans with {'context': 'Thank You Page'} %}Your order is processing!{% endtrans %}</div>
+      <div class="order-text">
+        {{ welcome_text|raw }}
+      </div>
+      <div class="terms-text">
+        {% trans with {'context': 'Thank You Page'} %}
+        You can read our Terms & Conditions and Cancellation Policies <a href="/en/page/terms-and-conditions" target="_blank">here</a>.
+        {% endtrans %}
+      </div>
+      <div class="buttons-wrapper">{{ search_button }}</div>
+    </div>
+    <div class="right">
+      <div class="order-details-wrapper">
+        {% for train in trains %}
+          <div class="title-row">
+            {% if one_way %}
+              {% trans with {'context': 'Thank You Page'} %}Order Details{% endtrans %}
+            {% else %}
+              {% trans with {'context': 'Thank You Page'} %}Leg {{ loop.index }}{% endtrans %}
+            {% endif %}
+          </div>
+
+          <div class="info-row ticket">
+            <div class="ticket-row">
+              <div class="ticket-col">
+                <div class="ticket-title">{% trans with {'context': 'Thank You Page'} %}Departure{% endtrans %}</div>
+                <div class="ticket-info">
+                  {{ train.departure_station_city }}{% if train.departure_station and train.departure_station_city != train.departure_station %}, {{ train.departure_station }}{% endif %}
+                </div>
+                <div class="ticket-info">{{ train.departure_date_time }}</div>
+              </div>
+              <div class="ticket-col">
+                <div class="ticket-title">{% trans with {'context': 'Thank You Page'} %}Arrival{% endtrans %}</div>
+                <div class="ticket-info">
+                  {{ train.arrival_station_city }}{% if train.arrival_station and train.arrival_station_city !=train.arrival_station %}, {{ train.arrival_station }}{% endif %}
+                </div>
+                <div class="ticket-info">{{ train.arrival_date_time }}</div>
+              </div>
+            </div>
+            <div class="ticket-row">
+              <div class="ticket-col">
+                <div class="ticket-title">{% trans with {'context': 'Thank You Page'} %}Train{% endtrans %}</div>
+                <div class="ticket-info">#{{ train.train_number }} - {{ train.train_class }}</div>
+              </div>
+              <div class="ticket-col">
+                <div class="ticket-title">{% trans with {'context': 'Thank You Page'} %}Ticket{% endtrans %}</div>
+                <div class="ticket-info">{{ train.tickets_count }} / {{ train.coach_class }} {{ train.seat_type }}</div>
+              </div>
+            </div>
+            {% if not one_way %}
+              <div class="view-all-link link-view-all-travelers view-travelers">
+                {% trans with {'context': 'Thank You Page'} %}view travelers{% endtrans %}
+              </div>
+            {% endif %}
+          </div>
+
+          {% if train.passengers %}
+            <div class="title-row {{ show_travelers_class }}">
+              {% trans with {'context': 'Thank You Page'} %}Travelers{% endtrans %}
+            </div>
+
+            <div class="info-row travelers {{ show_travelers_class }}">
+              <div class="travelers-container">
+                {% for passenger in train.passengers %}
+                  <div class="traveler">{{ passenger.name }}</div>
+                {% endfor %}
+              </div>
+              {% if train.passengers|length > 4 %}
+                <div class="view-all-link link-view-all-passengers view-all-items">
+                  {% trans with {'context': 'Thank You Page'} %}view all{% endtrans %}
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+
+        <div class="title-row grand-total">
+          <div class="grand-total-text">
+            {% trans with {'context': 'Thank You Page'} %}Total Paid{% endtrans %}
+          </div>
+          <div class="grand-total-amount">{{ order_info.total|raw }}</div>
+        </div>
+
+      </div>
+
+      <div class="transaction-data" style="display:none;" data-transaction-id="{{ order_info.number }}"
+           data-transaction-total="{{ order_info.profit }}" data-tax="{{ order_info.tax.profit }}"
+           data-customer-country-code="{{ order_info.customer_country_code }}">
+        {% for train in trains %}
+          <div class="product-data" data-name="{{ train.departure_station_city }} - {{ train.arrival_station_city }}"
+               data-coach-class-name = "{{ train.coach_class }}" data-coach-class-id="{{ train.coach_class_id }}"
+               data-coach-class-price="{{ train.coach_class_price }}" data-coach-class-ga="{{ train.coach_class_profit }}"
+               data-coach-class-currency-code="{{ train.coach_class_currency_code }}" data-quantity="{{ train.tickets_count }}"></div>
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+</div>

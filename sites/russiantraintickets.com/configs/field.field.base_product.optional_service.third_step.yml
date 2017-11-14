@@ -1,0 +1,25 @@
+uuid: 74e7f3b5-8bc5-44ae-96ca-4aeef2e4454a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.base_product.third_step
+    - store.base_product_type.optional_service
+_core:
+  default_config_hash: d3HGQmMghvL9SU6BQRq8iK1Um_0ymhCnTraiFC9efSw
+id: base_product.optional_service.third_step
+field_name: third_step
+entity_type: base_product
+bundle: optional_service
+label: 'Third step'
+description: 'Enabled on 3rd step'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

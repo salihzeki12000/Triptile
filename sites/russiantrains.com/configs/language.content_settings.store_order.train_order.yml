@@ -1,0 +1,13 @@
+uuid: 187bdd01-aa0a-4953-a78d-78e34f1ed77e
+langcode: en
+status: true
+dependencies:
+  config:
+    - store.store_order_type.train_order
+_core:
+  default_config_hash: KhIcLDFoIlC9mmz-SVRpC6vKXBGsQYipWkyhOD322_o
+id: store_order.train_order
+target_entity_type_id: store_order
+target_bundle: train_order
+default_langcode: site_default
+language_alterable: false

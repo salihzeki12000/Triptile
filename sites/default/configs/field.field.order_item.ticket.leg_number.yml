@@ -1,0 +1,23 @@
+uuid: abc4d0fd-f723-4886-9a82-3c0dd5533be4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.order_item.leg_number
+    - store.order_item_type.ticket
+id: order_item.ticket.leg_number
+field_name: leg_number
+entity_type: order_item
+bundle: ticket
+label: 'Leg number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

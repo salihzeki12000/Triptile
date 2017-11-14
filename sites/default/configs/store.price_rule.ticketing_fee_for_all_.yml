@@ -1,0 +1,12 @@
+uuid: efebaafc-daa5-43ae-afc7-b5923a4c39dc
+langcode: en
+status: true
+dependencies: {  }
+id: ticketing_fee_for_all_
+label: 'Renfe kids'
+price_rule_type: ticket
+condition: 'supplier == ''REN'' and age >= 4 and age <= 13'
+tax_type: rate
+tax_value: 0.7
+tax_value_currency: USD
+weight: '0'

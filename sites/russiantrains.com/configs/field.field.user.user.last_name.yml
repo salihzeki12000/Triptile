@@ -1,0 +1,22 @@
+uuid: fcd90c54-b7b8-4afe-9d7f-4cd086208303
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.last_name
+  module:
+    - user
+_core:
+  default_config_hash: JQAY77gf36_-ioCN-8kaC8xkKKQ2CdqF14VH2I-r0fw
+id: user.user.last_name
+field_name: last_name
+entity_type: user
+bundle: user
+label: 'Last Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

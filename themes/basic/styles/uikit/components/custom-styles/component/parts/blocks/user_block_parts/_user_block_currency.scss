@@ -1,0 +1,22 @@
+$sign-width: 23%;
+$row-gap: 2%;
+
+.currency-list {
+  .currency-item {
+    margin-top: $user-block-v-padding/2;
+    margin-bottom: $user-block-v-padding/2;
+    justify-content: space-between;
+
+    &::before {
+      @include box-shadow(0 0 2px rgba(0,0,0,0.3));
+    }
+
+    .sign {
+      flex-basis: $sign-width;
+    }
+
+    .label {
+      flex-basis: 100% - $sign-width - $row-gap;
+    }
+  }
+}

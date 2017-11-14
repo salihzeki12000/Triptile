@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - store
+    - train_base
+id: base_product.coach_class
+field_name: coach_class
+entity_type: base_product
+type: entity_reference
+settings:
+  target_type: coach_class
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

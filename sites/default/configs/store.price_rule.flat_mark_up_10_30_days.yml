@@ -1,0 +1,12 @@
+uuid: bc9e682d-bc5d-4e1a-96df-6ba75ff31877
+langcode: en
+status: true
+dependencies: {  }
+id: flat_mark_up_10_30_days
+label: 'Flat mark up 10 - 30 days'
+price_rule_type: before_display
+condition: 'order_depth >= 11 and order_depth <= 20 and supplier != ''IT'''
+tax_type: fixed
+tax_value: !!float 13
+tax_value_currency: USD
+weight: '0'

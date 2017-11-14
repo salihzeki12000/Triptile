@@ -1,0 +1,18 @@
+uuid: 707cf6cf-7291-4ef0-ab9a-6f00164dc64d
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.train_review
+id: comment.train_review.created
+field_name: created
+entity_type: comment
+bundle: train_review
+label: Created
+description: 'The time that the comment was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

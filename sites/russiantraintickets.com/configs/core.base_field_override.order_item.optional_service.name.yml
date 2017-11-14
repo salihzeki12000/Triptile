@@ -1,0 +1,20 @@
+uuid: 6ed5d911-53ee-4808-96b8-4d12a25ff532
+langcode: en
+status: true
+dependencies:
+  config:
+    - store.order_item_type.optional_service
+_core:
+  default_config_hash: O0Qk0CxhW92Fq7t1HHgd9puIglWduqD-2lv_wL_alcE
+id: order_item.optional_service.name
+field_name: name
+entity_type: order_item
+bundle: optional_service
+label: Name
+description: 'The order item name.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

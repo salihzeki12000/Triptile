@@ -1,0 +1,11 @@
+weight: 6
+status: false
+countries: {  }
+include_in_top: true
+in_top_if_no_country: false
+label: Invoice
+dependencies:
+  module:
+    - payment
+_core:
+  default_config_hash: 3_IDoviGTtftoOY-pWi7ODdEpZw_dzRkW21cNJwQj24

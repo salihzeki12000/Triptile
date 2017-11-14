@@ -1,0 +1,14 @@
+uuid: fbed35b9-a0e3-42b9-81e9-e1e42b8b359a
+name: Drupal
+mail: absborodin@ya.ru
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node/4
+admin_compact_mode: false
+weight_select_max: 100
+langcode: ru
+default_langcode: en
+_core:
+  default_config_hash: AyT9s8OUcclfALRE_imByOMgtZ19eOlqdF6zI3p7yqo

@@ -1,0 +1,337 @@
+<?php
+
+use Drupal\Component\Utility\Xss;
+use Drupal\Component\Utility\Html;
+use Drupal\Component\Utility;
+
+/**
+ * Add dynamic library definitions.
+ *
+ * Modules may implement this hook to add dynamic library definitions. Static
+ * libraries, which do not depend on any runtime information, should be declared
+ * in a modulename.libraries.yml file instead.
+ *
+ * @return array[]
+ *   An array of library definitions to register, keyed by library ID. The
+ *   library ID will be prefixed with the module name automatically.
+ *
+ * @see core.libraries.yml
+ * @see hook_library_info_alter()
+ */
+function basic_library_info_build() {
+  $libraries = [];
+  $theme = 'basic';
+  $theme_registry = \Drupal::service('theme.registry')->get();
+  $config = \Drupal::config($theme . '.settings')->get('settings');
+
+  // Layout libraries.
+  $libraries[$theme . '.layout.page'] = [
+    'css' => [
+      'layout' => [
+        'styles/css/generated/' . $theme . '.layout.page.css' => [],
+      ],
+    ],
+  ];
+  foreach ($theme_registry as $key => $values) {
+    if (substr($key, 0, 6) == 'page__') {
+      $suggestion = str_replace('_', '-', $key);
+      $libraries[$theme . '.layout.' . $key] = [
+        'css' => [
+          'layout' => [
+            'styles/css/generated/' . $theme . '.layout.'  . $suggestion . '.css' => [],
+          ],
+        ],
+      ];
+    }
+  }
+
+  // Extension libraries.
+  if (isset($config['enable_extensions']) && $config['enable_extensions'] === 1) {
+    // Fonts.
+    if (isset($config['enable_fonts']) && $config['enable_fonts'] === 1) {
+      // Google fonts.
+      if (!empty($config['font_google'])) {
+        $libraries['google_fonts'] = [
+          'remote' => 'https://www.google.com/fonts',
+          'license' => [
+            'name' => 'SIL (OFL)',
+            'url' => 'http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL',
+            'gpl-compatible' => TRUE,
+          ],
+          'css' => [
+            'base' => [
+              Xss::filter($config['font_google']) => [],
+            ],
+          ],
+          'weight' => -1000,
+        ];
+      }
+      // Typekit.
+      if (!empty($config['font_typekit'])) {
+        $libraries['typekit_id'] = [
+          'remote' => '//use.typekit.net/',
+          'license' => [
+            'name' => 'Apache 2.0',
+            'url' => 'http://www.apache.org/licenses/LICENSE-2.0',
+            'gpl-compatible' => TRUE,
+          ],
+          'js' => [
+            '//use.typekit.net/' . Html::escape($config['font_typekit']) . '.js' => ['type' => 'external'],
+          ],
+          'header' => TRUE,
+        ];
+      }
+    }
+  }
+
+  return $libraries;
+}
+
+/**
+ * Alter attachments (typically assets) to a page before it is rendered.
+ *
+ * Use this hook when you want to remove or alter attachments on the page, or
+ * add attachments to the page that depend on another module's attachments (this
+ * hook runs after hook_page_attachments().
+ *
+ * @param array &$page
+ *   An empty renderable array representing the page.
+ *
+ * @see hook_page_attachments_alter()
+ */
+function basic_page_attachments_alter(array &$page) {
+  $theme = 'basic';
+
+  // Attach module dependant libraries.
+  // These libraries are declared in your themeName.libraries.yml and we only
+  // load if the module is installed.
+  $module_libraries = array(
+    'addtoany',
+    'ds',
+    'social_media_links',
+    'superfish',
+  );
+  $theme_libraries = \Drupal::service('library.discovery')->getLibrariesByExtension($theme);
+  foreach ($module_libraries as $module_library) {
+    if (array_key_exists($module_library, $theme_libraries) && \Drupal::moduleHandler()->moduleExists($module_library) === TRUE) {
+      $page['#attached']['library'][] = "$theme/$module_library";
+    }
+  }
+
+  $viewport = array(
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => array(
+      'name' => 'viewport',
+      'content' => 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no',
+    ),
+  );
+  $page['#attached']['html_head'][] = [$viewport, 'viewport'];
+
+  $variables['path_to_templates'] = _basic_get_path_to_templates();
+  $variables['path_to_scripts'] = _basic_get_path_to_scripts();
+  $variables['include_templates'] = _basic_get_template_scripts($variables['path_to_scripts']);
+
+  if (strpos(\Drupal::request()->getRequestUri(), 'user') !== false) {
+    $page['#attached']['library'][] = "basic/user-table-link";
+  }
+}
+
+/**
+ * Preprocess variables for html templates.
+ */
+/* -- Delete this line if you want to use this function
+function basic_preprocess_html(&$variables) {
+}
+// */
+
+function basic_preprocess_html(&$variables) {
+  $is_front = \Drupal::service('path.matcher')->isFrontPage();
+
+  $variables['attributes']['class'][] = $is_front ? 'front' : 'inner-page';
+  $variables['attributes']['class'][] = _basic_get_route_class();
+
+  $theme = \Drupal::service('theme.manager')->getActiveTheme();
+  $variables['attributes']['class'][] = Html::cleanCssIdentifier($theme->getName());
+
+  // include files with scripts before <body> and after <body> in template
+  $variables['path_to_templates'] = _basic_get_path_to_templates();
+  $variables['path_to_scripts'] = _basic_get_path_to_scripts();
+  $variables['include_templates'] = _basic_get_template_scripts($variables['path_to_scripts']);
+  // Create instance of request path from ConditionBasePlugin.
+  /* @var \Drupal\system\Plugin\Condition\RequestPath $request_path */
+  $request_path = \Drupal::service('plugin.manager.condition')->createInstance('request_path');
+  $templates = _basic_get_template_scripts(_basic_get_path_to_scripts());
+  foreach ($templates as $region_name => $region_templates) {
+    foreach ($region_templates as $template) {
+      $template_name = _basic_replace_dots($template['name']);
+      $default_values = theme_get_setting($template_name);
+      if ($default_values && is_array($default_values)) {
+        $request_path->setConfiguration($default_values);
+      }
+      $variables['theme_custom_templates'][$template['name']] = $request_path->execute();
+    }
+  }
+
+  // Set mobile width in drupalSettings
+  $active_theme_name = \Drupal::service('theme.manager')->getActiveTheme()->getName();
+  $config = \Drupal::config($active_theme_name . '.settings');
+  $mobile_width = ($config && $config->get('settings_page_mobile_width')) ? $config->get('settings_page_mobile_width') : 736;
+  $variables['#attached']['drupalSettings']['settings_mobile_width'] = $mobile_width;
+}
+
+/**
+ * Preprocess variables for page templates.
+ */
+
+
+function basic_preprocess_page(&$variables) {
+
+  if(isset($variables['header']['wrapper_attributes']['class'])) {
+    $classes = $variables['header']['wrapper_attributes']['class'];
+    foreach($classes as $key => $class) {
+      if ($class == 'pr-header') {
+        unset($variables['header']['wrapper_attributes']['class'][$key]);
+      }
+    }
+    $variables['header']['wrapper_attributes']['class'][] =
+      'full-width';
+    $variables['header']['wrapper_attributes']['class'][] =
+      'header-container';
+  }
+
+  $variables['header']['container_attributes']['class'][] = 'top-header';
+
+  if(isset($variables['footer']['wrapper_attributes']['class'])) {
+    $classes = $variables['footer']['wrapper_attributes']['class'];
+    foreach($classes as $key => $class) {
+      if ($class == 'pr-footer') {
+        unset($variables['footer']['wrapper_attributes']['class'][$key]);
+      }
+    }
+    $variables['footer']['wrapper_attributes']['class'][] =
+      'full-width';
+    $variables['footer']['wrapper_attributes']['class'][] =
+      'footer-container';
+  }
+
+  $variables['path_to_theme'] = drupal_get_path('theme','basic') . '/templates/';
+}
+
+
+/**
+ * Preprocess variables for field templates.
+ */
+/* -- Delete this line if you want to use this function
+function basic_preprocess_field(&$variables) {
+}
+// */
+
+/**
+ * Preprocess variables for node templates.
+ */
+/* -- Delete this line if you want to use this function
+function basic_preprocess_node(&$variables) {
+}
+// */
+
+/**
+ * Preprocess variables for comment templates.
+ */
+/* -- Delete this line if you want to use this function
+function basic_preprocess_comment(&$variables) {
+}
+// */
+
+/**
+ * Preprocess variables for block templates.
+ */
+/* -- Delete this line if you want to use this function
+function basic_preprocess_block(&$variables) {
+}
+// */
+
+
+function _basic_get_route_class() {
+  $route = \Drupal::routeMatch()->getRouteName();
+  $class_name = strtolower(Html::cleanCssIdentifier($route));
+  return $class_name;
+}
+
+function _basic_get_path_to_templates() {
+  return \Drupal::service('theme.manager')->getActiveTheme()->getPath() .
+  '/templates';
+}
+
+function _basic_get_path_to_scripts() {
+  $templates_dir = _basic_get_path_to_templates();
+  return $templates_dir . '/scripts/';
+}
+
+function _basic_get_template_scripts($path) {
+  $template_dirs = array_filter(glob($path . '*'), 'is_dir');
+  $include_templates = [];
+
+  foreach($template_dirs as $directory) {
+
+    $files_to_include = array();
+    $files = file_scan_directory($directory, '/.html.twig/');
+
+    foreach($files as $file) {
+      $files_to_include[] = array(
+        'name' => $file->filename,
+        'path' => $directory
+      );
+    }
+
+    $region = explode('/',$directory);
+    $include_templates[end($region)] = $files_to_include;
+  }
+
+  return $include_templates;
+}
+
+/**
+ * Replace all dots in the subject.
+ *
+ * @param $subject
+ * @return mixed
+ */
+function _basic_replace_dots($subject) {
+  return str_replace('.', '_', $subject);
+}
+
+function basic_preprocess_views_view_field(&$vars) {
+  /** @var Drupal\views\ViewExecutable $view */
+  $view = $vars['view'];
+  if (in_array($view->id(), _basic_client_area_views())) {
+    if($vars['field']->field == 'status') {
+      $value = $vars['field']->getValue($vars['row']);
+      $vars['field_class'] = __basic_get_html_class($value);
+    }
+    if($vars['field']->field == 'state') {
+      /** @var \Drupal\store\Entity\StoreOrder $storeOrder */
+      if ($storeOrder = $vars['row']->_entity) {
+        $vars['field_class'] = __basic_get_html_class($storeOrder->getStateName($storeOrder->getState()));
+      }
+    }
+  }
+}
+
+function _basic_client_area_views() {
+  return array(
+    'user_orders',
+    'user_invoices'
+  );
+}
+
+
+/**
+ * gets html class
+ *
+ * @param $value
+ * @return string
+ */
+function __basic_get_html_class($value) {
+  return strtolower(Html::cleanCssIdentifier($value));
+}

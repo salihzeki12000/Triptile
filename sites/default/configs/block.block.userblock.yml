@@ -1,0 +1,24 @@
+uuid: 6eeb0a7e-2539-42ae-9c74-1566379755d7
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+    - rn_user
+  theme:
+    - railninja
+third_party_settings:
+  rn_content:
+    classes: ''
+id: userblock
+theme: railninja
+region: header_third
+weight: -19
+provider: null
+plugin: user_block
+settings:
+  id: user_block
+  label: 'User block'
+  provider: rn_user
+  label_display: '0'
+visibility: {  }

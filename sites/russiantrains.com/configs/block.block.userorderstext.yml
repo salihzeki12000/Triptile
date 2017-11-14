@@ -1,0 +1,38 @@
+uuid: 15c298f7-2801-434b-aede-2b05620b5c95
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+    - rn_user
+    - system
+  theme:
+    - russiantrains
+third_party_settings:
+  rn_content:
+    classes: ''
+_core:
+  default_config_hash: qm9zmQ-O2Az_1deS6cyaON23ip3NboGz0kvr0LiDAFg
+id: userorderstext
+theme: russiantrains
+region: content
+weight: -13
+provider: null
+plugin: userorderstext
+settings:
+  id: userorderstext
+  label: 'User orders text'
+  provider: rn_user
+  label_display: '0'
+  client_area_text:
+    value: 'Welcome to your trips page. Here you can find all of your journeys we have been planning for you.'
+    format: full_html_for_administrator
+  field_orders_text:
+    value: '<p>Welcome to your trips page. Here you can find all of your journeys we have been planning for you.</p>'
+    format: full_html_for_administrator
+visibility:
+  request_path:
+    id: request_path
+    pages: /user/%user/orders
+    negate: false
+    context_mapping: {  }

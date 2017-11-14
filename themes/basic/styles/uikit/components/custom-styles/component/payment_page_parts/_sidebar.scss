@@ -1,0 +1,48 @@
+@import "../parts/price_sidebar";
+
+.sidebar {
+  @media #{$tablet-portrait} {
+    margin-top: $payment-v-padding;
+    border-top: $pas-border;
+  }
+
+  @media #{$mobile} {
+    margin-top: $payment-v-padding;
+  }
+
+  .trip-summary-wrapper {
+    background: $pas-background-color;
+    padding: $pas-sidebar-v-padding $pas-sidebar-h-padding $payment-v-padding;
+  }
+
+  .sidebar-container {
+    border-top: $pas-sidebar-border;
+    border-bottom: $pas-sidebar-border;
+  }
+
+  .optional-services-label, .delivery-services-label {
+    border-top: $pas-sidebar-border;
+  }
+
+  .container {
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    @media #{$tablet-portrait} {
+      &:first-of-type {
+        border-top: none;
+      }
+    }
+
+    @media #{$mobile} {
+      &:first-of-type {
+        border-top: none;
+      }
+    }
+  }
+
+  .tax {
+    border-top: $pas-sidebar-border;
+  }
+}

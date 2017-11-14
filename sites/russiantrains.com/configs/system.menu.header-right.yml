@@ -1,0 +1,10 @@
+uuid: 52150de5-8fc8-4949-962a-8d529a73f91c
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: BNoXMRmDUrlvgs2_iV9sNdK_lc_O_yJxm8Gm_c5gsCY
+id: header-right
+label: 'Header right'
+description: ''
+locked: false

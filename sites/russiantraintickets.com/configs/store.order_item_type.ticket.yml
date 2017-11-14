@@ -1,0 +1,8 @@
+uuid: 0988fbee-293a-4e84-a134-13bd306a148c
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: k7O5tEkTRTQCgw2yQj2MnE9EyBYhUFMg56WB0DIJkY0
+id: ticket
+label: Ticket

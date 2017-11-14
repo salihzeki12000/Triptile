@@ -1,0 +1,119 @@
+#
+# Breakpoints - Simple
+#
+
+basic.simple.mobile:
+  label: Mobile
+  mediaQuery: 'all and (max-width: 767px)'
+  weight: 4
+  multipliers:
+    - 1x
+  group: basic.simple
+basic.simple.tablet-isolate:
+  label: Tablet
+  mediaQuery: 'all and (min-width: 768px)  and (max-width: 1024px)'
+  weight: 1
+  multipliers:
+    - 1x
+  group: basic.simple
+basic.simple.wide:
+  label: Wide
+  mediaQuery: 'all and (min-width: 1025px)'
+  weight: 0
+  multipliers:
+    - 1x
+  group: basic.simple
+
+# Breakpoints Advanced
+# ------------------------------------------------------------------------------
+# Pixel values based on 1em = 16px.
+#
+
+basic.advanced.mobile-isolate:
+  label: Mobile-isolate
+  mediaQuery: 'all and (max-width: 45em)'
+  weight: 4
+  multipliers:
+    - 1x
+  group: basic.advanced
+
+basic.advanced.mobile-portrait:
+  label: Mobile-portrait
+  mediaQuery: 'all and (max-width: 480px)'
+  weight: 4
+  multipliers:
+    - 1x
+  group: basic.advanced
+
+basic.advanced.mobile-landscape:
+  label: Mobile-landscape
+  mediaQuery: 'all and (min-width: 481px) and (max-width: 767px)'
+  weight: 4
+  multipliers:
+    - 1x
+  group: basic.advanced
+
+basic.advanced.tablet-isolate:
+  label: Tablet-isolate
+  mediaQuery: 'all and (min-width: 768px)  and (max-width: 1024px)'
+  weight: 3
+  multipliers:
+    - 1x
+  group: basic.advanced
+
+basic.advanced.tablet-portrait:
+  label: Tablet-portrait
+  mediaQuery: 'all and (min-width: 768px) and (max-width: 960px)'
+  weight: 3
+  multipliers:
+    - 1x
+  group: basic.advanced
+
+basic.advanced.tablet-landscape:
+  label: Tablet-portrait
+  mediaQuery: 'all and (min-width: 961px) and (max-width: 1024px)'
+  weight: 3
+  multipliers:
+    - 1x
+  group: basic.advanced
+
+basic.advanced.wide-isolate:
+  label: Wide-isolate
+  mediaQuery: 'all and (min-width: 1025px) and (max-width: 1920px)'
+  weight: 2
+  multipliers:
+    - 1x
+  group: basic.advanced
+
+basic.advanced.wide:
+  label: Wide
+  mediaQuery: 'all and (min-width: 1025px)'
+  weight: 1
+  multipliers:
+    - 1x
+  group: basic.advanced
+
+basic.advanced.huge:
+  label: Huge
+  mediaQuery: 'all and (min-width: 1920px)'
+  weight: 0
+  multipliers:
+    - 1x
+  group: basic.advanced
+
+# Breakpoints - Responsive Menus
+
+basic.responsive_menus.mobile:
+  label: Mobile
+  mediaQuery: 'all and (max-width: 767px)'
+  weight: 1
+  multipliers:
+    - 1x
+  group: basic.responsive_menus
+basic.responsive_menus.max-width:
+  label: Max-width
+  mediaQuery: 'all and (max-width: 960px)'
+  weight: 0
+  multipliers:
+    - 1x
+  group: basic.responsive_menus

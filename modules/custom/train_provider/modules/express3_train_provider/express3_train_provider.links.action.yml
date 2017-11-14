@@ -1,0 +1,5 @@
+entity.express3_station.add_form:
+  route_name: entity.express3_station.add_form
+  title: 'Add Express3station'
+  appears_on:
+    - entity.express3_station.collection

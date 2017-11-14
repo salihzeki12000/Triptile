@@ -1,0 +1,62 @@
+status: true
+min_days_before_departure: 0
+min_hours_before_departure: !!float 10
+max_days_before_departure: 60
+use_local_file: false
+ignore_cache: false
+long_cache:
+  max_routes: '10'
+  from: 0
+  to: 3600
+  lifetime: 72000
+live: true
+available_routes: null
+available_stations:
+  -
+    departure_station: '3'
+    arrival_station: '2'
+    stations:
+      -
+        id: '656'
+      -
+        id: '659'
+  -
+    departure_station: '2'
+    arrival_station: '3'
+    stations:
+      -
+        id: '667'
+      -
+        id: '666'
+  -
+    departure_station: '3'
+    arrival_station: '122'
+    stations:
+      -
+        id: '659'
+      -
+        id: '663'
+      -
+        id: '658'
+  -
+    departure_station: '3'
+    arrival_station: '460'
+    stations:
+      -
+        id: '659'
+      -
+        id: '658'
+  -
+    departure_station: '3'
+    arrival_station: '422'
+    stations:
+      -
+        id: '656'
+      -
+        id: '659'
+cache:
+  -
+    from: '0'
+    to: '60'
+    lifetime: 1800
+booking_available: false

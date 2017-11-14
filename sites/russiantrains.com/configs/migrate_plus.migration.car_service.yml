@@ -1,0 +1,34 @@
+uuid: 8581a3a3-a2e7-4628-a69d-fce0e749381a
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration
+_core:
+  default_config_hash: xOfujS7dz4pq4xLNA37uXiTFNILSFpadK_mn2tFI44E
+id: car_service
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - russian_trains_light
+migration_group: train_base
+label: CarService
+source:
+  plugin: car_service
+  key: travelallrussia
+process:
+  langcode: lang
+  code: code
+  name: name
+  supplier_mapping/target_id:
+    plugin: migration_lookup
+    migration: supplier
+    source: supplier_id
+  supplier_mapping/code: code
+  description: int_descr
+  status: enabled
+destination:
+  plugin: 'entity:car_service'
+migration_dependencies: {  }

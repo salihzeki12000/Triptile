@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.supplier.supplier.passenger_form_type
+    - image.style.thumbnail
+  module:
+    - image
+    - plugin
+    - train_base
+id: supplier.supplier.default
+targetEntityType: supplier
+bundle: supplier
+mode: default
+content:
+  passenger_form_type:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: 'plugin_selector:plugin_select_list'

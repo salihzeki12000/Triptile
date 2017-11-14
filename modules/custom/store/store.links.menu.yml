@@ -1,0 +1,106 @@
+store.config:
+  title: 'Store config'
+  description: 'Store config'
+  route_name: store.config_form
+  parent: rail_ninja.config_list
+  weight: -15
+
+# Train page menu items definition
+store.store_lists:
+  route_name: store.store_lists
+  parent: system.admin
+  description: 'Provide menu for custom entities.'
+  title: Store
+  weight: -8
+
+# Train configs page menu items definition
+store.store_types:
+  route_name: store.store_types
+  parent: system.admin
+  description: 'Provide menu for custom entities configs.'
+  title: Store types
+  weight: -8
+
+# Base product menu items definition
+entity.base_product.collection:
+  title: 'Products'
+  route_name: entity.base_product.collection
+  description: 'List Base product entities'
+  parent: store.store_lists
+  weight: 100
+
+# Base product type menu items definition
+entity.base_product_type.collection:
+  title: 'Product type'
+  route_name: entity.base_product_type.collection
+  description: 'List Base product type (bundles)'
+  parent: store.store_types
+  weight: 99
+
+# Store order menu items definition
+entity.store_order.collection:
+  title: 'Orders'
+  route_name: entity.store_order.collection
+  description: 'List Store order entities'
+  parent: store.store_lists
+  weight: 100
+
+# Store order type menu items definition
+entity.store_order_type.collection:
+  title: 'Order type'
+  route_name: entity.store_order_type.collection
+  description: 'List Store order type (bundles)'
+  parent: store.store_types
+  weight: 99
+
+# Invoice menu items definition
+entity.invoice.collection:
+  title: 'Invoices'
+  route_name: entity.invoice.collection
+  description: 'List Invoice entities'
+  parent: store.store_lists
+  weight: 100
+
+invoice.admin.structure.settings:
+  title: Invoice settings
+  description: 'Configure Invoice entities'
+  route_name: entity.invoice.settings
+  parent: master.entity_configs
+  
+# Order item menu items definition
+entity.order_item.collection:
+  title: 'Order items'
+  route_name: entity.order_item.collection
+  description: 'List Order item entities'
+  parent: store.store_lists
+  weight: 100
+
+# Order item type menu items definition
+entity.order_item_type.collection:
+  title: 'Order item type'
+  route_name: entity.order_item_type.collection
+  description: 'List Order item type (bundles)'
+  parent: store.store_types
+  weight: 99
+
+# Customer profile menu items definition
+entity.customer_profile.collection:
+  title: 'Customer profiles'
+  route_name: entity.customer_profile.collection
+  description: 'List Customer profile entities'
+  parent: store.store_lists
+  weight: 100
+
+customer_profile.admin.structure.settings:
+  title: Customer profile settings
+  description: 'Configure Customer profile entities'
+  route_name: entity.customer_profile.settings
+  parent: master.entity_configs
+
+# price rule menu items definition
+entity.price_rule.collection:
+  title: 'Price rules'
+  route_name: entity.price_rule.collection
+  description: 'List price rule (bundles)'
+  parent: store.store_lists
+  weight: 99

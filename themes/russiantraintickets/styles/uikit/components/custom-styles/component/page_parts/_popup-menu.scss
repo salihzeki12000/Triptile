@@ -1,0 +1,198 @@
+$open-icon-size: 25px;
+
+.popup-menu {
+  .block, .rm-block {
+    position: initial;
+    display: block;
+    width:   100%;
+  }
+
+  .rm-block__content {
+    position: relative;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .user-block {
+    @media #{$tablet-portrait} {
+      display: none;
+    }
+  }
+
+  .mobile-menu {
+    @include v-padding($mobile-menu-v-padding);
+
+    & > .block__content {
+      @include v-padding(0);
+    }
+  }
+
+  .menu {
+    transition: margin 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+    @include side-padding($mobile-menu-h-padding);
+
+    li {
+      margin: 0;
+      width: 100%;
+
+      &:not(:last-of-type) {
+        padding-bottom: $mobile-menu-v-padding/2;
+      }
+
+      a {
+        padding: 0;
+        margin: 0;
+      }
+
+      &:not(.menu__item--expanded) {
+        .open-arrow {
+          display: none;
+        }
+      }
+
+      .open-arrow {
+        width: $open-icon-size;
+        height: $open-icon-size;
+        @include transition(all 1s ease);
+        display: none;
+      }
+
+      &.sub-level-opened {
+        padding-bottom: 0;
+
+        & > .li-inside-wrapper {
+          & > .open-arrow {
+            @include transform(rotate(-90deg));
+          }
+        }
+      }
+    }
+
+    .li-inside-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &.menu-level-1 {
+      @include side-padding($mobile-menu-h-padding);
+
+      @media #{$tablet-portrait} {
+        @include side-padding(0);
+      }
+
+      li {
+        float: none;
+        width: 100%;
+        text-align: left;
+
+        a {
+          font-size: 1.6rem;
+          padding-bottom: $mobile-menu-h-padding/6;
+          border-bottom: $menu-hover-border-width solid transparent;
+        }
+
+        .open-arrow {
+          background: url("#{$path-to-images}/next-1.svg") no-repeat 0 0;
+          background-size: $open-icon-size;
+        }
+      }
+
+      & > .sub-level-opened {
+        & > .li-inside-wrapper {
+          a {
+            border-bottom: $menu-hover-border-width solid $menu-hover-border-color;
+          }
+        }
+      }
+    }
+
+    &.menu-level-2 {
+      @include side-padding(0);
+      @include v-padding($mobile-menu-v-padding);
+
+      li {
+
+        &.sub-level-opened {
+          padding-bottom: $mobile-menu-v-padding/2;
+        }
+
+        a {
+          font-size: 1.25rem;
+        }
+
+        .open-arrow {
+          background: url("#{$path-to-images}/next.svg") no-repeat center;
+          background-size: 25px;
+        }
+      }
+    }
+
+    &.menu-level-3 {
+      padding-bottom: 0;
+      @include side-padding($mobile-menu-h-padding/2);
+      @include v-padding($mobile-menu-v-padding/2);
+      margin-top: $mobile-menu-v-padding;
+      margin-bottom: $mobile-menu-v-padding/2;
+      border-top: 1px solid $mobile-menu-border-color;
+      border-bottom: 1px solid $mobile-menu-border-color;
+
+      li {
+        a {
+          font-size: 1.25rem;
+          color: $mobile-menu-3rd-level-color;
+        }
+      }
+    }
+
+    .is-child {
+      display: none;
+      @include transition;
+      width: 100%;
+      position: initial;
+      visibility: visible;
+      opacity: 1;
+      display: none;
+
+      &.opened {
+        display: flex;
+        flex-flow: row wrap;
+      }
+
+      li {
+        &:last-of-type {
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .ca-btn {
+    @include v-padding($mobile-menu-v-padding/2, $mobile-menu-v-padding/2);
+    max-width: 200px;
+    text-align: center;
+    font-size: 1.25rem;
+
+    @media #{$mobile} {
+      max-width: 100%;
+    }
+  }
+
+  .sign-in-btn {
+    background: $mobile-menu-3rd-level-color;
+    color: $mobile-menu-btn-color;
+    font-size: 1.25rem;
+    padding: $mobile-menu-v-padding/2 $mobile-menu-h-padding*2;
+    text-align: center;
+  }
+
+  .block-plugin-id--login-register-block {
+    @media #{$tablet-portrait} {
+      display: none;
+    }
+
+    @media #{$mobile} {
+      padding-bottom: $v-padding;
+    }
+  }
+}

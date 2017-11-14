@@ -1,0 +1,15 @@
+uuid: 36a021f2-c2cd-4ff4-ae6b-613c1c5c06af
+langcode: ru
+status: false
+dependencies:
+  enforced:
+    module:
+      - simplenews
+  module:
+    - node
+_core:
+  default_config_hash: rCDGCl6pMFu6zZuErLQggKvmawfFDysFcZNCDL72U4M
+id: node.email_plain
+label: 'E-mail: Текст'
+targetEntityType: node
+cache: true

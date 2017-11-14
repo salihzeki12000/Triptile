@@ -1,0 +1,91 @@
+uuid: a8616339-da73-4601-aea8-83717bf8b6f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.order_item.ticket.leg_number
+    - store.order_item_type.ticket
+  module:
+    - store
+    - user
+id: order_item.ticket.default
+targetEntityType: order_item
+bundle: ticket
+mode: default
+content:
+  booking_details:
+    label: above
+    type: string
+    weight: -4
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  leg_number:
+    weight: 1
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  name:
+    label: hidden
+    type: string
+    weight: -4
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  order_reference:
+    label: hidden
+    type: author
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  original_price:
+    label: above
+    type: price_default
+    weight: -4
+    region: content
+    settings:
+      strip_trailing_zeroes: false
+      display_currency_code: false
+    third_party_settings: {  }
+  price:
+    label: above
+    type: price_default
+    weight: -4
+    settings:
+      strip_trailing_zeroes: false
+      display_currency_code: false
+    third_party_settings: {  }
+    region: content
+  price_components:
+    label: above
+    type: string
+    weight: -4
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  product:
+    label: hidden
+    type: author
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  quantity:
+    label: above
+    type: number_integer
+    weight: -5
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

@@ -1,0 +1,14 @@
+uuid: 989fd2e3-0cb8-4e15-922a-7434713960f4
+langcode: en
+status: true
+dependencies: {  }
+name: blog_post_image
+label: 'Blog post image (1024x390)'
+effects:
+  38dfd291-a9cb-4772-a2c8-adcd7ea63246:
+    uuid: 38dfd291-a9cb-4772-a2c8-adcd7ea63246
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1024
+      height: 390

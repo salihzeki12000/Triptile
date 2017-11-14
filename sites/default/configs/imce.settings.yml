@@ -1,0 +1,10 @@
+abs_urls: false
+roles_profiles:
+  content_manager:
+    public: admin
+  agent:
+    public: admin
+  administrator:
+    public: admin
+_core:
+  default_config_hash: 6Wk4BLqlH9PdR3lPJohO4Ek3-uRJAgdfrVT4qWYXVMY

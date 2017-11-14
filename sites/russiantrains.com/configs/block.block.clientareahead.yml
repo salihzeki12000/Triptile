@@ -1,0 +1,32 @@
+uuid: 08f5631c-a5ca-4e48-9d03-f836c3368157
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+    - rn_user
+    - system
+  theme:
+    - russiantrains
+third_party_settings:
+  rn_content:
+    classes: ''
+_core:
+  default_config_hash: RANxFhlF-RfO9nZkjVGSNMk3TTbY_z29wgxrXmR-WZc
+id: clientareahead
+theme: russiantrains
+region: content
+weight: -17
+provider: null
+plugin: clientareahead
+settings:
+  id: clientareahead
+  label: 'Client area head'
+  provider: rn_user
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '/user/*'
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,21 @@
+uuid: a8ae2d56-af8b-48d0-9b0c-3d9d65b3beda
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_text_on_image
+    - node.type.train_page
+  module:
+    - text
+id: node.train_page.field_text_on_image
+field_name: field_text_on_image
+entity_type: node
+bundle: train_page
+label: 'Text on image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,90 @@
+plugin.plugin_configuration.train_provider.it_train_provider:
+  type: plugin.plugin_configuration.train_provider.train_provider_base
+  mapping:
+    live:
+      label: Live
+      type: boolean
+    username:
+      label: username
+      type: text
+    password:
+      label: Password
+      type: text
+    domain:
+      label: Domain
+      type: text
+    sourse_system:
+      label: SourceSystem
+      type: text
+    id_partner:
+      label: IdPartner
+      type: text
+    log:
+      label: Log
+      type: boolean
+    log_on_exception:
+      label: Log on exception
+      type: boolean
+    available_routes:
+      type: sequence
+      label: 'Available routes'
+      sequence:
+        type: mapping
+        mapping:
+          departure_station:
+            type: integer
+            label: 'Departure station'
+          arrival_station:
+            type: integer
+            label: 'Arrival station'
+    email:
+      label: Email
+      type: text
+    payment_methods:
+      type: mapping
+      mapping:
+        enabled:
+          type: text
+          label: 'Enabled payment method'
+        agency:
+          type: mapping
+          mapping:
+            payment_method_type:
+              type: text
+              label: 'Payment method type'
+            payment_method_code:
+              type: text
+              label: 'Payment method code'
+            quoted_currency_code:
+              type: text
+              label: 'Quoted Currency Code'
+            account_number:
+              type: text
+              label: 'Account Number'
+        external:
+          type: mapping
+          mapping:
+            payment_method_type:
+              type: text
+              label: 'Payment method type'
+            payment_method_code:
+              type: text
+              label: 'Payment method code'
+            quoted_currency_code:
+              type: text
+              label: 'Quoted Currency Code'
+            account_number:
+              type: text
+              label: 'Account Number'
+            expiration:
+              type: date
+              label: 'Expiration'
+            verification_code:
+              type: number
+              label: 'Verification Code'
+            account_holder_name:
+              type: text
+              label: 'Account Holder Name'
+
+
+

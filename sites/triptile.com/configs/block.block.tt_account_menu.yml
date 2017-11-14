@@ -1,0 +1,26 @@
+uuid: 9c0e5732-428c-4182-87f4-5b234b0cca04
+langcode: ru
+status: false
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - tt
+_core:
+  default_config_hash: DweBpscQZdG0-fHkSpUzdYucrNH45G_KF7Z82V-oyQM
+id: tt_account_menu
+theme: tt
+region: header
+weight: -10
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'Меню учётной записи пользователя'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+visibility: {  }

@@ -1,0 +1,27 @@
+uuid: c53ed8e5-1c88-4234-8ed3-86867cf252e1
+langcode: ru
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - tt
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: tt_page_title
+theme: tt
+region: content
+weight: -10
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Заголовок страницы'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "<front>\r\n/constructor\r\n/itinerary/*"
+    negate: true
+    context_mapping: {  }

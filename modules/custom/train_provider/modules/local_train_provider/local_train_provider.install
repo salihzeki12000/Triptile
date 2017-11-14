@@ -1,0 +1,125 @@
+<?php
+
+use Drupal\Core\Database\Database;
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Field\Plugin\Field\FieldType\EntityReferenceItem;
+
+/**
+ * Add change_station to timetable entry entity.
+ */
+function local_train_provider_update_8101(&$sandbox) {
+  drupal_flush_all_caches();
+  $entity_field_manager = \Drupal::service('entity_field.manager');
+  $field_storage_definitions = $entity_field_manager->getFieldStorageDefinitions('timetable_entry');
+  if (isset($field_storage_definitions['change_station'])) {
+    $spec = EntityReferenceItem::schema($field_storage_definitions['change_station']);
+    $schema = Database::getConnection()->schema();
+    $schema->addField('timetable_entry', 'change_station', $spec['columns']['target_id']);
+  }
+}
+
+/**
+ * Add price_update to timetable entry entity.
+ */
+function local_train_provider_update_8102(&$sandbox) {
+  drupal_flush_all_caches();
+  $allowedValues['disabled'] = t('Do not update');
+  $trainProviderManager = \Drupal::service('plugin.manager.train_provider');
+  foreach ($trainProviderManager->getDefinitions() as $pluginId => $definition) {
+    if ($definition['price_updater']) {
+      $allowedValues[$definition['id']] = $definition['label'];
+    }
+  }
+  $priceUpdate = BaseFieldDefinition::create('list_string')
+    ->setLabel(t('Price updater'))
+    ->setDefaultValue('disabled')
+    ->setSettings(array(
+      'allowed_values' => $allowedValues,
+    ))
+    ->setDisplayOptions('view', array(
+      'label' => 'above',
+      'type' => 'list_default',
+      'weight' => 4,
+    ))
+    ->setDisplayOptions('form', array(
+      'type' => 'options_select',
+      'weight' => 4,
+    ))
+    ->setDisplayConfigurable('form', TRUE)
+    ->setDisplayConfigurable('view', TRUE);
+
+  \Drupal::entityDefinitionUpdateManager()->installFieldStorageDefinition('price_updater', 'timetable_entry', 'local_train_provider', $priceUpdate);
+
+  // Update timetables with default value.
+  $query = \Drupal::database()->update('timetable_entry');
+  $query->fields([
+    'price_updater' => 'disabled',
+  ]);
+  $query->execute();
+}
+
+/**
+ * Add depth_price_update to timetable entry entity.
+ */
+function local_train_provider_update_8103(&$sandbox) {
+  drupal_flush_all_caches();
+  $depthPriceUpdate = BaseFieldDefinition::create('integer')
+    ->setLabel(t('Depth for price update request'))
+    ->setDefaultValue(30)
+    ->setDisplayOptions('view', array(
+      'label' => 'above',
+      'type' => 'number_integer',
+      'weight' => 4,
+    ))
+    ->setDisplayOptions('form', array(
+      'type' => 'number',
+      'weight' => 4,
+    ))
+    ->setDisplayConfigurable('form', TRUE)
+    ->setDisplayConfigurable('view', TRUE);
+
+  \Drupal::entityDefinitionUpdateManager()->installFieldStorageDefinition('depth_price_update', 'timetable_entry', 'local_train_provider', $depthPriceUpdate);
+
+  // Update timetables with default value.
+  $query = \Drupal::database()->update('timetable_entry');
+  $query->fields([
+    'depth_price_update' => 30,
+  ]);
+  $query->execute();
+}
+
+/**
+ * Add price_update_timestamp to timetable entry entity.
+ */
+function local_train_provider_update_8104(&$sandbox) {
+  drupal_flush_all_caches();
+  $priceUpdateTimestamp = BaseFieldDefinition::create('integer')
+    ->setLabel(t('Price update was'));
+
+  \Drupal::entityDefinitionUpdateManager()->installFieldStorageDefinition('price_update_timestamp', 'timetable_entry', 'local_train_provider', $priceUpdateTimestamp);
+}
+
+/**
+ * Install maximal order depth to TimetableEntry entity.
+ */
+function local_train_provider_update_8301(&$sandbox) {
+  drupal_flush_all_caches();
+  $updateManager = Drupal::entityDefinitionUpdateManager();
+
+  $maxOrderDepth = BaseFieldDefinition::create('integer')
+    ->setLabel(t('Maximal order depth'))
+    ->setSettings(['min' => 0])
+    ->setDisplayOptions('view', [
+      'label' => 'above',
+      'type' => 'number_integer',
+      'weight' => -4,
+    ])
+    ->setDisplayOptions('form', [
+      'type' => 'number',
+      'weight' => -4,
+    ])
+    ->setDisplayConfigurable('form', true)
+    ->setDisplayConfigurable('view', true);
+
+  $updateManager->installFieldStorageDefinition('max_order_depth', 'timetable_entry', 'local_train_provider', $maxOrderDepth);
+}

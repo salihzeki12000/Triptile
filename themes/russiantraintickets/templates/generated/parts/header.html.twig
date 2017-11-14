@@ -1,0 +1,31 @@
+{% if leaderboard.has_regions == true %}
+    <div{{ leaderboard.wrapper_attributes }}>
+        <div{{ leaderboard.container_attributes }}>
+            {{ page.leaderboard }}
+        </div>
+    </div>
+{% endif %}
+{% if header.has_regions == true %}
+    <header{{ header.wrapper_attributes }}>
+        <div{{ header.container_attributes }}>
+            {{ page.header_first }}
+            {{ page.header_second }}
+            {{ page.header_third }}
+        </div>
+    </header>
+{% endif %}
+{% if navbar.has_regions == true %}
+  <div{{ navbar.wrapper_attributes }}>
+      <div{{ navbar.container_attributes }}>
+          {{ page.navbar }}
+      </div>
+  </div>
+{% endif %}
+{% if highlighted.has_regions == true %}
+    <div{{ highlighted.wrapper_attributes }}>
+        <div{{ highlighted.container_attributes }}>
+            {{ page.highlighted }}
+        </div>
+    </div>
+{% endif %}
+{{ page.search }}

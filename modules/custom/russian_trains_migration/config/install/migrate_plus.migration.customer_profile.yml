@@ -1,0 +1,33 @@
+id: customer_profile
+migration_group: store
+label: Customer Profile
+source:
+  plugin: customer_profile
+  key: travelallrussia
+process:
+  'address/country_code': country
+  'address/administrative_area': state
+  'address/locality': city
+  'address/postal_code': postal_code
+  'address/address_line1': street1
+  'address/address_line1': street2
+  'address/given_name': first_name
+  'address/additional_name': middle_name
+  'address/family_name': last_name
+  email: email
+  phone_number: phone
+  invoice:
+    plugin: migration_lookup
+    migration: invoice
+    source: invoice_id
+  uid: destination_user_id
+destination:
+  plugin: entity:customer_profile
+migration_dependencies:
+  optional:
+    - invoice
+    - user
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

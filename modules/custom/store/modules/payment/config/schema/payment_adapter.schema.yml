@@ -1,0 +1,69 @@
+plugin.plugin_configuration.payment_adapter.payment_adapter_base:
+  type: config_object
+  mapping:
+    sandbox_mode:
+      type: boolean
+      label: Sandbox mode
+    default_currency:
+      type: string
+      label: Default currency
+    supported_currencies:
+      type: sequence
+      label: Supported currencies
+      sequence:
+        - type: string
+
+plugin.plugin_configuration.payment_adapter.paypal_base:
+  type: plugin.plugin_configuration.payment_adapter.payment_adapter_base
+  mapping:
+    username:
+      type: string
+      label: API username
+    password:
+      type: string
+      label: API password
+    signature:
+      type: string
+      label: Signature
+
+plugin.plugin_configuration.payment_adapter.paypal_wpp:
+  type: plugin.plugin_configuration.payment_adapter.paypal_base
+  mapping:
+    soft_descriptor:
+      type: string
+      label: Soft descriptor
+    fake_billing_address:
+      type: boolean
+      label: Fake billing address
+
+plugin.plugin_configuration.payment_adapter.paypal_ec:
+  type: plugin.plugin_configuration.payment_adapter.paypal_base
+
+plugin.plugin_configuration.payment_adapter.ecommpay_base:
+  type: plugin.plugin_configuration.payment_adapter.payment_adapter_base
+  mapping:
+    site_id:
+      type: string
+      label: Site ID
+    salt:
+      type: string
+      label: Salt
+    proxy:
+      type: string
+      label: Proxy
+
+plugin.plugin_configuration.payment_adapter.ecommpay_3ds_card:
+  type: plugin.plugin_configuration.payment_adapter.ecommpay_base
+
+plugin.plugin_configuration.payment_adapter.ecommpay_non3ds_card:
+  type: plugin.plugin_configuration.payment_adapter.ecommpay_base
+
+plugin.plugin_configuration.payment_adapter.paysera:
+  type: plugin.plugin_configuration.payment_adapter.payment_adapter_base
+  mapping:
+    projectid:
+      type: string
+      label: Project id
+    sign_password:
+      type: string
+      label: Sign password

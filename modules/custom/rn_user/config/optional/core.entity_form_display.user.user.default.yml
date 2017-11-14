@@ -1,0 +1,72 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.address
+    - field.field.user.user.first_name
+    - field.field.user.user.last_name
+    - field.field.user.user.phone_number
+    - field.field.user.user.user_picture
+    - image.style.thumbnail
+  module:
+    - address
+    - image
+    - telephone
+    - user
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  account:
+    weight: -10
+    region: content
+  contact:
+    weight: 5
+    region: content
+  address:
+    weight: 9
+    settings:
+      default_country: null
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  first_name:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  last_name:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  phone_number:
+    weight: 10
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  language:
+    weight: 0
+    region: content
+  timezone:
+    weight: 6
+    region: content
+  user_picture:
+    type: image_image
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    weight: -1
+    region: content
+hidden:
+  langcode: true

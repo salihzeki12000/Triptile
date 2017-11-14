@@ -1,0 +1,25 @@
+uuid: 80386891-7d4c-40a4-aa3f-26d8e1728b5e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.reviews_count
+    - node.type.route_page
+id: node.route_page.reviews_count
+field_name: reviews_count
+entity_type: node
+bundle: route_page
+label: 'Reviews count'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

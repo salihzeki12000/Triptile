@@ -1,0 +1,21 @@
+uuid: 4180dadb-d60b-4966-b504-57a76be6f138
+langcode: en
+status: true
+dependencies:
+  module:
+    - telephone
+    - user
+_core:
+  default_config_hash: VKS4pW2Z3T8_OFkcpYycQXlYZt0Q2vkSDizcdsYnCzA
+id: user.phone_number
+field_name: phone_number
+entity_type: user
+type: telephone
+settings: {  }
+module: telephone
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

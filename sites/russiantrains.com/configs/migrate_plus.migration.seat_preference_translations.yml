@@ -1,0 +1,33 @@
+uuid: 3ccd4788-3d94-4713-ba76-aa612aaff717
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration
+_core:
+  default_config_hash: c3mEYWd5zNPjkERgRjWsjstKyMV__KSp51L-mkQtyt8
+id: seat_preference_translations
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - translations
+migration_group: train_base
+label: 'SeatPreference translations'
+source:
+  plugin: seat_preference_translations
+  key: travelallrussia
+process:
+  id:
+    plugin: migration_lookup
+    source: id
+    migration: seat_preference
+  langcode: lang
+  name: name
+destination:
+  plugin: 'entity:seat_preference'
+  translations: true
+migration_dependencies:
+  required:
+    - seat_preference

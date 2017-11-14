@@ -1,0 +1,12 @@
+uuid: 7e2056aa-a317-4599-ae89-74f8fecb4502
+langcode: en
+status: true
+dependencies: {  }
+id: node__train_page
+label: 'Content: Train page'
+tags:
+  title: '[node:title] | Russiantrains.com'
+  description: '[node:field_brand:target_id] timetables, tickets & facts. [node:summary]'
+  og_title: '[current-page:title]'
+  og_description: '[node:summary]['
+  og_url: '[current-page:url]'

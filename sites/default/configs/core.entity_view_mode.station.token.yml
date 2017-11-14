@@ -1,0 +1,10 @@
+uuid: 5d8657d6-805c-48d8-aac8-19b8887cb4ec
+langcode: en
+status: true
+dependencies:
+  module:
+    - train_base
+id: station.token
+label: Token
+targetEntityType: station
+cache: true

@@ -1,0 +1,113 @@
+.views-table {
+  width: 100%;
+  border: $up-table-border;
+  margin-bottom: $v-padding;
+
+  tbody, thead {
+    border: none;
+  }
+
+  thead {
+    tr {
+      border: none;
+      background: $up-table-head-bg;
+    }
+
+    .table__cell {
+      @include v-padding($up-table-v-padding/2);
+      font-weight: normal;
+      font-size: $small-font-size;
+
+      a {
+        color: $up-table-head-color;
+      }
+
+      &.is-active {
+        a {
+          color: $up-table-head-active-color;
+        }
+      }
+    }
+  }
+
+  tbody {
+    .table__row {
+      @include transition;
+
+      &:last-of-type {
+        border-bottom: none;
+      }
+
+      &:hover {
+        background: $up-table-head-bg;
+
+        .table__cell {
+          &:first-of-type {
+            color: $up-table-row-active-color;
+          }
+        }
+      }
+    }
+
+    .user-table-row {
+      cursor: pointer;
+    }
+
+    .table__cell {
+      @include v-padding($up-table-v-padding);
+      color: $up-table-note-color;
+
+      &:first-of-type {
+        font-size: 1.125rem;
+        color: $up-table-head-color;
+      }
+    }
+  }
+
+  .table__row {
+    border: $up-table-border;
+    border-width: 0 0 1px 0;
+  }
+
+  .table__cell {
+    border: none;
+    background: transparent;
+    @include side-padding($up-table-h-padding);
+
+    @media #{$tablet} {
+      @include side-padding($tablet-h-padding);
+    }
+
+    @media #{$mobile} {
+      @include side-padding($tablet-h-padding);
+    }
+
+    &:last-of-type {
+      display: none;
+    }
+
+    &.views-field-arrival-datetime, &.views-field-expiration-date,
+    &.views-field-amount__number, &.views-field-departure-datetime,
+    &.views-field-order-total__number {
+      @media #{$mobile} {
+        display: none;
+      }
+    }
+  }
+}
+
+.status-field, .state-field {
+  color: $status-neutral-color;
+
+  &.booked, &.modified, &.paid, &.refund-requested, &.modification-requested {
+    color: $status-paid-color;
+  }
+
+  &.canceled, &.cancellation-requested, &.failed, &.sold-out {
+    color: $status-canceled-color;
+  }
+
+  &.new {
+    color: $up-table-note-color;
+  }
+}

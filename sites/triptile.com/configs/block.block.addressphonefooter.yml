@@ -1,0 +1,25 @@
+uuid: f44cfb63-872d-44e7-8132-7ccc844cb491
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:74c75ad2-880f-4313-a561-1ca9c1cceb65'
+  module:
+    - block_content
+  theme:
+    - tt
+id: addressphonefooter
+theme: tt
+region: footer_second
+weight: 0
+provider: null
+plugin: 'block_content:74c75ad2-880f-4313-a561-1ca9c1cceb65'
+settings:
+  id: 'block_content:74c75ad2-880f-4313-a561-1ca9c1cceb65'
+  label: 'Address, phone footer'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

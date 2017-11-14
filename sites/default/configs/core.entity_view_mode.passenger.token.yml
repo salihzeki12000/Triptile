@@ -1,0 +1,10 @@
+uuid: 6efba8fc-cd8e-424e-a68d-9f045b94f492
+langcode: en
+status: true
+dependencies:
+  module:
+    - train_base
+id: passenger.token
+label: Token
+targetEntityType: passenger
+cache: true

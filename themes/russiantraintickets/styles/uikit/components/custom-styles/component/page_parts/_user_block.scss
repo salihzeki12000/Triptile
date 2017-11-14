@@ -1,0 +1,125 @@
+.user-block {
+  position: absolute;
+  bottom: $header-v-padding;
+  left: 100%;
+
+  @media #{$narrow} {
+    position: initial;
+  }
+
+  @media #{$tablet-portrait} {
+    order: 1;
+  }
+
+  .user-settings {
+    @media #{$narrow} {
+      position: initial;
+    }
+
+    .icon {
+      display: none;
+    }
+
+    .current-lang-currency {
+      position: relative;
+      left: auto;
+      color: $user-block-color;
+      font-family: $user-block-font-family;
+      font-size: 0.8125rem;
+      margin-left: $header-h-padding;
+      line-height: 100%;
+
+      @media #{$medium-wide} {
+        margin-left: $header-huge-h-padding;
+      }
+
+      @media #{$narrow} {
+        position: initial;
+        display: flex;
+        margin-left: $header-narrow-h-padding;
+      }
+    }
+
+    .current-language {
+      //background-size: $user-block-flag-width;
+      background: url("#{$path-to-images}/flags-foot.png") no-repeat 0 0;
+      padding-left: $user-block-flag-width + $user-block-h-padding;
+
+      &.en {
+        background-position: 0 0;
+      }
+
+      &.ru {
+        background-position: 0 -13px;
+      }
+
+      &.es {
+        background-position: 0 -27px;
+      }
+
+      &.pt-br, &.pt-pt, &.pt {
+        background-position: 0 -41px;
+      }
+
+      &.it {
+        background-position: 0 -55px;
+      }
+
+      &.fr {
+        background-position: 0 -69px;
+      }
+
+      &.de {
+        background-position: 0 -83px;
+      }
+
+      &.zh-hans {
+        background-position: 0 -124px;
+      }
+
+      &.ja {
+        background-position: 0 -111px;
+      }
+
+      &.tr {
+        background-position: 0 -138px;
+      }
+
+      &.pl {
+        background-position: 0 -97px;
+      }
+
+      &.gb {
+        background-position: 0 -152px;
+      }
+    }
+
+    .current-currency {
+      margin-left: $user-block-h-padding;
+      border-left: 1px solid $user-block-color;
+      padding-left: $user-block-h-padding;
+    }
+  }
+
+  .user-triangle {
+    display: none !important;
+  }
+
+  .user-blocks {
+    margin-top: 20px;
+    border-top: 1px solid lighten($user-block-color,20%);
+
+    @media #{$tablet} {
+      margin-top: 11px;
+      right: 0;
+    }
+
+    .currency-list {
+      .currency-item {
+        .label {
+          text-align: left;
+        }
+      }
+    }
+  }
+}

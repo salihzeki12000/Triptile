@@ -1,0 +1,20 @@
+uuid: 977b7b4b-1b8e-46a9-b976-4dbe3734a1b4
+langcode: en
+status: true
+dependencies:
+  module:
+    - store
+id: base_product.min_departure_window
+field_name: min_departure_window
+entity_type: base_product
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

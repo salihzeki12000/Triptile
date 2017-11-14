@@ -1,0 +1,20 @@
+uuid: 0b2cbb7a-c15b-4174-bfea-757dc51c78e1
+langcode: en
+status: true
+dependencies:
+  theme:
+    - russiantrains
+_core:
+  default_config_hash: OHZba8mlmI5tmJh6ZqabOJKpisSvQGfv1KVzq1RLZ4g
+id: russiantrains_local_actions
+theme: russiantrains
+region: content
+weight: -12
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

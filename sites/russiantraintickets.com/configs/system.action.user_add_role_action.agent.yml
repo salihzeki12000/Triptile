@@ -1,0 +1,16 @@
+uuid: 7d5048a4-86c4-4f3a-8ec9-f034a289c104
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.agent
+  module:
+    - user
+_core:
+  default_config_hash: 98O5u-agZmASb4_ENFLWSoYNbCQmLw800FeicWodaC8
+id: user_add_role_action.agent
+label: 'Add the Agent role to the selected users'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: agent

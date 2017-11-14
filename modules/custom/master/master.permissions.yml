@@ -1,0 +1,11 @@
+access rail ninja config:
+  title: 'Access to list of all configs'
+  description: 'Allow to view the list of all configs.'
+
+access master config:
+  title: 'Access to master config'
+  description: 'Allow to change width on mobile devices.'
+
+allow recording translation files:
+  title: 'Allow recording translation files'
+  description: 'Specific user whose walking will be cosider.'

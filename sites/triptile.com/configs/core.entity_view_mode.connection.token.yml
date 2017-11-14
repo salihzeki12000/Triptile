@@ -1,0 +1,10 @@
+uuid: 35269ef9-6e29-4211-bf4f-9784f01790c5
+langcode: en
+status: true
+dependencies:
+  module:
+    - trip_base
+id: connection.token
+label: Token
+targetEntityType: connection
+cache: true

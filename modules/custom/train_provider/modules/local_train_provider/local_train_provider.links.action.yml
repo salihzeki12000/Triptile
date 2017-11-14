@@ -1,0 +1,5 @@
+entity.timetable_entry.add_form:
+  route_name: entity.timetable_entry.add_form
+  title: 'Add Timetable entry'
+  appears_on:
+    - entity.timetable_entry.collection

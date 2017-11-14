@@ -1,0 +1,14 @@
+{
+  "name": "drupal/train_provider",
+  "type": "drupal-module",
+  "description": "Train providers",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/train_provider",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/train_provider",
+    "source": "http://cgit.drupalcode.org/train_provider"
+  },
+  "require": { }
+}

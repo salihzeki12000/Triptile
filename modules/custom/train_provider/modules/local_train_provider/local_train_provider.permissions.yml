@@ -1,0 +1,22 @@
+add timetable entry entities:
+  title: 'Create new Timetable entry entities'
+
+administer timetable entry entities:
+  title: 'Administer Timetable entry entities'
+  description: 'Allow to access the administration form to configure Timetable entry entities.'
+  restrict access: true
+
+delete timetable entry entities:
+  title: 'Delete Timetable entry entities'
+
+edit timetable entry entities:
+  title: 'Edit Timetable entry entities'
+
+access timetable entry overview:
+  title: 'Access the Timetable entry overview page'
+
+view published timetable entry entities:
+  title: 'View published Timetable entry entities'
+
+view unpublished timetable entry entities:
+  title: 'View unpublished Timetable entry entities'

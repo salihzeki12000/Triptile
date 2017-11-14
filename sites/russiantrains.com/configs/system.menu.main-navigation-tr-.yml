@@ -1,0 +1,8 @@
+uuid: 924f5db6-f4f8-4ea4-8fc6-2da1df2b4168
+langcode: tr
+status: true
+dependencies: {  }
+id: main-navigation-tr-
+label: 'Main navigation (TR)'
+description: 'Site section links'
+locked: false

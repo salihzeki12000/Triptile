@@ -1,0 +1,22 @@
+add express3station entities:
+  title: 'Create new Express3station entities'
+
+administer express3station entities:
+  title: 'Administer Express3station entities'
+  description: 'Allow to access the administration form to configure Express3station entities.'
+  restrict access: true
+
+delete express3station entities:
+  title: 'Delete Express3station entities'
+
+edit express3station entities:
+  title: 'Edit Express3station entities'
+
+access express3station overview:
+  title: 'Access the Express3station overview page'
+
+view published express3station entities:
+  title: 'View published Express3station entities'
+
+view unpublished express3station entities:
+  title: 'View unpublished Express3station entities'

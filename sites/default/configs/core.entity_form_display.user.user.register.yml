@@ -1,0 +1,51 @@
+uuid: 49eb00f9-4a02-4182-aad1-07adbd37db56
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.user.register
+    - field.field.user.user.address
+    - field.field.user.user.first_name
+    - field.field.user.user.last_name
+    - field.field.user.user.phone_number
+    - field.field.user.user.user_picture
+  module:
+    - user
+_core:
+  default_config_hash: LLAieeozVsoZDb-2PbFxRJpQqnKmpR7-4OoRJnduz-U
+id: user.user.register
+targetEntityType: user
+bundle: user
+mode: register
+content:
+  account:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  first_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  last_name:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  timezone:
+    weight: 6
+    region: content
+hidden:
+  address: true
+  contact: true
+  langcode: true
+  language: true
+  phone_number: true
+  user_picture: true

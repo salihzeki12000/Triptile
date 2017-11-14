@@ -1,0 +1,79 @@
+<?php
+
+/**
+ * @file
+ * Contains tt_constructor.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function tt_constructor_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the tt_constructor module.
+    case 'help.page.tt_constructor':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Tour constructor page and routes') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function tt_constructor_theme() {
+  return [
+    'tt_constructor' => [
+      'template' => 'constructor',
+      'render element' => 'children',
+      'variables' => ['show_tips' => 1],
+    ],
+    'tt_constructor_edit_step_popup' => [
+      'template' => 'edit-step-popup',
+      'render element' => 'children',
+    ],
+    'tt_constructor_edit_hub_popup' => [
+      'template' => 'edit-hub-popup',
+      'render element' => 'children',
+    ],
+    'tt_constructor_edit_hotel_popup' => [
+      'template' => 'edit-hotel-popup',
+      'render element' => 'children',
+    ],
+    'tt_constructor_edit_transfer_popup' => [
+      'template' => 'edit-transfer-popup',
+      'render element' => 'children',
+    ],
+    'tt_constructor_edit_activity_popup' => [
+      'template' => 'edit-activity-popup',
+      'render element' => 'children',
+    ],
+    'tt_constructor_edit_connection_popup' => [
+      'template' => 'edit-connection-popup',
+      'render element' => 'children',
+    ],
+    'tt_itinerary' => [
+      'template' => 'itinerary',
+      'render element' => 'children',
+      'variables' => ['order_hash' => '1'],
+    ],
+    'tt_itinerary_map' => [
+      'template' => 'itinerary-map',
+      'render element' => 'children',
+      'variables' => [],
+    ],
+    'tt_itinerary_save_share_popup' => [
+      'template' => 'save-share-popup',
+      'render element' => 'children',
+    ],
+    'tt_itinerary_book_now_popup' => [
+      'template' => 'book-now-popup',
+      'render element' => 'children',
+    ],
+  ];
+}

@@ -1,0 +1,27 @@
+uuid: a46ba321-a80f-4026-adb2-d459b546c0fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.store_order.ticket
+    - store.store_order_type.train_order
+_core:
+  default_config_hash: Ilv6YxXx9EgFY0MV0XRd0Oh-eTvchG-pf0aG8ln6UQg
+id: store_order.train_order.ticket
+field_name: ticket
+entity_type: store_order
+bundle: train_order
+label: Ticket
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:train_ticket'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

@@ -1,0 +1,30 @@
+uuid: 828ecce3-27a5-4579-9e84-d0346a0b0c02
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+    - rn_user
+    - system
+  theme:
+    - railninja
+third_party_settings:
+  rn_content:
+    classes: ''
+id: userinfoblock
+theme: railninja
+region: content
+weight: -16
+provider: null
+plugin: userinfoblock
+settings:
+  id: userinfoblock
+  label: 'User info block'
+  provider: rn_user
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '/user/*'
+    negate: false
+    context_mapping: {  }

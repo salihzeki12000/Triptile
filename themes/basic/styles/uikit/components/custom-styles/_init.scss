@@ -1,0 +1,479 @@
+@import "media";
+
+// path
+
+$path-to-fonts: "../../../custom-fonts";
+$path-to-images: "../../../images";
+$misc-icons: "misc-icons.svg";
+
+// fonts
+
+@font-face{
+  font-family: Helvetica Neue;
+  src: url(#{$path-to-fonts}/HelveticaNeueLt.ttf);
+}
+
+@font-face{
+  font-family: "Myriad Pro";
+  font-style: normal;
+  src: url("#{$path-to-fonts}/MyriadPro-Regular.otf");
+}
+
+@font-face{
+  font-family: "Myriad Pro Italic";
+  font-style: italic;
+  src: url("#{$path-to-fonts}/myriad-pro-italic.ttf");
+}
+
+@font-face{
+  font-family: HelveticaLight;
+  src: url("#{$path-to-fonts}/HelveticaLight.ttf");
+}
+
+$helvetica-family: "Helvetica Neue", Arial, sans-serif;
+$tahoma: Tahoma, Arial, sans-serif;
+$myriad-pro-family: "Myriad Pro", Arial, sans-serif;
+$myriad-pro-italic: "Myriad Pro Italic", Arial, sans-serif;
+$helvetica-light-family: HelveticaLight, $helvetica-family;
+$arial: Arial, sans-serif;
+
+
+// colors
+
+$color-white: #ffffff;
+$color-yellow: #ffae00;
+$color-red: #ca0d03;
+$color-dark-red: #c10017;
+$color-green: #319069;
+$color-very-light-grey: #fafafa;
+$color-light-warm-grey: #eaeaea;
+$color-light-neutral-grey: #acacad;
+$color-grey: #909090;
+$color-warm-grey: #cacaca;
+$color-dark-warm-grey: #4b4b4b;
+$color-dark-neutral-grey: #777777;
+$color-lightblack: #222222;
+$color-black: #000000;
+
+// base
+
+$base-font-family: Arial, sans-serif;
+$title-font-family: $helvetica-family;
+$base-font-size: 16px;
+$page-bg: $color-white;
+$container-width: 1024px;
+$light-block-bg: $color-white;
+$dark-block-bg: $color-light-warm-grey;
+$base-color: $color-black;
+$h-padding: 1rem;
+$v-padding: 30px;
+$tablet-h-padding: 1rem;
+$mobile-h-padding: 1rem;
+$link-color: $color-yellow;
+$link-hover-color: $color-light-neutral-grey;
+$rating-stars-width: 110px;
+$rating-stars-height: 18px;
+$row-gap-width: 2%;
+$sidebar-width: 28%;
+$default-border: solid 1px #ebebeb;
+$button-v-padding: 17px;
+$button-h-padding: 30px;
+$details-bg: $color-white;
+$details-hover-bg: $color-very-light-grey;
+$details-color: $color-black;
+$details-hover-color: $color-yellow;
+$details-border: $default-border;
+$small-font-size: 0.875rem;
+$very-small-font-size: 0.75rem;
+$popup-input-border-color: #dcdcdc;
+
+// header
+
+$header-bg: lighten($color-black, 1%);
+$header-link-color: $color-white;
+$header-link-active-color: $color-yellow;
+$ca-btn-background: $color-light-neutral-grey;
+$ca-btn-color: $color-white;
+
+// user menu
+
+$um-bg: #f2f2f2;
+$um-color: $color-black;
+$um-active-bg: $color-red;
+$um-active-color: $color-white;
+$um-v-padding: 15px;
+$um-h-padding: 15px;
+
+// user page
+
+$up-font-family: $tahoma;
+$up-table-head-bg: #f8f8f8;
+$up-table-head-color: $color-black;
+$up-table-head-active-color: $color-red;
+$up-table-row-active-color: $color-red;
+$up-table-border: 1px solid #dbdbdb;
+$up-table-v-padding: 20px;
+$up-table-h-padding: $um-h-padding * 2;
+$up-table-note-color: #999999;
+$up-block-bg: $color-white;
+$up-text-block-bg: #fdf8eb;
+$up-ui-link-color: #db0202;
+$up-title-font-family: $base-font-family;
+$up-btn-bg: #cacaca;
+$up-btn-color: $color-white;
+$up-details-hover-color: $color-dark-warm-grey;
+
+// statuses
+
+$status-paid-color: #21d30f;
+$status-canceled-color: #c20115;
+$status-neutral-color: #ff9900;
+
+// user block
+
+$user-block-bg: $color-white;
+$user-block-language-bg: #e6e6e6;
+$user-block-width: 480px;
+$user-block-height: 260px;
+$user-block-h-padding: 20px;
+$user-block-v-padding: 20px;
+$user-block-menu-link-color: #535353;
+$user-block-active-menu-link-color: $color-black;
+$user-block-title-color: lighten($color-black, 1%);
+$user-block-link-color: $color-dark-neutral-grey;
+$user-block-link-hover-color: lighten($color-black, 1%);
+$user-block-font-family: $base-font-family;
+$user-block-title-font-family: $title-font-family;
+
+// login register dropdown
+
+$lrd-bg: $color-white;
+$lrd-link-color: $color-black;
+$lrd-link-hover-color: $color-yellow;
+
+// currency list
+
+$currency-list-color: $color-dark-neutral-grey;
+$currency-active-color: $color-black;
+
+// menu
+
+$menu-bg: $page-bg;
+$menu-color: $base-color;
+$menu-hover-color: $color-dark-neutral-grey;
+$menu-header-bg: $header-bg;
+$menu-header-color: $color-light-warm-grey;
+$menu-v-padding: 25px;
+$menu-h-padding: 2rem;
+$menu-h-line-bg: #dfdfdf;
+$menu-h-line-border: 1px solid #bbbbbb;
+$mobile-menu-font-family: $title-font-family;
+$mobile-menu-v-padding: 35px;
+$mobile-menu-h-padding: 25px;
+$mobile-menu-3rd-level-color: #6c6c6c;
+$mobile-menu-light-note-color: #999999;
+$mobile-menu-border-color: #cacaca;
+$mobile-menu-btn-color: #fff;
+$mobile-menu-active-link-color: #030303;
+
+
+// footer
+
+$footer-font-family: $title-font-family;
+$footer-top-bg: $color-light-warm-grey;
+$footer-top-color: $color-dark-neutral-grey;
+$footer-top-title-color: $color-dark-warm-grey;
+$footer-top-icon-color: $color-white;
+$footer-top-icon-bg: $color-dark-neutral-grey;
+$footer-top-icon-bg-hover: #a1a1a1;
+$footer-bottom-bg: lighten($color-black, 1%);
+$footer-bottom-color: $color-warm-grey;
+
+// forms
+
+$input-bg: $color-white;
+$input-border-color: #dcdcdc;
+$input-border: 1px solid $input-border-color;
+$input-color: $color-black;
+$input-v-padding: 15px;
+$input-h-padding: 17px;
+$input-padding: $input-v-padding $input-h-padding;
+$input-padding-pass-eye: 15px 36px 15px 15px;
+$input-tablet-v-padding: 10px;
+$input-tablet-h-padding: 10px;
+$input-mobile-v-padding: 20px;
+$input-mobile-h-padding: 17px;
+$input-icons-color: $color-light-neutral-grey;
+$active-item-bg: $color-light-warm-grey;
+$active-text-color: $color-dark-neutral-grey;
+$spinner-font-size: 1.25rem;
+$calendar-bg: $color-white;
+$calendar-dark-bg: $color-light-warm-grey;
+$calendar-active-bg: $color-red;
+$calendar-icons-color: $color-light-neutral-grey;
+$calendar-color: $color-black;
+$calendar-secondary-color: $color-dark-neutral-grey;
+$calendar-inactive-color: $calendar-secondary-color;
+$calendar-active-color: $color-white;
+$calendar-border: $input-border;
+$calendar-v-padding: 15px;
+$calendar-h-padding: 15px;
+$calendar-font-size: 0.875rem;
+$datepicker-tablet-min-width: 315px;
+$toggler-inactive-color: #c3c3c3;
+$toggler-active-color: #50d55e;
+$slider-color: $color-dark-neutral-grey;
+$slider-inactive-color: #dbdbdb;
+$slider-handle-size: 26px;
+$slider-height: 7px;
+$input-min-height: 50px;
+$input-wide-min-height: 40px;
+$drop-v-padding: 3px;
+$drop-h-padding: 4px;
+$drop-element-h-padding: $input-h-padding - $drop-h-padding;
+$forgot-pass-link-color: #cacaca;
+
+
+// search form
+
+$form-title-color: $color-white;
+$front-form-width: 1210px;
+$front-form-tablet-width: 1000px;
+$booking-form-bg: darken($color-white,2%);
+
+// multy-leg form
+$ml-form-bg: #eeeeee;
+$ml-switcher-color: $color-white;
+$ml-switcher-active-color: $color-yellow;
+$ml-switcher-2nd-step-color: $color-light-neutral-grey;
+$ml-switcher-2nd-step-active-color: #4e4e4e;
+
+// messages
+
+$message-color: $color-white;
+$error-bg: $color-red;
+$warning-bg: $color-yellow;
+$status-bg: $color-green;
+
+// sidebar
+
+$sidebar-color: $color-dark-neutral-grey;
+$sidebar-border: solid 1px #ebebeb;
+$sidebar-v-padding: 30px;
+$sidebar-title-color: $color-black;
+$sidebar-small-size: 0.875rem;
+
+// status
+
+$status-ok: $color-green;
+$status-process: $color-yellow;
+$status-cancel: $color-red;
+$status-none: $sidebar-color;
+
+// timetable page
+
+$tt-bg: $color-white;
+$tt-color: $color-black;
+$tt-border: solid 1px #ebebeb;
+$tt-hover-border: 1px solid #acacad;
+$tt-hover-bg-color: darken($color-white,2%);
+$tt-h-padding: 35px;
+$tt-mobile-h-padding: 25px;
+$tt-v-padding: 30px;
+$tt-dark-note-color: $color-dark-neutral-grey;
+$tt-light-note-color: $color-light-neutral-grey;
+$tt-active-sort-color: $color-dark-red;
+$tt-head-bg-color: darken($color-white,2%);
+$tt-head-color: $color-dark-neutral-grey;
+$tt-head-dates-font-size: 1.25rem;
+$tt-head-dates-width: 37%;
+$tt-select-btn-bg: $color-yellow;
+$tt-save-search-active-color: $color-dark-red;
+$tt-time-size: 1.9375rem;
+$tt-time-color: $color-lightblack;
+$tt-time-width: 55%;
+$tt-time-max-width: 300px;
+$tt-button-width: 50%;
+$tt-price-h-padding: 15px;
+$tt-select-color: $color-yellow;
+$tt-small-size: 0.875rem;
+$tt-sidebar-color: $color-black;
+$tt-sidebar-title-color: $color-black;
+$tt-sidebar-dark-note-color: $color-dark-neutral-grey;
+$tt-sidebar-light-note-color: $color-grey;
+$tt-sidebar-s-v-padding: 15px;
+$tt-sidebar-v-padding: 30px;
+$tt-sidebar-number-color: $tt-sidebar-dark-note-color;
+$tt-item-helper-bg: $color-very-light-grey;
+
+// passenger page
+
+$pas-background-color: #f2f2f2;
+$pas-border: solid 1px #ebebeb;
+$pas-v-border-color: 1px solid $color-light-neutral-grey;
+$pas-h-padding: 35px;
+$pas-mobile-h-padding: 20px;
+$pas-v-padding: 30px;
+$pas-hover-border: 1px solid #acacad;
+$pas-dark-note-color: $color-dark-neutral-grey;
+$pas-light-note-color: $color-light-neutral-grey;
+$pas-button-v-padding: $button-v-padding;
+$pas-button-h-padding: $button-h-padding;
+$pas-small-size: 0.875rem;
+$pas-sidebar-v-padding: 25px;
+$pas-sidebar-h-padding: 20px;
+$pas-sidebar-border: 1px solid $color-light-neutral-grey;
+
+// payment form
+
+$pp-title-color: $color-black;
+$pp-light-note-color: $color-light-neutral-grey;
+$pp-dark-note-color: $color-dark-neutral-grey;
+$pp-border: $input-border;
+$pp-font-family: $base-font-family;
+$pp-v-padding: 10px;
+$pp-numbers-bg: $color-light-warm-grey;
+$pp-numbers-color: $pp-title-color;
+
+// payment page
+
+$payment-background-color: #f2f2f2;
+$payment-border: solid 1px #ebebeb;
+$payment-v-border-color: 1px solid $color-light-neutral-grey;
+$payment-h-padding: 35px;
+$payment-mobile-h-padding: 20px;
+$payment-v-padding: 30px;
+$payment-hover-border: 1px solid #acacad;
+$payment-dark-note-color: $color-dark-neutral-grey;
+$payment-light-note-color: $color-light-neutral-grey;
+
+// order page
+
+$op-text-color: $color-black;
+$op-head-dates-width: 37%;
+$op-border: solid 1px #ebebeb;
+$op-v-padding: 30px;
+$op-h-padding: 35px;
+$op-mobile-h-padding: 25px;
+$op-dark-note-color: $color-dark-neutral-grey;
+$op-light-note-color: $color-light-neutral-grey;
+$op-active-color: $color-yellow;
+$op-small-size: 0.875rem;
+$op-very-small-size: 0.65rem;
+$op-head-bg-color: darken($color-white,2%);
+$op-head-dates-font-size: 1.25rem;
+$op-sidebar-title-color: $color-black;
+$op-sidebar-color: $op-dark-note-color;
+
+// invoice page
+
+$invoice-border: solid 1px #ebebeb;
+$invoice-v-padding: 30px;
+$invoice-h-padding: 35px;
+$invoice-mobile-h-padding: 25px;
+$invoice-dark-note-color: $color-dark-neutral-grey;
+$invoice-light-note-color: $color-light-neutral-grey;
+$invoice-small-size: 0.875rem;
+$invoice-head-bg-color: darken($color-white,2%);
+
+// ui-dialog
+
+$dialog-bg: $color-white;
+$dialog-color: $base-color;
+$dialog-header-bg: $color-black;
+$dialog-header-color: #e7e7e7;
+$dialog-v-padding: 30px;
+$dialog-h-padding: 35px;
+$dialog-mobile-h-padding: 25px;
+
+// steps
+
+$inactive-steps-bg: $color-light-neutral-grey;
+$active-steps-bg: $color-yellow;
+$inactive-steps-color: $inactive-steps-bg;
+$active-steps-color: $active-steps-bg;
+$steps-color: $color-white;
+$steps-bg: $color-white;
+
+// route page
+
+$rp-route-color: $color-white;
+$rp-border: solid 1px #ebebeb;
+$rp-h-padding: 35px;
+$rp-tablet-h-padding: 1rem;
+$rp-mobile-h-padding: 1rem;
+$rp-route-font-family: $base-font-family;
+$rp-v-padding: 30px;
+$rp-point-size: 8px;
+$rp-point-color: $color-dark-neutral-grey;
+$rp-line-color: $color-white;
+$rp-line-height: 2px;
+$rp-title-color: $color-black;
+$rp-text-color: $color-dark-neutral-grey;
+$rp-light-text-color: $color-light-neutral-grey;
+$rp-block-odd-bg: $color-very-light-grey;
+$rp-block-even-bg: $color-white;
+$rp-facts-color: #8d8d8d;
+
+// popup login
+
+$pl-tab-color: $color-black;
+$pl-tab-color-active: $color-black;
+$pl-tab-bg: #f2f2f2;
+$pl-tab-bg-active: #ffffff;
+$pl-color-weak: $color-dark-neutral-grey;
+$pl-color-fair: #cc2c2c;
+$pl-color-good: $color-yellow;
+$pl-color-strong: #04DE00;
+$pl-font-family: $tahoma;
+$pl-v-padding: 20px;
+
+// train page
+
+$tp-body-color: #666766;
+$tp-title-size: 1.875rem;
+$tp-line-height: 170%;
+
+// breadcrumbs
+
+$bc-link-color: #969696;
+$bc-text-color: $color-black;
+$bc-font-size: 12px;
+
+// pager
+
+$pager-link-color: #BAB9B9;
+$pager-active-link-color: #2A262D;
+$pager-active-border-color: $color-yellow;
+
+// blog
+
+$blog-title-color: #0D0C0C;
+$blog-v-padding: 20px;
+$blog-m-v-padding: 30px;
+$blog-description-color: #AFACAC;
+$blog-title-font-family: $helvetica-light-family;
+$blog-description-font-family: $myriad-pro-italic;
+$blog-text-color: #2A262D;
+$blog-btn-bg: #BAB9B9;
+$blog-calendar-size: 18px;
+$blog-post-line-color: #D9D9D9;
+$blog-related-content-color: $color-yellow;
+$blog-post-navigation-color: $pager-link-color;
+$blog-post-navigation-active-color: $pager-active-border-color;
+
+// thank you page
+
+$thp-v-padding: 30px;
+$thp-h-padding: 30px;
+$thp-title-color: #00b56a;
+$thp-text-color: $color-black;
+$thp-link-color: $color-yellow;
+$thp-table-title-color: $color-dark-neutral-grey;
+$thp-button-color: #c6c3c3;
+$thp-table-head-bg: $color-light-warm-grey;
+$thp-border: solid 1px #ebebeb;
+$thp-table-font-family: $arial;
+$thp-font-family: $helvetica-family;
+$thp-button-v-padding: 19px;
+

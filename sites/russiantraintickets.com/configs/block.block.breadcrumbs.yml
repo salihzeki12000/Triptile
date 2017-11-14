@@ -1,0 +1,24 @@
+uuid: 35d05443-b648-489b-b461-b77abd797279
+langcode: en
+status: false
+dependencies:
+  module:
+    - rn_content
+    - system
+  theme:
+    - russiantraintickets
+third_party_settings:
+  rn_content:
+    classes: ''
+id: breadcrumbs
+theme: russiantraintickets
+region: content_prefix
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

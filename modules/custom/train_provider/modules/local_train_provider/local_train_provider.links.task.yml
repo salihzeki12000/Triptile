@@ -1,0 +1,21 @@
+# Timetable entry routing definition
+timetable_entry.settings_tab:
+  route_name: timetable_entry.settings
+  title: 'Settings'
+  base_route: timetable_entry.settings
+entity.timetable_entry.canonical:
+  route_name: entity.timetable_entry.canonical
+  base_route: entity.timetable_entry.canonical
+  title: 'View'
+
+entity.timetable_entry.edit_form:
+  route_name: entity.timetable_entry.edit_form
+  base_route: entity.timetable_entry.canonical
+  title: Edit
+
+entity.timetable_entry.delete_form:
+  route_name:  entity.timetable_entry.delete_form
+  base_route:  entity.timetable_entry.canonical
+  title: Delete
+  weight: 10
+

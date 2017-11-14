@@ -1,0 +1,15 @@
+uuid: 7faa35cc-4cf9-4003-8ad4-4cc34dd41b70
+name: Russiantraintickets.com
+mail: info@russiantraintickets.com
+slogan: ''
+page:
+  403: /node/461
+  404: /node/460
+  front: /front
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: AyT9s8OUcclfALRE_imByOMgtZ19eOlqdF6zI3p7yqo
+mail_notification: ''

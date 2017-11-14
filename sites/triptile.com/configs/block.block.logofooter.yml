@@ -1,0 +1,25 @@
+uuid: 95bccccb-c802-4596-9739-e20f3a9d61bb
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:e4189cc6-7bad-4eb5-878b-f6b36012d65b'
+  module:
+    - block_content
+  theme:
+    - tt
+id: logofooter
+theme: tt
+region: footer_first
+weight: 0
+provider: null
+plugin: 'block_content:e4189cc6-7bad-4eb5-878b-f6b36012d65b'
+settings:
+  id: 'block_content:e4189cc6-7bad-4eb5-878b-f6b36012d65b'
+  label: 'Logo footer'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

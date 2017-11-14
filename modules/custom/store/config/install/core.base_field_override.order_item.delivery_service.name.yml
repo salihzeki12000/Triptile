@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - store.order_item_type.delivery_service
+id: order_item.delivery_service.name
+field_name: name
+entity_type: order_item
+bundle: delivery_service
+label: Name
+description: 'The order item name.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

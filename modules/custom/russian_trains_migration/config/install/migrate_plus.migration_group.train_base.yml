@@ -1,0 +1,8 @@
+id: train_base
+label: Train Base
+description: Migrate entities, which declared in train_base module.
+source_type: RussianTrains database
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

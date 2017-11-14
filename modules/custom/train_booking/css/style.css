@@ -1,0 +1,156 @@
+/****** TIMETABLE BEGIN ********/
+
+.route-info-wrapper .sorting-label span,
+#edit-help-buttons div div,
+.train-table-header .sorting-row div {
+  cursor: pointer;
+}
+
+.filter-container.car-type .additional-items,
+#edit-main-trains-no-result,
+.train-wrapper.travel-date-hide,
+.coach-class-wrapper.price-hide,
+.train-table-header .sorting-row,
+#edit-coach-class .car-type-item.hide,
+.more-less .less,
+.save-search-btn,
+.coach-classes-wrapper,
+.coach-class-wrapper {
+  display: none;
+}
+
+.coach-class-wrapper.visible {
+  display: flex;
+}
+
+.train-time > div,
+.coach-class-wrapper > div {
+  display: inline-block;
+}
+
+.filter-container.car-type .main-items {
+  display: flex;
+}
+
+
+.filter-container.car-type.opened .additional-items {
+  display: flex;
+}
+
+.timetable-header .sorting-row {
+  display: none;
+}
+.timetable-header .column-names {
+  display: flex;
+}
+
+.timetable-header.active-sorting .sorting-row {
+  display: flex;
+}
+.timetable-header.active-sorting .column-names {
+  display: none;
+}
+
+.coach-class-wrapper .selected-label {
+  display: none;
+}
+
+.coach-class-wrapper.selected .selected-label {
+  display: flex;
+}
+
+/****** TIMETABLE END ********/
+
+/****** SEARCHFORM BEGIN ********/
+
+.train-booking-search-form .form-flex-container,
+.datepicker-element,
+.form-type-calendar,
+.passengers-field .passengers-wrapper,
+.passengers-wrapper .children-age-wrapper > .form-type-select {
+  display: none;
+}
+
+#train-booking-search-form .passengers-wrapper .form-item-passengers-children .ui-spinner {
+  width: 100%;
+}
+.train-search-form-block #train-booking-search-form {
+  height: auto!important;
+}
+
+.train-booking-search-form .form-flex-container.visible {
+  display: flex;
+}
+
+.travel-date-input {
+  cursor: text;
+}
+.ui-datepicker-inline {
+  border: 0;
+}
+
+.train-search-form-block .train-booking-search-form .basic-mode {
+  display: none;
+}
+
+.train-search-form-block .train-booking-search-form .roundtrip-mode {
+  display: none;
+}
+
+.train-search-form-block .train-booking-search-form .complex-mode {
+  display: none;
+}
+
+.train-search-form-block .train-booking-search-form .basic-mode.visible {
+  display: flex;
+}
+
+.train-search-form-block .train-booking-search-form .roundtrip-mode.visible {
+  display: flex;
+}
+
+.train-search-form-block .train-booking-search-form .complex-mode.visible {
+  display: flex;
+}
+
+.train-search-form-block .train-booking-search-form .roundtrip-mode.visible > .leg-2 {
+  display: none;
+}
+
+.train-booking-search-form .roundtrip-mode .datepicker-element.leg-2.departure-date {
+  left: 100%;
+  width: 100%;
+}
+.form-flex-container.complex-mode .passengers-number,
+.form-flex-container.complex-mode .form-item-complex-mode-passengers-wrapper-adults,
+.form-flex-container.complex-mode .children-wrapper{
+  display: none;
+}
+
+
+
+.train-booking-search-form .form-flex-container .leg-1 .stations-wrapper > div {
+  position: relative;
+}
+  /****** SEARCHFORM END ********/
+
+/****** PASSENGER FORM ********/
+.train-bookingpassenger-form .all-passengers-wrapper.simple-form .passenger-wrapper:not(:last-child) .fields-wrapper > .form-item {
+  display: none;
+}
+.train-booking-passenger-form .complex-form .fields-wrapper {
+  display: none;
+}
+.train-booking-passenger-form .passenger-wrapper.opened .fields-wrapper {
+  display: block;
+}
+.train-booking-passenger-form .provide-later-message {
+  display: none;
+}
+.services-wrapper .service-wrapper .service-form-wrapper {
+  display: none;
+}
+.services-wrapper .service-wrapper.opened .service-form-wrapper {
+  display: block;
+}
+/****** PASSENGER END ********/

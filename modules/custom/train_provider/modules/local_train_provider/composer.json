@@ -1,0 +1,14 @@
+{
+  "name": "drupal/local_train_provider",
+  "type": "drupal-module",
+  "description": "Local train provider",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/local_train_provider",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/local_train_provider",
+    "source": "http://cgit.drupalcode.org/local_train_provider"
+  },
+  "require": { }
+}

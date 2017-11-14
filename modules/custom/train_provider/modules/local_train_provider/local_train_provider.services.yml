@@ -1,0 +1,4 @@
+services:
+  local_train_provider.timetable_entry_price_updater:
+    class: Drupal\local_train_provider\TimetableEntryPriceUpdater
+    arguments: ["@entity_type.manager", "@config.factory", "@train_provider.train_searcher", "@plugin.manager.train_provider"]

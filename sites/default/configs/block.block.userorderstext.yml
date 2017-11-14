@@ -1,0 +1,33 @@
+uuid: 2e62f5f5-cf49-4ef4-a9a9-7bd6442c21fb
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+    - rn_user
+    - system
+  theme:
+    - railninja
+third_party_settings:
+  rn_content:
+    classes: ''
+id: userorderstext
+theme: railninja
+region: content
+weight: -13
+provider: null
+plugin: userorderstext
+settings:
+  id: userorderstext
+  label: 'User orders text'
+  provider: rn_user
+  label_display: '0'
+  client_area_text:
+    value: '<p>This page lists all your Ninja journeys. </p>'
+    format: full_html_for_administrator
+visibility:
+  request_path:
+    id: request_path
+    pages: /user/%user/orders
+    negate: false
+    context_mapping: {  }

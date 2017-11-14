@@ -1,0 +1,56 @@
+uuid: 9b180ef4-9361-4002-b4b5-0c297a5604b0
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration
+_core:
+  default_config_hash: kj8BMT4qVVP_7UpsjNbhmJdN_PPbjw_d7-ufY1hsDuY
+id: seat_preference
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - russian_trains_light
+migration_group: train_base
+label: SeatPreference
+source:
+  plugin: seat_preference
+  key: travelallrussia
+process:
+  langcode: lang
+  name: name
+  weight: sort_order
+  status: enabled
+  seat_type:
+    plugin: iterator
+    source: seat_type
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: seat_type
+        source: seat_class_id
+  car_service:
+    plugin: iterator
+    source: car_service
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: car_service
+        source: car_service_id
+  supplier:
+    plugin: iterator
+    source: supplier
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: supplier
+        source: supplier_id
+destination:
+  plugin: 'entity:seat_preference'
+migration_dependencies:
+  required:
+    - supplier
+    - seat_type
+    - car_service

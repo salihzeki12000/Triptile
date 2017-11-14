@@ -1,0 +1,200 @@
+.filters {
+  .filter-container {
+    @include flex;
+    flex-flow: row wrap;
+  }
+
+  .title {
+    padding-bottom: $tt-sidebar-s-v-padding;
+    color: $tt-sidebar-title-color;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    flex-basis: 100%;
+  }
+
+  .filter-item {
+    flex-basis: 100%;
+    @include flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding-bottom: $tt-sidebar-s-v-padding;
+
+    &.last {
+      padding-bottom: 0;
+    }
+  }
+
+  .stars {
+    @include rating-stars;
+
+    .form-item {
+      &:not(:last-of-type) {
+        padding-bottom: $tt-sidebar-s-v-padding;
+      }
+    }
+
+    label {
+      align-items: center;
+    }
+
+    .lowest-price {
+      align-self: flex-end;
+    }
+  }
+
+  label {
+    display: inline-flex;
+    padding: 0;
+    margin: 0;
+    color: $tt-sidebar-light-note-color;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-basis: calc(100% - 30px);
+  }
+
+  @include custom-checkbox($tt-sidebar-light-note-color, $tt-sidebar-color);
+
+  input[type=checkbox] {
+    flex-basis: 30px;
+  }
+
+  .more-less {
+    flex-basis: 100%;
+  }
+
+  .more, .less {
+    font-size: $tt-small-size;
+    color: $tt-sidebar-light-note-color;
+    @include transition;
+    cursor: pointer;
+
+    &::after {
+      margin-left: 7px;
+    }
+
+    &:hover {
+      color: $tt-sidebar-dark-note-color;
+    }
+  }
+
+  .more {
+    &::after {
+      @include awesome-icon("\f107");
+    }
+  }
+
+  .less {
+    padding-top: $tt-sidebar-s-v-padding;
+
+    &::after {
+      @include awesome-icon("\f106");
+    }
+  }
+
+  .lowest, .highest {
+    display: inline-flex;
+    flex-basis: 50%;
+  }
+
+  .lowest-price, .lowest, .highest {
+    font-size: 1.125rem;
+    color: $tt-sidebar-number-color;
+  }
+
+  .lowest {
+    justify-content: flex-start;
+  }
+
+  .highest {
+    justify-content: flex-end;
+  }
+
+  .stars {
+    padding-bottom: $tt-sidebar-v-padding;
+  }
+
+  .car-type, .price, .departure, .arrival {
+    padding-bottom: $tt-sidebar-s-v-padding;
+  }
+
+  .car-type {
+    &.no-help-buttons {
+      padding-bottom: $tt-sidebar-v-padding;
+    }
+  }
+
+  .stars, .car-type {
+    .form-item {
+      flex-basis: 100%;
+      @include flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  }
+
+  .slider {
+    flex-basis: 100%;
+    margin-bottom: $tt-sidebar-s-v-padding;
+    @include side-padding(10px);
+    margin-left: 10px;
+    margin-right: 15px;
+  }
+
+  .time-tip {
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-bottom: $tt-sidebar-v-padding;
+    color: $tt-sidebar-dark-note-color;
+    font-style: italic;
+
+    &::before {
+      content: "";
+      width: 20px;
+      height: 45px;
+      background: transparent url("#{$path-to-images}/info-sign.png") no-repeat 0 center;
+      display: inline-flex;
+      flex-basis: 65px;
+    }
+  }
+
+  .reset-filters-wrapper {
+    @include v-padding($tt-sidebar-v-padding);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    color: $tt-sidebar-dark-note-color;
+    cursor: pointer;
+    border-top: $tt-border;
+    margin-top: $tt-sidebar-v-padding/2;
+    font-size: 1.125rem;
+
+    &:hover {
+      color: $tt-sidebar-light-note-color;
+      @include transition;
+    }
+  }
+
+  .coach-class-filter-item {
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .check-uncheck-wrapper {
+    width: 100%;
+    display: flex;
+    padding-bottom: $tt-sidebar-v-padding/2;
+    margin-bottom: $tt-sidebar-v-padding/2;
+    border-bottom: $tt-border;
+  }
+
+  .check-uncheck-item {
+    &:focus {
+      outline: none;
+    }
+  }
+}

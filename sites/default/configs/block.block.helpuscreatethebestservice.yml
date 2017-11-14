@@ -1,0 +1,35 @@
+uuid: 6af675a8-e0d4-447d-a237-11890a5feb78
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:a2e7e8b6-0cc4-4df7-a658-3ae9157c61b7'
+  module:
+    - block_content
+    - rn_content
+    - system
+  theme:
+    - railninja
+third_party_settings:
+  rn_content:
+    classes: ''
+id: helpuscreatethebestservice
+theme: railninja
+region: content
+weight: -23
+provider: null
+plugin: 'block_content:a2e7e8b6-0cc4-4df7-a658-3ae9157c61b7'
+settings:
+  id: 'block_content:a2e7e8b6-0cc4-4df7-a658-3ae9157c61b7'
+  label: 'Help us create the best service'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /front
+    negate: false
+    context_mapping: {  }

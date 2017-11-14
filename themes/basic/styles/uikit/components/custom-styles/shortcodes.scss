@@ -1,0 +1,1782 @@
+@import "init";
+@import "custom_mixins";
+
+/****** DISPLAY PROPERTIES ******/
+.d-block {
+  display: block;
+}
+
+.d-i-block {
+  display: inline-block;
+}
+
+.d-table {
+  display: table;
+}
+
+.d-table-cell {
+  display: table-cell;
+}
+
+.d-flex {
+  @include flex;
+}
+
+.d-i-flex {
+  display: inline-flex;
+}
+
+.d-none {
+  display: none;
+}
+
+.only-mobile {
+  display: none;
+}
+
+.only-tablet {
+  display: none;
+}
+/****** DISPLAY PROPERTIES END ******/
+
+
+
+/****** FLEX CONTAINER PROPERTIES ******/
+
+// flex direction
+
+.f-row {
+  flex-direction: row;
+}
+
+.f-column {
+  flex-direction: column;
+}
+
+// justify content
+
+.f-j-start {
+  justify-content: flex-start;
+}
+
+.f-j-end {
+  justify-content: flex-end;
+}
+
+.f-j-center {
+  justify-content: center;
+}
+
+.f-j-space-around {
+  justify-content: space-around;
+}
+
+.f-j-space-between {
+  justify-content: space-between;
+}
+
+// wrap content
+
+.f-row-w {
+  flex-flow: row wrap;
+}
+
+.f-row-nw {
+  flex-flow: row nowrap;
+}
+
+// align items
+
+.f-items-end {
+  align-items: flex-end;
+}
+
+.f-items-center {
+  align-items: center;
+}
+
+.f-items-baseline {
+  align-items: baseline;
+}
+
+.f-items-stretch {
+  align-items: stretch;
+}
+
+// flex-basis
+
+.f-one-quarter {
+  flex-basis: 25%;
+}
+
+.f-one-half {
+  flex-basis: 50%;
+}
+
+.f-three-quarters {
+  flex-basis: 75%;
+}
+
+.f-one-third {
+  flex-basis: calc(100%/3);
+}
+
+.f-two-thirds {
+  flex-basis: calc(100% * 2 /3);
+}
+
+.f-full {
+  flex-basis: 100%;
+}
+
+// multiple columns with equal size
+
+.f-1-column {
+  & > * {
+    flex-basis: 100%;
+  }
+}
+
+.f-2-column {
+  & > * {
+    flex-basis: calc(100%/2);
+  }
+}
+
+.f-3-column {
+  & > * {
+    flex-basis: calc(100%/3);
+  }
+}
+
+.f-4-column {
+  & > * {
+    flex-basis: calc(100%/4);
+  }
+}
+
+.f-5-column {
+  & > * {
+    flex-basis: calc(100%/5);
+  }
+}
+
+.f-6-column {
+  & > * {
+    flex-basis: calc(100%/6);
+  }
+}
+
+.f-7-column {
+  & > * {
+    flex-basis: calc(100%/7);
+  }
+}
+
+.f-8-column {
+  & > * {
+    flex-basis: calc(100%/8);
+  }
+}
+
+.f-9-column {
+  & > * {
+    flex-basis: calc(100%/9);
+  }
+}
+
+.f-10-column {
+  & > * {
+    flex-basis: calc(100%/10);
+  }
+}
+
+.f-11-column {
+  & > * {
+    flex-basis: calc(100%/11);
+  }
+}
+
+.f-12-column {
+  & > * {
+    flex-basis: calc(100%/12);
+  }
+}
+/****** FLEX CONTAINER PROPERTIES END ******/
+
+
+
+/****** SIZE PROPERTIES ******/
+.one-quarter {
+  width: 25%;
+}
+
+.one-half {
+  width: 50%;
+}
+
+.three-quarters {
+  width: 75%;
+}
+
+.one-third {
+  width: calc(100%/3);
+}
+
+.two-thirds {
+  width: calc(100% * 2/3);
+}
+
+.full-width {
+  width: 100%;
+}
+/****** SIZE PROPERTIES END ******/
+
+
+
+/****** PADDING PROPERTIES ******/
+.no-padding {
+  padding: 0;
+}
+
+.no-side-padding {
+  @include no-side-padding;
+}
+
+.no-v-padding {
+  @include no-v-padding;
+}
+
+.no-top-padding {
+  @include no-top-padding;
+}
+
+.no-bottom-padding {
+  @include no-bottom-padding;
+}
+
+.first {
+  @include first;
+}
+
+.last {
+  @include last;
+}
+
+.x1-padding {
+  @include shortcode-padding($h-padding);
+}
+
+.x2-padding {
+  @include shortcode-padding($h-padding*2);
+}
+
+.x3-padding {
+  @include shortcode-padding($h-padding*3);
+}
+
+.x4-padding {
+  @include shortcode-padding($h-padding*4);
+}
+
+.x5-padding {
+  @include shortcode-padding($h-padding*5);
+}
+
+.x6-padding {
+  @include shortcode-padding($h-padding*6);
+}
+
+.x7-padding {
+  @include shortcode-padding($h-padding*7);
+}
+
+.x8-padding {
+  @include shortcode-padding($h-padding*8);
+}
+
+.x9-padding {
+  @include shortcode-padding($h-padding*9);
+}
+
+.x10-padding {
+  @include shortcode-padding($h-padding*10);
+}
+
+.x-2-padding {
+  @include shortcode-padding($h-padding/2);
+}
+
+.x-3-padding {
+  @include shortcode-padding($h-padding/3);
+}
+
+.x-4-padding {
+  @include shortcode-padding($h-padding/4);
+}
+
+.x-5-padding {
+  @include shortcode-padding($h-padding/5);
+}
+
+.x-6-padding {
+  @include shortcode-padding($h-padding/6);
+}
+
+.x-7-padding {
+  @include shortcode-padding($h-padding/7);
+}
+
+.x-8-padding {
+  @include shortcode-padding($h-padding/8);
+}
+
+.x-9-padding {
+  @include shortcode-padding($h-padding/9);
+}
+
+.x-10-padding {
+  @include shortcode-padding($h-padding/10);
+}
+
+.y1-padding {
+  @include v-padding($h-padding);
+}
+
+.y2-padding {
+  @include v-padding($h-padding*2);
+}
+
+.y3-padding {
+  @include v-padding($h-padding*3);
+}
+
+.y4-padding {
+  @include v-padding($h-padding*4);
+}
+
+.y5-padding {
+  @include v-padding($h-padding*5);
+}
+
+.y6-padding {
+  @include v-padding($h-padding*6);
+}
+
+.y7-padding {
+  @include v-padding($h-padding*7);
+}
+
+.y8-padding {
+  @include v-padding($h-padding*8);
+}
+
+.y9-padding {
+  @include v-padding($h-padding*9);
+}
+
+.y10-padding {
+  @include v-padding($h-padding*10);
+}
+
+.y-2-padding {
+  @include v-padding($h-padding/2);
+}
+
+.y-3-padding {
+  @include v-padding($h-padding/3);
+}
+
+.y-4-padding {
+  @include v-padding($h-padding/4);
+}
+
+.y-5-padding {
+  @include v-padding($h-padding/5);
+}
+
+.y-6-padding {
+  @include v-padding($h-padding/6);
+}
+
+.y-7-padding {
+  @include v-padding($h-padding/7);
+}
+
+.y-8-padding {
+  @include v-padding($h-padding/8);
+}
+
+.y-9-padding {
+  @include v-padding($h-padding/9);
+}
+
+.y-10-padding {
+  @include v-padding($h-padding/10);
+}
+/****** PADDING PROPERTIES END ******/
+
+
+/****** COLUMN COUNT PROPERTIES ******/
+
+.column-count-1 {
+  @include column-count(1);
+}
+
+.column-count-2 {
+  @include column-count(2);
+}
+
+.column-count-3 {
+  @include column-count(3);
+}
+
+.column-count-4 {
+  @include column-count(4);
+}
+
+.column-count-5 {
+  @include column-count(5);
+}
+
+/****** COLUMN COUNT PROPERTIES END ******/
+
+
+
+/****** COLOR PROPERTIES ******/
+.white {
+  color: $color-white;
+}
+
+.yellow {
+  color: $color-yellow;
+}
+
+.grey {
+  color: $color-dark-neutral-grey;
+}
+
+.red {
+  color: $color-red;
+}
+
+.green {
+  color: $color-green;
+}
+
+.black {
+  color: $color-black;
+}
+/****** COLOR PROPERTIES END ******/
+
+/****** FONT PROPERTIES ******/
+.title-font {
+  font-family: $title-font-family;
+}
+/****** FONT PROPERTIES END ******/
+
+
+
+/****** SIZE PROPERTIES ******/
+.h1-size {
+  font-size: 1.7rem;
+}
+
+.h2-size {
+  font-size: 1.6rem;
+}
+
+.h3-size {
+  font-size: 1.5625rem;
+}
+
+.h4-size {
+  font-size: 1.4rem;
+}
+
+.h5-size {
+  font-size: 1.25rem;
+}
+
+.h6-size {
+  font-size: 1.1rem;
+}
+
+.base-size {
+  font-size: 1rem;
+}
+
+.small-size {
+  font-size: 0.875rem;
+}
+
+.xsmall-size {
+  font-size: 0.75rem;
+}
+
+.xxsmall-size {
+  font-size: 0.6rem;
+}
+/****** SIZE PROPERTIES END ******/
+
+
+
+/****** TEXT ALIGN PROPERTIES ******/
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+/****** TEXT ALIGN PROPERTIES END ******/
+
+/****** VISUALIZATION ******/
+
+.grey-shuriken {
+  padding-left: 0 !important;
+  list-style-type: none;
+
+  li {
+    background: transparent url("#{$path-to-images}/ninja-star-grey.png") no-repeat 0 0;
+    padding-left: $h-padding * 2;
+  }
+}
+
+.red-shuriken {
+  padding-left: 0 !important;
+  list-style-type: none;
+
+  li {
+    background: transparent url("#{$path-to-images}/ninja-star-red.png") no-repeat 0 0;
+    padding-left: $h-padding * 2;
+  }
+}
+
+/****** VISUALIZATION END ******/
+
+/****** CLEAR PROPERTIES ******/
+
+.clearfix {
+  clear: both;
+}
+
+/****** CLEAR PROPERTIES END ******/
+
+/****** BUTTONS ******/
+
+.button-black {
+  @include colored-btn($color-white, $color-black, lighten($color-black, 20%));
+  padding: 10px 60px;
+}
+
+.button-darkgrey {
+  @include colored-btn($color-white, $color-dark-warm-grey, darken($color-dark-warm-grey, 5%));
+  padding: 10px 60px;
+}
+
+.button-lightgrey{
+  @include colored-btn($color-white, $color-dark-warm-grey, darken($color-dark-warm-grey, 5%));
+  padding: 10px 60px;
+}
+
+.button-grey {
+  @include colored-btn($color-white, $color-grey, darken($color-grey, 10%));
+  padding: 10px 60px;
+}
+
+.button-green {
+  @include colored-btn($color-white, $color-green, lighten($color-green, 5%));
+  padding: 10px 60px;
+}
+
+.button-red {
+  @include colored-btn($color-white, $color-red, lighten($color-red, 5%));
+  padding: 10px 60px;
+}
+
+.button-yellow {
+  @include colored-btn($color-white, $color-yellow, lighten($color-yellow, 10%));
+  padding: 10px 60px;
+}
+
+/****** BUTTONS END ******/
+
+
+
+@media #{$tablet} {
+
+  /****** DISPLAY PROPERTIES ******/
+  .t-block {
+    display: block;
+  }
+
+  .t-i-block {
+    display: inline-block;
+  }
+
+  .t-table {
+    display: table;
+  }
+
+  .t-table-cell {
+    display: table-cell;
+  }
+
+  .t-flex {
+    @include flex;
+  }
+
+  .t-i-flex {
+    display: inline-flex;
+  }
+
+  .t-none {
+    display: none;
+  }
+
+  .non-tablet {
+    display: none;
+  }
+
+  .only-mobile {
+    display: none;
+  }
+  /****** DISPLAY PROPERTIES END ******/
+
+
+
+
+  /****** FLEX CONTAINER PROPERTIES ******/
+
+  // flex direction
+
+  .t-f-row {
+    flex-direction: row;
+  }
+
+  .t-f-column {
+    flex-direction: column;
+  }
+
+  // justify content
+
+  .t-f-j-start {
+    justify-content: flex-start;
+  }
+
+  .t-f-j-end {
+    justify-content: flex-end;
+  }
+
+  .t-f-j-center {
+    justify-content: center;
+  }
+
+  .t-f-j-space-around {
+    justify-content: space-around;
+  }
+
+  .t-f-j-space-between {
+    justify-content: space-between;
+  }
+
+  // wrap content
+
+  .t-f-row-w {
+    flex-flow: row wrap;
+  }
+
+  .t-f-row-nw {
+    flex-flow: row nowrap;
+  }
+
+  // align items
+
+  .t-f-items-end {
+    align-items: flex-end;
+  }
+
+  .t-f-items-center {
+    align-items: center;
+  }
+
+  .t-f-items-baseline {
+    align-items: baseline;
+  }
+
+  .t-f-items-stretch {
+    align-items: stretch;
+  }
+
+  // flex-basis
+
+  .t-f-one-quarter {
+    flex-basis: 25%;
+  }
+
+  .t-f-one-half {
+    flex-basis: 50%;
+  }
+
+  .t-f-three-quarters {
+    flex-basis: 75%;
+  }
+
+  .t-f-one-third {
+    flex-basis: calc(100%/3);
+  }
+
+  .t-f-two-thirds {
+    flex-basis: calc(100% * 2 /3);
+  }
+
+  .t-f-full {
+    flex-basis: 100%;
+  }
+
+  // multiple columns with equal size
+
+  .t-f-1-column {
+    & > * {
+      flex-basis: 100%;
+    }
+  }
+
+  .t-f-2-column {
+    & > * {
+      flex-basis: calc(100%/2);
+    }
+  }
+
+  .t-f-3-column {
+    & > * {
+      flex-basis: calc(100%/3);
+    }
+  }
+
+  .t-f-4-column {
+    & > * {
+      flex-basis: calc(100%/4);
+    }
+  }
+
+  .t-f-5-column {
+    & > * {
+      flex-basis: calc(100%/5);
+    }
+  }
+
+  .t-f-6-column {
+    & > * {
+      flex-basis: calc(100%/6);
+    }
+  }
+
+  .t-f-7-column {
+    & > * {
+      flex-basis: calc(100%/7);
+    }
+  }
+
+  .t-f-8-column {
+    & > * {
+      flex-basis: calc(100%/8);
+    }
+  }
+
+  .t-f-9-column {
+    & > * {
+      flex-basis: calc(100%/9);
+    }
+  }
+
+  .t-f-10-column {
+    & > * {
+      flex-basis: calc(100%/10);
+    }
+  }
+
+  .t-f-11-column {
+    & > * {
+      flex-basis: calc(100%/11);
+    }
+  }
+
+  .t-f-12-column {
+    & > * {
+      flex-basis: calc(100%/12);
+    }
+  }
+  /****** FLEX CONTAINER PROPERTIES END ******/
+
+
+
+  /****** SIZE PROPERTIES ******/
+  .t-one-quarter {
+    width: 25%;
+  }
+
+  .t-one-half {
+    width: 50%;
+  }
+
+  .t-three-quarters {
+    width: 75%;
+  }
+
+  .t-one-third {
+    width: 33.3334%;
+  }
+
+  .t-two-thirds {
+    width: 66.6667%;
+  }
+
+  .t-full-width {
+    width: 100%;
+  }
+  /****** SIZE PROPERTIES END ******/
+
+
+
+  /****** PADDING PROPERTIES ******/
+  .t-no-padding {
+    padding: 0;
+  }
+
+  .t-no-side-padding {
+    @include no-side-padding;
+  }
+
+  .t-no-v-padding {
+    @include no-v-padding;
+  }
+
+  .t-no-top-padding {
+    @include no-top-padding;
+  }
+
+  .t-no-bottom-padding {
+    @include no-bottom-padding;
+  }
+
+  .t-first {
+    @include first;
+  }
+
+  .t-last {
+    @include last;
+  }
+
+  .t-x-2-padding {
+    @include shortcode-padding($tablet-h-padding/2);
+  }
+
+  .t-x-3-padding {
+    @include shortcode-padding($tablet-h-padding/3);
+  }
+
+  .t-x-4-padding {
+    @include shortcode-padding($tablet-h-padding/4);
+  }
+
+  .t-x-5-padding {
+    @include shortcode-padding($tablet-h-padding/5);
+  }
+
+  .t-x-6-padding {
+    @include shortcode-padding($tablet-h-padding/6);
+  }
+
+  .t-x-7-padding {
+    @include shortcode-padding($tablet-h-padding/7);
+  }
+
+  .t-x-8-padding {
+    @include shortcode-padding($tablet-h-padding/8);
+  }
+
+  .t-x-9-padding {
+    @include shortcode-padding($tablet-h-padding/9);
+  }
+
+  .t-x-10-padding {
+    @include shortcode-padding($tablet-h-padding/10);
+  }
+
+  .t-x1-padding {
+    @include shortcode-padding($tablet-h-padding);
+  }
+
+  .t-x2-padding {
+    @include shortcode-padding($tablet-h-padding*2);
+  }
+
+  .t-x3-padding {
+    @include shortcode-padding($tablet-h-padding*3);
+  }
+
+  .t-x4-padding {
+    @include shortcode-padding($tablet-h-padding*4);
+  }
+
+  .t-x5-padding {
+    @include shortcode-padding($tablet-h-padding*5);
+  }
+
+  .t-x6-padding {
+    @include shortcode-padding($tablet-h-padding*6);
+  }
+
+  .t-x7-padding {
+    @include shortcode-padding($tablet-h-padding*7);
+  }
+
+  .t-x8-padding {
+    @include shortcode-padding($tablet-h-padding*8);
+  }
+
+  .t-x9-padding {
+    @include shortcode-padding($tablet-h-padding*9);
+  }
+
+  .t-x10-padding {
+    @include shortcode-padding($tablet-h-padding*10);
+  }
+
+  .t-y1-padding {
+    @include v-padding($h-padding);
+  }
+
+  .t-y2-padding {
+    @include v-padding($h-padding*2);
+  }
+
+  .t-y3-padding {
+    @include v-padding($h-padding*3);
+  }
+
+  .t-y4-padding {
+    @include v-padding($h-padding*4);
+  }
+
+  .t-y5-padding {
+    @include v-padding($h-padding*5);
+  }
+
+  .t-y6-padding {
+    @include v-padding($h-padding*6);
+  }
+
+  .t-y7-padding {
+    @include v-padding($h-padding*7);
+  }
+
+  .t-y8-padding {
+    @include v-padding($h-padding*8);
+  }
+
+  .t-y9-padding {
+    @include v-padding($h-padding*9);
+  }
+
+  .t-y10-padding {
+    @include v-padding($h-padding*10);
+  }
+
+  .t-y-2-padding {
+    @include v-padding($h-padding/2);
+  }
+
+  .t-y-3-padding {
+    @include v-padding($h-padding/3);
+  }
+
+  .t-y-4-padding {
+    @include v-padding($h-padding/4);
+  }
+
+  .t-y-5-padding {
+    @include v-padding($h-padding/5);
+  }
+
+  .t-y-6-padding {
+    @include v-padding($h-padding/6);
+  }
+
+  .t-y-7-padding {
+    @include v-padding($h-padding/7);
+  }
+
+  .t-y-8-padding {
+    @include v-padding($h-padding/8);
+  }
+
+  .t-y-9-padding {
+    @include v-padding($h-padding/9);
+  }
+
+  .t-y-10-padding {
+    @include v-padding($h-padding/10);
+  }
+  /****** PADDING PROPERTIES END ******/
+
+  /****** COLUMN COUNT PROPERTIES ******/
+
+  .t-column-count-1 {
+    @include column-count(1);
+  }
+
+  .t-column-count-2 {
+    @include column-count(2);
+  }
+
+  .t-column-count-3 {
+    @include column-count(3);
+  }
+
+  .t-column-count-4 {
+    @include column-count(4);
+  }
+
+  .t-column-count-5 {
+    @include column-count(5);
+  }
+
+  /****** COLUMN COUNT PROPERTIES END ******/
+
+  /****** COLOR PROPERTIES ******/
+  .t-white {
+    color: $color-white;
+  }
+
+  .t-yellow {
+    color: $color-yellow;
+  }
+
+  .t-grey {
+    color: $color-dark-neutral-grey;
+  }
+
+  .t-red {
+    color: $color-red;
+  }
+
+  .t-green {
+    color: $color-green;
+  }
+
+  .t-black {
+    color: $color-black;
+  }
+  /****** COLOR PROPERTIES END ******/
+
+  /****** FONT PROPERTIES ******/
+  .t-title-font {
+    font-family: $title-font-family;
+  }
+  /****** FONT PROPERTIES END ******/
+
+
+
+  /****** SIZE PROPERTIES ******/
+  .t-h1-size {
+    font-size: 1.7rem;
+  }
+
+  .t-h2-size {
+    font-size: 1.6rem;
+  }
+
+  .t-h3-size {
+    font-size: 1.5625rem;
+  }
+
+  .t-h4-size {
+    font-size: 1.4rem;
+  }
+
+  .t-h5-size {
+    font-size: 1.25rem;
+  }
+
+  .t-h6-size {
+    font-size: 1.1rem;
+  }
+
+  .t-base-size {
+    font-size: 1rem;
+  }
+
+  .t-small-size {
+    font-size: 0.875rem;
+  }
+
+  .t-xsmall-size {
+    font-size: 0.75rem;
+  }
+
+  .t-xxsmall-size {
+    font-size: 0.6rem;
+  }
+  /****** SIZE PROPERTIES END ******/
+
+
+
+  /****** TEXT ALIGN PROPERTIES ******/
+  .t-text-center {
+    text-align: center;
+  }
+
+  .t-text-left {
+    text-align: left;
+  }
+
+  .t-text-right {
+    text-align: right;
+  }
+  /****** TEXT ALIGN PROPERTIES END ******/
+
+  /****** CLEAR PROPERTIES ******/
+
+  .t-clearfix {
+    clear: both;
+  }
+
+  /****** CLEAR PROPERTIES END ******/
+
+  /****** BUTTONS ******/
+
+  .t-button-black {
+    @include colored-btn($color-white, $color-black, lighten($color-black, 20%));
+    padding: 10px 60px;
+  }
+
+  .t-button-darkgrey {
+    @include colored-btn($color-white, $color-dark-warm-grey, darken($color-dark-warm-grey, 5%));
+    padding: 10px 60px;
+  }
+
+  .t-button-lightgrey{
+    @include colored-btn($color-white, $color-dark-warm-grey, darken($color-dark-warm-grey, 5%));
+    padding: 10px 60px;
+  }
+
+  .t-button-grey {
+    @include colored-btn($color-white, $color-grey, darken($color-grey, 10%));
+    padding: 10px 60px;
+  }
+
+  .t-button-green {
+    @include colored-btn($color-white, $color-green, lighten($color-green, 5%));
+    padding: 10px 60px;
+  }
+
+  .t-button-red {
+    @include colored-btn($color-white, $color-red, lighten($color-red, 5%));
+    padding: 10px 60px;
+  }
+
+  .t-button-yellow {
+    @include colored-btn($color-white, $color-yellow, lighten($color-yellow, 10%));
+    padding: 10px 60px;
+  }
+
+  /****** BUTTONS END ******/
+}
+
+@media #{$mobile} {
+
+  /****** DISPLAY PROPERTIES ******/
+  .m-block {
+    display: block;
+  }
+
+  .m-i-block {
+    display: inline-block;
+  }
+
+  .m-table {
+    display: table;
+  }
+
+  .m-table-cell {
+    display: table-cell;
+  }
+
+  .m-flex {
+    @include flex;
+  }
+
+  .m-i-flex {
+    display: inline-flex;
+  }
+
+  .m-none {
+    display: none;
+  }
+
+  .non-mobile {
+    display: none;
+  }
+
+  .only-tablet {
+    display: none;
+  }
+
+  .only-mobile {
+    @include flex;
+  }
+
+  /****** DISPLAY PROPERTIES END ******/
+
+
+
+
+  /****** FLEX CONTAINER PROPERTIES ******/
+
+  // flex direction
+
+  .m-f-row {
+    flex-direction: row;
+  }
+
+  .m-f-column {
+    flex-direction: column;
+  }
+
+  // justify content
+
+  .m-f-j-start {
+    justify-content: flex-start;
+  }
+
+  .m-f-j-end {
+    justify-content: flex-end;
+  }
+
+  .m-f-j-center {
+    justify-content: center;
+  }
+
+  .m-f-j-space-around {
+    justify-content: space-around;
+  }
+
+  .m-f-j-space-between {
+    justify-content: space-between;
+  }
+
+  // wrap content
+
+  .m-f-row-w {
+    flex-flow: row wrap;
+  }
+
+  .m-f-row-nw {
+    flex-flow: row nowrap;
+  }
+
+  // align items
+
+  .m-f-items-end {
+    align-items: flex-end;
+  }
+
+  .m-f-items-center {
+    align-items: center;
+  }
+
+  .m-f-items-baseline {
+    align-items: baseline;
+  }
+
+  .m-f-items-stretch {
+    align-items: stretch;
+  }
+
+  // flex-basis
+
+  .m-f-one-quarter {
+    flex-basis: 25%;
+  }
+
+  .m-f-one-half {
+    flex-basis: 50%;
+  }
+
+  .m-f-three-quarters {
+    flex-basis: 75%;
+  }
+
+  .m-f-one-third {
+    flex-basis: calc(100%/3);
+  }
+
+  .m-f-two-thirds {
+    flex-basis: calc(100% * 2 /3);
+  }
+
+  .m-f-full {
+    flex-basis: 100%;
+  }
+
+  // multiple columns with equal size
+
+  .m-f-1-column {
+    & > * {
+      flex-basis: 100%;
+    }
+  }
+
+  .m-f-2-column {
+    & > * {
+      flex-basis: calc(100%/2);
+    }
+  }
+
+  .m-f-3-column {
+    & > * {
+      flex-basis: calc(100%/3);
+    }
+  }
+
+  .m-f-4-column {
+    & > * {
+      flex-basis: calc(100%/4);
+    }
+  }
+
+  .m-f-5-column {
+    & > * {
+      flex-basis: calc(100%/5);
+    }
+  }
+
+  .m-f-6-column {
+    & > * {
+      flex-basis: calc(100%/6);
+    }
+  }
+
+  .m-f-7-column {
+    & > * {
+      flex-basis: calc(100%/7);
+    }
+  }
+
+  .m-f-8-column {
+    & > * {
+      flex-basis: calc(100%/8);
+    }
+  }
+
+  .m-f-9-column {
+    & > * {
+      flex-basis: calc(100%/9);
+    }
+  }
+
+  .m-f-10-column {
+    & > * {
+      flex-basis: calc(100%/10);
+    }
+  }
+
+  .m-f-11-column {
+    & > * {
+      flex-basis: calc(100%/11);
+    }
+  }
+
+  .m-f-12-column {
+    & > * {
+      flex-basis: calc(100%/12);
+    }
+  }
+  /****** FLEX CONTAINER PROPERTIES END ******/
+
+
+
+  /****** SIZE PROPERTIES ******/
+  .m-one-quarter {
+    width: 25%;
+  }
+
+  .m-one-half {
+    width: 50%;
+  }
+
+  .m-three-quarters {
+    width: 75%;
+  }
+
+  .m-one-third {
+    width: 33.3334%;
+  }
+
+  .m-two-thirds {
+    width: 66.6667%;
+  }
+
+  .m-full-width {
+    width: 100%;
+  }
+  /****** SIZE PROPERTIES END ******/
+
+
+
+  /****** PADDING PROPERTIES ******/
+  .m-no-padding {
+    padding: 0;
+  }
+
+  .m-no-side-padding {
+    @include no-side-padding;
+  }
+
+  .m-no-v-padding {
+    @include no-v-padding;
+  }
+
+  .m-no-top-padding {
+    @include no-top-padding;
+  }
+
+  .m-no-bottom-padding {
+    @include no-bottom-padding;
+  }
+
+  .m-first {
+    @include first;
+  }
+
+  .m-last {
+    @include last;
+  }
+
+  .m-x-2-padding {
+    @include shortcode-padding($mobile-h-padding/2);
+  }
+
+  .m-x-3-padding {
+    @include shortcode-padding($mobile-h-padding/3);
+  }
+
+  .m-x-4-padding {
+    @include shortcode-padding($mobile-h-padding/4);
+  }
+
+  .m-x-5-padding {
+    @include shortcode-padding($mobile-h-padding/5);
+  }
+
+  .m-x-6-padding {
+    @include shortcode-padding($mobile-h-padding/6);
+  }
+
+  .m-x-7-padding {
+    @include shortcode-padding($mobile-h-padding/7);
+  }
+
+  .m-x-8-padding {
+    @include shortcode-padding($mobile-h-padding/8);
+  }
+
+  .m-x-9-padding {
+    @include shortcode-padding($mobile-h-padding/9);
+  }
+
+  .m-x-10-padding {
+    @include shortcode-padding($mobile-h-padding/10);
+  }
+
+  .m-x1-padding {
+    @include shortcode-padding($mobile-h-padding);
+  }
+
+  .m-x2-padding {
+    @include shortcode-padding($mobile-h-padding*2);
+  }
+
+  .m-x3-padding {
+    @include shortcode-padding($mobile-h-padding*3);
+  }
+
+  .m-x4-padding {
+    @include shortcode-padding($mobile-h-padding*4);
+  }
+
+  .m-x5-padding {
+    @include shortcode-padding($mobile-h-padding*5);
+  }
+
+  .m-x6-padding {
+    @include shortcode-padding($mobile-h-padding*6);
+  }
+
+  .m-x7-padding {
+    @include shortcode-padding($mobile-h-padding*7);
+  }
+
+  .m-x8-padding {
+    @include shortcode-padding($mobile-h-padding*8);
+  }
+
+  .m-x9-padding {
+    @include shortcode-padding($mobile-h-padding*9);
+  }
+
+  .m-x10-padding {
+    @include shortcode-padding($mobile-h-padding*10);
+  }
+
+  .m-y1-padding {
+    @include v-padding($h-padding);
+  }
+
+  .m-y2-padding {
+    @include v-padding($h-padding*2);
+  }
+
+  .m-y3-padding {
+    @include v-padding($h-padding*3);
+  }
+
+  .m-y4-padding {
+    @include v-padding($h-padding*4);
+  }
+
+  .m-y5-padding {
+    @include v-padding($h-padding*5);
+  }
+
+  .m-y6-padding {
+    @include v-padding($h-padding*6);
+  }
+
+  .m-y7-padding {
+    @include v-padding($h-padding*7);
+  }
+
+  .m-y8-padding {
+    @include v-padding($h-padding*8);
+  }
+
+  .m-y9-padding {
+    @include v-padding($h-padding*9);
+  }
+
+  .m-y10-padding {
+    @include v-padding($h-padding*10);
+  }
+
+  .m-y-2-padding {
+    @include v-padding($h-padding/2);
+  }
+
+  .m-y-3-padding {
+    @include v-padding($h-padding/3);
+  }
+
+  .m-y-4-padding {
+    @include v-padding($h-padding/4);
+  }
+
+  .m-y-5-padding {
+    @include v-padding($h-padding/5);
+  }
+
+  .m-y-6-padding {
+    @include v-padding($h-padding/6);
+  }
+
+  .m-y-7-padding {
+    @include v-padding($h-padding/7);
+  }
+
+  .m-y-8-padding {
+    @include v-padding($h-padding/8);
+  }
+
+  .m-y-9-padding {
+    @include v-padding($h-padding/9);
+  }
+
+  .m-y-10-padding {
+    @include v-padding($h-padding/10);
+  }
+  /****** PADDING PROPERTIES END ******/
+
+
+  /****** COLUMN COUNT PROPERTIES ******/
+
+  .m-column-count-1 {
+    @include column-count(1);
+  }
+
+  .m-column-count-2 {
+    @include column-count(2);
+  }
+
+  .m-column-count-3 {
+    @include column-count(3);
+  }
+
+  .m-column-count-4 {
+    @include column-count(4);
+  }
+
+  .m-column-count-5 {
+    @include column-count(5);
+  }
+
+  /****** COLUMN COUNT PROPERTIES END ******/
+
+
+  /****** COLOR PROPERTIES ******/
+  .m-white {
+    color: $color-white;
+  }
+
+  .m-yellow {
+    color: $color-yellow;
+  }
+
+  .m-grey {
+    color: $color-dark-neutral-grey;
+  }
+
+  .m-red {
+    color: $color-red;
+  }
+
+  .m-green {
+    color: $color-green;
+  }
+
+  .m-black {
+    color: $color-black;
+  }
+  /****** COLOR PROPERTIES END ******/
+
+  /****** FONT PROPERTIES ******/
+  .m-title-font {
+    font-family: $title-font-family;
+  }
+  /****** FONT PROPERTIES END ******/
+
+
+
+  /****** SIZE PROPERTIES ******/
+  .m-h1-size {
+    font-size: 1.7rem;
+  }
+
+  .m-h2-size {
+    font-size: 1.6rem;
+  }
+
+  .m-h3-size {
+    font-size: 1.5625rem;
+  }
+
+  .m-h4-size {
+    font-size: 1.4rem;
+  }
+
+  .m-h5-size {
+    font-size: 1.25rem;
+  }
+
+  .m-h6-size {
+    font-size: 1.1rem;
+  }
+
+  .m-base-size {
+    font-size: 1rem;
+  }
+
+  .m-small-size {
+    font-size: 0.875rem;
+  }
+
+  .m-xsmall-size {
+    font-size: 0.75rem;
+  }
+
+  .m-xxsmall-size {
+    font-size: 0.6rem;
+  }
+  /****** SIZE PROPERTIES END ******/
+
+
+
+  /****** TEXT ALIGN PROPERTIES ******/
+  .m-text-center {
+    text-align: center;
+  }
+
+  .m-text-left {
+    text-align: left;
+  }
+
+  .m-text-right {
+    text-align: right;
+  }
+  /****** TEXT ALIGN PROPERTIES END ******/
+
+  /****** CLEAR PROPERTIES ******/
+
+  .m-clearfix {
+    clear: both;
+  }
+
+  /****** CLEAR PROPERTIES END ******/
+
+
+  /****** BUTTONS ******/
+
+  .m-button-black {
+    @include colored-btn($color-white, $color-black, lighten($color-black, 20%));
+    padding: 10px 60px;
+  }
+
+  .m-button-darkgrey {
+    @include colored-btn($color-white, $color-dark-warm-grey, darken($color-dark-warm-grey, 5%));
+    padding: 10px 60px;
+  }
+
+  .m-button-lightgrey{
+    @include colored-btn($color-white, $color-dark-warm-grey, darken($color-dark-warm-grey, 5%));
+    padding: 10px 60px;
+  }
+
+  .m-button-grey {
+    @include colored-btn($color-white, $color-grey, darken($color-grey, 10%));
+    padding: 10px 60px;
+  }
+
+  .m-button-green {
+    @include colored-btn($color-white, $color-green, lighten($color-green, 5%));
+    padding: 10px 60px;
+  }
+
+  .m-button-red {
+    @include colored-btn($color-white, $color-red, lighten($color-red, 5%));
+    padding: 10px 60px;
+  }
+
+  .m-button-yellow {
+    @include colored-btn($color-white, $color-yellow, lighten($color-yellow, 10%));
+    padding: 10px 60px;
+  }
+
+  /****** BUTTONS END ******/
+}

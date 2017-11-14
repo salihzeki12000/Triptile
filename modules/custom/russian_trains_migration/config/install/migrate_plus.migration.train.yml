@@ -1,0 +1,35 @@
+id: train
+migration_group: train_base
+migration_tags:
+  - russian_trains_light
+label: Train
+source:
+  plugin: train
+  key: travelallrussia
+process:
+  number: code
+  name: name
+  message: descr
+  supplier:
+    plugin: migration_lookup
+    migration: supplier
+    source: supplier_id
+  train_class:
+    plugin: migration_lookup
+    migration: train_class
+    source: train_class_id
+  eticket_available: eticket
+  boarding_pass_required: board_pass_req
+  tp_rating: tp_rating
+  internal_rating: internal_rating
+  count_of_reviews: review_count
+destination:
+  plugin: entity:train
+migration_dependencies:
+  required:
+    - supplier
+    - train_class
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

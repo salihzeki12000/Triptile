@@ -1,0 +1,8 @@
+id: rn_user
+label: RN User
+description: Migrate entities, which declared in rn_user module.
+source_type: RussianTrains database
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

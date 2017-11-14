@@ -1,0 +1,18 @@
+uuid: af3ea3e5-9a40-4efa-b9f3-60866561f9b4
+langcode: en
+status: true
+dependencies:
+  module:
+    - train_base
+id: seat_type.seat_type.name
+field_name: name
+entity_type: seat_type
+bundle: seat_type
+label: Name
+description: 'The name of the Seat type entity.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

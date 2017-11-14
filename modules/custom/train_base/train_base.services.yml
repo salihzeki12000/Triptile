@@ -1,0 +1,5 @@
+services:
+  train_base.route_page:
+    class: Drupal\train_base\RoutePage
+    arguments: ['@entity_type.manager']
+

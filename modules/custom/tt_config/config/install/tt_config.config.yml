@@ -1,0 +1,30 @@
+north:
+  DK: Denmark
+  NO: Norway
+  SE: Sweden
+  IS: Iceland
+  FI: Finland
+  GB: UK
+  IE: Ireland
+south:
+  ES: Spain
+  PT: Portugal
+  IT: Italy
+  MA: Morocco
+east:
+  RU: Russia
+  LT: Lithuania
+  LV: Latvia
+  EE: Estonia
+  BY: Belarus
+  PL: Poland
+  AZ: Azerbaijan
+  GE: Georgia
+  AM: Armenia
+west:
+  CH: Switzerland
+  AT: Austria
+  DE: Germany
+  FR: France
+  NL: Netherlands
+  BE: Belgium

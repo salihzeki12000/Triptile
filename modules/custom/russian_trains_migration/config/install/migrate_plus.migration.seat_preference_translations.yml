@@ -1,0 +1,25 @@
+id: seat_preference_translations
+migration_group: train_base
+migration_tags:
+  - translations
+label: SeatPreference translations
+source:
+  plugin: seat_preference_translations
+  key: travelallrussia
+process:
+  id:
+    plugin: migration_lookup
+    source: id
+    migration: seat_preference
+  langcode: lang
+  name: name
+destination:
+  plugin: entity:seat_preference
+  translations: true
+migration_dependencies:
+  required:
+    - seat_preference
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

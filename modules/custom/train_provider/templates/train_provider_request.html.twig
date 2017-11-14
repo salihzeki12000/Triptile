@@ -1,0 +1,22 @@
+{#
+/**
+ * @file searc_statistic.html.twig
+ * Default theme implementation to present Search statistic data.
+ *
+ * This template is used when viewing Search statistic pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_train_provider_request()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('searc_statistic') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

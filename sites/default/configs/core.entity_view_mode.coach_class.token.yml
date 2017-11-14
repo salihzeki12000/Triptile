@@ -1,0 +1,10 @@
+uuid: fa2d45f9-f552-41af-975f-365f115b5e8c
+langcode: en
+status: true
+dependencies:
+  module:
+    - train_base
+id: coach_class.token
+label: Token
+targetEntityType: coach_class
+cache: true

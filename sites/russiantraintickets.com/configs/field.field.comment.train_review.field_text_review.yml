@@ -1,0 +1,19 @@
+uuid: 2b46b46a-6022-4955-b2f2-bac6b1df5fa2
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.train_review
+    - field.storage.comment.field_text_review
+id: comment.train_review.field_text_review
+field_name: field_text_review
+entity_type: comment
+bundle: train_review
+label: 'Text review'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

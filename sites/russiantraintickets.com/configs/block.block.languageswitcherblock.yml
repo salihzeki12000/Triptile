@@ -1,0 +1,25 @@
+uuid: 97232447-427f-480f-9890-a76b1a80dfc5
+langcode: en
+status: false
+dependencies:
+  module:
+    - rn_content
+  theme:
+    - russiantraintickets
+third_party_settings:
+  rn_content:
+    classes: ''
+_core:
+  default_config_hash: AcjCQaT6wgNkjhvf5427LUASUzG6nYABcFneKbbgjY8
+id: languageswitcherblock
+theme: russiantraintickets
+region: leaderboard
+weight: -19
+provider: null
+plugin: languageswitcherblock
+settings:
+  id: languageswitcherblock
+  label: Language
+  provider: rn_content
+  label_display: visible
+visibility: {  }

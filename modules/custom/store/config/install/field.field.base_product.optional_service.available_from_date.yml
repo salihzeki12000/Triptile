@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.base_product.available_from_date
+    - store.base_product_type.optional_service
+  module:
+    - datetime
+id: base_product.optional_service.available_from_date
+field_name: available_from_date
+entity_type: base_product
+bundle: optional_service
+label: 'Available from date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

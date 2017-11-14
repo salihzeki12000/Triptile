@@ -1,0 +1,18 @@
+alternativeSigns: {  }
+currencyCode: JPY
+currencyNumber: '392'
+label: JPY
+roundingStep: 0.001
+sign: ¥
+subunits: 1000
+status: true
+usages:
+  -
+    start: '1914-10-03'
+    end: '1944-01-01'
+    countryCode: FM
+  -
+    start: '1871-06-01'
+    end: null
+    countryCode: JP
+uuid: 8af2e3c2-4195-4f4a-9d30-70a00e3fe090

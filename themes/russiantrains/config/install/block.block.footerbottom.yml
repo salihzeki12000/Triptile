@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:2ad416a2-64d7-40d9-b4a4-364097d46f18'
+  module:
+    - block_content
+    - rn_content
+  theme:
+    - russiantrains
+third_party_settings:
+  rn_content:
+    classes: 'non-mobile xsmall-size grey last-block'
+id: footerbottom
+theme: russiantrains
+region: footer
+weight: -5
+provider: null
+plugin: 'block_content:2ad416a2-64d7-40d9-b4a4-364097d46f18'
+settings:
+  id: 'block_content:2ad416a2-64d7-40d9-b4a4-364097d46f18'
+  label: 'Footer bottom'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

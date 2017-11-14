@@ -1,0 +1,273 @@
+# Supplier routing definition
+supplier.settings_tab:
+  route_name: entity.supplier.settings
+  title: 'Settings'
+  base_route: entity.supplier.settings
+entity.supplier.canonical:
+  route_name: entity.supplier.canonical
+  base_route: entity.supplier.canonical
+  title: 'View'
+
+entity.supplier.edit_form:
+  route_name: entity.supplier.edit_form
+  base_route: entity.supplier.canonical
+  title: Edit
+
+entity.supplier.delete_form:
+  route_name:  entity.supplier.delete_form
+  base_route:  entity.supplier.canonical
+  title: Delete
+  weight: 10
+
+# Train routing definition
+train.settings_tab:
+  route_name: entity.train.settings
+  title: 'Settings'
+  base_route: entity.train.settings
+entity.train.canonical:
+  route_name: entity.train.canonical
+  base_route: entity.train.canonical
+  title: 'View'
+
+entity.train.edit_form:
+  route_name: entity.train.edit_form
+  base_route: entity.train.canonical
+  title: Edit
+
+entity.train.delete_form:
+  route_name:  entity.train.delete_form
+  base_route:  entity.train.canonical
+  title: Delete
+  weight: 10
+
+# Train brand routing definition
+train_class.settings_tab:
+  route_name: entity.train_brand.settings
+  title: 'Settings'
+  base_route: entity.train_brand.settings
+entity.train_class.canonical:
+  route_name: entity.train_brand.canonical
+  base_route: entity.train_brand.canonical
+  title: 'View'
+
+entity.train_class.edit_form:
+  route_name: entity.train_brand.edit_form
+  base_route: entity.train_brand.canonical
+  title: Edit
+
+entity.train_class.delete_form:
+  route_name:  entity.train_brand.delete_form
+  base_route:  entity.train_brand.canonical
+  title: Delete
+  weight: 10
+
+# Train class routing definition
+train_class.settings_tab:
+  route_name: entity.train_class.settings
+  title: 'Settings'
+  base_route: entity.train_class.settings
+entity.train_class.canonical:
+  route_name: entity.train_class.canonical
+  base_route: entity.train_class.canonical
+  title: 'View'
+
+entity.train_class.edit_form:
+  route_name: entity.train_class.edit_form
+  base_route: entity.train_class.canonical
+  title: Edit
+
+entity.train_class.delete_form:
+  route_name:  entity.train_class.delete_form
+  base_route:  entity.train_class.canonical
+  title: Delete
+  weight: 10
+
+# Station routing definition
+station.settings_tab:
+  route_name: entity.station.settings
+  title: 'Settings'
+  base_route: entity.station.settings
+entity.station.canonical:
+  route_name: entity.station.canonical
+  base_route: entity.station.canonical
+  title: 'View'
+
+entity.station.edit_form:
+  route_name: entity.station.edit_form
+  base_route: entity.station.canonical
+  title: Edit
+
+entity.station.delete_form:
+  route_name:  entity.station.delete_form
+  base_route:  entity.station.canonical
+  title: Delete
+  weight: 10
+
+# Coach class routing definition
+coach_class.settings_tab:
+  route_name: entity.coach_class.settings
+  title: 'Settings'
+  base_route: entity.coach_class.settings
+entity.coach_class.canonical:
+  route_name: entity.coach_class.canonical
+  base_route: entity.coach_class.canonical
+  title: 'View'
+
+entity.coach_class.edit_form:
+  route_name: entity.coach_class.edit_form
+  base_route: entity.coach_class.canonical
+  title: Edit
+
+entity.coach_class.delete_form:
+  route_name:  entity.coach_class.delete_form
+  base_route:  entity.coach_class.canonical
+  title: Delete
+  weight: 10
+
+# Coach scheme routing definition
+coach_scheme.settings_tab:
+  route_name: entity.coach_scheme.settings
+  title: 'Settings'
+  base_route: entity.coach_scheme.settings
+entity.coach_scheme.canonical:
+  route_name: entity.coach_scheme.canonical
+  base_route: entity.coach_scheme.canonical
+  title: 'View'
+
+entity.coach_scheme.edit_form:
+  route_name: entity.coach_scheme.edit_form
+  base_route: entity.coach_scheme.canonical
+  title: Edit
+
+entity.coach_scheme.delete_form:
+  route_name:  entity.coach_scheme.delete_form
+  base_route:  entity.coach_scheme.canonical
+  title: Delete
+  weight: 10
+
+# Car service routing definition
+car_service.settings_tab:
+  route_name: entity.car_service.settings
+  title: 'Settings'
+  base_route: entity.car_service.settings
+entity.car_service.canonical:
+  route_name: entity.car_service.canonical
+  base_route: entity.car_service.canonical
+  title: 'View'
+
+entity.car_service.edit_form:
+  route_name: entity.car_service.edit_form
+  base_route: entity.car_service.canonical
+  title: Edit
+
+entity.car_service.delete_form:
+  route_name:  entity.car_service.delete_form
+  base_route:  entity.car_service.canonical
+  title: Delete
+  weight: 10
+
+# Seat type routing definition
+seat_type.settings_tab:
+  route_name: entity.seat_type.settings
+  title: 'Settings'
+  base_route: entity.seat_type.settings
+entity.seat_type.canonical:
+  route_name: entity.seat_type.canonical
+  base_route: entity.seat_type.canonical
+  title: 'View'
+
+entity.seat_type.edit_form:
+  route_name: entity.seat_type.edit_form
+  base_route: entity.seat_type.canonical
+  title: Edit
+
+entity.seat_type.delete_form:
+  route_name:  entity.seat_type.delete_form
+  base_route:  entity.seat_type.canonical
+  title: Delete
+  weight: 10
+
+# Train ticket routing definition
+train_ticket.settings_tab:
+  route_name: entity.train_ticket.settings
+  title: 'Settings'
+  base_route: entity.train_ticket.settings
+entity.train_ticket.canonical:
+  route_name: entity.train_ticket.canonical
+  base_route: entity.train_ticket.canonical
+  title: 'View'
+
+entity.train_ticket.edit_form:
+  route_name: entity.train_ticket.edit_form
+  base_route: entity.train_ticket.canonical
+  title: Edit
+
+entity.train_ticket.delete_form:
+  route_name:  entity.train_ticket.delete_form
+  base_route:  entity.train_ticket.canonical
+  title: Delete
+  weight: 10
+
+# Passenger routing definition
+passenger.settings_tab:
+  route_name: entity.passenger.settings
+  title: 'Settings'
+  base_route: entity.passenger.settings
+entity.passenger.canonical:
+  route_name: entity.passenger.canonical
+  base_route: entity.passenger.canonical
+  title: 'View'
+
+entity.passenger.edit_form:
+  route_name: entity.passenger.edit_form
+  base_route: entity.passenger.canonical
+  title: Edit
+
+entity.passenger.delete_form:
+  route_name:  entity.passenger.delete_form
+  base_route:  entity.passenger.canonical
+  title: Delete
+  weight: 10
+
+# Seat preference routing definition
+seat_preference.settings_tab:
+  route_name: entity.seat_preference.settings
+  title: 'Settings'
+  base_route: entity.seat_preference.settings
+entity.seat_preference.canonical:
+  route_name: entity.seat_preference.canonical
+  base_route: entity.seat_preference.canonical
+  title: 'View'
+
+entity.seat_preference.edit_form:
+  route_name: entity.seat_preference.edit_form
+  base_route: entity.seat_preference.canonical
+  title: Edit
+
+entity.seat_preference.delete_form:
+  route_name:  entity.seat_preference.delete_form
+  base_route:  entity.seat_preference.canonical
+  title: Delete
+  weight: 10
+
+# Route message routing definition
+route_message.settings_tab:
+  route_name: entity.route_message.settings
+  title: 'Settings'
+  base_route: entity.route_message.settings
+entity.route_message.canonical:
+  route_name: entity.route_message.canonical
+  base_route: entity.route_message.canonical
+  title: 'View'
+
+entity.route_message.edit_form:
+  route_name: entity.route_message.edit_form
+  base_route: entity.route_message.canonical
+  title: Edit
+
+entity.route_message.delete_form:
+  route_name:  entity.route_message.delete_form
+  base_route:  entity.route_message.canonical
+  title: Delete
+  weight: 10
+

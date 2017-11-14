@@ -1,0 +1,31 @@
+uuid: 753e21bd-72c0-404e-91f1-b0fc32d37c4c
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+    - system
+  theme:
+    - russiantraintickets
+third_party_settings:
+  rn_content:
+    classes: ''
+_core:
+  default_config_hash: 1SMWv4Eb9Uqng1A5FrH8kFsg9VUHAIENCBI4jgdNi74
+id: pagetitle
+theme: russiantraintickets
+region: content
+weight: -19
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '/user/*'
+    negate: false
+    context_mapping: {  }

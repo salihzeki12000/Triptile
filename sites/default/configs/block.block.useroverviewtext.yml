@@ -1,0 +1,33 @@
+uuid: 88d17b48-225f-4a65-9bca-477c7e1459ca
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+    - rn_user
+    - system
+  theme:
+    - railninja
+third_party_settings:
+  rn_content:
+    classes: ''
+id: useroverviewtext
+theme: railninja
+region: content
+weight: -15
+provider: null
+plugin: useroverviewtext
+settings:
+  id: useroverviewtext
+  label: 'User overview text'
+  provider: rn_user
+  label_display: '0'
+  client_area_text:
+    value: ' <p>Welcome to the Ninja Zone [user:full_name]! This is a secret place where we keep your Ninja story saved (your bookings and your e-tickets).</p>'
+    format: full_html_for_administrator
+visibility:
+  request_path:
+    id: request_path
+    pages: /user/%user
+    negate: false
+    context_mapping: {  }

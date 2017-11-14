@@ -1,0 +1,10 @@
+uuid: a2e75115-fc1c-4422-b607-e24e27e6d0b2
+langcode: en
+status: true
+dependencies:
+  module:
+    - store
+id: base_product.token
+label: Token
+targetEntityType: base_product
+cache: true

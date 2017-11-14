@@ -1,0 +1,588 @@
+$first-column-width: 37%;
+$last-column-width: 21%;
+$two-column-width: 48%;
+$input-padding: 7px;
+
+$ninja-icon-width: 21px;
+$ninja-icon-height: 24px;
+
+.all-passengers-wrapper {
+  border: $pas-border;
+  border-top-width: 0;
+
+  @media #{$mobile-portrait} {
+    border-top-width: 1px;
+  }
+
+  label {
+    font-weight: normal;
+    font-family: $base-font-family;
+  }
+
+  .passenger-details-header {
+    border-bottom: $pas-border;
+  }
+
+  .provide-later-wrapper {
+    padding: $pas-v-padding $pas-h-padding;
+    display: flex;
+    flex-flow: column wrap;
+    max-height: 120px;
+
+    @media #{$mobile-portrait} {
+      @include side-padding($pas-mobile-h-padding);
+      flex-direction: row;
+      max-height: 100%;
+    }
+
+    & > div {
+      width: 70%;
+      flex-basis: 50%;
+
+      @media #{$mobile-portrait} {
+        width: 100%;
+        flex-basis: 100%;
+      }
+
+      &:nth-of-type(2) {
+        @media #{$mobile} {
+          padding-top: $pas-v-padding;
+          font-size: 0.875rem;
+          color: $pas-dark-note-color;
+        }
+      }
+
+      &.sign-in {
+        flex-basis: 100%;
+        width: 30%;
+
+        @media #{$mobile-portrait} {
+          width: 100%;
+          flex-basis: 100%;
+          margin-top: $pas-v-padding/2;
+        }
+      }
+    }
+  }
+
+  .provide-later-message {
+    padding: $pas-v-padding $pas-h-padding;
+    color: $pas-dark-note-color;
+    font-size: 0.875rem;
+    background: $color-white;
+    border: $pas-border;
+    margin-top: $pas-v-padding/2;
+    margin-bottom: $pas-v-padding/2;
+
+    @media #{$mobile} {
+      @include side-padding($pas-mobile-h-padding);
+    }
+  }
+
+  .sign-in {
+    @include btn-grey;
+    @include v-padding($pas-button-v-padding - 2px);
+    @include side-padding($pas-button-h-padding);
+  }
+
+  .passenger-wrapper {
+    &.opened {
+      border: $pas-hover-border;
+
+      .passenger-form-header-wrapper {
+        border-bottom: $pas-border;
+        cursor: default;
+      }
+
+      .passenger-info {
+        @include arrow-down($pas-light-note-color, 0, 1.7rem);
+      }
+    }
+
+    &:not(:first-of-type) {
+      .passenger-form-header-wrapper {
+        border-top: $pas-border;
+      }
+    }
+
+    $name-width: 49%;
+    &.dead-easy-form {
+      .internal-fields-wrapper {
+        & > div {
+          flex-basis: $name-width;
+
+          @media #{$mobile-portrait} {
+            flex-basis: 100%;
+          }
+        }
+      }
+    }
+
+    $name-width: 40%;
+
+    &.greeting-form {
+      .internal-fields-wrapper {
+        & > div {
+          flex-basis: $name-width;
+
+          &:first-of-type {
+            flex-basis: 100% - $name-width * 2 - 3%;
+          }
+
+          @media #{$tablet-landscape} {
+            select {
+              @include v-padding($input-v-padding - 1px);
+            }
+          }
+
+          @media #{$tablet-portrait} {
+            select {
+              @include v-padding($input-tablet-v-padding - 1px);
+            }
+          }
+
+          @media #{$mobile} {
+            select {
+              @include v-padding($input-mobile-v-padding - 1px);
+            }
+          }
+
+          @media #{$mobile-portrait} {
+            flex-basis: 100% !important;
+          }
+        }
+      }
+    }
+
+    &.rzd-passenger-form {
+      .internal-fields-wrapper {
+        & > div {
+          &:nth-of-type(3n+1) {
+            flex-basis: $first-column-width;
+            width: $first-column-width;
+          }
+
+          &:nth-of-type(3n+2) {
+            flex-basis: $first-column-width;
+            width: $first-column-width;
+          }
+
+          &:nth-of-type(3n+3) {
+            flex-basis: $last-column-width;
+            width: $last-column-width;
+          }
+
+          @media #{$tablet-portrait} {
+            &:nth-of-type(3n+1),
+            &:nth-of-type(3n+2),
+            &:nth-of-type(3n+3) {
+              flex-basis: $two-column-width;
+              width: $two-column-width;
+            }
+          }
+
+          @media #{$mobile-landscape} {
+            &:nth-of-type(3n+1),
+            &:nth-of-type(3n+2),
+            &:nth-of-type(3n+3) {
+              flex-basis: $two-column-width;
+              width: $two-column-width;
+            }
+          }
+
+          @media #{$mobile-portrait} {
+            &:nth-of-type(3n+1),
+            &:nth-of-type(3n+2),
+            &:nth-of-type(3n+3) {
+              flex-basis: 100%;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    &.required-pass-form {
+      .internal-fields-wrapper {
+        & > div {
+          flex-basis: calc(100%/3 - 3%);
+
+          @media #{$mobile-portrait} {
+            flex-basis: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .passenger-form-header-wrapper {
+    padding: $pas-v-padding $pas-h-padding;
+    cursor: pointer;
+
+    .passenger-info {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      position: relative;
+
+      &::before {
+        content: '';
+        width: $ninja-icon-width;
+        height: $ninja-icon-height;
+        display: inline-flex;
+        margin-right: 10px;
+      }
+
+      @include arrow-up($pas-light-note-color, 0, 1.7rem);
+
+      &::after {
+        position: absolute;
+        right: 0;
+      }
+    }
+
+    &.adult {
+      .passenger-info {
+        &::before {
+          background: transparent url("#{$path-to-images}/ninja-adult.svg") no-repeat 0 0;
+          background-size: $ninja-icon-width $ninja-icon-height;
+        }
+      }
+    }
+
+    &.child {
+      .passenger-info {
+        &::before {
+          background: transparent url("#{$path-to-images}/ninja-child.svg") no-repeat 0 0;
+          background-size: $ninja-icon-width $ninja-icon-height;
+        }
+      }
+    }
+
+    &.infant {
+      .passenger-info {
+        &::before {
+          background: transparent url("#{$path-to-images}/ninja-infant.svg") no-repeat 0 0;
+          background-size: $ninja-icon-width $ninja-icon-height;
+        }
+      }
+    }
+
+    &.adult {
+      .passenger-info {
+        &.accepted {
+          &::before {
+            background:      url("#{$path-to-images}/ninja-adult-green.png") no-repeat 0 0;
+            background-size: $ninja-icon-width;
+          }
+        }
+      }
+    }
+
+    &.child {
+      .passenger-info {
+        &.accepted {
+          &::before {
+            background:      url("#{$path-to-images}/ninja-child-green.png") no-repeat 0 0;
+            background-size: $ninja-icon-width;
+          }
+        }
+      }
+    }
+
+    &.infant {
+      .passenger-info {
+        &.accepted {
+          &::before {
+            background:      url("#{$path-to-images}/ninja-infant-green.png") no-repeat 0 0;
+            background-size: $ninja-icon-height;
+          }
+        }
+      }
+    }
+
+    &.adult, &.child, &.infant {
+      .passenger-info {
+        &.accepted {
+          font-size: $pas-small-size;
+
+          &::before {
+            content: '';
+            width: $ninja-icon-height;
+            height: $ninja-icon-height;
+            display: inline-flex;
+            margin-right: 10px;
+          }
+
+          .title {
+            margin-right: 5px;
+          }
+
+          .name {
+            flex-basis: 50%;
+          }
+
+          .dob, .id-number {
+            flex-basis: 25%;
+          }
+
+          @media #{$mobile} {
+            @include side-padding(0);
+
+            & > span {
+              &:not(.name):not(.number) {
+                display: none;
+              }
+            }
+
+            @media #{$mobile-portrait} {
+              span {
+                &:not(.name) {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @media #{$mobile} {
+      @include side-padding($pas-mobile-h-padding);
+    }
+  }
+
+  .internal-fields-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    @include v-padding($pas-v-padding, $pas-v-padding/2);
+    @include side-padding($pas-h-padding);
+
+    @media #{$mobile} {
+      @include side-padding($pas-mobile-h-padding);
+    }
+
+    .form-item {
+      height: 100%;
+
+      select {
+        height: 100%;
+        @include v-padding($input-v-padding);
+
+        @media #{$mobile} {
+          @include v-padding($input-mobile-v-padding);
+          min-height: $input-min-height;
+        }
+      }
+    }
+
+    & > div {
+      padding-bottom: $pas-v-padding/2;
+
+      input[type="text"] {
+        width: 100%;
+      }
+    }
+
+    label {
+      padding-bottom: 10px;
+    }
+
+    select, textarea, input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"] {
+      @include side-padding($input-padding);
+
+      @media #{$tablet} {
+        @include side-padding($input-padding);
+      }
+
+      @media #{$tablet-portrait} {
+        @include side-padding($input-padding);
+      }
+
+      @media #{$mobile} {
+        width: 100%;
+      }
+    }
+
+    .chosen-container {
+      width: 100% !important;
+
+      .chosen-single {
+        @include side-padding($input-padding);
+      }
+
+      .chosen-drop {
+        .chosen-search {
+          input[type="text"] {
+            @include side-padding($input-padding);
+          }
+        }
+      }
+
+      .chosen-results {
+        li {
+          @include side-padding($input-padding);
+        }
+      }
+    }
+
+    .selectize-input {
+      @include side-padding($input-padding);
+
+      @media #{$tablet} {
+        @include side-padding($input-padding);
+      }
+
+      @media #{$tablet-portrait} {
+        @include side-padding($input-padding);
+      }
+
+      .item {
+        padding: 1px 0;
+      }
+    }
+
+    .selectize-dropdown-content {
+      div {
+        @include side-padding($input-padding);
+
+        @media #{$tablet} {
+          @include side-padding($input-padding);
+        }
+
+        @media #{$tablet-portrait} {
+          @include side-padding($input-padding);
+        }
+      }
+    }
+  }
+
+  .date-of-birth {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    & > div {
+      flex-basis: 32%;
+    }
+  }
+
+  .fields-wrapper {
+    & > .form-item {
+      @include side-padding($pas-h-padding);
+      padding-bottom: $pas-v-padding;
+
+      @media #{$mobile} {
+        @include side-padding($pas-mobile-h-padding);
+      }
+    }
+  }
+
+  @include custom-checkbox($tt-sidebar-light-note-color, $tt-sidebar-color);
+
+  .form-type-checkbox {
+    display: flex;
+    flex-flow: row nowrap;
+
+    input[type="checkbox"] {
+      &::before {
+        border: $input-border;
+      }
+
+      & + label {
+        margin-left: 20px;
+      }
+    }
+  }
+
+  .save-details-wrapper {
+    padding: $pas-v-padding $pas-h-padding;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-items: center;
+    border-top: $pas-border;
+
+    @media #{$mobile} {
+      @include side-padding($pas-mobile-h-padding);
+    }
+
+    input[type="submit"] {
+      @include btn-yellow;
+      padding: $pas-button-v-padding 50px;
+
+      @media #{$mobile} {
+        width: 100%;
+      }
+    }
+  }
+
+  &.simple-form {
+    padding-bottom: $pas-v-padding;
+
+    .passenger-form-header-wrapper{
+      border: none;
+    }
+
+    .passenger-details-header {
+      display: none;
+    }
+
+    .passenger-form-header-wrapper {
+
+      .passenger-info {
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    .passenger-wrapper {
+
+      .internal-fields-wrapper {
+        @include v-padding(0);
+      }
+
+      .passenger-form-header-wrapper {
+        border: none;
+      }
+
+      &.opened {
+        border: none;
+
+        .passenger-form-header-wrapper {
+          border: none;
+        }
+      }
+    }
+
+
+    .form-item {
+      label {
+        font-size: 0.875rem;
+        padding-bottom: 5px;
+      }
+    }
+
+    .form-type-checkbox {
+      padding-bottom: 0;
+
+      label {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  .use-details-from-first-leg {
+    @include side-padding($pas-h-padding);
+    padding-top: $pas-v-padding;
+
+    @media #{$mobile} {
+      @include side-padding($pas-mobile-h-padding);
+    }
+  }
+}

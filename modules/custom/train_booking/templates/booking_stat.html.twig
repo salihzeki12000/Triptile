@@ -1,0 +1,22 @@
+{#
+/**
+ * @file booking_stat.html.twig
+ * Default theme implementation to present Booking stat data.
+ *
+ * This template is used when viewing Booking stat pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_booking_stat()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('booking_stat') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

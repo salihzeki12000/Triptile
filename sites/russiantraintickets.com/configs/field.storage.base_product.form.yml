@@ -1,0 +1,21 @@
+uuid: cb7ebff4-d3de-4635-8f34-9e006d0a75b9
+langcode: en
+status: true
+dependencies:
+  module:
+    - plugin
+    - store
+_core:
+  default_config_hash: '-WrgrhNC6l8UIZz1fdcogH6x_4W6B845Y76grovPH0k'
+id: base_product.form
+field_name: form
+entity_type: base_product
+type: 'plugin:field_form_type'
+settings: {  }
+module: plugin
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

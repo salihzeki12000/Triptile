@@ -1,0 +1,65 @@
+plugin.plugin_configuration.train_provider.express3_train_provider:
+  type: plugin.plugin_configuration.train_provider.train_provider_base
+  mapping:
+    live:
+      label: 'Live'
+      type: boolean
+    use_local_file:
+      label: 'Use local file'
+      type: boolean
+    ignore_cache:
+      label: 'Ignore Cache'
+      type: boolean
+    available_routes:
+      type: sequence
+      label: 'Available routes'
+      sequence:
+        departure_station:
+          type: integer
+          label: 'Departure station'
+        arrival_station:
+          type: integer
+          label: 'Arrival station'
+    available_stations:
+      type: sequence
+      label: 'Available stations'
+      sequence:
+        departure_station:
+          type: integer
+          label: 'Departure station'
+        arrival_station:
+          type: integer
+          label: 'Arrival station'
+        stations:
+          type: sequence
+          sequence:
+            id:
+              type: integer
+              label: 'Station id'
+    cache:
+      type: sequence
+      label: 'Cache'
+      sequence:
+        from:
+          type: integer
+          label: 'From'
+        to:
+          type: integer
+          label: 'To'
+        lifetime:
+          type: integer
+          label: 'Lifetime'
+    long_cache:
+      type: mapping
+      label: 'Long cache'
+      mapping:
+        from:
+          type: integer
+          label: 'From'
+        to:
+          type: integer
+          label: 'To'
+        lifetime:
+          type: integer
+          label: 'Lifetime'
+

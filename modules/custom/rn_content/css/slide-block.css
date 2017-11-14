@@ -1,0 +1,29 @@
+.pr-footer__footer {
+  position: relative;
+  width: 100%;
+  overflow-y: hidden;
+}
+.pr-footer__footer .whole-footer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  display: none;
+}
+.pr-footer__footer .footer-arrow {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.pr-footer__footer .footer-arrow:hover {
+  opacity: 0.5;
+  -o-transition: 0.4s linear;
+  -moz-transition: 0.4s linear;
+  -webkit-transition: 0.4s linear;
+  transition: 0.4s linear;
+}

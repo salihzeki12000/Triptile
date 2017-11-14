@@ -1,0 +1,63 @@
+{#
+/**
+ * site-builder page template.
+ * Generated on: Mon, 14 Dec 15 10:18:17 +1300
+ */
+#}
+{{ attach_library('basic/basic.layout.page') }}
+
+{% set path = path_to_theme ~ 'generated/parts/' %}
+
+<div{{ attributes }}>
+  {% include "#{path}header.html.twig" %}
+
+  {% if features.has_regions == true %}
+    <div{{ features.wrapper_attributes }}>
+      <div{{ features.container_attributes }}>
+        {{ page.features_first }}
+        {{ page.features_second }}
+        {{ page.features_third }}
+      </div>
+    </div>
+  {% endif %}
+  {% if content_prefix.has_regions == true %}
+    <div{{ content_prefix.wrapper_attributes }}>
+      <div{{ content_prefix.container_attributes }}>
+        {{ page.content_prefix }}
+      </div>
+    </div>
+  {% endif %}
+  {% block content %}
+    {% if main.has_regions == true %}
+      <div{{ main.wrapper_attributes }}>
+        <div{{ main.container_attributes }}>
+          {{ page.content }}
+          {{ page.sidebar_first }}
+          {{ page.sidebar_second }}
+        </div>
+      </div>
+    {% endif %}
+  {% endblock %}
+  {% if content_suffix.has_regions == true %}
+    <div{{ content_suffix.wrapper_attributes }}>
+      <div{{ content_suffix.container_attributes }}>
+        {{ page.content_suffix }}
+      </div>
+    </div>
+  {% endif %}
+  {% if subfeatures.has_regions == true %}
+    <div{{ subfeatures.wrapper_attributes }}>
+      <div{{ subfeatures.container_attributes }}>
+        {{ page.subfeatures_first }}
+        {{ page.subfeatures_second }}
+        {{ page.subfeatures_third }}
+        {{ page.subfeatures_fourth }}
+      </div>
+    </div>
+  {% endif %}
+
+  {% include  "#{path}footer-top.html.twig" %}
+
+  {% include  "#{path}footer-bottom.html.twig" %}
+
+</div>

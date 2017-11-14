@@ -1,0 +1,9 @@
+.form-radios .radios-hidden {
+  display: none;
+}
+.form-radios .radios-hidden.visible {
+  display: inherit;
+}
+.less-options {
+  display: none;
+}

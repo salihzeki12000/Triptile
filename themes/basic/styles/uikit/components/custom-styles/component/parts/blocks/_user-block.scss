@@ -1,0 +1,9 @@
+.user-block {
+  font-family: $user-block-font-family;
+  font-size: 1rem;
+
+  @import "user_block_parts/user-block-inline";
+  @import "user_block_parts/user-block-mobile";
+  @import "user_block_parts/user-block-language-switcher";
+  @import "user_block_parts/user_block_currency";
+}

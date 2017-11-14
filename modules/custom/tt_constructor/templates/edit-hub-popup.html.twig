@@ -1,0 +1,51 @@
+<div class="mobile-return" ng-click="closeThisDialog()">{{'Return'|t}}</div>
+
+<div class="step">
+  <div class="city step-hub">
+    <div class="region-icon region-[[load.hubs[activeStep.hub.hubId].region]]-europe"></div>
+    <label>{{'City'|t}}</label>
+    <h2 class="choose-hub choose">
+      <span class="hub-name">[[returnCurrentStepHubProp('name')]]</span>
+      <span class="hub-country">[[returnCurrentStepHubProp('country_name')]]</span>
+    </h2>
+
+    <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="wheelSpeed"
+                       on-scroll="onScroll(scrollTop, scrollHeight)" ng-show="true">
+      <div class="cities" ng-repeat="hub in load.hubs | filterHubsWithoutRegions | filterHubsForThisStep:order.steps:load:activeStepNum-1 | orderByObject:'name'">
+        <div class="city-line city-[[hub.region]]-europe" ng-click="setHub([[hub.id]])">
+          [[hub.name]]
+          <span class="country-name">[[hub.country_name]]</span>
+        </div>
+      </div>
+    </perfect-scrollbar>
+
+    <div class="duration-days-nights">
+      <span class="duration-days">[[getDuration('days')]]</span>
+      <span class="duration-nights">[[getDuration('nights')]]</span>
+    </div>
+
+    <div class="duration-count">
+      <span class="minus" ng-dblclick="" ng-click="minusDays()"></span>
+      <span class="count">[[currentStep.days]]</span>
+      <span class="mobile-duration-days-nights">
+        <span class="duration-days">[[getDuration('days')]]</span>
+        <span class="duration-nights">[[getDuration('nights')]]</span>
+      </span>
+      <span class="plus" ng-dblclick="" ng-click="plusDays()"></span>
+    </div>
+
+  </div>
+</div>
+
+<div class="total">
+  <div class="actions" ng-show="!currentStep.delete">
+    <span class="delete" ng-click="currentStep.delete = 1">{{'Delete city'|t}}</span>
+    <span class="cancel" ng-click="cancel()">{{'Cancel'|t}}</span>
+    <button class="orange-button" ng-click="saveOrder()">{{'Save changes'|t}}</button>
+  </div>
+  <div class="actions-delete" ng-show="currentStep.delete">
+    <div class="text">{{'If you delete this city, all your further itineary will be deleted as well. Delete it anyway?'|t}}</div>
+    <button class="gray-button" ng-click="currentStep.delete = 0">{{'Cancel'|t}}</button>
+    <button class="orange-button" ng-click="deleteHub()">{{'Delete city'|t}}</button>
+  </div>
+</div>

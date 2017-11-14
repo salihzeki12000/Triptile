@@ -1,0 +1,28 @@
+uuid: 11aa7967-839d-4b4d-8865-25726a1b8c91
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.popular-routes
+  module:
+    - rn_content
+    - system
+  theme:
+    - railninja
+third_party_settings:
+  rn_content:
+    classes: non-mobile
+id: popularroutes
+theme: railninja
+region: footer
+weight: -11
+provider: null
+plugin: 'system_menu_block:popular-routes'
+settings:
+  id: 'system_menu_block:popular-routes'
+  label: 'Popular routes'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

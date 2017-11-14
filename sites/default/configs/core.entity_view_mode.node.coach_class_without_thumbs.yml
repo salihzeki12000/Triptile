@@ -1,0 +1,10 @@
+uuid: a38b2180-9bba-411f-81b4-e69f12b6b9f7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.coach_class_without_thumbs
+label: 'Coach class without thumbs'
+targetEntityType: node
+cache: true

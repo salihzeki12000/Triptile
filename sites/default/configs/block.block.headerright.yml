@@ -1,0 +1,28 @@
+uuid: 8e6607a1-b92e-4e1a-892c-965982a6868c
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.header-right
+  module:
+    - rn_content
+    - system
+  theme:
+    - railninja
+third_party_settings:
+  rn_content:
+    classes: ''
+id: headerright
+theme: railninja
+region: header_third
+weight: -21
+provider: null
+plugin: 'system_menu_block:header-right'
+settings:
+  id: 'system_menu_block:header-right'
+  label: 'Header right'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

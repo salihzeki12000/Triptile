@@ -1,0 +1,11 @@
+weight: -10
+status: false
+countries:
+  - DE
+include_in_top: true
+in_top_if_no_country: false
+projectid: '101628'
+display_payment_form_text: true
+payment_form_text:
+  value: "<p>Your payment will be processed by our partner &nbsp;&nbsp;<img alt=\"wallet.png\" data-entity-type=\"\" data-entity-uuid=\"\" height=\"28\" src=\"/sites/russiantrains.com/files/inline-images/wallet.png\" width=\"132\" /></p>\r\n"
+  format: full_html

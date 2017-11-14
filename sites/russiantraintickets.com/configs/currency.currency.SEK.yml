@@ -1,0 +1,18 @@
+alternativeSigns: {  }
+currencyCode: SEK
+currencyNumber: '752'
+label: SEK
+roundingStep: 0.01
+sign: kr
+subunits: 100
+status: true
+usages:
+  -
+    start: '1873-05-27'
+    end: '1905-06-07'
+    countryCode: 'NO'
+  -
+    start: '1873-05-27'
+    end: null
+    countryCode: SE
+uuid: 652f850e-62a3-4a4a-b243-2e2a88084694

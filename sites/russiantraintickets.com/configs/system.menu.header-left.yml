@@ -1,0 +1,10 @@
+uuid: 32308075-6d50-4a7b-8c49-5e837d93f953
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 0etUdSuZ-cnKzypPy_vdpvWsvLYFYIRFH5X4GxGWlw8
+id: header-left
+label: 'Header left'
+description: ''
+locked: false

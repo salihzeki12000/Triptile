@@ -1,0 +1,43 @@
+uuid: ae52e80a-085d-42d2-a43d-a8c10c9217eb
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration
+_core:
+  default_config_hash: sXwZC2VuhNxBD0LQiVUPsdaEzHmR15DpxD8dyr101BA
+id: train
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - russian_trains_light
+migration_group: train_base
+label: Train
+source:
+  plugin: train
+  key: travelallrussia
+process:
+  number: code
+  name: name
+  message: descr
+  supplier:
+    plugin: migration_lookup
+    migration: supplier
+    source: supplier_id
+  train_class:
+    plugin: migration_lookup
+    migration: train_class
+    source: train_class_id
+  eticket_available: eticket
+  boarding_pass_required: board_pass_req
+  tp_rating: tp_rating
+  internal_rating: internal_rating
+  count_of_reviews: review_count
+destination:
+  plugin: 'entity:train'
+migration_dependencies:
+  required:
+    - supplier
+    - train_class

@@ -1,0 +1,8 @@
+id: salesforce
+label: Salesforce
+description: Migrate entities, which declared in salesforce module.
+source_type: RussianTrains database
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

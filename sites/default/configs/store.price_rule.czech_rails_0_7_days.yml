@@ -1,0 +1,12 @@
+uuid: 1a06a4b6-95be-4dd3-864c-0a640fa10b74
+langcode: en
+status: true
+dependencies: {  }
+id: czech_rails_0_7_days
+label: 'Czech rails 0-7 days'
+price_rule_type: before_display
+condition: 'supplier == ''CD'' and order_depth >= 0 and order_depth <= 7'
+tax_type: fixed
+tax_value: !!float 20
+tax_value_currency: USD
+weight: '0'

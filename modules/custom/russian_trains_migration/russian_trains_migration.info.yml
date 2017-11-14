@@ -1,0 +1,11 @@
+name: russian_trains_migration
+type: module
+description: Russian Train Migration
+core: 8.x
+package: Custom
+dependencies:
+  - migrate_tools
+  - salesforce
+  - train_base
+  - store
+  - payment

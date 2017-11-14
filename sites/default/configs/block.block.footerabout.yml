@@ -1,0 +1,29 @@
+uuid: 6cedcd63-bc1d-4073-a67a-cfb27fc7db0c
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:0344e317-6ac1-4446-a78b-a6fa85c9a5f9'
+  module:
+    - block_content
+    - rn_content
+  theme:
+    - railninja
+third_party_settings:
+  rn_content:
+    classes: non-mobile
+id: footerabout
+theme: railninja
+region: footer
+weight: -12
+provider: null
+plugin: 'block_content:0344e317-6ac1-4446-a78b-a6fa85c9a5f9'
+settings:
+  id: 'block_content:0344e317-6ac1-4446-a78b-a6fa85c9a5f9'
+  label: 'Footer about'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

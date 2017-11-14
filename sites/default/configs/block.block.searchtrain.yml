@@ -1,0 +1,24 @@
+uuid: bedf55b2-2930-4057-bd43-76bd6cf508d4
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+  theme:
+    - railninja
+third_party_settings:
+  rn_content:
+    classes: only-mobile
+id: searchtrain
+theme: railninja
+region: footer
+weight: -17
+provider: null
+plugin: to_search
+settings:
+  id: to_search
+  label: 'Search train'
+  provider: rn_content
+  label_display: '0'
+  button_label: 'Search train'
+visibility: {  }

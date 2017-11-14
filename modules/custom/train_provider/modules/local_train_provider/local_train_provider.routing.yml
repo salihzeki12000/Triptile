@@ -1,0 +1,6 @@
+entity.timetable_entry.toggle:
+  path: '/admin/structure/timetable_entry/{timetable_entry}/toggle'
+  defaults:
+    _controller: '\Drupal\local_train_provider\Controller\TimetableEntryPage::toggle'
+  requirements:
+    _permission: 'edit timetable entry entities'

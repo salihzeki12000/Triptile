@@ -1,0 +1,12 @@
+uuid: 8abb2c49-a66a-46e1-825e-35bbf3dafdfb
+langcode: en
+status: true
+dependencies: {  }
+id: ticketing_fee_last_minute
+label: 'Flat mark up 1 - 3 days'
+price_rule_type: before_display
+condition: 'order_depth >= 0 and order_depth <= 3 '
+tax_type: fixed
+tax_value: !!float 37
+tax_value_currency: USD
+weight: '0'

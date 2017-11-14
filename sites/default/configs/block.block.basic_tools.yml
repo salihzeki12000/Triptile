@@ -1,0 +1,26 @@
+uuid: da55c72f-90fd-4ca9-b10d-71b2f9d83748
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - basic
+_core:
+  default_config_hash: 7OjvGmnS-E8IN705zS9PLW0o2mxjymBlNKd_bSIlluc
+id: basic_tools
+theme: basic
+region: sidebar_second
+weight: 10
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Tools
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

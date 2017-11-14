@@ -1,0 +1,30 @@
+entity.hub.add_form:
+  route_name: entity.hub.add_form
+  title: 'Add Hub'
+  appears_on:
+    - entity.hub.collection
+entity.connection.add_form:
+  route_name: entity.connection.add_form
+  title: 'Add Connection'
+  appears_on:
+    - entity.connection.collection
+entity.hotel.add_form:
+  route_name: entity.hotel.add_form
+  title: 'Add Hotel'
+  appears_on:
+    - entity.hotel.collection
+entity.transfer.add_form:
+  route_name: entity.transfer.add_form
+  title: 'Add Transfer'
+  appears_on:
+    - entity.transfer.collection
+entity.activity.add_form:
+  route_name: entity.activity.add_form
+  title: 'Add Activity'
+  appears_on:
+    - entity.activity.collection
+entity.trip.add_form:
+  route_name: entity.trip.add_form
+  title: 'Add Trip'
+  appears_on:
+    - entity.trip.collection

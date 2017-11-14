@@ -1,0 +1,21 @@
+uuid: 88deaab1-76d6-4a1f-83bf-dafbf771619f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.store_order.trip_type
+    - store.store_order_type.train_order
+  module:
+    - options
+id: store_order.train_order.trip_type
+field_name: trip_type
+entity_type: store_order
+bundle: train_order
+label: 'Trip type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

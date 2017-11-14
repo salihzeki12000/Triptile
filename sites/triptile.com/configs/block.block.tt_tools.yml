@@ -1,0 +1,26 @@
+uuid: b8be1986-06b1-4e0a-b419-46ed53e500b9
+langcode: ru
+status: false
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - tt
+_core:
+  default_config_hash: NeHSoqm4XFqA7_0bDmR429ZZQt3LRbZMNRJTMsFyOfI
+id: tt_tools
+theme: tt
+region: header
+weight: -11
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Инструменты
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

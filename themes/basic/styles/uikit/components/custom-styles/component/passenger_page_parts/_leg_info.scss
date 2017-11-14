@@ -1,0 +1,54 @@
+@import "../parts/leg_info";
+
+.leg-info-wrapper {
+  margin-bottom: 0;
+
+  @media #{$mobile-portrait} {
+    margin-bottom: $pas-v-padding;
+  }
+
+  .leg-info-header {
+    background: $pas-background-color;
+  }
+
+  .leg-info-header-right {
+    border-left: $pas-v-border-color;
+
+    @media #{$mobile-portrait} {
+      border-left: none;
+    }
+  }
+
+  .leg-info-header,
+  .leg-info-body {
+    @include side-padding($pas-h-padding);
+
+    @media #{$mobile} {
+      @include side-padding($pas-mobile-h-padding);
+    }
+  }
+
+  .leg-info-body {
+    @media #{$mobile-portrait} {
+      @include v-padding($pas-mobile-h-padding/2);
+    }
+  }
+
+  .leg-info-header {
+    @media #{$mobile-portrait} {
+      @include v-padding($pas-mobile-h-padding, $pas-mobile-h-padding * 2);
+    }
+  }
+
+  .column {
+    @media #{$mobile} {
+      padding-right: 2%;
+    }
+  }
+}
+
+.all-passengers-wrapper {
+  & + .leg-info-wrapper {
+    margin-top: $pas-v-padding;
+  }
+}

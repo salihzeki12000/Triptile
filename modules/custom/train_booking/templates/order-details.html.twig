@@ -1,0 +1,108 @@
+<div id="edit-sidebar" class="sidebar">
+  <div class="trip-summary-wrapper">
+    <div class="main-label">
+      {% trans with {'context': 'Train Booking Sidebar Order'} %}
+      Trip summary
+      {% endtrans %}
+    </div>
+    <div class="order-details-wrapper container sidebar-container">
+      {% for route_items in routes_data %}
+        <div class="order-details route-items">
+          {% if route_items.route_name %}
+            <div class="order-details route-items route-label">
+              {% trans with {'context': 'Train Booking Sidebar Order'} %}
+              {{ route_items.route_name }}
+              {% endtrans %}
+            </div>
+          {% endif %}
+
+          <div class="order-details sidebar-item tickets-quantity sidebar-label">
+            {% trans with {'context': 'Train Booking Sidebar Order'} %}
+            {{ route_items.tickets_number }} ticket
+            {% plural route_items.tickets_number %}
+            {{ route_items.tickets_number }} tickets
+            {% endtrans %}
+                                             - {{ route_items.coach_class }}
+          </div>
+
+          {% for order_item in route_items.order_items %}
+            {%-
+            set classes = [
+            'order-details',
+            'sidebar-item',
+            'tickets-quantity',
+            ]
+            -%}
+
+            {# @todo find a way to work with attributes object without printing it or setting. #}
+            {% set something = attributes.removeClass(['first']).removeClass(['last']) %}
+            {% if loop.first %} {% set classes = classes|merge(['first']) %} {% endif %}
+            {% if loop.last %} {% set classes = classes|merge(['last']) %} {% endif %}
+
+            {# @todo need update https://www.drupal.org/node/2818293 #}
+            <div {{ attributes.addClass(classes) }}>
+              <div class="name">
+                {{ order_item.name }}
+              </div>
+              <div class="price">{{ order_item.price | raw }}</div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endfor %}
+      {% if tax %}
+        <div class="tax sidebar-item last">
+          <div class="name">{{ tax.name }}</div>
+          <div class="price">{{ tax.price | raw }}</div>
+        </div>
+      {% endif %}
+
+      {% if optional_service %}
+        <div class="order-details sidebar-item sidebar-label optional-services-label">
+          {% trans with {'context': 'Train Booking Sidebar Order'} %}Optional Services{% endtrans %}
+        </div>
+        <div class="order-details optional_services">
+          {% for item in optional_service %}
+            <div class="optional_service sidebar-item">
+              <div class="name">{{ item.name }}</div>
+              <div class="price">{{ item.price | raw }}</div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+      {% if delivery_service %}
+        <div class="order-details sidebar-item sidebar-label delivery-services-label">
+          {% trans with {'context': 'Train Booking Sidebar Order'} %}Delivery Services{% endtrans %}
+        </div>
+        <div class="order-details delivery_services">
+          {% for item in delivery_service %}
+            <div class="delivery_service sidebar-item">
+              <div class="name">{{ item.name }}</div>
+              <div class="price">{{ item.price | raw }}</div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+    <div class="container order-total-wrapper total-order">
+      <div class="order-details sidebar-label sidebar-item last order-total">
+        <div>
+          {% trans with {'context': 'Train Booking Sidebar Order'} %}
+          Grand total
+          {% endtrans %}
+        </div>
+        <div>{{ total_price | raw }}</div>
+      </div>
+    </div>
+  </div>
+  {% if confidence_block.value %}
+    <div class="confidence-block">
+      <div class="block__inner">
+        <div class="block__content">
+          {% if confidence_block %}
+            {{ confidence_block.value | raw }}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</div>

@@ -1,0 +1,10 @@
+uuid: a245d5ee-e4bf-489c-993d-26f871be8702
+langcode: en
+status: true
+dependencies:
+  module:
+    - train_booking
+id: booking_stat.token
+label: Token
+targetEntityType: booking_stat
+cache: true

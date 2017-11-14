@@ -1,0 +1,84 @@
+uuid: c955a8ab-541c-47b7-ad95-44f86d94ecf8
+langcode: en
+status: true
+dependencies: {  }
+id: cd
+label: CD
+canvases:
+  -
+    page: '1'
+    x: '435'
+    'y': '593'
+    width: '435'
+    height: '42'
+    color: '#ffffff'
+  -
+    page: '1'
+    x: '435'
+    'y': '593'
+    width: '435'
+    height: '42'
+    color: '#ffffff'
+  -
+    page: '1'
+    x: '435'
+    'y': '593'
+    width: '435'
+    height: '42'
+    color: '#ffffff'
+  -
+    page: '1'
+    x: '435'
+    'y': '593'
+    width: '435'
+    height: '42'
+    color: '#ffffff'
+  -
+    page: '1'
+    x: '435'
+    'y': '593'
+    width: '435'
+    height: '42'
+    color: '#ffffff'
+  -
+    page: '1'
+    x: '435'
+    'y': '593'
+    width: '435'
+    height: '42'
+    color: '#ffffff'
+  -
+    page: '1'
+    x: '435'
+    'y': '593'
+    width: '435'
+    height: '42'
+    color: '#ffffff'
+  -
+    page: '1'
+    x: '435'
+    'y': '593'
+    width: '435'
+    height: '42'
+    color: '#ffffff'
+  -
+    page: '1'
+    x: '435'
+    'y': '593'
+    width: '435'
+    height: '42'
+    color: '#ffffff'
+  -
+    page: '1'
+    x: '435'
+    'y': '593'
+    width: '435'
+    height: '42'
+    color: '#ffffff'
+  -
+    page: '1'
+    x: '435'
+    'y': '593'
+    width: '435'
+    height: '42'
+    color: '#ffffff'

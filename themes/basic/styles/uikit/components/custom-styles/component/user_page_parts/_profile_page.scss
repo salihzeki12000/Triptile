@@ -1,0 +1,80 @@
+.user-form {
+  max-width: 440px;
+  margin: 0;
+
+  .form-item {
+    margin-bottom: $v-padding/2;
+  }
+
+  input[type="text"], input[type="password"], input[type="email"], input[type="tel"], textarea, details {
+    width: 100%;
+  }
+
+  label {
+    font-weight: normal;
+    padding-bottom: 5px;
+  }
+
+  .description {
+    font-size: $very-small-font-size;
+    color: $up-table-note-color;
+  }
+
+  .password-strength {
+    margin-top: (-1) * $v-padding/3;
+  }
+
+  .password-strength__meter {
+    height: 5px;
+
+    .is-weak {
+      background-color: $pl-color-weak;
+    }
+
+    .is-fair {
+      background-color: $pl-color-fair;
+    }
+
+    .is-good {
+      background-color: $pl-color-good;
+    }
+
+    .is-strong {
+      background-color: $pl-color-strong;
+    }
+  }
+
+  .password-strength__title {
+    font-size: $very-small-font-size;
+  }
+
+  .password-confirm {
+    font-size: $very-small-font-size;
+
+    .ok {
+      color: $pl-color-strong;
+    }
+
+    .error {
+      color: $pl-color-fair;
+    }
+  }
+
+  .form-required {
+    &::after {
+      display: none;
+    }
+  }
+
+  .form-actions {
+    padding-top: $v-padding/2;
+    width: 100%;
+    flex-basis: 100%;
+
+    input[type="submit"] {
+      @include btn-red;
+      width: 100%;
+      @include v-padding($input-v-padding);
+    }
+  }
+}

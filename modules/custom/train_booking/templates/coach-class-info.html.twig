@@ -1,0 +1,31 @@
+<div class="ticket-wrapper">
+  <div class="ticket-name">
+    <span>{{ data.name }}</span>
+  </div>
+  <div class="ticket-gallery-icon-wrapper">
+    {% if data.gallery is not empty %}
+      <div class="ticket-gallery-icon">{{ data.gallery }}</div>
+    {% endif %}
+  </div>
+  <div class="ticket-descr">
+    <div class="ticket-services">
+      {% for car_service in data.car_services %}
+          {% if not car_service.image is empty %}
+            <div class="service">
+              {{ car_service.image }}
+            </div>
+          {% endif %}
+      {% endfor %}
+    </div>
+    <div class="ticket-seats-remaining">
+      {{ data.count_of_available_tickets }}
+    </div>
+  </div>
+  <div class="ticket-price" data-currency-code="{{ data.currency_code }}">
+    {{ data.price | raw }}
+  </div>
+</div>
+<div class="selected-label">
+  {% trans with {'context': 'Timetable Form'} %}selected{% endtrans %}
+</div>
+

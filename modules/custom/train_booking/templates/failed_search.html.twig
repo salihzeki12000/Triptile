@@ -1,0 +1,22 @@
+{#
+/**
+ * @file failed_search.html.twig
+ * Default theme implementation to present Failed search data.
+ *
+ * This template is used when viewing Failed search pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_failed_search()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('failed_search') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

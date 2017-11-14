@@ -1,0 +1,8 @@
+uuid: 153cb42f-557b-4404-bef5-ad4f7a3561c4
+langcode: en
+status: true
+dependencies: {  }
+id: train_review
+label: 'Train review'
+target_entity_type_id: node
+description: ''

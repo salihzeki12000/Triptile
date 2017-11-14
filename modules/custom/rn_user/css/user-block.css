@@ -1,0 +1,23 @@
+.user-blocks {
+  display: none;
+}
+
+.user-triangle {
+  display: none;
+}
+
+.user-blocks.opened {
+  display: block;
+}
+
+.user-triangle.opened {
+  display: block;
+}
+
+.mobile-menu .user-blocks {
+  display: flex;
+}
+
+.mobile-menu .user-blocks .block__content {
+  display: none;
+}

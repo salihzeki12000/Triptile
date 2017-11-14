@@ -1,0 +1,15 @@
+<div class="user-settings">
+  <div class="icon"></div>
+  <div class="current-lang-currency">
+    <div class="current-language {{ currentLanguageCode }}">
+      {% if currentLanguageCode == 'gb' %}
+        {{ 'en' }}
+      {% else %}
+        {{ currentLanguageCode }}
+      {% endif %}
+    </div>
+    <div class="current-currency {{ currentCurrencyCode|lower }}">
+      {{ currentCurrencyCode }}
+    </div>
+  </div>
+</div>

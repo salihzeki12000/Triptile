@@ -1,0 +1,200 @@
+uuid: fc06a241-651f-4a31-9f11-81eec89763ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.base_product.optional_service.available_from_date
+    - field.field.base_product.optional_service.available_until_date
+    - field.field.base_product.optional_service.coach_class
+    - field.field.base_product.optional_service.form
+    - field.field.base_product.optional_service.price_title
+    - field.field.base_product.optional_service.seat_type
+    - field.field.base_product.optional_service.supplier
+    - field.field.base_product.optional_service.thank_you_page
+    - field.field.base_product.optional_service.third_step
+    - field.field.base_product.optional_service.train
+    - field.field.base_product.optional_service.train_class
+    - field.field.base_product.optional_service.train_station
+    - store.base_product_type.optional_service
+  module:
+    - datetime
+    - plugin
+    - store
+_core:
+  default_config_hash: o2B3YAAPKdVyDdQ_-cX5AD08ZnMJq6IYxdyxxyec3OE
+id: base_product.optional_service.default
+targetEntityType: base_product
+bundle: optional_service
+mode: default
+content:
+  available_from_date:
+    weight: 20
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  available_until_date:
+    weight: 21
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  coach_class:
+    weight: 15
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  code:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  currency:
+    type: string_textfield
+    weight: -7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  description:
+    type: string_textarea
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  form:
+    weight: 12
+    settings: {  }
+    third_party_settings: {  }
+    type: 'plugin_selector:plugin_select_list'
+    region: content
+  langcode:
+    type: language_select
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  max_quantity:
+    type: number
+    weight: 4
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  name:
+    type: string_textfield
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  price:
+    type: price_default
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  price_title:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  seat_type:
+    weight: 16
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  site:
+    type: options_select
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  status:
+    type: boolean_checkbox
+    weight: 8
+    settings:
+      display_label: false
+    third_party_settings: {  }
+    region: content
+  supplier:
+    weight: 19
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  thank_you_page:
+    weight: 11
+    settings:
+      display_label: false
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  third_step:
+    weight: 10
+    settings:
+      display_label: false
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  train:
+    weight: 18
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  train_class:
+    weight: 13
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  train_station:
+    weight: 17
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  translation:
+    weight: 14
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  weight:
+    type: number
+    weight: 3
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

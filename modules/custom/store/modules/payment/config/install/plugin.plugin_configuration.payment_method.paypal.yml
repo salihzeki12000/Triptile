@@ -1,0 +1,6 @@
+label: Paypal
+status: true
+weight: 1
+dependencies:
+  module:
+    - payment

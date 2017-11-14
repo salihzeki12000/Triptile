@@ -1,0 +1,10 @@
+<div class="mobile-return" ng-click="closeThisDialog()">{{'Return'|t}}</div>
+<h2>{{'Map of your journey'|t}}</h2>
+<div class="itinerary-map" ng-controller="ConstructorMapCtrl">
+    <leaflet width="100%" height="100%"
+             tiles="map.data.tiles"
+             center="map.data.center"
+             paths="map.data.paths"
+             markers="map.data.markers">
+    </leaflet>
+</div>

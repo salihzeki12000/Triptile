@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+    - rn_user
+    - system
+  theme:
+    - russiantrains
+third_party_settings:
+  rn_content:
+    classes: ''
+id: userorderstext
+theme: russiantrains
+region: content
+weight: -11
+provider: null
+plugin: userorderstext
+settings:
+  id: userorderstext
+  label: 'User orders text'
+  provider: rn_user
+  label_display: '0'
+  field_orders_text:
+    value: '<p>Welcome to your trips page. Here you can find all of your journeys we have been planning for you.</p>'
+    format: full_html_for_administrator
+visibility:
+  request_path:
+    id: request_path
+    pages: /user/%user/orders
+    negate: false
+    context_mapping: {  }

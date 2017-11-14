@@ -1,0 +1,68 @@
+<div class="mobile-return" ng-click="closeThisDialog()">{{'Return'|t}}</div>
+
+<div class="step">
+  <div class="step-hub">
+    <label>{{ 'Hotel'|t }}</label>
+    <span class="price entity-total-price">[[getHotelTotal()]]</span>
+
+    <div class="constructor-filter-hotel">
+      <div class="choose-checkbox" ng-repeat="hotel in currentStep.hotels | unique: 'star' | orderByObject: 'star'"
+           ng-click="setHotelFilter([[hotel.star]])" ng-class="isHotelFilterOptionActive('[[hotel.star]]')">
+        <span class="stars-count">
+          {% set star = '[[hotel.star]]' %}
+          {% trans %}
+            {{ star }} star
+          {% endtrans %}
+        </span>
+         <span class="hotels-count">[[getHotelFilterCount(hotel)]]</span>
+      </div>
+    </div>
+
+    <h2 class="choose-hotel choose" ng-click="isChooseHotelPriceOpen = 0;">
+      <span class="hotel-name">[[ getHotelName() ]]</span>
+    </h2>
+
+    <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="wheelSpeed"
+                       on-scroll="onScroll(scrollTop, scrollHeight)"
+                       ng-show="true">
+      <div class="hotels"
+           ng-repeat="hotel in currentStep.hotels | inArray:allFilters(currentStep.hotels):'star' | orderByObject: 'name'">
+        <div class="choose-checkbox" ng-click="setHotel(hotel.id);" ng-class="isHotelActive(hotel.id)">
+          [[hotel.name]]
+        </div>
+      </div>
+    </perfect-scrollbar>
+
+    <div class="price-options" style="position: relative" ng-show="currentStep.hotel !== undefined">
+      <div class="price-edit-wrapper" ng-show="!isChooseHotelPriceOpen">
+        <div class="price-option-selected">[[ priceName() ]]</div>
+        <div class="edit"
+             ng-click="isChooseHotelPriceOpen = !isChooseHotelPriceOpen; isChooseHotelOpen = 0;"
+             ng-show="currentStep.hotel.price_options.length > 1"></div>
+      </div>
+      <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="wheelSpeed"
+                         on-scroll="onScroll(scrollTop, scrollHeight)"
+                         ng-show="isChooseHotelPriceOpen">
+        <div class="price-line choose-checkbox" ng-repeat="price in getPricesForHotel()"
+             ng-click="setPrice([[price.id]]);" ng-class="isPriceActive(price.id)">
+          <span class="price-name">[[price.name]]</span>
+          <span class="price">
+            [[ price | formatPriceObject ]]
+          </span>
+        </div>
+      </perfect-scrollbar>
+    </div>
+
+  </div>
+</div>
+
+<div class="total">
+  <div class="actions">
+    <textarea placeholder="{{'Your note'|t}}" ng-show="isHotelNoteVisible" ng-model="currentStep.hotel.note"></textarea>
+    <span class="add-note" ng-show="!isHotelNoteVisible" ng-click="isHotelNoteVisible = 1">
+      {{'Add note'|t}}
+    </span>
+    <span class="cancel" ng-click="cancel()">{{'Cancel'|t}}</span>
+    <button class="orange-button" ng-click="saveOrder()">{{'Save changes'|t}}</button>
+  </div>
+</div>

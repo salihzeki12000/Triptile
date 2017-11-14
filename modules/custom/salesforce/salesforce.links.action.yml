@@ -1,0 +1,5 @@
+entity.salesforce_mapping_object.add_form:
+  route_name: entity.salesforce_mapping_object.add_form
+  title: 'Add Salesforce mapping object'
+  appears_on:
+    - entity.salesforce_mapping_object.collection

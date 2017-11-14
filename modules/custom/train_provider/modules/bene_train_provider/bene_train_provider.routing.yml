@@ -1,0 +1,7 @@
+bene_train_provider.log:
+  path: '/admin/config/rail-ninja-config/train-providers/bene_train_provider/log'
+  defaults:
+    _form: '\Drupal\bene_train_provider\Form\LogForm'
+    _title: 'BeNe Train provider log'
+  requirements:
+    _permission: 'administer train providers'

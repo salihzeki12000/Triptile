@@ -1,0 +1,33 @@
+uuid: 9c3de984-1f35-4649-aae5-748306c22dc6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.blog_categories.category_image
+    - taxonomy.vocabulary.blog_categories
+  module:
+    - image
+    - text
+id: taxonomy_term.blog_categories.default
+targetEntityType: taxonomy_term
+bundle: blog_categories
+mode: default
+content:
+  category_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  description:
+    label: hidden
+    type: text_default
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

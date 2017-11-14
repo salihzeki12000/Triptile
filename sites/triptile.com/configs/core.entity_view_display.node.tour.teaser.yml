@@ -1,0 +1,35 @@
+uuid: 7ecb3ff9-38f0-4b39-af38-d69bc3069b26
+langcode: ru
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.tour.body
+    - field.field.node.tour.field_tour_image
+    - field.field.node.tour.field_tour_price
+    - field.field.node.tour.field_tour_region
+    - node.type.tour
+  module:
+    - text
+    - user
+id: node.tour.teaser
+targetEntityType: node
+bundle: tour
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_tour_image: true
+  field_tour_price: true
+  field_tour_region: true
+  langcode: true

@@ -1,0 +1,13 @@
+uuid: aa6ca3be-c5c8-4588-9de4-6737279f8feb
+langcode: ru
+status: true
+dependencies:
+  module:
+    - user
+_core:
+  default_config_hash: DyypzTfThX10FFQw-399qPfEbLLyrhXgQrKPVsmAoJ4
+id: user_block_user_action
+label: 'Заблокировать выбранных пользователей'
+type: user
+plugin: user_block_user_action
+configuration: {  }

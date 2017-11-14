@@ -1,0 +1,30 @@
+id: blog_translations
+migration_group: content_page
+migration_tags:
+  - translations
+label: Blog translations
+source:
+  plugin: blog_translations
+  key: travelallrussia
+process:
+  nid:
+    plugin: migration_lookup
+    migration: blog
+    source: slug
+  langcode: lang
+  title: title
+  'body/value': content
+  'body/summary': meta_description
+  'body/format':
+    plugin: default_value
+    default_value: full_html_for_administrator
+destination:
+  plugin: entity:node
+  translations: true
+migration_dependencies:
+  required:
+    - blog
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

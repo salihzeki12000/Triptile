@@ -1,0 +1,80 @@
+<?php
+
+/**
+ * @file
+ * Contains master.module..
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function master_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the master module.
+    case 'help.page.master':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Contains base classes and logic for the whole project') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+function master_theme() {
+  $themes['selectize'] = [
+    'render element' => 'element',
+    'template' => 'selectize',
+  ];
+  $themes['spinner'] = [
+    'render element' => 'element',
+    'template' => 'spinner',
+  ];
+  $themes['map'] = [
+    'variables' => [
+      'routes' => null,
+      'params' => null,
+    ],
+    'file' => 'map.theme.inc',
+  ];
+  return $themes;
+}
+
+/**
+ * @param $variables
+ */
+function template_preprocess_selectize(&$variables) {
+  $form_wrapper_class = 'form-item-' . substr($variables['element']['#id'], 5);
+  $variables['element']['#form_wrapper_class'] = $form_wrapper_class;
+}
+
+/**
+ * @param $variables
+ */
+function template_preprocess_spinner(&$variables) {
+  $form_wrapper_class = 'form-item-' . substr($variables['element']['#id'], 5);
+  $variables['element']['#form_wrapper_class'] = $form_wrapper_class;
+}
+
+/**
+ * Callback used to display the link to page with entity translations in inline form.
+ *
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ * @param array $variables
+ * @param string|null $link_text
+ * @param string|null $target
+ * @return \Drupal\Core\Link|string
+ */
+function master_inline_entity_form_translate_link_callback(EntityInterface $entity, array $variables, $link_text = null, $target = null) {
+  if (!$entity->isNew()) {
+    $link_text = $link_text ?: t('Translations');
+    $options = $target ? ['attributes' => ['target' => $target]] : [];
+    return $entity->toLink($link_text, 'drupal:content-translation-overview', $options);
+  }
+  else {
+    return '';
+  }
+}

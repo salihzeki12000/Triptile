@@ -1,0 +1,10 @@
+uuid: f183251a-04d1-4dca-9673-af32be2d1559
+langcode: en
+status: true
+dependencies:
+  module:
+    - train_provider
+id: train_provider_request.token
+label: Token
+targetEntityType: train_provider_request
+cache: true

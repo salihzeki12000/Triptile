@@ -1,0 +1,18 @@
+uuid: 3baced4b-9a43-43c5-83c1-5320bb77d572
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.route_page
+id: node.route_page.created
+field_name: created
+entity_type: node
+bundle: route_page
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

@@ -1,0 +1,22 @@
+.page {
+  .footer-bottom-container {
+    background: $header-bg;
+    color: $footer-bottom-color;
+    font-style: italic;
+    text-align: center;
+    font-size: 1.125rem;
+    padding: 20px $h-padding;
+  }
+
+  @media #{$tablet} {
+    .footer-bottom-container {
+      @include side-padding($tablet-h-padding);
+    }
+  }
+
+  @media #{$mobile} {
+    .footer-bottom-container {
+      @include side-padding($mobile-h-padding);
+    }
+  }
+}

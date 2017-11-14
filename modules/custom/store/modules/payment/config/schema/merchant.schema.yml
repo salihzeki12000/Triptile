@@ -1,0 +1,29 @@
+payment.merchant.*:
+  type: config_entity
+  label: 'Merchant config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    merchant_id:
+      type: string
+      label: Merchant ID
+    company_id:
+      type: string
+      label: Company ID
+    payment_methods:
+      type: sequence
+      label: Payment methods
+      sequence:
+        - type: string
+    payment_adapter:
+      type: string
+      label: Payment adapter
+    adapter_config:
+      type: plugin.plugin_configuration.payment_adapter.[%parent.payment_adapter]
+      label: Payment adapter configuration
+    uuid:
+      type: string

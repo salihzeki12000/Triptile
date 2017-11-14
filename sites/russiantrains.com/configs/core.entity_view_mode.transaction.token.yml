@@ -1,0 +1,10 @@
+uuid: df66f74c-cf97-4a09-9678-79bcd1e262da
+langcode: en
+status: true
+dependencies:
+  module:
+    - payment
+id: transaction.token
+label: Token
+targetEntityType: transaction
+cache: true

@@ -1,0 +1,11 @@
+uuid: c7072bf9-22b0-4827-a434-f5ad8ecc8f90
+langcode: en
+status: true
+dependencies:
+  module:
+    - express3_train_provider
+id: express3_station.express3_station
+target_entity_type_id: express3_station
+target_bundle: express3_station
+default_langcode: site_default
+language_alterable: false

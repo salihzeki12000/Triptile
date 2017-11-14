@@ -1,0 +1,130 @@
+.popup-search-form {
+
+  label {
+    display: none;
+  }
+
+  &:not(.complex-mode) {
+    top: 0 !important;
+  }
+
+  .ui-dialog-content {
+    @include v-padding($v-padding);
+  }
+
+  .selectize-control {
+    height: auto;
+
+    .selectize-dropdown-content {
+      & > div {
+        @include v-padding(20px);
+      }
+    }
+  }
+
+  .ui-dialog-buttonset {
+    button {
+      width: 100%;
+    }
+  }
+
+  &.travel-date {
+
+    .travel-date-wrapper {
+      @include side-padding(0);
+    }
+
+    .travel-date-input {
+      padding-bottom: $v-padding;
+      @include side-padding($h-padding);
+
+      @media #{$tablet} {
+        @include side-padding($tablet-h-padding);
+      }
+
+      @media #{$mobile} {
+        @include side-padding($mobile-h-padding);
+      }
+    }
+
+    .datepicker-element {
+      position: inherit;
+      top:0;
+
+      $icon-width: 20px;
+
+      .ui-datepicker {
+        .ui-datepicker-header {
+          .ui-datepicker-next, .ui-datepicker-prev {
+            width: $icon-width;
+          }
+
+          .ui-datepicker-prev {
+            left: $h-padding;
+            background: url("#{$path-to-images}/left-arrow.svg") no-repeat center center;
+            background-size: $icon-width;
+
+            @media #{$tablet} {
+              left: $tablet-h-padding;
+            }
+
+            @media #{$mobile} {
+              left: $mobile-h-padding;
+            }
+          }
+
+          .ui-datepicker-next {
+            right: $h-padding;
+            background: url("#{$path-to-images}/right-arrow.svg") no-repeat center center;
+            background-size: $icon-width;
+
+            @media #{$tablet} {
+              right: $tablet-h-padding;
+            }
+
+            @media #{$mobile} {
+              right: $mobile-h-padding;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.passengers {
+    .passengers-wrapper {
+      background: $input-bg;
+      border: $input-border;
+      padding: $v-padding $h-padding;
+
+      label {
+        display: block;
+        font-weight: normal;
+        padding: 0 0 5px;
+      }
+
+      select {
+        width: 100%;
+        @include v-padding($input-v-padding - 3px);
+        height: auto;
+      }
+
+      .form-item {
+        padding-bottom: 15px;
+      }
+
+      .chosen-container {
+        width: 100% !important;
+
+        .chosen-single {
+          font-size: $spinner-font-size;
+          justify-content: center;
+
+          span {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}

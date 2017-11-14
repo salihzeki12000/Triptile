@@ -1,0 +1,132 @@
+add hub entities:
+  title: 'Create new Hub entities'
+
+administer hub entities:
+  title: 'Administer Hub entities'
+  description: 'Allow to access the administration form to configure Hub entities.'
+  restrict access: true
+
+delete hub entities:
+  title: 'Delete Hub entities'
+
+edit hub entities:
+  title: 'Edit Hub entities'
+
+access hub overview:
+  title: 'Access the Hub overview page'
+
+view published hub entities:
+  title: 'View published Hub entities'
+
+view unpublished hub entities:
+  title: 'View unpublished Hub entities'
+add connection entities:
+  title: 'Create new Connection entities'
+
+administer connection entities:
+  title: 'Administer Connection entities'
+  description: 'Allow to access the administration form to configure Connection entities.'
+  restrict access: true
+
+delete connection entities:
+  title: 'Delete Connection entities'
+
+edit connection entities:
+  title: 'Edit Connection entities'
+
+access connection overview:
+  title: 'Access the Connection overview page'
+
+view published connection entities:
+  title: 'View published Connection entities'
+
+view unpublished connection entities:
+  title: 'View unpublished Connection entities'
+add hotel entities:
+  title: 'Create new Hotel entities'
+
+administer hotel entities:
+  title: 'Administer Hotel entities'
+  description: 'Allow to access the administration form to configure Hotel entities.'
+  restrict access: true
+
+delete hotel entities:
+  title: 'Delete Hotel entities'
+
+edit hotel entities:
+  title: 'Edit Hotel entities'
+
+access hotel overview:
+  title: 'Access the Hotel overview page'
+
+view published hotel entities:
+  title: 'View published Hotel entities'
+
+view unpublished hotel entities:
+  title: 'View unpublished Hotel entities'
+add transfer entities:
+  title: 'Create new Transfer entities'
+
+administer transfer entities:
+  title: 'Administer Transfer entities'
+  description: 'Allow to access the administration form to configure Transfer entities.'
+  restrict access: true
+
+delete transfer entities:
+  title: 'Delete Transfer entities'
+
+edit transfer entities:
+  title: 'Edit Transfer entities'
+
+access transfer overview:
+  title: 'Access the Transfer overview page'
+
+view published transfer entities:
+  title: 'View published Transfer entities'
+
+view unpublished transfer entities:
+  title: 'View unpublished Transfer entities'
+add activity entities:
+  title: 'Create new Activity entities'
+
+administer activity entities:
+  title: 'Administer Activity entities'
+  description: 'Allow to access the administration form to configure Activity entities.'
+  restrict access: true
+
+delete activity entities:
+  title: 'Delete Activity entities'
+
+edit activity entities:
+  title: 'Edit Activity entities'
+
+access activity overview:
+  title: 'Access the Activity overview page'
+
+view published activity entities:
+  title: 'View published Activity entities'
+
+view unpublished activity entities:
+  title: 'View unpublished Activity entities'
+add trip entities:
+  title: 'Create new Trip entities'
+
+administer trip entities:
+  title: 'Administer Trip entities'
+  description: 'Allow to access the administration form to configure Trip entities.'
+  restrict access: true
+
+delete trip entities:
+  title: 'Delete Trip entities'
+
+edit trip entities:
+  title: 'Edit Trip entities'
+
+access trip overview:
+  title: 'Access the Trip overview page'
+
+view published trip entities:
+  title: 'View published Trip entities'
+
+view unpublished trip entities:
+  title: 'View unpublished Trip entities'

@@ -1,0 +1,12 @@
+uuid: 592becc4-c7dc-45bc-a6df-61728db4a6e8
+langcode: en
+status: true
+dependencies: {  }
+id: sncf_0_8_days
+label: 'SNCF 0 - 8 days'
+price_rule_type: before_display
+condition: 'supplier == ''SNCF'' and order_depth >= 0 and order_depth <= 8'
+tax_type: fixed
+tax_value: !!float 60
+tax_value_currency: USD
+weight: '0'

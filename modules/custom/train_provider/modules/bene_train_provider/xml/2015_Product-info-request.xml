@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://bene-ws.b-rail.be/rail1/2007-06-13/types">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <product-info-request>
+         <user-data>
+            <user-name>XXX_BENEUSER</user-name>
+            <password>XXX_BENEUSER</password>
+            <language code="nl_NL">Nederlands</language>
+            <distributor>XX</distributor>
+            <user-related-data>Training</user-related-data>
+         </user-data>
+         <taco domain="I" tariff-group="THA" tic="MFDA2"/>
+         <taco domain="I" tariff-group="THA" tic="MFEA1"/>
+      </product-info-request>
+   </soapenv:Body>
+</soapenv:Envelope>

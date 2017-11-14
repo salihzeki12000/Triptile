@@ -1,0 +1,12 @@
+uuid: 1ef7d1fd-99e1-4ccc-a59b-be75ecf2e8c6
+langcode: en
+status: true
+dependencies: {  }
+id: additional_fee_fifa
+label: 'Additional fee FIFA'
+price_rule_type: before_display
+condition: 'order_depth >= 180'
+tax_type: fixed
+tax_value: !!float 20
+tax_value_currency: USD
+weight: '0'

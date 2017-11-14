@@ -1,0 +1,27 @@
+uuid: c01640fe-59d8-4d3f-8870-c7397b5e9c0f
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - railninja
+_core:
+  default_config_hash: x9HxEoFx3SfRSuGOFDhC6Gus9dkAPUiGBiPtiLZfN24
+id: railninja_page_title
+theme: railninja
+region: leaderboard
+weight: -12
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/node/*\r\n/user/*\r\n<front>"
+    negate: true
+    context_mapping: {  }

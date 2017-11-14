@@ -1,0 +1,15 @@
+services:
+  plugin.manager.field_form_type:
+    class: Drupal\master\FieldFormTypeManager
+    parent: default_plugin_manager
+
+  master.maxmind:
+    class: Drupal\master\MasterMaxMind
+    arguments: ['@file_system', '@logger.factory', '@request_stack']
+
+  master.pdf_tool:
+    class: Drupal\master\PdfTool
+    arguments: ['@file_system']
+
+  master.expression_language:
+    class: Symfony\Component\ExpressionLanguage\ExpressionLanguage

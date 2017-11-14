@@ -1,0 +1,49 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://bene-ws.b-rail.be/rail1/2007-06-13/types">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trains-and-products-request>
+         <user-data>
+            <user-name>WSRailNinja</user-name>
+            <password>WSRailNinja</password>
+            <language code="nl_NL">Nederlands</language>
+            <distributor>BS</distributor>
+            <user-related-data>Training</user-related-data>
+         </user-data>
+         <journey-query>
+            <origin-station code="NLASC"/>
+            <destination-station code="FRPNO"/>
+            <outward-route-query>
+               <time>06:00:00</time>
+               <date>2017-03-24</date>
+            </outward-route-query>
+            <passenger-list-request>
+               <passenger-request>
+                  <last-name>Janssen</last-name>
+                  <first-name>Jan</first-name>
+                  <gender code="H">?</gender>
+                  <passenger-type>A</passenger-type>
+               </passenger-request>
+               <passenger-request>
+                  <last-name>Janssen</last-name>
+                  <first-name>Jenny</first-name>
+                  <gender code="D">?</gender>
+                  <passenger-type>A</passenger-type>
+               </passenger-request>
+            </passenger-list-request>
+            <return-route-query>
+               <time>08:00:00</time>
+               <date>2017-03-03</date>
+            </return-route-query>
+         </journey-query>
+         <user-profile>
+            <travel-prefs/>
+            <response-prefs>
+               <calculate-price-combination>true</calculate-price-combination>
+               <calculate-production-mode>true</calculate-production-mode>
+               <number-of-route-summaries>5</number-of-route-summaries>
+               <number-of-route-summaries-with-prices>5</number-of-route-summaries-with-prices>
+            </response-prefs>
+         </user-profile>
+      </trains-and-products-request>
+   </soapenv:Body>
+</soapenv:Envelope>

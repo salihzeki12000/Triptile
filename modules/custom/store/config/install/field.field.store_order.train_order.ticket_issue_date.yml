@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.store_order.ticket_issue_date
+    - store.store_order_type.train_order
+  module:
+    - datetime
+id: store_order.train_order.ticket_issue_date
+field_name: ticket_issue_date
+entity_type: store_order
+bundle: train_order
+label: 'Ticket issue date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

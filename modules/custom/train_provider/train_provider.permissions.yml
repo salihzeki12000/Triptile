@@ -1,0 +1,9 @@
+administer train providers:
+  title: 'Administer train providers'
+  restrict access: true
+
+access cancel booking:
+  title: 'Allow to cancel booking'
+
+access booking info:
+  title: 'Allow to get info about booking'

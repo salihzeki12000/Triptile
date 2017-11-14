@@ -1,0 +1,10 @@
+uuid: 5aa37b99-18ec-43f9-8ef4-677cde5c8832
+langcode: en
+status: true
+dependencies:
+  module:
+    - store
+id: store_order.token
+label: Token
+targetEntityType: store_order
+cache: true

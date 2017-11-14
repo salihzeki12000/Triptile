@@ -1,0 +1,11 @@
+uuid: aa0caad1-64a9-4dcc-b9cc-ab415aefcaf7
+langcode: en
+status: true
+dependencies:
+  module:
+    - store
+id: invoice.invoice
+target_entity_type_id: invoice
+target_bundle: invoice
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,115 @@
+<?php
+
+/**
+ * @file
+ * Contains rn_content.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\block\Entity\Block;
+use Drupal\taxonomy\Entity\Term;
+
+
+/**
+ * Implements hook_help().
+ */
+function rn_content_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the rn_content module.
+    case 'help.page.rn_content':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Contains elements for layout') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function rn_content_form_block_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if (\Drupal::currentUser()->hasPermission('administer block classes')) {
+
+    /** @var \Drupal\block\BlockInterface $block */
+    $block = $form_state->getFormObject()->getEntity();
+
+    // This will automatically be saved in the third party settings.
+    $form['third_party_settings']['#tree'] = TRUE;
+    $form['third_party_settings']['rn_content']['classes'] = array(
+      '#type' => 'textfield',
+      '#title' => t('CSS class(es)'),
+      '#description' => t('Customize the styling of this block by adding CSS classes. Separate multiple classes by spaces.'),
+      '#default_value' => $block->getThirdPartySetting('rn_content', 'classes'),
+    );
+
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function rn_content_preprocess_block(&$variables) {
+  // Blocks coming from page manager widget does not have id.
+  if (!empty($variables['elements']['#id'])) {
+    $block = Block::load($variables['elements']['#id']);
+    if ($classes = $block->getThirdPartySetting('rn_content', 'classes')) {
+      $variables['attributes']['class'][] = $classes;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess().
+ */
+function rn_content_preprocess_page(&$variables) {
+  $term = null;
+  if ($blog_category = Drupal::service('rn_content.get_post_navigation')->getBlogCategoryId()) {
+    /** @var \Drupal\taxonomy\Entity\Term $term */
+    $term = Term::load($blog_category);
+  }
+  else {
+    $term = \Drupal::request()->attributes->get('taxonomy_term');
+  }
+
+  if ($term && $term->getVocabularyId() == 'blog_categories') {
+
+    // Add category image as background to search region
+    /** \Drupal\Core\Entity\Image $image */
+    if ($image = $term->get('category_image')->first()) {
+      if ($image->entity) {
+        $url = $image->entity->url();
+        $variables['page']['search']['#attributes']['style'] = 'background-image: url(' . $url . ') !important';
+        $variables['page']['search']['#attributes']['class'][] = 'blog-page-search-region';
+      }
+    }
+
+    // Add breadcrumbs
+    if ($breadcrumbs = Block::load('breadcrumbs')) {
+      $variables['page']['content_prefix'][] = \Drupal::entityTypeManager()
+        ->getViewBuilder('block')
+        ->view($breadcrumbs);
+    }
+  }
+}
+
+function rn_content_preprocess_node(&$variables) {
+  /* @var \Drupal\node\Entity\Node $node */
+  $node = $variables['node'];
+  if ($node->getType() == 'blog') {
+    $variables['created_date'] = date("d/m/Y", $node->getCreatedTime());
+    if ($blog_category = Drupal::service('rn_content.get_post_navigation')->getBlogCategoryId()) {
+      $variables['back_link'] = Drupal::service('rn_content.get_post_navigation')->generateBackLink();
+      $variables['previous_link'] = Drupal::service('rn_content.get_post_navigation')->generatePreviousLink();
+      $variables['next_link'] = Drupal::service('rn_content.get_post_navigation')->generateNextLink();
+    }
+
+    if ($social_icons_block = Block::load('socialicons')) {
+      $variables['social_icons'] = \Drupal::entityTypeManager()
+        ->getViewBuilder('block')
+        ->view($social_icons_block);
+    }
+  }
+}
+

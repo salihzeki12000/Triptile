@@ -1,0 +1,30 @@
+id: route_message
+migration_group: train_base
+migration_tags:
+  - russian_trains_light
+label: Route message
+source:
+  plugin: route_message
+  key: travelallrussia
+process:
+  langcode: lang
+  name: route_name
+  status: enabled
+  departure_station:
+    plugin: migration_lookup
+    migration: station
+    source: departure_station
+  arrival_station:
+    plugin: migration_lookup
+    migration: station
+    source: arrival_station
+  message: note
+destination:
+  plugin: entity:route_message
+migration_dependencies:
+  required:
+    - station
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

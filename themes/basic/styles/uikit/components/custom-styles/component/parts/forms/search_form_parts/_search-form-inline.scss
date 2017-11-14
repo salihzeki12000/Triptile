@@ -1,0 +1,725 @@
+$custom-fields-v-padding: 11px;
+$mobile-top-v-padding: 30px;
+$search-form-top-margin: 37px;
+$search-form-margin: 20px;
+$leg-part: 3.2;
+$fields-count: 5;
+$stations-part: 1.8;
+$leg-fields-count: 3;
+
+.train-search-form-block {
+  margin: 0;
+  max-height: 430px;
+  background-size: cover;
+
+  @media #{$tablet} {
+    @include side-padding($tablet-h-padding);
+  }
+
+  @media #{$mobile} {
+    max-height: 100%;
+  }
+
+  .block__inner {
+    padding: 95px 0 165px;
+    max-width: $front-form-width;
+    width: 100%;
+    margin: 0 auto;
+
+    @media #{$tablet} {
+      max-width: 100%;
+
+      @media #{$tablet-portrait} {
+        padding: 50px 0 80px;
+      }
+    }
+
+    @media #{$mobile} {
+      padding: $mobile-top-v-padding $mobile-h-padding $mobile-top-v-padding + $search-form-margin;
+    }
+  }
+
+  .block__title {
+    text-align: center;
+    color: $form-title-color;
+    text-transform: uppercase;
+    text-shadow: 0.6px 0.8px 1px rgba(0, 0, 0, 0.67);
+    font-family: $title-font-family;
+    font-size: 1.5625rem;
+    padding-bottom: 50px;
+    margin: 0;
+
+    @media #{$mobile} {
+      padding-bottom: $mobile-top-v-padding * 1.5;
+    }
+  }
+
+  .block__content {
+    max-width: $front-form-width;
+    width: 100%;
+    padding: 38px 75px;
+    background: rgba(2,2,2,0.54);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+    position: relative;
+    margin: 0 auto;
+
+    @media #{$tablet} {
+      max-width: 100%;
+      padding:   30px 15px;
+    }
+
+    @media #{$mobile} {
+      padding: $search-form-top-margin $search-form-margin $search-form-margin;
+    }
+  }
+
+  $station-width: 19.5%;
+  $delta: 1.5%;
+  $type-1-width: $station-width;
+  $type-2-width: $station-width - $delta;
+
+  .train-booking-search-form {
+    display: block;
+    margin: 0 auto;
+
+    label {
+      display: none;
+    }
+
+    .basic-mode, .roundtrip-mode {
+      &.visible {
+        @media #{$mobile} {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .search-form-switcher {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    max-width: $container-width;
+    flex-basis: 100%;
+    @include flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    @include side-padding(0);
+    margin: 0 auto;
+
+    @media #{$tablet} {
+      top: 5px;
+    }
+
+    span {
+      padding-right: 25px;
+      color: $ml-switcher-color;
+      cursor: pointer;
+
+      &:hover {
+        color: darken($ml-switcher-color,10%);
+      }
+
+      &.active {
+        color: $ml-switcher-active-color;
+      }
+
+      &.complex {
+        @media #{$mobile} {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .form-flex-container {
+    @include flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    height: $input-min-height;
+    width: 100%;
+    position: relative;
+    
+
+    @media #{$wide} {
+      height: $input-wide-min-height;
+
+      .overlay {
+        height: inherit;
+      }
+    }
+
+    @media #{$tablet-portrait} {
+      height: 100%;
+
+      .overlay {
+        height: 100%;
+      }
+    }
+
+    @media #{$mobile} {
+      align-items: stretch;
+      flex-direction: column;
+      height: auto;
+      min-height: $input-min-height * 5 + $search-form-margin * 4;
+      @include side-padding($tt-mobile-h-padding);
+
+      @media #{$mobile-portrait} {
+        @include side-padding(0);
+      }
+
+      .overlay {
+        height: 100%;
+      }
+    }
+
+    .leg {
+      width: 100% * $leg-part / $fields-count;
+      flex-basis: 100% * $leg-part / $fields-count;
+      @include flex;
+      flex-flow: row wrap;
+
+      @media #{$tablet-portrait} {
+        flex-basis: 100%;
+        @include flex;
+      }
+
+      @media #{$mobile} {
+        flex-basis: 100%;
+        @include flex;
+        width: 100%;
+      }
+    }
+
+    .passengers-field-wrapper {
+      width: 100% * ($fields-count - $leg-part) / 2 / $fields-count;
+      flex-basis: 100% * ($fields-count - $leg-part) / 2 / $fields-count;
+    }
+
+    .form-actions {
+      width: 100% * ($fields-count - $leg-part) / 2 / $fields-count;
+      flex-basis: 100% * ($fields-count - $leg-part) / 2 / $fields-count;
+    }
+
+    .selectize-control {
+
+      &.single {
+        .selectize-input {
+          padding: 0 $input-h-padding;
+
+          @media #{$wide} {
+            height: $input-wide-min-height;
+            min-height: $input-wide-min-height;
+          }
+
+          @media #{$tablet} {
+            padding: 0 $input-tablet-h-padding;
+
+            @media #{$tablet-portrait} {
+              padding: $input-tablet-v-padding $input-tablet-h-padding;
+            }
+          }
+
+          @media #{$mobile} {
+            @include side-padding($input-mobile-h-padding);
+            @include v-padding(0);
+
+            &::after {
+              top: 22px;
+            }
+          }
+        }
+      }
+    }
+
+    .stations-wrapper {
+      flex-basis: 100% * $stations-part / $leg-fields-count;
+      width: 100% * $stations-part / $leg-fields-count;
+      @include flex;
+      height: 100%;
+
+      @media #{$tablet-portrait} {
+        flex-basis: 100%;
+        @include flex;
+        margin-bottom: $search-form-margin;
+      }
+
+      @media #{$mobile} {
+        border-right: none;
+        flex-basis: 100%;
+        display: block;
+
+        @media #{$mobile-portrait} {
+          flex-flow: row wrap;
+          border:    none;
+        }
+      }
+
+      & > div {
+        flex-basis: 50%;
+        height: 100%;
+
+        select {
+          @media #{$wide} {
+            min-height: $input-wide-min-height;
+            @include appearance(none);
+            margin: 0;
+          }
+        }
+
+        @media #{$mobile} {
+          margin-bottom: $search-form-margin;
+        }
+
+        @media #{$mobile-portrait} {
+          flex-basis: 100%;
+        }
+      }
+
+      .selectize-control {
+        .selectize-input {
+
+          &.has-items {
+            input[type="text"] {
+              height: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .departure-station {
+      &.selectize-control{
+        &.single {
+          .selectize-input {
+            &::after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    .form-item-departure-station {
+
+      .selectize-input, select {
+
+        @media #{$wide} {
+          border-right: none;
+        }
+
+        @media #{$tablet} {
+          border-right: none;
+        }
+
+        @media #{$mobile-landscape} {
+          border-right: none;
+        }
+
+        @media #{$mobile-portrait} {
+          margin-bottom: $search-form-margin;
+        }
+      }
+    }
+
+    .form-item-arrival-station {
+      .selectize-control {
+        &.single {
+          .selectize-input {
+            .item {
+              @include gradient-input(80%, 90%);
+            }
+          }
+        }
+      }
+
+      .selectize-input, select {
+
+        @media #{$wide} {
+          border-right: none;
+        }
+
+        @media #{$tablet-landscape} {
+          border-right: none;
+        }
+      }
+    }
+
+    .form-item-departure-station, .form-item-arrival-station {
+      height: 100%;
+
+      @media #{$mobile-portrait} {
+        flex-basis: 100%;
+      }
+
+      .form-type-select {
+        height: 100%;
+
+        select {
+          height: 100%;
+
+          @media #{$wide} {
+           min-height: $input-wide-min-height;
+          }
+        }
+      }
+
+      .selectize-input {
+
+        input {
+          height: 100%;
+        }
+
+        &::after {
+          display: none;
+
+          @media #{$mobile} {
+            top: 22px;
+          }
+        }
+      }
+
+      .selectize-dropdown-content {
+
+        div {
+          display:     flex;
+          align-items: center;
+        }
+      }
+    }
+
+    .departure-station-wrapper {
+      position: relative;
+    }
+
+    $icon-size: 17px;
+
+    .swap-stations {
+      position: absolute;
+      width: $icon-size + 5px;
+      height: $icon-size;
+      margin-top: $icon-size * (-1) / 2;
+      top: 50%;
+      right: $input-h-padding;
+      background: transparent url("#{$path-to-images}/#{$misc-icons}") no-repeat -23px -15px;
+      cursor: pointer;
+      z-index: 9;
+      -webkit-transform: translate3d(0,0,2px);
+
+      @media #{$tablet-portrait} {
+        top: 35%;
+      }
+
+      @media #{$mobile} {
+        right: $input-mobile-h-padding;
+      }
+    }
+
+    .passengers-field-wrapper {
+      @media #{$tablet-portrait} {
+        margin-left: 50%;
+        margin-top: -1 * ($input-min-height + $search-form-margin);
+      }
+
+      @media #{$mobile} {
+        display: block;
+        width: 100%;
+        margin-bottom: $search-form-margin;
+      }
+    }
+
+    .passengers-field {
+      @include input-styles;
+      position: relative;
+      cursor: pointer;
+      @include side-padding($input-h-padding);
+      display: flex;
+      align-items: center;
+      min-height: $input-min-height;
+
+      @media #{$wide} {
+        min-height: $input-wide-min-height;
+        border-right: none;
+      }
+
+      @media #{$tablet} {
+        @include side-padding($input-tablet-h-padding);
+      }
+
+      .passengers-number {
+        @include gradient-input(70%, 80%);
+
+        .value {
+          max-height: 1rem;
+        }
+
+        .arrow {
+          cursor: pointer;
+          position: absolute;
+          top: 50%;
+          right: 15px;
+          margin-top: -3px;
+          background: transparent url("#{$path-to-images}/#{$misc-icons}") no-repeat 0 0;
+          border: none;
+          width: 13px;
+          height: 9px;
+          z-index: 1;
+          -webkit-transform: translate3d(0,0,1px);
+        }
+      }
+
+      .passengers-wrapper {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        background: $input-bg;
+        border: $input-border;
+        padding: 15px;
+        z-index: 999;
+        -webkit-transform: translate3d(0,0,1px);
+
+        label {
+          font-weight: normal;
+          padding: 0 0 5px;
+          display: block;
+        }
+
+        select {
+          width: 100%;
+          @include v-padding($input-v-padding + 5px);
+        }
+
+        .ui-spinner-input {
+          @media #{$wide} {
+            min-height: $input-wide-min-height;
+          }
+        }
+
+        .form-item {
+          padding-bottom: 15px;
+        }
+
+        .chosen-container {
+          width: 100% !important;
+
+          .chosen-single {
+            font-size: $spinner-font-size;
+            justify-content: center;
+            height: $input-min-height;
+
+            @media #{$wide} {
+              height: $input-wide-min-height;
+            }
+
+            span {
+              margin: 0;
+            }
+          }
+
+        }
+
+        .selectize-control {
+          &.single {
+            .selectize-input {
+              @include v-padding($input-v-padding - 4px);
+              justify-content: center;
+              font-size: $spinner-font-size;
+
+              @media #{$wide} {
+                min-height: $input-wide-min-height;
+                height: $input-wide-min-height;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .travel-date-element-wrapper {
+      flex-basis: 100% * ($leg-fields-count - $stations-part) / $leg-fields-count;
+      width: 100% * ($leg-fields-count - $stations-part) / $leg-fields-count;
+    }
+
+    .travel-date-wrapper {
+      @include input-styles;
+      @include side-padding($input-h-padding);
+      position: relative;
+      border-right: none;
+      min-height: $input-min-height;
+      display: flex;
+      align-items: center;
+      border-right:  $input-border;
+      @include v-padding($input-v-padding/2);
+
+      @media #{$wide} {
+        min-height: $input-wide-min-height;
+      }
+
+      @media #{$tablet} {
+        @include side-padding($input-tablet-h-padding);
+        margin-bottom: 0;
+
+        @media #{$tablet-portrait} {
+          @include side-padding(0);
+        }
+      }
+
+      @media #{$mobile} {
+        @include side-padding($input-mobile-h-padding);
+        @include v-padding($input-mobile-v-padding);
+        display: block;
+        width: 100%;
+        height: $input-min-height;
+        margin-bottom: $search-form-margin;
+      }
+
+      $height: 20px;
+
+      &::before {
+        border: none;
+        width: 22px;
+        height: $height;
+        background: transparent url("#{$path-to-images}/#{$misc-icons}") no-repeat 0 -17px;
+        display: inline-block;
+        content: "";
+        position: absolute;
+        left: 15px;
+        top: 50%;
+
+        margin-top: (-1) * $height / 2;
+
+        @media #{$tablet} {
+          left: 10px;
+        }
+      }
+
+      .travel-date-input {
+        padding-left: 28px;
+        @include gradient-input(85%, 95%);
+
+        @media #{$tablet-portrait} {
+          padding-left: 40px;
+        }
+      }
+
+      #edit-dates-wrapper {
+        @include flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    .wide-stripe {
+      @media #{$tablet-portrait} {
+        min-width: $datepicker-tablet-min-width;
+        border: $input-border;
+      }
+    }
+
+    .travel-date-element-wrapper,
+    .passengers-field {
+      @media #{$wide} {
+        min-height: $input-wide-min-height;
+      }
+
+      @media #{$mobile} {
+        flex-basis:    100%;
+      }
+    }
+
+    .form-item-departure-station,
+    .form-item-arrival-station,
+    .travel-date-element-wrapper,
+    .passengers-field-wrapper {
+      @media #{$tablet-portrait} {
+        flex-basis:    50%;
+        margin-bottom: $search-form-margin;
+      }
+    }
+
+    .form-actions {
+      min-height: $input-min-height;
+
+      @media #{$wide} {
+        min-height: $input-wide-min-height;
+      }
+
+      @media #{$tablet-portrait} {
+        flex-basis: 100%;
+        text-align: right;
+      }
+
+      @media #{$mobile} {
+        display: block;
+        width: 100%;
+      }
+
+      input[type="submit"] {
+        @include btn-red;
+        @include btn-straight;
+        opacity: 1;
+        border: none;
+        width: 100%;
+        height: 100%;
+        font-size: 1.0625rem;
+        padding: 0 5px;
+        line-height: 120%;
+        min-height: $input-min-height;
+
+        @media #{$wide} {
+          min-height: $input-wide-min-height;
+        }
+
+        @media #{$tablet-portrait} {
+          @include side-padding($input-tablet-h-padding);
+          width: 50%;
+        }
+
+        @media #{$mobile} {
+          @include side-padding($input-mobile-h-padding);
+        }
+      }
+    }
+
+    .overlay {
+      background: rgba(119, 119, 119, 0.2);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      width: inherit;
+      z-index: 99;
+      -webkit-transform: translate3d(0,0,2px);
+
+      .custom-throbber {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .loading {
+          width: 35px;
+          height: 35px;
+          background: url("#{$path-to-images}/throbber.gif") no-repeat;
+          background-size: 35px;
+          margin: auto auto;
+        }
+
+        .text {
+          color: #fff;
+          font-size: 26px;
+          font-weight: bold;
+          margin: 20px 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+uuid: 4f770a17-c057-484f-a485-ea3ac7a6dce5
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.train_review
+    - field.field.comment.train_review.field_rating
+    - field.field.comment.train_review.field_text_review
+    - field.field.comment.train_review.field_user_name
+id: comment.train_review.default
+targetEntityType: comment
+bundle: train_review
+mode: default
+content:
+  author:
+    weight: -2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_rating:
+    weight: 13
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_text_review:
+    weight: 14
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_user_name:
+    weight: 12
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  subject:
+    type: string_textfield
+    weight: 10
+    region: content
+    settings:
+      size: 250
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

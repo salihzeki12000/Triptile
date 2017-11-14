@@ -1,0 +1,18 @@
+uuid: 523b0e31-4b9b-4201-b026-0ce2849a8372
+langcode: en
+status: true
+dependencies:
+  config:
+    - store.order_item_type.ticket
+id: order_item.ticket.name
+field_name: name
+entity_type: order_item
+bundle: ticket
+label: Name
+description: 'The order item name.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

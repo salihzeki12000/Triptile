@@ -1,0 +1,10 @@
+display:
+  default:
+    display_options:
+      fields:
+        redirect_source__path:
+          label: De
+      filters:
+        redirect_source__path:
+          expose:
+            label: De

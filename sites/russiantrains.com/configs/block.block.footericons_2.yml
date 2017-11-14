@@ -1,0 +1,23 @@
+uuid: 95f1bdc2-a62b-44b0-83ab-b50ea5fc1f58
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+  theme:
+    - russiantrains
+third_party_settings:
+  rn_content:
+    classes: ''
+id: footericons_2
+theme: russiantrains
+region: footer
+weight: -12
+provider: null
+plugin: footer_icons
+settings:
+  id: footer_icons
+  label: 'Footer icons'
+  provider: rn_content
+  label_display: '0'
+visibility: {  }

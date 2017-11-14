@@ -1,0 +1,10 @@
+uuid: 0f95e314-333a-4999-8b53-435658ac555e
+langcode: en
+status: true
+dependencies:
+  module:
+    - train_base
+id: car_service.token
+label: Token
+targetEntityType: car_service
+cache: true

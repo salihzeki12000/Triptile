@@ -1,0 +1,64 @@
+$label-width: 40%;
+
+.invoice-page {
+  width: 100%;
+  max-width: $container-width;
+  margin: $invoice-v-padding auto;
+  font-family: $base-font-family;
+
+  .title {
+    margin-bottom: $invoice-v-padding;
+  }
+
+  .invoice-table {
+    margin: $invoice-v-padding 0;
+    border: $invoice-border;
+
+    @media #{$wide} {
+      max-width: 600px;
+    }
+  }
+
+  .row {
+    display: flex;
+    flex-flow: row wrap;
+
+    &:not(:last-of-type) {
+      border-bottom: $invoice-border;
+    }
+  }
+
+  .label, .value {
+    @include v-padding($invoice-v-padding/2);
+    @include side-padding($invoice-h-padding);
+
+    @media #{$mobile} {
+      @include side-padding($invoice-mobile-h-padding);
+    }
+  }
+
+  .label {
+    background: $invoice-head-bg-color;
+    border-right: $invoice-border;
+    flex-basis: $label-width;
+
+    @media #{$mobile-portrait} {
+      flex-basis: 100%;
+      border-bottom: $invoice-border;
+      border-right: none;
+    }
+  }
+
+  .value {
+    flex-basis: 100% - $label-width;
+
+    @media #{$mobile-portrait} {
+      flex-basis: 100%;
+    }
+  }
+
+  .grand-total {
+    font-size: 1.125rem;
+    font-weight: bold;
+  }
+}

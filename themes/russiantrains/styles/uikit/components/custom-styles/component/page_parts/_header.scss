@@ -1,0 +1,102 @@
+$first-header-width: 25%;
+
+.header-container {
+  background: $header-bg;
+  @import "main-menu";
+  @import "user_block";
+}
+
+.top-header {
+  padding: $header-v-padding 0;
+  justify-content: space-between;
+
+  @media #{$tablet} {
+    @include side-padding($tablet-h-padding);
+  }
+
+  @media #{$mobile} {
+    @include side-padding($mobile-h-padding);
+  }
+
+  .pr-header__header-first {
+    flex-basis: $first-header-width;
+    justify-content: flex-start;
+
+    @media #{$mobile} {
+      flex-basis: 100% - $first-header-width;
+    }
+
+    .block-system-branding-block {
+
+      a {
+        color: transparent;
+      }
+
+      img {
+        width: 100%;
+        min-height: 20px;
+
+        @media #{$mobile} {
+          max-width: 200px;
+        }
+      }
+
+      @media #{$mobile} {
+        display: flex;
+      }
+    }
+  }
+
+  .pr-header__header-second {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-basis: 100% - $first-header-width;
+    position: relative;
+
+    @media #{$tablet} {
+      align-items: center;
+    }
+
+    @media #{$mobile} {
+      flex-basis: $first-header-width;
+
+      & > *:not(.mobile-menu-block) {
+        display: none;
+      }
+    }
+  }
+
+  .block-plugin-id--login-register-block {
+    @media #{$tablet-portrait} {
+      order: 2;
+      margin: 0 $header-narrow-h-padding;
+    }
+  }
+
+  .ca-btn {
+    @include v-padding($header-v-padding);
+    max-width: 200px;
+
+    @media #{$tablet-portrait} {
+      @include side-padding($header-narrow-h-padding);
+      @include v-padding($header-v-padding);
+    }
+
+    &.logged-in {
+      @include v-padding(0);
+
+      @media #{$tablet-portrait} {
+        @include side-padding(0);
+        @include v-padding(0);
+      }
+
+    }
+
+  }
+}
+
+.site-branding__logo-link {
+  padding: 0;
+}
+

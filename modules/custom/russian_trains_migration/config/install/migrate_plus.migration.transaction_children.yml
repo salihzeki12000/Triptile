@@ -1,0 +1,40 @@
+id: transaction_children
+migration_group: store
+migration_tags:
+  - transaction_children
+label: Transaction children
+source:
+  plugin: transaction_children
+  key: travelallrussia
+process:
+  merchant_id: merchant_entity_id
+  remote_id: payment_transaction_id
+  payment_method: payment_method
+  status: status
+  type: transaction_type
+  'original_amount/number': amount
+  'original_amount/currency_code': currency
+  'amount/number': payment_amount
+  'amount/currency_code': payment_currency
+  currency_rate: currency_rate
+  ip_address: ip_address
+  uid: destination_user_id
+  invoice:
+    plugin: migration_lookup
+    migration: invoice
+    source: invoice_id
+  parent:
+    plugin: migration_lookup
+    migration: transaction
+    source: parent_id
+  message: error_messages
+destination:
+  plugin: entity:transaction
+migration_dependencies:
+  optional:
+    - invoice
+    - transaction
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

@@ -1,0 +1,9 @@
+.thank-you-page .order-details-wrapper .title-row.hide-travelers,
+.thank-you-page .order-details-wrapper .info-row.hide-travelers {
+  display: none;
+}
+
+.thank-you-page .order-details-wrapper .title-row.show-travelers,
+.thank-you-page .order-details-wrapper .info-row.show-travelers {
+  display: flex;
+}

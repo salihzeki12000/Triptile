@@ -1,0 +1,45 @@
+id: timetable_entry
+migration_group: train_base
+migration_tags: { }
+label: Timetable entry
+source:
+  plugin: timetable_entry
+  key: travelallrussia
+process:
+  train:
+    plugin: migration_lookup
+    migration: train
+    source: code
+  departure_time: departure_time
+  running_time: running_time
+  departure_station: departure_station
+  arrival_station: arrival_station
+  'schedule/weekdays': week_days
+  'schedule/even_days': even_days
+  'schedule/every_n_days': every_other_days
+  'schedule/available_from': available_from
+  'schedule/available_until': available_until
+  min_departure_window: dw_apply
+  product:
+    plugin: iterator
+    source: product
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: ticket_product
+        source: product_id
+  site:
+    plugin: default_value
+    default_value: 'RT'
+destination:
+  plugin: entity:timetable_entry
+migration_dependencies:
+  required:
+    - station
+    - ticket_product
+  optional:
+    - train
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

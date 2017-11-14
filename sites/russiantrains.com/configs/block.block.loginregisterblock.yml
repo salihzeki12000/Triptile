@@ -1,0 +1,30 @@
+uuid: babee724-54aa-48cc-9c45-1b87203b2c92
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+    - rn_user
+  theme:
+    - russiantrains
+third_party_settings:
+  rn_content:
+    classes: ''
+_core:
+  default_config_hash: 1LaeoOQ60d8dOGEy6A1ud4ns_Img2BmcBq9JaPCS2pY
+id: loginregisterblock
+theme: russiantrains
+region: header_second
+weight: -19
+provider: null
+plugin: login_register_block
+settings:
+  id: login_register_block
+  label: 'Login/register block'
+  provider: rn_user
+  label_display: '0'
+  image: '24'
+  button_label_anonymous: 'sign in'
+  button_label_authorized: 'my account'
+  button_label_logout: 'log out'
+visibility: {  }

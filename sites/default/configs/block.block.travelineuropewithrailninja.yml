@@ -1,0 +1,35 @@
+uuid: 6eddd9b0-0a00-4441-b465-5a4c5160da2b
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:f1920a18-2f10-46e4-ac8d-038e79cd2323'
+  module:
+    - block_content
+    - rn_content
+    - system
+  theme:
+    - railninja
+third_party_settings:
+  rn_content:
+    classes: ''
+id: travelineuropewithrailninja
+theme: railninja
+region: content
+weight: -22
+provider: null
+plugin: 'block_content:f1920a18-2f10-46e4-ac8d-038e79cd2323'
+settings:
+  id: 'block_content:f1920a18-2f10-46e4-ac8d-038e79cd2323'
+  label: 'Travel in Europe with Rail Ninja'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /front
+    negate: false
+    context_mapping: {  }

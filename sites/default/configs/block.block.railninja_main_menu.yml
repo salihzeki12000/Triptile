@@ -1,0 +1,26 @@
+uuid: 116d7531-e47f-4d77-b626-5c1909030be5
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - railninja
+_core:
+  default_config_hash: Lty0PIKj8tAHfMWQ3ZUoYOBJRoMxCY93Qx6hWuhLGUY
+id: railninja_main_menu
+theme: railninja
+region: leaderboard
+weight: -13
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main menu'
+  provider: system
+  label_display: '1'
+  level: 1
+  depth: 0
+visibility: {  }

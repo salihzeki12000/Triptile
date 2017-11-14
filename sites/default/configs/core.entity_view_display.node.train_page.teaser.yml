@@ -1,0 +1,35 @@
+uuid: e97bd5a6-6702-446c-bc2e-cfc15bf1e1c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.train_page.body
+    - node.type.train_page
+  module:
+    - text
+    - user
+id: node.train_page.teaser
+targetEntityType: node
+bundle: train_page
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_brand: true
+  field_gallery: true
+  field_image: true
+  field_reviews: true
+  field_text_below_map: true
+  field_text_on_image: true
+  langcode: true

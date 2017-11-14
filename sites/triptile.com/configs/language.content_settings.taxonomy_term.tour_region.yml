@@ -1,0 +1,11 @@
+uuid: 74612900-366b-4c6b-a2cf-8e8f11c2f0d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tour_region
+id: taxonomy_term.tour_region
+target_entity_type_id: taxonomy_term
+target_bundle: tour_region
+default_langcode: site_default
+language_alterable: false

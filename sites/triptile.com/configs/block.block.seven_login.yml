@@ -1,0 +1,22 @@
+uuid: 1cc65211-da56-4010-896b-74b4a55bcff3
+langcode: ru
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - seven
+_core:
+  default_config_hash: IItlF4SKHgxduIysVQdvirDJ_v3HGuAviOkidAOJYRE
+id: seven_login
+theme: seven
+region: content
+weight: 10
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'Вход на сайт'
+  provider: user
+  label_display: visible
+visibility: {  }

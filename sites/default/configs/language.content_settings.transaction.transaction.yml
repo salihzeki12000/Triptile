@@ -1,0 +1,11 @@
+uuid: 3b493231-6f05-4f40-98ba-dd27ab84cdc2
+langcode: en
+status: true
+dependencies:
+  module:
+    - payment
+id: transaction.transaction
+target_entity_type_id: transaction
+target_bundle: transaction
+default_langcode: site_default
+language_alterable: false

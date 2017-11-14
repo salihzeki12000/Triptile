@@ -1,0 +1,60 @@
+<?php
+
+use Drupal\Core\Database\Database;
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Field\Plugin\Field\FieldType\MapItem;
+
+/**
+ * Add 'data' field to store order entity.
+ */
+function store_update_8102(&$sandbox) {
+  drupal_flush_all_caches();
+  $entity_field_manager = \Drupal::service('entity_field.manager');
+  $field_storage_definitions = $entity_field_manager->getFieldStorageDefinitions('store_order');
+  if (isset($field_storage_definitions['data'])) {
+    $spec = MapItem::schema($field_storage_definitions['data']);
+    $schema = Database::getConnection()->schema();
+    $schema->addField('store_order', 'data', $spec['columns']['value']);
+  }
+}
+
+/**
+ * Add 'original_price' field to order item entity.
+ */
+function store_update_8103(&$sandbox) {
+  $originalPriceField = BaseFieldDefinition::create('price')
+    ->setLabel(t('Original price'))
+    ->setDescription(t('The price without any markup.'))
+    ->setDisplayOptions('view', array(
+      'label' => 'above',
+      'type' => 'price_default',
+      'weight' => -4,
+    ))
+    ->setDisplayOptions('form', array(
+      'type' => 'price_default',
+      'weight' => -4,
+    ))
+    ->setDisplayConfigurable('form', TRUE)
+    ->setDisplayConfigurable('view', TRUE);
+
+  \Drupal::entityDefinitionUpdateManager()->installFieldStorageDefinition('original_price', 'order_item', 'store', $originalPriceField);
+}
+
+/**
+ * Remove 'booking_details' field from OrderItem entity.
+ */
+function store_update_8104(&$sandbox) {
+  $bookingDetailsField = \Drupal::entityDefinitionUpdateManager()->getFieldStorageDefinition('booking_details', 'order_item');
+
+  \Drupal::entityDefinitionUpdateManager()->uninstallFieldStorageDefinition($bookingDetailsField);
+}
+
+/**
+ * Add 'data' field to the OrderItem entity.
+ */
+function store_update_8105(&$sandbox) {
+  $dataField = BaseFieldDefinition::create('map')
+    ->setLabel('Data');
+
+  \Drupal::entityDefinitionUpdateManager()->installFieldStorageDefinition('data', 'order_item', 'store', $dataField);
+}

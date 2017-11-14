@@ -1,0 +1,10 @@
+uuid: 98f1e866-ed3b-49ef-92b5-60596f742107
+langcode: en
+status: true
+dependencies:
+  module:
+    - train_base
+id: train_ticket.token
+label: Token
+targetEntityType: train_ticket
+cache: true

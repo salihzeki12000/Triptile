@@ -1,0 +1,25 @@
+id: supplier_translations
+migration_group: train_base
+migration_tags:
+  - translations
+label: Supplier translations
+source:
+  plugin: supplier_translations
+  key: travelallrussia
+process:
+  id:
+    plugin: migration_lookup
+    source: id
+    migration: supplier
+  langcode: lang
+  name: name
+destination:
+  plugin: entity:supplier
+  translations: true
+migration_dependencies:
+  required:
+    - supplier
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

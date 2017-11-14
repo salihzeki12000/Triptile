@@ -1,0 +1,14 @@
+.departure-time-wrapper,
+.running-time-wrapper {
+  position: relative;
+  margin-top: 10px;
+}
+.departure-time-wrapper .form-type-select,
+.running-time-wrapper .form-type-select {
+  display: inline-block;
+}
+.departure-time-wrapper .form-type-select label,
+.running-time-wrapper .form-type-select label {
+  position: absolute;
+  margin-top: -20px;
+}

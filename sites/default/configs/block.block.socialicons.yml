@@ -1,0 +1,26 @@
+uuid: 7a0c8ad9-fb9e-4337-8f7a-a8385163d529
+langcode: en
+status: false
+dependencies:
+  module:
+    - rn_content
+  theme:
+    - railninja
+third_party_settings:
+  rn_content:
+    classes: ''
+id: socialicons
+theme: railninja
+region: content
+weight: -7
+provider: null
+plugin: social_icons
+settings:
+  id: social_icons
+  label: 'Social icons'
+  provider: rn_content
+  label_display: '0'
+  facebook: ''
+  twitter: ''
+  google: ''
+visibility: {  }

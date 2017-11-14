@@ -1,0 +1,12 @@
+uuid: 9d9dc9b7-b4bf-40b9-8546-1f299402dd14
+langcode: en
+status: true
+dependencies: {  }
+id: ufs_kids
+label: 'UFS kids'
+price_rule_type: ticket
+condition: 'supplier == ''UFS'' and age >= 4 and age <= 15'
+tax_type: rate
+tax_value: 0.7
+tax_value_currency: USD
+weight: '0'

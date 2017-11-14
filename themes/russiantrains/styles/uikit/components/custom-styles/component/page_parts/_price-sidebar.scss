@@ -1,0 +1,19 @@
+.sidebar {
+  .sidebar-container {
+    border-top: $pas-sidebar-border;
+    border-bottom: $pas-sidebar-border;
+    @include v-padding($pas-v-padding/2);
+    margin-bottom: $pas-v-padding/2;
+  }
+
+  .order-details {
+    &:not(:last-of-type) {
+      padding-bottom: $pas-v-padding/2;
+    }
+  }
+
+  .tax {
+    padding-top: $sidebar-v-padding/2;
+    border-top: none;
+  }
+}

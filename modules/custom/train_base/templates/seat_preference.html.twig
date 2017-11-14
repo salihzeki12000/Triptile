@@ -1,0 +1,22 @@
+{#
+/**
+ * @file seat_preference.html.twig
+ * Default theme implementation to present Seat preference data.
+ *
+ * This template is used when viewing Seat preference pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_seat_preference()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('seat_preference') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

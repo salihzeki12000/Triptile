@@ -1,0 +1,30 @@
+uuid: 147fbe73-0023-4ff7-ada2-1fdf56f2e233
+langcode: ru
+status: true
+dependencies:
+  config:
+    - views.view.what_people_say
+  module:
+    - system
+    - views
+  theme:
+    - tt
+id: views_block__what_people_say_block_1
+theme: tt
+region: content
+weight: -6
+provider: null
+plugin: 'views_block:what_people_say-block_1'
+settings:
+  id: 'views_block:what_people_say-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

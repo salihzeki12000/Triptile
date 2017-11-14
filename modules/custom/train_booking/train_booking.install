@@ -1,0 +1,314 @@
+<?php
+
+use Drupal\Core\Database\Database;
+use Drupal\Core\Field\Plugin\Field\FieldType\IntegerItem;
+use Drupal\datetime\Plugin\Field\FieldType\DateTimeItem;
+use Drupal\store\Entity\StoreOrder;
+use Drupal\train_booking\Entity\BookingStat;
+
+/**
+ * Implements hook_schema().
+ */
+function train_booking_schema() {
+  $schema['train_booking_logger'] = [
+    'description' => 'Train booking logger table.',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'last_step' => [
+        'description' => 'The step number of the booking to which the user has reached.',
+        'type' => 'int',
+        'default' => 0,
+      ],
+      'session_id' => [
+        'description' => 'The session id.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'search_datetime' => [
+        'description' => 'Date and time of search.',
+        'type' => 'varchar',
+        'length' => 255,
+        'default' => '',
+      ],
+      'ga_client_id' => [
+        'description' => 'Client ID from GA.',
+        'type' => 'varchar',
+        'length' => 255,
+        'default' => '',
+      ],
+      'departure' => [
+        'description' => 'Station of departure.',
+        'type' => 'varchar',
+        'length' => 255,
+        'default' => '',
+      ],
+      'arrival' => [
+        'description' => 'Station of arrival.',
+        'type' => 'varchar',
+        'length' => 255,
+        'default' => '',
+      ],
+      'depth' => [
+        'description' => 'Depth of search.',
+        'type' => 'int',
+        'default' => 0,
+      ],
+      'roundtrip' => [
+        'description' => 'Boolean round trip request.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'default' => 0,
+        'size' => 'tiny',
+      ],
+      'multileg' => [
+        'description' => 'Boolean request for a complex route.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'default' => 0,
+        'size' => 'tiny',
+      ],
+      'pax' => [
+        'description' => 'Total number of passengers.',
+        'type' => 'int',
+        'default' => 0,
+      ],
+      'child' => [
+        'description' => 'Total number of children.',
+        'type' => 'int',
+        'default' => 0,
+      ],
+      'language' => [
+        'description' => 'The current language.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'country' => [
+        'description' => 'Ip-based country.',
+        'type' => 'varchar',
+        'length' => 255,
+        'default' => '',
+      ],
+      'currency' => [
+        'description' => 'Current user currency.',
+        'type' => 'varchar',
+        'length' => 255,
+        'default' => '',
+      ],
+      'min_price' => [
+        'description' => 'The minimum price that the user saw at the 2nd step, in USD.',
+        'type' => 'int',
+        'default' => 0,
+      ],
+      'markup' => [
+        'description' => 'Extra charge in USD for an adult ticket.',
+        'type' => 'int',
+        'default' => 0,
+      ],
+      'price' => [
+        'description' => 'Price for 1 ticket in USD.',
+        'type' => 'int',
+        'default' => 0,
+      ],
+      'tax' => [
+        'description' => 'The tax, in USD.',
+        'type' => 'int',
+        'default' => 0,
+      ],
+      'cost' => [
+        'description' => 'Order cost for us in USD.',
+        'type' => 'int',
+        'default' => 0,
+      ],
+      'order_total' => [
+        'description' => 'Total price of the current order.',
+        'type' => 'int',
+        'default' => 0,
+      ],
+      'coach_class' => [
+        'description' => 'The name of the class that was selected.',
+        'type' => 'varchar',
+        'length' => 255,
+        'default' => '',
+      ],
+      'train_number' => [
+        'description' => 'Train number',
+        'type' => 'varchar',
+        'length' => 255,
+        'default' => '',
+      ],
+      'departure_time' => [
+        'description' => 'Departure time.',
+        'type' => 'varchar',
+        'length' => 255,
+        'default' => '',
+      ],
+      'supplier' => [
+        'description' => 'Vendor code.',
+        'type' => 'varchar',
+        'length' => 255,
+        'default' => '',
+      ],
+      'optional' => [
+        'description' => 'Whether a paid entry was selected in step 3.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'default' => 0,
+        'size' => 'tiny',
+      ],
+      'payment_method' => [
+        'description' => 'Selected payment method.',
+        'type' => 'varchar',
+        'length' => 255,
+        'default' => '',
+      ],
+      'status' => [
+        'description' => 'Write down when you try to pay.',
+        'type' => 'varchar',
+        'length' => 255,
+        'default' => '',
+      ],
+      'order_number' => [
+        'description' => 'Order number.',
+        'type' => 'varchar',
+        'length' => 255,
+        'default' => '',
+      ],
+      'paid_amount' => [
+        'description' => 'How much was paid in USD.',
+        'type' => 'int',
+        'default' => 0,
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+
+  return $schema;
+}
+
+/**
+ * Add failed search entity.
+ */
+function train_booking_update_8101(&$sandbox) {
+  drupal_flush_all_caches();
+  $entity_type_manager = \Drupal::service('entity_type.manager');
+  $storage = $entity_type_manager->getStorage('failed_search');
+  $interface = $entity_type_manager->getDefinition('failed_search');
+  $storage->onEntityTypeCreate($interface);
+}
+
+/**
+ * Add failed search entity.
+ */
+function train_booking_update_8102(&$sandbox) {
+  drupal_flush_all_caches();
+  $entity_field_manager = \Drupal::service('entity_field.manager');
+  $field_storage_definitions = $entity_field_manager->getFieldStorageDefinitions('failed_search');
+  if (isset($field_storage_definitions['departure_date'])) {
+    $spec = DateTimeItem::schema($field_storage_definitions['departure_date']);
+    $schema = Database::getConnection()->schema();
+    $schema->addField('failed_search', 'departure_date', $spec['columns']['value']);
+  }
+}
+
+/**
+ * Add failed search entity.
+ */
+function train_booking_update_8103(&$sandbox) {
+  drupal_flush_all_caches();
+  $entity_field_manager = \Drupal::service('entity_field.manager');
+  $field_storage_definitions = $entity_field_manager->getFieldStorageDefinitions('failed_search');
+  if (isset($field_storage_definitions['order_depth'])) {
+    $spec = IntegerItem::schema($field_storage_definitions['order_depth']);
+    $schema = Database::getConnection()->schema();
+    $schema->addField('failed_search', 'order_depth', $spec['columns']['value']);
+  }
+}
+
+/**
+ * Add booking_stat and success_search_detailed entities.
+ */
+function train_booking_update_8104(&$sandbox) {
+  drupal_flush_all_caches();
+  $entity_type_manager = \Drupal::service('entity_type.manager');
+  $storage = $entity_type_manager->getStorage('booking_stat');
+  $interface = $entity_type_manager->getDefinition('booking_stat');
+  $storage->onEntityTypeCreate($interface);
+
+  $entity_type_manager = \Drupal::service('entity_type.manager');
+  $storage = $entity_type_manager->getStorage('success_search_detailed');
+  $interface = $entity_type_manager->getDefinition('success_search_detailed');
+  $storage->onEntityTypeCreate($interface);
+}
+
+/**
+ * Import statistic from existing bookings.
+ */
+function train_booking_update_8105(&$sandbox) {
+  $orders = \Drupal::entityTypeManager()->getStorage('store_order')->loadMultiple();
+  /** @var \Drupal\store\Entity\StoreOrder $order */
+  foreach ($orders as $order) {
+    $tickets = $order->getTickets();
+    /** @var \Drupal\train_base\Entity\TrainTicket $ticket */
+    $ticket = reset($tickets);
+    $departureStation = $ticket->getDepartureStation()->getParentStation() ? : $ticket->getDepartureStation();
+    $arrivalStation = $ticket->getArrivalStation()->getParentStation() ? : $ticket->getArrivalStation();
+
+    // Get stat entity
+    $entity_ids = \Drupal::entityQuery('booking_stat')
+      ->condition('departure_station', $departureStation->id())
+      ->condition('arrival_station', $arrivalStation->id())
+      ->execute();
+    if (!empty($entity_ids)) {
+      /** @var \Drupal\train_booking\Entity\BookingStat $bookingStat */
+      $bookingStat = \Drupal::entityTypeManager()->getStorage('booking_stat')->load(reset($entity_ids));
+    }
+    else {
+      $bookingStat = BookingStat::create([
+        'departure_station' => $departureStation,
+        'arrival_station' => $arrivalStation,
+      ]);
+    }
+
+    // Update base counters.
+    if (in_array($order->getStatus(), [StoreOrder::STATUS_BOOKED, StoreOrder::STATUS_PROCESSING, StoreOrder::STATUS_MODIFIED, StoreOrder::STATUS_MODIFICATION_REQUESTED])) {
+      $bookingStat->incrementSuccessBookingCount()
+        ->incrementTicketCount(count($tickets));
+    }
+    else {
+      $bookingStat->incrementFailedBookingCount();
+    }
+
+    // Update round/one way counters.
+    $roundTrip = false;
+    /** @var \Drupal\train_base\Entity\TrainTicket $t */
+    foreach ($tickets as $t) {
+      if ($t->getDepartureStation()->id() == $ticket->getArrivalStation()->id()) {
+        $roundTrip = true;
+        break;
+      }
+    }
+    $roundTrip ? $bookingStat->incrementComplexTripCount() : $bookingStat->incrementOneWayTripCount();
+
+    $bookingStat->save();
+  }
+}
+
+/**
+ * Add table for logging.
+ */
+function train_booking_update_8106() {
+  $database = \Drupal::database();
+  // Create database table.
+  if (!$database->schema()->tableExists('train_booking_logger')) {
+    $schema = train_booking_schema();
+    $database->schema()->createTable('train_booking_logger', $schema['train_booking_logger']);
+  }
+}

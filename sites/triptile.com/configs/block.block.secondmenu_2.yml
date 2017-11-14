@@ -1,0 +1,24 @@
+uuid: 0bbe1ffe-b32c-4a3a-8abe-4274e47b6004
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.second-menu
+  module:
+    - system
+  theme:
+    - tt
+id: secondmenu_2
+theme: tt
+region: footer_third
+weight: -11
+provider: null
+plugin: 'system_menu_block:second-menu'
+settings:
+  id: 'system_menu_block:second-menu'
+  label: 'Second menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

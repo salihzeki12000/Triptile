@@ -1,0 +1,18 @@
+uuid: 3f2da34f-efb4-45ec-a702-2f0e63990f78
+langcode: en
+status: true
+dependencies:
+  module:
+    - train_base
+id: seat_preference.seat_preference.name
+field_name: name
+entity_type: seat_preference
+bundle: seat_preference
+label: Name
+description: 'The name of the Seat preference entity.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,25 @@
+uuid: 130d252e-c623-4754-9cd6-b1a61343120a
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:de67ee11-e1d4-498d-8f16-a4a40d8129c8'
+  module:
+    - block_content
+  theme:
+    - tt
+id: copyrightfooter
+theme: tt
+region: footer_third
+weight: -10
+provider: null
+plugin: 'block_content:de67ee11-e1d4-498d-8f16-a4a40d8129c8'
+settings:
+  id: 'block_content:de67ee11-e1d4-498d-8f16-a4a40d8129c8'
+  label: 'Copyright footer'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

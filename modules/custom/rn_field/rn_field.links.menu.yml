@@ -1,0 +1,8 @@
+# pdf cutter template menu items definition
+entity.pdf_cutter_template.collection:
+  title: 'Pdf cutter template'
+  route_name: entity.pdf_cutter_template.collection
+  description: 'List pdf cutter templates'
+  parent: rail_ninja.config_list
+  weight: 99
+

@@ -1,0 +1,26 @@
+uuid: a95c5f4a-a37e-4bff-b5b5-01f0b698569f
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - railninja
+_core:
+  default_config_hash: _rUUq4pWIxsmzipHPvhtJ8_ttHOXO0sSOwt8dSGf9_8
+id: railninja_tools
+theme: railninja
+region: leaderboard
+weight: -9
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Tools
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

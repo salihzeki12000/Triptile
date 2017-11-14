@@ -1,0 +1,121 @@
+uuid: daf310d4-48ac-45ed-af12-9502fa73ad3c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.base_product.ticket_product.coach_class
+    - field.field.base_product.ticket_product.min_departure_window
+    - field.field.base_product.ticket_product.seat_type
+    - store.base_product_type.ticket_product
+  module:
+    - options
+_core:
+  default_config_hash: Hz_Wnv16giSNtDz5ipgdDAkzdpOOBDwAZjxRahYgeIA
+id: base_product.ticket_product.default
+targetEntityType: base_product
+bundle: ticket_product
+mode: default
+content:
+  coach_class:
+    weight: 5
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  code:
+    label: above
+    type: string
+    weight: -9
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  currency:
+    label: above
+    type: string
+    weight: -7
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  description:
+    label: above
+    type: string
+    weight: -7
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  max_quantity:
+    label: above
+    type: number_integer
+    weight: -5
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    region: content
+  min_departure_window:
+    weight: 6
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  name:
+    label: above
+    type: string
+    weight: -8
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  price:
+    weight: 2
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  seat_type:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  site:
+    label: above
+    type: list_default
+    weight: -4
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  status:
+    label: above
+    type: boolean
+    weight: -4
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    region: content
+  weight:
+    label: above
+    type: number_integer
+    weight: -5
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

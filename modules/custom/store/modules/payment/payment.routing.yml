@@ -1,0 +1,87 @@
+payment.base:
+  path: '/admin/store/payment'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+  requirements:
+    _permission: 'access administration pages'
+
+payment.payment_config.payment_methods:
+  path: '/admin/store/payment/payment-methods'
+  defaults:
+    _form: '\Drupal\payment\Form\Admin\PaymentMethodsForm'
+    _title: Payment methods
+  requirements:
+    _permission: 'payment.administer'
+
+payment.payment_config.payment_methods.configuration:
+  path: '/admin/store/payment/payment-methods/{payment_method}'
+  defaults:
+    _form: '\Drupal\payment\Form\Admin\PaymentMethodConfigurationForm'
+    _title_callback: '\Drupal\payment\Form\Admin\PaymentMethodConfigurationForm::title'
+  requirements:
+    _permission: 'payment.administer'
+
+entity.invoice.payment:
+  path: '/invoice/{invoice_number}/payment'
+  defaults:
+    _form: '\Drupal\payment\Form\InvoicePaymentForm'
+    _title: Payment
+  options:
+    parameters:
+      invoice_number:
+        type: invoice
+  requirements:
+    _permission: 'payment.access_payment_page'
+
+entity.invoice.payment.success:
+  path: '/invoice/{invoice}/payment/{payment_method}/return'
+  defaults:
+    _controller: '\Drupal\payment\Controller\PaymentServiceUrlController::success'
+    _title: Payment success
+  requirements:
+    _permission: 'payment.access_payment_page'
+
+entity.invoice.payment.cancel:
+  path: '/invoice/{invoice}/payment/{payment_method}/cancel'
+  defaults:
+    _controller: '\Drupal\payment\Controller\PaymentServiceUrlController::cancel'
+    _title: Payment canceled
+  requirements:
+    _permission: 'payment.access_payment_page'
+
+entity.invoice.payment.fail:
+  path: '/invoice/{invoice}/payment/{payment_method}/fail'
+  defaults:
+    _controller: '\Drupal\payment\Controller\PaymentServiceUrlController::fail'
+    _title: Payment failed
+  requirements:
+    _permission: 'payment.access_payment_page'
+
+payment.paypal_ipn_url:
+  path: '/paypal/ipn/{transaction}'
+  defaults:
+    _controller: '\Drupal\payment\Controller\PaymentAPICallback::paypalIPN'
+  requirements:
+    _access: 'TRUE'
+
+payment.ecommpay_notification:
+  path: '/ecommpay/notification'
+  defaults:
+    _controller: '\Drupal\payment\Controller\PaymentAPICallback::ecommpayNotification'
+  requirements:
+    _access: 'TRUE'
+
+payment.ecommpay_autoredirect:
+  path: '/payment/ecommpay/3ds'
+  defaults:
+    _form: '\Drupal\payment\Form\Ecommpay3dsAutosubmitForm'
+    _title: Complete payment
+  requirements:
+    _custom_access: '\Drupal\payment\Form\Ecommpay3dsAutosubmitForm::access'
+
+payment.paysera_callback:
+  path: '/paysera/callback/{transaction}'
+  defaults:
+    _controller: '\Drupal\payment\Controller\PaymentAPICallback::payseraCallback'
+  requirements:
+    _access: 'TRUE'

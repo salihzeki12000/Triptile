@@ -1,0 +1,7 @@
+.popup-form-wrapper .tab-form {
+  display: none;
+}
+
+.popup-form-wrapper .tab-form.active {
+  display: block;
+}

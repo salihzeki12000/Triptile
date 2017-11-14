@@ -1,0 +1,24 @@
+uuid: f5d91797-c6a1-410b-807b-56eeee11d2d0
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+  theme:
+    - russiantraintickets
+third_party_settings:
+  rn_content:
+    classes: only-mobile
+id: searchtrain
+theme: russiantraintickets
+region: footer
+weight: -19
+provider: null
+plugin: to_search
+settings:
+  id: to_search
+  label: 'Search train'
+  provider: rn_content
+  label_display: '0'
+  button_label: 'Search train'
+visibility: {  }

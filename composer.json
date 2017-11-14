@@ -1,0 +1,155 @@
+{
+    "name": "drupal-composer/drupal-project",
+    "description": "Project template for Drupal 8 projects with composer",
+    "type": "project",
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "",
+            "role": ""
+        }
+    ],
+    "repositories": {
+        "0": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
+        "1": {
+            "type": "package",
+            "package": {
+                "name": "harvesthq/chosen",
+                "version": "1.7.0",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/harvesthq/chosen/releases/download/v1.7.0/chosen_v1.7.0.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "^1.2.0"
+                }
+            }
+        },
+        "2": {
+            "type": "package",
+            "package": {
+                "name": "woothemes/flexslider",
+                "version": "2.6.3",
+                "type": "drupal-library",
+                "source": {
+                    "url": "https://github.com/woothemes/FlexSlider.git",
+                    "type": "git",
+                    "reference": "2.6.3"
+                }
+            }
+        }
+    },
+    "require": {
+        "zendframework/zendpdf": "*",
+        "composer/installers": "^1.0.20",
+        "drupal-composer/drupal-scaffold": "^2.0.1",
+        "cweagans/composer-patches": "~1.0",
+        "drupal/core": "~8.0",
+        "drush/drush": "~8.0",
+        "drupal/console": "~1.0",
+        "drupal/devel": "~1.0",
+        "drupal/adaptivetheme": "~1.0",
+        "drupal/at_tools": "~1.0",
+        "drupal/examples": "1.x-dev",
+        "drupal/config_tools": "~1.0",
+        "drupal/currency": "^3.1",
+        "drupal/address": "~1.0",
+        "drupal/config_devel": "~1.0",
+        "drupal/geolocation": "~1.0",
+        "drupal/config_inspector": "~1.0",
+        "drupal/plugin": "~2.4",
+        "mobiledetect/mobiledetectlib": "~2.0",
+        "drupal/admin_toolbar": "~1.0",
+        "drupal/inline_entity_form": "~1.0",
+        "drupal/robotstxt": "~1.0",
+        "drupal/metatag": "~1.0",
+        "drupal/simple_sitemap": "~2.0",
+        "drupal/juicebox": "~2.0",
+        "drupal/imce": "~1.0",
+        "drupal/advagg": "~2.0",
+        "harvesthq/chosen": "1.7.0",
+        "drupal/chosen": "^2.1",
+        "electrolinux/phpquery": "~0.9",
+        "neitanod/forceutf8": "dev-master",
+        "drupal/restui": ">=1.13",
+        "drupal/field_collection": "^1.0@alpha",
+        "drupal/simplenews": "^1.0@alpha",
+        "symfony/expression-language": "~2.0",
+        "drupal/migrate_tools": "4.x-dev",
+        "drupal/migrate_plus": "4.x-dev",
+        "drupal/redirect": "1.x-dev",
+        "drupal/migrate_source_csv": "2.0",
+        "geoip2/geoip2": "~2.0",
+        "drupal/swiftmailer": "~1.0-beta1",
+        "drupal/pathauto": "~1.0",
+        "drupal/views_bulk_operations": "1.x-dev",
+        "drupal/smtp": "~1.0",
+        "drupal/stage_file_proxy": "~1.0",
+        "woothemes/flexslider": "~2.0",
+        "drupal/flexslider": "2.0-beta1",
+        "drupal/captcha": "~1.0-beta1",
+        "drupal/recaptcha": "~2.2"
+    },
+    "require-dev": {
+        "behat/mink": "~1.7",
+        "behat/mink-goutte-driver": "~1.2",
+        "jcalderonzumba/gastonjs": "~1.0.2",
+        "jcalderonzumba/mink-phantomjs-driver": "~0.3.1",
+        "mikey179/vfsStream": "~1.2",
+        "phpunit/phpunit": "~4.8",
+        "symfony/css-selector": "~2.8",
+        "drupal/twig_xdebug": "^1.0",
+        "drupal/search_kint": "~1.0"
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "classmap": [
+            "scripts/composer/ScriptHandler.php"
+        ]
+    },
+    "scripts": {
+        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+        "pre-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "pre-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "post-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "post-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ]
+    },
+    "extra": {
+        "installer-paths": {
+            "core": [
+                "type:drupal-core"
+            ],
+            "libraries/{$name}": [
+                "type:drupal-library"
+            ],
+            "modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "drush/contrib/{$name}": [
+                "type:drupal-drush"
+            ]
+        }
+    }
+}

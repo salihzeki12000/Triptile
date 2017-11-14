@@ -1,0 +1,14 @@
+uuid: c581daf7-6627-41de-a3f0-6663b58bc776
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.accountant
+  module:
+    - user
+id: user_add_role_action.accountant
+label: 'Add the Accountant role to the selected users'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: accountant

@@ -1,0 +1,21 @@
+uuid: b6a78744-8df7-49cf-a94c-06acaf8f9a1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.base_product.available_until_date
+    - store.base_product_type.price_option
+  module:
+    - datetime
+id: base_product.price_option.available_until_date
+field_name: available_until_date
+entity_type: base_product
+bundle: price_option
+label: 'Available until'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

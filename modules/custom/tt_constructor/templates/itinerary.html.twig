@@ -1,0 +1,139 @@
+{{ attach_library('tt/constructor') }}
+{{ attach_library('tt/constructor_slick') }}
+
+<div ng-controller="ConstructorCtrl">
+  <div class="search-return" ng-click="returnFromMobileSearch()">{{'Return'|t}}</div>
+  <div class="i-step-wrapper" ng-repeat="(stepIndex, step) in order.steps">
+    <div class="i-step-img" ng-style="{'background-image':'url([[load.hubs[step.hub.id].img]])'}">
+      <div class="i-step-info" ng-if="stepIndex == 1" ng-controller="ConstructorSearchController">
+        <h2>[[ returnItineraryTitle() ]]</h2>
+        <span class="days">[[ getOrderTotalDays() ]]</span>
+        <span class="cities">[[getHubsCount()]]</span>
+        <br/>
+        <input class="form-text start-date"
+               placeholder="{{'Select the exact start date'|t}}"
+               moment-picker="stringDate"
+               locale="en"
+               format="YYYY-MM-DD"
+               min-date="minDateMoment"
+               min-view="month"
+               max-view="month"
+               start-view="month"
+               ng-model="momentDate"
+               inline="true"
+               ng-focus="showDatePickerItinerary($event)"
+               change="onDatePickerChange(newValue, oldValue)">
+        <div class="price" id="header-order-total">[[getOrderTotal()]]</div>
+        <button class="orange-button" ng-click="editBookNow(1)">{{'Book now'|t}}</button><br/>
+        <span class="save" ng-click="editSaveShare(1)">{{'Save & Share'|t}}</span>
+      </div>
+      <div class="show-map" ng-show="stepIndex == 1" ng-click="showItineraryMap(1)"></div>
+    </div>
+    <div class="map"></div>
+    <div class="i-step" >
+      <div class="city">
+        <label>
+          {% set index = '[[stepIndex]]' %}
+          {% trans %}
+            {{ index }} city
+          {% endtrans %}
+        </label>
+        <h2><span class="hub-name">[[step.hub.name]]</span> <span class="hub-country ">[[step.hub.country_name]]</span></h2>
+        <div class="duration-count">
+          <span class="small-minus" ng-click="subtractDayFromHub(stepIndex)"></span>
+          <span class="hub-days">
+            [[ getDuration(stepIndex, 'days') ]]
+          </span>
+          <span class="small-plus" ng-click="addDayToHub(stepIndex)"></span>
+        </div>
+        <span ng-bind-html="getHubDescriptionValue(step.hub.id)"></span>
+      </div>
+      <div class="hotel" ng-if="order.saveAndShare == true">
+        <span class="entity-description">{{'Hotels'|t}}</span>
+          <h3 ng-if="step.hotel.name">[[step.hotel.name]]
+            <span class="star" ng-repeat="star in getHotelStars(stepIndex, step.hotel.id)"></span>
+          </h3>
+          <span>[[ hotelDescription(stepIndex)]]</span><br><br>
+          <span ng-bind-html="getHotelDescriptionValue(stepIndex, step.hotel.id)"></span>
+          <div class="price">[[ hotelTotal(stepIndex) ]]</div>
+          <div class="edit" ng-click="editHotel(stepIndex, 1);"  ng-show="getLength(load[stepIndex].hotels)"></div>
+      </div>
+      <div class="hotel" ng-if="order.saveAndShare != true">
+        <span class="entity-description">{{'Hotels'|t}}</span>
+          <h3>
+            {{ 'Access denied for Hotels'|t }}
+          </h3>
+      </div>
+      <div class="activities">
+        <span class="entity-description">{{'Activities'|t}}</span>
+        <span>
+          <h3 ng-repeat="description in activityDescription(stepIndex)">[[description]]</h3>
+        </span>
+        <div class="price">[[ activityTotal(stepIndex) ]]</div>
+        <div class="edit" ng-click="editActivity(stepIndex, 1)" ng-show="getLength(load[stepIndex].activities)"></div>
+      </div>
+      <div class="transfer">
+        <span class="entity-description">{{'Transfers'|trans}}</span>
+        <h3>[[ transferDescription(stepIndex)]]</h3>
+        <div class="price">[[ transferTotal(stepIndex) ]]</div>
+        <div class="edit" ng-click="editTransfer(stepIndex, 1)" ng-show="getLength(load[stepIndex].transfers)"></div>
+      </div>
+      <div class="i-step-total">
+        {% set indexName = '[[ getStepIndexName(stepIndex) ]]' %}
+        {% trans %}
+          Total for the {{ indexName }} city:
+        {% endtrans %}
+         <div class="i-step-total-price">[[stepTotal(stepIndex)]]</div>
+      </div>
+    </div>
+    <div class="step-connection i-step-connection connection-type-[[step.connection.type]]" ng-show="connectionShow(stepIndex)">
+      <h2>{{'Connection'|t}}
+        <span>|
+          {% set name = '[[step.connection.name]]' %}
+          {% trans %}
+            {{ name }} # will be specified
+          {% endtrans %}
+        </span></h2>
+      <div class="connection-options">[[step.connection.price.name]]</div>
+      <div class="price">[[connectionTotal(stepIndex)]]</div>
+      <div class="edit" ng-click="editConnection(stepIndex, 1)"></div>
+    </div>
+  </div>
+
+  <div class="total">
+    <span class="price" id="footer-order-total">
+      {% set total = '[[getOrderTotal()]]' %}
+      {% trans %}
+        Grand total price {{ total }}
+      {% endtrans %}
+    </span>
+    <span class="total-days">[[ getOrderTotalDays() ]]</span><br/>
+    <span class="share" ng-click="editSaveShare(1)">{{'Save & Share'|t}}</span>
+    <button class="orange-button" ng-click="editBookNow(1)">{{'Book now'|trans}}</button>
+  </div>
+  <div class="m-total">
+    <button class="orange" ng-click="editBookNow(1)">{{'Book now'|t}}</button>
+    <span class="grey share" ng-click="editSaveShare(1)">{{'Save & Share'|t}}</span>
+    <div class="price">
+      {% trans %}
+        Total {{ total }}
+      {% endtrans %}
+    </div>
+    <div class="total-days">
+      <span>[[ getOrderTotalDays() ]]</span> |
+      <span>[[ getHubsCount() ]]</span>
+    </div>
+  </div>
+
+  <div id="floating" ng-show="isShowFloating" ng-style="styleFloating">
+    <div class="price">[[getOrderTotal()]]</div>
+    <div class="days">
+      <span>[[ getOrderTotalDays() ]]</span> —
+      <span>[[getHubsCount()]]</span>
+    </div>
+    <button class="orange-button" ng-click="editBookNow(1)">{{'Book now'|t}}</button>
+    <span class="share" ng-click="editSaveShare(1)">{{'Save & Share'|t}}</span>
+    <a url="/">{{'Request review'|t}}</a>
+  </div>
+
+</div>

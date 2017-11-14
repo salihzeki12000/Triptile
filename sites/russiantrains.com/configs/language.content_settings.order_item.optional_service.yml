@@ -1,0 +1,18 @@
+uuid: a846d69c-33dd-4e2d-b530-ae4befdb01cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - store.order_item_type.optional_service
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+_core:
+  default_config_hash: HXtIfp1vKdtARmytrSlQgNm_beKoYMSzShyD-ewJ8eY
+id: order_item.optional_service
+target_entity_type_id: order_item
+target_bundle: optional_service
+default_langcode: site_default
+language_alterable: false

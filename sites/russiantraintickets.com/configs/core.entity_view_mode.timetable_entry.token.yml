@@ -1,0 +1,10 @@
+uuid: 0424736f-7e80-4090-8aad-0339dce2bc8b
+langcode: en
+status: true
+dependencies:
+  module:
+    - local_train_provider
+id: timetable_entry.token
+label: Token
+targetEntityType: timetable_entry
+cache: true

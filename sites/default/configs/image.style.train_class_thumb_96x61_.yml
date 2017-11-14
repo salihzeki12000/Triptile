@@ -1,0 +1,14 @@
+uuid: c9672f77-00a9-41f0-a35c-534ee281b450
+langcode: en
+status: true
+dependencies: {  }
+name: train_class_thumb_96x61_
+label: 'Train class thumb (96x61)'
+effects:
+  9f3b1367-8c46-4a6b-8a56-0fd646435671:
+    uuid: 9f3b1367-8c46-4a6b-8a56-0fd646435671
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 96
+      height: 61

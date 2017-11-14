@@ -1,0 +1,16 @@
+uuid: bc2b6ceb-68fe-4157-a449-5c8bc46b7ea9
+langcode: en
+status: true
+dependencies:
+  config:
+    - store.base_product_type.optional_service
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: base_product.optional_service
+target_entity_type_id: base_product
+target_bundle: optional_service
+default_langcode: site_default
+language_alterable: false

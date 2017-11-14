@@ -1,0 +1,19 @@
+uuid: a735ffa0-d666-42d5-b1a7-7ff6088676d6
+langcode: en
+status: true
+dependencies:
+  module:
+    - text
+    - train_base
+id: train_class.train_class.description
+field_name: description
+entity_type: train_class
+bundle: train_class
+label: Description
+description: 'The description of the Supplier entity.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

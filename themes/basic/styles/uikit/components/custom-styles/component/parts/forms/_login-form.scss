@@ -1,0 +1,13 @@
+.user-login-form {
+  @include v-padding($v-padding);
+
+  .form-item {
+    max-width: 425px;
+    padding-bottom: $v-padding/2;
+  }
+
+  .form-submit {
+    @include v-padding($v-padding/2);
+    @include side-padding($v-padding);
+  }
+}

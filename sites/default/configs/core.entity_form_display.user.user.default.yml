@@ -1,0 +1,68 @@
+uuid: e4bf9a4d-4bc6-4bcd-864e-2fc85b270da1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.address
+    - field.field.user.user.first_name
+    - field.field.user.user.last_name
+    - field.field.user.user.phone_number
+    - field.field.user.user.user_picture
+  module:
+    - address
+    - telephone
+    - user
+_core:
+  default_config_hash: LLAieeozVsoZDb-2PbFxRJpQqnKmpR7-4OoRJnduz-U
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  account:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  address:
+    weight: 5
+    settings:
+      default_country: null
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  first_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  language:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  last_name:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  phone_number:
+    weight: 4
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  timezone:
+    weight: 6
+    region: content
+hidden:
+  contact: true
+  langcode: true
+  user_picture: true

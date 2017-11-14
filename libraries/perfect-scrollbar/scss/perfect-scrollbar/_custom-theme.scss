@@ -1,0 +1,13 @@
+.ps--theme_user-block-theme {
+  @include ps-container(map-merge($ps-theme-default, (
+    scrollbar-y-rail-width: 11px,
+    scrollbar-y-width: 11px,
+    rail-hover-opacity: 0.6,
+    rail-default-opacity: 0.6,
+    rail-hover-bg: transparent,
+  )));
+
+  .ps__scrollbar-x-rail, .ps__scrollbar-y-rail {
+    cursor: pointer;
+  }
+}

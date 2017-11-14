@@ -1,0 +1,36 @@
+user-block:
+  version: 1.x
+  js:
+    js/user-block.js: {}
+  css:
+    theme:
+      css/user-block.css: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/jquery.ui
+    - core/drupalSettings
+    - master/perfect-scrollbar
+
+login-register-block:
+  version: 1.x
+  js:
+    js/login-register-block.js: {}
+  css:
+    theme:
+      css/login-register-block.css: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupalSettings
+    - master/perfect-scrollbar
+
+login-register-dropdown:
+  version: 1.x
+  js:
+    js/login-register-dropdown.js: {}
+  css:
+    theme:
+      css/login-register-dropdown.css: {}
+  dependencies:
+    - rn_user/login-register-block

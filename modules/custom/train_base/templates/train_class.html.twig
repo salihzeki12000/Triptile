@@ -1,0 +1,22 @@
+{#
+/**
+ * @file train_class.html.twig
+ * Default theme implementation to present Train class data.
+ *
+ * This template is used when viewing Train class pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_train_class()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('train_class') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

@@ -1,0 +1,29 @@
+uuid: 4adf7333-5cbe-4c7c-b96f-f1be10c9ce56
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+    - system
+  theme:
+    - railninja
+third_party_settings:
+  rn_content:
+    classes: ''
+id: pagetitle
+theme: railninja
+region: content
+weight: -19
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '/user/*'
+    negate: false
+    context_mapping: {  }

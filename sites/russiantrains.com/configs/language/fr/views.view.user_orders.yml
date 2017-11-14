@@ -1,0 +1,23 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Appliquer
+          reset_button_label: Réinitialiser
+          exposed_sorts_label: 'Trier par'
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Eléments par page '
+            offset_label: Décalage
+      empty:
+        area:
+          content:
+            value: "<p>Vous n'avez pas encore des commandes.</p>\r\n"
+            format: basic_html
+      title: 'Mes commandes'
+      fields:
+        number:
+          label: 'Numéro de commande'
+label: 'Commandes d''utilisateurs'

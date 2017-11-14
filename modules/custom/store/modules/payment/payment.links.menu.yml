@@ -1,0 +1,41 @@
+payment.base:
+  title: 'Payment'
+  route_name: payment.base
+  parent: store.store_lists
+
+# Transaction menu items definition
+entity.transaction.collection:
+  title: 'Transaction list'
+  route_name: entity.transaction.collection
+  description: 'List Transaction entities'
+  parent: store.store_lists
+  weight: 100
+
+transaction.admin.structure.settings:
+  title: Transaction settings
+  description: 'Configure Transaction entities'
+  route_name: entity.transaction.settings
+  parent: master.entity_configs
+
+# Merchant menu items definition
+entity.merchant.collection:
+  title: 'Merchants'
+  route_name: entity.merchant.collection
+  description: 'List Merchant (bundles)'
+  parent: payment.base
+  weight: 99
+
+payment.payment_methods:
+  title: Payment methods
+  route_name: payment.payment_config.payment_methods
+  parent: payment.base
+  weight: 98
+
+# Merchant router rule menu items definition
+entity.merchant_router_rule.collection:
+  title: 'Merchant router rules'
+  route_name: entity.merchant_router_rule.collection
+  description: 'List Merchant router rules'
+  parent: payment.base
+  weight: 99
+

@@ -1,0 +1,48 @@
+.block-plugin-id--local-tasks-block {
+  &.block {
+    .block__inner {
+      @include v-padding($v-padding);
+
+      .tabs {
+        margin: 0;
+
+        &.nav {
+          padding: 0;
+        }
+
+        ul {
+          background: $um-bg;
+          border: none;
+          display: flex;
+          flex-flow: row wrap;
+
+          li {
+            border: none;
+            background: transparent;
+
+            @media #{$mobile-portrait} {
+              flex-basis: 100%;
+            }
+
+            a {
+              text-transform: uppercase;
+              font-size: 1rem;
+              color: $um-color;
+              border: none;
+              padding: $um-v-padding $um-h-padding;
+              background-color: transparent;
+            }
+
+            &.tabs__tab--is-active, &:hover {
+              a {
+                background-color: $um-active-bg;
+                color: $um-active-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

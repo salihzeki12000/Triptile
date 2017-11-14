@@ -1,0 +1,23 @@
+name: Triptile 
+description: Theme for Triptile 
+type: theme 
+core: 8.x 
+libraries: 
+  - tt/global-css 
+  - tt/global-js 
+stylesheets-remove: 
+  - core/assets/vendor/normalize-css/normalize.css 
+  - core/modules/system/css/system.module.css 
+  - core/modules/system/css/system.theme.css 
+  - core/modules/views/css/views.module.css 
+regions:
+  header: Header
+  primary_menu: 'Primary menu'
+  secondary_menu: 'Secondary menu'
+  featured_top: 'Featured top'
+  highlighted: Highlighted
+  content: Content
+  footer_first: 'Footer first'
+  footer_second: 'Footer second'
+  footer_third: 'Footer third'
+

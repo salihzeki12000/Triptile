@@ -1,0 +1,41 @@
+.block-plugin-id--system-breadcrumb-block {
+  .breadcrumb {
+    margin: 20px 0;
+
+    @media #{$mobile} {
+      margin: $v-padding 0;
+    }
+  }
+
+  .breadcrumb__list-item {
+    font-size: $bc-font-size;
+    color: $bc-text-color;
+
+    @media #{$mobile} {
+      display: inline;
+      margin-right: 7px;
+    }
+
+    &::before {
+      @include awesome-icon("\f101");
+      color: $bc-link-color;
+    }
+
+    &:first-of-type {
+      &::before {
+        display: none;
+      }
+    }
+
+    a {
+      color: $bc-link-color;
+      @include transition;
+
+      &:hover {
+        color: $bc-text-color;
+      }
+    }
+
+
+  }
+}

@@ -1,0 +1,245 @@
+{{ attach_library('tt/constructor') }}
+
+<div ng-controller="ConstructorCtrl">
+
+  <div class="search-return" ng-click="returnFromMobile()" ng-cloak>{{'Return'|t}}</div>
+
+  <div class="constructor-gmap" ng-controller="ConstructorMapCtrl" ng-show="map.data.show" ng-class="classForMap()">
+    <leaflet width="100%" height="100%"
+             tiles="map.data.tiles"
+             center="map.data.center"
+             paths="map.data.paths"
+             markers="map.data.markers">
+    </leaflet>
+  </div>
+
+  <div class="progress">
+    <span class="mobile-search-wrapper" ng-controller="ConstructorSearchController">
+      <div class="mobile-buttons">
+        <button class="hide-show-filters hide-show" ng-click="openFilters()"></button>
+        <button class="hide-show-map hide-show" ng-click="openMap()"></button>
+      </div>
+      <div class="constructor-search-wrapper">
+        <div class="mobile-label filter-title">{{'Your tour starts on'|t}}</div>
+        <input class="form-text when-go"
+               placeholder="{{'When you go'|t}}"
+               moment-picker="stringDate"
+               locale="en"
+               format="YYYY-MM-DD"
+               start-view="month"
+               min-date="minDateMoment"
+               min-view="month"
+               max-view="month"
+               start-view="month"
+               ng-model="momentDate"
+               inline="true"
+               ng-focus="showDatePicker($event)"
+               change="onDatePickerChange(newValue, oldValue)">
+
+        <div class="mobile-label filter-title">{{'Travelers'|t}}</div>
+        <input type="text" name="who-go" placeholder="{{'Who goes'|t}}" class="form-text who-go"
+               ng-focus="openSearchContainer('who')" hide-search="hideSearchContainer()" ng-model="whoCountText" ng-change="changeWhoCount()">
+        <div class="who-go-open ng-hide" style="z-index: 1000;" hide-search="hideSearchContainer()" ng-show="showSearchContainerFunc('who')" ng-cloak>
+          <span class="minus" ng-click="whoMinus()" ng-dblclick=""></span>
+          <span class="count">[[order.common.whoCount]]</span>
+          <span class="plus" ng-click="whoPlus()" ng-dblclick=""></span>
+        </div>
+
+        <input type="button" value="{{'More filters'|t}}" class="open-filter" ng-click="showFilter()">
+
+        <div class="constructor-filter" ng-show="$parent.isFilterOpen" ng-cloak>
+          <div class="constructor-filter-hotel">
+            <div class="filter-title">{{'Hotel'|t}}</div>
+
+            <div class="choose-checkbox" ng-repeat="star in filter.allStars"
+                 ng-click="setHotelFilter([[star]])"
+                 ng-class="isHotelFilterOptionActive('[[star]]')">
+              [[star]] star <span class="hotel-text">{{'hotels'|t}}</span>
+            </div>
+          </div>
+
+          <div class="constructor-filter-action">
+            <div class="filter-cancel cancel" ng-click="filterCancel()">{{'Cancel'|t}}</div>
+            <div class="filter-apply apply" ng-click="filterSave()">{{'Apply filters'|t}}</div>
+          </div>
+        </div>
+
+      </div>
+    </span>
+
+    <div class="tour-wrapper" ng-show="!isFilterOpen">
+
+      <div class="step animate-repeat" ng-repeat="(key, step) in order.steps" ng-cloak>
+        <div class="step-hub">
+          <div class="region-icon region-[[step.hub.region]]-europe"></div>
+          <div class="edit" ng-click="editStep(key, 1)"></div>
+          <label>
+            {% set key = '[[key]]' %}
+            {% trans %}
+              {{ key }} city:
+            {% endtrans %}
+          </label>
+          <h2>
+            <span class="hub-name">[[step.hub.name]]</span>
+            <span class="hub-country">[[step.hub.country_name]]</span>
+          </h2>
+          <div class="hub-days" ng-show="step.hub.days != null">
+            <span class="duration-days">[[ getDuration(key, 'days') ]]</span>
+            <span class="duration-nights">[[ getDuration(key, 'nights') ]]</span>
+
+          </div>
+          <div class="hub-hotel" ng-show="step.hotel.id != null">
+            {% set stars = '[[step.hotel.star]]' %}
+            {% set price = '[[step.hotel.price.name]]' %}
+            {% trans %}
+              {{ stars }} star hotel / {{ price }}
+            {% endtrans %}
+          </div>
+          <div class="price">[[ stepTotal(key) ]]</div>
+        </div>
+
+        <div class="step-connection connection-type-[[step.connection.type | lowercase]] animate-repeat" ng-show="connectionShow(key)">
+
+          <h2>
+            {% set type = '[[step.connection.type]]' %}
+            {% trans %}
+              Connection {{ type }}
+            {% endtrans %}
+          </h2>
+          <table class="connection-from-to" ng-show="step.connection.type">
+            <tr>
+              <td>[[load.hubs[step.connection.point_1].name]]</td>
+              <td class="connection-from color-[[load.hubs[step.connection.point_1].region]]-europe"><span></span></td>
+              <td class="connection-line"><span></span></td>
+              <td class="connection-to color-[[load.hubs[step.connection.point_2].region]]-europe"><span></span></td>
+              <td>[[load.hubs[step.connection.point_2].name]]</td>
+            </tr>
+          </table>
+
+          <div class="connection-options" ng-show="!step.connection.name">[[connectionDescription(key)]]</div>
+          <div class="connection-options" ng-show="step.connection.name">[[step.connection.price.name]]</div>
+          <div class="price" ng-show="step.connection.price.price__number">[[connectionTotal(key)]]</div>
+          <div class="edit" ng-click="editConnection(key, 1)" ng-show="getLength(load[key].connections)"></div>
+
+        </div>
+
+      </div>
+
+      <div class="new-step" ng-show="showNewStep()">
+        <input class="form-text search-recommended" type="text" placeholder="[[getSearchPlaceholder()]]" ng-model="searchText" ng-focus="showChooseHub()" hide-search="hideChooseHub()" ng-init="searchText = ''">
+        <div class="search-hub" ng-show="isChooseHubVisible" ng-init="isChooseHubVisible = false">
+          <div class="not-found" ng-show="showNotFound()">
+            {% set text = '[[searchText]]' %}
+            {% trans %}
+              We can't find city with name {{ text }}
+            {% endtrans %}
+          </div>
+          <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="wheelSpeed" on-scroll="onScroll(scrollTop, scrollHeight)">
+            <div class="cities" ng-repeat="hub in load.hubs | filterHubsWithoutRegions | filterHubsForNextStep:order.steps:load | filterHubsInOrder:order.steps | orderByObject: 'name' | filter: searchText">
+              <div class="city-line city-[[hub.region]]-europe" ng-click="addNewHub(hub.id, order.common.defaultHubDays, getRecommendedConnectionId(hub.id))">
+                <span ng-bind-html="hub.name | highlight: searchText"></span>
+                <span class="country-name" ng-bind-html="hub.country_name | highlight: searchText"></span>
+              </div>
+            </div>
+          </perfect-scrollbar>
+        </div>
+
+        <span class="slick-wrapper">
+          <slick class="recommended" settings="slickConfig" ng-if="hubsLoaded">
+
+            <div class="step-hub-recommended" ng-repeat="hub in recommended.hubs track by $index">
+              <div class="region-icon region-[[hub.region]]-europe"></div>
+              <h3>
+                <span class="hub-name">[[hub.name]]</span>
+                <span class="hub-country">[[hub.country_name]]</span>
+              </h3>
+              <span class="small-minus" ng-click="recommendedMinus(hub.id)"></span>
+              <span class="hub-days">[[ getRecommendedDays(hub) ]]</span>
+              <span class="small-plus" ng-click="recommendedPlus(hub.id)"></span>
+              <div class="recommended-connection" ng-cloak>
+                {% set transport = '[[getRecommendedConnectionType(hub.id)]]' %}
+                {% trans %}
+                  Recommended connection transport is {{ transport }}.
+                {% endtrans %}
+                <span class="trip-duration">[[ getTripDurationHours(getRecommendedConnectionId(hub.id)) ]]</span>
+              </div>
+              <span class="price" ng-cloak>[[ getTotalPriceForRecommendHub(hub.id) ]]</span>
+              <span class="plus" ng-click="addNewHub(hub.id, hub.days, getRecommendedConnectionId(hub.id))"></span>
+            </div>
+
+          </slick>
+        </span>
+      </div>
+      <div class="new-step" ng-if="!showNewStep()">
+        {{ 'No connections found for this city.'|t }}
+      </div>
+
+      <div class="total">
+        <span class="price" ng-cloak>
+          {% set total = '[[getOrderTotal()]]' %}
+          {% trans %}
+            Total {{ total }}
+          {% endtrans %}
+        </span>
+        <span class="total-days">[[getOrderTotalDays()]]</span>
+        <button class="orange-button" ng-click="goToItinerary()">Finish itinerary</button>
+      </div>
+      <div class="m-total">
+        <button class="orange">{{'Finish itinerary'|t}}</button>
+        <div class="price">
+          {% trans %}
+            Total {{ total }}
+          {% endtrans %}
+        </div>
+        <div class="total-days">
+          <span>[[getOrderTotalDays()]]</span> |
+          <span>[[getHubsCount()]]</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+{% if show_tips %}
+  <div class="trip-tips">
+
+    <div class="trip-tips-close"></div>
+    <h2>{{'Easy tips for building your ideal trip'|t}}</h2>
+
+    <div class="tour-1-tip">
+      <div class="tip-image"></div>
+      <span class="tip-number">1</span>
+      <span class="tip-text">
+        {{'Each selected city<br />already includes<br />recommended number of days and our<br />
+        most prefered hotel. You can change<br />default settings right away or<br />later on by<br />
+        clicking Edit<br />button.'|t}}
+      </span>
+    </div>
+
+    <div class="tour-2-tip">
+      <div class="tip-image"></div>
+      <span class="tip-number">2</span>
+      <span class="tip-text">
+        {{'Select the next city of your<br />journey by clicking Add button.<br />
+        Each city already includes the most<br />convinient connection transport. You<br />
+        can change the connection<br />transport and default<br />city settings later<br />on.'|t}}
+      </span>
+    </div>
+
+    <div class="tour-3-tip">
+      <div class="tip-image"></div>
+      <span class="tip-number">3</span>
+      <span class="tip-text">
+        {{'When you add all the cities<br />you would like to visit, you can<br />
+        proceed to your itinerary page by<br />clicking Finish itinerary button. You<br />
+        can edit the program details,<br />save your itinerary or<br />book it directly on<br />this page.'|t}}
+      </span>
+    </div>
+
+    <h3>{{'Let`s start'|t}}</h3>
+
+  </div>
+{% endif %}

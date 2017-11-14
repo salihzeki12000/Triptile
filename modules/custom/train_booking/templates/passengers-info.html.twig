@@ -1,0 +1,12 @@
+<div class="passengers-info-wrapper">
+  {% for passenger in passengers %}
+    <div class="passenger-info-wrapper">
+      <div class="number">#{{ passenger.number }}</div>
+      <div class="name">{{ passenger.first_name }} {{ passenger.last_name }}</div>
+      <div class="dob">{{ passenger.dob }}</div>
+      <div class="id-number">{{ passenger.id_number }}</div>
+      <div class="citizenship">{{ passsenger.citizenship }}</div>
+      <div class="gender">{{ passenger.gender }}</div>
+    </div>
+  {% endfor %}
+</div>

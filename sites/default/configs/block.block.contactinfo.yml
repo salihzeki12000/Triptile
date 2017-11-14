@@ -1,0 +1,26 @@
+uuid: 682bfec2-56a2-4583-8884-f0906078f27c
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+  theme:
+    - railninja
+third_party_settings:
+  rn_content:
+    classes: non-mobile
+id: contactinfo
+theme: railninja
+region: footer
+weight: -10
+provider: null
+plugin: 'block_content:bf621246-1dea-43b7-93f2-1f20af3810e6'
+settings:
+  id: 'block_content:bf621246-1dea-43b7-93f2-1f20af3810e6'
+  label: 'Contact info'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

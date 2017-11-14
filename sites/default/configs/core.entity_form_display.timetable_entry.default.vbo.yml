@@ -1,0 +1,133 @@
+uuid: c2840dd5-8643-4e43-8bec-850ae3339c17
+langcode: en
+status: true
+dependencies:
+  config: {  }
+  module:
+    - train_base
+id: timetable_entry.default.vbo
+targetEntityType: timetable_entry
+bundle: default
+mode: vbo
+content:
+  arrival_station:
+    type: entity_reference_autocomplete
+    weight: -2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  change_station:
+    type: entity_reference_autocomplete
+    weight: -2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  departure_station:
+    type: entity_reference_autocomplete
+    weight: -2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  departure_time:
+    type: departure_time_default
+    weight: -4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  depth_price_update:
+    type: number
+    weight: 4
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  locked_day:
+    type: datetime_default
+    weight: -4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  max_order_depth:
+    type: number
+    weight: -4
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  min_departure_window:
+    type: number
+    weight: -4
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  price_updater:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  product:
+    type: inline_entity_form_complex
+    weight: -2
+    settings:
+      allow_existing: true
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      match_operator: CONTAINS
+    region: content
+    third_party_settings: {  }
+  running_time:
+    type: running_time_default
+    weight: -4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  schedule:
+    type: schedule_default
+    weight: -4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  site:
+    type: options_select
+    weight: -4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: -4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  train:
+    type: entity_reference_autocomplete
+    weight: -2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+hidden: {  }

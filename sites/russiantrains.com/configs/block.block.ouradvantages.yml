@@ -1,0 +1,35 @@
+uuid: 551a22dd-ecff-4a39-86ab-ee1d8a74e7e5
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:6a78ec07-26d8-4046-9a15-2365658e534b'
+  module:
+    - block_content
+    - rn_content
+    - system
+  theme:
+    - russiantrains
+third_party_settings:
+  rn_content:
+    classes: ''
+id: ouradvantages
+theme: russiantrains
+region: content
+weight: -10
+provider: null
+plugin: 'block_content:6a78ec07-26d8-4046-9a15-2365658e534b'
+settings:
+  id: 'block_content:6a78ec07-26d8-4046-9a15-2365658e534b'
+  label: 'Our Advantages'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

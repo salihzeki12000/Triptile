@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+    - rn_user
+    - system
+  theme:
+    - russiantrains
+third_party_settings:
+  rn_content:
+    classes: ''
+id: useroverviewtext
+theme: russiantrains
+region: content
+weight: -13
+provider: null
+plugin: useroverviewtext
+settings:
+  id: useroverviewtext
+  label: 'User overview text'
+  provider: rn_user
+  label_display: '0'
+  field_overview_text:
+    value: "<p style=\"font-size: 1rem;\">Dear [current-user:full_name].</p><p>Welcome to your Client Area! This is a secure place where we store all information about your trips with us. Please, make sure to read our policies and FAQs before departure.</p>\r\n"
+    format: full_html_for_administrator
+visibility:
+  request_path:
+    id: request_path
+    pages: /user/%user
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,5 @@
+name: Lead
+type: module
+description: Lead awesome module
+core: 8.x
+package: Custom

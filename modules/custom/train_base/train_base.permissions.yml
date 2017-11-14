@@ -1,0 +1,247 @@
+administer supplier entities:
+  title: 'Administer Supplier entities'
+  description: 'Allow to access the administration form to configure Supplier entities.'
+  restrict access: true
+
+add train entities:
+  title: 'Create new Train entities'
+
+administer train entities:
+  title: 'Administer Train entities'
+  description: 'Allow to access the administration form to configure Train entities.'
+  restrict access: true
+
+delete train entities:
+  title: 'Delete Train entities'
+
+edit train entities:
+  title: 'Edit Train entities'
+
+access train overview:
+  title: 'Access the Train overview page'
+
+view published train entities:
+  title: 'View published Train entities'
+
+view unpublished train entities:
+  title: 'View unpublished Train entities'
+add train class entities:
+  title: 'Create new Train class entities'
+
+administer train class entities:
+  title: 'Administer Train class entities'
+  description: 'Allow to access the administration form to configure Train class entities.'
+  restrict access: true
+
+delete train class entities:
+  title: 'Delete Train class entities'
+
+edit train class entities:
+  title: 'Edit Train class entities'
+
+access train class overview:
+  title: 'Access the Train class overview page'
+
+view published train class entities:
+  title: 'View published Train class entities'
+
+view unpublished train class entities:
+  title: 'View unpublished Train class entities'
+add station entities:
+  title: 'Create new Station entities'
+
+administer station entities:
+  title: 'Administer Station entities'
+  description: 'Allow to access the administration form to configure Station entities.'
+  restrict access: true
+
+delete station entities:
+  title: 'Delete Station entities'
+
+edit station entities:
+  title: 'Edit Station entities'
+
+access station overview:
+  title: 'Access the Station overview page'
+
+view published station entities:
+  title: 'View published Station entities'
+
+view unpublished station entities:
+  title: 'View unpublished Station entities'
+add coach class entities:
+  title: 'Create new Coach class entities'
+
+administer coach class entities:
+  title: 'Administer Coach class entities'
+  description: 'Allow to access the administration form to configure Coach class entities.'
+  restrict access: true
+
+delete coach class entities:
+  title: 'Delete Coach class entities'
+
+edit coach class entities:
+  title: 'Edit Coach class entities'
+
+access coach class overview:
+  title: 'Access the Coach class overview page'
+
+view published coach class entities:
+  title: 'View published Coach class entities'
+
+view unpublished coach class entities:
+  title: 'View unpublished Coach class entities'
+add coach scheme entities:
+  title: 'Create new Coach scheme entities'
+
+administer coach scheme entities:
+  title: 'Administer Coach scheme entities'
+  description: 'Allow to access the administration form to configure Coach scheme entities.'
+  restrict access: true
+
+delete coach scheme entities:
+  title: 'Delete Coach scheme entities'
+
+edit coach scheme entities:
+  title: 'Edit Coach scheme entities'
+
+access coach scheme overview:
+  title: 'Access the Coach scheme overview page'
+
+view published coach scheme entities:
+  title: 'View published Coach scheme entities'
+
+view unpublished coach scheme entities:
+  title: 'View unpublished Coach scheme entities'
+add car service entities:
+  title: 'Create new Car service entities'
+
+administer car service entities:
+  title: 'Administer Car service entities'
+  description: 'Allow to access the administration form to configure Car service entities.'
+  restrict access: true
+
+delete car service entities:
+  title: 'Delete Car service entities'
+
+edit car service entities:
+  title: 'Edit Car service entities'
+
+access car service overview:
+  title: 'Access the Car service overview page'
+
+view published car service entities:
+  title: 'View published Car service entities'
+
+view unpublished car service entities:
+  title: 'View unpublished Car service entities'
+add seat type entities:
+  title: 'Create new Seat type entities'
+
+administer seat type entities:
+  title: 'Administer Seat type entities'
+  description: 'Allow to access the administration form to configure Seat type entities.'
+  restrict access: true
+
+delete seat type entities:
+  title: 'Delete Seat type entities'
+
+edit seat type entities:
+  title: 'Edit Seat type entities'
+
+access seat type overview:
+  title: 'Access the Seat type overview page'
+
+view published seat type entities:
+  title: 'View published Seat type entities'
+
+view unpublished seat type entities:
+  title: 'View unpublished Seat type entities'
+add train ticket entities:
+  title: 'Create new Train ticket entities'
+
+administer train ticket entities:
+  title: 'Administer Train ticket entities'
+  description: 'Allow to access the administration form to configure Train ticket entities.'
+  restrict access: true
+
+delete train ticket entities:
+  title: 'Delete Train ticket entities'
+
+edit train ticket entities:
+  title: 'Edit Train ticket entities'
+
+access train ticket overview:
+  title: 'Access the Train ticket overview page'
+
+view published train ticket entities:
+  title: 'View published Train ticket entities'
+
+view unpublished train ticket entities:
+  title: 'View unpublished Train ticket entities'
+add passenger entities:
+  title: 'Create new Passenger entities'
+
+administer passenger entities:
+  title: 'Administer Passenger entities'
+  description: 'Allow to access the administration form to configure Passenger entities.'
+  restrict access: true
+
+delete passenger entities:
+  title: 'Delete Passenger entities'
+
+edit passenger entities:
+  title: 'Edit Passenger entities'
+
+access passenger overview:
+  title: 'Access the Passenger overview page'
+
+view published passenger entities:
+  title: 'View published Passenger entities'
+
+view unpublished passenger entities:
+  title: 'View unpublished Passenger entities'
+add seat preference entities:
+  title: 'Create new Seat preference entities'
+
+administer seat preference entities:
+  title: 'Administer Seat preference entities'
+  description: 'Allow to access the administration form to configure Seat preference entities.'
+  restrict access: true
+
+delete seat preference entities:
+  title: 'Delete Seat preference entities'
+
+edit seat preference entities:
+  title: 'Edit Seat preference entities'
+
+access seat preference overview:
+  title: 'Access the Seat preference overview page'
+
+view published seat preference entities:
+  title: 'View published Seat preference entities'
+
+view unpublished seat preference entities:
+  title: 'View unpublished Seat preference entities'
+add route message entities:
+  title: 'Create new Route message entities'
+
+administer route message entities:
+  title: 'Administer Route message entities'
+  description: 'Allow to access the administration form to configure Route message entities.'
+  restrict access: true
+
+delete route message entities:
+  title: 'Delete Route message entities'
+
+edit route message entities:
+  title: 'Edit Route message entities'
+
+access route message overview:
+  title: 'Access the Route message overview page'
+
+view published route message entities:
+  title: 'View published Route message entities'
+
+view unpublished route message entities:
+  title: 'View unpublished Route message entities'

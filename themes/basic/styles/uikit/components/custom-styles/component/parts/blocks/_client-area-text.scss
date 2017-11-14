@@ -1,0 +1,12 @@
+.user-text-block {
+
+  .block__inner {
+    background: $up-text-block-bg;
+
+    p {
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+name: Basic
+type: theme
+'base theme': at_core
+'base theme original': rc2
+'subtheme type': adaptive_subtheme
+layout: site-builder
+description: 'Basic thee for train projects. Based on Adaptivetheme..<br />Base theme: at_core <br />Machine-name: basic <br />Generated: Fri 14th, Oct, 2016 - 11:24'
+'alt text': 'Screenshot for Basic'
+tags: sub-theme
+regions:
+  leaderboard: Leaderboard
+  header_first: 'Header first'
+  header_second: 'Header second'
+  header_third: 'Header third'
+  navbar: Navbar
+  search: Search
+  highlighted: Highlighted
+  features_first: 'Features first'
+  features_second: 'Features second'
+  features_third: 'Features third'
+  content_prefix: 'Content prefix'
+  content: 'Main content'
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  content_suffix: 'Content suffix'
+  subfeatures_first: 'Sub-features first'
+  subfeatures_second: 'Sub-features second'
+  subfeatures_third: 'Sub-features third'
+  subfeatures_fourth: 'Sub-features fourth'
+  footer: Footer
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+features:
+  - logo
+  - favicon
+  - node_user_picture
+  - comment_user_picture
+  - comment_user_verification
+stylesheets-remove:
+  - '@stable/css/node/node.preview.css'
+  - '@stable/css/system/components/tablesort.module.css'
+libraries:
+  - basic/time-check
+  - basic/main-min-height
+  - basic/page-styles
+  - basic/custom-shortcodes
+  - basic/user-table-link
+  - basic/perfect-scrollbar
+  - basic/language-currency-scrollbar
+libraries-extend:
+  quickedit/quickedit:
+    - basic/quickedit
+libraries-override:
+  user/drupal.user: basic/user
+version: 8.x-1.0
+core: 8.x

@@ -1,0 +1,35 @@
+uuid: 56426a54-da9b-4c18-8b4c-c7e150c1713d
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:2bdca971-29d6-4cfb-b32a-35c3b7b81c36'
+  module:
+    - block_content
+    - rn_content
+    - system
+  theme:
+    - russiantrains
+third_party_settings:
+  rn_content:
+    classes: ''
+id: awards
+theme: russiantrains
+region: content
+weight: -7
+provider: null
+plugin: 'block_content:2bdca971-29d6-4cfb-b32a-35c3b7b81c36'
+settings:
+  id: 'block_content:2bdca971-29d6-4cfb-b32a-35c3b7b81c36'
+  label: Awards
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

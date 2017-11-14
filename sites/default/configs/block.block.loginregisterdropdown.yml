@@ -1,0 +1,29 @@
+uuid: 32dc1b93-e19e-47b6-9662-5a568dc3df80
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+    - rn_user
+  theme:
+    - railninja
+third_party_settings:
+  rn_content:
+    classes: ''
+id: loginregisterdropdown
+theme: railninja
+region: header_third
+weight: -20
+provider: null
+plugin: login_register_dropdown
+settings:
+  id: login_register_dropdown
+  label: 'Login/register dropdown'
+  provider: rn_user
+  label_display: '0'
+  image: '7223'
+  button_label_anonymous: 'sign in'
+  button_label_authorized: 'my account'
+  button_label_logout: 'log out'
+  button_label_register: register
+visibility: {  }

@@ -1,0 +1,5 @@
+train_booking.settings:
+  title: 'Train Booking settings'
+  base_route_name: train_booking.config_form
+  names:
+    - train_booking.settings

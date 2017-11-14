@@ -1,0 +1,29 @@
+uuid: a8ec8f47-1341-4f7e-baa5-1e9df865f2c1
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:11ad3739-7afc-446a-9178-a8dc43e95af0'
+  module:
+    - block_content
+    - rn_content
+  theme:
+    - russiantraintickets
+third_party_settings:
+  rn_content:
+    classes: 'non-mobile xsmall-size grey last-block'
+id: footerbottom
+theme: russiantraintickets
+region: footer
+weight: -11
+provider: null
+plugin: 'block_content:11ad3739-7afc-446a-9178-a8dc43e95af0'
+settings:
+  id: 'block_content:11ad3739-7afc-446a-9178-a8dc43e95af0'
+  label: 'Footer bottom'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

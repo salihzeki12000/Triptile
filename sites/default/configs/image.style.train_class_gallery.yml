@@ -1,0 +1,14 @@
+uuid: 0a6a1e10-8364-437d-8086-7b39aa155f3d
+langcode: en
+status: true
+dependencies: {  }
+name: train_class_gallery
+label: 'Train class gallery (500x320)'
+effects:
+  f2fe9ff2-5f37-4f78-bfa8-de858e3d671a:
+    uuid: f2fe9ff2-5f37-4f78-bfa8-de858e3d671a
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 500
+      height: 320

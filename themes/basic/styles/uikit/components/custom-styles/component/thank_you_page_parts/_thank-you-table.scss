@@ -1,0 +1,112 @@
+.order-details-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  font-family: $thp-table-font-family;
+  border: $thp-border;
+
+  & > div {
+    width: 100%;
+    @include side-padding($thp-h-padding);
+
+    @media #{$mobile} {
+      @include side-padding($mobile-h-padding);
+    }
+  }
+
+  .title-row {
+    @include v-padding(20px);
+    background: $thp-table-head-bg;
+    font-size: 1.25rem;
+  }
+
+  .info-row {
+    @include v-padding($thp-v-padding);
+    border-top: $thp-border;
+    border-bottom: $thp-border;
+    display: flex;
+    flex-flow: row wrap;
+    font-size: 1.125rem;
+    line-height: 160%;
+  }
+
+  .ticket-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    @media #{$mobile} {
+      flex-flow: row wrap;
+    }
+
+    &:not(:last-of-type) {
+      padding-bottom: $thp-v-padding;
+
+      @media #{$mobile} {
+        padding-bottom: $thp-v-padding/2;
+      }
+    }
+  }
+
+  .ticket-col, .traveler {
+    flex-basis: 49%;
+
+    @media #{$mobile} {
+      flex-basis: 100%;
+    }
+  }
+
+  .ticket-col {
+    &:not(:last-of-type) {
+      @media #{$mobile} {
+        padding-bottom: $thp-v-padding/2;
+      }
+    }
+  }
+
+  .ticket-title {
+    color: $thp-table-title-color;
+  }
+
+  .link-view-all-passengers {
+    @media #{$mobile} {
+      display: none;
+    }
+  }
+
+  .travelers-container {
+    width: 100%;
+    height: 55px;
+    overflow: hidden;
+    display: flex;
+    flex-flow: row wrap;
+
+    @media #{$mobile} {
+      height: 100%;
+    }
+
+    &.show-all {
+      height: auto;
+    }
+  }
+
+  .view-all-link {
+    width: 100%;
+    flex-basis: 100%;
+    color: $thp-link-color;
+    text-align: right;
+    cursor: pointer;
+  }
+
+  .grand-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .grand-total-amount {
+    font-size: 1.5rem;
+  }
+}

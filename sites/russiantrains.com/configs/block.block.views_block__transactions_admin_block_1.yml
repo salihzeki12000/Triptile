@@ -1,0 +1,35 @@
+uuid: c246ae39-4acf-470b-ab21-608c9bf5d92a
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.transactions_admin
+  module:
+    - rn_content
+    - system
+    - views
+  theme:
+    - seven
+third_party_settings:
+  rn_content:
+    classes: ''
+id: views_block__transactions_admin_block_1
+theme: seven
+region: content
+weight: -1
+provider: null
+plugin: 'views_block:transactions_admin-block_1'
+settings:
+  id: 'views_block:transactions_admin-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '/admin/store/store-order/*'
+    negate: false
+    context_mapping: {  }

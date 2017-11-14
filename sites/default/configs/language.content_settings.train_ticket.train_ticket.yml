@@ -1,0 +1,11 @@
+uuid: 28a3d684-ecf8-4a2e-bd5d-11ade83c47c9
+langcode: en
+status: true
+dependencies:
+  module:
+    - train_base
+id: train_ticket.train_ticket
+target_entity_type_id: train_ticket
+target_bundle: train_ticket
+default_langcode: site_default
+language_alterable: false

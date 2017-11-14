@@ -1,0 +1,22 @@
+uuid: 9272c14a-6e93-4c5a-a42f-272501eadde5
+langcode: en
+status: true
+dependencies:
+  module:
+    - store
+    - train_base
+_core:
+  default_config_hash: r-pezC-Ui-mrjXU57y7WBkiqFKhJCBZeWXbPWPaD51c
+id: store_order.coach_scheme
+field_name: coach_scheme
+entity_type: store_order
+type: entity_reference
+settings:
+  target_type: coach_scheme
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

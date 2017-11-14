@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies: {  }
+id: anonymous
+label: 'Anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access booking'
+  - 'access comments'
+  - 'access content'
+  - 'access site-wide contact form'
+  - payment.access_payment_page
+  - 'search content'
+  - 'use text format restricted_html'
+  - 'view published invoice entities'
+  - 'view published store order entities'

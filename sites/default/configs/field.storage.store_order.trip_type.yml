@@ -1,0 +1,30 @@
+uuid: 9bd806cf-dc9d-4350-b13f-2933653c720d
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - store
+id: store_order.trip_type
+field_name: trip_type
+entity_type: store_order
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: simple
+      label: Simple
+    -
+      value: roundtrip
+      label: Roundtrip
+    -
+      value: complex
+      label: Complex
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

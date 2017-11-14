@@ -1,0 +1,30 @@
+.ui-slider {
+  background: $slider-inactive-color;
+  @include border-radius($slider-height);
+  border: none;
+  height: $slider-height;
+  margin-top: $slider-handle-size/2;
+  cursor: pointer;
+
+  .ui-slider-range {
+    background: $slider-color;
+    @include border-radius($slider-height);
+    border: none;
+  }
+
+  .ui-slider-handle {
+    background: $slider-color;
+    border: none;
+    @include border-radius(50%);
+    width: $slider-handle-size;
+    height: $slider-handle-size;
+    margin-top: (-1) * ($slider-handle-size/2 - $slider-height);
+    cursor: pointer;
+    @include box-shadow(0px 5px 5px 0 rgba(0, 0, 0, 0.15));
+
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

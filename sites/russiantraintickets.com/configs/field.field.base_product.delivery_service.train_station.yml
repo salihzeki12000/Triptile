@@ -1,0 +1,27 @@
+uuid: c3ec3ba8-7665-4e55-a780-468fe4a2b20f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.base_product.train_station
+    - store.base_product_type.delivery_service
+_core:
+  default_config_hash: 1Qv3zr-00h0P2QfiApTS-DsB9b9LcdmDrL7f7_X1Rv8
+id: base_product.delivery_service.train_station
+field_name: train_station
+entity_type: base_product
+bundle: delivery_service
+label: 'Train station'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: only_enabled
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

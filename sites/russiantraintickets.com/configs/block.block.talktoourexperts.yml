@@ -1,0 +1,29 @@
+uuid: 1d883d84-d523-4d9c-9f27-5c5105ff89a0
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:e0585daf-dcd3-4ecb-8143-f14836d01c80'
+  module:
+    - block_content
+    - rn_content
+  theme:
+    - russiantraintickets
+third_party_settings:
+  rn_content:
+    classes: 'non-mobile first x2-padding t-x1-padding'
+id: talktoourexperts
+theme: russiantraintickets
+region: footer
+weight: -15
+provider: null
+plugin: 'block_content:e0585daf-dcd3-4ecb-8143-f14836d01c80'
+settings:
+  id: 'block_content:e0585daf-dcd3-4ecb-8143-f14836d01c80'
+  label: 'Talk to our experts'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

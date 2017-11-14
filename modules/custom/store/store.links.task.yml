@@ -1,0 +1,93 @@
+# Base product routing definition
+entity.base_product.canonical:
+  route_name: entity.base_product.canonical
+  base_route: entity.base_product.canonical
+  title: 'View'
+
+entity.base_product.edit_form:
+  route_name: entity.base_product.edit_form
+  base_route: entity.base_product.canonical
+  title: Edit
+
+entity.base_product.delete_form:
+  route_name:  entity.base_product.delete_form
+  base_route:  entity.base_product.canonical
+  title: Delete
+  weight: 10
+
+# Store order routing definition
+entity.store_order.canonical:
+  route_name: entity.store_order.canonical
+  base_route: entity.store_order.canonical
+  title: 'View'
+
+entity.store_order.edit_form:
+  route_name: entity.store_order.edit_form
+  base_route: entity.store_order.canonical
+  title: Edit
+
+entity.store_order.delete_form:
+  route_name:  entity.store_order.delete_form
+  base_route:  entity.store_order.canonical
+  title: Delete
+  weight: 10
+
+# Invoice routing definition
+invoice.settings_tab:
+  route_name: entity.invoice.settings
+  title: 'Settings'
+  base_route: entity.invoice.settings
+entity.invoice.canonical:
+  route_name: entity.invoice.canonical
+  base_route: entity.invoice.canonical
+  title: 'View'
+
+entity.invoice.edit_form:
+  route_name: entity.invoice.edit_form
+  base_route: entity.invoice.canonical
+  title: Edit
+
+entity.invoice.delete_form:
+  route_name:  entity.invoice.delete_form
+  base_route:  entity.invoice.canonical
+  title: Delete
+  weight: 10
+
+# Order item routing definition
+entity.order_item.canonical:
+  route_name: entity.order_item.canonical
+  base_route: entity.order_item.canonical
+  title: 'View'
+
+entity.order_item.edit_form:
+  route_name: entity.order_item.edit_form
+  base_route: entity.order_item.canonical
+  title: Edit
+
+entity.order_item.delete_form:
+  route_name:  entity.order_item.delete_form
+  base_route:  entity.order_item.canonical
+  title: Delete
+  weight: 10
+
+# Customer profile routing definition
+customer_profile.settings_tab:
+  route_name: entity.customer_profile.settings
+  title: 'Settings'
+  base_route: entity.customer_profile.settings
+entity.customer_profile.canonical:
+  route_name: entity.customer_profile.canonical
+  base_route: entity.customer_profile.canonical
+  title: 'View'
+
+entity.customer_profile.edit_form:
+  route_name: entity.customer_profile.edit_form
+  base_route: entity.customer_profile.canonical
+  title: Edit
+
+entity.customer_profile.delete_form:
+  route_name:  entity.customer_profile.delete_form
+  base_route:  entity.customer_profile.canonical
+  title: Delete
+  weight: 10
+

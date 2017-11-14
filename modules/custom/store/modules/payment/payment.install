@@ -1,0 +1,26 @@
+<?php
+
+use Drupal\Core\Database\Database;
+use Drupal\Core\Field\Plugin\Field\FieldType\MapItem;
+
+/**
+ * Add 'data' field to transaction entity.
+ */
+function payment_update_8101(&$sandbox) {
+  drupal_flush_all_caches();
+  $entity_field_manager = \Drupal::service('entity_field.manager');
+  $field_storage_definitions = $entity_field_manager->getFieldStorageDefinitions('transaction');
+  if (isset($field_storage_definitions['data'])) {
+    $spec = MapItem::schema($field_storage_definitions['data']);
+    $schema = Database::getConnection()->schema();
+    $schema->addField('transaction', 'data', $spec['columns']['value']);
+  }
+}
+
+/**
+ * Install merchant router rule entity.
+ */
+function payment_update_8201(&$sandbox) {
+  $entity_type = \Drupal::entityTypeManager()->getDefinition('merchant_router_rule');
+  \Drupal::entityDefinitionUpdateManager()->installEntityType($entity_type);
+}

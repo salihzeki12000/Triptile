@@ -1,0 +1,217 @@
+$column-delta: 2%;
+
+.leg-info-wrapper {
+  border: $tt-border;
+  margin-bottom: $tt-v-padding;
+
+  .leg-info-header,
+  .leg-info-body {
+    padding: $tt-v-padding $tt-h-padding;
+
+    @media #{$mobile} {
+      @include side-padding($tt-mobile-h-padding);
+    }
+  }
+
+  .leg-info-body {
+    @media #{$mobile-portrait} {
+      @include v-padding($tt-v-padding/2);
+    }
+  }
+
+  .leg-info-header {
+    @media #{$mobile-portrait} {
+      @include v-padding($tt-v-padding/2, $tt-v-padding * 1.5);
+    }
+  }
+
+  /****** HEAD ******/
+
+  .leg-info-header {
+    @include flex;
+    flex-flow: row wrap;
+    width: 100%;
+    height: 100%;
+    align-items: stretch;
+    justify-content: space-between;
+    background: $tt-head-bg-color;
+    border-bottom: $tt-border;
+    position: relative;
+
+    @media #{$mobile-portrait} {
+      border-bottom: none;
+    }
+  }
+
+  @include head-stations;
+
+  .stations {
+    padding-bottom: $tt-v-padding/2;
+
+    .departure {
+      @media #{$mobile-portrait} {
+        padding-bottom: $tt-v-padding/2;
+      }
+    }
+  }
+
+  .count {
+    @include flex;
+    flex-direction: row;
+    align-items: baseline;
+    padding-bottom: $tt-v-padding/2;
+    font-size: $tt-head-dates-font-size;
+  }
+
+  .open-ticket {
+    display: none;
+  }
+
+  .open-ticket {
+    position: absolute;
+    right: $mobile-h-padding;
+    bottom: $tt-v-padding/2;
+    color: $tt-dark-note-color;
+    font-size: $tt-small-size;
+    cursor: pointer;
+
+    &:hover {
+      columns: $tt-light-note-color;
+      @include transition;
+    }
+
+    &::after {
+      @include awesome-icon("\f107");
+      color: $tt-light-note-color;
+      font-size: 1.2rem;
+      margin-left: 7px;
+    }
+
+    @media #{$mobile-portrait} {
+      @include flex;
+    }
+  }
+
+  &.opened {
+    .open-ticket {
+      .label-open {
+        display: none;
+      }
+
+      .label-close {
+        display: flex;
+      }
+
+      &::after {
+        @include awesome-icon("\f106");
+      }
+    }
+  }
+
+  .open-ticket {
+    .label-open {
+      display: flex;
+    }
+    
+    .label-close {
+      display: none;
+    }
+  }
+
+  /****** END OF HEAD ******/
+
+  /****** BODY ******/
+
+  .leg-info-body {
+    @include flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @media #{$mobile-portrait} {
+      display: none;
+    }
+  }
+
+  &.opened {
+    .leg-info-body {
+
+      @media #{$mobile-portrait} {
+        @include flex;
+      }
+    }
+  }
+
+  $column-width: round(100%/3);
+
+  .column {
+
+    &.dates {
+      flex-basis: $column-width + $column-delta*2;
+
+      @media #{$mobile-portrait} {
+        flex-basis: 100%;
+      }
+    }
+
+    &.time {
+      flex-basis: $column-width - $column-delta;
+
+      @media #{$mobile-portrait} {
+        flex-basis: 100%;
+      }
+    }
+
+    &:not(:last-of-type) {
+      padding-right: 2%;
+
+      @media #{$mobile-portrait} {
+        padding-right: 0;
+      }
+    }
+
+    @media #{$mobile-portrait} {
+      flex-basis: 100%;
+      @include side-padding(0);
+    }
+  }
+
+  @media #{$mobile-portrait} {
+    .dates, .departure-info {
+      padding-bottom: $tt-v-padding/2;
+    }
+  }
+
+  .info-title {
+    font-size: $tt-small-size;
+    color: $tt-light-note-color;
+  }
+
+  .middle {
+    @include v-padding($tt-v-padding/1.5, 0);
+
+    @media #{$mobile-portrait} {
+      flex-basis: 100%;
+      @include v-padding($tt-v-padding/2);
+    }
+  }
+
+  .bottom {
+    padding-top: $tt-v-padding;
+  }
+
+  .number {
+    font-size: 1.625rem;
+
+    @media #{$mobile} {
+      font-size: 1.5rem;
+    }
+  }
+
+  .help-info {
+    font-size: 1rem;
+    color: $tt-light-note-color;
+  }
+
+  /****** END OF BODY ******/
+}

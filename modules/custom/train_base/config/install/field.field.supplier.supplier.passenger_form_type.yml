@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.supplier.passenger_form_type
+  module:
+    - plugin
+    - train_base
+id: supplier.supplier.passenger_form_type
+field_name: passenger_form_type
+entity_type: supplier
+bundle: supplier
+label: 'Passenger form type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: 'plugin:field_form_type'

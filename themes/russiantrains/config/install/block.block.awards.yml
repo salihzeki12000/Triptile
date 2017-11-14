@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:f3ec7ef4-4c63-44a7-9663-8bb3593c7d10'
+  module:
+    - block_content
+    - rn_content
+    - system
+  theme:
+    - russiantrains
+third_party_settings:
+  rn_content:
+    classes: awards
+id: awards
+theme: russiantrains
+region: content
+weight: -6
+provider: null
+plugin: 'block_content:f3ec7ef4-4c63-44a7-9663-8bb3593c7d10'
+settings:
+  id: 'block_content:f3ec7ef4-4c63-44a7-9663-8bb3593c7d10'
+  label: Awards
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

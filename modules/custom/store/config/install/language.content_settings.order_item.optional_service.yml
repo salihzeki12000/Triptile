@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - store.order_item_type.optional_service
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+id: order_item.optional_service
+target_entity_type_id: order_item
+target_bundle: optional_service
+default_langcode: site_default
+language_alterable: false

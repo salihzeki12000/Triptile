@@ -1,0 +1,12 @@
+uuid: 77838e50-a011-4946-b34b-f2b169cf071d
+langcode: ru
+status: true
+dependencies: {  }
+id: contact
+label: Contact
+recipients:
+  - absborodin@ya.ru
+reply: ''
+weight: 0
+message: 'Thank you for your submission'
+redirect: /

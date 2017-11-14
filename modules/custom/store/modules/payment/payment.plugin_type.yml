@@ -1,0 +1,9 @@
+payment_method:
+  label: Payment method
+  plugin_manager_service_id: plugin.manager.payment.payment_method
+  plugin_definition_decorator_class: \Drupal\plugin\PluginDefinition\ArrayPluginDefinitionDecorator
+  operations_provider_class: \Drupal\payment\Plugin\PaymentMethodOperationsProvider
+payment_adapter:
+  label: Payment adapter
+  plugin_manager_service_id: plugin.manager.payment.payment_adapter
+  plugin_definition_decorator_class: \Drupal\plugin\PluginDefinition\ArrayPluginDefinitionDecorator

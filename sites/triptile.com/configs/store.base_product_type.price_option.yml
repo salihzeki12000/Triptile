@@ -1,0 +1,6 @@
+uuid: e709cc65-ff00-4ccf-ab73-1982f981d4e1
+langcode: en
+status: true
+dependencies: {  }
+id: price_option
+label: 'Price item'

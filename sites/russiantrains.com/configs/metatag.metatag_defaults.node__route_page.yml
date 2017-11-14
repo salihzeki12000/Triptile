@@ -1,0 +1,13 @@
+uuid: 79af3495-0cd2-4f08-a1b8-94fc756ff6d7
+langcode: en
+status: true
+dependencies: {  }
+id: node__route_page
+label: 'Content: Route page'
+tags:
+  title: 'From [node:departure_station] to [node:arrival_station] Trains | Russiantrains.com'
+  description: '[node:summary]'
+  og_title: '[node:title]'
+  og_image: '[node:gallery_image]'
+  og_description: '[node:summary]'
+  og_url: '[node:original:url]'

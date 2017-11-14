@@ -1,0 +1,10 @@
+@import "../init";
+@import "../custom_mixins";
+
+.page {
+
+}
+
+@import "page_parts/header";
+@import "page_parts/footer-top";
+@import "page_parts/footer-bottom";

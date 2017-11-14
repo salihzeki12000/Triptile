@@ -1,0 +1,12 @@
+uuid: 4768aac6-04f7-4685-a557-f8711bcd05f8
+langcode: en
+status: true
+dependencies: {  }
+id: nsb_kids
+label: 'NSB kids'
+price_rule_type: ticket
+condition: 'supplier == ''NSB'' and age >= 4 and age <= 15'
+tax_type: rate
+tax_value: 0.7
+tax_value_currency: USD
+weight: '0'

@@ -1,0 +1,120 @@
+.main-label {
+  font-size: 1.25rem;
+  padding-bottom: $sidebar-v-padding/2;
+}
+
+.trip-summary-wrapper {
+  @include v-padding($sidebar-v-padding);
+  width: 100%;
+}
+
+.sidebar-container {
+  color: $sidebar-color;
+  border-top: $sidebar-border;
+  padding-top: $sidebar-v-padding;
+  border-bottom: $sidebar-border;
+  padding-bottom: $sidebar-v-padding;
+
+  & + .sidebar-container {
+    border-top: none;
+    padding-top: 0;
+  }
+}
+
+.sidebar-label {
+  font-size: 1rem;
+  color: $sidebar-title-color;
+
+  &.order-total {
+    font-size: 1.25rem;
+    font-family: $title-font-family;
+  }
+}
+
+.sidebar-item {
+  padding-bottom: $sidebar-v-padding/2;
+  @include flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 1rem;
+
+  &.first {
+    padding-top: 0;
+  }
+
+  &.last {
+    padding-bottom: 0;
+  }
+}
+
+.optional-services-label, .delivery-services-label {
+  padding-top: $sidebar-v-padding;
+  border-top: $sidebar-border;
+}
+
+.optional_service, .delivery_service {
+  &:last-of-type {
+    padding-bottom: 0;
+  }
+}
+
+.tax {
+  padding-top: $sidebar-v-padding;
+  border-top: $sidebar-border;
+}
+
+.sidebar {
+  .container {
+    @include flex;
+    flex-flow: row wrap;
+    align-items: center;
+    margin-bottom: $sidebar-v-padding;
+
+    & > div {
+      flex-basis: 100%;
+    }
+  }
+}
+
+.order-details {
+  &:not(:last-of-type) {
+    padding-bottom: $pas-v-padding;
+  }
+}
+
+.route-label {
+  padding-bottom: $sidebar-v-padding/2;
+  font-size: 1.125rem;
+  color: $sidebar-title-color;
+}
+
+.status-description {
+  color: $sidebar-color;
+  font-size: $sidebar-small-size;
+}
+
+.status {
+  &.state-1 {
+    color: $status-none;
+  }
+
+  &.state-2 {
+    color: $status-process;
+  }
+
+  &.state-6 {
+    color: $status-process;
+  }
+
+  &.state-5 {
+    color: $status-process;
+  }
+
+  &.state-3 {
+    color: $status-ok;
+  }
+
+  &.state-4 {
+    color: $status-cancel;
+  }
+}

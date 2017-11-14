@@ -1,0 +1,36 @@
+uuid: 1997a137-1487-449a-9ef0-ee0df9a0f60b
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration
+_core:
+  default_config_hash: 7L60R5kZ2MnIguiBHyfJ6vFPZSJodYsFw9f3YKM1vSY
+id: salesforce_mapping_object_transaction
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: salesforce
+label: 'SalesforceMappingObject Transaction'
+source:
+  plugin: salesforce_mapping_object_transaction
+  key: travelallrussia
+process:
+  record_id: sforce_id
+  salesforce_object: sforce_type
+  entity_id: transaction_id
+  entity_type_id:
+    plugin: default_value
+    default_value: transaction
+  tries:
+    plugin: default_value
+    default_value: 0
+  created: changed
+  changed: changed
+destination:
+  plugin: 'entity:salesforce_mapping_object'
+migration_dependencies:
+  optional:
+    - transaction

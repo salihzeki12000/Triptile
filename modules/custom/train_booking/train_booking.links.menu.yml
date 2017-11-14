@@ -1,0 +1,67 @@
+train_booking.config:
+  title: 'Train Booking config'
+  description: 'Train Booking config'
+  route_name: train_booking.config_form
+  parent: rail_ninja.config_list
+  weight: -15
+
+train_booking.stats:
+  title: 'Statistic'
+  description: Search and booking statistic
+  route_name: train_booking.stats
+  parent: train_base.train_lists
+  weight: 100
+
+# Failed search menu items definition
+entity.failed_search.collection:
+  title: 'Failed searches'
+  route_name: entity.failed_search.collection
+  description: 'List Failed search entities'
+  parent: train_booking.stats
+  weight: 100
+
+failed_search.admin.structure.settings:
+  title: Failed search settings
+  description: 'Configure Failed search entities'
+  route_name: entity.failed_search.settings
+  parent: master.entity_configs
+
+# Detailed success search menu items definition
+entity.success_search_detailed.collection:
+  title: 'Success searches'
+  route_name: entity.success_search_detailed.collection
+  description: 'List Success search entities'
+  parent: train_booking.stats
+  weight: 100
+
+success_search_detailed.admin.structure.settings:
+  title: Detailed success search settings
+  description: 'Configure Detailed success search entities'
+  route_name: entity.success_search_detailed.settings
+  parent: master.entity_configs
+
+# Booking stat menu items definition
+entity.booking_stat.collection:
+  title: 'Booking statistic'
+  description: 'List booking statistic'
+  route_name: entity.booking_stat.collection
+  parent: train_booking.stats
+  weight: 100
+
+booking_stat.admin.structure.settings:
+  title: Booking stat settings
+  description: 'Configure Booking stat entities'
+  route_name: entity.booking_stat.settings
+  parent: master.entity_configs
+
+train_booking.search_url_generator:
+  title: 'Search URL Generator'
+  description: 'Help you generate search url.'
+  route_name: train_booking.search_url_generator
+  parent: train_base.train_lists
+
+train_booking.export_csv:
+  title: 'Train Booking Export CSV'
+  description: 'Train Booking Export CSV'
+  route_name: train_booking.export_csv
+  parent: train_booking.stats

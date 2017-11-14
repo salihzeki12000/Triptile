@@ -1,0 +1,132 @@
+# Hub routing definition
+hub.settings_tab:
+  route_name: entity.hub.settings
+  title: 'Settings'
+  base_route: entity.hub.settings
+
+entity.hub.canonical:
+  route_name: entity.hub.canonical
+  base_route: entity.hub.canonical
+  title: 'View'
+
+entity.hub.edit_form:
+  route_name: entity.hub.edit_form
+  base_route: entity.hub.canonical
+  title: 'Edit'
+
+entity.hub.delete_form:
+  route_name:  entity.hub.delete_form
+  base_route:  entity.hub.canonical
+  title: Delete
+  weight: 10
+
+# Connection routing definition
+connection.settings_tab:
+  route_name: entity.connection.settings
+  title: 'Settings'
+  base_route: entity.connection.settings
+
+entity.connection.canonical:
+  route_name: entity.connection.canonical
+  base_route: entity.connection.canonical
+  title: 'View'
+
+entity.connection.edit_form:
+  route_name: entity.connection.edit_form
+  base_route: entity.connection.canonical
+  title: 'Edit'
+
+entity.connection.delete_form:
+  route_name:  entity.connection.delete_form
+  base_route:  entity.connection.canonical
+  title: Delete
+  weight: 10
+
+# Hotel routing definition
+hotel.settings_tab:
+  route_name: entity.hotel.settings
+  title: 'Settings'
+  base_route: entity.hotel.settings
+
+entity.hotel.canonical:
+  route_name: entity.hotel.canonical
+  base_route: entity.hotel.canonical
+  title: 'View'
+
+entity.hotel.edit_form:
+  route_name: entity.hotel.edit_form
+  base_route: entity.hotel.canonical
+  title: 'Edit'
+
+entity.hotel.delete_form:
+  route_name:  entity.hotel.delete_form
+  base_route:  entity.hotel.canonical
+  title: Delete
+  weight: 10
+
+# Transfer routing definition
+transfer.settings_tab:
+  route_name: entity.transfer.settings
+  title: 'Settings'
+  base_route: entity.transfer.settings
+
+entity.transfer.canonical:
+  route_name: entity.transfer.canonical
+  base_route: entity.transfer.canonical
+  title: 'View'
+
+entity.transfer.edit_form:
+  route_name: entity.transfer.edit_form
+  base_route: entity.transfer.canonical
+  title: 'Edit'
+
+entity.transfer.delete_form:
+  route_name:  entity.transfer.delete_form
+  base_route:  entity.transfer.canonical
+  title: Delete
+  weight: 10
+
+# Activity routing definition
+activity.settings_tab:
+  route_name: entity.activity.settings
+  title: 'Settings'
+  base_route: entity.activity.settings
+
+entity.activity.canonical:
+  route_name: entity.activity.canonical
+  base_route: entity.activity.canonical
+  title: 'View'
+
+entity.activity.edit_form:
+  route_name: entity.activity.edit_form
+  base_route: entity.activity.canonical
+  title: 'Edit'
+
+entity.activity.delete_form:
+  route_name:  entity.activity.delete_form
+  base_route:  entity.activity.canonical
+  title: Delete
+  weight: 10
+
+# Trip routing definition
+trip.settings_tab:
+  route_name: entity.trip.settings
+  title: 'Settings'
+  base_route: entity.trip.settings
+
+entity.trip.canonical:
+  route_name: entity.trip.canonical
+  base_route: entity.trip.canonical
+  title: 'View'
+
+entity.trip.edit_form:
+  route_name: entity.trip.edit_form
+  base_route: entity.trip.canonical
+  title: 'Edit'
+
+entity.trip.delete_form:
+  route_name:  entity.trip.delete_form
+  base_route:  entity.trip.canonical
+  title: Delete
+  weight: 10
+

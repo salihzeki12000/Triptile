@@ -1,0 +1,6 @@
+label: Invoice
+status: false
+weight: 2
+dependencies:
+  module:
+    - payment

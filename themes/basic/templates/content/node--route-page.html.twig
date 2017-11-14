@@ -1,0 +1,220 @@
+{#
+/**
+ * @file
+ * Theme override to display a node.
+ *
+ * Available variables:
+ * - node: The node entity with limited access to object properties and methods.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - node.getCreatedTime() will return the node creation timestamp.
+ *   - node.hasField('field_example') returns TRUE if the node bundle includes
+ *     field_example. (This does not indicate the presence of a value in this
+ *     field.)
+ *   - node.isPublished() will return whether the node is published or not.
+ *   Calling other methods, such as node.delete(), will result in an exception.
+ *   See \Drupal\node\Entity\Node for a full list of public properties and
+ *   methods for the node object.
+ * - label: The title of the node.
+ * - content: All node items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - author_picture: The node author user entity, rendered using the "compact"
+ *   view mode.
+ * - metadata: Metadata for this node.
+ * - date: Themed creation date field.
+ * - author_name: Themed author name field.
+ * - url: Direct URL of the current node.
+ * - display_submitted: Whether submission information should be displayed.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - node: The current template type (also known as a "theming hook").
+ *   - node--type-[type]: The current node type. For example, if the node is an
+ *     "Article" it would result in "node--type-article". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+ *     teaser would result in: "node--view-mode-teaser", and
+ *     full: "node--view-mode-full".
+ *   The following are controlled through the node publishing options.
+ *   - node--promoted: Appears on nodes promoted to the front page.
+ *   - node--sticky: Appears on nodes ordered above other non-sticky nodes in
+ *     teaser listings.
+ *   - node--unpublished: Appears on unpublished nodes visible only to site
+ *     admins.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - author_attributes: Same as attributes, except applied to the author of
+ *   the node tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
+ * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+ * - readmore: Flag for more state. Will be true if the teaser content of the
+ *   node cannot hold the main body content.
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_node()
+ * @see at_core_preprocess_node()
+ */
+#}
+<div itemscope itemtype="http://schema.org/Offer">
+  {%-
+    set classes = [
+      'node',
+      'node--id-' ~ node.id,
+      'node--type-' ~ node.bundle|clean_class,
+      node.isPromoted() ? 'node--promoted',
+      node.isSticky() ? 'node--sticky',
+      not node.isPublished() ? 'node--unpublished',
+      view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    ]
+  -%}
+
+  {% set route_partial = 'themes/basic/templates/content/route-part.html.twig' %}
+
+  {% if content.field_image.0 is not empty %}
+    <div class="image-wrapper">
+      {{ content.field_image }}
+      {% include route_partial %}
+    </div>
+  {% else %}
+    {% include route_partial %}
+  {% endif %}
+  <article{{ attributes.addClass(classes).setAttribute('role', 'article') }}>
+    <div class="container">
+      <div class="title">
+        {{- title_prefix -}}
+        {%- if label -%}
+          {%- if view_mode == 'full' -%}
+            <h1{{ title_attributes.addClass('node__title') }} itemprop="name">{{- label -}}</h1>
+          {%- else -%}
+            <h2{{ title_attributes.addClass('node__title') }} itemprop="name"><a href="{{ url }}" class="node__title-link"
+                                                                  rel="bookmark">{{- label -}}</a></h2>
+          {%- endif -%}
+        {%- endif -%}
+        {{- title_suffix -}}
+      </div>
+      {% if content.body.0 is not empty %}
+        <div class="body" itemprop="description">
+          {{ content.body }}
+        </div>
+      {% endif %}
+    </div>
+    <div class="map-wrapper" itemscope itemtype="http://schema.org/Map">
+      <div itemprop="mapType" href="http://schema.org/VenueMap">
+        {{ map }}
+      </div>
+    </div>
+    <div class="landing-blocks-wrapper">
+      <div class="landing-block">
+        <div class="container">
+          {% if average_rating > 0 %}
+            <div class="rating-container average-rating" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+              <div class="rating-row">
+                <div class="rating-stars">
+                  <div class="active-stars" style="width:{{ active_stars }}%"></div>
+                </div>
+                <span class="rating-phrase">
+                  <span itemprop="ratingValue">{{ average_rating }}</span> / <span itemprop="bestRating">10</span>
+                  {% trans with {'context': 'Route page'} %}
+                     based on
+                  {% endtrans %} <span itemprop="reviewcount">{{ reviews_count }}</span>
+                    <span>
+                      {% trans with {'context': 'Route page'} %}
+                         review
+                      {% plural reviews_count %}
+                         reviews
+                      {% endtrans %}
+                    </span>
+                </span>
+
+                <meta itemprop="worstRating" content = "1">
+              </div>
+            </div>
+          {% endif %}
+          <div class="review-text">
+            {{ content.reviews }}
+          </div>
+          <div class="customer-rate-circle"></div>
+        </div>
+      </div>
+      <div class="landing-block">
+        <div class="container useful-info">
+          <h2 class="main-block-title">
+            {% trans with {'context': 'Route page'} %}
+              Quick facts about trains
+            {% endtrans %}
+          </h2>
+          <div class="fact-row">
+            <div class="facts-container">
+              {% if fastest_travel_time > 0  %}
+              <div class="fact fastest-trip">
+                <div class="value">
+                  {{ fastest_travel_time }}
+                </div>
+                <div class="fact-title">
+                  {% trans with {'context': 'Route page'} %}
+                    shortest travel time
+                  {% endtrans %}
+                </div>
+              </div>
+              {% endif %}
+              {% if longest_travel_time > 0  %}
+              <div class="fact longest-trip">
+                <div class="value">
+                  {{ longest_travel_time }}
+                </div>
+                <div class="fact-title">
+                  {% trans with {'context': 'Route page'} %}
+                    longest travel time
+                  {% endtrans %}
+                </div>
+              </div>
+              {% endif %}
+              <div class="fact trains-number">
+                <div class="value">
+                  {{ trains_number }}
+                </div>
+                <div class="fact-title">
+                  {% trans with {'context': 'Route page'} %}
+                    train on the route
+                  {% plural trains_number %}
+                    trains on the route
+                  {% endtrans %}
+                </div>
+              </div>
+            </div>
+          </div>
+          {% if train_classes_available is not empty %}
+            <div class="fact-row">
+              <h3 class="block-title">
+                {% trans with {'context': 'Route page'} %}
+                  Train classes on the route
+                {% endtrans %}
+              </h3>
+              <div class="train-class-wrapper">
+                {% for train_class in train_classes_available %}
+                  <details>
+                    <summary>{{ train_class.name }}</summary>
+                    {{ train_class.description | raw }}
+                  </details>
+                {% endfor %}
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+  </article>
+</div>

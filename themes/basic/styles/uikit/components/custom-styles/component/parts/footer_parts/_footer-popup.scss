@@ -1,0 +1,82 @@
+$large-icon-size: 70px;
+$large-icon-bg-size: 220px;
+$large-icon-tel-position: -76px;
+
+.footer-popup {
+  top: 0 !important;
+
+  .whole-footer {
+    padding: $dialog-v-padding $dialog-h-padding;
+    background: $footer-top-bg;
+    flex-basis: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .block-title {
+    @include flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    & > div {
+      flex-basis: 100%;
+      text-align: center;
+    }
+  }
+
+  .block-content {
+    padding: $dialog-v-padding 0;
+  }
+
+  .footer-title {
+    font-size: 2.59rem;
+    padding: 30px 0;
+    line-height: 120%;
+  }
+
+  .footer-subtitle {
+    font-size: 1.5rem;
+    line-height: 130%;
+  }
+
+  .footer-arrow {
+    display: none;
+  }
+
+  .large-icon {
+
+    $icon-delta: 0;
+
+    .footer-icon {
+      @include flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      background-color: $footer-top-icon-bg;
+      color: $footer-top-icon-color;
+      font-size: 1.25rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      @include border-radius(50%);
+      @include transition;
+      cursor: default;
+      width: $large-icon-size - $icon-delta;
+      height: $large-icon-size - $icon-delta;
+      background-size: $large-icon-bg-size - $icon-delta*3;
+
+      &.mail {
+        background-image: url("#{$path-to-images}/footer-icons-default.png");
+        background-position: 0 0;
+      }
+
+      &.tel {
+        background-image: url("#{$path-to-images}/footer-icons-default.png");
+        background-position: $large-icon-tel-position + $icon-delta 0;
+      }
+
+      .inner-icon {
+        font-size: 1.5625rem;
+      }
+    }
+  }
+}

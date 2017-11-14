@@ -1,0 +1,10 @@
+uuid: 5411b648-6437-4ef5-8b12-a02f32e9c16a
+langcode: en
+status: true
+dependencies:
+  module:
+    - train_base
+id: coach_scheme.token
+label: Token
+targetEntityType: coach_scheme
+cache: true

@@ -1,0 +1,20 @@
+uuid: 0d1e5375-9956-49be-90c2-695a34f11d25
+langcode: en
+status: true
+dependencies:
+  module:
+    - comment
+id: comment.field_rating
+field_name: field_rating
+entity_type: comment
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

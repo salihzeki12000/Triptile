@@ -1,0 +1,5 @@
+train_provider:
+  label: Train provider
+  plugin_manager_service_id: plugin.manager.train_provider
+  plugin_definition_decorator_class: \Drupal\plugin\PluginDefinition\ArrayPluginDefinitionDecorator
+  operations_provider_class: \Drupal\train_provider\Plugin\TrainProviderOperationsProvider

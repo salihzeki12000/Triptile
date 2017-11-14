@@ -1,0 +1,25 @@
+id: station_children_translations
+migration_group: train_base
+migration_tags:
+  - translations
+label: Station children translations
+source:
+  plugin: station_children_translations
+  key: travelallrussia
+process:
+  id:
+    plugin: migration_lookup
+    source: id
+    migration: station_children
+  langcode: lang
+  name: name
+destination:
+  plugin: entity:station
+  translations: true
+migration_dependencies:
+  required:
+    - station_children
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

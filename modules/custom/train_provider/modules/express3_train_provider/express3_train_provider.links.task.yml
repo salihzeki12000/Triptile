@@ -1,0 +1,22 @@
+# Express3station routing definition
+express3_station.settings_tab:
+  route_name: entity.express3_station.settings
+  title: 'Settings'
+  base_route: entity.express3_station.settings
+
+entity.express3_station.canonical:
+  route_name: entity.express3_station.canonical
+  base_route: entity.express3_station.canonical
+  title: 'View'
+
+entity.express3_station.edit_form:
+  route_name: entity.express3_station.edit_form
+  base_route: entity.express3_station.canonical
+  title: 'Edit'
+
+entity.express3_station.delete_form:
+  route_name:  entity.express3_station.delete_form
+  base_route:  entity.express3_station.canonical
+  title: Delete
+  weight: 10
+

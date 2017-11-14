@@ -1,0 +1,43 @@
+uuid: bc5aae7f-5a91-4298-ace0-ef14f95de125
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration
+_core:
+  default_config_hash: 7aTZlsU1KZ_eknDg6w-MvgRiaO8jkb260FRXICCS690
+id: first_payments_transaction
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - transaction
+migration_group: store
+label: 'First Payments Transaction'
+source:
+  plugin: first_payments_transaction
+  key: travelallrussia
+process:
+  merchant_id: merchant_entity_id
+  remote_id: payment_transaction_id
+  payment_method: payment_method
+  status: status
+  type: transaction_type
+  original_amount/number: amount
+  original_amount/currency_code: currency
+  amount/number: payment_amount
+  amount/currency_code: payment_currency
+  currency_rate: currency_rate
+  ip_address: ip_address
+  uid: destination_user_id
+  invoice:
+    plugin: migration_lookup
+    migration: invoice
+    source: invoice_id
+  message: error_messages
+destination:
+  plugin: 'entity:transaction'
+migration_dependencies:
+  optional:
+    - invoice

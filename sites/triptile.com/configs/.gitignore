@@ -1,0 +1,8 @@
+salesforce.credentials.yml
+payment.merchant.*
+devel.settings.yml
+system.menu.devel.yml
+devel.toolbar.settings.yml
+robotstxt.settings.yml
+currency.exchanger.fixed_rates.yml
+payment.merchant_router_rule.*

@@ -1,0 +1,11 @@
+name: Local train provider
+type: module
+description: Local train provider
+dependencies:
+  - train_provider
+  - train_base
+  - store
+  - content_translation
+  - inline_entity_form
+core: 8.x
+package: Custom

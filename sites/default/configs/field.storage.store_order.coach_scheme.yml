@@ -1,0 +1,22 @@
+uuid: 1866e0d0-fc57-47c4-9f3b-a46517a5cef8
+langcode: en
+status: true
+dependencies:
+  module:
+    - store
+    - train_base
+_core:
+  default_config_hash: dLtC8mLA0VfUXJBKsIHq375w2QvHaw5iWdGQ0kXdvW0
+id: store_order.coach_scheme
+field_name: coach_scheme
+entity_type: store_order
+type: entity_reference
+settings:
+  target_type: coach_scheme
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,20 @@
+services:
+  train_booking.train_booking_manager:
+    class: Drupal\train_booking\TrainBookingManager
+    parent: booking.booking_manager_base
+    arguments: ['@config.factory', '@plugin.manager.train_provider']
+
+  train_booking.render_helper:
+    class: Drupal\train_booking\RenderHelper
+
+  train_booking.logger:
+    class: Drupal\train_booking\TrainBookingLogger
+    arguments:
+      - '@database'
+      - '@entity_type.manager'
+      - '@datetime.time'
+      - '@language_manager'
+      - '@master.maxmind'
+      - '@store.default_currency'
+      - '@date.formatter'
+      - '@lead.user_metadata'

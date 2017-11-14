@@ -1,0 +1,40 @@
+id: blog
+migration_group: content_page
+migration_tags:
+  - russian_trains_light
+label: Blog
+source:
+  plugin: blog
+  key: travelallrussia
+process:
+  type:
+    plugin: default_value
+    default_value: blog
+  title: title
+  'body/value': content
+  'body/summary': summary
+  'body/format':
+    plugin: default_value
+    default_value: full_html_for_administrator
+  'blog_image/target_id':
+    plugin: migration_lookup
+    migration: blog_image
+    no_stub: true
+    source: blog_id
+  'blog_image/alt': slug
+  blog_categories:
+    plugin: migration_lookup
+    migration: blog_taxonomy
+    source: category_slug
+  published: is_published
+  uid:
+    plugin: default_value
+    default_value: 1
+destination:
+  plugin: entity:node
+  bundle: blog
+migration_dependencies: {}
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

@@ -1,0 +1,29 @@
+.entitytaxonomy-termcanonical, .page-node-type--blog {
+  @import "parts/forms/blog_page_search_region";
+
+  .info-page-search-form {
+    max-height: 490px;
+    overflow: hidden;
+  }
+
+  .pr-main {
+    padding-bottom: $v-padding*2;
+
+    @media #{$mobile} {
+      padding-bottom: $blog-v-padding;
+    }
+  }
+
+  .block-plugin-id--system-breadcrumb-block {
+    @media #{$tablet} {
+      @include side-padding($tablet-h-padding);
+    }
+
+    @media #{$mobile} {
+      @include side-padding($tablet-h-padding);
+    }
+  }
+}
+
+@import "blog_parts/blog-list";
+@import "blog_parts/blog-post";

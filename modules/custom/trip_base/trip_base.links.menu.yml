@@ -1,0 +1,90 @@
+trip_base.lists:
+  route_name: trip_base.lists
+  parent: system.admin
+  description: 'Provide menu for custom entities.'
+  title: 'Trip data'
+  weight: -8
+
+# Hub menu items definition
+entity.hub.collection:
+  title: 'Hubs'
+  route_name: entity.hub.collection
+  description: 'List Hub entities'
+  parent: trip_base.lists
+  weight: 100
+
+entity.hub.settings:
+  title: Hub settings
+  description: 'Configure Hub entities'
+  route_name: entity.hub.settings
+  parent: master.entity_configs
+
+# Connection menu items definition
+entity.connection.collection:
+  title: 'Connections'
+  route_name: entity.connection.collection
+  description: 'List Connection entities'
+  parent: trip_base.lists
+  weight: 100
+
+entity.connection.settings:
+  title: Connection settings
+  description: 'Configure Connection entities'
+  route_name: entity.connection.settings
+  parent: master.entity_configs
+
+# Hotel menu items definition
+entity.hotel.collection:
+  title: 'Hotels'
+  route_name: entity.hotel.collection
+  description: 'List Hotel entities'
+  parent: trip_base.lists
+  weight: 100
+
+entity.hotel.settings:
+  title: Hotel settings
+  description: 'Configure Hotel entities'
+  route_name: entity.hotel.settings
+  parent: master.entity_configs
+
+# Transfer menu items definition
+entity.transfer.collection:
+  title: 'Transfers'
+  route_name: entity.transfer.collection
+  description: 'List Transfer entities'
+  parent: trip_base.lists
+  weight: 100
+
+entity.transfer.settings:
+  title: Transfer settings
+  description: 'Configure Transfer entities'
+  route_name: entity.transfer.settings
+  parent: master.entity_configs
+
+# Activity menu items definition
+entity.activity.collection:
+  title: 'Activities'
+  route_name: entity.activity.collection
+  description: 'List Activity entities'
+  parent: trip_base.lists
+  weight: 100
+
+entity.activity.settings:
+  title: Activity settings
+  description: 'Configure Activity entities'
+  route_name: entity.activity.settings
+  parent: master.entity_configs
+
+# Trip menu items definition
+entity.trip.collection:
+  title: 'Trips'
+  route_name: entity.trip.collection
+  description: 'List Trip entities'
+  parent: trip_base.lists
+  weight: 100
+
+entity.trip.settings:
+  title: Trip settings
+  description: 'Configure Trip entities'
+  route_name: entity.trip.settings
+  parent: master.entity_configs

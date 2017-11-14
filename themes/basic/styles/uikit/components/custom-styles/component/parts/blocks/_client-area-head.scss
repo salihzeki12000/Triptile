@@ -1,0 +1,62 @@
+&.block-plugin-id--clientareahead {
+  padding: 0 0 $v-padding;
+  font-size: $small-font-size;
+
+  @media #{$tablet} {
+    @include side-padding($tablet-h-padding);
+  }
+
+  @media #{$mobile} {
+    @include side-padding($tablet-h-padding);
+  }
+
+  .block-plugin-id--userinfoblock, .user-text-block {
+    display: flex;
+    flex-basis: 49%;
+    border: $up-table-border;
+
+    @media #{$tablet} {
+      @include side-padding(0);
+    }
+
+    @media #{$mobile} {
+      @include side-padding(0);
+      flex-basis: 100%;
+    }
+
+    .block__content {
+      padding: $up-table-v-padding $up-table-h-padding;
+
+      @media #{$tablet} {
+        padding: $tablet-h-padding;
+      }
+
+      @media #{$mobile} {
+        padding: $tablet-h-padding;
+      }
+    }
+  }
+
+  .user-info-block {
+    @media #{$mobile} {
+      margin-bottom: $v-padding;
+    }
+  }
+
+  .block__inner {
+    padding: 0;
+  }
+  
+  .block__content{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    justify-content: space-between;
+
+    & > div {
+      @media #{$mobile-landscape} {
+        flex-basis: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,122 @@
+<?php
+
+use Drupal\master\Master;
+
+/**
+ * Update images for node's body.
+ */
+function russian_trains_migration_update_8301(&$sandbox) {
+  if (\Drupal\master\Master::siteCode() == 'RT') {
+    drupal_flush_all_caches();
+    \Drupal::service('russian_trains_migration.node_updater')->updateImages();
+  }
+}
+
+/**
+ * Set 'Generate automatic URL alias' to false on all nodes.
+ */
+function russian_trains_migration_update_8302(&$sandbox) {
+  if (\Drupal\master\Master::siteCode() == 'RT' || \Drupal\master\Master::siteCode() == 'RTT') {
+    $query = \Drupal::service('entity_type.manager')->getStorage('node')->getQuery();
+    $nids = $query->execute();
+    foreach ($nids as $nid) {
+      \Drupal::keyValue('pathauto_state.node')->set($nid, 0);
+    }
+  }
+}
+
+/**
+ * Disable unnecessary train base data.
+ */
+function russian_trains_migration_update_8303(&$sandbox) {
+  if (in_array(Master::siteCode(), [Master::SITE_CODE_RUSSIAN_TRAIN_TICKETS, Master::SITE_CODE_RUSSIAN_TRAINS])) {
+    $supplierIds = \Drupal::entityTypeManager()
+      ->getStorage('supplier')
+      ->getQuery()
+      ->condition('code', ['BT', 'E3', 'FR', 'CN', 'JUL'], 'IN')
+      ->execute();
+
+    \Drupal::database()->update('coach_class_field_data')
+      ->fields(['status' => 0])
+      ->condition('supplier', $supplierIds, 'NOT IN')
+      ->execute();
+
+    \Drupal::database()->update('seat_type_field_data')
+      ->fields(['status' => 0])
+      ->condition('supplier', $supplierIds, 'NOT IN')
+      ->execute();
+
+    \Drupal::database()->update('train_class_field_data')
+      ->fields(['status' => 0])
+      ->condition('supplier', $supplierIds, 'NOT IN')
+      ->execute();
+
+    $carServiceIds = \Drupal::entityTypeManager()
+      ->getStorage('car_service')
+      ->getQuery()
+      ->condition('supplier_mapping.target_id', $supplierIds, 'NOT IN')
+      ->execute();
+
+    \Drupal::database()->update('car_service_field_data')
+      ->fields(['status' => 0])
+      ->condition('id', $carServiceIds, 'IN')
+      ->execute();
+  }
+}
+
+/**
+ * Set 'Generate automatic URL alias' to false on all nodes.
+ */
+function russian_trains_migration_update_8304(&$sandbox) {
+  if (in_array(Master::siteCode(), [Master::SITE_CODE_RUSSIAN_TRAINS])) {
+    $query = \Drupal::service('entity_type.manager')->getStorage('node')->getQuery();
+    $nids = $query->execute();
+    foreach ($nids as $nid) {
+      \Drupal::keyValue('pathauto_state.node')->set($nid, 0);
+    }
+  }
+}
+
+/**
+ * Disable unnecessary train base data.
+ */
+function russian_trains_migration_update_8305(&$sandbox) {
+  if (in_array(Master::siteCode(), [Master::SITE_CODE_RUSSIAN_TRAINS])) {
+    $supplierIds = \Drupal::entityTypeManager()
+      ->getStorage('supplier')
+      ->getQuery()
+      ->condition('code', ['BT', 'E3', 'FR', 'CN', 'JUL'], 'IN')
+      ->execute();
+
+    \Drupal::database()->update('supplier_field_data')
+      ->fields(['status' => 0])
+      ->condition('id', $supplierIds, 'NOT IN')
+      ->execute();
+
+    \Drupal::database()->update('coach_class_field_data')
+      ->fields(['status' => 0])
+      ->condition('supplier', $supplierIds, 'NOT IN')
+      ->execute();
+
+    \Drupal::database()->update('seat_type_field_data')
+      ->fields(['status' => 0])
+      ->condition('supplier', $supplierIds, 'NOT IN')
+      ->execute();
+
+    \Drupal::database()->update('train_class_field_data')
+      ->fields(['status' => 0])
+      ->condition('supplier', $supplierIds, 'NOT IN')
+      ->execute();
+
+    $carServiceIds = \Drupal::entityTypeManager()
+      ->getStorage('car_service')
+      ->getQuery()
+      ->condition('supplier_mapping.target_id', $supplierIds, 'NOT IN')
+      ->execute();
+
+    \Drupal::database()->update('car_service_field_data')
+      ->fields(['status' => 0])
+      ->condition('id', $carServiceIds, 'IN')
+      ->execute();
+  }
+}

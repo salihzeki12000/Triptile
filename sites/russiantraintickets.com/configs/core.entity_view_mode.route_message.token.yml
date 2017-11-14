@@ -1,0 +1,10 @@
+uuid: dc1ecf8a-4192-4339-811f-7b76f97afc72
+langcode: en
+status: true
+dependencies:
+  module:
+    - train_base
+id: route_message.token
+label: Token
+targetEntityType: route_message
+cache: true

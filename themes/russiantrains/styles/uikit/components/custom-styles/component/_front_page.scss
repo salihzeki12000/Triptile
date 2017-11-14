@@ -1,0 +1,96 @@
+&.front {
+  @import "page_parts/front_page_search_form";
+
+  #main-content {
+    .pr-main__content {
+      .block {
+        .block__inner {
+          padding: $v-padding*3 0;
+        }
+
+        .block__title {
+          font-size: 1.85rem;
+          text-align: center;
+          font-weight: 300;
+          letter-spacing: 0.8px;
+        }
+      }
+
+      .image-with-button-wrapper {
+        position: relative;
+        padding: 5px;
+        margin-top: $v-padding;
+        margin-bottom: $v-padding;
+        @include transition(all .5s ease);
+        display: flex;
+
+        .image-button {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          margin: auto;
+          display: flex;
+          width: 160px;
+          height: 40px;
+          align-items: center;
+          justify-content: center;
+          visibility: hidden;
+          opacity: 0;
+          color: $color-lightblack;
+          padding: $input-v-padding/2 $input-h-padding*2;
+          background: rgba(255,255,255,0.8);
+          @include transition(all .5s ease);
+
+          @media #{$tablet} {
+            visibility: visible;
+            opacity: 1;
+          }
+
+          @media #{$mobile} {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+
+        img {
+          width: 100%;
+          @include transition(all .3s linear);
+
+          @media #{$tablet} {
+            @include filter(brightness(80%));
+          }
+
+          @media #{$mobile} {
+            @include filter(brightness(80%));
+          }
+        }
+
+        &:hover {
+          .image-button {
+            visibility: visible;
+            opacity: 1;
+          }
+
+          img {
+            @include transition(all .3s linear);
+            @include transform(scale(1.05));
+            @include filter(brightness(80%));
+          }
+        }
+      }
+
+      .image {
+        width: 100%;
+      }
+
+      .awards {
+        a {
+          color: $base-color;
+        }
+      }
+    }
+  }
+}
+

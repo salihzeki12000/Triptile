@@ -1,0 +1,29 @@
+uuid: 9492761d-7511-465d-bbb4-d86d309e2921
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.store_order.pdf_file
+    - store.store_order_type.train_order
+  module:
+    - file
+_core:
+  default_config_hash: QHzHqDXi-DY7ETYumKEu0ScNT2hVkwHoCmcc4K15nBw
+id: store_order.train_order.pdf_file
+field_name: pdf_file
+entity_type: store_order
+bundle: train_order
+label: 'PDF file'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: 'pdf-tickets/[date:custom:Y]-[date:custom:m]'
+  file_extensions: pdf
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

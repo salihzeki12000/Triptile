@@ -1,0 +1,41 @@
+uuid: 4fcebf76-c140-4896-8a62-1922e7a94140
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.route_page.arrival_station
+    - field.field.node.route_page.body
+    - field.field.node.route_page.departure_station
+    - field.field.node.route_page.distance
+    - field.field.node.route_page.field_image
+    - field.field.node.route_page.reviews
+    - field.field.node.route_page.reviews_count
+    - node.type.route_page
+  module:
+    - text
+    - user
+id: node.route_page.teaser
+targetEntityType: node
+bundle: route_page
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  arrival_station: true
+  departure_station: true
+  distance: true
+  field_image: true
+  langcode: true
+  reviews: true
+  reviews_count: true

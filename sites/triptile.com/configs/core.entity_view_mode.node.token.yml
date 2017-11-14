@@ -1,0 +1,10 @@
+uuid: caf2095d-3280-4ac4-83aa-a7c357af1aea
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.token
+label: Token
+targetEntityType: node
+cache: true

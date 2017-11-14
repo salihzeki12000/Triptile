@@ -1,0 +1,12 @@
+uuid: f533a2a1-15ae-4fbb-8a23-83b5835d1abf
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: ZRVSBI9saRNeJiXphAdzCCv8D0n9MboZP42JqqOIF4A
+id: translator
+label: Translator
+weight: 5
+is_admin: null
+permissions:
+  - 'allow recording translation files'

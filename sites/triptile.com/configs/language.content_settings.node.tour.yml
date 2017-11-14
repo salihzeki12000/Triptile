@@ -1,0 +1,11 @@
+uuid: 0234f6ae-b7ee-42ea-8d80-66359bfaf055
+langcode: ru
+status: true
+dependencies:
+  config:
+    - node.type.tour
+id: node.tour
+target_entity_type_id: node
+target_bundle: tour
+default_langcode: site_default
+language_alterable: false

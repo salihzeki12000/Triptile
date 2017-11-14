@@ -1,0 +1,39 @@
+uuid: 88837f7c-59c6-4b82-bb69-709fddd99e1c
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: train
+label: Train
+type: 'canonical_entities:node'
+pattern: '/train/[node:source:title]'
+selection_criteria:
+  4e239b4c-2b24-4e0e-92ec-f61a54eb6f7d:
+    id: node_type
+    bundles:
+      train_page: train_page
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 4e239b4c-2b24-4e0e-92ec-f61a54eb6f7d
+  ec2815f8-738e-4043-a3f6-a5ef8ccdc1fe:
+    id: language
+    langcodes:
+      en: en
+      ru: ru
+      es: es
+      pt: pt
+      it: it
+      fr: fr
+      de: de
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: ec2815f8-738e-4043-a3f6-a5ef8ccdc1fe
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Language

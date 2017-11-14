@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+id: popular-links
+label: 'Popular links'
+description: ''
+locked: false

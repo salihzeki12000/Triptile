@@ -1,0 +1,139 @@
+.entitytaxonomy-termcanonical {
+
+  #block-russiantrains-local-tasks {
+    display: none;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 1.875rem;
+    line-height: 2.375rem;
+    @include v-padding($v-padding);
+    margin: 0;
+
+    .field__item {
+      @include v-padding($blog-v-padding/2);
+    }
+
+    @media #{$mobile} {
+      margin: 0;
+      @include v-padding(0, $v-padding);
+    }
+  }
+
+  .term-wrapper {
+    .content {
+      @include v-padding($v-padding);
+
+      @media #{$mobile} {
+        @include v-padding(0, $v-padding/2);
+      }
+    }
+  }
+
+  .view-taxonomy-term {
+    max-width: $container-width;
+    width: 100%;
+    margin: 0 auto;
+
+    .views-row {
+      @include v-padding($v-padding);
+    }
+
+    .view-content {
+      padding-bottom: $v-padding*2;
+    }
+
+    .views-field {
+      width: 100%;
+
+      &:not(:last-of-type) {
+        padding-bottom: $blog-v-padding;
+
+        @media #{$mobile} {
+          padding-bottom: $blog-v-padding;
+        }
+      }
+    }
+
+    .views-field-title {
+      font-size: 1.875rem;
+      color: $blog-title-color;
+
+      @media #{$mobile} {
+        @include v-padding($v-padding/2);
+      }
+
+      a {
+        font-family: $blog-title-font-family;
+        font-size: 1.875rem;
+        color: $blog-title-color;
+
+        @media #{$mobile} {
+          line-height: 2.375rem;
+        }
+      }
+    }
+
+    .views-field-created {
+      color: $blog-description-color;
+      font-size: 1rem;
+      display: flex;
+      align-content: center;
+
+      &::before {
+        width: $blog-calendar-size;
+        height: $blog-calendar-size;
+        content: '';
+        display: inline-flex;
+        background: url("#{$path-to-images}/calendar.svg") no-repeat center center;
+        background-size: $blog-calendar-size;
+        margin-right: 7px;
+      }
+    }
+
+    .views-field-body {
+      font-size: 1.125rem;
+      font-family: $blog-description-font-family;
+      font-style: italic;
+      color: $blog-text-color;
+      padding-top: $blog-v-padding/2;
+      line-height: 1.75rem;
+      letter-spacing: 0.02rem;
+
+      @media #{$mobile} {
+        padding-top: 0;
+      }
+
+      p {
+        &:last-of-type {
+          margin: 0;
+        }
+      }
+    }
+
+    .views-field-view-node {
+      display: flex;
+      justify-content: flex-end;
+      padding-top: $v-padding/2;
+
+      .field-content {
+        @include colored-btn($color-white, $blog-btn-bg);
+        padding: 14px 0;
+
+        @media #{$mobile} {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+
+        a {
+          padding: 14px 24px;
+
+          @media #{$mobile} {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

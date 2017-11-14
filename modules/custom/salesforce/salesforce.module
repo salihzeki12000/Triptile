@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Contains salesforce.module.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\salesforce\SalesforceSync;
+
+/**
+ * Implements hook_help().
+ */
+function salesforce_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the salesforce module.
+    case 'help.page.salesforce':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Salesforce integration') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_entity_delete().
+ */
+function salesforce_entity_delete(EntityInterface $entity) {
+  \Drupal::service('salesforce_sync')->entityCrud($entity, SalesforceSync::OPERATION_DELETE);
+}

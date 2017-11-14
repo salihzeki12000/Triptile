@@ -1,0 +1,9 @@
+name: User
+type: module
+description: Extends default user module
+core: 8.x
+package: Custom
+dependencies:
+  - user
+  - telephone
+  - salesforce

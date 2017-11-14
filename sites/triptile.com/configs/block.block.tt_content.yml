@@ -1,0 +1,27 @@
+uuid: d08d506a-872d-4fc4-bed7-7294c3c56418
+langcode: ru
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - tt
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: tt_content
+theme: tt
+region: content
+weight: -2
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Содержимое страницы'
+  provider: system
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }

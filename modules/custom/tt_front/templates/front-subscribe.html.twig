@@ -1,0 +1,15 @@
+<div class="description">
+    {{ 'Northern Lights tours, The Netherlands & Belgium, Denmark vacations...<br>
+    or Request custom itinerary'|t }}
+</div>
+<div class="subscribe-form-wrapper" ng-controller="FrontSubscribeController">
+    <form name="subscribe-form">
+        <div class="subscribe-mail-wrapper">
+            <input type="email" placeholder="{{ 'Enter your email'|t }}" class="form-email" ng-model="data.email"
+                   ng-change="data.class.email = {}" ng-class="data.class.email" required>
+        </div>
+        <div class="form-actions">
+            <input type="button" value="{{ 'Read more'|t }}" class="form-submit" ng-click="subscribeLead()">
+        </div>
+    </form>
+</div>

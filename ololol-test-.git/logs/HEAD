@@ -1,0 +1,56 @@
+0000000000000000000000000000000000000000 aa8ec3be55a428b0e0f89b440e4de2d1684eb4a6 deweb-ss <sergey.shumskiy@scbali.com> 1501167869 +0300	clone: from https://ibbykov@bitbucket.org/resultant/triptile.git
+aa8ec3be55a428b0e0f89b440e4de2d1684eb4a6 cb25a9cfd804b4da72321b0bb73430f1d559e81b deweb-ss <sergey.shumskiy@scbali.com> 1501168551 +0300	checkout: moving from master to triptile
+cb25a9cfd804b4da72321b0bb73430f1d559e81b cb25a9cfd804b4da72321b0bb73430f1d559e81b deweb-ss <sergey.shumskiy@scbali.com> 1501231106 +0300	checkout: moving from triptile to triptile-start-project-dev-ss
+cb25a9cfd804b4da72321b0bb73430f1d559e81b fbf675012560e4b0a8d3c98747f79a0f08541da2 deweb-ss <sergey.shumskiy@scbali.com> 1501240296 +0300	pull origin master: Merge made by the 'recursive' strategy.
+fbf675012560e4b0a8d3c98747f79a0f08541da2 cb25a9cfd804b4da72321b0bb73430f1d559e81b deweb-ss <sergey.shumskiy@scbali.com> 1501240503 +0300	checkout: moving from triptile-start-project-dev-ss to triptile
+cb25a9cfd804b4da72321b0bb73430f1d559e81b 8dfce1f7dcfd40ef1bbfca950481538be7de422e deweb-ss <sergey.shumskiy@scbali.com> 1501240539 +0300	pull: Fast-forward
+8dfce1f7dcfd40ef1bbfca950481538be7de422e 8dfce1f7dcfd40ef1bbfca950481538be7de422e deweb-ss <sergey.shumskiy@scbali.com> 1501323136 +0300	checkout: moving from triptile to triptile-task-13108-1
+8dfce1f7dcfd40ef1bbfca950481538be7de422e 19836c1fc2e13eff34b883ac4fe3c1d2a128cd82 deweb-ss <sergey.shumskiy@scbali.com> 1501324900 +0300	commit: [triptile-task-13108-1] : fix bug with "Recommended days in SF instead of 3 days by default"
+19836c1fc2e13eff34b883ac4fe3c1d2a128cd82 ab5eecf532818b5f06de0900dc2a0192113c0829 deweb-ss <sergey.shumskiy@scbali.com> 1501326541 +0300	commit: [triptile-task-13108-1] : fix bug with - output type in section "Total" number of days.
+ab5eecf532818b5f06de0900dc2a0192113c0829 45a1dd8b29355057a19ab45742685c94d4f94cb4 deweb-ss <sergey.shumskiy@scbali.com> 1501328953 +0300	commit: [triptile-task-13108-1] : fix bug with - output type in section "Total" number of days. #2
+45a1dd8b29355057a19ab45742685c94d4f94cb4 8dfce1f7dcfd40ef1bbfca950481538be7de422e deweb-ss <sergey.shumskiy@scbali.com> 1501482458 +0300	checkout: moving from triptile-task-13108-1 to triptile
+8dfce1f7dcfd40ef1bbfca950481538be7de422e 8dfce1f7dcfd40ef1bbfca950481538be7de422e deweb-ss <sergey.shumskiy@scbali.com> 1501482494 +0300	checkout: moving from triptile to triptile-task-13108-2
+8dfce1f7dcfd40ef1bbfca950481538be7de422e 45a1dd8b29355057a19ab45742685c94d4f94cb4 deweb-ss <sergey.shumskiy@scbali.com> 1501483443 +0300	checkout: moving from triptile-task-13108-2 to triptile-task-13108-1
+45a1dd8b29355057a19ab45742685c94d4f94cb4 54a8aecf3bc7d8bd536b9c704bbdd0ee3958fc83 deweb-ss <sergey.shumskiy@scbali.com> 1501483524 +0300	commit: [triptile-task-13108-1] : fix bug - class LoadEntities fix function oneHub().
+54a8aecf3bc7d8bd536b9c704bbdd0ee3958fc83 2de5af6111f3ae80dd0f12be3c6d53c3a407fec9 deweb-ss <sergey.shumskiy@scbali.com> 1501484259 +0300	commit: [triptile-task-13108-1] : fix bug - set type for data 'days' integer.
+2de5af6111f3ae80dd0f12be3c6d53c3a407fec9 8dfce1f7dcfd40ef1bbfca950481538be7de422e deweb-ss <sergey.shumskiy@scbali.com> 1501489821 +0300	checkout: moving from triptile-task-13108-1 to triptile-task-13108-2
+8dfce1f7dcfd40ef1bbfca950481538be7de422e 2de5af6111f3ae80dd0f12be3c6d53c3a407fec9 deweb-ss <sergey.shumskiy@scbali.com> 1501501562 +0300	checkout: moving from triptile-task-13108-2 to triptile-task-13108-1
+2de5af6111f3ae80dd0f12be3c6d53c3a407fec9 f06898c7722f16fe052bb38f87263d1d988be5ec deweb-ss <sergey.shumskiy@scbali.com> 1501508920 +0300	commit: [triptile-task-13108-1] : fix bug with wrong output Price for Hotel.
+f06898c7722f16fe052bb38f87263d1d988be5ec fc2cd31e3a2726777f0396c0923ad8a2fc1685d3 deweb-ss <sergey.shumskiy@scbali.com> 1501518076 +0300	commit: [triptile-task-13108-1] : fix bug from check list "Wrong hotel data"
+fc2cd31e3a2726777f0396c0923ad8a2fc1685d3 2cb1d24600f203baf4c23f75d05e1fd53cbb6456 deweb-ss <sergey.shumskiy@scbali.com> 1501574398 +0300	commit: [triptile-task-13108-1] : fix bug from check list "Wrong hotel data" #2 -> Removed from the list of hotels that do not have prices
+2cb1d24600f203baf4c23f75d05e1fd53cbb6456 3ca23e63dda3976210a0ce9bb5e5f1ed282e66d0 deweb-ss <sergey.shumskiy@scbali.com> 1501671940 +0300	commit: [triptile-task-13108-1] : fix bug "Not all connections are showing and in not in the correct order"
+3ca23e63dda3976210a0ce9bb5e5f1ed282e66d0 8dfce1f7dcfd40ef1bbfca950481538be7de422e deweb-ss <sergey.shumskiy@scbali.com> 1501672219 +0300	checkout: moving from triptile-task-13108-1 to triptile
+8dfce1f7dcfd40ef1bbfca950481538be7de422e a07c1e948d6b0df5aaa7a166765d369c723d0bdd deweb-ss <sergey.shumskiy@scbali.com> 1501672237 +0300	pull: Fast-forward
+a07c1e948d6b0df5aaa7a166765d369c723d0bdd 3ca23e63dda3976210a0ce9bb5e5f1ed282e66d0 deweb-ss <sergey.shumskiy@scbali.com> 1501672788 +0300	checkout: moving from triptile to triptile-task-13108-1
+3ca23e63dda3976210a0ce9bb5e5f1ed282e66d0 1eee6055f321019ae4af6703f67ab9c76d1836a4 deweb-ss <sergey.shumskiy@scbali.com> 1501682745 +0300	commit: [triptile-task-13108-1] : fix bug "error from console"
+1eee6055f321019ae4af6703f67ab9c76d1836a4 a07c1e948d6b0df5aaa7a166765d369c723d0bdd deweb-ss <sergey.shumskiy@scbali.com> 1501682801 +0300	checkout: moving from triptile-task-13108-1 to triptile
+a07c1e948d6b0df5aaa7a166765d369c723d0bdd 1eee6055f321019ae4af6703f67ab9c76d1836a4 deweb-ss <sergey.shumskiy@scbali.com> 1501683062 +0300	checkout: moving from triptile to triptile-task-13108-1
+1eee6055f321019ae4af6703f67ab9c76d1836a4 a1701fcfca9e3ffa402796d7e2a6b3d277e6057b deweb-ss <sergey.shumskiy@scbali.com> 1501746819 +0300	commit: [triptile-task-13108-1] : fix bug "error different display of the results of the city of Madrid (or other undiscovered cities) in different browsers "
+a1701fcfca9e3ffa402796d7e2a6b3d277e6057b a07c1e948d6b0df5aaa7a166765d369c723d0bdd deweb-ss <sergey.shumskiy@scbali.com> 1501746877 +0300	checkout: moving from triptile-task-13108-1 to triptile
+a07c1e948d6b0df5aaa7a166765d369c723d0bdd a1701fcfca9e3ffa402796d7e2a6b3d277e6057b deweb-ss <sergey.shumskiy@scbali.com> 1501747071 +0300	checkout: moving from triptile to triptile-task-13108-1
+a1701fcfca9e3ffa402796d7e2a6b3d277e6057b a07c1e948d6b0df5aaa7a166765d369c723d0bdd deweb-ss <sergey.shumskiy@scbali.com> 1501749013 +0300	checkout: moving from triptile-task-13108-1 to triptile
+a07c1e948d6b0df5aaa7a166765d369c723d0bdd a1701fcfca9e3ffa402796d7e2a6b3d277e6057b deweb-ss <sergey.shumskiy@scbali.com> 1501749759 +0300	checkout: moving from triptile to triptile-task-13108-1
+a1701fcfca9e3ffa402796d7e2a6b3d277e6057b 1c61817d72b035471e1996c8f91060cf06355eda deweb-ss <sergey.shumskiy@scbali.com> 1501770095 +0300	commit: [triptile-task-13108-1] : fix bug "Recommended days fix for all connections hubs"
+1c61817d72b035471e1996c8f91060cf06355eda a07c1e948d6b0df5aaa7a166765d369c723d0bdd deweb-ss <sergey.shumskiy@scbali.com> 1501770307 +0300	checkout: moving from triptile-task-13108-1 to triptile
+a07c1e948d6b0df5aaa7a166765d369c723d0bdd c249f8227f9e0550f5f214a53234013a7d8c3dd7 deweb-ss <sergey.shumskiy@scbali.com> 1501770331 +0300	pull: Fast-forward
+c249f8227f9e0550f5f214a53234013a7d8c3dd7 5af5c6ddcfbb9d1c4a224d5937e68ad5696e002e deweb-ss <sergey.shumskiy@scbali.com> 1501844632 +0300	commit: [triptile-task-13108-1] : add convert to all prices for all entity, from current code currency to USD.
+5af5c6ddcfbb9d1c4a224d5937e68ad5696e002e 5af5c6ddcfbb9d1c4a224d5937e68ad5696e002e deweb-ss <sergey.shumskiy@scbali.com> 1502267465 +0300	checkout: moving from triptile to triptile-save-share
+5af5c6ddcfbb9d1c4a224d5937e68ad5696e002e d659713659478cda0a9b20307500f54ea8e4df76 deweb-ss <sergey.shumskiy@scbali.com> 1502267592 +0300	commit: [triptile-save-share] : Hotel get "Access denied for Hotels" since no SS with Triptile publish = True
+d659713659478cda0a9b20307500f54ea8e4df76 aa8ec3be55a428b0e0f89b440e4de2d1684eb4a6 deweb-ss <sergey.shumskiy@scbali.com> 1502268252 +0300	checkout: moving from triptile-save-share to master
+aa8ec3be55a428b0e0f89b440e4de2d1684eb4a6 5af5c6ddcfbb9d1c4a224d5937e68ad5696e002e deweb-ss <sergey.shumskiy@scbali.com> 1502268264 +0300	checkout: moving from master to triptile
+5af5c6ddcfbb9d1c4a224d5937e68ad5696e002e f0b58781b0c9a3d454f8056a0837df11f9e4f540 deweb-ss <sergey.shumskiy@scbali.com> 1502268305 +0300	pull: Fast-forward
+f0b58781b0c9a3d454f8056a0837df11f9e4f540 e55de971a363584fa1500e8e269582385ba4e667 deweb-ss <sergey.shumskiy@scbali.com> 1502945682 +0300	pull: Fast-forward
+e55de971a363584fa1500e8e269582385ba4e667 e55de971a363584fa1500e8e269582385ba4e667 deweb-ss <sergey.shumskiy@scbali.com> 1502951467 +0300	checkout: moving from triptile to triptile-task-13108-fix
+e55de971a363584fa1500e8e269582385ba4e667 4e9038ccf91b77b44538b69a705d0e47473585f1 deweb-ss <sergey.shumskiy@scbali.com> 1502952932 +0300	commit: Correct sorting connections by overall rating = sum rating + hub rating
+4e9038ccf91b77b44538b69a705d0e47473585f1 3399414771fd62379bb02fa63eca0bbb7eb3b095 deweb-ss <sergey.shumskiy@scbali.com> 1502960457 +0300	commit: Hotel: the amount is multiplied by the number of nights. If more than 1 day is selected, day = day - 1. Else, day = 1.
+3399414771fd62379bb02fa63eca0bbb7eb3b095 ffa48cecb454d3e6ee26d83c4147f55b431906e4 deweb-ss <sergey.shumskiy@scbali.com> 1502960702 +0300	commit: Changed recommendedHubsCount to 15 element.
+ffa48cecb454d3e6ee26d83c4147f55b431906e4 25213b07118394a0a213f7aab3ff6bfc30fad9f6 deweb-ss <sergey.shumskiy@scbali.com> 1502984027 +0300	commit: Floating unit on screens in 13".
+25213b07118394a0a213f7aab3ff6bfc30fad9f6 494c4177532aaf8d5575a8f1b6b43bf8cdb20737 deweb-ss <sergey.shumskiy@scbali.com> 1502984559 +0300	commit: Floating unit on screens in 13" -> add max-width = 1076px
+494c4177532aaf8d5575a8f1b6b43bf8cdb20737 444d016543b3731b838aac7e21227dc19eb9ce9a deweb-ss <sergey.shumskiy@scbali.com> 1502986688 +0300	commit: Floating unit on screens in 13" -> add button 'Save & Share'
+444d016543b3731b838aac7e21227dc19eb9ce9a 6e5ed54acef6a28fb4224da03cee9c91984617dc deweb-ss <sergey.shumskiy@scbali.com> 1503034451 +0300	pull origin triptile: Fast-forward
+6e5ed54acef6a28fb4224da03cee9c91984617dc f6ca6a2a6e0319d2cd8c6dad2fef29f5679a7414 deweb-ss <sergey.shumskiy@scbali.com> 1503059107 +0300	commit: new sort for recommended Hubs.
+f6ca6a2a6e0319d2cd8c6dad2fef29f5679a7414 935d0552e72cf1c7a8a77b44cfb3d4f79ff0864b deweb-ss <sergey.shumskiy@scbali.com> 1503059150 +0300	merge origin/triptile-task-13108-fix: Merge made by the 'recursive' strategy.
+935d0552e72cf1c7a8a77b44cfb3d4f79ff0864b e55de971a363584fa1500e8e269582385ba4e667 deweb-ss <sergey.shumskiy@scbali.com> 1503059234 +0300	checkout: moving from triptile-task-13108-fix to triptile
+e55de971a363584fa1500e8e269582385ba4e667 0360c1e1776a985153450cc0008cf900ff2f327e deweb-ss <sergey.shumskiy@scbali.com> 1503059251 +0300	pull origin triptile: Fast-forward
+0360c1e1776a985153450cc0008cf900ff2f327e aa8ec3be55a428b0e0f89b440e4de2d1684eb4a6 deweb-ss <sergey.shumskiy@scbali.com> 1510662843 +0200	checkout: moving from triptile to master
+aa8ec3be55a428b0e0f89b440e4de2d1684eb4a6 0360c1e1776a985153450cc0008cf900ff2f327e deweb-ss <sergey.shumskiy@scbali.com> 1510662960 +0200	checkout: moving from master to triptile

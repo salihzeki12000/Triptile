@@ -1,0 +1,6 @@
+entity.pdf_cutter_template.add_form:
+  route_name: 'entity.pdf_cutter_template.add_form'
+  title: 'Add Pdf cutter template'
+  appears_on:
+    - entity.pdf_cutter_template.collection
+

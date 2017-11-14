@@ -1,0 +1,32 @@
+uuid: 5487812b-28fd-4472-b2fa-b8a28a67caab
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration
+_core:
+  default_config_hash: rZe9pBrIUgQ3C9stLA4E90cVOGEHnp6BHWSBhE2-xA4
+id: passenger
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: train_base
+label: Passenger
+source:
+  plugin: passenger
+  key: travelallrussia
+process:
+  first_name: first_name
+  last_name: last_name
+  gender: gender
+  citizenship: citizenship
+  id_number: id_number
+  dob: date_of_birth
+  uid: destination_user_id
+destination:
+  plugin: 'entity:passenger'
+migration_dependencies:
+  optional:
+    - user

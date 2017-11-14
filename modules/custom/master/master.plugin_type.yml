@@ -1,0 +1,5 @@
+field_form_type:
+  label: Field form type
+  provider: master
+  plugin_manager_service_id: plugin.manager.field_form_type
+  plugin_definition_decorator_class: \Drupal\plugin\PluginDefinition\ArrayPluginDefinitionDecorator

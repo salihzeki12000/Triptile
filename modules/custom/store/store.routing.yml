@@ -1,0 +1,57 @@
+store.store_lists:
+  path: '/admin/store'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+  requirements:
+    _permission: 'access administration pages'
+
+store.store_types:
+  path: '/admin/store-types'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+  requirements:
+    _permission: 'access administration pages'
+
+entity.invoice.user_view:
+  path: '/invoice/{invoice_number}'
+  defaults:
+    _controller: '\Drupal\store\Controller\InvoicePage::userView'
+    _title_callback: '\Drupal\store\Controller\InvoicePage::getTitle'
+  options:
+    parameters:
+      invoice_number:
+        type: invoice
+  requirements:
+    _permission: 'view published invoice entities'
+
+entity.store_order.user_view:
+  path: '/order/{order_hash}'
+  defaults:
+    _controller: '\Drupal\store\Controller\StoreThankYouPage::userView'
+    _title_callback: '\Drupal\store\Controller\StoreThankYouPage::getTitle'
+  options:
+    parameters:
+      order_hash:
+        type: store_order
+  requirements:
+    _permission: 'view published store order entities'
+
+store.currency.switch_currency:
+  path: '/currency/switch/{currency}'
+  defaults:
+    _controller: '\Drupal\store\Controller\SwitchCurrency::switchCurrency'
+    _title: 'Switch currency'
+  options:
+    query:
+      destination: '{destination}'
+  requirements:
+    _permission: 'access content'
+    currency: '[a-zA-z ]+'
+
+store.config_form:
+  path: '/admin/admin/config/rail-ninja-config/store-config'
+  defaults:
+    _form: '\Drupal\store\Form\Admin\StoreConfigForm'
+  requirements:
+    _permission: 'access store config'
+

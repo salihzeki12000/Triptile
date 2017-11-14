@@ -1,0 +1,27 @@
+id: user
+migration_group: rn_user
+label: User
+source:
+  plugin: user
+  key: travelallrussia
+process:
+  name: username
+  pass: pass
+  mail: email_address
+  status: is_active
+  first_name: first_name
+  last_name: last_name
+  'address/country_code': country
+  'address/administrative_area': state
+  'address/locality': city
+  'address/postal_code': postal_code
+  'address/address_line1': street1
+  'address/address_line1': street2
+  phone_number: phone
+destination:
+  plugin: entity:user
+migration_dependencies: {}
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

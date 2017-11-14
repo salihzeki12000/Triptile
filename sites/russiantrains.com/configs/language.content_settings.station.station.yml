@@ -1,0 +1,15 @@
+uuid: 1aee3e22-5fa8-48cd-a3fe-13774f08b488
+langcode: en
+status: true
+dependencies:
+  module:
+    - content_translation
+    - train_base
+third_party_settings:
+  content_translation:
+    enabled: true
+id: station.station
+target_entity_type_id: station
+target_bundle: station
+default_langcode: site_default
+language_alterable: true

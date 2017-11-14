@@ -1,0 +1,55 @@
+uuid: a57d403e-a39a-4c1d-9b47-f994e10c8e41
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration
+_core:
+  default_config_hash: yUb4sUpGzdLIxu9OeR0dBcPLmmEVFZP-rNe_-tQJwGg
+id: blog_image
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - file
+  - image
+migration_group: content_page
+label: 'Blog image'
+source:
+  plugin: blog_image
+  key: travelallrussia
+  constants:
+    file_source_uri: 'http://www.russiantrains.com/uploads/blog'
+    file_dest_uri: 'public://migrated/blog'
+process:
+  file_source:
+    plugin: concat
+    delimiter: /
+    source:
+      - constants/file_source_uri
+      - image
+  file_dest:
+    -
+      plugin: concat
+      delimiter: /
+      source:
+        - constants/file_dest_uri
+        - image
+    -
+      plugin: urlencode
+  filename: image
+  uri:
+    plugin: file_copy
+    source:
+      - '@file_source'
+      - '@file_dest'
+  uid:
+    plugin: default_value
+    default_value: 1
+  status:
+    plugin: default_value
+    default_value: 1
+destination:
+  plugin: 'entity:file'
+migration_dependencies: {  }

@@ -1,0 +1,73 @@
+uuid: 1369c3ec-d098-4279-9258-6ced778ef659
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_display.comment.train_review.default
+    - core.entity_view_mode.node.coach_class_without_thumbs
+    - field.field.node.train_page.body
+    - field.field.node.train_page.field_brand
+    - field.field.node.train_page.field_gallery
+    - field.field.node.train_page.field_image
+    - field.field.node.train_page.field_reviews
+    - field.field.node.train_page.field_text_below_map
+    - field.field.node.train_page.field_text_on_image
+    - node.type.train_page
+  module:
+    - comment
+    - image
+    - text
+    - user
+id: node.train_page.coach_class_without_thumbs
+targetEntityType: node
+bundle: train_page
+mode: coach_class_without_thumbs
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_image:
+    weight: 2
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_reviews:
+    weight: 5
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    type: comment_default
+    region: content
+  field_text_below_map:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_text_on_image:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_brand: true
+  field_gallery: true
+  langcode: true

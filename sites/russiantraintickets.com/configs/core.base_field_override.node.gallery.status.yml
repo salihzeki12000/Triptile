@@ -1,0 +1,22 @@
+uuid: dc48c471-ebf4-43f4-8d3b-932e44f65434
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.gallery
+id: node.gallery.status
+field_name: status
+entity_type: node
+bundle: gallery
+label: 'Publishing status'
+description: 'A boolean indicating whether the node is published.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

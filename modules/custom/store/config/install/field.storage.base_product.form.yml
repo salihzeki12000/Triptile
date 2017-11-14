@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - plugin
+    - store
+id: base_product.form
+field_name: form
+entity_type: base_product
+type: 'plugin:field_form_type'
+settings: {  }
+module: plugin
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

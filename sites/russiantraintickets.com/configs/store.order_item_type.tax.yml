@@ -1,0 +1,8 @@
+uuid: 006ed45e-84e0-4eec-a6bc-09efd3c28da1
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: kPzn8eUddgxFVDjXpT3taxru62cfz5m63v7PVzLvgek
+id: tax
+label: Tax

@@ -1,0 +1,10 @@
+uuid: 5c1fa448-6bd2-4a9a-99ad-3e0852089b4f
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: q6M9u3mPum-MJAtv-ctbjrB_mGPrAWAwgFA1So9DZDU
+id: popular-links
+label: 'Popular routes'
+description: ''
+locked: false

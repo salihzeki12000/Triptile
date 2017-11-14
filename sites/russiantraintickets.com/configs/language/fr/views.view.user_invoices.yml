@@ -1,0 +1,30 @@
+label: 'Factures d''utilisateur'
+display:
+  default:
+    display_options:
+      empty:
+        area:
+          content:
+            value: "<p>Vous n'avez pas encore des factures.</p>\r\n"
+            format: basic_html
+      title: 'Mes factures'
+      exposed_form:
+        options:
+          submit_button: Appliquer
+          reset_button_label: Réinitialiser
+          exposed_sorts_label: 'Trier par'
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Eléments par page '
+      fields:
+        number:
+          label: 'Numéro de facture'
+        amount__number:
+          label: 'Somme finale'
+        status:
+          label: Statut
+  my_invoices:
+    display_options:
+      menu:
+        title: 'Mes factures'

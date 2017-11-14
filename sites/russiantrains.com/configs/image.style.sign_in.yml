@@ -1,0 +1,15 @@
+uuid: 1f7935d5-41b7-4328-8ea4-f298425e7003
+langcode: en
+status: true
+dependencies: {  }
+name: sign_in
+label: 'Sign in'
+effects:
+  e05c128b-97c4-442e-8da9-e0ed6b9ead32:
+    uuid: e05c128b-97c4-442e-8da9-e0ed6b9ead32
+    id: image_crop
+    weight: 1
+    data:
+      width: 480
+      height: 750
+      anchor: center-center

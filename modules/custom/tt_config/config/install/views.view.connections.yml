@@ -1,0 +1,1093 @@
+uuid: cfe61230-dfac-4a82-95d3-0a6efd8ef63b
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - rest
+    - serialization
+    - trip_base
+_core:
+  default_config_hash: H1cbGPchNJhzaP9sof9VvN_x4c1PO_htiTdn2LjQTZc
+id: connections
+label: Connections
+module: views
+description: ''
+tag: ''
+base_table: connection_field_data
+base_field: id
+core: 8.x
+display:
+  default:
+    display_plugin: default
+    id: default
+    display_title: Master
+    position: 0
+    display_options:
+      access:
+        type: none
+        options: {  }
+      cache:
+        type: tag
+        options: {  }
+      query:
+        type: views_query
+        options:
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
+          query_comment: ''
+          query_tags: {  }
+      exposed_form:
+        type: basic
+        options:
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      pager:
+        type: mini
+        options:
+          items_per_page: 10
+          offset: 0
+          id: 0
+          total_pages: null
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          tags:
+            previous: ‹‹
+            next: ››
+      style:
+        type: serializer
+      row:
+        type: fields
+        options:
+          inline: {  }
+          separator: ''
+          hide_empty: false
+          default_field_elements: true
+      fields:
+        id:
+          id: id
+          table: connection_field_data
+          field: id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: connection
+          entity_field: id
+          plugin_id: field
+        name:
+          table: connection_field_data
+          field: name
+          id: name
+          entity_type: null
+          entity_field: name
+          plugin_id: field
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        overall_rating:
+          id: overall_rating
+          table: connection_field_data
+          field: overall_rating
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_decimal
+          settings:
+            thousand_separator: ''
+            prefix_suffix: false
+            decimal_separator: .
+            scale: 2
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: connection
+          entity_field: overall_rating
+          plugin_id: field
+        point_1:
+          id: point_1
+          table: connection_field_data
+          field: point_1
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_entity_id
+          settings: {  }
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: connection
+          entity_field: point_1
+          plugin_id: field
+        point_2:
+          id: point_2
+          table: connection_field_data
+          field: point_2
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_entity_id
+          settings: {  }
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: connection
+          entity_field: point_2
+          plugin_id: field
+        price_options:
+          id: price_options
+          table: connection__price_options
+          field: price_options
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_entity_id
+          settings: {  }
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: connection
+          entity_field: price_options
+          plugin_id: field
+        rating:
+          id: rating
+          table: connection_field_data
+          field: rating
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_decimal
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+            decimal_separator: .
+            scale: 2
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: connection
+          entity_field: rating
+          plugin_id: field
+        duration:
+          id: duration
+          table: connection_field_data
+          field: duration
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: connection
+          entity_field: duration
+          plugin_id: field
+        type:
+          id: type
+          table: connection_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: list_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: connection
+          entity_field: type
+          plugin_id: field
+      filters: {  }
+      sorts: {  }
+      header: {  }
+      footer: {  }
+      empty: {  }
+      relationships: {  }
+      arguments:
+        id:
+          id: id
+          table: connection_field_data
+          field: id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          default_action: default
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: raw
+          default_argument_options:
+            index: 1
+            use_alias: false
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            items_per_page: 25
+            override: false
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: false
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          break_phrase: false
+          not: false
+          entity_type: connection
+          entity_field: id
+          plugin_id: numeric
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - request_format
+        - url
+        - url.query_args
+      tags: {  }
+  rest_export_1:
+    display_plugin: rest_export
+    id: rest_export_1
+    display_title: Connections
+    position: 1
+    display_options:
+      display_extenders: {  }
+      path: connections/get.json
+      pager:
+        type: some
+        options:
+          items_per_page: 10
+          offset: 0
+      style:
+        type: serializer
+        options:
+          grouping: {  }
+          uses_fields: false
+          formats: {  }
+      row:
+        type: data_field
+        options:
+          field_options:
+            id:
+              alias: ''
+              raw_output: false
+            name:
+              alias: ''
+              raw_output: false
+            overall_rating:
+              alias: ''
+              raw_output: false
+            point_1:
+              alias: ''
+              raw_output: true
+            point_2:
+              alias: ''
+              raw_output: true
+            price_options:
+              alias: ''
+              raw_output: true
+            rating:
+              alias: ''
+              raw_output: false
+            duration:
+              alias: ''
+              raw_output: false
+            type:
+              alias: ''
+              raw_output: false
+      display_description: ' '
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - request_format
+        - url
+      tags: {  }
+  rest_export_2:
+    display_plugin: rest_export
+    id: rest_export_2
+    display_title: 'One connection'
+    position: 1
+    display_options:
+      display_extenders: {  }
+      path: connections/%/get.json
+      pager:
+        type: some
+        options:
+          items_per_page: 10
+          offset: 0
+      style:
+        type: serializer
+        options:
+          grouping: {  }
+          uses_fields: false
+          formats: {  }
+      row:
+        type: data_field
+        options:
+          field_options:
+            id:
+              alias: ''
+              raw_output: false
+            name:
+              alias: ''
+              raw_output: false
+            overall_rating:
+              alias: ''
+              raw_output: false
+            point_1:
+              alias: ''
+              raw_output: true
+            point_2:
+              alias: ''
+              raw_output: true
+            price_options:
+              alias: ''
+              raw_output: true
+            rating:
+              alias: ''
+              raw_output: false
+            duration:
+              alias: ''
+              raw_output: false
+            type:
+              alias: ''
+              raw_output: false
+      display_description: ' '
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - request_format
+        - url
+      tags: {  }
+  rest_export_3:
+    display_plugin: rest_export
+    id: rest_export_3
+    display_title: 'One connection by hub'
+    position: 1
+    display_options:
+      display_extenders: {  }
+      path: connections/hub/%/get.json
+      pager:
+        type: some
+        options:
+          items_per_page: 10
+          offset: 0
+      style:
+        type: serializer
+        options:
+          grouping: {  }
+          uses_fields: false
+          formats: {  }
+      row:
+        type: data_field
+        options:
+          field_options:
+            id:
+              alias: ''
+              raw_output: false
+            name:
+              alias: ''
+              raw_output: false
+            overall_rating:
+              alias: ''
+              raw_output: false
+            point_1:
+              alias: ''
+              raw_output: true
+            point_2:
+              alias: ''
+              raw_output: true
+            price_options:
+              alias: ''
+              raw_output: true
+            rating:
+              alias: ''
+              raw_output: false
+            duration:
+              alias: ''
+              raw_output: false
+            type:
+              alias: ''
+              raw_output: false
+      display_description: ' '
+      arguments:
+        point_1:
+          id: point_1
+          table: connection_field_data
+          field: point_1
+          relationship: none
+          group_type: group
+          admin_label: ''
+          default_action: default
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: raw
+          default_argument_options:
+            index: 2
+            use_alias: false
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            items_per_page: 25
+            override: false
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: false
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          break_phrase: false
+          not: false
+          entity_type: connection
+          entity_field: point_1
+          plugin_id: numeric
+      defaults:
+        arguments: false
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - request_format
+        - url
+      tags: {  }
+  rest_export_4:
+    display_plugin: rest_export
+    id: rest_export_4
+    display_title: 'Connections between hubs'
+    position: 1
+    display_options:
+      display_extenders: {  }
+      path: connections/a/%/b/%/get.json
+      pager:
+        type: some
+        options:
+          items_per_page: 10
+          offset: 0
+      style:
+        type: serializer
+        options:
+          grouping: {  }
+          uses_fields: false
+          formats: {  }
+      row:
+        type: data_field
+        options:
+          field_options:
+            id:
+              alias: ''
+              raw_output: false
+            name:
+              alias: ''
+              raw_output: false
+            overall_rating:
+              alias: ''
+              raw_output: false
+            point_1:
+              alias: ''
+              raw_output: true
+            point_2:
+              alias: ''
+              raw_output: true
+            price_options:
+              alias: ''
+              raw_output: true
+            rating:
+              alias: ''
+              raw_output: false
+            duration:
+              alias: ''
+              raw_output: false
+            type:
+              alias: ''
+              raw_output: false
+      display_description: ' '
+      arguments:
+        point_1:
+          id: point_1
+          table: connection_field_data
+          field: point_1
+          relationship: none
+          group_type: group
+          admin_label: ''
+          default_action: default
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: raw
+          default_argument_options:
+            index: 2
+            use_alias: false
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            items_per_page: 25
+            override: false
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: false
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          break_phrase: false
+          not: false
+          entity_type: connection
+          entity_field: point_1
+          plugin_id: numeric
+        point_2:
+          id: point_2
+          table: connection_field_data
+          field: point_2
+          relationship: none
+          group_type: group
+          admin_label: ''
+          default_action: default
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: raw
+          default_argument_options:
+            index: 4
+            use_alias: false
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            items_per_page: 25
+            override: false
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: false
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          break_phrase: false
+          not: false
+          entity_type: connection
+          entity_field: point_2
+          plugin_id: numeric
+      defaults:
+        arguments: false
+        sorts: false
+      sorts:
+        rating:
+          id: rating
+          table: connection_field_data
+          field: rating
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          entity_type: connection
+          entity_field: rating
+          plugin_id: standard
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - request_format
+        - url
+      tags: {  }

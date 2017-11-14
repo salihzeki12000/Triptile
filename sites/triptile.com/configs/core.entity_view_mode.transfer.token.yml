@@ -1,0 +1,10 @@
+uuid: 63016bac-c29c-404f-b20b-0a80c6f1b439
+langcode: en
+status: true
+dependencies:
+  module:
+    - trip_base
+id: transfer.token
+label: Token
+targetEntityType: transfer
+cache: true

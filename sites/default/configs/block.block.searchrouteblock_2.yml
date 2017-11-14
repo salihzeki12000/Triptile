@@ -1,0 +1,25 @@
+uuid: 3bff2669-2440-4d4f-819f-8b56c9802640
+langcode: en
+status: false
+dependencies:
+  module:
+    - rn_content
+    - train_booking
+  theme:
+    - railninja
+third_party_settings:
+  rn_content:
+    classes: ''
+id: searchrouteblock_2
+theme: railninja
+region: content
+weight: -8
+provider: null
+plugin: search_route_block
+settings:
+  id: search_route_block
+  label: 'Book Train Tickets Online'
+  provider: train_booking
+  label_display: '0'
+  image: null
+visibility: {  }

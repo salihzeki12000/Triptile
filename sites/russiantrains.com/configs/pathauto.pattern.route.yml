@@ -1,0 +1,39 @@
+uuid: a9f8927c-71a8-4b01-b05e-e376340d03a9
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: route
+label: Route
+type: 'canonical_entities:node'
+pattern: '/route/[node:source:title]'
+selection_criteria:
+  a815d122-8fc4-4212-a443-1bdf1d6cd8ed:
+    id: node_type
+    bundles:
+      route_page: route_page
+    negate: false
+    context_mapping:
+      node: node
+    uuid: a815d122-8fc4-4212-a443-1bdf1d6cd8ed
+  92e7c8e0-9d80-4416-b0a5-48d7c50dceb7:
+    id: language
+    langcodes:
+      en: en
+      ru: ru
+      es: es
+      pt: pt
+      it: it
+      fr: fr
+      de: de
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: 92e7c8e0-9d80-4416-b0a5-48d7c50dceb7
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Language

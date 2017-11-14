@@ -1,0 +1,608 @@
+$service-size: 20px;
+$train-subtotal-width: 60%;
+$gallery-icon-size: 20px;
+
+.no-result {
+  color: $tt-dark-note-color;
+  width: 100%;
+
+  @media #{$tablet} {
+    text-align: center;
+  }
+
+  @media #{$mobile} {
+    @include v-padding($tt-v-padding);
+    @include side-padding($tt-mobile-h-padding);
+    text-align: center;
+  }
+}
+
+#edit-main-trains {
+  @include flex;
+  flex-direction: column;
+  border: $tt-border;
+  border-bottom-width: 0;
+
+  .no-result {
+    @include side-padding($tt-h-padding);
+    @include v-padding($tt-v-padding);
+    border-bottom: $tt-border;
+
+    @media #{$tablet} {
+      text-align: left;
+    }
+
+    @media #{$mobile} {
+      @include side-padding($tt-mobile-h-padding);
+      text-align: left;
+    }
+  }
+
+  /****** TRAIN INFO ******/
+  .train-wrapper {
+    border-bottom: $tt-border;
+
+    &.opened {
+      border: $tt-hover-border;
+    }
+
+    .time-row {
+      display: inline-flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-between;
+      align-items: stretch;
+      padding: $tt-v-padding $tt-h-padding;
+
+      .train-col {
+        flex-basis: $tt-time-width;
+      }
+
+      .right-column {
+        flex-basis: 100% - $tt-time-width;
+        @include flex;
+        align-items: flex-start;
+      }
+
+      .price-col {
+        flex-basis: 100% - $tt-button-width;
+      }
+
+      .train-select-col {
+        flex-basis: $tt-button-width;
+      }
+
+      .train-time {
+        @include flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: $tt-v-padding;
+        max-width: $tt-time-max-width;
+      }
+
+      .time {
+        font-size: $tt-time-size;
+        color: $tt-time-color;
+      }
+
+      .run-time {
+        color: $tt-dark-note-color;
+        font-style: italic;
+        font-size: $tt-small-size;
+      }
+
+      .arrow {
+        &::before {
+          @include awesome-icon("\f105");
+          color: $tt-light-note-color;
+          font-style: normal;
+        }
+      }
+
+      .train-info-row {
+        font-size: $tt-small-size;
+        @include flex;
+        align-items: flex-start;
+        padding-bottom: 10px;
+        flex-flow: row wrap;
+
+        & > * {
+          display: inline-flex;
+        }
+
+        img {
+          height: 20px;
+          margin-right: 5px;
+        }
+
+        .train-category {
+          color: $tt-dark-note-color;
+          margin-right: 5px;
+        }
+
+        .arrival-note {
+          color: $tt-select-color;
+          flex-basis: 100%;
+        }
+      }
+
+      .rating-popup-trigger {
+        color: $tt-dark-note-color;
+        @include transition;
+        text-decoration: none;
+
+        &:hover {
+          color: $tt-light-note-color;
+          text-decoration: none;
+        }
+      }
+
+      $rating-stars-decrement: 0.88;
+
+      .rating-row {
+        @include flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: $tt-small-size;
+        @include rating-stars($rating-stars-width * $rating-stars-decrement, $rating-stars-height * $rating-stars-decrement);
+
+        .rating-stars {
+          margin-right: 7px;
+          align-self: flex-start;
+        }
+
+        .rating-phrase {
+          color: $tt-dark-note-color;
+        }
+      }
+
+      .price {
+        font-size: 1.75rem;
+        color: $tt-time-color;
+      }
+
+      .price-from {
+        padding-bottom: $tt-v-padding - 3px;
+
+        .label {
+          display: none;
+        }
+      }
+
+      .price-total {
+        color: $tt-dark-note-color;
+        font-size: $tt-small-size;
+      }
+
+      .price-col {
+        @include side-padding($tt-price-h-padding);
+      }
+    }
+
+    .select-seat {
+      @include btn-yellow;
+      @include v-padding($button-v-padding);
+      @include side-padding($button-h-padding/2);
+    }
+  }
+  /****** TRAIN INFO END ******/
+
+  /****** COACH CLASSES INFO ******/
+
+  $icon-size: 16px;
+  $v-delta: 6px;
+  $tt-radio-width: 5%;
+  $tt-ticket-wrapper-width: 80%;
+  $tt-ticket-name-width: 25%;
+  $ticket-icon-width: 9%;
+  $tt-price-width: 20%;
+  $tt-coach-class-h-padding: 20px;
+
+  .coach-classes-wrapper {
+    @include v-padding($tt-v-padding + $v-delta, 0);
+    border-top: $tt-border;
+    flex-direction: column;
+    position: relative;
+
+    .close {
+      position: absolute;
+      top: ($tt-v-padding +$v-delta - $icon-size) / 2;
+      right: $tt-h-padding;
+
+      .close-icon {
+        width: $icon-size;
+        height: $icon-size;
+        background-size: $icon-size;
+      }
+    }
+
+    .coach-class-wrapper {
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: row;
+      flex-basis: 100%;
+      padding: $tt-v-padding/2 $tt-h-padding;
+      font-size: $tt-small-size;
+      cursor: pointer;
+
+      &.selected, &:hover {
+        background: transparentize($tt-select-color, 0.85);
+      }
+
+      @include custom-radio(white,white,$tt-light-note-color,$tt-select-color);
+
+      .form-type-radio {
+        flex-basis: $tt-radio-width;
+        display: flex;
+
+        @media #{$mobile} {
+          min-height: 1rem;
+          align-items: baseline;
+        }
+      }
+
+      .ticket-wrapper {
+        display: inline-flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        flex-basis: $tt-ticket-wrapper-width;
+
+        .ticket-name {
+          flex-basis: $tt-ticket-name-width;
+          max-width: 130px;
+          word-wrap: break-word;
+        }
+
+        .ticket-gallery-icon-wrapper {
+          flex-basis: $ticket-icon-width;
+        }
+
+        .ticket-gallery-icon {
+          width: $gallery-icon-size;
+          height: $gallery-icon-size;
+          background: url("#{$path-to-images}/gallery-icon.png") no-repeat center center;
+          background-size: $gallery-icon-size;
+          position: relative;
+
+          a {
+            position: absolute;
+            top:0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            outline: none;
+          }
+
+          .ajax-progress-throbber {
+            display: none !important;
+          }
+        }
+
+        .ticket-descr {
+          flex-basis: 100% - $tt-ticket-name-width - $tt-price-width - $ticket-icon-width;
+          display: inline-flex;
+          justify-content: space-between;
+          align-items: center;
+
+          & > div {
+            flex-basis: 50%;
+          }
+        }
+
+        .ticket-services {
+          display: inline-flex;
+          flex-flow: row wrap;
+          justify-content: flex-start;
+          align-items: flex-start;
+
+          @media #{$mobile} {
+            @include side-padding($tt-coach-class-h-padding/4);
+          }
+
+          img {
+            height: $service-size;
+          }
+        }
+
+        .service {
+          & + .service {
+            margin-left: 5px;
+
+            @media #{$mobile} {
+              margin-left: 0;
+            }
+          }
+        }
+
+        .ticket-seats-remaining {
+          color: $tt-dark-note-color;
+          font-style: italic;
+        }
+
+        .ticket-price {
+          @include side-padding($tt-coach-class-h-padding/2);
+          flex-basis: $tt-price-width;
+          font-size: 1.375rem;
+        }
+      }
+
+      .selected-label {
+        flex-basis: 100% - $tt-radio-width -$tt-ticket-wrapper-width;
+        justify-content: flex-end;
+        color: $tt-select-color;
+      }
+    }
+
+    .train-message {
+      background: $tt-item-helper-bg;
+      padding: $tt-v-padding/2 $tt-h-padding;
+      border-top: $tt-border;
+
+      @media #{$mobile} {
+        @include side-padding($tt-mobile-h-padding);
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+
+    .product-note {
+      font-size: 0.85rem;
+      padding-top: $tt-v-padding/2;
+      color: $tt-light-note-color;
+      font-style: italic;
+    }
+
+    .form-actions {
+      padding: $tt-v-padding $tt-h-padding;
+      border-top: $tt-border;
+      @include flex;
+      flex-flow: row wrap;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+
+      .train-subtotal {
+        flex-basis: $train-subtotal-width;
+        font-size: 1.2rem;
+
+        @media #{$mobile} {
+          flex-basis: 100%;
+          padding-bottom: $tt-v-padding;
+        }
+
+        .amount-wrapper {
+          font-size: 1.8rem;
+        }
+      }
+
+      input[type="submit"] {
+        @include btn-red;
+        @include box-shadow(none);
+        @include border-radius(0);
+        padding: $button-v-padding $button-h-padding;
+        border: none;
+        height: auto;
+        flex-basis: 100% - $train-subtotal-width - 5%;
+        text-align: center;
+
+        @media #{$mobile} {
+          flex-basis: 100%;
+        }
+      }
+    }
+
+    .overlay {
+      background: rgba(119, 119, 119, 0.2);
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 99;
+
+      .custom-throbber {
+        display: flex;
+        width: inherit;
+        height: inherit;
+        position: absolute;
+        z-index: 100;
+
+        .loading {
+          width: 35px;
+          height: 35px;
+          background: url("#{$path-to-images}/throbber.gif") no-repeat;
+          background-size: 35px;
+          margin: auto auto;
+        }
+
+        .text {
+          color: #fff;
+          font-size: 26px;
+          font-weight: bold;
+          margin: 20px 0;
+        }
+      }
+    }
+  }
+  /****** COACH CLASSES END ******/
+
+  @media #{$tablet-portrait} {
+    .train-wrapper {
+      .select-seat {
+        padding: 15px 7px;
+      }
+    }
+
+    .tickets {
+      display: none;
+    }
+  }
+
+
+  $tt-time-width: 55%;
+
+  @media #{$mobile} {
+
+    .price-total {
+      display: none;
+    }
+
+    .train-wrapper {
+
+      .time-row {
+        @include side-padding($tt-mobile-h-padding);
+
+        .train-col {
+          flex-basis: $tt-time-width;
+        }
+
+        .right-column {
+          flex-basis:  100% - $tt-time-width;
+          align-items: flex-end;
+          flex-direction: column;
+
+          & > * {
+            flex-basis: 100%;
+          }
+        }
+
+        .price-col {
+          padding-right: 0;
+        }
+
+        .price {
+          font-size: $tt-time-size;
+        }
+      }
+    }
+
+    .coach-classes-wrapper {
+      .close {
+        right: $tt-mobile-h-padding;
+      }
+
+      .coach-class-wrapper {
+        @include side-padding($tt-mobile-h-padding);
+
+        .ticket-wrapper {
+          flex-basis: 100% - $tt-radio-width;
+
+          .ticket-price {
+            padding-right: 0;
+            display: inline-flex;
+            justify-content: flex-end;
+          }
+        }
+
+        .selected-label {
+          display: none;
+        }
+      }
+
+      .form-actions {
+        @include side-padding($tt-mobile-h-padding);
+      }
+    }
+  }
+
+  $tt-radio-width: 10%;
+
+  @media #{$mobile-portrait} {
+    .train-wrapper {
+      .time-row {
+        flex-wrap: wrap;
+
+        .train-col, .right-column {
+          flex-basis: 100%;
+        }
+
+        .right-column {
+          align-items: center;
+          flex-flow: row wrap;
+
+          & > * {
+            flex-basis: 100%;
+          }
+
+          .price-col {
+            @include side-padding(0);
+          }
+
+          .price-from {
+            padding: $tt-v-padding 0;
+            width: 100%;
+            @include flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .label {
+              justify-content: flex-start;
+            }
+
+            .price {
+              justify-content: flex-end;
+              font-size: $tt-time-size;
+            }
+
+            & > * {
+              display: inline-flex;
+            }
+          }
+        }
+      }
+    }
+
+    $delta: 10%;
+
+    .coach-classes-wrapper {
+
+      .coach-class-wrapper {
+        .ticket-seats-remaining {
+          display: none;
+        }
+
+        .form-type-radio {
+          flex-basis: $tt-radio-width;
+        }
+
+        .ticket-wrapper {
+          flex-basis: 100% - $tt-radio-width;
+          flex-wrap: nowrap;
+
+          .ticket-name {
+            flex-basis: $tt-ticket-name-width;
+          }
+
+          .ticket-price {
+            @include side-padding(0);
+          }
+
+          .ticket-gallery-icon-wrapper {
+            flex-basis: $ticket-icon-width + $delta;
+            @include side-padding($tt-mobile-h-padding/2);
+          }
+
+          .ticket-descr {
+            flex-basis: 100% - $tt-ticket-name-width - $tt-price-width - $ticket-icon-width - $delta;
+
+            .ticket-service {
+              flex-basis: 100%;
+            }
+          }
+        }
+      }
+
+      .form-actions {
+        input[type="submit"] {
+          flex-basis: 100%;
+        }
+      }
+    }
+  }
+
+}

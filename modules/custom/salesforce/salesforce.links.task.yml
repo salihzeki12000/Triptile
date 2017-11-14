@@ -1,0 +1,21 @@
+# Mapping object routing definition
+salesforce_mapping_object.settings_tab:
+  route_name: entity.salesforce_mapping_object.settings
+  title: 'Settings'
+  base_route: entity.salesforce_mapping_object.settings
+
+entity.salesforce_mapping_object.canonical:
+  route_name: entity.salesforce_mapping_object.canonical
+  base_route: entity.salesforce_mapping_object.canonical
+  title: 'View'
+
+entity.salesforce_mapping_object.edit_form:
+  route_name: entity.salesforce_mapping_object.edit_form
+  base_route: entity.salesforce_mapping_object.canonical
+  title: Edit
+
+entity.salesforce_mapping_object.delete_form:
+  route_name:  entity.salesforce_mapping_object.delete_form
+  base_route:  entity.salesforce_mapping_object.canonical
+  title: Delete
+  weight: 10

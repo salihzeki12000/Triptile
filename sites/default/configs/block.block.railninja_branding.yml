@@ -1,0 +1,29 @@
+uuid: 3f9d28de-18c7-4e69-ae98-0db458a2f941
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+    - system
+  theme:
+    - railninja
+third_party_settings:
+  rn_content:
+    classes: ''
+_core:
+  default_config_hash: yqMh-BDtUuqAzTQf1qj3FYJHyiEL8CL3EOmocTNCR1E
+id: railninja_branding
+theme: railninja
+region: header_second
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

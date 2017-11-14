@@ -1,0 +1,5 @@
+entity.lead.add_form:
+  route_name: entity.lead.add_form
+  title: 'Add Lead'
+  appears_on:
+    - entity.lead.collection

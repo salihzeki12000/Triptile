@@ -1,0 +1,8 @@
+uuid: a80a15e7-66b1-4b80-bdce-ed4bb72ad1ca
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: P34d-ju6o-W1Rl2o4UWqe_K9hauQPGYmUSkHRnM0nmg
+id: delivery_service
+label: 'Delivery service'

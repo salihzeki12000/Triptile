@@ -1,0 +1,22 @@
+uuid: 35930a66-8f2d-4ff2-8318-f736a9fa4180
+langcode: en
+status: true
+dependencies:
+  theme:
+    - railninja
+_core:
+  default_config_hash: 0a6dV1MkzLUSFGFSDE2jRcfdM-n4_-TEZwUPetV8I20
+id: railninja_local_tasks
+theme: railninja
+region: content
+weight: -18
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

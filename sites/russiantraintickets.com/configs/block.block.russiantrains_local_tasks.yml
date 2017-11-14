@@ -1,0 +1,22 @@
+uuid: 3f0f6917-583b-4d99-bc68-d9e7996be128
+langcode: en
+status: true
+dependencies:
+  theme:
+    - russiantraintickets
+_core:
+  default_config_hash: Mg0FjFZ1REk8GvtSstpw95WVbSMs2ePWlOhY3SBg12Y
+id: russiantrains_local_tasks
+theme: russiantraintickets
+region: content
+weight: -18
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

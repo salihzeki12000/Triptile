@@ -1,0 +1,21 @@
+uuid: 73857f6a-dd16-4665-ae65-55016feb9a80
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_text_below_map
+    - node.type.train_page
+  module:
+    - text
+id: node.train_page.field_text_below_map
+field_name: field_text_below_map
+entity_type: node
+bundle: train_page
+label: 'Text below map'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

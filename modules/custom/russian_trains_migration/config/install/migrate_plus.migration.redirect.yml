@@ -1,0 +1,32 @@
+id: redirect
+migration_group: content_page
+label: Redirect
+source:
+  plugin: redirect
+  path: public://migrated/redirect/rt_migration_url.csv
+  header_row_count: 1
+  keys:
+    - external_link
+  column_names:
+    0:
+      external_link: External link
+    1:
+      alias_path: Alias path
+process:
+  type:
+    plugin: default_value
+    default_value: redirect
+  language: language
+  'redirect_source/path': redirect_source
+  'redirect_redirect/uri': redirect_uri
+  status_code:
+    plugin: default_value
+    default_value: 301
+destination:
+  plugin: entity:redirect
+  bundle: redirect
+migration_dependencies: {}
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

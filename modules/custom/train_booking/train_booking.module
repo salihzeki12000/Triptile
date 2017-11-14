@@ -1,0 +1,151 @@
+<?php
+
+/**
+ * @file
+ * Contains train_booking.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\train_base\Entity\Station;
+use Drupal\train_booking\Form\TimetableForm;
+
+/**
+ * Implements hook_help().
+ */
+function train_booking_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the train_booking module.
+    case 'help.page.train_booking':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Train booking pages') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function train_booking_theme($existing, $type, $theme, $path) {
+  $themes['search_forms_switcher'] = [
+    'render element' => 'form',
+    'variables' => ['roundtrip' => NULL],
+  ];
+  $themes['train_info'] = [
+    'render element' => 'form',
+    'variables' => ['data' => NULL],
+  ];
+  $themes['coach_class_info'] = [
+    'render element' => 'form',
+    'variables' => ['data' => NULL],
+    'file' => 'train_booking.theme.inc',
+  ];
+  $themes['route_info'] = [
+    'render element' => 'form',
+    'variables' => ['data' => NULL],
+  ];
+  $themes['route_leg_info'] = [
+    'variables' => [
+      'departure_station' => null,
+      'arrival_station' => null,
+      'departure_datetime' => null,
+      'arrival_datetime' => null,
+      'train_info' => null,
+      'count_of_tickets' => 0,
+      'coach_class_info' => null,
+      'save_search' => null,
+    ],
+    'file' => 'train_booking.theme.inc',
+  ];
+  $themes['sidebar_stars_info'] = [
+    'render element' => 'form',
+    'variables' => ['data' => NULL],
+  ];
+  $themes['train_order_page'] = [
+    'variables' => [
+      'store_order' => NULL,
+      'trains' => NULL,
+      'search_button' => NULL,
+      'pdf_files' => [],
+    ],
+    'file' => 'train_booking.theme.inc',
+  ];
+  $themes['order_details'] = [
+    'render element' => 'form',
+    'variables' => [
+      'order' => null,
+      'order_items' => null,
+      'complex_trip' => false,
+      'round_trip' => false,
+      'confidence_block' => [],
+      'coach_class_info' => null,
+    ],
+    'file' => 'train_booking.theme.inc',
+  ];
+  $themes['passengers_info'] = [
+    'render element' => 'form',
+    'variables' => [
+      'passengers' => null,
+    ],
+    'file' => 'train_booking.theme.inc',
+  ];
+  $themes['thank_you_page'] = [
+    'variables' => [
+      'order_info' => NULL,
+      'trains' => NULL,
+      'search_button' => NULL,
+      'welcome_text' => '',
+    ]
+  ];
+  $themes['google_dynamic_remarketing_script'] = [
+    'variables' => [
+      'travel_destid' => '',
+      'google_conversion_id' => '',
+    ],
+  ];
+
+  return $themes;
+}
+
+
+/**
+ * Implements hook_views_data_alter().
+ */
+function train_booking_views_data_alter(array &$data) {
+  $data['store_order']['link_to_tickets'] = [
+    'field' => [
+      // ID of the field handler to use.
+      'id' => 'train_booking_link_to_tickets',
+      'title' => t('Link to tickets'),
+      'help' => t('Link to tickets download page'),
+    ],
+  ];
+}
+
+/**
+ * Implements hook_page_bottom().
+ */
+function train_booking_page_bottom(array &$page_bottom) {
+  $routeName = \Drupal::routeMatch()->getRouteName();
+  if (in_array($routeName, ['train_booking.timetable_form', 'train_booking.timetable_form2'])
+    && $id = \Drupal::config('train_booking.settings')->get('google_conversion_id')) {
+
+    $sessionId = \Drupal::request()->get('session_id');
+    /** @var \Drupal\rn_user\SessionStore $store */
+    $store = \Drupal::service('rn_user.session_store')->get(TimetableForm::COLLECTION_NAME);
+    $store->setSessionId($sessionId);
+    $searchRequest = $store->get('search_request');
+    $leg = $routeName == 'train_booking.timetable_form' ? 1 : 2;
+    /** @var \Drupal\train_base\Entity\Station $departureStation */
+    $departureStation = Station::load($searchRequest['legs'][$leg]['departure_station']);
+    /** @var \Drupal\train_base\Entity\Station $arrivalStation */
+    $arrivalStation = Station::load($searchRequest['legs'][$leg]['arrival_station']);
+    $page_bottom['train_booking_remarketing'] = [
+      '#theme' => 'google_dynamic_remarketing_script',
+      '#travel_destid' => $departureStation->id() . '-' . $arrivalStation->id(),
+      '#google_conversion_id' => $id,
+    ];
+  }
+}

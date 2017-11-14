@@ -1,0 +1,189 @@
+# Train page menu items definition
+train_base.train_lists:
+  route_name: train_base.train_lists
+  parent: system.admin
+  description: 'Provide menu for custom entities.'
+  title: 'Train data'
+  weight: -8
+
+# Supplier menu items definition
+entity.supplier.collection:
+  title: Suppliers
+  route_name: entity.supplier.collection
+  description: 'List Supplier entities'
+  parent: train_base.train_lists
+  weight: 100
+
+supplier.admin.structure.settings:
+  title: 'Supplier settings'
+  description: 'Supplier settings'
+  route_name: entity.supplier.settings
+  parent: master.entity_configs
+
+# Train menu items definition
+entity.train.collection:
+  title: Trains
+  route_name: entity.train.collection
+  description: 'List Train entities'
+  parent: train_base.train_lists
+  weight: 100
+
+train.admin.structure.settings:
+  title: 'Train settings'
+  description: 'Configure Train entities'
+  route_name: entity.train.settings
+  parent: master.entity_configs
+
+# Train brand menu items definition
+entity.train_brand.collection:
+  title: 'Train brands'
+  route_name: entity.train_brand.collection
+  description: 'List Train brand entities'
+  parent: train_base.train_lists
+  weight: 100
+
+train_brand.admin.structure.settings:
+  title: 'Train brand settings'
+  description: 'Configure Train brand entities'
+  route_name: entity.train_brand.settings
+  parent: master.entity_configs
+
+# Train class menu items definition
+entity.train_class.collection:
+  title: 'Train classes'
+  route_name: entity.train_class.collection
+  description: 'List Train class entities'
+  parent: train_base.train_lists
+  weight: 100
+
+train_class.admin.structure.settings:
+  title: 'Train class settings'
+  description: 'Configure Train class entities'
+  route_name: entity.train_class.settings
+  parent: master.entity_configs
+
+# Station menu items definition
+entity.station.collection:
+  title: Stations
+  route_name: entity.station.collection
+  description: 'List Station entities'
+  parent: train_base.train_lists
+  weight: 100
+
+station.admin.structure.settings:
+  title: 'Station settings'
+  description: 'Configure Station entities'
+  route_name: entity.station.settings
+  parent: master.entity_configs
+
+# Coach class menu items definition
+entity.coach_class.collection:
+  title: 'Coach classes'
+  route_name: entity.coach_class.collection
+  description: 'List Coach class entities'
+  parent: train_base.train_lists
+  weight: 100
+
+coach_class.admin.structure.settings:
+  title: 'Coach class settings'
+  description: 'Configure Coach class entities'
+  route_name: entity.coach_class.settings
+  parent: master.entity_configs
+
+# Coach scheme menu items definition
+entity.coach_scheme.collection:
+  title: 'Coach schemes'
+  route_name: entity.coach_scheme.collection
+  description: 'List Coach scheme entities'
+  parent: train_base.train_lists
+  weight: 100
+
+coach_scheme.admin.structure.settings:
+  title: 'Coach scheme settings'
+  description: 'Configure Coach scheme entities'
+  route_name: entity.coach_scheme.settings
+  parent: master.entity_configs
+
+# Car service menu items definition
+entity.car_service.collection:
+  title: 'Car services'
+  route_name: entity.car_service.collection
+  description: 'List Car service entities'
+  parent: train_base.train_lists
+  weight: 100
+
+car_service.admin.structure.settings:
+  title: 'Car service settings'
+  description: 'Configure Car service entities'
+  route_name: entity.car_service.settings
+  parent: master.entity_configs
+
+# Seat type menu items definition
+entity.seat_type.collection:
+  title: 'Seat types'
+  route_name: entity.seat_type.collection
+  description: 'List Seat type entities'
+  parent: train_base.train_lists
+  weight: 100
+
+seat_type.admin.structure.settings:
+  title: Seat type settings
+  description: 'Configure Seat type entities'
+  route_name: entity.seat_type.settings
+  parent: master.entity_configs
+
+# Train ticket menu items definition
+entity.train_ticket.collection:
+  title: 'Train tickets'
+  route_name: entity.train_ticket.collection
+  description: 'List Train ticket entities'
+  parent: train_base.train_lists
+  weight: 100
+
+train_ticket.admin.structure.settings:
+  title: Train ticket settings
+  description: 'Configure Train ticket entities'
+  route_name: entity.train_ticket.settings
+  parent: master.entity_configs
+
+# Passenger menu items definition
+entity.passenger.collection:
+  title: Passengers
+  route_name: entity.passenger.collection
+  description: 'List Passenger entities'
+  parent: train_base.train_lists
+  weight: 100
+
+passenger.admin.structure.settings:
+  title: Passenger settings
+  description: 'Configure Passenger entities'
+  route_name: entity.passenger.settings
+  parent: master.entity_configs
+
+# Seat preference menu items definition
+entity.seat_preference.collection:
+  title: 'Seat preferences'
+  route_name: entity.seat_preference.collection
+  description: 'List Seat preference entities'
+  parent: train_base.train_lists
+  weight: 100
+
+seat_preference.admin.structure.settings:
+  title: Seat preference settings
+  description: 'Configure Seat preference entities'
+  route_name: entity.seat_preference.settings
+  parent: master.entity_configs
+  
+# Route message menu items definition
+entity.route_message.collection:
+  title: 'Route messages'
+  route_name: entity.route_message.collection
+  description: 'List Route message entities'
+  parent: train_base.train_lists
+  weight: 100
+
+route_message.admin.structure.settings:
+  title: Route message settings
+  description: 'Configure Route message entities'
+  route_name: entity.route_message.settings
+  parent: master.entity_configs

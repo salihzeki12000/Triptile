@@ -1,0 +1,4 @@
+status: true
+booking_available: false
+min_days_before_departure: 0
+min_hours_before_departure: !!float 10

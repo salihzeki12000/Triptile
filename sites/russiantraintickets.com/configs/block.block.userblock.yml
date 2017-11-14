@@ -1,0 +1,26 @@
+uuid: 8bab037f-8a0b-4cb8-9d46-cc7538639fc2
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+    - rn_user
+  theme:
+    - russiantraintickets
+third_party_settings:
+  rn_content:
+    classes: ''
+_core:
+  default_config_hash: aFeTRX8iZGhCuswZt8_yhbEN-9XSTFYl8Pk_EX-MI8Y
+id: userblock
+theme: russiantraintickets
+region: header_second
+weight: -12
+provider: null
+plugin: user_block
+settings:
+  id: user_block
+  label: 'User block'
+  provider: rn_user
+  label_display: '0'
+visibility: {  }

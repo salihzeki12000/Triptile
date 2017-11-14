@@ -1,0 +1,25 @@
+uuid: a5f358c7-1212-4851-b5a5-80a82c878606
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - basic
+_core:
+  default_config_hash: MgVEqLOjXssPRBlrn-5Xm1AULt_-qUP1U9BPC0238N8
+id: basic_branding
+theme: basic
+region: header_second
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

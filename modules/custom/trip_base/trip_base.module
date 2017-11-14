@@ -1,0 +1,45 @@
+<?php
+
+/**
+ * @file
+ * Contains trip_base.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function trip_base_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the trip_base module.
+    case 'help.page.trip_base':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Contains triptile base entities and features') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_rest_resource_alter().
+ */
+function trip_base_rest_resource_alter(&$definitions) {
+  if (isset($definitions['entity:hub'])) {
+    $definitions['entity:hub']['class'] = 'Drupal\master\Plugin\rest\resource\EntityResource';
+  }
+
+  if (isset($definitions['entity:connection'])) {
+    $definitions['entity:connection']['class'] = 'Drupal\master\Plugin\rest\resource\EntityResource';
+  }
+
+  if (isset($definitions['entity:hotel'])) {
+    $definitions['entity:hotel']['class'] = 'Drupal\master\Plugin\rest\resource\EntityResource';
+  }
+
+  if (isset($definitions['entity:transfer'])) {
+    $definitions['entity:transfer']['class'] = 'Drupal\master\Plugin\rest\resource\EntityResource';
+  }
+}

@@ -1,0 +1,29 @@
+store.settings:
+  type: config_object
+  mapping:
+    global_currency:
+      type: string
+      label: 'Global site currency'
+    country_currency:
+      type: sequence
+      label: 'Country currency'
+      sequence:
+        type: mapping
+        mapping:
+          country_code:
+            type: string
+            label: 'Country'
+          currency_code:
+            type: string
+            label: 'Currency'
+    opportunity_id_for_payable_invoices:
+      type: string
+      label: 'Opportunity ID for payable invoices'
+    order_verification_condition:
+      type: string
+      label: 'Verification condition'
+    visible_currencies:
+      type: sequence
+      label: 'Visible currencies'
+      sequence:
+        type: boolean

@@ -1,0 +1,180 @@
+.train-search-form-block {
+  max-height: $search-form-max-height;
+
+  @media #{$tablet} {
+    @include side-padding(0);
+  }
+
+  @media #{$mobile} {
+    max-height: 100%;
+  }
+
+  .colorized {
+    background: rgba(21, 21, 21, 0.22);
+    width: 100%;
+    height: 100%;
+    max-height: $search-form-max-height;
+
+    @media #{$tablet} {
+      @include side-padding($tablet-h-padding);
+    }
+
+    @media #{$mobile} {
+      max-height: 100%;
+    }
+  }
+
+  .block__title {
+    font-family: $fp-sf-title-font-family;
+    font-size: 2.0625rem;
+    font-weight: 300;
+    letter-spacing: 0.8px;
+    text-shadow: 1.1px 1.7px 1px rgba(0, 0, 0, 0.23);
+    text-transform: capitalize;
+
+    @media #{$mobile} {
+      padding-bottom: $v-padding/2;
+      font-size: 1.5rem;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  .block__inner {
+    max-width: $container-width;
+
+    @media #{$mobile} {
+      @include v-padding($v-padding);
+    }
+  }
+
+  .block__content {
+    max-width: $container-width;
+    @include side-padding(0);
+    background: none;
+    @include box-shadow(none);
+  }
+
+  .search-form-switcher {
+    font-family: $base-font-family;
+    font-size: $small-font-size;
+    letter-spacing: 0.1px;
+
+    .active {
+      font-weight: bold;
+    }
+  }
+
+  .form-flex-container {
+    @media #{$wide} {
+      height: $fp-sf-height;
+      align-items: stretch;
+    }
+
+    @media #{$tablet-landscape} {
+      height: $fp-sf-height + 10px;
+      align-items: stretch;
+    }
+
+    @media #{$mobile-landscape} {
+      @include side-padding(0);
+    }
+  }
+
+  $multiplier: 0.35;
+
+  label {
+    display: flex;
+    padding: $input-v-padding*(1 - $multiplier) $input-h-padding $input-v-padding*$multiplier;
+    border: $input-border;
+    border-bottom: none;
+    background: $input-bg;
+    color: $search-form-label-color;
+    font-size: $small-font-size;
+    font-weight: normal;
+
+    @media #{$tablet} {
+      padding: $input-v-padding*(1 - $multiplier) $input-tablet-h-padding $input-v-padding*$multiplier;
+    }
+
+    @media #{$tablet-portrait} {
+      display: none;
+    }
+
+    @media #{$mobile} {
+      display: none;
+    }
+  }
+
+  .swap-stations {
+    @media #{$wide} {
+      top: auto;
+      bottom: $input-v-padding*0.75;
+    }
+
+    @media #{$tablet-landscape} {
+      top: auto;
+      bottom: $input-v-padding;
+    }
+  }
+
+  .selectize-control {
+    &.single {
+      .selectize-input {
+        border-top: none;
+
+        @media #{$mobile} {
+          border-top: $input-border;
+        }
+      }
+    }
+  }
+
+  select, .travel-date-wrapper, .passengers-field {
+    border-top: none;
+  }
+
+  select {
+    @media #{$mobile} {
+      border-top: $input-border;
+    }
+  }
+
+  .passengers-wrapper {
+    label {
+      border: none;
+    }
+  }
+
+  .form-actions {
+    input[type="submit"] {
+      @include colored-btn(#fff, #ff8a00, lighten(#ff8a00, 5%));
+      font-size: 1.125rem;
+    }
+  }
+
+  @import "search-form/complex-form";
+  @import "search-form/popup-search-form";
+  @import "search-form/round-trip-form";
+}
+
+@import "search-form/search-form-inline";
+
+.search {
+  position: relative;
+}
+
+#block-searchformawards {
+  position: absolute;
+  bottom: $fp-awards-block-v-padding;
+  right: 0;
+  left: 0;
+  margin: 0;
+
+  @media #{$mobile} {
+    display: none;
+  }
+
+  img {
+    @include filter(brightness(200%) contrast(30%) grayscale(100%));
+  }
+}

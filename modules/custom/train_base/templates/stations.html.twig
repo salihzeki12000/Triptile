@@ -1,0 +1,22 @@
+{#
+/**
+ * @file station.html.twig
+ * Default theme implementation to present Station data.
+ *
+ * This template is used when viewing Station pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_station()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('station') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

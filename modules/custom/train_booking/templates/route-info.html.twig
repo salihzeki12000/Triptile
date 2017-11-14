@@ -1,0 +1,57 @@
+<div class="train-table-header">
+  <div class="route-info-wrapper">
+    <div class="results-wrapper">
+      <div class="stations">
+        <span class="departure value">{{ data.from }}</span>
+        <span class="arrival value">{{ data.to }}</span>
+      </div>
+      <div class="inline-dates">
+        {{ data.date }}, {{ data.weekday }}
+      </div>
+      <div class="results">
+        <div class="quantity-label">{{ data.results_count }} </div>
+        <div class="sorting-label">{% trans with {'context': 'Timetable Form Route Info'} %}sorted by{% endtrans %} <span class="sorting-type"></span></div>
+      </div>
+    </div>
+    <div class="dates-wrapper">
+      <div class="dates-value">{{ data.date }}</div>
+      <div class="dates-day">{{ data.weekday }}</div>
+    </div>
+    <div class="icons-wrapper">
+      <div class="search-wrapper item-helper searchform-trigger">
+        <div class="search-label text">{% trans with {'context': 'Timetable Form Route Info'} %}Search{% endtrans %}</div>
+        <div class="setting-icon icon"></div>
+      </div>
+      <div class="filters-wrapper item-helper filters-trigger">
+        <div class="filters-label text">{% trans with {'context': 'Timetable Form Route Info'} %}Filters{% endtrans %}</div>
+        <div class="filters-icon icon"></div>
+      </div>
+    </div>
+  </div>
+  <div class="timetable-header">
+    <div class="sorting-row">
+      <div data-sort="popularity" data-sort-direction="asc">{% trans with {'context': 'Timetable Form Route Info'} %}Popularity{% endtrans %}</div>
+      <div data-sort="departure-time" data-sort-direction="desc">{% trans with {'context': 'Timetable Form Route Info'} %}Departure time{% endtrans %}</div>
+      <div data-sort="travel-time" data-sort-direction="asc">{% trans with {'context': 'Timetable Form Route Info'} %}Travel time{% endtrans %}</div>
+      <div data-sort="arrival-time" data-sort-direction="asc">{% trans with {'context': 'Timetable Form Route Info'} %}Arrival time{% endtrans %}</div>
+      <div data-sort="price-from" data-sort-direction="asc">{% trans with {'context': 'Timetable Form Route Info'} %}Price{% endtrans %}</div>
+      <div data-sort="rate" data-sort-direction="asc">{% trans with {'context': 'Timetable Form Route Info'} %}Rating{% endtrans %}</div>
+    </div>
+    <div class="column-names">
+      <div class="time-wrapper">
+        <div class="time-cols-wrapper">
+          <div>{% trans with {'context': 'Timetable Form Route Info'} %}Departure{% endtrans %}</div>
+          <div>{% trans with {'context': 'Timetable Form Route Info'} %}Arrival{% endtrans %}</div>
+        </div>
+      </div>
+      <div class="right-column">
+        <div class="price-wrapper">
+          <div>{% trans with {'context': 'Timetable Form Route Info'} %}Price from{% endtrans %}</div>
+        </div>
+         <div class="save-search-wrapper">
+            <div class="save-search">{{ data.save_search }}</div>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>

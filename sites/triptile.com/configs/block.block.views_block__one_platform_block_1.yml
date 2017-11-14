@@ -1,0 +1,30 @@
+uuid: d014a2a1-bde3-4fcb-a6af-da817b7779c6
+langcode: ru
+status: true
+dependencies:
+  config:
+    - views.view.one_platform
+  module:
+    - system
+    - views
+  theme:
+    - tt
+id: views_block__one_platform_block_1
+theme: tt
+region: content
+weight: -7
+provider: null
+plugin: 'views_block:one_platform-block_1'
+settings:
+  id: 'views_block:one_platform-block_1'
+  label: 'All Europe tickets one platform'
+  provider: views
+  label_display: '0'
+  views_label: 'All Europe tickets one platform'
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

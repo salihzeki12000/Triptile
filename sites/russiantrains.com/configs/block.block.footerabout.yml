@@ -1,0 +1,29 @@
+uuid: b37b99f7-0279-4214-a6ab-0aac043a4f41
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:e097c587-c460-4cd1-914e-78f8696d4b22'
+  module:
+    - block_content
+    - rn_content
+  theme:
+    - russiantrains
+third_party_settings:
+  rn_content:
+    classes: 'non-mobile small-size'
+id: footerabout
+theme: russiantrains
+region: footer
+weight: -13
+provider: null
+plugin: 'block_content:e097c587-c460-4cd1-914e-78f8696d4b22'
+settings:
+  id: 'block_content:e097c587-c460-4cd1-914e-78f8696d4b22'
+  label: 'Footer about'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

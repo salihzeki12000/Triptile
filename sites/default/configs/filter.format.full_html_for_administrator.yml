@@ -1,0 +1,8 @@
+uuid: 560a14ff-6942-4deb-b68b-6ecd15007965
+langcode: en
+status: true
+dependencies: {  }
+name: 'Full html for administrator'
+format: full_html_for_administrator
+weight: 0
+filters: {  }

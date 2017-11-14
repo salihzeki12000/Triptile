@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.base_product.form
+    - store.base_product_type.delivery_service
+  module:
+    - plugin
+id: base_product.delivery_service.form
+field_name: form
+entity_type: base_product
+bundle: delivery_service
+label: Form
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: 'plugin:field_form_type'

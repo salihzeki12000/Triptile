@@ -1,0 +1,18 @@
+uuid: f50cb97e-0fa1-42f3-8fcb-8f99cb5ef61a
+langcode: en
+status: true
+dependencies:
+  config:
+    - store.base_product_type.optional_service
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+_core:
+  default_config_hash: H73mYaSK_ESTXDPeKu1J6ln960GtPH7-dxoq7pPNxDY
+id: base_product.optional_service
+target_entity_type_id: base_product
+target_bundle: optional_service
+default_langcode: site_default
+language_alterable: false

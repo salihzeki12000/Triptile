@@ -1,0 +1,33 @@
+uuid: 6c1f8f18-33ae-4e4e-8b41-893ad457fa08
+langcode: en
+status: true
+dependencies: {  }
+id: accountant
+label: Accountant
+weight: 6
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access base product overview'
+  - 'access customer profile overview'
+  - 'access invoice overview'
+  - 'access order item overview'
+  - 'access store order overview'
+  - 'access toolbar'
+  - 'access transaction overview'
+  - 'administer invoice entities'
+  - 'administer store order entities'
+  - 'administer transaction entities'
+  - payment.refund_transaction
+  - 'synchronize objects from form'
+  - 'view published base product entities'
+  - 'view published customer profile entities'
+  - 'view published order item entities'
+  - 'view published transaction entities'
+  - 'view the administration theme'
+  - 'view unpublished base product entities'
+  - 'view unpublished customer profile entities'
+  - 'view unpublished invoice entities'
+  - 'view unpublished order item entities'
+  - 'view unpublished store order entities'
+  - 'view unpublished transaction entities'

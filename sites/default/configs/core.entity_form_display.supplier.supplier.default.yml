@@ -1,0 +1,76 @@
+uuid: 28f02b18-ee6e-4891-9785-721b181fdbfa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.supplier.supplier.passenger_form_type
+    - image.style.thumbnail
+  module:
+    - image
+    - plugin
+    - train_base
+_core:
+  default_config_hash: zODuzV5PHemsp2YMYOc8vz2cbpzo4aSulGHFKs5UYow
+id: supplier.supplier.default
+targetEntityType: supplier
+bundle: supplier
+mode: default
+content:
+  code:
+    type: string_textfield
+    weight: -6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  logo:
+    type: image_image
+    weight: -3
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    region: content
+  max_child_age:
+    type: number
+    weight: -4
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  min_child_age:
+    type: number
+    weight: -4
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  passenger_form_type:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: 'plugin_selector:plugin_select_list'
+    region: content
+  status:
+    type: boolean_checkbox
+    weight: -4
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    region: content
+hidden: {  }

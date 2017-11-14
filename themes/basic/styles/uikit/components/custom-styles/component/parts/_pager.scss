@@ -1,0 +1,158 @@
+$mobile-button-width: 27%;
+
+.pager--full {
+  margin: 20px 0;
+
+  .pager__items {
+    display: flex;
+    justify-content: center;
+
+    @media #{$mobile} {
+      flex-flow: row wrap;
+    }
+  }
+
+  .pager__items__num-pages {
+    @media #{$mobile} {
+      flex-basis: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      order: 1;
+    }
+  }
+
+  .pager__items__first-previous {
+    @media #{$mobile} {
+      order: 2;
+    }
+  }
+
+  .pager__items__next-last {
+    @media #{$mobile} {
+      order: 3;
+    }
+  }
+
+  .pager__items__next-last, .pager__items__first-previous {
+    @media #{$mobile} {
+      margin-top: 20px;
+      flex-basis: 50%;
+      display: flex;
+      border: 1px solid $pager-link-color;
+    }
+
+    &.no-first-previous, &.no-next-last {
+      @media #{$mobile} {
+        flex-basis: 100%;
+      }
+    }
+
+    &.has-first-previous {
+      @media #{$mobile} {
+        border-left: none;
+      }
+    }
+
+    .pager__item {
+      margin: 0 5px;
+
+      @media #{$mobile} {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        position: relative;
+        height: 40px;
+      }
+
+      &:not(:last-of-type) {
+        @media #{$mobile} {
+          border-right: 1px solid $pager-link-color;
+        }
+      }
+
+      .pager__link {
+        padding: 0;
+
+        @media #{$mobile} {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+
+    .pager__item--next, .pager__item--previous {
+      @media #{$mobile} {
+        flex-basis: 100% - $mobile-button-width;
+      }
+    }
+
+    .pager__item--first, .pager__item--last {
+      @media #{$mobile} {
+        flex-basis: $mobile-button-width;
+      }
+    }
+  }
+
+  .pager__item {
+    .pager__link {
+      color: $pager-link-color;
+      padding: 5px 11px;
+      outline: none;
+      border: 1px solid transparent;
+
+      &:active {
+        @include box-shadow(none);
+        opacity: 1;
+        border: 1px solid $pager-active-border-color;
+        @include border-radius(0);
+
+        a {
+          color: $pager-active-link-color;
+        }
+      }
+    }
+
+    &.is-active,&:hover  {
+      .pager__link {
+        border: 1px solid $pager-active-border-color;
+        color: $pager-active-link-color;
+        @include border-radius(0);
+      }
+    }
+
+    .link-text {
+      display: none;
+    }
+
+    .pager-icon {
+      width: 31px;
+      height: 31px;
+
+      $slip: 6px;
+
+      &.pager-first {
+        background: url("#{$path-to-images}/pager-first.png") no-repeat center $slip;
+      }
+
+      &.pager-prev {
+        background: url("#{$path-to-images}/pager-prev.png") no-repeat center $slip;
+      }
+
+      &.pager-next {
+        background: url("#{$path-to-images}/pager-next.png") no-repeat center $slip;
+      }
+
+      &.pager-last {
+        background: url("#{$path-to-images}/pager-last.png") no-repeat center $slip;
+      }
+    }
+  }
+}

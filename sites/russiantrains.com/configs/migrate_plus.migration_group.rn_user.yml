@@ -1,0 +1,15 @@
+uuid: 76d0bdf9-7d7e-43e1-bcb1-3cc850e0da4b
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration
+_core:
+  default_config_hash: do7bC8beHZxLF1Ixwf058U5b2Cewk4T-AAzuojFvb6s
+id: rn_user
+label: 'RN User'
+description: 'Migrate entities, which declared in rn_user module.'
+source_type: 'RussianTrains database'
+module: null
+shared_configuration: null

@@ -1,0 +1,7 @@
+name: Booking
+type: module
+description: Booking pages and logic
+core: 8.x
+package: Store
+dependencies:
+  - store

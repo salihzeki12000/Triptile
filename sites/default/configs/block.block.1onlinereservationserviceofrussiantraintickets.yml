@@ -1,0 +1,35 @@
+uuid: 81c7dfd4-b6c9-4239-9769-2ad4f68fa368
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:1dd67de9-3ec6-4443-8a4c-4ffcfd35461c'
+  module:
+    - block_content
+    - rn_content
+    - system
+  theme:
+    - railninja
+third_party_settings:
+  rn_content:
+    classes: ''
+id: 1onlinereservationserviceofrussiantraintickets
+theme: railninja
+region: content
+weight: -21
+provider: null
+plugin: 'block_content:1dd67de9-3ec6-4443-8a4c-4ffcfd35461c'
+settings:
+  id: 'block_content:1dd67de9-3ec6-4443-8a4c-4ffcfd35461c'
+  label: '#1 Online Reservation Service of Russian Train Tickets'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /front
+    negate: false
+    context_mapping: {  }

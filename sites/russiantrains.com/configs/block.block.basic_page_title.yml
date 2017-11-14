@@ -1,0 +1,27 @@
+uuid: 917fcb67-5bf7-4458-8a93-e972ec95f91d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - basic
+_core:
+  default_config_hash: mc5y0sLnEcFgTTog36O5Rth01_vaGiTfPTH1hIAX11o
+id: basic_page_title
+theme: basic
+region: content
+weight: 0
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/node/*\r\n/user/*\r\n<front>"
+    negate: true
+    context_mapping: {  }

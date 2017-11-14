@@ -1,0 +1,15 @@
+uuid: bb1a80cf-e26d-4e6d-afb9-e3c8c7378d5c
+langcode: en
+status: true
+dependencies:
+  module:
+    - content_translation
+    - train_base
+third_party_settings:
+  content_translation:
+    enabled: true
+id: seat_type.seat_type
+target_entity_type_id: seat_type
+target_bundle: seat_type
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,12 @@
+uuid: 9a7c7d6d-46b0-4a8c-8370-7c6d4cb91e58
+langcode: en
+status: true
+dependencies: {  }
+id: trenitalia_1_10_days
+label: 'TrenItalia 1 - 10 days'
+price_rule_type: before_display
+condition: 'supplier == ''TRI'' and order_depth >= 0 and order_depth <= 10'
+tax_type: fixed
+tax_value: !!float 15
+tax_value_currency: USD
+weight: '0'

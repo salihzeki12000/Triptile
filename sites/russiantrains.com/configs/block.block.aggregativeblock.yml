@@ -1,0 +1,89 @@
+uuid: 2acd4fa1-c317-4044-98ef-7ac2a925c8e7
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+  theme:
+    - russiantrains
+third_party_settings:
+  rn_content:
+    classes: ''
+_core:
+  default_config_hash: vA-sMWtETYXruFuIesejUwgzKyoLI7h7mjVze01ylbU
+id: aggregativeblock
+theme: russiantrains
+region: header_second
+weight: -17
+provider: null
+plugin: aggregativeblock
+settings:
+  id: aggregativeblock
+  label: 'Aggregative block'
+  provider: rn_content
+  label_display: visible
+  include_regions:
+    header_second: header_second
+    leaderboard: 0
+    header_first: 0
+    navbar: 0
+    search: 0
+    highlighted: 0
+    features_first: 0
+    features_second: 0
+    features_third: 0
+    content_prefix: 0
+    content: 0
+    sidebar_first: 0
+    sidebar_second: 0
+    content_suffix: 0
+    subfeatures_first: 0
+    subfeatures_second: 0
+    subfeatures_third: 0
+    subfeatures_fourth: 0
+    footer: 0
+    page_top: 0
+    page_bottom: 0
+  include_blocks:
+    leaderboard:
+      headerleft: 0
+      headerright: 0
+    header_first:
+      russiantrains_branding: 0
+    header_second:
+      russiantrains_main_menu: russiantrains_main_menu
+      userblock: userblock
+      mobilemenublock: 0
+      clientarealink: 0
+      loginregisterblock: loginregisterblock
+    search:
+      searchrouteblock: 0
+      searchformawards: 0
+    highlighted:
+      russiantrains_messages: 0
+    content_prefix:
+      russiantrains_breadcrumbs: 0
+    content:
+      russiantrains_local_actions: 0
+      russiantrains_local_tasks: 0
+      russiantrains_content: 0
+      helpuscreatethebestservice: 0
+      ayudenosacrearelmejorservicio: 0
+      allticketsoneplatform: 0
+      bookeuropeantrainticketsonline: 0
+      ouradvantages: 0
+      awards: 0
+      1onlinereservationserviceofrussiantraintickets: 0
+    footer:
+      searchtrain: 0
+      footerlanguage: 0
+      footerabout: 0
+      popularroutes: 0
+      contactinfo: 0
+      footericons: 0
+      footertrains: 0
+      footertel: 0
+      footermail: 0
+      popularlinks: 0
+      footerbottom: 0
+visibility: {  }

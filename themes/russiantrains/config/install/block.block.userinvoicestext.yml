@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+    - rn_user
+    - system
+  theme:
+    - russiantrains
+third_party_settings:
+  rn_content:
+    classes: ''
+id: userinvoicestext
+theme: russiantrains
+region: content
+weight: -12
+provider: null
+plugin: userinvoicestext
+settings:
+  id: userinvoicestext
+  label: 'User invoices text'
+  provider: rn_user
+  label_display: '0'
+  field_invoices_text:
+    value: "<p>This page shows all of your invoices, paid and unpaid. If you have any questions regarding invoicing, please contact our accounting department: <a href=\"accounting@firebirdtours.com\">accounting@firebirdtours.com</a>.</p>\r\n"
+    format: full_html
+visibility:
+  request_path:
+    id: request_path
+    pages: /user/%user/invoices
+    negate: false
+    context_mapping: {  }

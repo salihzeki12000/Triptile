@@ -1,0 +1,22 @@
+uuid: 59036a50-dcf2-4633-885f-4bdfe32e8068
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - russiantraintickets
+_core:
+  default_config_hash: nTonrmI_DEUu7vH0KWEEh3i4lCJ1TMDD7CCoLP_QJ0c
+id: russiantrains_content
+theme: russiantraintickets
+region: content
+weight: -6
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

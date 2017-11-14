@@ -1,0 +1,16 @@
+<div class="mobile-return" ng-click="closeThisDialog()">{{'Return'|t}}</div>
+<h2>{{'Save & Share'|t}}</h2>
+<div class="description">{{'you can keep the tour and immediately send it to a friend'|t}}</div>
+<form class="share-form" name="form">
+  <input type="text" class="form-text" name="username" placeholder="{{'Your name'|t}}" ng-model="data.form.name" required>
+  <input id="phone-input" class="form-text" type="tel" name="phone" placeholder="{{'Enter your number'|t}}"
+         mask="(999) 999-9999" clean="true" international-phone-number ng-model="data.form.phone" required>
+  <input type="email" class="form-email" placeholder="{{'Your email'|t}}" name="email1" ng-model="data.form.email1" required>
+  <input type="email" class="form-email" placeholder="{{'2 email'|t}}" name="email2" ng-model="data.form.email2">
+  <input type="email" class="form-email" placeholder="{{'3 email'|t}}" name="email3" ng-model="data.form.email3">
+  <input type="email" class="form-email" placeholder="{{'4 email'|t}}" name="email4" ng-model="data.form.email4" ng-show="data.show.email4">
+  <input type="email" class="form-email" placeholder="{{'5 email'|t}}" name="email5" ng-model="data.form.email5" ng-show="data.show.email5">
+  <span class="i-plus" ng-click="showNextEmail()" ng-show="data.show.addEmailButton">{{'Add email'|t}}</span>
+  <textarea placeholder="{{'Add note'|t}}" name="description" ng-model="data.form.description"></textarea>
+  <button class="orange-button" ng-click="saveAndShareOrder()">{{'Save & Share'|t}}</button>
+</form>

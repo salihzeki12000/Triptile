@@ -1,0 +1,29 @@
+uuid: e86c8b3d-9345-424c-9842-ae687db64c47
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:a6413482-a6ed-48fc-8b15-e135244e494a'
+  module:
+    - block_content
+    - rn_content
+  theme:
+    - railninja
+third_party_settings:
+  rn_content:
+    classes: non-mobile
+id: footertrains
+theme: railninja
+region: footer
+weight: -8
+provider: null
+plugin: 'block_content:a6413482-a6ed-48fc-8b15-e135244e494a'
+settings:
+  id: 'block_content:a6413482-a6ed-48fc-8b15-e135244e494a'
+  label: 'Footer trains'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

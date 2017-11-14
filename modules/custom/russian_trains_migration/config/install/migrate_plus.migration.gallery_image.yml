@@ -1,0 +1,48 @@
+id: gallery_image
+migration_group: content_page
+migration_tags:
+  - file
+  - image
+label: Gallery image
+source:
+  plugin: gallery_image
+  key: travelallrussia
+  constants:
+    file_source_uri: http://www.russiantrains.com/uploads
+    file_dest_uri: public://migrated/gallery
+process:
+  file_source:
+    plugin: concat
+    delimiter: /
+    source:
+      - constants/file_source_uri
+      - root_path
+      - path
+  file_dest:
+    -
+      plugin: concat
+      delimiter: /
+      source:
+        - constants/file_dest_uri
+        - path
+    -
+      plugin: urlencode
+  filename: path
+  uri:
+    plugin: file_copy
+    source:
+      - '@file_source'
+      - '@file_dest'
+  uid:
+    plugin: default_value
+    default_value: 1
+  status:
+    plugin: default_value
+    default_value: 1
+destination:
+  plugin: entity:file
+migration_dependencies: {}
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

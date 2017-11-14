@@ -1,0 +1,12 @@
+uuid: bd539e07-34f5-4c38-878a-d21cf1772bd8
+langcode: en
+status: true
+dependencies: {  }
+id: czechs_all_time
+label: 'Czechs all time'
+price_rule_type: before_display
+condition: 'supplier == ''CD'' '
+tax_type: fixed
+tax_value: !!float 10
+tax_value_currency: USD
+weight: '0'

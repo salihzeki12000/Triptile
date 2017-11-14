@@ -1,0 +1,481 @@
+$label-width: 40%;
+$label-tag-width: $label-width - 5%;
+$exp-date-width: 49%;
+$icon-margin: 10px;
+$payment-method-width: 100%;
+$padding-left: 50px;
+$mob-padding-left: 0;
+$fieldset-max-width: 550px;
+
+.payment-form {
+  @include flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-family: $pp-font-family;
+  margin: $v-padding auto;
+
+  @media #{$tablet-portrait} {
+    margin: 20px auto;
+  }
+
+  label {
+    color: $pp-dark-note-color;
+    font-weight: normal;
+    white-space: normal;
+  }
+
+  select {
+    @media #{$mobile} {
+      height: auto;
+    }
+  }
+
+  fieldset {
+    width: 100%;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    max-width: $fieldset-max-width;
+
+    @media #{$mobile} {
+      max-width: 100%;
+    }
+
+    .fieldset-wrapper {
+      width: 100%;
+
+      @media #{$mobile-portrait} {
+        @include flex;
+        flex-flow: row wrap;
+      }
+    }
+  }
+
+  > .form-wrapper {
+    width: 100%;
+  }
+
+  .payment-method {
+    flex-basis: $payment-method-width;
+  }
+
+  .terms-and-conditions {
+    max-width: 100%;
+  }
+
+  .payment-method,
+  .credit-card.payment-data,
+  .terms-and-conditions {
+    & > legend {
+
+      &::before {
+        display: inline-flex;
+        padding: 0.5rem 0.8rem;
+        margin-right: $icon-margin;
+        background: $pp-numbers-bg;
+        color: $pp-numbers-color;
+        font-size: 1.5rem;
+      }
+    }
+
+    &.form-item {
+      padding-bottom: $pp-v-padding * 3;
+
+      &.payment-method {
+        @include v-padding(0);
+
+        fieldset {
+          @include v-padding(0);
+
+          legend {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .payment-method,
+  .terms-and-conditions {
+    @include legend-label($pp-title-color, 1.5rem, $pp-v-padding * 3, 0);
+  }
+
+  .payment-data, .billing-profile {
+    @include legend-label ($pp-title-color, 1.5rem, $pp-v-padding * 3, 0);
+
+    .fieldset-wrapper{
+      @media #{$mobile-portrait} {
+        @include flex;
+        flex-flow: row wrap;
+
+        & > div {
+          flex-basis: 100%;
+          @include flex;
+          flex-flow: row wrap;
+
+          & > * {
+            @include flex;
+            flex-flow: row wrap;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .billing-profile {
+    legend {
+      padding-left: $padding-left;
+
+      @media #{$mobile} {
+        padding-left: $mob-padding-left;
+      }
+    }
+  }
+
+  .payment-data {
+    @media #{$mobile} {
+      .form-item-credit-card-payment-data-card-owner {
+        order: 3;
+      }
+
+      #edit-credit-card-payment-data-card-expiration-date {
+        order: 4;
+      }
+
+      .form-item-credit-card-payment-data-card-code {
+        order: 5;
+      }
+    }
+  }
+
+  .credit-card.payment-data,
+  .terms-and-conditions {
+    legend {
+      @media #{$mobile-portrait} {
+        flex-wrap: nowrap;
+      }
+    }
+  }
+
+  .terms-and-conditions {
+    .form-required {
+      flex-basis: 100%;
+      color: #000;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  .number-1 {
+    @include content('1');
+  }
+
+  .number-2 {
+    @include content('2');
+  }
+
+  .number-3 {
+    @include content('3');
+  }
+
+  .form-radios {
+    margin: 0;
+    padding-left: $padding-left;
+
+    @media #{$mobile} {
+      padding-left: 0;
+      width: 100%;
+    }
+  }
+
+  .form-item-payment-method {
+
+    input[type="radio"] {
+      margin-top: -5px;
+
+      @media #{$mobile} {
+        margin-top: 4px;
+      }
+
+      & + label {
+        &::after {
+          content: "";
+          display: inline-block;
+          vertical-align: middle;
+          margin-left: 10px;
+        }
+      }
+    }
+
+    .giropay {
+      & + label {
+        &::after {
+          width: 54px;
+          height: 25px;
+          background: url("#{$path-to-images}/giropay_logo_iso.png") no-repeat 0 0;
+          background-size: 54px;
+        }
+      }
+    }
+
+    .nl-banks, .at-banks {
+      & + label {
+        &::after {
+          width: 81px;
+          height: 25px;
+          background: url("#{$path-to-images}/sofort-logo.svg") no-repeat 0 0;
+          background-size: 81px;
+
+          @media #{$mobile} {
+            width: 60px;
+            height: 20px;
+            background-size: 60px;
+          }
+
+
+        }
+      }
+    }
+
+    .paypal {
+      & + label {
+        &::after {
+          width: 40px;
+          height: 11px;
+          background: url("#{$path-to-images}/paypal-light.png") no-repeat 0 0;
+          background-size: 40px;
+        }
+      }
+    }
+
+    .credit-card {
+      & + label {
+        &::after {
+          width: 74px;
+          height: 25px;
+          background: url("#{$path-to-images}/visa+mc-93x28.png") no-repeat 0 0;
+          background-size: 74px;
+        }
+      }
+    }
+
+    .safetypay {
+      & + label {
+        &::after {
+          width: 140px;
+          height: 25px;
+          background: url("#{$path-to-images}/giropay_logo_iso.png") no-repeat 0 0;
+          background-size: 54px;
+        }
+      }
+    }
+
+    .paysera-wallet {
+      & + label {
+        &::after {
+          width: 118px;
+          height: 25px;
+          background: url("#{$path-to-images}/paysera-wallet.png") no-repeat 0 0;
+          background-size: 118px;
+        }
+      }
+    }
+  }
+
+  .credit-card {
+    &.payment-data {
+      legend {
+        span {
+          &::before {
+            @include awesome-icon("\f023");
+            color: $pp-dark-note-color;
+            margin-right: $icon-margin;
+          }
+        }
+      }
+    }
+  }
+
+  @include custom-radio(white,white,$pp-light-note-color,$pp-light-note-color);
+  @include custom-checkbox($pp-light-note-color, $pp-title-color);
+
+  .payment-method-options {
+    .form-item {
+      label {
+        flex-basis: 80%;
+      }
+    }
+
+    .toggle-options {
+      color: #acacad;
+    }
+  }
+
+  .form-wrapper, .form-item {
+    @include flex;
+    flex-flow: row wrap;
+    align-items: center;
+  }
+
+  .form-item {
+    padding: $pp-v-padding 0;
+
+    label {
+      padding-left: $padding-left;
+      flex-basis: $label-tag-width;
+
+      @media #{$mobile} {
+        padding-left: $mob-padding-left;
+        flex-basis: 100%;
+        padding-bottom: $pp-v-padding
+      }
+    }
+
+    .form-type-checkbox,
+    .form-type-radio {
+      @include flex;
+      justify-content: flex-start;
+      flex-flow: row nowrap;
+    }
+
+    .form-type-checkbox {
+      align-items: center;
+
+      @media #{$mobile} {
+        align-items: baseline;
+      }
+    }
+
+    .form-type-radio {
+      align-items: baseline;
+
+      @media #{$mobile} {
+        align-items: flex-start;
+      }
+    }
+
+    .form-text,
+    .element-selectize,
+    .chosen-container,
+    .expiration-dates,
+    input[type="email"],
+    input[type="tel"] {
+      flex-basis: 100% - $label-width;
+
+      @media #{$mobile} {
+        flex-basis: 100%;
+      }
+
+    }
+
+    &.form-item-credit-card-payment-data-card-code {
+      .form-text {
+        flex-basis: (100% - $label-width) * $exp-date-width / 2 / 100%;
+
+        @media #{$mobile} {
+          flex-basis: $exp-date-width;
+        }
+      }
+    }
+
+    .description {
+      flex-basis: 100%;
+      padding-left: $label-tag-width;
+      padding-top: 10px;
+      font-size: 0.875rem;
+      color: $pp-light-note-color;
+
+      @media #{$mobile} {
+        padding-left: $mob-padding-left;
+      }
+    }
+  }
+
+  fieldset {
+    &.form-item {
+      padding: 0;
+
+      &.fieldset-paysera {
+        padding: $v-padding 0 0 $padding-left;
+
+        @media #{$mobile} {
+          padding-left: $mob-padding-left;
+        }
+      }
+    }
+  }
+
+  .form-item-accept {
+    padding-left: $padding-left;
+    @include v-padding(0);
+
+    @media #{$mobile-portrait} {
+      padding-left: $mob-padding-left;
+    }
+
+    input[type="checkbox"] {
+      margin-top: -10px;
+      margin-right: 7px;
+    }
+  }
+
+  .text-wrapper {
+    padding-left: $padding-left;
+    padding-bottom: $pp-v-padding * 3;
+
+    @media #{$mobile-portrait} {
+      padding-left: $mob-padding-left;
+    }
+  }
+
+  .expiration-dates {
+    @include flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    & > div {
+      flex-basis: $exp-date-width;
+    }
+
+    .element-selectize, .chosen-container {
+      flex-basis: 100%;
+    }
+  }
+
+  .form-actions {
+    @include flex;
+    width: 100%;
+    justify-content: flex-end;
+
+    input[type="submit"] {
+      @include btn-red;
+      padding: 15px 60px;
+
+      @media #{$mobile-portrait} {
+        flex-basis: 100%;
+      }
+    }
+  }
+
+  .payment-method-description {
+    padding-top: 10px;
+    padding-left: $padding-left;
+  }
+
+  fieldset.fieldset-no-title {
+    legend {
+      padding: 0;
+    }
+  }
+
+}
+
+.payment-redirect-message {
+  margin-top: 100px;
+  text-align: center;
+}
+

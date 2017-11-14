@@ -1,0 +1,28 @@
+uuid: 0005b761-4419-4947-b8f6-9af65dfad304
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.popular-links
+  module:
+    - rn_content
+    - system
+  theme:
+    - russiantraintickets
+third_party_settings:
+  rn_content:
+    classes: 'non-mobile x5-padding t-x2-padding small-size'
+id: popularlinks
+theme: russiantraintickets
+region: footer
+weight: -14
+provider: null
+plugin: 'system_menu_block:popular-links'
+settings:
+  id: 'system_menu_block:popular-links'
+  label: 'Related Links'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

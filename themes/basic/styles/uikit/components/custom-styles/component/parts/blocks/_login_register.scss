@@ -1,0 +1,420 @@
+$ca-btn-height: 40px;
+$ca-btn-height-mobile: 60px;
+$image-height: 510px;
+$mark-size: 15px;
+
+.ca-btn {
+  padding: $v-padding/3 $h-padding*2;
+  background: $ca-btn-background;
+  color: $ca-btn-color;
+  text-transform: lowercase;
+  @include transition;
+  white-space: nowrap;
+  cursor: pointer;
+  position: relative;
+  height: $ca-btn-height;
+
+  @media #{$mobile} {
+    height: $ca-btn-height-mobile;
+  }
+
+  a {
+    color: $ca-btn-color;
+    padding: $v-padding/3 0;
+  }
+
+  &:hover {
+    background: darken($ca-btn-background,10%);
+
+    a {
+      color: $ca-btn-color;
+    }
+  }
+}
+
+.logged-in {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include v-padding(0);
+  @include side-padding(0);
+
+  & > div {
+    height: 100%;
+
+    &:hover {
+      background: darken($ca-btn-background,10%);
+    }
+  }
+
+  &:hover {
+    background: $ca-btn-background;
+  }
+}
+
+.my-account-btn {
+  @include v-padding(10px);
+  @include side-padding($h-padding);
+
+  @media #{$mobile} {
+    @include side-padding($h-padding*3);
+  }
+}
+
+.logout-btn {
+  width: $ca-btn-height;
+  border-left: 1px solid $popup-input-border-color;
+  position: relative;
+
+  @media #{$mobile} {
+    width: $ca-btn-height-mobile;
+  }
+
+  a {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: url("#{$path-to-images}/exit.svg") no-repeat center center;
+    background-size: $ca-btn-height/2;
+
+    @media #{$mobile} {
+      background-size: $ca-btn-height-mobile/2;
+    }
+  }
+}
+
+.login-register-block {
+  .login-register-forms {
+    display: none;
+  }
+}
+
+.login-form-popup {
+  &.ui-dialog {
+    .form-text {
+      border-color: $input-border-color !important;
+    }
+  }
+
+  .block__content {
+    padding: 0;
+  }
+
+  .popup-form-wrapper {
+    display:         flex;
+    flex-flow:       row wrap;
+    justify-content: space-between;
+    align-items:     flex-start;
+    width:           100%;
+    max-width:       670px;
+    max-height: $image-height;
+  }
+
+  .form-wrapper {
+    @media #{$mobile} {
+      width: 100%;
+    }
+  }
+
+  .form-image, .forms {
+    flex-basis: 50%;
+    height: $image-height;
+    overflow: hidden;
+
+    @media #{$mobile} {
+      flex-basis: 100%;
+      height: auto;
+    }
+  }
+
+  .form-image {
+    img {
+      position: fixed;
+      width: 335px;
+      overflow: hidden;
+    }
+
+    @media #{$mobile} {
+      display: none;
+    }
+  }
+
+  .forms {
+    input[type="text"], input[type="password"], input[type="email"], .password-strength {
+      width: 100%;
+    }
+    [aria-live="polite"] {
+      font-size: $small-font-size;
+      text-align: right;
+      padding-top: $pl-v-padding;
+    }
+  }
+
+  form {
+    @include v-padding($v-padding);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-family: $pl-font-family;
+  }
+
+  .tabs-wrapper, .forms {
+    display: block;
+    width: 50%;
+  }
+
+  .tabs-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    width: 100%;
+  }
+
+  .tab-name {
+    flex-basis: 50%;
+    width: 50%;
+    text-align: center;
+    @include v-padding($v-padding/2);
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    color: $pl-tab-color;
+    background: $pl-tab-bg;
+    cursor: pointer;
+
+    &.active {
+      color: $pl-tab-color-active;
+      background: $pl-tab-bg-active;
+      cursor: default;
+    }
+  }
+
+  .tab-forms {
+    @include v-padding($v-padding/2);
+    @include side-padding($h-padding*2);
+    position: relative;
+    height: 100%;
+  }
+
+  .sign-in-form, .forgot-pass-form {
+    padding-top: $v-padding;
+  }
+
+  .user-register-form {
+    max-height: 455px;
+    overflow: auto;
+  }
+
+  .form-title {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .form-sub-title {
+    padding: 1.5rem 0 1.5rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  label {
+    font-weight: normal;
+    padding-bottom: $pl-v-padding/2;
+  }
+
+  input, textarea {
+    border: $input-border;
+  }
+
+  .description {
+    display: none;
+  }
+
+  .form-required {
+    &::after {
+      display: none;
+    }
+  }
+
+  .form-item {
+    padding-bottom: $v-padding/2;
+
+    @media #{$mobile} {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  .field--name-first-name, .field--name-last-name {
+    width: 48%;
+
+    @media #{$mobile-portrait} {
+      width: 100%;
+    }
+  }
+
+  .password-strength {
+    margin-top: (-1) * $v-padding/3;
+    position: relative;
+    text-align: right;
+  }
+
+  .password-strength__meter {
+    height: 5px;
+
+    .is-weak {
+      background-color: $pl-color-weak;
+    }
+
+    .is-fair {
+      background-color: $pl-color-fair;
+    }
+
+    .is-good {
+      background-color: $pl-color-good;
+    }
+
+    .is-strong {
+      background-color: $pl-color-strong;
+    }
+  }
+
+  .password-strength__title {
+    font-size: $small-font-size;
+
+    &.is-weak {
+      color: $pl-color-weak;
+    }
+
+    &.is-fair {
+      color: $pl-color-fair;
+    }
+
+    &.is-good {
+      color: $pl-color-good;
+    }
+
+    &.is-strong {
+      color: $pl-color-strong;
+    }
+  }
+
+  .form-type-password-confirm {
+    padding-bottom: 0;
+  }
+
+  .password-confirm {
+    &.error {
+      border-color: $pl-color-fair !important;
+      color: $pl-color-fair;
+    }
+
+    &.ok {
+      color: $pl-color-strong;
+
+      .title {
+        &:before {
+          content: '';
+          display: inline-block;
+          width: $mark-size;
+          height: $mark-size;
+          background: transparent url("#{$path-to-images}/mark.svg") no-repeat bottom center;
+          background-size: $mark-size;
+          margin-right: 7px;
+        }
+      }
+    }
+  }
+
+  .password-suggestions {
+    display: none !important;
+  }
+
+  .form-actions {
+    padding-top: $v-padding/2;
+    padding-bottom: $v-padding;
+    width: 100%;
+    flex-basis: 100%;
+
+    input[type="submit"] {
+      @include btn-red;
+      width: 100%;
+      @include v-padding($input-v-padding);
+      text-transform: uppercase;
+
+      &:hover {
+        border: $color-red;
+      }
+    }
+  }
+
+  .ps__scrollbar-y-rail {
+    top: 0 !important;
+  }
+
+  .forgot-pass-link {
+    text-align: center;
+    cursor: pointer;
+    color: $forgot-pass-link-color;
+  }
+
+  .forgot-pass-link:hover {
+    color: $color-black;
+  }
+
+  .captcha {
+    width: 100%;
+    @include v-padding($pl-v-padding);
+  }
+
+  .g-recaptcha {
+    transform:scale(0.87);
+    transform-origin:0 0;
+  }
+
+  .eye {
+    width: 94%;
+    position: relative;
+    z-index: 5;
+    span {
+      background: url('#{$path-to-images}/eye_hide.png') no-repeat;
+      margin-top: -30px;
+      font-size: 1em;
+      padding: .5em;
+      float: right;
+      cursor: pointer;
+    }
+  }
+
+  .eye-show {
+    span {
+      background: url('#{$path-to-images}/eye_show.png') no-repeat;
+    }
+  }
+
+  .password-preview {
+    color: #595959;
+    font-style: italic;
+    padding: .2em 0 0 .5em;
+  }
+
+  label.password-toggle {
+    font-weight: normal;
+  }
+
+  label.password-toggle input {
+    margin-right: 4px;
+  }
+
+  .password-strength__meter {
+    margin-top: 0.5em;
+    background-color: lightgray;
+  }
+  .password-strength__indicator {
+    height: 100%;
+    width: 0;
+    background-color: gray;
+  }
+
+}

@@ -1,0 +1,38 @@
+uuid: 47b43e5f-805f-41ee-9536-392db2714714
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.category_image
+    - taxonomy.vocabulary.blog_categories
+  module:
+    - image
+id: taxonomy_term.blog_categories.category_image
+field_name: category_image
+entity_type: taxonomy_term
+bundle: blog_categories
+label: 'Category image'
+description: 'Image for search form'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: false
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

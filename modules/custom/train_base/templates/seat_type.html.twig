@@ -1,0 +1,22 @@
+{#
+/**
+ * @file seat_type.html.twig
+ * Default theme implementation to present Seat type data.
+ *
+ * This template is used when viewing Seat type pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_seat_type()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('seat_type') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

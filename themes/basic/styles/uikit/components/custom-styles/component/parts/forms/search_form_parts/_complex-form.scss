@@ -1,0 +1,206 @@
+$stations-part: 2.2;
+$stations-tablet-part: 2;
+$fields-count: 3;
+
+.popup-search-form {
+
+  &.complex-mode {
+    background: $ml-form-bg;
+    overflow: visible;
+
+    .ui-dialog-titlebar {
+      background: transparent;
+
+      .ui-dialog-titlebar-close {
+        background-image: url("#{$path-to-images}/close-icon-grey.svg");
+      }
+    }
+
+    .form-flex-container {
+      @include flex;
+      flex-flow: row wrap;
+      @include v-padding(0, 60px);
+      overflow: visible;
+      min-height: 240px !important;
+      align-content: space-between;
+    }
+
+    .leg {
+      width: 100%;
+      height: $input-min-height;
+      @include flex;
+    }
+
+    .stations-wrapper {
+      flex-basis: 100% * $stations-part / $fields-count;
+      width: 100% * $stations-part / $fields-count;
+      @include flex;
+      flex-flow: row wrap;
+
+      @media #{$tablet} {
+        flex-basis: 100% * $stations-tablet-part / $fields-count;
+        width: 100% * $stations-tablet-part / $fields-count;
+      }
+
+      & > div {
+        flex-basis: 50%;
+      }
+    }
+
+    .travel-date-element-wrapper {
+      flex-basis: 100% * ($fields-count - $stations-part) / $fields-count;
+      width: 100% * ($fields-count - $stations-part) / $fields-count;
+      position: relative;
+
+      @media #{$tablet} {
+        flex-basis: 100% * ($fields-count - $stations-tablet-part) / $fields-count;
+        width: 100% * ($fields-count - $stations-tablet-part) / $fields-count;
+      }
+    }
+
+    .travel-date-wrapper {
+      $height: 20px;
+
+      &::before {
+        border:     none;
+        width:      22px;
+        height:     $height;
+        background: transparent url("#{$path-to-images}/#{$misc-icons}") no-repeat 0 -17px;
+        display:    inline-block;
+        content:    "";
+        position:   absolute;
+        left:       15px;
+        top:        50%;
+        margin-top: (-1) * $height / 2;
+
+        @media #{$tablet} {
+          left: 10px;
+        }
+      }
+
+      .travel-date-input {
+        height: $input-min-height;
+        background: $input-bg;
+        color: $input-color;
+        border: $input-border;
+        padding: $input-v-padding $input-h-padding;
+        padding-left: 40px;
+      }
+    }
+
+    .passengers-field-wrapper {
+      flex-basis: 100% * $stations-part / $fields-count;
+      width: 100% * $stations-part / $fields-count;
+      @include flex;
+      flex-flow: row wrap;
+
+      @media #{$tablet} {
+        flex-basis: 100% * $stations-tablet-part / $fields-count;
+        width: 100% * $stations-tablet-part / $fields-count;
+      }
+    }
+
+    .passengers-field {
+      width: 100%;
+
+      .passengers-wrapper {
+        display: flex !important;
+        flex-basis: 100%;
+        width: 100%;
+        position: relative;
+
+        .adult-number-input, .children-number-input {
+          display: flex;
+          flex-basis: 50%;
+          width: 50%;
+          height: $input-min-height;
+          background: $input-bg;
+          color: $input-color;
+          border: $input-border;
+          padding: $input-v-padding $input-h-padding;
+          position: relative;
+
+          &::after {
+            position: absolute;
+            content: "";
+            display: block;
+            right: 12px;
+            top: 20px;
+            border: none;
+            width: 13px;
+            height: 9px;
+            background: transparent url("#{$path-to-images}/#{$misc-icons}") no-repeat 0 0;
+            cursor: pointer;
+          }
+        }
+
+        .ui-spinner {
+          input[type="text"] {
+            height: $input-min-height;
+          }
+        }
+
+        label {
+          background: none;
+          font-weight: normal;
+          padding-bottom: $input-v-padding/2;
+        }
+
+        .form-item-complex-mode-passengers-passengers-field-wrapper-adults, .children-wrapper {
+          position: absolute;
+          top: 100%;
+          width: 50%;
+          background: $input-bg;
+          padding: $input-v-padding $input-h-padding;
+          border: $input-border;
+
+          select {
+            width: 100%;
+            height: $input-min-height;
+          }
+        }
+
+        .form-item-complex-mode-passengers-passengers-field-wrapper-adults {
+          left: 0;
+          display: none;
+        }
+
+        .children-wrapper {
+          left: 50%;
+        }
+
+        .chosen-container {
+          width: 100% !important;
+
+          .chosen-single {
+            font-size: $spinner-font-size;
+            justify-content: center;
+
+            span {
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .form-actions {
+      flex-basis: 100% * ($fields-count - $stations-part) / $fields-count;
+      width: 100% * ($fields-count - $stations-part) / $fields-count;
+      height: $input-min-height;
+      margin: 0;
+
+      @media #{$tablet} {
+        flex-basis: 100% * ($fields-count - $stations-tablet-part) / $fields-count;
+        width: 100% * ($fields-count - $stations-tablet-part) / $fields-count;
+      }
+
+      input[type="submit"] {
+        height: $input-min-height;
+        padding: $input-v-padding $input-h-padding;
+        @include btn-red;
+        width: 100%;
+      }
+    }
+  }
+}

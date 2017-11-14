@@ -1,0 +1,9 @@
+master.settings:
+  type: config_object
+  mapping:
+    record_translations:
+      type: integer
+      label: 'On/Off record translations to the files.'
+    site_code:
+      type: string
+      label: Site code

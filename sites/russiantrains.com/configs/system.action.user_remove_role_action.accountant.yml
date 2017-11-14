@@ -1,0 +1,14 @@
+uuid: 0386f823-9100-4077-96f6-20613b8af871
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.accountant
+  module:
+    - user
+id: user_remove_role_action.accountant
+label: 'Remove the Accountant role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: accountant

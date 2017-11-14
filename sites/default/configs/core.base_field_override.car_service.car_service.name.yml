@@ -1,0 +1,18 @@
+uuid: 70cee10c-731c-48e6-a789-f5f6c539d02f
+langcode: en
+status: true
+dependencies:
+  module:
+    - train_base
+id: car_service.car_service.name
+field_name: name
+entity_type: car_service
+bundle: car_service
+label: Name
+description: 'The name of the Car service entity.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

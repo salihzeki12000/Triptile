@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:rail1="http://bene-ws.b-rail.be/rail1/2007-06-13/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:types="http://bene-ws.b-rail.be/rail1/2007-06-13/types" xmlns:xs="http://www.w3.org/2001/XMLSchema" name="Rail1WS" targetNamespace="http://bene-ws.b-rail.be/rail1/2007-06-13/wsdl">
+	  <wsdl:types>
+		    <xs:schema version="29.0">
+<!--
+    THIS FILE IS GENERATED USING THE oobs xsd-repository PUBLISHING MECHANISM
+    DO NOT EDIT: any edits will be lost on the next publish                      
+
+    source file:  /mod/bnds-services/schema/rail1-ws-external/rail1-ws-2007-06-13/rail1-ws-2007-06-13.wsdl-->
+<!--BEGIN import of --><xs:import namespace="http://bene-ws.b-rail.be/rail1/2007-06-13/types" schemaLocation="sandbox-2007-06-13.xsd"/>
+         <!--END   import of -->
+			
+		</xs:schema>
+	  </wsdl:types>
+	  <wsdl:message name="trains-and-products-request">
+		    <wsdl:part element="types:trains-and-products-request" name="input"/>
+	  </wsdl:message>
+	  <wsdl:message name="trains-and-products-reply">
+		    <wsdl:part element="types:trains-and-products-reply" name="output"/>
+	  </wsdl:message>
+	  <wsdl:message name="product-info-request">
+		    <wsdl:part element="types:product-info-request" name="input"/>
+	  </wsdl:message>
+	  <wsdl:message name="product-info-reply">
+		    <wsdl:part element="types:product-info-reply" name="output"/>
+	  </wsdl:message>
+	  <wsdl:message name="booking-request">
+		    <wsdl:part element="types:booking-request" name="input"/>
+	  </wsdl:message>
+	  <wsdl:message name="booking-reply">
+		    <wsdl:part element="types:booking-reply" name="output"/>
+	  </wsdl:message>
+	  <wsdl:message name="update-booking-request">
+		    <wsdl:part element="types:update-booking-request" name="input"/>
+	  </wsdl:message>
+	  <wsdl:message name="update-booking-reply">
+		    <wsdl:part element="types:update-booking-reply" name="output"/>
+	  </wsdl:message>
+	  <wsdl:message name="manage-fullfilment-request">
+		    <wsdl:part element="types:manage-fulfillment-request" name="input"/>
+	  </wsdl:message>
+	  <wsdl:message name="manage-fullfilment-reply">
+		    <wsdl:part element="types:manage-fulfillment-reply" name="output"/>
+	  </wsdl:message>
+	  <wsdl:message name="retrieve-dossier-request">
+		    <wsdl:part element="types:retrieve-dossier-request" name="input"/>
+	  </wsdl:message>
+	  <wsdl:message name="retrieve-dossier-reply">
+		    <wsdl:part element="types:retrieve-dossier-reply" name="output"/>
+	  </wsdl:message>
+	  <wsdl:message name="confirm-booking-request">
+		    <wsdl:part element="types:confirm-booking-request" name="input"/>
+	  </wsdl:message>
+	  <wsdl:message name="confirm-booking-reply">
+		    <wsdl:part element="types:confirm-booking-reply" name="output"/>
+	  </wsdl:message>
+	  <wsdl:message name="ticket-booking-request">
+		    <wsdl:part element="types:ticket-booking-request" name="input"/>
+	  </wsdl:message>
+	  <wsdl:message name="ticket-booking-reply">
+		    <wsdl:part element="types:ticket-booking-reply" name="output"/>
+	  </wsdl:message>
+	  <wsdl:message name="cancel-booking-request">
+		    <wsdl:part element="types:cancel-booking-request" name="input"/>
+	  </wsdl:message>
+	  <wsdl:message name="cancel-booking-reply">
+		    <wsdl:part element="types:cancel-booking-reply" name="output"/>
+	  </wsdl:message>
+	  <wsdl:message name="retrieve-dossiers-by-topo-request">
+		    <wsdl:part element="types:retrieve-dossiers-by-topo-request" name="input"/>
+	  </wsdl:message>
+	  <wsdl:message name="retrieve-dossiers-by-topo-reply">
+		    <wsdl:part element="types:retrieve-dossiers-by-topo-reply" name="output"/>
+	  </wsdl:message>
+	  <wsdl:message name="availability-request">
+		    <wsdl:part element="types:availability-request" name="input"/>
+	  </wsdl:message>
+	  <wsdl:message name="availability-reply">
+		    <wsdl:part element="types:availability-reply" name="output"/>
+	  </wsdl:message>
+	  <wsdl:message name="confirm-deferred-bo-request">
+		    <wsdl:part element="types:confirm-deferred-bo-request" name="input"/>
+	  </wsdl:message>
+	  <wsdl:message name="confirm-deferred-bo-reply">
+		    <wsdl:part element="types:confirm-deferred-bo-reply" name="output"/>
+	  </wsdl:message>
+	  <wsdl:message name="get-cancellation-offer-request">
+		    <wsdl:part element="types:get-cancellation-offer-request" name="input"/>
+	  </wsdl:message>
+	  <wsdl:message name="get-cancellation-offer-reply">
+		    <wsdl:part element="types:get-cancellation-offer-reply" name="output"/>
+	  </wsdl:message>
+	  <wsdl:message name="execute-cancellation-request">
+		    <wsdl:part element="types:execute-cancellation-request" name="input"/>
+	  </wsdl:message>
+	  <wsdl:message name="execute-cancellation-reply">
+		    <wsdl:part element="types:execute-cancellation-reply" name="output"/>
+	  </wsdl:message>
+	  <wsdl:message name="exchange-ticket-list-request">
+		    <wsdl:part element="types:exchange-ticket-list-request" name="input"/>
+	  </wsdl:message>
+	  <wsdl:message name="exchange-ticket-list-reply">
+		    <wsdl:part element="types:exchange-ticket-list-reply" name="output"/>
+	  </wsdl:message>
+	  <wsdl:portType name="Rail1PortType">
+		    <wsdl:operation name="trains-and-products-request">
+			      <wsdl:input message="rail1:trains-and-products-request"/>
+			      <wsdl:output message="rail1:trains-and-products-reply"/>
+		    </wsdl:operation>
+		    <wsdl:operation name="product-info-request">
+			      <wsdl:input message="rail1:product-info-request"/>
+			      <wsdl:output message="rail1:product-info-reply"/>
+		    </wsdl:operation>
+		    <wsdl:operation name="booking-request">
+			      <wsdl:input message="rail1:booking-request"/>
+			      <wsdl:output message="rail1:booking-reply"/>
+		    </wsdl:operation>
+		    <wsdl:operation name="update-booking-request">
+			      <wsdl:input message="rail1:update-booking-request"/>
+			      <wsdl:output message="rail1:update-booking-reply"/>
+		    </wsdl:operation>
+		    <wsdl:operation name="manage-fulfillment-request">
+			      <wsdl:input message="rail1:manage-fullfilment-request"/>
+			      <wsdl:output message="rail1:manage-fullfilment-reply"/>
+		    </wsdl:operation>
+		    <wsdl:operation name="retrieve-dossier-request">
+			      <wsdl:input message="rail1:retrieve-dossier-request"/>
+			      <wsdl:output message="rail1:retrieve-dossier-reply"/>
+		    </wsdl:operation>
+		    <wsdl:operation name="confirm-booking-request">
+			      <wsdl:input message="rail1:confirm-booking-request"/>
+			      <wsdl:output message="rail1:confirm-booking-reply"/>
+		    </wsdl:operation>
+		    <wsdl:operation name="ticket-booking-request">
+			      <wsdl:input message="rail1:ticket-booking-request"/>
+			      <wsdl:output message="rail1:ticket-booking-reply"/>
+		    </wsdl:operation>
+		    <wsdl:operation name="cancel-booking-request">
+			      <wsdl:input message="rail1:cancel-booking-request"/>
+			      <wsdl:output message="rail1:cancel-booking-reply"/>
+		    </wsdl:operation>
+		    <wsdl:operation name="retrieve-dossiers-by-topo-request">
+			      <wsdl:input message="rail1:retrieve-dossiers-by-topo-request"/>
+			      <wsdl:output message="rail1:retrieve-dossiers-by-topo-reply"/>
+		    </wsdl:operation>
+		    <wsdl:operation name="availability-request">
+			      <wsdl:input message="rail1:availability-request"/>
+			      <wsdl:output message="rail1:availability-reply"/>
+		    </wsdl:operation>
+		    <wsdl:operation name="confirm-deferred-bo-request">
+			      <wsdl:input message="rail1:confirm-deferred-bo-request"/>
+			      <wsdl:output message="rail1:confirm-deferred-bo-reply"/>
+		    </wsdl:operation>
+		    <wsdl:operation name="get-cancellation-offer-request">
+			      <wsdl:input message="rail1:get-cancellation-offer-request"/>
+			      <wsdl:output message="rail1:get-cancellation-offer-reply"/>
+		    </wsdl:operation>
+		    <wsdl:operation name="execute-cancellation-request">
+			      <wsdl:input message="rail1:execute-cancellation-request"/>
+			      <wsdl:output message="rail1:execute-cancellation-reply"/>
+		    </wsdl:operation>
+		    <wsdl:operation name="exchange-ticket-list-request">
+			      <wsdl:input message="rail1:exchange-ticket-list-request"/>
+			      <wsdl:output message="rail1:exchange-ticket-list-reply"/>
+		    </wsdl:operation>
+	  </wsdl:portType>
+	  <wsdl:binding name="Rail1Binding" type="rail1:Rail1PortType">
+		    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		    <wsdl:operation name="trains-and-products-request">
+			      <soap:operation soapAction="http://www.rail1.be/itti/webservices/wsdl/processMessage" style="document"/>
+			      <wsdl:input>
+				        <soap:body use="literal"/>
+			      </wsdl:input>
+			      <wsdl:output>
+				        <soap:body use="literal"/>
+			      </wsdl:output>
+		    </wsdl:operation>
+		    <wsdl:operation name="product-info-request">
+			      <soap:operation soapAction="http://www.rail1.be/itti/webservices/wsdl/processMessage" style="document"/>
+			      <wsdl:input>
+				        <soap:body use="literal"/>
+			      </wsdl:input>
+			      <wsdl:output>
+				        <soap:body use="literal"/>
+			      </wsdl:output>
+		    </wsdl:operation>
+		    <wsdl:operation name="booking-request">
+			      <soap:operation soapAction="http://www.rail1.be/itti/webservices/wsdl/processMessage" style="document"/>
+			      <wsdl:input>
+				        <soap:body use="literal"/>
+			      </wsdl:input>
+			      <wsdl:output>
+				        <soap:body use="literal"/>
+			      </wsdl:output>
+		    </wsdl:operation>
+		    <wsdl:operation name="update-booking-request">
+			      <soap:operation soapAction="http://www.rail1.be/itti/webservices/wsdl/processMessage" style="document"/>
+			      <wsdl:input>
+				        <soap:body use="literal"/>
+			      </wsdl:input>
+			      <wsdl:output>
+				        <soap:body use="literal"/>
+			      </wsdl:output>
+		    </wsdl:operation>
+		    <wsdl:operation name="manage-fulfillment-request">
+			      <soap:operation soapAction="http://www.rail1.be/itti/webservices/wsdl/processMessage" style="document"/>
+			      <wsdl:input>
+				        <soap:body use="literal"/>
+			      </wsdl:input>
+			      <wsdl:output>
+				        <soap:body use="literal"/>
+			      </wsdl:output>
+		    </wsdl:operation>
+		    <wsdl:operation name="retrieve-dossier-request">
+			      <soap:operation soapAction="http://www.rail1.be/itti/webservices/wsdl/processMessage" style="document"/>
+			      <wsdl:input>
+				        <soap:body use="literal"/>
+			      </wsdl:input>
+			      <wsdl:output>
+				        <soap:body use="literal"/>
+			      </wsdl:output>
+		    </wsdl:operation>
+		    <wsdl:operation name="confirm-booking-request">
+			      <soap:operation soapAction="http://www.rail1.be/itti/webservices/wsdl/processMessage" style="document"/>
+			      <wsdl:input>
+				        <soap:body use="literal"/>
+			      </wsdl:input>
+			      <wsdl:output>
+				        <soap:body use="literal"/>
+			      </wsdl:output>
+		    </wsdl:operation>
+		    <wsdl:operation name="ticket-booking-request">
+			      <soap:operation soapAction="http://www.rail1.be/itti/webservices/wsdl/processMessage" style="document"/>
+			      <wsdl:input>
+				        <soap:body use="literal"/>
+			      </wsdl:input>
+			      <wsdl:output>
+				        <soap:body use="literal"/>
+			      </wsdl:output>
+		    </wsdl:operation>
+		    <wsdl:operation name="cancel-booking-request">
+			      <soap:operation soapAction="http://www.rail1.be/itti/webservices/wsdl/processMessage" style="document"/>
+			      <wsdl:input>
+				        <soap:body use="literal"/>
+			      </wsdl:input>
+			      <wsdl:output>
+				        <soap:body use="literal"/>
+			      </wsdl:output>
+		    </wsdl:operation>
+		    <wsdl:operation name="retrieve-dossiers-by-topo-request">
+			      <soap:operation soapAction="http://www.rail1.be/itti/webservices/wsdl/processMessage" style="document"/>
+			      <wsdl:input>
+				        <soap:body use="literal"/>
+			      </wsdl:input>
+			      <wsdl:output>
+				        <soap:body use="literal"/>
+			      </wsdl:output>
+		    </wsdl:operation>
+		    <wsdl:operation name="availability-request">
+			      <soap:operation soapAction="http://www.rail1.be/itti/webservices/wsdl/processMessage" style="document"/>
+			      <wsdl:input>
+				        <soap:body use="literal"/>
+			      </wsdl:input>
+			      <wsdl:output>
+				        <soap:body use="literal"/>
+			      </wsdl:output>
+		    </wsdl:operation>
+		    <wsdl:operation name="confirm-deferred-bo-request">
+			      <soap:operation soapAction="http://www.rail1.be/itti/webservices/wsdl/processMessage" style="document"/>
+			      <wsdl:input>
+				        <soap:body use="literal"/>
+			      </wsdl:input>
+			      <wsdl:output>
+				        <soap:body use="literal"/>
+			      </wsdl:output>
+		    </wsdl:operation>
+		    <wsdl:operation name="get-cancellation-offer-request">
+			      <soap:operation soapAction="http://www.rail1.be/itti/webservices/wsdl/processMessage" style="document"/>
+			      <wsdl:input>
+				        <soap:body use="literal"/>
+			      </wsdl:input>
+			      <wsdl:output>
+				        <soap:body use="literal"/>
+			      </wsdl:output>
+		    </wsdl:operation>
+		    <wsdl:operation name="execute-cancellation-request">
+			      <soap:operation soapAction="http://www.rail1.be/itti/webservices/wsdl/processMessage" style="document"/>
+			      <wsdl:input>
+				        <soap:body use="literal"/>
+			      </wsdl:input>
+			      <wsdl:output>
+				        <soap:body use="literal"/>
+			      </wsdl:output>
+		    </wsdl:operation>
+		    <wsdl:operation name="exchange-ticket-list-request">
+			      <soap:operation soapAction="http://www.rail1.be/itti/webservices/wsdl/processMessage" style="document"/>
+			      <wsdl:input>
+				        <soap:body use="literal"/>
+			      </wsdl:input>
+			      <wsdl:output>
+				        <soap:body use="literal"/>
+			      </wsdl:output>
+		    </wsdl:operation>
+	  </wsdl:binding>
+	  <wsdl:service name="rail1-ws">
+		    <wsdl:port binding="rail1:Rail1Binding" name="Rail1">
+			      <soap:address location="https://accept-services.bene-system.com:443/bene-agent/legacy/dsws_2007-06-13/Rail1PortType"/>
+		    </wsdl:port>
+	  </wsdl:service>
+</wsdl:definitions>

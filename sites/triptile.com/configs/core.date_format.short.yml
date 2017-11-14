@@ -1,0 +1,10 @@
+uuid: 7173f15d-91ad-4f05-ac14-93b680f3e34e
+langcode: ru
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: AlzeyytA8InBgxIG9H2UDJYs3CG98Zj6yRsDKmlbZwA
+id: short
+label: 'Короткая дата по умолчанию'
+locked: false
+pattern: 'm/d/Y - H:i'

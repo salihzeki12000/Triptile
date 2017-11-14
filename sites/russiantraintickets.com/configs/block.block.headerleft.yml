@@ -1,0 +1,30 @@
+uuid: cda13e2f-baf9-4f87-acf7-3e13239431cd
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.header-left
+  module:
+    - rn_content
+    - system
+  theme:
+    - russiantraintickets
+third_party_settings:
+  rn_content:
+    classes: ''
+_core:
+  default_config_hash: ABbFkEaq5yFRbY-yY9fdUY3CugNm1AkJ0xN0vVLimQ4
+id: headerleft
+theme: russiantraintickets
+region: leaderboard
+weight: -17
+provider: null
+plugin: 'system_menu_block:header-left'
+settings:
+  id: 'system_menu_block:header-left'
+  label: 'Header left'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

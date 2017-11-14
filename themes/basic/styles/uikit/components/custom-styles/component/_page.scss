@@ -1,0 +1,42 @@
+.page {
+
+  .full-width {
+    width: 100%;
+  }
+
+  .l-rw {
+    max-width: $container-width;
+    padding:   0;
+  }
+
+  .regions {
+    background-color: transparent;
+  }
+
+  #main-content {
+    .block {
+      &.block-plugin-id--local-tasks-block {
+        .block__inner {
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+@import "parts/header";
+@import "parts/footer";
+@import "parts/content";
+@import "parts/forms/search-form";
+@import "parts/forms/payment-form";
+@import "parts/forms/invoice_payment_form";
+@import "parts/forms/login-form";
+@import "parts/blocks/system-blocks";
+@import "parts/forms/password-reset";
+@import "parts/regions/highlighted";
+@import "parts/blocks/login_register";
+@import "parts/blocks/login-register-dropdown";
+@import "parts/pager";
+@import "parts/flexslider";
+
+

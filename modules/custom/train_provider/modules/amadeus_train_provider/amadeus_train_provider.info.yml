@@ -1,0 +1,11 @@
+name: Amadeus train provider
+type: module
+description: Amadeus train provider
+dependencies:
+  - train_provider
+  - train_base
+  - store
+  - content_translation
+  - inline_entity_form
+core: 8.x
+package: Custom

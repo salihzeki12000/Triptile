@@ -1,0 +1,10 @@
+label: Credit card
+status: true
+weight: 0
+allowed_card_types:
+  - visa
+  - mc
+  - discover
+dependencies:
+  module:
+    - payment

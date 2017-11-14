@@ -1,0 +1,19 @@
+uuid: 8445c823-d5a1-4561-9d04-7a24106629c6
+langcode: ru
+status: true
+dependencies:
+  module:
+    - field_collection
+    - text
+id: field_collection_item.field_collection_group_text_1
+field_name: field_collection_group_text_1
+entity_type: field_collection_item
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

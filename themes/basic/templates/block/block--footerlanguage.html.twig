@@ -1,0 +1,19 @@
+{% extends "themes/basic/templates/block/block-footer-base.html.twig" %}
+
+ {% block footer_icon %}
+     <div class="footer-icon">
+         <div class="inner-icon">{{ content.current_language }}</div>
+     </div>
+ {% endblock %}
+
+{% block footer_title %}
+  {{ content.footer_language_field_title }}
+{% endblock %}
+
+ {% block footer_subtitle %}
+   {{ content.footer_language_field_subtitle }}
+ {% endblock %}
+
+{% block footer_content %}
+  {{ content.footer_drupal_language_switcher }}
+{% endblock %}

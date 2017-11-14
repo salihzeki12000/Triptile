@@ -1,0 +1,26 @@
+uuid: 6f9039a3-c333-4aeb-8cc5-c4469186dc6c
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - tt_front
+  theme:
+    - tt
+id: suggestourprogram
+theme: tt
+region: content
+weight: -3
+provider: null
+plugin: subscribe_block
+settings:
+  id: subscribe_block
+  label: 'Suggest Our Program'
+  provider: tt_front
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,10 @@
+weight: 2
+status: false
+countries: {  }
+include_in_top: true
+in_top_if_no_country: false
+projectid: ''
+display_payment_form_text: false
+payment_form_text:
+  value: ''
+  format: full_html

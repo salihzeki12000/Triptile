@@ -1,0 +1,134 @@
+global-css: 
+  css: 
+   theme:     
+    css/intlTelInput.css: { weight: -10 }
+    css/style.css: {}
+  dependencies:
+    - tt/ng_dialog
+    - tt/slick
+    - tt/scrollbar
+
+global-js: 
+  js: 
+   js/script.js: {}
+
+angular:
+  version: 1.6.2
+  js:
+    js/angular/angular.min.js: {}
+    js/angular/angular-animate.min.js: {}
+    js/angular/ngMask.js: {}
+    js/angular/ngStorage.min.js: {}
+    js/angular/angular-filter.min.js: {}
+
+slick:
+  version: 1.6.0
+  css:
+    theme:
+      css/slick.css: {}
+  js:
+    js/slick/slick.min.js: {}
+    js/angular/angular-slick.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+
+front_slick:
+  version: 1.0
+  js:
+    js/slick/front_slick.js: {}
+  dependencies:
+    - tt/slick
+
+front_search:
+  version: 1.0
+  js:
+    js/angular/angular-scroll.min.js: {}
+    js/angular/app/front/front_module.js: {}
+    js/angular/app/front/front_search_ctrl.js: {}
+    js/angular/app/front/front_subscribe_ctrl.js: {}
+    js/angular/app/common/common_filters.js: {}
+    js/angular/app/front/front_directives.js: {}
+  dependencies:
+    - core/jquery
+    - tt/angular
+    - tt/datepicker
+    - tt/scrollbar
+
+constructor:
+  version: 1.0
+  js:
+    js/angular/angular-leaflet-directive.min.js: {}
+    js/angular/angular-scroll.min.js: {}
+    js/angular/app/constructor/constructor_module.js: {}
+    js/angular/app/constructor/constructor_ctrl.js: {}
+    js/angular/app/constructor/constructor_search_ctrl.js: {}
+    js/angular/app/constructor/constructor_map_ctrl.js: {}
+    js/angular/app/constructor/dialogs/connection_dialog_ctrl.js: {}
+    js/angular/app/constructor/dialogs/step_dialog_ctrl.js: {}
+    js/angular/app/constructor/dialogs/activity_dialog_ctrl.js: {}
+    js/angular/app/constructor/dialogs/hotel_dialog_ctrl.js: {}
+    js/angular/app/constructor/dialogs/hub_dialog_ctrl.js: {}
+    js/angular/app/constructor/dialogs/transfer_dialog_ctrl.js: {}
+    js/angular/app/constructor/dialogs/save_share_dialog_ctrl.js: {}
+    js/angular/app/constructor/dialogs/book_now_dialog_ctrl.js: {}
+    js/angular/app/constructor/dialogs/show_itinerary_map_ctrl.js: {}
+    js/angular/app/common/common_filters.js: {}
+    js/angular/app/constructor/constructor_directives.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.cookie
+    - tt/slick
+    - tt/angular
+    - tt/datepicker
+    - tt/scrollbar
+    - tt/ng_dialog
+    - tt/leaflet
+    - tt/ng_phone
+
+datepicker:
+  js: 
+    js/datepicker/moment-with-locales.js: {}
+    js/datepicker/angular-moment-picker.js: {}
+  css:
+    theme:
+      css/angular-moment-picker.min.css: { weight: -10 }
+
+scrollbar:
+  version: 0.6.16
+  css:
+    theme:
+      css/perfect-scrollbar.min.css: { }
+  js:
+    js/scrollbar/perfect-scrollbar.min.js: {}
+    js/scrollbar/perfect-scrollbar.with-mousewheel.min.js: {}
+  dependencies:
+    - core/jquery
+
+leaflet:
+  version: 0.7.7
+  css:
+    theme:
+      css/leaflet.css: { weight: -10 }
+  js:
+    js/angular/leaflet.js: {}
+
+ng_dialog:
+  version: 1.0.1
+  css:
+    theme:
+      css/ngDialog.min.css: { }
+      css/ngDialog-theme-default.min.css: { }
+  js:
+    js/angular/ngDialog.min.js: {}
+  dependencies:
+    - core/jquery
+    - tt/angular
+
+ng_phone:
+  version: 11.0.14
+  js:
+    js/phone/intlTelInput.js: {}
+    js/phone/utils.js: {}
+    js/phone/international-phone-number.js: {}

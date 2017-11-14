@@ -1,0 +1,6 @@
+uuid: null
+langcode: en
+status: true
+dependencies: {  }
+id: field_collection_group
+label: field_collection_group

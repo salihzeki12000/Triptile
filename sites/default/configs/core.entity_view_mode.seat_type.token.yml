@@ -1,0 +1,10 @@
+uuid: 40427fc2-8cff-4ed4-93de-5bf084f32a61
+langcode: en
+status: true
+dependencies:
+  module:
+    - train_base
+id: seat_type.token
+label: Token
+targetEntityType: seat_type
+cache: true

@@ -1,0 +1,10 @@
+uuid: fc3abb0c-07f2-45a9-a7f9-77c6aa8b1666
+langcode: en
+status: true
+dependencies:
+  module:
+    - train_booking
+id: success_search_detailed.token
+label: Token
+targetEntityType: success_search_detailed
+cache: true

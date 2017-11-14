@@ -1,0 +1,50 @@
+uuid: cfda6db8-270e-4010-adbf-5338217dd2e7
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.field.field_collection_item.field_collection_group.field_collection_group_image
+    - field.field.field_collection_item.field_collection_group.field_collection_group_text_1
+    - field.field.field_collection_item.field_collection_group.field_collection_group_text_2
+    - field.field.field_collection_item.field_collection_group.field_text_short
+    - field_collection.field_collection.field_collection_group
+  module:
+    - image
+    - text
+id: field_collection_item.field_collection_group.default
+targetEntityType: field_collection_item
+bundle: field_collection_group
+mode: default
+content:
+  field_collection_group_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_collection_group_text_1:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_collection_group_text_2:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_text_short:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

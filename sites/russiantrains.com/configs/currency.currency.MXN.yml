@@ -1,0 +1,15 @@
+alternativeSigns:
+  - N$
+currencyCode: MXN
+currencyNumber: '484'
+label: MXN
+roundingStep: 0.01
+sign: $
+subunits: 100
+status: true
+usages:
+  -
+    start: '1993-01-01'
+    end: null
+    countryCode: MX
+uuid: b2503c0f-2d23-473d-b69c-85a48f507448

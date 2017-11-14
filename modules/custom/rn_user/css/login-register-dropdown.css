@@ -1,0 +1,8 @@
+.dropdown-container {
+  display: none;
+}
+
+.dropdown-container.opened {
+  display: flex;
+  align-items: center;
+}

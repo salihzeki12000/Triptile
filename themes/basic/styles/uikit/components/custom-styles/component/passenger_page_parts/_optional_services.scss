@@ -1,0 +1,279 @@
+$ninja-icon-width: 21px;
+$ninja-icon-height: 21px;
+$checkbox-width: 30%;
+$opt-btn-mobile-width: 45%;
+
+.services-wrapper {
+  width: 100%;
+  border: $pas-border;
+  border-bottom: none;
+}
+
+.free-services-wrapper, .paid-services-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.free-services-title, .paid-services-title, .delivery-services-title {
+  background: $pas-background-color;
+  @include v-padding($pas-v-padding/2);
+  @include side-padding($pas-h-padding);
+  font-size: 1.125rem;
+  width: 100%;
+
+  @media #{$mobile} {
+    @include side-padding($pas-mobile-h-padding);
+  }
+}
+
+.free-services-title, .paid-services-title, .delivery-services-title, .service-header {
+  border-bottom: $pas-border;
+}
+
+.service-wrapper {
+  width: 100%;
+
+  &.opened {
+    .service-header {
+      @include arrow-down($pas-light-note-color, 0, 1.7rem);
+    }
+  }
+}
+
+.service-header {
+  width: 100%;
+  padding: $pas-v-padding $pas-h-padding;
+  cursor:  pointer;
+  display:         flex;
+  flex-flow:       row nowrap;
+  justify-content: flex-start;
+  align-items:     center;
+  position:        relative;
+  @include arrow-up($pas-light-note-color, 0, 1.7rem);
+
+  @media #{$mobile} {
+    @include side-padding($pas-mobile-h-padding);
+  }
+
+  &::after {
+    position: absolute;
+    right:    $pas-h-padding;
+
+    @media #{$mobile} {
+      right: $pas-mobile-h-padding;
+    }
+
+    @media #{$mobile-portrait} {
+      bottom: $pas-v-padding;
+    }
+  }
+}
+
+.service-title {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  @media #{$mobile-portrait} {
+    flex-wrap: wrap;
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
+    font-size: $pas-small-size;
+
+    @media #{$mobile-portrait} {
+      width: 100%;
+    }
+
+    &::before {
+      content: '';
+      background: transparent url("#{$path-to-images}/ninja-star-grey.png") no-repeat 0 0;
+      background-size: $ninja-icon-width $ninja-icon-height;
+      width: $ninja-icon-width;
+      height: $ninja-icon-height;
+      display: inline-flex;
+      margin-right: 10px;
+    }
+  }
+
+  $icon-padding: 10px;
+
+  &.selected {
+    flex-flow: row wrap;
+
+    .title {
+      width: 100%;
+
+      &::before {
+        content: '';
+        width: $ninja-icon-width;
+        height: $ninja-icon-height;
+        display: inline-flex;
+        margin-right: $icon-padding;
+        background: url("#{$path-to-images}/ninja-star-green.png") no-repeat 0 center;
+        background-size: $ninja-icon-width;
+      }
+    }
+
+    .summary {
+      width: 100%;
+      font-size: 0.875rem;
+      padding-left: $ninja-icon-width + $icon-padding;
+      font-style: italic;
+      color: $pas-dark-note-color;
+    }
+  }
+
+  .price {
+    margin-right: $pas-h-padding * 2;
+    font-size: 1.125rem;
+
+    @media #{$mobile-portrait} {
+      width: 100%;
+      margin: 0;
+      padding: $pas-v-padding/2 $pas-mobile-h-padding*1.5 0;
+    }
+  }
+}
+
+.service-form-wrapper {
+  width: 100%;
+  padding: $pas-v-padding $pas-h-padding;
+  display:         flex;
+  flex-flow:       row nowrap;
+  justify-content: flex-start;
+  align-items:     flex-start;
+  border-bottom: $pas-border;
+  @include custom-checkbox($tt-sidebar-light-note-color, $tt-sidebar-color);
+
+  @media #{$mobile} {
+    @include side-padding($pas-mobile-h-padding);
+  }
+
+  label {
+    font-size: $pas-small-size;
+  }
+
+  .form-wrapper {
+    padding-bottom: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .form-wrapper {
+      color: $pas-dark-note-color;
+      padding-bottom: $pas-v-padding;
+      font-size: $pas-small-size;
+    }
+  }
+
+  .form-item {
+    padding-bottom: $pas-v-padding/2;
+  }
+
+  label {
+    font-weight: normal;
+    padding-bottom: 5px;
+  }
+
+  .form-type-checkbox {
+    display: flex;
+    flex-flow: row nowrap;
+    flex-basis: $checkbox-width;
+    width: $checkbox-width;
+    padding-right: round((100% - $checkbox-width*3)/3);
+
+    @media #{$mobile-portrait} {
+      flex-basis: 100%;
+      width: 100%;
+      padding-right: 0;
+    }
+
+    &:last-of-type {
+      padding-bottom: $pas-v-padding;
+    }
+
+    input[type=checkbox] {
+      & + label {
+        margin-left: $pas-h-padding/2;
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  .form-type-number {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: $pas-v-padding;
+
+    @media #{$mobile-portrait} {
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    input[type="number"] {
+      max-width: 100px;
+
+      @media #{$mobile-portrait} {
+        max-width: 100%;
+        flex-basis: $opt-btn-mobile-width;
+        width: $opt-btn-mobile-width;
+      }
+    }
+
+    label {
+      padding-right: $pas-h-padding/2;
+
+      @media #{$mobile-portrait} {
+        padding-right: 0;
+        flex-basis: $opt-btn-mobile-width;
+        width:      $opt-btn-mobile-width;
+      }
+    }
+  }
+
+  .actions-button-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: $pas-v-padding;
+    border-top: $pas-border;
+
+    @media #{$mobile-portrait} {
+      justify-content: space-between;
+    }
+
+    input[type="submit"] {
+      padding: $pas-button-v-padding 50px;
+
+      @media #{$mobile-portrait} {
+        @include side-padding(0);
+        flex-basis: $opt-btn-mobile-width;
+        width: $opt-btn-mobile-width;
+      }
+
+      &:first-of-type {
+        @include btn-red;
+        margin-right: $pas-h-padding/3;
+
+        @media #{$mobile-portrait} {
+          margin-right: 0;
+        }
+      }
+
+      &:last-of-type {
+        @include btn-yellow;
+      }
+    }
+  }
+}

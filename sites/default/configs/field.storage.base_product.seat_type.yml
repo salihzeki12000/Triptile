@@ -1,0 +1,22 @@
+uuid: c3909d8c-326a-46b3-b4e2-06f230f51b44
+langcode: en
+status: true
+dependencies:
+  module:
+    - store
+    - train_base
+_core:
+  default_config_hash: o7sEW8v7PMDEYqUumAeieCi-KlHPJaD7nseLquffYV4
+id: base_product.seat_type
+field_name: seat_type
+entity_type: base_product
+type: entity_reference
+settings:
+  target_type: seat_type
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

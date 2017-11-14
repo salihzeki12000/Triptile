@@ -1,0 +1,23 @@
+uuid: 3fd6aff5-dcd0-49a3-a9a3-86bcc7f7a79c
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.train_review
+    - field.storage.comment.field_rating
+id: comment.train_review.field_rating
+field_name: field_rating
+entity_type: comment
+bundle: train_review
+label: Rating
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: 10
+  prefix: ''
+  suffix: ''
+field_type: integer

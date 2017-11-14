@@ -1,0 +1,18 @@
+uuid: 6d0a41c9-175d-433c-97e1-7836422a864b
+langcode: en
+status: true
+dependencies:
+  config:
+    - store.base_product_type.delivery_service
+id: base_product.delivery_service.description
+field_name: description
+entity_type: base_product
+bundle: delivery_service
+label: Description
+description: 'The description of the base product entity.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

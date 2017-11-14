@@ -1,0 +1,30 @@
+uuid: a95ad2c7-ef62-4498-84da-6c373d68eff0
+langcode: ru
+status: true
+dependencies:
+  config:
+    - views.view.our_most_popular_tour
+  module:
+    - system
+    - views
+  theme:
+    - tt
+id: views_block__our_most_popular_tour_block_1
+theme: tt
+region: content
+weight: -8
+provider: null
+plugin: 'views_block:our_most_popular_tour-block_1'
+settings:
+  id: 'views_block:our_most_popular_tour-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

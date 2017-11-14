@@ -1,0 +1,77 @@
+global_currency: USD
+country_currency:
+  -
+    country_code: US
+    currency_code: USD
+  -
+    country_code: GB
+    currency_code: GBP
+  -
+    country_code: DE
+    currency_code: EUR
+  -
+    country_code: RU
+    currency_code: RUB
+  -
+    country_code: AT
+    currency_code: EUR
+  -
+    country_code: BE
+    currency_code: EUR
+  -
+    country_code: GR
+    currency_code: EUR
+  -
+    country_code: IE
+    currency_code: EUR
+  -
+    country_code: ES
+    currency_code: EUR
+  -
+    country_code: IT
+    currency_code: EUR
+  -
+    country_code: LV
+    currency_code: EUR
+  -
+    country_code: LT
+    currency_code: EUR
+  -
+    country_code: LU
+    currency_code: EUR
+  -
+    country_code: NL
+    currency_code: EUR
+  -
+    country_code: PT
+    currency_code: EUR
+  -
+    country_code: SK
+    currency_code: EUR
+  -
+    country_code: SI
+    currency_code: EUR
+  -
+    country_code: FI
+    currency_code: EUR
+  -
+    country_code: FR
+    currency_code: EUR
+  -
+    country_code: EE
+    currency_code: EUR
+  -
+    country_code: AU
+    currency_code: AUD
+  -
+    country_code: CA
+    currency_code: CAD
+opportunity_id_for_payable_invoices: 0061A000014FJJ0
+order_verification_condition: "depth <= 14 and\r\nip_country in ['BR', 'KZ', 'UA', 'NG', 'GB']\r\nor\r\nfailed_transactions >= 2\r\nor\r\nip_country != billing_country \r\nor \r\ndepth <= 14 and\r\nbilling_country  in ['BR', 'US', 'NZ', 'AU', 'FR']\r\nor \r\nlanguage == 'pt'\r\nor\r\nemail matches '/[\\\\\\\\d]{4}/'\r\nor\r\nemail matches '/\\\\\\\\.ru$/'"
+visible_currencies:
+  AUD: true
+  CAD: true
+  EUR: true
+  GBP: true
+  RUB: true
+  USD: true

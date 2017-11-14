@@ -1,0 +1,18 @@
+uuid: 35406de5-f990-4a03-b46e-ae1be94f02ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.train_review
+id: comment.train_review.hostname
+field_name: hostname
+entity_type: comment
+bundle: train_review
+label: Hostname
+description: 'The comment author''s hostname.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

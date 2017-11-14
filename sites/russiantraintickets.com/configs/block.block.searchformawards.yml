@@ -1,0 +1,34 @@
+uuid: 6a0e194d-0fa1-472a-9561-68298085046d
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+    - system
+  theme:
+    - russiantraintickets
+third_party_settings:
+  rn_content:
+    classes: ''
+_core:
+  default_config_hash: JqWRgCX2-Pdmyoi1zT98MfvCdzYTXxz94UxkVUMV_YE
+id: searchformawards
+theme: russiantraintickets
+region: search
+weight: -12
+provider: null
+plugin: searchformawards
+settings:
+  id: searchformawards
+  label: 'Search form awards'
+  provider: rn_content
+  label_display: '0'
+  field_awards:
+    value: "<p><div class=\"d-flex f-j-center f-items-center text-center full-width \"><br />\r\n<div class=\"text-center x1-padding\"><img alt=\"cnn\" data-entity-type=\"file\" data-entity-uuid=\"7c6b1230-69ec-4d37-9f54-37489db555d0\" src=\"/sites/russiantraintickets.com/files/inline-images/Allegro3.png\" style=\"height: 51px;\" /></div><br />\r\n<div class=\"text-center x1-padding\"><img alt=\"ft\" data-entity-type=\"file\" data-entity-uuid=\"35856f8e-4818-4059-b16a-b1c91c512b54\" src=\"/sites/russiantraintickets.com/files/inline-images/Sapsan3.png\" style=\"height: 51px;\" /></div><br />\r\n<div class=\"text-center x1-padding\"><img alt=\"ng\" data-entity-type=\"file\" data-entity-uuid=\"ed29d27c-42db-45d4-8b2d-cc67f727a87b\" src=\"/sites/russiantraintickets.com/files/inline-images/Striz3.png\" style=\"height: 51px;\" /></div><br />\r\n<div class=\"text-center x1-padding\"><img alt=\"tg\" data-entity-type=\"file\" data-entity-uuid=\"a763d5e0-8194-4c0e-a577-83ed81521400\" src=\"/sites/russiantraintickets.com/files/inline-images/Grando3.png\" style=\"height: 51px;\" /></div><br />\r\n</div></p>\r\n"
+    format: full_html_for_administrator
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

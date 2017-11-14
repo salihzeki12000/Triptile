@@ -1,0 +1,49 @@
+.thank-you-page {
+  .content-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-width: $container-width;
+    width: 100%;
+    margin: $thp-v-padding*2.5 auto;
+    font-family: $thp-font-family;
+
+    @media #{$tablet-portrait} {
+      flex-flow: row wrap;
+      margin: $thp-v-padding*2 auto;
+      @include side-padding(0);
+    }
+
+    @media #{$mobile} {
+      flex-flow: row wrap;
+      margin: $thp-v-padding*1.5 auto;
+      @include side-padding(0);
+    }
+
+    a {
+      &:visited, &:focus {
+        color: $thp-link-color;
+      }
+    }
+
+    & > div {
+      flex-basis: 48.8%;
+
+      @media #{$tablet-portrait} {
+        flex-basis: 100%;
+      }
+
+      @media #{$mobile} {
+        flex-basis: 100%;
+      }
+    }
+
+    .full {
+      width: 100%;
+      flex-basis: 100%;
+    }
+  }
+
+  @import "thank_you_page_parts/thank-you-text";
+  @import "thank_you_page_parts/thank-you-table";
+}

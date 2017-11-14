@@ -1,0 +1,38 @@
+uuid: aea15cb1-d76e-4e3c-b0fd-afaebe6474b7
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+  theme:
+    - russiantraintickets
+third_party_settings:
+  rn_content:
+    classes: ''
+id: footertel
+theme: russiantraintickets
+region: footer
+weight: -18
+provider: null
+plugin: footer_tel
+settings:
+  id: footer_tel
+  label: 'Talk to us'
+  provider: rn_content
+  label_display: visible
+  title_field: 'Talk to us'
+  field_subtitle: 'Get travel advice from our experts'
+  field_contacts:
+    -
+      country: 'EU countries'
+      phone: +34-932-20-4999
+    -
+      country: Russia
+      phone: +7-812-648-24-57
+    -
+      country: 'United Kingdom'
+      phone: +44-20-3868-1704
+    -
+      country: 'US and Canada'
+      phone: +1-954-639-4643
+visibility: {  }

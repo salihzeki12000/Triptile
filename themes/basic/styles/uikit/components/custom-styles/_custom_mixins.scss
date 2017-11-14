@@ -1,0 +1,685 @@
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+  -moz-transform: $transform;
+  -ms-transform: $transform;
+  -o-transform: $transform;
+  transform: $transform;
+}
+
+@mixin transform-rotate($deg: 45deg) {
+  @include transform(rotate($deg));
+}
+
+@mixin transition($time: .4s linear) {
+  -o-transition: $time;
+  -moz-transition: $time;
+  -webkit-transition: $time;
+  transition: $time;
+}
+
+@mixin border-radius($radius: 50%) {
+  -o-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin box-sizing($sizing: border-box) {
+  box-sizing: $sizing;
+  -moz-box-sizing: $sizing;
+  -webkit-box-sizing: $sizing;
+}
+
+@mixin box-shadow($shadow: 0 1px 2px rgba(0, 0, 0, 0.05)) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+@mixin appearance ($value: none) {
+  -webkit-appearance: $value;
+  -moz-appearance:    $value;
+  appearance:         $value;
+}
+
+@mixin btn-straight {
+  @include border-radius(0);
+  @include box-shadow(none);
+}
+
+@mixin hover-effect ($bg, $color) {
+  background: $bg;
+  color: $color;
+  text-decoration: none;
+  @include transition;
+
+  a {
+    color: $color;
+    text-decoration: none;
+  }
+}
+
+@mixin colored-btn ($btn-color, $btn-bg-color, $btn-active-bg-color: darken($btn-bg-color, 5%), $btn-active-color: $btn-color, $has-borders: false, $btn-border-width: 1px, $btn-border-color: $btn-bg-color, $btn-border-style: solid) {
+  color: $btn-color;
+  background-color: $btn-bg-color;
+  cursor: pointer;
+  text-decoration: none;
+  @include transition;
+  font-weight: normal;
+  text-align: center;
+
+  @if $has-borders == true {
+    border: $btn-border-width $btn-border-color $btn-border-style;
+  }
+
+  a {
+    color: $btn-color;
+    text-decoration: none;
+    font-weight: normal;
+
+    &:visited {
+      color: $btn-color;
+    }
+  }
+
+  &:visited {
+    color: $btn-color;
+  }
+
+  &:hover {
+    @include hover-effect($btn-active-bg-color,$btn-active-color);
+  }
+
+  @media #{$tablet} {
+    &:focus {
+      @include hover-effect($btn-active-bg-color,$btn-active-color);
+    }
+  }
+
+  @media #{$mobile} {
+    &:focus {
+      @include hover-effect($btn-active-bg-color,$btn-active-color);
+    }
+  }
+}
+
+@mixin btn-grey {
+  @include colored-btn($color-white,$color-dark-neutral-grey)
+}
+
+@mixin btn-red {
+  @include colored-btn($color-white,$color-red);
+}
+
+@mixin btn-yellow {
+  @include colored-btn($color-white,$color-yellow,lighten($color-yellow, 10%));
+}
+
+@mixin input-styles {
+  line-height: 100%;
+  color: $input-color;
+  background: $input-bg;
+  font-size: 1rem;
+  font-family: $base-font-family;
+  border: $input-border;
+  @include border-radius(0);
+}
+
+@mixin side-padding($padding-left, $padding-right: $padding-left) {
+  padding-left: $padding-left;
+  padding-right: $padding-right;
+}
+
+@mixin v-padding($padding-top, $padding-bottom: $padding-top) {
+  padding-top: $padding-top;
+  padding-bottom: $padding-bottom;
+}
+
+@mixin first {
+  padding-left: 0;
+}
+
+@mixin last {
+  padding-right: 0;
+}
+
+@mixin no-side-padding {
+  @include side-padding(0);
+}
+
+@mixin no-v-padding {
+  padding-top: 0;
+  pading-bottom: 0;
+}
+
+@mixin no-top-padding {
+  padding-top: 0;
+}
+
+@mixin no-bottom-padding {
+  padding-bottom: 0;
+}
+
+@mixin shortcode-padding($padding) {
+  @include side-padding($padding);
+
+  .no-padding {
+    padding: 0;
+  }
+
+  &.first {
+    @include first;
+  }
+
+  &.last {
+    @include last;
+  }
+
+  &.no-side-padding {
+    @include no-side-padding;
+  }
+
+  &.no-top-padding {
+    @include no-top-padding;
+  }
+
+  &.no-bottom-padding {
+    @include no-bottom-padding;
+  }
+
+  &.no-v-padding {
+    @include no-v-padding;
+  }
+
+  @media #{$tablet} {
+    @include side-padding($padding);
+
+    .t-no-padding {
+      padding: 0;
+    }
+
+    &.t-first {
+      @include first;
+    }
+
+    &.t-last {
+      @include last;
+    }
+
+    &.t-no-side-padding {
+      @include no-side-padding;
+    }
+
+    &.t-no-top-padding {
+      @include no-top-padding;
+    }
+
+    &.t-no-bottom-padding {
+      @include no-bottom-padding;
+    }
+
+    &.t-no-v-padding {
+      @include no-v-padding;
+    }
+  }
+
+  @media #{$mobile} {
+    @include side-padding($padding);
+
+    &.m-no-padding {
+      padding: 0;
+    }
+
+    &.m-first {
+      @include first;
+    }
+
+    &.m-last {
+      @include last;
+    }
+
+    &.m-no-side-padding {
+      @include no-side-padding;
+    }
+
+    &.m-no-top-padding {
+      @include no-top-padding;
+    }
+
+    &.m-no-bottom-padding {
+      @include no-bottom-padding;
+    }
+
+    &.m-no-v-padding {
+      @include no-v-padding;
+    }
+  }
+}
+
+@mixin awesome-icon($unicode) {
+  font-family: FontAwesome;
+  content: $unicode;
+}
+
+@mixin rating-stars ($width: $rating-stars-width, $height: $rating-stars-height) {
+ .rating-stars {
+   background: url("#{$path-to-images}/stars-grey-light.png") no-repeat 0 0;
+   width: $width + 1px;
+   height: $height;
+   background-size: $width $height;
+   position: relative;
+
+   .active-stars {
+     background: url("#{$path-to-images}/stars-grey-dark.png") no-repeat 0 0;
+     background-size: $width $height;
+     position: absolute;
+     top: 0;
+     bottom: 0;
+     left: 0;
+   }
+ }
+
+ .rating-stars.no-rating {
+   background: 0;
+ }
+}
+
+@mixin custom-checkbox ($border-color, $color, $size: 12px) {
+  input[type=checkbox] {
+    cursor: pointer;
+    margin: 0;
+    bottom: 0;
+    @include border-radius(0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $size;
+    width: $size;
+    position: relative;
+
+    @media #{$mobile} {
+      @include appearance(none);
+      outline: none;
+      border: none;
+      background: transparent;
+    }
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      content: "";
+      height: $size + 2;
+      width: $size + 2;
+      margin: -2px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2px;
+      background: white;
+      border: 1px solid $border-color;
+      color: $color;
+    }
+
+    &:checked {
+      &::before {
+        @include awesome-icon("\f00c");
+      }
+    }
+
+    & + label {
+      margin-left: 10px;
+      padding: 0;
+      @include border-radius(0);
+      word-wrap: normal;
+      white-space: normal;
+
+      @media #{$mobile} {
+        flex-basis: 100%;
+      }
+    }
+  }
+}
+
+@mixin custom-radio($bg: white, $box-shadow-1: white, $box-shadow-2: #777, $checked-bg: #777, $size: 11px, $border-width: 3px, $delta: 1px) {
+  input[type=radio] {
+    cursor: pointer;
+    margin: 0;
+    bottom: 0;
+    @include border-radius(0);
+    min-width: 1px;
+    min-height: 1px;
+    position: relative;
+
+    @media #{$mobile} {
+      @include appearance(none);
+      outline: none;
+      border: none;
+      background: transparent;
+    }
+
+    &::before {
+      position: absolute;
+      top:0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      height: $size;
+      width: $size;
+      margin: 0;
+      content: " ";
+      display: flex;
+      background: $bg;
+      @include border-radius(50%);
+      box-shadow: 0 0 0 $border-width $box-shadow-1, 0 0 0 ($border-width + 1) $box-shadow-2;
+      margin-left: $border-width - 1px;
+      margin-top: $border-width - 1px;
+    }
+
+    &:checked {
+      &::before {
+        background: $checked-bg;
+      }
+    }
+
+    & + label {
+      padding: 0;
+      margin-left: 10px;
+      @include border-radius(0);
+      word-wrap: normal;
+      white-space: normal;
+
+      @media #{$mobile} {
+        flex-basis: auto;
+      }
+    }
+  }
+}
+
+@mixin content ($content: '') {
+  legend {
+    &::before {
+      content: $content;
+    }
+  }
+}
+
+@mixin legend-label ($color: $color-black, $font-size: 1.5rem, $v-padding: 0, $h-padding: 0, $justify: flex-start, $align: center) {
+  legend {
+    width: 100%;
+    color:       $color;
+    font-size:   $font-size;
+    font-weight: normal;
+    @include v-padding($v-padding);
+    @include side-padding($h-padding);
+    @include flex;
+    display: -moz-box;
+    flex-flow: row wrap;
+    justify-content: $justify;
+    align-items: $align;
+    line-height: 110%;
+  }
+}
+
+@mixin head-stations {
+  .stations {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .value {
+      font-size: 1.25rem;
+
+      @media #{$tablet-portrait} {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .departure, .arrival {
+    font-size: $tt-head-dates-font-size;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+  }
+
+  .departure {
+    &::after {
+      @include awesome-icon("\f101");
+      margin: 0 20px;
+      font-size: 1.25rem;
+      color: $tt-light-note-color;
+
+      @media #{$tablet-portrait} {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .train-station {
+    font-size: $tt-small-size;
+    color: $tt-dark-note-color;
+    padding-left: $tt-h-padding/3;
+  }
+}
+
+@mixin flex() {
+  display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+  display: -moz-box;      /* OLD: Firefox (buggy) */
+  display: -ms-flexbox;   /* MID: IE 10 */
+  display: -webkit-flex;  /* NEW, Chrome 21–28, Safari 6.1+ */
+  display: flex;
+}
+
+@mixin text-adjust($adjust-value: 100%)
+{
+  text-size-adjust: $adjust-value;
+  -webkit-text-size-adjust: $adjust-value;
+  -ms-text-size-adjust: $adjust-value;
+  -moz-text-size-adjust: $adjust-value;
+}
+
+
+
+@mixin arrow-up ($color: $color-light-neutral-grey, $margin: 7px, $font-size: 1.2rem) {
+  &::after {
+    @include awesome-icon("\f107");
+    color: $color;
+    font-size: $font-size;
+    margin-left: $margin;
+  }
+}
+
+@mixin arrow-down ($color: $color-light-neutral-grey, $margin: 7px, $font-size: 1.2rem) {
+  &::after {
+    @include awesome-icon("\f106");
+    color: $color;
+    font-size: $font-size;
+    margin-left: $margin;
+  }
+}
+
+@mixin gradient-input ($position1: 65%, $position2: 75%, $color1: rgba(255,255,255,0), $color2: white, $direction: to right) {
+  overflow: hidden;
+  width: 100%;
+  word-break: break-all;
+  max-height: 1rem;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient($direction, $color1 $position1, $color2 $position2);
+  }
+}
+
+@mixin column-count($count) {
+  -webkit-column-count: $count; /* Chrome, Safari, Opera */
+  -moz-column-count: $count; /* Firefox */
+  column-count: $count;
+}
+
+@mixin placeholder($opacity: 0.2, $color: $base-color) {
+  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $color;
+    opacity: $opacity;
+  }
+  &::-moz-placeholder { /* Firefox 19+ */
+    color: $color;
+    opacity: $opacity;
+  }
+  &:-ms-input-placeholder { /* IE 10+ */
+    color: $color;
+    opacity: $opacity;
+  }
+  &:-moz-placeholder { /* Firefox 18- */
+    color: $color;
+    opacity: $opacity;
+  }
+}
+
+@mixin filter($filter) {
+  -webkit-filter: $filter;
+  -moz-filter: $filter;
+  -ms-filter: $filter;
+  -o-filter: $filter;
+  filter: $filter;
+}
+
+@mixin scrollbar-rail-default($theme) {
+  display: none;
+  position: absolute; /* please don't change 'position' */
+  opacity: map_get($theme, rail-default-opacity);
+  transition: background-color .2s linear, opacity .2s linear;
+}
+
+@mixin scrollbar-rail-hover($theme) {
+  background-color: map_get($theme, rail-hover-bg);
+  opacity: map_get($theme, rail-hover-opacity);
+}
+
+@mixin scrollbar-default($theme) {
+  position: absolute; /* please don't change 'position' */
+  background-color: map_get($theme, bar-container-hover-bg);
+  border-radius: map_get($theme, border-radius);
+  transition: background-color .2s linear, height .2s linear, width .2s ease-in-out,
+            border-radius .2s ease-in-out;
+}
+
+@mixin scrollbar-hover($theme) {
+  background-color: map_get($theme, bar-hover-bg);
+}
+
+@mixin in-scrolling($theme) {
+  &.ps--in-scrolling {
+    &.ps--x > .ps__scrollbar-x-rail {
+      @include scrollbar-rail-hover($theme);
+      > .ps__scrollbar-x {
+        @include scrollbar-hover($theme);
+        height: map_get($theme, scrollbar-x-hover-height);
+      }
+    }
+    &.ps--y > .ps__scrollbar-y-rail {
+      @include scrollbar-rail-hover($theme);
+      > .ps__scrollbar-y {
+        @include scrollbar-hover($theme);
+        width: map_get($theme, scrollbar-y-hover-width);
+      }
+    }
+  }
+}
+
+// Layout and theme mixin
+@mixin ps-container($theme) {
+  -ms-touch-action: auto;
+  touch-action: auto;
+  overflow: hidden !important;
+  -ms-overflow-style: none;
+
+  // Edge
+  @supports (-ms-overflow-style: none) {
+    overflow: auto !important;
+  }
+  // IE10+
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    overflow: auto !important;
+  }
+
+  &.ps--active-x > .ps__scrollbar-x-rail,
+  &.ps--active-y > .ps__scrollbar-y-rail {
+    display: block;
+    background-color: map_get($theme, bar-bg);
+  }
+
+  @include in-scrolling($theme);
+
+  > .ps__scrollbar-x-rail {
+    @include scrollbar-rail-default($theme);
+    bottom: map_get($theme, scrollbar-x-rail-bottom); /* there must be 'bottom' for ps__scrollbar-x-rail */
+    height: map_get($theme, scrollbar-x-rail-height);
+
+    > .ps__scrollbar-x {
+      @include scrollbar-default($theme);
+      bottom: map_get($theme, scrollbar-x-bottom); /* there must be 'bottom' for ps__scrollbar-x */
+      height: map_get($theme, scrollbar-x-height);
+    }
+    &:hover,
+    &:active {
+      > .ps__scrollbar-x {
+        height: map_get($theme, scrollbar-x-hover-height);
+      }
+    }
+  }
+
+  > .ps__scrollbar-y-rail {
+    @include scrollbar-rail-default($theme);
+    right: map_get($theme, scrollbar-y-rail-right); /* there must be 'right' for ps__scrollbar-y-rail */
+    width: map_get($theme, scrollbar-y-rail-width);
+
+    > .ps__scrollbar-y {
+      @include scrollbar-default($theme);
+      right: map_get($theme, scrollbar-y-right); /* there must be 'right' for ps__scrollbar-y */
+      width: map_get($theme, scrollbar-y-width);
+    }
+    &:hover,
+    &:active {
+      > .ps__scrollbar-y {
+        width: map_get($theme, scrollbar-y-hover-width);
+      }
+    }
+  }
+
+  &:hover {
+    @include in-scrolling($theme);
+
+    > .ps__scrollbar-x-rail,
+    > .ps__scrollbar-y-rail {
+      opacity: map_get($theme, rail-container-hover-opacity);
+    }
+
+    > .ps__scrollbar-x-rail:hover {
+      @include scrollbar-rail-hover($theme);
+
+      > .ps__scrollbar-x {
+        @include scrollbar-hover($theme);
+      }
+    }
+
+    > .ps__scrollbar-y-rail:hover {
+      @include scrollbar-rail-hover($theme);
+
+      > .ps__scrollbar-y {
+        @include scrollbar-hover($theme);
+      }
+    }
+  }
+}
+

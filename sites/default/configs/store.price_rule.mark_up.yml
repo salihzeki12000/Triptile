@@ -1,0 +1,12 @@
+uuid: 6ed82c32-e215-4d73-8a1e-bb8a967b734a
+langcode: en
+status: true
+dependencies: {  }
+id: mark_up
+label: Mark-up
+price_rule_type: before_display
+condition: 'supplier != ''IT'''
+tax_type: fixed
+tax_value: !!float 25
+tax_value_currency: USD
+weight: '0'

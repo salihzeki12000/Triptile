@@ -1,0 +1,36 @@
+uuid: 39b09eb1-de7a-4ad9-8f8b-15df5cd9e934
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration
+_core:
+  default_config_hash: XGYwEVTanzb9gSQQ1gjoT5uRFbeqe69WLoRj0qhw9-w
+id: page_translations
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - translations
+migration_group: content_page
+label: 'Page translations'
+source:
+  plugin: page_translations
+  key: travelallrussia
+process:
+  nid:
+    plugin: migration_lookup
+    migration: page
+    source: slug
+  langcode: lang
+  title: title
+  body/value: content
+  body/summary: meta_description
+  body/format:
+    plugin: default_value
+    default_value: full_html_for_administrator
+destination:
+  plugin: 'entity:node'
+  translations: true
+migration_dependencies: {  }

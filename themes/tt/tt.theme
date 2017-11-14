@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * Implements template_page_attachments_alter().
+ */
+function tt_page_attachments_alter(array &$page) {
+  $viewport = array(
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => array(
+      'name' => 'viewport',
+      'content' => 'width=device-width',
+    ),
+  );
+  $page['#attached']['html_head'][] = [$viewport, 'viewport'];
+}
+
+/**
+ * Implements template_preprocess_html().
+ */
+function tt_preprocess_html(&$variables){
+  $ngapp = (\Drupal::service('path.matcher')->isFrontPage()) ? 'ng-app="FrontSearch"' : '';
+  $mask = FALSE;
+
+  $route = \Drupal::routeMatch()->getRouteName();
+
+  if($route == 'tt_constructor.content' || $route == 'tt_constructor.itinerary'){
+    $ngapp = 'ng-app="TripConstructor"';
+
+    $show_tips = $_COOKIE['show_tips'] ?? 1;
+    if($show_tips && $route != 'tt_constructor.itinerary'){
+      $mask = TRUE;
+    }
+  }
+
+  $variables['ngapp'] = $ngapp;
+  $variables['mask'] = $mask;
+}
+
+function tt_preprocess_menu(&$variables) {
+  if($variables['menu_name'] == 'main'){
+    $variables['mobile_settings'] = array('#theme' => 'top_right_mobile_menu');
+  }
+}

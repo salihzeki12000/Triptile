@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - store.base_product_type.ticket_product
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: base_product.ticket_product
+target_entity_type_id: base_product
+target_bundle: ticket_product
+default_langcode: site_default
+language_alterable: false

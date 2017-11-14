@@ -1,0 +1,28 @@
+<div class="invoice-page">
+
+  <h1 class="title">{% trans %}Invoice{% endtrans %} {{ invoice_page.number}}</h1>
+
+  <div class="invoice-status-message">{{ invoice_page.status_message }}</div>
+
+  <div class="invoice-table">
+
+    <div class="row invoice-id">
+      <div class="label">{% trans %}Invoice ID{% endtrans %}:</div>
+      <div class="value">{{ invoice_page.number }}</div>
+    </div>
+
+    <div class="row invoice-status">
+      <div class="label">{% trans %}Status{% endtrans %}:</div>
+      <div class="value">{{ invoice_page.status }}</div>
+    </div>
+
+    <div class="row invoice-date-created">
+      <div class="label">{% trans %}Date created{% endtrans %}:</div>
+      <div class="value">{{ invoice_page.date_created }}</div>
+    </div>
+
+  </div>
+
+  <div class="grand-total">{% trans %}Grand total{% endtrans %}: {{ invoice_page.amount | raw }}</div>
+
+</div>

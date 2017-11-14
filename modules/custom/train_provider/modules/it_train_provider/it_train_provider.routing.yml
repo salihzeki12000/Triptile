@@ -1,0 +1,7 @@
+it_train_provider.log:
+  path: '/admin/config/rail-ninja-config/train-providers/it_train_provider/log'
+  defaults:
+    _form: '\Drupal\it_train_provider\Form\LogForm'
+    _title: 'It Train provider log'
+  requirements:
+    _permission: 'administer train providers'

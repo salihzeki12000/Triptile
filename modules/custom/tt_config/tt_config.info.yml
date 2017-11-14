@@ -1,0 +1,6 @@
+name: Config for triptile
+description: Config file
+package: Custom
+
+type: module
+core: 8.x

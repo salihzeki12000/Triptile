@@ -1,0 +1,28 @@
+id: invoice
+migration_group: store
+label: Invoice
+source:
+  plugin: invoice
+  key: travelallrussia
+process:
+  number: reference
+  'amount/number': amount
+  'amount/currency_code': currency
+  uid: destination_user_id
+  order_reference:
+    plugin: migration_lookup
+    migration: store_order
+    source: order_id
+  status: status
+  visible: is_visible
+  created: created
+  changed: changed
+destination:
+  plugin: entity:invoice
+migration_dependencies:
+  optional:
+    - store_order
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

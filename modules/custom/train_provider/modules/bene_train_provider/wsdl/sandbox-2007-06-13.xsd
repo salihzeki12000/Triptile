@@ -1,0 +1,2674 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- edited with XMLSpy v2006 sp2 U (http://www.altova.com) by Kris Maleux (Syntigo NV) --><!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by Kris (V) --><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://bene-ws.b-rail.be/rail1/2007-06-13/types" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://bene-ws.b-rail.be/rail1/2007-06-13/types" version="29.0">
+<!--
+    THIS FILE IS GENERATED USING THE oobs xsd-repository PUBLISHING MECHANISM
+    DO NOT EDIT: any edits will be lost on the next publish                      
+
+    source file:  /mod/bnds-services/schema/rail1-ws-external/rail1-ws-2007-06-13/rail1-ws-2007-06-13.xsd-->
+	<xs:annotation>
+		    <xs:documentation>Request and reply base</xs:documentation>
+	  </xs:annotation>
+	  <xs:complexType name="request">
+		    <xs:annotation>
+			      <xs:documentation>Base of the requests</xs:documentation>
+		    </xs:annotation>
+		    <xs:sequence>
+			      <xs:element ref="user-data"/>
+		    </xs:sequence>
+	  </xs:complexType>
+	  <xs:complexType name="reply">
+		    <xs:annotation>
+			      <xs:documentation>Base of the replies</xs:documentation>
+		    </xs:annotation>
+		    <xs:sequence>
+			      <xs:element ref="user-data"/>
+			      <xs:element maxOccurs="unbounded" minOccurs="0" name="warning" type="CT_message">
+				        <xs:annotation>
+					          <xs:documentation>Non fatal errors that need attention. </xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+		    </xs:sequence>
+	  </xs:complexType>
+	  <xs:annotation>
+		    <xs:documentation>error handling</xs:documentation>
+	  </xs:annotation>
+	  <xs:element name="error-reply">
+		    <xs:complexType>
+			      <xs:complexContent>
+				        <xs:extension base="reply">
+					          <xs:sequence>
+						            <xs:element minOccurs="0" ref="error"/>
+					          </xs:sequence>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="error" type="CT_message"/>
+	  <xs:annotation>
+		    <xs:documentation>Informational web services</xs:documentation>
+	  </xs:annotation>
+	  <xs:element name="trains-and-products-request">
+		    <xs:annotation>
+			      <xs:documentation>request to retrieve schedules and availabilities</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:complexContent>
+				        <xs:extension base="request">
+					          <xs:sequence>
+						            <xs:element ref="journey-query">
+							              <xs:annotation>
+								                <xs:documentation>Query to determine a number of outward and (optional) return routes
+With these routes a journey can be formed</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+						            <xs:element name="user-profile">
+							              <xs:annotation>
+								                <xs:documentation>contains data that has influence on the amount of information in the reply </xs:documentation>
+							              </xs:annotation>
+							              <xs:complexType>
+								                <xs:sequence>
+									                  <xs:element name="travel-prefs">
+										                    <xs:annotation>
+											                      <xs:documentation>preferences for the route solutions</xs:documentation>
+										                    </xs:annotation>
+										                    <xs:complexType>
+											                      <xs:sequence>
+												                        <xs:element minOccurs="0" ref="comfort-class">
+													                          <xs:annotation>
+														                            <xs:documentation>first (1) or second (2) class</xs:documentation>
+													                          </xs:annotation>
+												                        </xs:element>
+												                        <xs:element minOccurs="0" name="must-be-exchangeable" type="xs:string">
+													                          <xs:annotation>
+														                            <xs:documentation>if not given, no restriction is used</xs:documentation>
+													                          </xs:annotation>
+												                        </xs:element>
+												                        <xs:element minOccurs="0" name="must-be-refundable" type="xs:string">
+													                          <xs:annotation>
+														                            <xs:documentation>if not given, no restriction is used</xs:documentation>
+													                          </xs:annotation>
+												                        </xs:element>
+												                        <xs:element maxOccurs="unbounded" minOccurs="0" name="product-range" type="xs:string">
+													                          <xs:annotation>
+														                            <xs:documentation>filters on specific tariff codes: only those tariff codes will be given in the answer</xs:documentation>
+													                          </xs:annotation>
+												                        </xs:element>
+												                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="carrier">
+													                          <xs:annotation>
+														                            <xs:documentation>only tariffs for this carrier may be allowed in the answer</xs:documentation>
+													                          </xs:annotation>
+												                        </xs:element>
+												                        <xs:element maxOccurs="unbounded" minOccurs="0" name="corporate-info">
+													                          <xs:annotation>
+														                            <xs:documentation>contains contracts on a B2B level, not a B2C level, to retrieve specific tariffs</xs:documentation>
+													                          </xs:annotation>
+													                          <xs:complexType>
+														                            <xs:sequence>
+															                              <xs:element name="contract-type" type="xs:string">
+																                                <xs:annotation>
+																	                                  <xs:documentation>indicates the carrier for which the contract is valid, e.g. TFP,...</xs:documentation>
+																                                </xs:annotation>
+															                              </xs:element>
+															                              <xs:choice>
+																                                <xs:element name="contract-shortcode" type="xs:string">
+																	                                  <xs:annotation>
+																		                                    <xs:documentation>shortcode that specifies the contract for the given carrier</xs:documentation>
+																	                                  </xs:annotation>
+																                                </xs:element>
+																                                <xs:element name="contract-number" type="xs:string">
+																	                                  <xs:annotation>
+																		                                    <xs:documentation>contract number that specifies the contract for the given carrier</xs:documentation>
+																	                                  </xs:annotation>
+																                                </xs:element>
+															                              </xs:choice>
+														                            </xs:sequence>
+													                          </xs:complexType>
+												                        </xs:element>
+												                        <xs:element minOccurs="0" name="must-be-ticketless" type="xs:boolean">
+													                          <xs:annotation>
+														                            <xs:documentation>if not given, no restriction is used</xs:documentation>
+													                          </xs:annotation>
+												                        </xs:element>
+												                        <xs:element minOccurs="0" name="max-nrs-of-transfer" type="xs:integer">
+													                          <xs:annotation>
+														                            <xs:documentation>indicates maximum number of transfers a passenger is prepared to make before reaching destination</xs:documentation>
+													                          </xs:annotation>
+												                        </xs:element>
+											                      </xs:sequence>
+										                    </xs:complexType>
+									                  </xs:element>
+									                  <xs:element name="response-prefs">
+										                    <xs:annotation>
+											                      <xs:documentation>sets limit to the number of possible routes in the reply</xs:documentation>
+										                    </xs:annotation>
+										                    <xs:complexType>
+											                      <xs:sequence>
+												                        <xs:element minOccurs="0" name="time-filter" type="xs:time">
+													                          <xs:annotation>
+														                            <xs:documentation>indicates what time frame needs to be used when proposing the answers</xs:documentation>
+													                          </xs:annotation>
+												                        </xs:element>
+												                        <xs:element minOccurs="0" name="detail-filter" type="xs:boolean">
+													                          <xs:annotation>
+														                            <xs:documentation>indicates if the details need to be present in the answer, default all blocks are present</xs:documentation>
+													                          </xs:annotation>
+												                        </xs:element>
+												                        <xs:element minOccurs="0" name="calculate-price-combination" type="xs:boolean">
+													                          <xs:annotation>
+														                            <xs:documentation>this boolean indicates if the element outward-return-price-list needs to be calculated in the response. Default is false, no calculation</xs:documentation>
+													                          </xs:annotation>
+												                        </xs:element>
+												                        <xs:element minOccurs="0" name="calculate-production-mode" type="xs:boolean">
+													                          <xs:annotation>
+														                            <xs:documentation>this boolean indicates if all possible production modes need to be calculated per taco</xs:documentation>
+													                          </xs:annotation>
+												                        </xs:element>
+												                        <xs:element minOccurs="0" name="number-of-route-summaries" type="xs:integer">
+													                          <xs:annotation>
+														                            <xs:documentation>The maximum number of route-summarys. Possible values: nothing is 5 route-summarys returned, 0 is alle route-summarys for the requested date, &gt;0 the maximum route-summarys</xs:documentation>
+													                          </xs:annotation>
+												                        </xs:element>
+												                        <xs:element minOccurs="0" name="show-route-detail-list" type="xs:boolean">
+													                          <xs:annotation>
+														                            <xs:documentation>indicaties wheter of not the route-detail-list is returned  reply</xs:documentation>
+													                          </xs:annotation>
+												                        </xs:element>
+												                        <xs:element minOccurs="0" name="number-of-route-summaries-with-prices" type="xs:integer">
+													                          <xs:annotation>
+														                            <xs:documentation>Determines the number of route-summarys for which the proposed prices are calculated</xs:documentation>
+													                          </xs:annotation>
+												                        </xs:element>
+												                        <xs:element minOccurs="0" name="time-of-route-summaries-outward-with-prices" type="xs:time">
+													                          <xs:annotation>
+														                            <xs:documentation>determines which route-summary should have propose prices for outward. </xs:documentation>
+													                          </xs:annotation>
+												                        </xs:element>
+												                        <xs:element minOccurs="0" name="time-of-route-summaries-return-with-prices" type="xs:time">
+													                          <xs:annotation>
+														                            <xs:documentation>determines which route-summary should have propose prices for return. </xs:documentation>
+													                          </xs:annotation>
+												                        </xs:element>
+											                      </xs:sequence>
+										                    </xs:complexType>
+									                  </xs:element>
+								                </xs:sequence>
+							              </xs:complexType>
+						            </xs:element>
+					          </xs:sequence>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="trains-and-products-reply">
+		    <xs:annotation>
+			      <xs:documentation>reply with schedules, train-info, availabilities and possible fares</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:complexContent>
+				        <xs:extension base="reply">
+					          <xs:sequence>
+						            <xs:element ref="passenger-list-reply">
+							              <xs:annotation>
+								                <xs:documentation>Total number of passengers of the main order</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+						            <xs:element name="route-summary-list">
+							              <xs:annotation>
+								                <xs:documentation>list of possible total </xs:documentation>
+							              </xs:annotation>
+							              <xs:complexType>
+								                <xs:sequence>
+									                  <xs:element maxOccurs="unbounded" minOccurs="0" name="route-summary">
+										                    <xs:complexType>
+											                      <xs:sequence>
+												                        <xs:element ref="origin-station"/>
+												                        <xs:element ref="destination-station"/>
+												                        <xs:element name="departure-date" type="xs:date"/>
+												                        <xs:element minOccurs="0" name="departure-time" type="xs:time"/>
+												                        <xs:element minOccurs="0" name="travel-duration" type="xs:time"/>
+												                        <xs:element minOccurs="0" name="arrival-date" type="xs:date">
+													                          <xs:annotation>
+														                            <xs:documentation>The arrival date of the aggregated journey. </xs:documentation>
+													                          </xs:annotation>
+												                        </xs:element>
+												                        <xs:element minOccurs="0" name="arrival-time" type="xs:time">
+													                          <xs:annotation>
+														                            <xs:documentation>The arrival time of the aggregated journey.</xs:documentation>
+													                          </xs:annotation>
+												                        </xs:element>
+												                        <xs:element name="number-of-transfers" type="xs:integer"/>
+												                        <xs:element ref="route-summary-id">
+													                          <xs:annotation>
+														                            <xs:documentation>reference to the summary solution</xs:documentation>
+													                          </xs:annotation>
+												                        </xs:element>
+											                      </xs:sequence>
+										                    </xs:complexType>
+									                  </xs:element>
+								                </xs:sequence>
+							              </xs:complexType>
+						            </xs:element>
+						            <xs:element name="proposed-price-list">
+							              <xs:annotation>
+								                <xs:documentation>possible prices for the entire party and trip. These prices do not neccessarily take into account the rail trains.</xs:documentation>
+							              </xs:annotation>
+							              <xs:complexType>
+								                <xs:sequence>
+									                  <xs:element maxOccurs="unbounded" minOccurs="0" ref="proposed-price">
+										                    <xs:annotation>
+											                      <xs:documentation>the price is calculated for all passengers given in the passengers list, it is therefore a sum!</xs:documentation>
+										                    </xs:annotation>
+									                  </xs:element>
+								                </xs:sequence>
+							              </xs:complexType>
+						            </xs:element>
+						            <xs:element name="route-details-list">
+							              <xs:annotation>
+								                <xs:documentation>details of the different travel parts of a summary travel. These details concern the train the traveller must take</xs:documentation>
+							              </xs:annotation>
+							              <xs:complexType>
+								                <xs:sequence>
+									                  <xs:element maxOccurs="unbounded" minOccurs="0" ref="route-detail"/>
+								                </xs:sequence>
+							              </xs:complexType>
+						            </xs:element>
+						            <xs:element name="outward-return-price-list">
+							              <xs:annotation>
+								                <xs:documentation>only calculated when a return was asked; lists all possible combinations of prices</xs:documentation>
+							              </xs:annotation>
+							              <xs:complexType>
+								                <xs:sequence>
+									                  <xs:element maxOccurs="unbounded" minOccurs="0" name="outward-return-price">
+										                    <xs:complexType>
+											                      <xs:sequence>
+												                        <xs:element maxOccurs="2" ref="proposed-price-id"/>
+											                      </xs:sequence>
+										                    </xs:complexType>
+									                  </xs:element>
+								                </xs:sequence>
+							              </xs:complexType>
+						            </xs:element>
+						            <xs:element name="information-price-list">
+							              <xs:annotation>
+								                <xs:documentation>details of the travel circumstances</xs:documentation>
+							              </xs:annotation>
+							              <xs:complexType>
+								                <xs:sequence>
+									                  <xs:element maxOccurs="unbounded" minOccurs="0" name="information-price">
+										                    <xs:complexType>
+											                      <xs:sequence>
+												                        <xs:element name="information" type="xs:string">
+													                          <xs:annotation>
+														                            <xs:documentation>text about the travel such as the expected time to change,...</xs:documentation>
+													                          </xs:annotation>
+												                        </xs:element>
+												                        <xs:element maxOccurs="unbounded" ref="proposed-price-id"/>
+											                      </xs:sequence>
+										                    </xs:complexType>
+									                  </xs:element>
+								                </xs:sequence>
+							              </xs:complexType>
+						            </xs:element>
+					          </xs:sequence>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="product-info-request">
+		    <xs:annotation>
+			      <xs:documentation>request to demand details of a given fare</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:complexContent>
+				        <xs:extension base="request">
+					          <xs:sequence>
+						            <xs:element maxOccurs="unbounded" ref="taco">
+							              <xs:annotation>
+								                <xs:documentation>taco or tariff code is used in the reply from 'retrieve trains and products'</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+						            <xs:element minOccurs="0" name="departure-date" type="xs:date">
+							              <xs:annotation>
+								                <xs:documentation>If not given, the system-date will be used</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+						            <xs:element minOccurs="0" name="sales-date" type="xs:date">
+							              <xs:annotation>
+								                <xs:documentation>If not given, the system-date will be used</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+						            <xs:element minOccurs="0" name="info-category" type="xs:string">
+							              <xs:annotation>
+								                <xs:documentation>if not given, "1,2,3,4" will be used</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+					          </xs:sequence>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="product-info-reply">
+		    <xs:annotation>
+			      <xs:documentation>reply with the general info, after-sales and exchange conditions</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:complexContent>
+				        <xs:extension base="reply">
+					          <xs:sequence>
+						            <xs:element maxOccurs="unbounded" minOccurs="0" name="product">
+							              <xs:complexType>
+								                <xs:sequence>
+									                  <xs:element name="taco">
+										                    <xs:complexType>
+											                      <xs:simpleContent>
+												                        <xs:extension base="xs:string">
+													                          <xs:attribute default="I" name="domain" type="xs:string" use="optional"/>
+													                          <xs:attribute name="tariff-group" type="xs:string" use="optional"/>
+													                          <xs:attribute name="tic" type="xs:string" use="optional"/>
+												                        </xs:extension>
+											                      </xs:simpleContent>
+										                    </xs:complexType>
+									                  </xs:element>
+									                  <xs:element maxOccurs="unbounded" minOccurs="0" name="info-section">
+										                    <xs:complexType>
+											                      <xs:sequence>
+												                        <xs:element name="section-label">
+													                          <xs:annotation>
+														                            <xs:documentation>example: Verkoopsvoorwaarden</xs:documentation>
+													                          </xs:annotation>
+													                          <xs:complexType>
+														                            <xs:simpleContent>
+															                              <xs:extension base="xs:string">
+																                                <xs:attribute name="infotype" type="xs:string" use="required"/>
+															                              </xs:extension>
+														                            </xs:simpleContent>
+													                          </xs:complexType>
+												                        </xs:element>
+												                        <xs:element name="section-text" type="xs:string">
+													                          <xs:annotation>
+														                            <xs:documentation>The informational text for this section</xs:documentation>
+													                          </xs:annotation>
+												                        </xs:element>
+											                      </xs:sequence>
+										                    </xs:complexType>
+									                  </xs:element>
+									                  <xs:element ref="product-feature"/>
+								                </xs:sequence>
+							              </xs:complexType>
+						            </xs:element>
+					          </xs:sequence>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="availability-request">
+		    <xs:annotation>
+			      <xs:documentation>request to retrieve the availability, schedule info must be known!</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:complexContent>
+				        <xs:extension base="request">
+					          <xs:sequence>
+						            <xs:element ref="origin-station"/>
+						            <xs:element ref="destination-station"/>
+						            <xs:element maxOccurs="unbounded" name="train-number">
+							              <xs:annotation>
+								                <xs:documentation>The number of the train. Only availability of the train numbers listed, are returned.</xs:documentation>
+							              </xs:annotation>
+							              <xs:simpleType>
+								                <xs:restriction base="xs:string">
+									                  <xs:maxLength value="20"/>
+								                </xs:restriction>
+							              </xs:simpleType>
+						            </xs:element>
+						            <xs:element name="departure-date" type="xs:date">
+							              <xs:annotation>
+								                <xs:documentation>The date on which the customer wishes to depart from the origin station.</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+						            <xs:element minOccurs="0" name="departure-time" type="xs:time">
+							              <xs:annotation>
+								                <xs:documentation>The time on which the customer wishes to depart from the origin station.</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+						            <xs:element minOccurs="0" name="inventory-system" type="xs:string">
+							              <xs:annotation>
+								                <xs:documentation>An indication as to which inventory system must be used for the availability.
+
+This equals the segmentform linked to the tariffgroup.
+
+RR -&gt; RÃ©sasrail
+EPA -&gt; EPA
+COSTA -&gt; COSTA</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+					          </xs:sequence>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="availability-reply">
+		    <xs:annotation>
+			      <xs:documentation>reply with the availability</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:complexContent>
+				        <xs:extension base="reply">
+					          <xs:sequence>
+						            <xs:element maxOccurs="unbounded" minOccurs="0" name="train-availability">
+							              <xs:complexType>
+								                <xs:sequence>
+									                  <xs:element minOccurs="0" name="availability-state" type="xs:string">
+										                    <xs:annotation>
+											                      <xs:documentation>Indication whether or not and availability-set is found for the train and if it is found, an indication where it is found.
+
+Possible values:
+- NO_SERVICE
+- NOT_IN_CACHE
+- FROM_CACHE
+- FROM_CACHE_EXPIRED
+- ONLINE</xs:documentation>
+										                    </xs:annotation>
+									                  </xs:element>
+									                  <xs:element maxOccurs="unbounded" minOccurs="0" ref="error"/>
+									                  <xs:element ref="origin-station"/>
+									                  <xs:element ref="destination-station"/>
+									                  <xs:element name="train-number">
+										                    <xs:annotation>
+											                      <xs:documentation>The number of the train.</xs:documentation>
+										                    </xs:annotation>
+										                    <xs:simpleType>
+											                      <xs:restriction base="xs:string">
+												                        <xs:maxLength value="20"/>
+											                      </xs:restriction>
+										                    </xs:simpleType>
+									                  </xs:element>
+									                  <xs:element ref="availability-set">
+										                    <xs:annotation>
+											                      <xs:documentation>A general element for a set of availabilities (on seat or range level)</xs:documentation>
+										                    </xs:annotation>
+									                  </xs:element>
+								                </xs:sequence>
+							              </xs:complexType>
+						            </xs:element>
+					          </xs:sequence>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:annotation>
+		    <xs:documentation>Transactional web services</xs:documentation>
+	  </xs:annotation>
+	  <xs:element name="booking-request">
+		    <xs:annotation>
+			      <xs:documentation>request to make temporary reservations or confirmed seats</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:complexContent>
+				        <xs:extension base="request">
+					          <xs:sequence>
+						            <xs:element name="booking-type">
+							              <xs:annotation>
+								                <xs:documentation>provisional  = a non confirmed booking with a ticket time limit. Confrim = seats are booked and payed for but whithout tiket info. Ticket = seats are booked en payed but with the creation of the tickets</xs:documentation>
+							              </xs:annotation>
+							              <xs:simpleType>
+								                <xs:restriction base="xs:string">
+									                  <xs:enumeration value="provisional"/>
+									                  <xs:enumeration value="confirm"/>
+									                  <xs:enumeration value="ticket"/>
+								                </xs:restriction>
+							              </xs:simpleType>
+						            </xs:element>
+						            <xs:element ref="booking-info"/>
+						            <xs:element ref="passenger-list-reply">
+							              <xs:annotation>
+								                <xs:documentation>the passagner list is general for all bookings. Therefor it is possible to refer for different bookings to 1 passenger element</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+						            <xs:element maxOccurs="unbounded" name="booking-request-list">
+							              <xs:annotation>
+								                <xs:documentation>on this level, homogeneous bookings are bundled (not used in phase 1)</xs:documentation>
+							              </xs:annotation>
+							              <xs:complexType>
+								                <xs:sequence>
+									                  <xs:element maxOccurs="unbounded" ref="proposed-price"/>
+								                </xs:sequence>
+							              </xs:complexType>
+						            </xs:element>
+						            <xs:element maxOccurs="unbounded" minOccurs="0" ref="BO-integration"/>
+					          </xs:sequence>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="confirm-deferred-bo-request">
+		    <xs:annotation>
+			      <xs:documentation>to submit back office integration information after a confirmed booking - only available to atlantis_user with deferred_bo_integration</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:complexContent>
+				        <xs:extension base="request">
+					          <xs:sequence>
+						            <xs:element ref="dossier-id"/>
+						            <xs:element ref="BO-integration"/>
+					          </xs:sequence>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="booking-reply">
+		    <xs:annotation>
+			      <xs:documentation>reply with the booking reference</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:complexContent>
+				        <xs:extension base="reply">
+					          <xs:sequence>
+						            <xs:element ref="dossier-id"/>
+						            <xs:element name="total-dossier-price" type="price"/>
+						            <xs:element minOccurs="0" ref="pin-code">
+							              <xs:annotation>
+								                <xs:documentation>4 number code when retrieving the dossier at a machine</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+						            <xs:element minOccurs="0" name="ticket-time-limit" type="xs:dateTime">
+							              <xs:annotation>
+								                <xs:documentation>gives the lifetime of the provisional booking</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+						            <xs:element minOccurs="0" name="pnr" type="xs:string"/>
+					          </xs:sequence>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="confirm-deferred-bo-reply">
+		    <xs:complexType>
+			      <xs:complexContent>
+				        <xs:extension base="reply">
+					          <xs:sequence>
+						            <xs:element ref="dossier-id"/>
+						            <xs:element name="confirm-OK" type="xs:boolean">
+							              <xs:annotation>
+								                <xs:documentation>boolean that indicates if the confirmation was correctly executed</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+					          </xs:sequence>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="confirm-booking-request">
+		    <xs:annotation>
+			      <xs:documentation>request to confirm a temporary reservation</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:complexContent>
+				        <xs:extension base="request">
+					          <xs:sequence>
+						            <xs:element ref="dossier-id"/>
+						            <xs:element minOccurs="0" ref="booking-info"/>
+					          </xs:sequence>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="confirm-booking-reply">
+		    <xs:annotation>
+			      <xs:documentation>reply with the booking reference</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:complexContent>
+				        <xs:extension base="reply">
+					          <xs:sequence>
+						            <xs:element ref="dossier-id"/>
+						            <xs:element name="confirm-OK" type="xs:boolean">
+							              <xs:annotation>
+								                <xs:documentation>boolean that indicates if the confirmation was correctly executed</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+						            <xs:element minOccurs="0" ref="pin-code">
+							              <xs:annotation>
+								                <xs:documentation>4 number code when retrieving the dossier at a machine</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+					          </xs:sequence>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="update-booking-request">
+		    <xs:annotation>
+			      <xs:documentation>request to confirm a temporary reservation</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:complexContent>
+				        <xs:extension base="request">
+					          <xs:sequence>
+						            <xs:element ref="dossier-id"/>
+						            <xs:element minOccurs="0" ref="booking-info"/>
+						            <xs:element minOccurs="0" ref="passenger-list-reply"/>
+					          </xs:sequence>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="update-booking-reply">
+		    <xs:annotation>
+			      <xs:documentation>reply with the booking reference</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:complexContent>
+				        <xs:extension base="reply">
+					          <xs:sequence>
+						            <xs:element ref="dossier-id"/>
+						            <xs:element name="update-OK" type="xs:boolean">
+							              <xs:annotation>
+								                <xs:documentation>boolean that indicates if the update was correctly executed</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+					          </xs:sequence>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="ticket-booking-request">
+		    <xs:annotation>
+			      <xs:documentation>request to fetch the ticket data of a given, confirmed seat</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:complexContent>
+				        <xs:extension base="request">
+					          <xs:sequence>
+						            <xs:element ref="dossier-id"/>
+						            <xs:element minOccurs="0" ref="booking-info"/>
+					          </xs:sequence>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="ticket-booking-reply">
+		    <xs:annotation>
+			      <xs:documentation>reply with the booking reference</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:complexContent>
+				        <xs:extension base="reply">
+					          <xs:sequence>
+						            <xs:element ref="dossier-id"/>
+						            <xs:element name="ticket-OK" type="xs:boolean">
+							              <xs:annotation>
+								                <xs:documentation>boolean that indicates if the ticketing was correctly executed</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+						            <xs:element ref="pin-code">
+							              <xs:annotation>
+								                <xs:documentation>4 number code when retrieving the dossier at a machine</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+					          </xs:sequence>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="cancel-booking-request">
+		    <xs:annotation>
+			      <xs:documentation>request to cancel a temporary reservation</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:complexContent>
+				        <xs:extension base="request">
+					          <xs:sequence>
+						            <xs:element ref="dossier-id"/>
+					          </xs:sequence>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="cancel-booking-reply">
+		    <xs:annotation>
+			      <xs:documentation>reply with the booking reference</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:complexContent>
+				        <xs:extension base="reply">
+					          <xs:sequence>
+						            <xs:element ref="dossier-id"/>
+						            <xs:element name="cancel-OK" type="xs:boolean">
+							              <xs:annotation>
+								                <xs:documentation>indicates if the cancellation was done or not</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+					          </xs:sequence>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="manage-fulfillment-request">
+		    <xs:annotation>
+			      <xs:documentation>request to fulfill confirmed seats</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:complexContent>
+				        <xs:extension base="request">
+					          <xs:sequence>
+						            <xs:element ref="dossier-id">
+							              <xs:annotation>
+								                <xs:documentation>bookingsreference of 7 characters</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+						            <xs:element minOccurs="0" name="printer-id" type="xs:string">
+							              <xs:annotation>
+								                <xs:documentation>ATB printer identification</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+						            <xs:element ref="pin-code">
+							              <xs:annotation>
+								                <xs:documentation>4 number code when retrieving the dossier at a machine</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+						            <xs:element minOccurs="0" name="sync" type="xs:boolean">
+							              <xs:annotation>
+								                <xs:documentation>indicates if printing is synchronous or asynchronous</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+						            <xs:element minOccurs="0" name="fulfillment-mode" type="xs:string">
+							              <xs:annotation>
+								                <xs:documentation>this can be ATB, which is the default value, or PDF, which must be asked explicetely. At this point, only 1 fulfillment -mode per dossier is possible</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+					          </xs:sequence>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="manage-fulfillment-reply">
+		    <xs:annotation>
+			      <xs:documentation>reply with the booking reference (including the pdf url for e-ticketing)</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:complexContent>
+				        <xs:extension base="reply">
+					          <xs:sequence>
+						            <xs:element name="print-indication" type="xs:string">
+							              <xs:annotation>
+								                <xs:documentation>indicates the result of the print action, depends if the print was asynchron or synchron</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+						            <xs:element ref="dossier-id">
+							              <xs:annotation>
+								                <xs:documentation>booking reference for which a print request was made</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+						            <xs:element minOccurs="0" ref="HP-url"/>
+					          </xs:sequence>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="get-cancellation-offer-request">
+		    <xs:annotation>
+			      <xs:documentation>request for cancellation cost for a number of tickets within one booking file</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:complexContent>
+				        <xs:extension base="request">
+					          <xs:sequence>
+						            <xs:element ref="dossier-id">
+							              <xs:annotation>
+								                <xs:documentation>bookingsreference of 7 characters</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+						            <xs:element maxOccurs="unbounded" name="ticket-ref">
+							              <xs:annotation>
+								                <xs:documentation>Reference to a ticket for which the aftersales offer is requested.</xs:documentation>
+							              </xs:annotation>
+							              <xs:complexType>
+								                <xs:attributeGroup ref="booking-id-attrgrp"/>
+							              </xs:complexType>
+						            </xs:element>
+					          </xs:sequence>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="get-cancellation-offer-reply">
+		    <xs:annotation>
+			      <xs:documentation>reply with the booking reference</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:complexContent>
+				        <xs:extension base="reply">
+					          <xs:sequence>
+						            <xs:element ref="dossier-id"/>
+						            <xs:element name="cancel-OK" type="xs:boolean">
+							              <xs:annotation>
+								                <xs:documentation>indicates whether the cancellation is possible</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+						            <xs:element minOccurs="0" ref="cancellation-conditions"/>
+					          </xs:sequence>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="execute-cancellation-request">
+		    <xs:annotation>
+			      <xs:documentation>request for cancellation for a number of tickets within one booking file</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:complexContent>
+				        <xs:extension base="request">
+					          <xs:sequence>
+						            <xs:element ref="dossier-id">
+							              <xs:annotation>
+								                <xs:documentation>bookingsreference of 7 characters</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+						            <xs:element maxOccurs="unbounded" name="ticket-ref-cancellation">
+							              <xs:complexType>
+								                <xs:sequence>
+									                  <xs:element name="maximum-carrier-fee" type="euro-amount"/>
+								                </xs:sequence>
+								                <xs:attributeGroup ref="booking-id-attrgrp"/>
+							              </xs:complexType>
+						            </xs:element>
+					          </xs:sequence>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="execute-cancellation-reply">
+		    <xs:annotation>
+			      <xs:documentation>reply with the booking reference</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:complexContent>
+				        <xs:extension base="reply">
+					          <xs:sequence>
+						            <xs:element ref="dossier-id"/>
+						            <xs:element name="cancel-OK" type="xs:boolean">
+							              <xs:annotation>
+								                <xs:documentation>indicates whether the cancellation has been successful</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+						            <xs:element minOccurs="0" ref="cancellation-conditions"/>
+						            <xs:element minOccurs="0" name="earliest-refund-date" type="xs:dateTime">
+							              <xs:annotation>
+								                <xs:documentation>The earlist date on which the customer should be refunded.
+This is used for digital tickets when the validation that the ticket isn't used to travel cannot be done online.</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+					          </xs:sequence>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="exchange-ticket-list-request">
+		    <xs:annotation>
+			      <xs:documentation>request for an exchanging the ticket-lists</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:complexContent>
+				        <xs:extension base="request">
+					          <xs:sequence>
+						            <xs:element ref="dossier-id">
+							              <xs:annotation>
+								                <xs:documentation>bookingsreference of 7 characters</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+						            <xs:element maxOccurs="unbounded" ref="ticket-list-reference"/>
+					          </xs:sequence>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="ticket-list-reference">
+		    <xs:complexType>
+			      <xs:sequence>
+				        <xs:element name="ticket-list-ref">
+					          <xs:complexType>
+						            <xs:simpleContent>
+							              <xs:extension base="xs:string">
+								                <xs:attribute name="id" type="xs:string" use="required"/>
+							              </xs:extension>
+						            </xs:simpleContent>
+					          </xs:complexType>
+				        </xs:element>
+				        <xs:element name="departure-date" type="xs:date"/>
+				        <xs:element ref="train-number"/>
+			      </xs:sequence>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="exchange-ticket-list-reply">
+		    <xs:annotation>
+			      <xs:documentation>reply on a exchange-ticket-list-reply</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:complexContent>
+				        <xs:extension base="reply">
+					          <xs:sequence>
+						            <xs:element ref="dossier-id"/>
+						            <xs:element name="exchange-OK" type="xs:boolean">
+							              <xs:annotation>
+								                <xs:documentation>boolean that indicates if the exchange was correctly executed</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+						            <xs:element ref="pin-code">
+							              <xs:annotation>
+								                <xs:documentation>4 number code when retrieving the dossier at a machine</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+					          </xs:sequence>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:annotation>
+		    <xs:documentation>non-transactional web services</xs:documentation>
+	  </xs:annotation>
+	  <xs:element name="retrieve-dossier-request">
+		    <xs:annotation>
+			      <xs:documentation>request to see the latest state of dossier (including possible aftersales)</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:complexContent>
+				        <xs:extension base="request">
+					          <xs:sequence>
+						            <xs:element ref="dossier-id">
+							              <xs:annotation>
+								                <xs:documentation>bookingsreference</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+					          </xs:sequence>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="retrieve-dossier-reply">
+		    <xs:annotation>
+			      <xs:documentation> the dossier, seen as a bundle of tickets</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:complexContent>
+				        <xs:extension base="reply">
+					          <xs:sequence>
+						            <xs:element ref="dossier-id"/>
+						            <xs:element maxOccurs="unbounded" ref="ticket-list"/>
+						            <xs:element ref="booking-info"/>
+						            <xs:element minOccurs="0" ref="BO-integration"/>
+						            <xs:element minOccurs="0" name="fulfillment-info">
+							              <xs:complexType>
+								                <xs:sequence>
+									                  <xs:element maxOccurs="unbounded" ref="HP-url"/>
+								                </xs:sequence>
+							              </xs:complexType>
+						            </xs:element>
+					          </xs:sequence>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="retrieve-dossiers-by-topo-request">
+		    <xs:annotation>
+			      <xs:documentation> for synchronisation purposes only, searches a dossier based on the reference field to-po</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:complexContent>
+				        <xs:extension base="request">
+					          <xs:sequence>
+						            <xs:element ref="to-po-number"/>
+					          </xs:sequence>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="retrieve-dossiers-by-topo-reply">
+		    <xs:annotation>
+			      <xs:documentation> the dossier, seen as a bundle of tickets</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:complexContent>
+				        <xs:extension base="reply">
+					          <xs:sequence minOccurs="0">
+						            <xs:element maxOccurs="unbounded" minOccurs="0" ref="dossier-id"/>
+					          </xs:sequence>
+				        </xs:extension>
+			      </xs:complexContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:annotation>
+		    <xs:documentation>Simple types</xs:documentation>
+	  </xs:annotation>
+	  <xs:simpleType name="currency">
+		    <xs:annotation>
+			      <xs:documentation>Type for a currency</xs:documentation>
+		    </xs:annotation>
+		    <xs:restriction base="xs:string">
+			      <xs:enumeration value="EUR"/>
+		    </xs:restriction>
+	  </xs:simpleType>
+	  <xs:annotation>
+		    <xs:documentation>Complex types</xs:documentation>
+	  </xs:annotation>
+	  <xs:complexType name="price">
+		    <xs:sequence>
+			      <xs:element name="amount" type="xs:float"/>
+			      <xs:element name="currency" type="currency">
+				        <xs:annotation>
+					          <xs:documentation>always EUR</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+		    </xs:sequence>
+	  </xs:complexType>
+	  <xs:complexType name="route-query">
+		    <xs:annotation>
+			      <xs:documentation>Part of query which differs per route</xs:documentation>
+		    </xs:annotation>
+		    <xs:sequence>
+			      <xs:element name="time" type="xs:time"/>
+			      <xs:element name="date" type="xs:date">
+				        <xs:annotation>
+					          <xs:documentation>indicates the date on which the journey starts</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:element minOccurs="0" name="is-departure" type="xs:boolean">
+				        <xs:annotation>
+					          <xs:documentation>indicates if the date and time are valid for departure or arrival default is departure = true, arrival = false</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:element minOccurs="0" ref="carrier"/>
+			      <xs:element minOccurs="0" name="interval-duration" type="xs:positiveInteger">
+				        <xs:annotation>
+					          <xs:documentation>The duration of the interval expressed in minutes.
+
+In case this is used, the time and the is-departure are interpreted differently.
+
+If the is-departure = true or not given, the time is considered as a start time of the interval-duration.
+
+If the is-departure = false, the time is considered as an end time of the interval duration.
+
+e.g. time 00:00, is-departure true and interval-duration 1440 results in a full day search.</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:element minOccurs="0" name="max-nbr-connections">
+				        <xs:annotation>
+					          <xs:documentation>ONLY TO BE USED IN COMBINATION WITH intervan-duration !!!
+
+Maximum number of connections which should be replied.
+
+Note that this is only a preference. There is no guarantee that exactly the requested number of connections are returned (this depends on the interval and on some internal optimizations in the HAFAS search algorithm).</xs:documentation>
+				        </xs:annotation>
+				        <xs:simpleType>
+					          <xs:restriction base="xs:positiveInteger">
+						            <xs:maxInclusive value="127"/>
+					          </xs:restriction>
+				        </xs:simpleType>
+			      </xs:element>
+		    </xs:sequence>
+	  </xs:complexType>
+	  <xs:complexType name="reservation-info">
+		    <xs:annotation>
+			      <xs:documentation>contains the necessary info for the reservation when a seat reservation is possible or required on a train</xs:documentation>
+		    </xs:annotation>
+		    <xs:sequence>
+			      <xs:element name="price-offer">
+				        <xs:annotation>
+					          <xs:documentation>price information of the route referenced for all passengers in the request</xs:documentation>
+				        </xs:annotation>
+				        <xs:complexType>
+					          <xs:sequence>
+						            <xs:element maxOccurs="unbounded" name="used-tacos">
+							              <xs:complexType>
+								                <xs:sequence>
+									                  <xs:element ref="taco"/>
+									                  <xs:element name="unit-price" type="price">
+										                    <xs:annotation>
+											                      <xs:documentation>price of the TaCo per passenger</xs:documentation>
+										                    </xs:annotation>
+									                  </xs:element>
+									                  <xs:element minOccurs="0" ref="passenger-type"/>
+									                  <xs:element minOccurs="0" ref="corporate-contract"/>
+									                  <xs:element name="number-of-passengers" type="xs:integer"/>
+									                  <xs:element name="passenger-list">
+										                    <xs:complexType>
+											                      <xs:sequence>
+												                        <xs:element maxOccurs="unbounded" ref="passenger-id">
+													                          <xs:annotation>
+														                            <xs:documentation>reference to the passenger in the route-reply</xs:documentation>
+													                          </xs:annotation>
+												                        </xs:element>
+											                      </xs:sequence>
+										                    </xs:complexType>
+									                  </xs:element>
+									                  <xs:element minOccurs="0" name="production-mode-list">
+										                    <xs:annotation>
+											                      <xs:documentation>the production mode reflects how the ticket info will get to the customer. It might be printed on an ATB, ticketless for Thalys or a homeprint. At this point, only 1 production-mode per booking is allowed.</xs:documentation>
+										                    </xs:annotation>
+										                    <xs:complexType>
+											                      <xs:sequence>
+												                        <xs:element maxOccurs="unbounded" name="production-mode" type="xs:string">
+													                          <xs:annotation>
+														                            <xs:documentation>possible values are presently ATB, TCL or PDF. ATB is the default value. TCL must be given when booking. PDF must be given when printing</xs:documentation>
+													                          </xs:annotation>
+												                        </xs:element>
+											                      </xs:sequence>
+										                    </xs:complexType>
+									                  </xs:element>
+								                </xs:sequence>
+							              </xs:complexType>
+						            </xs:element>
+					          </xs:sequence>
+				        </xs:complexType>
+			      </xs:element>
+			      <xs:element ref="product-feature"/>
+			      <xs:element ref="origin-station"/>
+			      <xs:element ref="destination-station"/>
+			      <xs:element minOccurs="0" ref="train-number"/>
+			      <xs:element minOccurs="0" name="departure-time" type="xs:time"/>
+			      <xs:element minOccurs="0" name="travel-duration" type="xs:time"/>
+			      <xs:element name="departure-date" type="xs:date"/>
+			      <xs:element ref="segment-type"/>
+		    </xs:sequence>
+	  </xs:complexType>
+	  <xs:complexType name="CT_message">
+		    <xs:annotation>
+			      <xs:documentation>complex type for messages (information, warning, error)</xs:documentation>
+		    </xs:annotation>
+		    <xs:sequence>
+			      <xs:element name="code">
+				        <xs:annotation>
+					          <xs:documentation>code of the message. Value has format 'SYS-SUB-CODE', if it is a standard bene message</xs:documentation>
+				        </xs:annotation>
+				        <xs:complexType>
+					          <xs:simpleContent>
+						            <xs:extension base="xs:string">
+							              <xs:attribute name="system" type="xs:string" use="optional"/>
+							              <xs:attribute name="subsystem" type="xs:string" use="optional"/>
+							              <xs:attribute name="code" type="xs:string" use="optional"/>
+						            </xs:extension>
+					          </xs:simpleContent>
+				        </xs:complexType>
+			      </xs:element>
+			      <xs:element maxOccurs="unbounded" minOccurs="0" name="info" type="xs:string">
+				        <xs:annotation>
+					          <xs:documentation>Additional non-localizable information (parameters) needed to build the localized message.</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:element minOccurs="0" name="locale" type="xs:language">
+				        <xs:annotation>
+					          <xs:documentation>locale that was used to localize this error message</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:element minOccurs="0" name="name" type="xs:string">
+				        <xs:annotation>
+					          <xs:documentation>localized label for the message code. </xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:element minOccurs="0" name="message" type="xs:string">
+				        <xs:annotation>
+					          <xs:documentation>localized message.</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:element minOccurs="0" name="wrapped-exception">
+				        <xs:annotation>
+					          <xs:documentation>software exception that caused this message</xs:documentation>
+				        </xs:annotation>
+				        <xs:complexType>
+					          <xs:sequence>
+						            <xs:element name="class-FQN" type="xs:string">
+							              <xs:annotation>
+								                <xs:documentation>fully qualified class name of the Exception class</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+						            <xs:element minOccurs="0" name="message" type="xs:string">
+							              <xs:annotation>
+								                <xs:documentation>the message of the exception</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+						            <xs:element minOccurs="0" name="stacktrace" type="xs:string">
+							              <xs:annotation>
+								                <xs:documentation>the stack trace of the exception</xs:documentation>
+							              </xs:annotation>
+						            </xs:element>
+					          </xs:sequence>
+				        </xs:complexType>
+			      </xs:element>
+			      <xs:element maxOccurs="unbounded" minOccurs="0" name="cause-message" type="CT_message">
+				        <xs:annotation>
+					          <xs:documentation>lmessage that caused this message (for error and waringing messages).</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+		    </xs:sequence>
+		    <xs:attribute name="message-type">
+			      <xs:simpleType>
+				        <xs:restriction base="xs:string">
+					          <xs:enumeration value="DEBUG"/>
+					          <xs:enumeration value="INFO"/>
+					          <xs:enumeration value="WARN"/>
+					          <xs:enumeration value="ERROR"/>
+					          <xs:enumeration value="FATAL"/>
+				        </xs:restriction>
+			      </xs:simpleType>
+		    </xs:attribute>
+	  </xs:complexType>
+	  <xs:annotation>
+		    <xs:documentation>Referred elements for web services</xs:documentation>
+	  </xs:annotation>
+	  <xs:element name="taco">
+		    <xs:complexType>
+			      <xs:simpleContent>
+				        <xs:extension base="xs:string">
+					          <xs:attribute default="I" name="domain" type="xs:string" use="optional"/>
+					          <xs:attribute name="tariff-group" type="xs:string" use="required"/>
+					          <xs:attribute name="tic" type="xs:string" use="required"/>
+				        </xs:extension>
+			      </xs:simpleContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="journey-query">
+		    <xs:annotation>
+			      <xs:documentation>Query to determine a number of possible outward and (optional) return routes with possible tariff codes.</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:sequence>
+				        <xs:element ref="origin-station"/>
+				        <xs:element ref="destination-station"/>
+				        <xs:element name="outward-route-query" type="route-query">
+					          <xs:annotation>
+						            <xs:documentation>info relevant for outward route</xs:documentation>
+					          </xs:annotation>
+				        </xs:element>
+				        <xs:element ref="passenger-list-request"/>
+				        <xs:element minOccurs="0" name="return-route-query" type="route-query">
+					          <xs:annotation>
+						            <xs:documentation>info relevant for return route</xs:documentation>
+					          </xs:annotation>
+				        </xs:element>
+				        <xs:element minOccurs="0" name="number-of-transfers" type="xs:integer">
+					          <xs:annotation>
+						            <xs:documentation>number indicating the maximum times a customer wants to change a train during the journey</xs:documentation>
+					          </xs:annotation>
+				        </xs:element>
+			      </xs:sequence>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="dossier-id">
+		    <xs:simpleType>
+			      <xs:restriction base="xs:string">
+				        <xs:pattern value="[\w]{7}"/>
+			      </xs:restriction>
+		    </xs:simpleType>
+	  </xs:element>
+	  <xs:element name="BO-integration">
+		    <xs:annotation>
+			      <xs:documentation>integration for the back office when creating tickets, compatible with current integrations</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:sequence>
+				        <xs:element name="type" type="xs:string">
+					          <xs:annotation>
+						            <xs:documentation>determines the type of the back office integration, to be defined in cooperation with BeNe</xs:documentation>
+					          </xs:annotation>
+				        </xs:element>
+				        <xs:element maxOccurs="5" name="free-text">
+					          <xs:complexType>
+						            <xs:sequence>
+							              <xs:element name="free-text-content">
+								                <xs:simpleType>
+									                  <xs:restriction base="xs:string">
+										                    <xs:maxLength value="100"/>
+									                  </xs:restriction>
+								                </xs:simpleType>
+							              </xs:element>
+							              <xs:element name="free-text-number" type="xs:positiveInteger"/>
+						            </xs:sequence>
+					          </xs:complexType>
+				        </xs:element>
+				        <xs:element maxOccurs="3" minOccurs="0" name="large-text">
+					          <xs:complexType>
+						            <xs:sequence>
+							              <xs:element name="large-text-content">
+								                <xs:simpleType>
+									                  <xs:restriction base="xs:string">
+										                    <xs:maxLength value="4000"/>
+									                  </xs:restriction>
+								                </xs:simpleType>
+							              </xs:element>
+							              <xs:element name="large-text-number" type="xs:positiveInteger"/>
+						            </xs:sequence>
+					          </xs:complexType>
+				        </xs:element>
+				        <xs:element maxOccurs="unbounded" minOccurs="0" name="remark">
+					          <xs:annotation>
+						            <xs:documentation>only for ACE</xs:documentation>
+					          </xs:annotation>
+					          <xs:complexType>
+						            <xs:sequence>
+							              <xs:element name="remark-text">
+								                <xs:simpleType>
+									                  <xs:restriction base="xs:string">
+										                    <xs:maxLength value="200"/>
+									                  </xs:restriction>
+								                </xs:simpleType>
+							              </xs:element>
+							              <xs:element name="remark-type">
+								                <xs:simpleType>
+									                  <xs:restriction base="xs:string">
+										                    <xs:enumeration value="ace1"/>
+										                    <xs:enumeration value="ace2"/>
+									                  </xs:restriction>
+								                </xs:simpleType>
+							              </xs:element>
+						            </xs:sequence>
+					          </xs:complexType>
+				        </xs:element>
+			      </xs:sequence>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="passenger-request">
+		    <xs:annotation>
+			      <xs:documentation>Passenger in the request</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:sequence>
+				        <xs:element minOccurs="0" name="last-name">
+					          <xs:annotation>
+						            <xs:documentation>when filled in, it must be unique. It may be combined with the first-name to make a unique combination</xs:documentation>
+					          </xs:annotation>
+					          <xs:simpleType>
+						            <xs:restriction base="xs:string">
+							              <xs:maxLength value="30"/>
+							              <xs:minLength value="2"/>
+						            </xs:restriction>
+					          </xs:simpleType>
+				        </xs:element>
+				        <xs:element minOccurs="0" name="first-name">
+					          <xs:annotation>
+						            <xs:documentation>when filled in, the combination with last-name must be unique</xs:documentation>
+					          </xs:annotation>
+					          <xs:simpleType>
+						            <xs:restriction base="xs:string">
+							              <xs:maxLength value="15"/>
+						            </xs:restriction>
+					          </xs:simpleType>
+				        </xs:element>
+				        <xs:element minOccurs="0" ref="gender"/>
+				        <xs:element minOccurs="0" name="identitycardnumber">
+					          <xs:simpleType>
+						            <xs:restriction base="xs:string">
+							              <xs:maxLength value="20"/>
+						            </xs:restriction>
+					          </xs:simpleType>
+				        </xs:element>
+				        <xs:element minOccurs="0" name="residence">
+					          <xs:simpleType>
+						            <xs:restriction base="xs:string">
+							              <xs:maxLength value="30"/>
+						            </xs:restriction>
+					          </xs:simpleType>
+				        </xs:element>
+				        <xs:element minOccurs="0" ref="external-pass-ref"/>
+				        <xs:element maxOccurs="unbounded" minOccurs="0" ref="reduction-reason"/>
+				        <xs:element maxOccurs="unbounded" minOccurs="0" ref="loyalty-card"/>
+				        <xs:choice minOccurs="0">
+					          <xs:annotation>
+						            <xs:documentation>default passengertype Adult</xs:documentation>
+					          </xs:annotation>
+					          <xs:element minOccurs="0" name="birth-date" type="xs:date">
+						            <xs:annotation>
+							              <xs:documentation>not used anymore for Homeprint tickets</xs:documentation>
+						            </xs:annotation>
+					          </xs:element>
+					          <xs:element minOccurs="0" ref="passenger-type">
+						            <xs:annotation>
+							              <xs:documentation>Four possibilities: Adult,  Child, Dog and Bicycle.
+A child has a typical age of 10 years
+For a more detailed passengertype distinction, the birthdate must be used</xs:documentation>
+						            </xs:annotation>
+					          </xs:element>
+				        </xs:choice>
+			      </xs:sequence>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="passenger-list-request">
+		    <xs:complexType>
+			      <xs:sequence>
+				        <xs:element maxOccurs="unbounded" ref="passenger-request">
+					          <xs:annotation>
+						            <xs:documentation> </xs:documentation>
+					          </xs:annotation>
+				        </xs:element>
+			      </xs:sequence>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="booking-info">
+		    <xs:annotation>
+			      <xs:documentation>general information for the booking</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:sequence>
+				        <xs:element ref="delivery-info"/>
+				        <xs:element name="ticket-language">
+					          <xs:annotation>
+						            <xs:documentation>Possible values for Code attribute:
+  NL: Dutch
+  FR: French
+Note that for tickets there is no country dependend language</xs:documentation>
+					          </xs:annotation>
+					          <xs:complexType>
+						            <xs:simpleContent>
+							              <xs:extension base="xs:string">
+								                <xs:attribute name="code" type="xs:string" use="required"/>
+							              </xs:extension>
+						            </xs:simpleContent>
+					          </xs:complexType>
+				        </xs:element>
+				        <xs:element minOccurs="0" ref="to-po-number">
+					          <xs:annotation>
+						            <xs:documentation>tour operator number, only valid for agents or external users</xs:documentation>
+					          </xs:annotation>
+				        </xs:element>
+				        <xs:element minOccurs="0" name="client-name">
+					          <xs:annotation>
+						            <xs:documentation>only valid for agents or external users</xs:documentation>
+					          </xs:annotation>
+					          <xs:simpleType>
+						            <xs:restriction base="xs:string">
+							              <xs:maxLength value="30"/>
+						            </xs:restriction>
+					          </xs:simpleType>
+				        </xs:element>
+				        <xs:element minOccurs="0" name="client-number">
+					          <xs:annotation>
+						            <xs:documentation>only valid for agents or external users</xs:documentation>
+					          </xs:annotation>
+					          <xs:simpleType>
+						            <xs:restriction base="xs:string">
+							              <xs:maxLength value="15"/>
+						            </xs:restriction>
+					          </xs:simpleType>
+				        </xs:element>
+				        <xs:element minOccurs="0" name="CRIS-number">
+					          <xs:annotation>
+						            <xs:documentation>only valid for BeNe users</xs:documentation>
+					          </xs:annotation>
+					          <xs:simpleType>
+						            <xs:restriction base="xs:string">
+							              <xs:maxLength value="15"/>
+						            </xs:restriction>
+					          </xs:simpleType>
+				        </xs:element>
+				        <xs:element minOccurs="0" name="seat-info-requested" type="xs:boolean">
+					          <xs:annotation>
+						            <xs:documentation>default = false. If = true, the seatinfo will be updated during booking. This will require extra time for the booking.</xs:documentation>
+					          </xs:annotation>
+				        </xs:element>
+				        <xs:element minOccurs="0" name="corporate-program" type="xs:string"/>
+				        <xs:element minOccurs="0" name="history">
+					          <xs:annotation>
+						            <xs:documentation>this element contains information about the change history of the dossier</xs:documentation>
+					          </xs:annotation>
+					          <xs:complexType>
+						            <xs:sequence>
+							              <xs:element minOccurs="0" name="creator" type="xs:string">
+								                <xs:annotation>
+									                  <xs:documentation>the user that created the dossier</xs:documentation>
+								                </xs:annotation>
+							              </xs:element>
+						            </xs:sequence>
+					          </xs:complexType>
+				        </xs:element>
+			      </xs:sequence>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="delivery-info">
+		    <xs:annotation>
+			      <xs:documentation>information on how the tickets are delivered</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:sequence>
+				        <xs:element name="delivery-method">
+					          <xs:complexType>
+						            <xs:simpleContent>
+							              <xs:extension base="xs:string">
+								                <xs:attribute name="code" type="xs:string" use="required"/>
+							              </xs:extension>
+						            </xs:simpleContent>
+					          </xs:complexType>
+				        </xs:element>
+				        <xs:choice minOccurs="0">
+					          <xs:element minOccurs="0" name="delivery-address">
+						            <xs:annotation>
+							              <xs:documentation>if the tickets have to be sent to a specific address other than the standard address</xs:documentation>
+						            </xs:annotation>
+						            <xs:complexType>
+							              <xs:sequence>
+								                <xs:element minOccurs="0" name="delivery-date" type="xs:date"/>
+								                <xs:element minOccurs="0" name="salutation">
+									                  <xs:simpleType>
+										                    <xs:restriction base="xs:string">
+											                      <xs:maxLength value="30"/>
+										                    </xs:restriction>
+									                  </xs:simpleType>
+								                </xs:element>
+								                <xs:element minOccurs="0" name="first-name">
+									                  <xs:simpleType>
+										                    <xs:restriction base="xs:string">
+											                      <xs:maxLength value="35"/>
+										                    </xs:restriction>
+									                  </xs:simpleType>
+								                </xs:element>
+								                <xs:element name="last-name">
+									                  <xs:simpleType>
+										                    <xs:restriction base="xs:string">
+											                      <xs:maxLength value="50"/>
+										                    </xs:restriction>
+									                  </xs:simpleType>
+								                </xs:element>
+								                <xs:element name="street1">
+									                  <xs:simpleType>
+										                    <xs:restriction base="xs:string">
+											                      <xs:maxLength value="50"/>
+										                    </xs:restriction>
+									                  </xs:simpleType>
+								                </xs:element>
+								                <xs:element minOccurs="0" name="street2">
+									                  <xs:simpleType>
+										                    <xs:restriction base="xs:string">
+											                      <xs:maxLength value="50"/>
+										                    </xs:restriction>
+									                  </xs:simpleType>
+								                </xs:element>
+								                <xs:element name="house-number">
+									                  <xs:simpleType>
+										                    <xs:restriction base="xs:string">
+											                      <xs:maxLength value="10"/>
+										                    </xs:restriction>
+									                  </xs:simpleType>
+								                </xs:element>
+								                <xs:element minOccurs="0" name="bus-number">
+									                  <xs:simpleType>
+										                    <xs:restriction base="xs:string">
+											                      <xs:maxLength value="30"/>
+										                    </xs:restriction>
+									                  </xs:simpleType>
+								                </xs:element>
+								                <xs:element name="zipcode">
+									                  <xs:simpleType>
+										                    <xs:restriction base="xs:string">
+											                      <xs:maxLength value="7"/>
+										                    </xs:restriction>
+									                  </xs:simpleType>
+								                </xs:element>
+								                <xs:element name="city">
+									                  <xs:simpleType>
+										                    <xs:restriction base="xs:string">
+											                      <xs:maxLength value="50"/>
+										                    </xs:restriction>
+									                  </xs:simpleType>
+								                </xs:element>
+								                <xs:element name="country">
+									                  <xs:simpleType>
+										                    <xs:restriction base="xs:string">
+											                      <xs:maxLength value="50"/>
+										                    </xs:restriction>
+									                  </xs:simpleType>
+								                </xs:element>
+							              </xs:sequence>
+						            </xs:complexType>
+					          </xs:element>
+					          <xs:element minOccurs="0" name="e-mail" type="xs:string"/>
+				        </xs:choice>
+			      </xs:sequence>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="ticket-list">
+		    <xs:annotation>
+			      <xs:documentation>information to represent a logical bundle of tickets</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:sequence>
+				        <xs:element name="general-info">
+					          <xs:complexType>
+						            <xs:sequence>
+							              <xs:element ref="origin-station"/>
+							              <xs:element ref="destination-station"/>
+							              <xs:element name="departure-date" type="xs:date"/>
+							              <xs:element minOccurs="0" name="departure-time" type="xs:time"/>
+							              <xs:element minOccurs="0" name="arrival-time" type="xs:time"/>
+							              <xs:element minOccurs="0" ref="train-number"/>
+							              <xs:element minOccurs="0" name="smoking-option">
+								                <xs:complexType>
+									                  <xs:simpleContent>
+										                    <xs:extension base="xs:string">
+											                      <xs:attribute name="code" type="xs:string" use="required"/>
+										                    </xs:extension>
+									                  </xs:simpleContent>
+								                </xs:complexType>
+							              </xs:element>
+							              <xs:element name="is-return" type="xs:boolean"/>
+							              <xs:element minOccurs="0" ref="corporate-contract"/>
+							              <xs:element ref="comfort-class"/>
+							              <xs:element minOccurs="0" name="ticket-time-limit" type="xs:dateTime"/>
+							              <xs:element minOccurs="0" name="cancel-state-info" type="xs:string"/>
+							              <xs:element minOccurs="0" name="ticket-list-ref" type="xs:string"/>
+							              <xs:element minOccurs="0" name="ebs" type="xs:boolean"/>
+							              <xs:element minOccurs="0" name="esn" type="xs:boolean"/>
+						            </xs:sequence>
+					          </xs:complexType>
+				        </xs:element>
+				        <xs:element maxOccurs="unbounded" minOccurs="0" name="seat-info">
+					          <xs:complexType>
+						            <xs:sequence>
+							              <xs:element name="coach-number" type="xs:integer"/>
+							              <xs:element minOccurs="0" name="coach-type">
+								                <xs:complexType>
+									                  <xs:simpleContent>
+										                    <xs:extension base="xs:string">
+											                      <xs:attribute name="code" type="xs:string" use="required"/>
+										                    </xs:extension>
+									                  </xs:simpleContent>
+								                </xs:complexType>
+							              </xs:element>
+							              <xs:element minOccurs="0" name="space-type" type="xs:string"/>
+							              <xs:choice>
+								                <xs:element name="seat-number" type="xs:string">
+									                  <xs:annotation>
+										                    <xs:documentation>for RR, an exact number is returned</xs:documentation>
+									                  </xs:annotation>
+								                </xs:element>
+								                <xs:element name="seat-range" type="xs:string">
+									                  <xs:annotation>
+										                    <xs:documentation>for EPA, a range from. to is returned</xs:documentation>
+									                  </xs:annotation>
+								                </xs:element>
+							              </xs:choice>
+						            </xs:sequence>
+					          </xs:complexType>
+				        </xs:element>
+				        <xs:element maxOccurs="unbounded" minOccurs="0" name="ticket-info">
+					          <xs:complexType>
+						            <xs:sequence>
+							              <xs:element name="ticket-state-info" type="xs:string">
+								                <xs:annotation>
+									                  <xs:documentation>for meaning of the different states: see use cases</xs:documentation>
+								                </xs:annotation>
+							              </xs:element>
+							              <xs:element name="booking-state-info" type="xs:string">
+								                <xs:annotation>
+									                  <xs:documentation>contains the state of the ticket in the bookings process. for meaning of the different states: see use cases</xs:documentation>
+								                </xs:annotation>
+							              </xs:element>
+							              <xs:element name="reservation-reference" type="xs:string">
+								                <xs:annotation>
+									                  <xs:documentation>bookings reference for the reservation system, visible on the printed ticket</xs:documentation>
+								                </xs:annotation>
+							              </xs:element>
+							              <xs:element name="ticket-price" type="price">
+								                <xs:annotation>
+									                  <xs:documentation>original ticket price, to be paid by the customer</xs:documentation>
+								                </xs:annotation>
+							              </xs:element>
+							              <xs:element name="cancel-state-info" type="xs:string"/>
+							              <xs:element minOccurs="0" name="cancel-cost" type="price">
+								                <xs:annotation>
+									                  <xs:documentation>costs made for the cancellation</xs:documentation>
+								                </xs:annotation>
+							              </xs:element>
+							              <xs:element minOccurs="0" name="reason-code">
+								                <xs:annotation>
+									                  <xs:documentation>code that indicates why the ticket was cancelled.</xs:documentation>
+								                </xs:annotation>
+								                <xs:simpleType>
+									                  <xs:restriction base="xs:string">
+										                    <xs:enumeration value="refund"/>
+										                    <xs:enumeration value="exchange"/>
+									                  </xs:restriction>
+								                </xs:simpleType>
+								                <!--xs:complexType&gt;
+									&lt;xs:simpleContent&gt;
+										&lt;xs:extension base=&quot;xs:string&quot;&gt;
+											&lt;xs:attribute name=&quot;rcode&quot; type=&quot;xs:string&quot; use=&quot;required&quot;/&gt;
+										&lt;/xs:extension&gt;
+									&lt;/xs:simpleContent&gt;
+								&lt;/xs:complexType-->
+							</xs:element>
+							              <xs:element name="ticket-id" type="xs:integer">
+								                <xs:annotation>
+									                  <xs:documentation>internal reference inside the bookingsreference</xs:documentation>
+								                </xs:annotation>
+							              </xs:element>
+							              <xs:element maxOccurs="unbounded" name="passenger-info">
+								                <xs:complexType>
+									                  <xs:sequence>
+										                    <xs:element ref="taco"/>
+										                    <xs:element minOccurs="0" ref="passenger-type"/>
+										                    <xs:element minOccurs="0" name="last-name" type="xs:string"/>
+										                    <xs:element minOccurs="0" name="first-name" type="xs:string"/>
+										                    <xs:element minOccurs="0" ref="external-pass-ref"/>
+										                    <xs:element maxOccurs="unbounded" minOccurs="0" ref="reduction-reason"/>
+										                    <xs:element maxOccurs="unbounded" minOccurs="0" ref="loyalty-card"/>
+									                  </xs:sequence>
+								                </xs:complexType>
+							              </xs:element>
+							              <xs:element minOccurs="0" name="scn" type="xs:string">
+								                <xs:annotation>
+									                  <xs:documentation>this field contains the stock control number, a reference to the physical ticket that was used to print the ticket on. Can contain default value of 123456789</xs:documentation>
+								                </xs:annotation>
+							              </xs:element>
+							              <xs:element minOccurs="0" name="model-type" type="xs:string">
+								                <xs:annotation>
+									                  <xs:documentation>different values are possible, check the description</xs:documentation>
+								                </xs:annotation>
+							              </xs:element>
+							              <xs:element minOccurs="0" name="pdf-guid" type="xs:string">
+								                <xs:annotation>
+									                  <xs:documentation>info about the pdf</xs:documentation>
+								                </xs:annotation>
+							              </xs:element>
+							              <xs:element minOccurs="0" ref="ticket-ref"/>
+						            </xs:sequence>
+					          </xs:complexType>
+				        </xs:element>
+			      </xs:sequence>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="passenger-reply">
+		    <xs:complexType>
+			      <xs:sequence>
+				        <xs:element minOccurs="0" name="last-name">
+					          <xs:simpleType>
+						            <xs:restriction base="xs:string">
+							              <xs:maxLength value="30"/>
+							              <xs:minLength value="2"/>
+						            </xs:restriction>
+					          </xs:simpleType>
+				        </xs:element>
+				        <xs:element minOccurs="0" name="first-name">
+					          <xs:annotation>
+						            <xs:documentation>when filled in, the combination with last-name must be unique</xs:documentation>
+					          </xs:annotation>
+					          <xs:simpleType>
+						            <xs:restriction base="xs:string">
+							              <xs:maxLength value="15"/>
+						            </xs:restriction>
+					          </xs:simpleType>
+				        </xs:element>
+				        <xs:element minOccurs="0" ref="gender"/>
+				        <xs:element minOccurs="0" name="identitycard-number">
+					          <xs:simpleType>
+						            <xs:restriction base="xs:string">
+							              <xs:maxLength value="20"/>
+						            </xs:restriction>
+					          </xs:simpleType>
+				        </xs:element>
+				        <xs:element minOccurs="0" name="residence">
+					          <xs:simpleType>
+						            <xs:restriction base="xs:string">
+							              <xs:maxLength value="30"/>
+						            </xs:restriction>
+					          </xs:simpleType>
+				        </xs:element>
+				        <xs:element minOccurs="0" name="birth-date" type="xs:date">
+					          <xs:annotation>
+						            <xs:documentation>not used anymore for Homeprint tickets</xs:documentation>
+					          </xs:annotation>
+				        </xs:element>
+				        <xs:element minOccurs="0" ref="external-pass-ref"/>
+				        <xs:element maxOccurs="unbounded" minOccurs="0" ref="reduction-reason"/>
+				        <xs:element maxOccurs="unbounded" minOccurs="0" ref="loyalty-card"/>
+				        <xs:element ref="passenger-id">
+					          <xs:annotation>
+						            <xs:documentation>reference to the passenger in the route-reply. This has to be unique for each passenger and has a form like AA, AB, AC</xs:documentation>
+					          </xs:annotation>
+				        </xs:element>
+				        <xs:element minOccurs="0" name="seat-preference">
+					          <xs:annotation>
+						            <xs:documentation>This  element contains preferences that can be given for this passenger for the train booking. It contains the physical location of the seat in the coach such as window, aisle,...</xs:documentation>
+					          </xs:annotation>
+					          <xs:complexType>
+						            <xs:simpleContent>
+							              <xs:extension base="xs:string">
+								                <xs:attribute name="code" use="required"/>
+							              </xs:extension>
+						            </xs:simpleContent>
+					          </xs:complexType>
+				        </xs:element>
+			      </xs:sequence>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="passenger-list-reply">
+		    <xs:complexType>
+			      <xs:sequence>
+				        <xs:element maxOccurs="unbounded" ref="passenger-reply"/>
+			      </xs:sequence>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="route-summary-id" type="xs:integer">
+		    <xs:annotation>
+			      <xs:documentation> </xs:documentation>
+		    </xs:annotation>
+	  </xs:element>
+	  <xs:element name="route-detail-id" type="xs:integer"/>
+	  <xs:element name="proposed-price-id" type="xs:integer"/>
+	  <xs:element name="passenger-id" type="xs:string"/>
+	  <xs:element name="external-pass-ref">
+		    <xs:annotation>
+			      <xs:documentation>reference stored for a passenger from external source</xs:documentation>
+		    </xs:annotation>
+		    <xs:simpleType>
+			      <xs:restriction base="xs:string">
+				        <xs:maxLength value="255"/>
+			      </xs:restriction>
+		    </xs:simpleType>
+	  </xs:element>
+	  <xs:element name="proposed-price">
+		    <xs:complexType>
+			      <xs:sequence>
+				        <xs:element name="price-offer">
+					          <xs:annotation>
+						            <xs:documentation>price information of the route referenced for all passengers in the request</xs:documentation>
+					          </xs:annotation>
+					          <xs:complexType>
+						            <xs:sequence>
+							              <xs:element maxOccurs="unbounded" name="used-tacos">
+								                <xs:complexType>
+									                  <xs:sequence>
+										                    <xs:element ref="taco"/>
+										                    <xs:element name="unit-price" type="price">
+											                      <xs:annotation>
+												                        <xs:documentation>price of the TaCo per passenger</xs:documentation>
+											                      </xs:annotation>
+										                    </xs:element>
+										                    <xs:element minOccurs="0" ref="passenger-type"/>
+										                    <xs:element minOccurs="0" ref="corporate-contract"/>
+										                    <xs:element name="number-of-passengers" type="xs:integer"/>
+										                    <xs:element name="passenger-list">
+											                      <xs:complexType>
+												                        <xs:sequence>
+													                          <xs:element maxOccurs="unbounded" ref="passenger-id">
+														                            <xs:annotation>
+															                              <xs:documentation>reference to the passenger in the route-reply</xs:documentation>
+														                            </xs:annotation>
+													                          </xs:element>
+												                        </xs:sequence>
+											                      </xs:complexType>
+										                    </xs:element>
+										                    <xs:element minOccurs="0" name="production-mode-list">
+											                      <xs:annotation>
+												                        <xs:documentation>the production mode reflects how the ticket info will get to the customer. It might be printed on an ATB, ticketless for Thalys or a homeprint. At this point, only 1 production-mode per booking is allowed.</xs:documentation>
+											                      </xs:annotation>
+											                      <xs:complexType>
+												                        <xs:sequence>
+													                          <xs:element maxOccurs="unbounded" name="production-mode" type="xs:string">
+														                            <xs:annotation>
+															                              <xs:documentation>possible values are presently ATB, TCL or PDF. ATB is the default value. TCL must be given when booking. PDF must be given when printing</xs:documentation>
+														                            </xs:annotation>
+													                          </xs:element>
+												                        </xs:sequence>
+											                      </xs:complexType>
+										                    </xs:element>
+									                  </xs:sequence>
+								                </xs:complexType>
+							              </xs:element>
+						            </xs:sequence>
+					          </xs:complexType>
+				        </xs:element>
+				        <xs:element ref="product-feature"/>
+				        <xs:element ref="origin-station"/>
+				        <xs:element ref="destination-station"/>
+				        <xs:element maxOccurs="8" minOccurs="0" ref="via-station">
+					          <xs:annotation>
+						            <xs:documentation>Only relevant for BIL</xs:documentation>
+					          </xs:annotation>
+				        </xs:element>
+				        <xs:element maxOccurs="unbounded" minOccurs="0" ref="train-number"/>
+				        <xs:element minOccurs="0" name="departure-time" type="xs:time"/>
+				        <xs:element minOccurs="0" name="travel-duration" type="xs:time"/>
+				        <xs:element name="departure-date" type="xs:date"/>
+				        <xs:element ref="proposed-price-id"/>
+				        <xs:element ref="route-summary-id">
+					          <xs:annotation>
+						            <xs:documentation>reference to the summary solution</xs:documentation>
+					          </xs:annotation>
+				        </xs:element>
+				        <xs:element ref="segment-id">
+					          <xs:annotation>
+						            <xs:documentation>identifier of the segment. Indicates the segment order of the journey.</xs:documentation>
+					          </xs:annotation>
+				        </xs:element>
+				        <xs:element ref="segment-type"/>
+				        <xs:element minOccurs="0" name="possible-reservation">
+					          <xs:annotation>
+						            <xs:documentation>This elements indicates whether a reservation is needed for a specific part and for what part of the journey a reservation is needed. A reservation is always bound to a specific train</xs:documentation>
+					          </xs:annotation>
+					          <xs:complexType>
+						            <xs:sequence>
+							              <xs:element name="reservation-required" type="xs:boolean">
+								                <xs:annotation>
+									                  <xs:documentation>Indication whether a reservation is required.</xs:documentation>
+								                </xs:annotation>
+							              </xs:element>
+							              <xs:element name="reservation-details">
+								                <xs:complexType>
+									                  <xs:sequence>
+										                    <xs:element name="price-offer-reservation">
+											                      <xs:annotation>
+												                        <xs:documentation>price information of the route referenced for all passengers in the request</xs:documentation>
+											                      </xs:annotation>
+											                      <xs:complexType>
+												                        <xs:sequence>
+													                          <xs:element maxOccurs="unbounded" name="reservation-taco">
+														                            <xs:complexType>
+															                              <xs:sequence>
+																                                <xs:element ref="taco"/>
+																                                <xs:element name="unit-price" type="price">
+																	                                  <xs:annotation>
+																		                                    <xs:documentation>price of the TaCo per passenger</xs:documentation>
+																	                                  </xs:annotation>
+																                                </xs:element>
+																                                <xs:element minOccurs="0" ref="passenger-type"/>
+																                                <xs:element minOccurs="0" ref="corporate-contract"/>
+																                                <xs:element name="number-of-passengers" type="xs:integer"/>
+																                                <xs:element name="passenger-list">
+																	                                  <xs:complexType>
+																		                                    <xs:sequence>
+																			                                      <xs:element maxOccurs="unbounded" ref="passenger-id">
+																				                                        <xs:annotation>
+																					                                          <xs:documentation>reference to the passenger in the route-reply</xs:documentation>
+																				                                        </xs:annotation>
+																			                                      </xs:element>
+																		                                    </xs:sequence>
+																	                                  </xs:complexType>
+																                                </xs:element>
+															                              </xs:sequence>
+														                            </xs:complexType>
+													                          </xs:element>
+												                        </xs:sequence>
+											                      </xs:complexType>
+										                    </xs:element>
+										                    <xs:element ref="origin-station"/>
+										                    <xs:element ref="destination-station"/>
+										                    <xs:element ref="train-number"/>
+										                    <xs:element minOccurs="0" name="departure-time" type="xs:time"/>
+										                    <xs:element minOccurs="0" name="travel-duration" type="xs:time"/>
+										                    <xs:element name="departure-date" type="xs:date"/>
+										                    <xs:element ref="segment-type"/>
+									                  </xs:sequence>
+								                </xs:complexType>
+							              </xs:element>
+							              <xs:element ref="availability">
+								                <xs:annotation>
+									                  <xs:documentation>as this concerns a reservation, there is always availability</xs:documentation>
+								                </xs:annotation>
+							              </xs:element>
+						            </xs:sequence>
+					          </xs:complexType>
+				        </xs:element>
+				        <xs:element minOccurs="0" name="outward-proposed-price-id" type="xs:integer">
+					          <xs:annotation>
+						            <xs:documentation>In case of a TCV booking and a return journey, it is possible to indicate the outward journey </xs:documentation>
+					          </xs:annotation>
+				        </xs:element>
+				        <xs:element minOccurs="0" name="booking-specifications">
+					          <xs:annotation>
+						            <xs:documentation>This  element contains preferences that can be given for this train booking. These specs are not given in the proposed price offer and thus must be filled in from the GUI</xs:documentation>
+					          </xs:annotation>
+					          <xs:complexType>
+						            <xs:sequence>
+							              <xs:element minOccurs="0" name="seating-preferences">
+								                <xs:annotation>
+									                  <xs:documentation>seating preferences can only be given for trains where reservations are possible, so RR and EPA trains, not for TCV trains.</xs:documentation>
+								                </xs:annotation>
+								                <xs:complexType>
+									                  <xs:sequence>
+										                    <xs:choice>
+											                      <xs:element name="specific-placement">
+												                        <xs:annotation>
+													                          <xs:documentation>this is a reference to a seat: the seating will be done as close as possible to this seat or the exact seat will be demanded, depending upon the chosen code</xs:documentation>
+												                        </xs:annotation>
+												                        <xs:complexType>
+													                          <xs:sequence>
+														                            <xs:element name="type-of-placement">
+															                              <xs:annotation>
+																                                <xs:documentation>possible values are N for nearby or S for specific</xs:documentation>
+															                              </xs:annotation>
+															                              <xs:complexType>
+																                                <xs:simpleContent>
+																	                                  <xs:extension base="xs:string">
+																		                                    <xs:attribute name="code" type="xs:string" use="required"/>
+																	                                  </xs:extension>
+																                                </xs:simpleContent>
+															                              </xs:complexType>
+														                            </xs:element>
+														                            <xs:element name="coach-number" type="xs:string"/>
+														                            <xs:element name="seat-number" type="xs:string"/>
+													                          </xs:sequence>
+												                        </xs:complexType>
+											                      </xs:element>
+											                      <xs:element name="general-placement">
+												                        <xs:annotation>
+													                          <xs:documentation>this contains placement info that is not bound to a specific coach and seat</xs:documentation>
+												                        </xs:annotation>
+												                        <xs:complexType>
+													                          <xs:sequence>
+														                            <xs:element name="space-type">
+															                              <xs:annotation>
+																                                <xs:documentation>the type of seat, such as carre, solo,... This element is only possible for RR bookings</xs:documentation>
+															                              </xs:annotation>
+															                              <xs:complexType>
+																                                <xs:simpleContent>
+																	                                  <xs:extension base="xs:string">
+																		                                    <xs:attribute name="code" type="xs:string" use="required"/>
+																	                                  </xs:extension>
+																                                </xs:simpleContent>
+															                              </xs:complexType>
+														                            </xs:element>
+													                          </xs:sequence>
+												                        </xs:complexType>
+											                      </xs:element>
+										                    </xs:choice>
+									                  </xs:sequence>
+								                </xs:complexType>
+							              </xs:element>
+						            </xs:sequence>
+					          </xs:complexType>
+				        </xs:element>
+				        <xs:element minOccurs="0" ref="availability">
+					          <xs:annotation>
+						            <xs:documentation>only for trains with a reservation option, it is possible to give availability numbers</xs:documentation>
+					          </xs:annotation>
+				        </xs:element>
+				        <xs:element minOccurs="0" name="one-ticket-indicator" type="xs:boolean">
+					          <xs:annotation>
+						            <xs:documentation>if true, for return trip, the field 'outward-proposed-price-id' needs to be filled out for a booking request</xs:documentation>
+					          </xs:annotation>
+				        </xs:element>
+			      </xs:sequence>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="route-detail">
+		    <xs:annotation>
+			      <xs:documentation>Detail for a specific train on a route.</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:sequence>
+				        <xs:element ref="origin-station"/>
+				        <xs:element ref="destination-station"/>
+				        <xs:element minOccurs="0" ref="train-number">
+					          <xs:annotation>
+						            <xs:documentation>specifies a specific train.</xs:documentation>
+					          </xs:annotation>
+				        </xs:element>
+				        <xs:element name="departure-date" type="xs:date"/>
+				        <xs:element minOccurs="0" name="departure-time" type="xs:time"/>
+				        <xs:element minOccurs="0" name="departure-info" type="xs:string"/>
+				        <xs:element minOccurs="0" name="travel-duration" type="xs:time"/>
+				        <xs:element minOccurs="0" name="arrival-date" type="xs:date"/>
+				        <xs:element minOccurs="0" name="arrival-time" type="xs:time"/>
+				        <xs:element minOccurs="0" name="arrival-info" type="xs:string"/>
+				        <xs:element maxOccurs="unbounded" minOccurs="0" name="travel-info" type="xs:string"/>
+				        <xs:element ref="route-detail-id"/>
+				        <xs:element ref="route-summary-id">
+					          <xs:annotation>
+						            <xs:documentation>reference to the summary solution</xs:documentation>
+					          </xs:annotation>
+				        </xs:element>
+			      </xs:sequence>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="reduction-reason">
+		    <xs:annotation>
+			      <xs:documentation>this is defined by 2 attributes. the net-code, e.g. DB, and the reco, e.g. interrail,... </xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:simpleContent>
+				        <xs:extension base="xs:string">
+					          <xs:attribute name="net-code" use="required">
+						            <xs:simpleType>
+							              <xs:restriction base="xs:string">
+								                <xs:maxLength value="2"/>
+							              </xs:restriction>
+						            </xs:simpleType>
+					          </xs:attribute>
+					          <xs:attribute name="reco" use="required">
+						            <xs:simpleType>
+							              <xs:restriction base="xs:string">
+								                <xs:maxLength value="2"/>
+							              </xs:restriction>
+						            </xs:simpleType>
+					          </xs:attribute>
+					          <xs:attribute name="passenger-type" type="xs:string"/>
+				        </xs:extension>
+			      </xs:simpleContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="product-feature">
+		    <xs:annotation>
+			      <xs:documentation>contains a list of features that can be used to select a product</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:sequence>
+				        <xs:element ref="comfort-class">
+					          <xs:annotation>
+						            <xs:documentation>first (1) or second (2) class</xs:documentation>
+					          </xs:annotation>
+				        </xs:element>
+				        <xs:element name="is-refundable" type="xs:string"/>
+				        <xs:element name="is-changeable" type="xs:string"/>
+				        <xs:element maxOccurs="unbounded" minOccurs="0" name="product-group" type="xs:string"/>
+				        <xs:element name="carrier-description">
+					          <xs:annotation>
+						            <xs:documentation>this is the commercial name of the product that can be found in the brochures </xs:documentation>
+					          </xs:annotation>
+					          <xs:complexType>
+						            <xs:simpleContent>
+							              <xs:extension base="xs:string">
+								                <xs:attribute name="supplier" type="xs:string" use="optional"/>
+							              </xs:extension>
+						            </xs:simpleContent>
+					          </xs:complexType>
+				        </xs:element>
+				        <xs:element name="EBS" type="xs:boolean">
+					          <xs:annotation>
+						            <xs:documentation>Indication whether or not any Belgian station is included in the tariff for the international journey.
+
+If this is the case, the domestic Belgian segment will NOT be included in the segment list.</xs:documentation>
+					          </xs:annotation>
+				        </xs:element>
+				        <xs:element name="ESN" type="xs:boolean">
+					          <xs:annotation>
+						            <xs:documentation>Indication whether or not any Dutch station is included in the tariff for the international journey.
+
+If this is the case, the domestic Dutch segment will NOT be included in the segment list.</xs:documentation>
+					          </xs:annotation>
+				        </xs:element>
+				        <xs:element minOccurs="0" name="single-indication" type="xs:boolean">
+					          <xs:annotation>
+						            <xs:documentation>Indicates if the used taco's can be used for one-leg booking.</xs:documentation>
+					          </xs:annotation>
+				        </xs:element>
+			      </xs:sequence>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="corporate-contract">
+		    <xs:annotation>
+			      <xs:documentation>contains contracts on a B2B level, not a B2C level, to retrieve specific tariffs</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:sequence>
+				        <xs:element name="contract-type" type="xs:string">
+					          <xs:annotation>
+						            <xs:documentation>indicates the carrier for which the contract is valid, e.g. TFP,...</xs:documentation>
+					          </xs:annotation>
+				        </xs:element>
+				        <xs:element name="contract-code">
+					          <xs:annotation>
+						            <xs:documentation>number that specifies the contract for the given carrier</xs:documentation>
+					          </xs:annotation>
+					          <xs:complexType>
+						            <xs:simpleContent>
+							              <xs:extension base="xs:string">
+								                <xs:attribute name="distributor" type="xs:string" use="optional"/>
+								                <xs:attribute name="number" type="xs:string" use="required"/>
+								                <xs:attribute name="supplier" type="xs:string" use="required"/>
+								                <xs:attribute name="id" type="xs:string" use="optional"/>
+							              </xs:extension>
+						            </xs:simpleContent>
+					          </xs:complexType>
+				        </xs:element>
+			      </xs:sequence>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="loyalty-card">
+		    <xs:complexType>
+			      <xs:sequence>
+				        <xs:element ref="carrier">
+					          <xs:annotation>
+						            <xs:documentation>e.g. THA for Thalys or the net for a reco, e.g. DB</xs:documentation>
+					          </xs:annotation>
+				        </xs:element>
+				        <xs:element name="card-number">
+					          <xs:annotation>
+						            <xs:documentation>is required when using ftp-cards for different carriers</xs:documentation>
+					          </xs:annotation>
+					          <xs:simpleType>
+						            <xs:restriction base="xs:string">
+							              <xs:maxLength value="17"/>
+						            </xs:restriction>
+					          </xs:simpleType>
+				        </xs:element>
+			      </xs:sequence>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="comfort-class" type="xs:string">
+		    <xs:annotation>
+			      <xs:documentation>first (1) or second (2) class</xs:documentation>
+		    </xs:annotation>
+		    <!--xs:simpleType&gt;
+			&lt;xs:restriction base=&quot;xs:string&quot;&gt;
+				&lt;xs:enumeration value=&quot;&quot;/&gt;
+				&lt;xs:enumeration value=&quot;1&quot;/&gt;
+				&lt;xs:enumeration value=&quot;2&quot;/&gt;
+			&lt;/xs:restriction&gt;
+		&lt;/xs:simpleType-->
+		<!--xs:complexType&gt;
+			&lt;xs:simpleContent&gt;
+				&lt;xs:extension base=&quot;xs:string&quot;&gt;
+					&lt;xs:attribute name=&quot;code&quot; type=&quot;xs:string&quot; use=&quot;required&quot;/&gt;
+				&lt;/xs:extension&gt;
+			&lt;/xs:simpleContent&gt;
+		&lt;/xs:complexType-->
+	</xs:element>
+	  <xs:element name="train-number" type="xs:string">
+		    <xs:annotation>
+			      <xs:documentation>specifies a specific train and departure time</xs:documentation>
+		    </xs:annotation>
+	  </xs:element>
+	  <xs:element name="gender">
+		    <xs:complexType>
+			      <xs:simpleContent>
+				        <xs:extension base="xs:string">
+					          <xs:attribute name="code" type="xs:string" use="required"/>
+				        </xs:extension>
+			      </xs:simpleContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="passenger-type">
+		    <xs:annotation>
+			      <xs:documentation>the passenger type is not given for main passengers, there the taco is sufficient for the booking of the main taco. For secondary passengers, the passenger type and the derived taco are needed for a correct booking</xs:documentation>
+		    </xs:annotation>
+		    <xs:simpleType>
+			      <xs:restriction base="xs:string">
+				        <xs:enumeration value="A"/>
+				        <xs:enumeration value="C"/>
+				        <xs:enumeration value="Y"/>
+				        <xs:enumeration value="S"/>
+			      </xs:restriction>
+		    </xs:simpleType>
+		    <!--xs:complexType&gt;
+			&lt;xs:simpleContent&gt;
+				&lt;xs:extension base=&quot;xs:string&quot;&gt;
+					&lt;xs:attribute name=&quot;code&quot; type=&quot;xs:string&quot; use=&quot;required&quot;/&gt;
+				&lt;/xs:extension&gt;
+			&lt;/xs:simpleContent&gt;
+		&lt;/xs:complexType-->
+	</xs:element>
+	  <xs:element name="carrier">
+		    <xs:annotation>
+			      <xs:documentation>e.g. THA for Thalys or EUR for Eurostar</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:simpleContent>
+				        <xs:extension base="xs:string">
+					          <xs:attribute name="code" type="xs:string" use="required"/>
+				        </xs:extension>
+			      </xs:simpleContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="origin-station">
+		    <xs:complexType>
+			      <xs:simpleContent>
+				        <xs:extension base="xs:string">
+					          <xs:attribute name="code" type="xs:string" use="required"/>
+				        </xs:extension>
+			      </xs:simpleContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="destination-station">
+		    <xs:complexType>
+			      <xs:simpleContent>
+				        <xs:extension base="xs:string">
+					          <xs:attribute name="code" type="xs:string" use="required"/>
+				        </xs:extension>
+			      </xs:simpleContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="via-station">
+		    <xs:complexType>
+			      <xs:simpleContent>
+				        <xs:extension base="xs:string">
+					          <xs:attribute name="code" type="xs:string" use="required"/>
+				        </xs:extension>
+			      </xs:simpleContent>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="pin-code">
+		    <xs:simpleType>
+			      <xs:restriction base="xs:string">
+				        <xs:minLength value="4"/>
+				        <xs:maxLength value="4"/>
+			      </xs:restriction>
+		    </xs:simpleType>
+	  </xs:element>
+	  <xs:element name="to-po-number">
+		    <xs:annotation>
+			      <xs:documentation>tour operator purchase order, only valid for agents or external users</xs:documentation>
+		    </xs:annotation>
+		    <xs:simpleType>
+			      <xs:restriction base="xs:string">
+				        <xs:maxLength value="25"/>
+			      </xs:restriction>
+		    </xs:simpleType>
+	  </xs:element>
+	  <xs:element name="HP-url" type="xs:string">
+		    <xs:annotation>
+			      <xs:documentation>contains the url where the pdf of the homeprint tickets can be found</xs:documentation>
+		    </xs:annotation>
+	  </xs:element>
+	  <xs:element name="user-data">
+		    <xs:annotation>
+			      <xs:documentation>user specific data</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:sequence>
+				        <xs:element name="user-name" type="xs:string">
+					          <xs:annotation>
+						            <xs:documentation>Identification of the organization of a third party</xs:documentation>
+					          </xs:annotation>
+				        </xs:element>
+				        <xs:element minOccurs="0" name="password" type="xs:string">
+					          <xs:annotation>
+						            <xs:documentation>password of the user. Not needed if web service is authenticated. Never copied into the reply. </xs:documentation>
+					          </xs:annotation>
+				        </xs:element>
+				        <xs:element minOccurs="0" name="language">
+					          <xs:annotation>
+						            <xs:documentation>Possible values for Code:
+
+nl_NL: Dutch
+nl_BE: Dutch (Belgium)
+fr_BE: French (Belgium)
+de_BE: German
+en_GB: English</xs:documentation>
+					          </xs:annotation>
+					          <xs:complexType>
+						            <xs:simpleContent>
+							              <xs:extension base="xs:string">
+								                <xs:attribute name="code" type="xs:string" use="required"/>
+							              </xs:extension>
+						            </xs:simpleContent>
+					          </xs:complexType>
+				        </xs:element>
+				        <xs:element name="distributor" type="xs:string">
+					          <xs:annotation>
+						            <xs:documentation>Possible values:
+
+BS: Belgium
+NS: The Netherlands
+
+In combination with the language, this can lead to other labels. 
+</xs:documentation>
+					          </xs:annotation>
+				        </xs:element>
+				        <xs:element name="user-related-data">
+					          <xs:annotation>
+						            <xs:documentation>is returned unchanged in the reply, max size is 250 characters</xs:documentation>
+					          </xs:annotation>
+					          <xs:simpleType>
+						            <xs:restriction base="xs:string">
+							              <xs:maxLength value="250"/>
+						            </xs:restriction>
+					          </xs:simpleType>
+				        </xs:element>
+			      </xs:sequence>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="segment-id" type="xs:integer">
+		    <xs:annotation>
+			      <xs:documentation>identifier of the segment</xs:documentation>
+		    </xs:annotation>
+	  </xs:element>
+	  <xs:element name="segment-type">
+		    <xs:annotation>
+			      <xs:documentation>Type of the segment</xs:documentation>
+		    </xs:annotation>
+		    <xs:simpleType>
+			      <xs:restriction base="xs:string">
+				        <xs:enumeration value="marketprice"/>
+				        <xs:enumeration value="reservation"/>
+				        <xs:enumeration value="admission"/>
+			      </xs:restriction>
+		    </xs:simpleType>
+	  </xs:element>
+	  <xs:element name="availability-set">
+		    <xs:annotation>
+			      <xs:documentation>General element for a set of availabilities (can be RR / EPA / COSTA)</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:choice>
+				        <xs:element maxOccurs="unbounded" minOccurs="0" name="rr-availability-level">
+					          <xs:complexType>
+						            <xs:sequence>
+							              <xs:element name="rr-class-of-service">
+								                <xs:annotation>
+									                  <xs:documentation>The class of service (f.e. AF) for this availability element.</xs:documentation>
+								                </xs:annotation>
+								                <xs:complexType>
+									                  <xs:simpleContent>
+										                    <xs:extension base="xs:string">
+											                      <xs:attribute name="code" type="xs:string" use="required"/>
+										                    </xs:extension>
+									                  </xs:simpleContent>
+								                </xs:complexType>
+							              </xs:element>
+							              <xs:element name="rr-available-level">
+								                <xs:annotation>
+									                  <xs:documentation>The range of available seats.</xs:documentation>
+								                </xs:annotation>
+								                <xs:complexType>
+									                  <xs:simpleContent>
+										                    <xs:extension base="xs:string">
+											                      <xs:attribute name="code" type="xs:string" use="required"/>
+										                    </xs:extension>
+									                  </xs:simpleContent>
+								                </xs:complexType>
+							              </xs:element>
+						            </xs:sequence>
+					          </xs:complexType>
+				        </xs:element>
+				        <xs:element maxOccurs="unbounded" minOccurs="0" name="rr-availability">
+					          <xs:complexType>
+						            <xs:sequence>
+							              <xs:element name="rr-class-of-service">
+								                <xs:annotation>
+									                  <xs:documentation>The class of service (f.e. AF) for this availability element.</xs:documentation>
+								                </xs:annotation>
+								                <xs:complexType>
+									                  <xs:simpleContent>
+										                    <xs:extension base="xs:string">
+											                      <xs:attribute name="code" type="xs:string" use="required"/>
+										                    </xs:extension>
+									                  </xs:simpleContent>
+								                </xs:complexType>
+							              </xs:element>
+							              <xs:element name="rr-available-nbr" type="xs:positiveInteger">
+								                <xs:annotation>
+									                  <xs:documentation>The exact number of available seats.</xs:documentation>
+								                </xs:annotation>
+							              </xs:element>
+						            </xs:sequence>
+					          </xs:complexType>
+				        </xs:element>
+				        <xs:element maxOccurs="unbounded" minOccurs="0" name="epa-availability">
+					          <xs:complexType>
+						            <xs:sequence>
+							              <xs:element name="reduction-code" type="xs:string">
+								                <xs:annotation>
+									                  <xs:documentation>The EPA reduction code.</xs:documentation>
+								                </xs:annotation>
+							              </xs:element>
+							              <xs:element name="epa-service-level">
+								                <xs:annotation>
+									                  <xs:documentation>The EPA service level replied by EPA availability.</xs:documentation>
+								                </xs:annotation>
+								                <xs:complexType>
+									                  <xs:simpleContent>
+										                    <xs:extension base="xs:string">
+											                      <xs:attribute name="code" type="xs:string" use="required"/>
+										                    </xs:extension>
+									                  </xs:simpleContent>
+								                </xs:complexType>
+							              </xs:element>
+							              <xs:element name="epa-available-nbr" type="xs:positiveInteger">
+								                <xs:annotation>
+									                  <xs:documentation>The range of available seats.</xs:documentation>
+								                </xs:annotation>
+							              </xs:element>
+						            </xs:sequence>
+					          </xs:complexType>
+				        </xs:element>
+				        <xs:element maxOccurs="unbounded" minOccurs="0" name="costa-availability-level">
+					          <xs:complexType>
+						            <xs:sequence>
+							              <xs:element name="costa-class-of-service">
+								                <xs:annotation>
+									                  <xs:documentation>The class of service (f.e. AF) for this availability element.</xs:documentation>
+								                </xs:annotation>
+								                <xs:complexType>
+									                  <xs:simpleContent>
+										                    <xs:extension base="xs:string">
+											                      <xs:attribute name="code" type="xs:string" use="required"/>
+										                    </xs:extension>
+									                  </xs:simpleContent>
+								                </xs:complexType>
+							              </xs:element>
+							              <xs:element name="costa-available-level">
+								                <xs:complexType>
+									                  <xs:simpleContent>
+										                    <xs:extension base="xs:string">
+											                      <xs:attribute name="code" type="xs:string" use="required"/>
+										                    </xs:extension>
+									                  </xs:simpleContent>
+								                </xs:complexType>
+							              </xs:element>
+						            </xs:sequence>
+					          </xs:complexType>
+				        </xs:element>
+			      </xs:choice>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="availability">
+		    <xs:complexType>
+			      <xs:sequence>
+				        <xs:element name="class-of-service" type="xs:string">
+					          <xs:annotation>
+						            <xs:documentation>this elements indicates the service level of the tariff within the reservation system. This is not necessary to interprete the availability itself.</xs:documentation>
+					          </xs:annotation>
+				        </xs:element>
+				        <xs:choice>
+					          <xs:element name="availability-level" type="xs:integer">
+						            <xs:annotation>
+							              <xs:documentation>range indication of the number of available seats left.</xs:documentation>
+						            </xs:annotation>
+					          </xs:element>
+					          <xs:element name="availability-nbr" type="xs:integer">
+						            <xs:annotation>
+							              <xs:documentation>exact number of available seats left</xs:documentation>
+						            </xs:annotation>
+					          </xs:element>
+				        </xs:choice>
+			      </xs:sequence>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:attributeGroup name="booking-id-attrgrp">
+		    <xs:annotation>
+			      <xs:documentation>Attributes for identifying a (group of) ticket(s)</xs:documentation>
+		    </xs:annotation>
+		    <xs:attribute name="booking-id" type="xs:string" use="required"/>
+		    <xs:attribute name="booking-id-scheme" type="booking-id-scheme-type" use="optional"/>
+	  </xs:attributeGroup>
+	  <xs:simpleType name="booking-id-scheme-type">
+		    <xs:restriction base="xs:string">
+			      <xs:enumeration value="TCN"/>
+			      <xs:enumeration value="RCN"/>
+			      <xs:enumeration value="ISSUENR"/>
+		    </xs:restriction>
+	  </xs:simpleType>
+	  <xs:element name="cancellation-conditions">
+		    <xs:annotation>
+			      <xs:documentation>Aftersales cancellation conditions for a set of tickets.</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:sequence>
+				        <xs:element minOccurs="0" name="total-amounts" type="cancellation-amounts-type">
+					          <xs:annotation>
+						            <xs:documentation>The total amounts for the requested aftersales cancellation. This can only be calculated if ALL conditions could be calculated. </xs:documentation>
+					          </xs:annotation>
+				        </xs:element>
+				        <xs:element maxOccurs="unbounded" ref="cancellation-condition"/>
+			      </xs:sequence>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="cancellation-condition">
+		    <xs:annotation>
+			      <xs:documentation>Aftersales cancellation condition for an individual ticket.</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:sequence>
+				        <xs:element name="success" type="xs:boolean">
+					          <xs:annotation>
+						            <xs:documentation>Indication whether the condition could be calculated.</xs:documentation>
+					          </xs:annotation>
+				        </xs:element>
+				        <xs:element name="cancellation-reason-code">
+					          <xs:annotation>
+						            <xs:documentation>Indication whether the cancellation is caused by a refund or exchange.</xs:documentation>
+					          </xs:annotation>
+					          <xs:simpleType>
+						            <xs:restriction base="xs:string">
+							              <xs:enumeration value="refund"/>
+							              <xs:enumeration value="exchange"/>
+						            </xs:restriction>
+					          </xs:simpleType>
+				        </xs:element>
+				        <xs:element name="taco" type="xs:string">
+					          <xs:annotation>
+						            <xs:documentation>The tariff of the pax-segment to which this ticket is bound.</xs:documentation>
+					          </xs:annotation>
+				        </xs:element>
+				        <xs:element name="ticket-amounts" type="cancellation-amounts-type"/>
+			      </xs:sequence>
+			      <xs:attributeGroup ref="booking-id-attrgrp"/>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:complexType name="cancellation-amounts-type">
+		    <xs:annotation>
+			      <xs:documentation>complexType for ticket amounts</xs:documentation>
+		    </xs:annotation>
+		    <xs:sequence>
+			      <xs:element name="original-value" type="euro-amount">
+				        <xs:annotation>
+					          <xs:documentation>The original value.</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:element minOccurs="0" name="carrier-fee" type="euro-amount">
+				        <xs:annotation>
+					          <xs:documentation>The calculated carrier fee.</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+			      <xs:element minOccurs="0" name="refund-amount" type="euro-amount">
+				        <xs:annotation>
+					          <xs:documentation>The amount to refund (original value - carrier fee)</xs:documentation>
+				        </xs:annotation>
+			      </xs:element>
+		    </xs:sequence>
+	  </xs:complexType>
+	  <xs:simpleType name="euro-amount">
+		    <xs:annotation>
+			      <xs:documentation>base representation for a euro amount</xs:documentation>
+		    </xs:annotation>
+		    <xs:restriction base="xs:decimal">
+			      <xs:totalDigits value="10"/>
+			      <xs:fractionDigits value="2"/>
+		    </xs:restriction>
+	  </xs:simpleType>
+	  <xs:element name="ticket-ref">
+		    <xs:annotation>
+			      <xs:documentation>Reference to a ticket for which the aftersales offer is requested.</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:attributeGroup ref="booking-id-attrgrp"/>
+		    </xs:complexType>
+	  </xs:element>
+</xs:schema>

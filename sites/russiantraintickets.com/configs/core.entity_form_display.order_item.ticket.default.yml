@@ -1,0 +1,91 @@
+uuid: 612a02d4-f245-44e7-85b1-058121bcc6fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.order_item.ticket.leg_number
+    - store.order_item_type.ticket
+  module:
+    - store
+_core:
+  default_config_hash: Jigpq8QCCkl0C_DHgnw6gdgYsKmx4-QgLlzDSwJaLW8
+id: order_item.ticket.default
+targetEntityType: order_item
+bundle: ticket
+mode: default
+content:
+  booking_details:
+    type: string_textarea
+    weight: -4
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  leg_number:
+    weight: 6
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  name:
+    type: string_textfield
+    weight: -4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  order_reference:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  original_price:
+    type: price_default
+    weight: -4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  price:
+    type: price_default
+    weight: -4
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  price_components:
+    type: string_textarea
+    weight: -4
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  product:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  quantity:
+    type: number
+    weight: -5
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

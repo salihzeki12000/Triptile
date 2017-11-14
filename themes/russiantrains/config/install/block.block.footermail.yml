@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+  theme:
+    - russiantrains
+third_party_settings:
+  rn_content:
+    classes: ''
+id: footermail
+theme: russiantrains
+region: footer
+weight: -11
+provider: null
+plugin: footer_mail
+settings:
+  id: footer_mail
+  label: 'Talk to us'
+  provider: rn_content
+  label_display: visible
+  title_field: 'Talk to us'
+  field_subtitle: 'Get travel advice from our experts'
+visibility: {  }

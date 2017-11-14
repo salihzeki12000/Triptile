@@ -1,0 +1,4 @@
+services:
+  booking.booking_manager_base:
+    abstract: true
+    arguments: ['@current_user', '@entity_type.manager', '@store.price_rule', '@language_manager', '@salesforce_sync', '@plugin.manager.salesforce_mapping', '@store.order_verification']

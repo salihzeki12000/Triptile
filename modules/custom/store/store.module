@@ -1,0 +1,172 @@
+<?php
+
+/**
+ * @file
+ * Contains store.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\master\Master;
+use Drupal\store\Entity\StoreOrder;
+use Drupal\store\Entity\Invoice;
+use Drupal\Core\Datetime\DrupalDateTime;
+
+/**
+ * Implements hook_help().
+ */
+function store_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the store module.
+    case 'help.page.store':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Store products, orders, invoices, payments, price rule.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function store_theme() {
+  $theme = [];
+  $theme['base_product'] = array(
+    'render element' => 'elements',
+    'file' => 'base_product.page.inc',
+    'template' => 'base_product',
+  );
+  $theme['base_product_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'base_product.page.inc',
+  ];
+  $theme['store_order'] = array(
+    'render element' => 'elements',
+    'file' => 'store_order.page.inc',
+    'template' => 'store_order',
+  );
+  $theme['store_order_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'store_order.page.inc',
+  ];
+  $theme['order_item'] = array(
+    'render element' => 'elements',
+    'file' => 'order_item.page.inc',
+    'template' => 'order_item',
+  );
+  $theme['order_item_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'order_item.page.inc',
+  ];
+  $theme['invoice_page'] = [
+    'variables' => [
+      'invoice' => NULL
+    ],
+    'file' => 'invoice_page.theme.inc',
+  ];
+  return $theme;
+}
+
+/**
+* Implements hook_theme_suggestions_HOOK().
+*/
+function store_theme_suggestions_base_product(array $variables) {
+  $suggestions = array();
+  $entity = $variables['elements']['#base_product'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'base_product__' . $sanitized_view_mode;
+  $suggestions[] = 'base_product__' . $entity->bundle();
+  $suggestions[] = 'base_product__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'base_product__' . $entity->id();
+  $suggestions[] = 'base_product__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}
+
+/**
+* Implements hook_theme_suggestions_HOOK().
+*/
+function store_theme_suggestions_store_order(array $variables) {
+  $suggestions = array();
+  $entity = $variables['elements']['#store_order'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'store_order__' . $sanitized_view_mode;
+  $suggestions[] = 'store_order__' . $entity->bundle();
+  $suggestions[] = 'store_order__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'store_order__' . $entity->id();
+  $suggestions[] = 'store_order__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}
+
+/**
+* Implements hook_theme_suggestions_HOOK().
+*/
+function store_theme_suggestions_order_item(array $variables) {
+  $suggestions = array();
+  $entity = $variables['elements']['#order_item'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'order_item__' . $sanitized_view_mode;
+  $suggestions[] = 'order_item__' . $entity->bundle();
+  $suggestions[] = 'order_item__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'order_item__' . $entity->id();
+  $suggestions[] = 'order_item__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}
+
+/**
+ * Implements hook_entity_insert().
+ * @param \Drupal\store\Entity\StoreOrder $entity
+ */
+function store_store_order_insert(StoreOrder $entity) {
+  if ($entity->bundle() == 'train_order' && !$entity->getOrderNumber()) {
+    $created = DrupalDateTime::createFromtimestamp($entity->getCreatedTime());
+    $siteCode = Master::siteCode();
+    $orderNumber = $siteCode . '-' . $created->format('Ym') . '-' . $entity->id();
+    $entity->setNewRevision(FALSE);
+    $entity->setOrderNumber($orderNumber)->save();
+  }
+}
+
+/**
+ * Implements hook_entity_insert().
+ * @param \Drupal\store\Entity\Invoice $entity
+ */
+function store_invoice_insert(Invoice $entity) {
+  if (!$entity->getInvoiceNumber()) {
+    $created = DrupalDateTime::createFromtimestamp($entity->getCreatedTime());
+    $siteCode = Master::siteCode();
+    $invoiceNumber = $siteCode . '-' . $created->format('Ym') . '-' . $entity->id();
+    $entity->setNewRevision(FALSE);
+    $entity->setInvoiceNumber($invoiceNumber)->save();
+  }
+}
+
+
+/**
+ * Implements hook_views_data_alter().
+ */
+function store_views_data_alter(array &$data) {
+  $data['invoice']['link_to_invoice'] = [
+    'field' => [
+      // ID of the field handler to use.
+      'id' => 'store_view_link_to_invoice',
+      'title' => t('Link to invoice'),
+      'help' => t('Link to invoice page'),
+    ],
+  ];
+}
+
+/**
+ * Implements hook_salesforce_mapping_info_alter().
+ */
+function store_salesforce_mapping_info_alter(&$definitions) {
+  if (isset($definitions['base_product_price']) && Master::siteCode() != Master::SITE_CODE_TRIP_TILE) {
+    unset($definitions['base_product_price']);
+  }
+}

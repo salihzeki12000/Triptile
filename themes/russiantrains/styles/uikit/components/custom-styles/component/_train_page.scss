@@ -1,0 +1,54 @@
+&.page-node-type--train-page {
+  .page {
+    #main-content {
+      .info-page-search-form {
+        @import "page_parts/front_page_search_form";
+
+        .block__title, .node__title {
+          font-family: $fp-sf-title-font-family;
+          font-size: 2.0625rem;
+          font-weight: 300;
+          letter-spacing: 0.8px;
+          text-shadow: 1.1px 1.7px 1px rgba(0, 0, 0, 0.23);
+          text-transform: capitalize;
+          padding-top: 110px;
+          @include box-sizing;
+
+          @media #{$tablet-portrait} {
+            padding-top: $v-padding*2;
+          }
+
+          @media #{$mobile} {
+            padding-top: $v-padding;
+            font-size: 1.5rem;
+            letter-spacing: 0.5px;
+            @include side-padding($mobile-h-padding);
+          }
+        }
+
+        .train-search-form-block {
+          padding-bottom: 190px;
+
+          @media #{$tablet-portrait} {
+            display: block;
+            padding-top: $v-padding*2;
+            padding-bottom: $v-padding*4;
+          }
+
+          @media #{$mobile} {
+            display: block;
+            @include v-padding(0);
+          }
+
+          @media #{$mobile-landscape} {
+            @include side-padding($mobile-h-padding);
+          }
+
+          .colorized {
+            background: transparent;
+          }
+        }
+      }
+    }
+  }
+}

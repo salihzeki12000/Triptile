@@ -1,0 +1,20 @@
+uuid: bc50fc56-9ab1-4faa-852c-2a72429aba3a
+langcode: en
+status: true
+dependencies:
+  config:
+    - store.base_product_type.ticket_product
+_core:
+  default_config_hash: mg79VXsV93eOcQs28nW6HBdnAI4i_fQ0zWru7RioWcs
+id: base_product.ticket_product.name
+field_name: name
+entity_type: base_product
+bundle: ticket_product
+label: Name
+description: 'The name of the base product entity.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

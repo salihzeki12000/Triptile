@@ -1,0 +1,12 @@
+uuid: 421ad865-5ee2-473e-8221-611f67e21b90
+langcode: en
+status: true
+dependencies:
+  module:
+    - store
+_core:
+  default_config_hash: vtJB8p4qvvynqdaAnInyEOq5djuA2ndTAfv6jYWm8bM
+id: store_order.token
+label: Token
+targetEntityType: store_order
+cache: true

@@ -1,0 +1,11 @@
+<div class="mobile-return" ng-click="closeThisDialog()">{{'Return'|t}}</div>
+<h2>{{'Contact us'|t}}</h2>
+<div class="description">{{'We greatly appreciate members feedback.'|t}}</div>
+<form class="book-now-form" name="form">
+  <input type="text" class="form-text" name="username" placeholder="{{ 'Enter your name'|t }}" ng-model="data.form.name" required>
+  <input type="email" class="form-email" placeholder="{{ 'Enter your email'|t }}" name="email1" ng-model="data.form.email1" required>
+  <input id="phone-input" class="form-text" type="tel" name="phone" placeholder="{{ 'Enter your number'|t }}"
+         mask="(999) 999-9999" clean="true" international-phone-number ng-model="data.form.phone" required>
+  <textarea placeholder="{{ 'Add note'|t }}" ng-model="data.form.description"></textarea>
+  <button class="orange-button" ng-click="bookNowOrder()">{{ 'Contact us'|t }}</button>
+</form>

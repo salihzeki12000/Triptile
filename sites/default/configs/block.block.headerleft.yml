@@ -1,0 +1,28 @@
+uuid: 3c1724f7-37f6-4102-ae55-9c2471a91d45
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.header-left
+  module:
+    - rn_content
+    - system
+  theme:
+    - railninja
+third_party_settings:
+  rn_content:
+    classes: ''
+id: headerleft
+theme: railninja
+region: header_first
+weight: 0
+provider: null
+plugin: 'system_menu_block:header-left'
+settings:
+  id: 'system_menu_block:header-left'
+  label: 'Header left'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

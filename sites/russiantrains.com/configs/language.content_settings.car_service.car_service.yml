@@ -1,0 +1,15 @@
+uuid: 417c3149-5a86-45e9-b368-312aa23e224f
+langcode: en
+status: true
+dependencies:
+  module:
+    - content_translation
+    - train_base
+third_party_settings:
+  content_translation:
+    enabled: true
+id: car_service.car_service
+target_entity_type_id: car_service
+target_bundle: car_service
+default_langcode: site_default
+language_alterable: true

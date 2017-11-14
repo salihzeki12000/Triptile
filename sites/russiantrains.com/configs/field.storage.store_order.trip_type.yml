@@ -1,0 +1,32 @@
+uuid: 6af6809c-d6d7-48d5-be22-4fb9d7cc8d46
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - store
+_core:
+  default_config_hash: f_b8vQFpE75WLfpZJQySMiT2Hkpkv1Xxuv997iN-SJ4
+id: store_order.trip_type
+field_name: trip_type
+entity_type: store_order
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: simple
+      label: Simple
+    -
+      value: roundtrip
+      label: Roundtrip
+    -
+      value: complex
+      label: Complex
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

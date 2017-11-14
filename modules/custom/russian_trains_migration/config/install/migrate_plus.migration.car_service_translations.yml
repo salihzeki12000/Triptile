@@ -1,0 +1,25 @@
+id: car_service_translations
+migration_group: train_base
+migration_tags:
+  - translations
+label: CarService translations
+source:
+  plugin: car_service_translations
+  key: travelallrussia
+process:
+  id:
+    plugin: migration_lookup
+    source: id
+    migration: car_service
+  langcode: lang
+  name: name
+destination:
+  plugin: entity:car_service
+  translations: true
+migration_dependencies:
+  required:
+    - car_service
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

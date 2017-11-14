@@ -1,0 +1,79 @@
+uuid: 85e67efb-53f8-4242-8b3a-01179834f78a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.supplier.supplier.passenger_form_type
+  module:
+    - image
+    - plugin
+    - train_base
+_core:
+  default_config_hash: 4FLHFlFo-FUhO74_NQRiV-6gLx-MUOVAGPAZMovSftg
+id: supplier.supplier.default
+targetEntityType: supplier
+bundle: supplier
+mode: default
+content:
+  code:
+    label: above
+    type: string
+    weight: -6
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  logo:
+    label: hidden
+    type: image
+    weight: -3
+    region: content
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+  max_child_age:
+    label: above
+    type: number_integer
+    weight: -4
+    region: content
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  min_child_age:
+    label: above
+    type: number_integer
+    weight: -4
+    region: content
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  name:
+    label: above
+    type: string
+    weight: -5
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  passenger_form_type:
+    weight: -2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: plugin_label
+    region: content
+  status:
+    label: above
+    type: boolean
+    weight: -4
+    region: content
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+hidden:
+  langcode: true

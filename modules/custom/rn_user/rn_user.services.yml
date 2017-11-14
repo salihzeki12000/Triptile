@@ -1,0 +1,13 @@
+services:
+  rn_user.session_store:
+    class: Drupal\rn_user\SessionStoreFactory
+    arguments: ['@keyvalue.expirable', '@lock', '@current_user', '@request_stack', '%user.tempstore.expire%']
+  cache_context.user_country:
+    class: Drupal\rn_user\UserCountryCacheContext
+    tags:
+      - { name: cache.context }
+  rn_user.route_subscriber:
+    class: Drupal\rn_user\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }
+

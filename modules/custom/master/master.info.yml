@@ -1,0 +1,7 @@
+name: Master
+type: module
+description: Contains base classes and logic for the whole project
+core: 8.x
+package: Master
+dependencies:
+  - address

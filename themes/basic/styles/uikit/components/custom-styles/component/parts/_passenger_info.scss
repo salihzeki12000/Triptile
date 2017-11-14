@@ -1,0 +1,80 @@
+$short-width: 5%;
+$long-width: 30%;
+
+.passengers-info-wrapper {
+  padding: $v-padding $h-padding;
+  border: $default-border;
+}
+
+.passenger-info-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  @include v-padding($v-padding/2);
+
+  &:first-of-type {
+    padding-top: 0;
+  }
+
+  &:last-of-type {
+    padding-bottom: 0;
+  }
+
+  & > div {
+    padding: 0 5px;
+
+    &:first-of-type {
+      padding-left: 0;
+    }
+
+    &:last-of-type {
+      padding-right: 0;
+    }
+  }
+
+  .gender {
+    flex-basis: 3%;
+  }
+
+  .number {
+    flex-basis: 4%;
+  }
+
+  .citizenship {
+    flex-basis: 7%;
+  }
+
+  .dob {
+    flex-basis: 17%;
+  }
+
+  .id-number {
+    flex-basis: 19%;
+  }
+
+  .name {
+    flex-basis: 50%;
+  }
+
+  $name-width: 90%;
+
+  @media #{$mobile} {
+    @include side-padding($pas-mobile-h-padding);
+
+    & > div {
+      &:not(.name):not(.number) {
+        display: none;
+      }
+
+      &.name {
+        flex-basis: $name-width;
+      }
+
+      &.number {
+        flex-basis: 100% - $name-width;
+      }
+    }
+  }
+}
+
+

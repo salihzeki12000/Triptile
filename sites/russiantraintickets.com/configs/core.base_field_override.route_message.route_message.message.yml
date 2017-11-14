@@ -1,0 +1,18 @@
+uuid: 0b535153-a679-45ef-ae4a-92c9214539e1
+langcode: en
+status: true
+dependencies:
+  module:
+    - train_base
+id: route_message.route_message.message
+field_name: message
+entity_type: route_message
+bundle: route_message
+label: Message
+description: 'The Route message.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

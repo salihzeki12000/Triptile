@@ -1,0 +1,100 @@
+$save-search-h-padding: $h-padding*2;
+$icon-size: 15px;
+
+.save-search {
+  @include transition();
+  @include flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  a {
+    color: $tt-dark-note-color;
+    outline: none;
+    background: transparent url("#{$path-to-images}/ninja-star-grey.png") no-repeat center right;
+    background-size: $icon-size;
+    padding-right: $icon-size+ 7px;
+
+    &:hover {
+      color: $tt-save-search-active-color;
+      background: transparent url("#{$path-to-images}/ninja-star-red.png") no-repeat center right;
+      background-size: $icon-size;
+      @include transition;
+    }
+  }
+
+  .ajax-progress {
+    display: none;
+  }
+}
+
+.save-search-popup {
+  .ui-dialog-titlebar {
+    background: $dialog-bg;
+    @include v-padding($dialog-v-padding/2);
+    @include side-padding($dialog-h-padding);
+
+    @media #{$mobile} {
+      @include side-padding($mobile-dialog-padding);
+    }
+  }
+
+  .ui-dialog-titlebar-close {
+    background-image: url("#{$path-to-images}/close-icon-grey.svg");
+  }
+
+  .save-search-form-title {
+    font-size: 1.5rem;
+    font-family: $title-font-family;
+    padding-bottom: $tt-v-padding;
+  }
+
+  .save-search-form-text {
+    padding-bottom: $tt-v-padding;
+  }
+
+  label {
+    display: none;
+  }
+
+  .form-item {
+    margin-bottom: $tt-v-padding/2;
+  }
+
+  input[type="text"], input[type="email"] {
+    border-color: $popup-input-border-color !important;
+    width: 100%;
+    @include placeholder(0.8, $tt-dark-note-color);
+
+    &:focus {
+      @include placeholder(0.4, $tt-dark-note-color);
+    }
+  }
+
+  .form-actions {
+    margin: 0;
+  }
+
+  .ui-widget-content {
+    padding: 0 $save-search-h-padding;
+  }
+
+  .ui-dialog-buttonpane {
+    padding: $tt-v-padding/2 $save-search-h-padding $v-padding;
+  }
+
+  button {
+    &.save-search-button {
+      @include side-padding($save-search-h-padding*2);
+    }
+  }
+
+  .thank-you-title {
+    font-size: 1.25rem;
+    padding-bottom: $v-padding/2;
+  }
+
+  .messages--error {
+    margin-bottom: $v-padding/2;
+  }
+
+}

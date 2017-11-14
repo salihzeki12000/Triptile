@@ -1,0 +1,22 @@
+{#
+/**
+ * @file express3_station.html.twig
+ * Default theme implementation to present Express3station data.
+ *
+ * This template is used when viewing Express3station pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_express3_station()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('express3_station') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

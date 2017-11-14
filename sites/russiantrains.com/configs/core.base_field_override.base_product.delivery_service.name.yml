@@ -1,0 +1,20 @@
+uuid: 225dca21-3867-4810-8456-2b9a85a2f210
+langcode: en
+status: true
+dependencies:
+  config:
+    - store.base_product_type.delivery_service
+_core:
+  default_config_hash: B5JbJrc3mvfVfeoMtwULyNmYkWi8cqPpQIozbSDh5Ss
+id: base_product.delivery_service.name
+field_name: name
+entity_type: base_product
+bundle: delivery_service
+label: Name
+description: 'The name of the base product entity.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

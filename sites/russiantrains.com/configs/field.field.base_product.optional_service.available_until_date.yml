@@ -1,0 +1,23 @@
+uuid: 082f89c1-ca07-45a1-885a-7c242d7da1d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.base_product.available_until_date
+    - store.base_product_type.optional_service
+  module:
+    - datetime
+_core:
+  default_config_hash: HPbUZTi99OgVAgeVhBCW8GYKKTej-izid-U4W19_z6A
+id: base_product.optional_service.available_until_date
+field_name: available_until_date
+entity_type: base_product
+bundle: optional_service
+label: 'Available until date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

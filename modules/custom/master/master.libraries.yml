@@ -1,0 +1,69 @@
+calendar:
+  js:
+    js/calendar.js: {}
+  dependencies:
+    - core/jquery.ui.datepicker
+
+selectize-core:
+  css:
+    component:
+      /libraries/selectize/dist/css/selectize.default.css: {}
+  js:
+    /libraries/selectize/dist/js/standalone/selectize.js: {}
+selectize-drupal:
+  version: VERSION
+  js:
+    js/selectize.drupal.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+
+spinner:
+  js:
+    js/spinner.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/jquery.ui
+    - core/jquery.ui.spinner
+
+mapbox-js:
+  remote: https://api.mapbox.com/mapbox.js
+  license:
+    name: BSD
+    url: https://github.com/mapbox/mapbox.js/blob/mb-pages/LICENSE.md
+    gpl-compatible: true
+  css:
+    theme:
+      https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css: { external: true }
+  js:
+    https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js: { external: true, minified: true }
+map:
+  js:
+    js/map.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings
+    - master/mapbox-js
+
+radios-with-hidden-options:
+  css:
+    component:
+      css/radios-with-hidden-options.css: {}
+  js:
+    js/radios-with-hidden-options.js: {}
+
+
+# Custom jQuery scrollbar
+perfect-scrollbar:
+  version: 0.7.1
+  js:
+    /libraries/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js: { minified: true }
+    /libraries/perfect-scrollbar/js/perfect-scrollbar.min.js: { minified: true }
+  css:
+    theme:
+      /libraries/perfect-scrollbar/css/perfect-scrollbar.css: {}
+  dependencies:
+    - core/jquery

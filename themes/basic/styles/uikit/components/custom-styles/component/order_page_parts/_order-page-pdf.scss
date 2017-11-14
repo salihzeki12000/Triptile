@@ -1,0 +1,104 @@
+.pdf-container {
+  .pdf-head {
+    background: $op-head-bg-color;
+    border-bottom: $op-border;
+    padding: $op-v-padding/2 $op-h-padding;
+  }
+
+  .pdf-body {
+    padding: $op-v-padding $op-h-padding;
+  }
+
+  .pdf-head,
+  .pdf-body {
+    @media #{$mobile} {
+      @include side-padding($op-mobile-h-padding);
+    }
+
+    @media #{$mobile-portrait} {
+      @include v-padding($op-v-padding/2);
+    }
+  }
+}
+
+.agreement {
+  padding-top: $op-v-padding/2;
+}
+
+.pdf-file {
+  position: relative;
+  @include flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: $op-border;
+  @include v-padding($op-v-padding/2);
+
+  @media #{$mobile-portrait} {
+    flex-direction: column;
+  }
+
+  &.last {
+    padding-bottom: 0;
+  }
+
+  a {
+    font-size: $op-small-size;
+    color: #fff;
+    background-color: $color-green;
+    padding: 10px 20px;
+    white-space: normal;
+    max-width: 50%;
+
+    @media #{$mobile-portrait} {
+      flex-basis: 100%;
+      max-width: 100%;
+      margin-top: 10px;
+    }
+
+    &.disabled {
+      box-shadow: none;
+      opacity: 0.7;
+      user-select: none;
+      cursor: default;
+      color: $op-light-note-color;
+      background-color: #ededed;
+    }
+  }
+
+  & > div {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .filename {
+    flex-basis: $filename-width;
+
+    @media #{$mobile} {
+      flex-basis: 100%;
+    }
+
+    &::before {
+      display: inline-flex;
+      content: '';
+      width: $icon-size;
+      height: $icon-size;
+      min-width: $icon-size;
+      background: transparent url("#{$path-to-images}/pdf_icon.png") no-repeat 0 0;
+      margin-right: $op-h-padding/2;
+
+      @media #{$mobile} {
+        display: none;
+      }
+    }
+  }
+
+  .help {
+    flex-basis: $note-width;
+    font-size: $op-small-size;
+    color: $op-light-note-color;
+
+    @media #{$mobile} {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+plugin.plugin_configuration.train_provider.train_provider_base:
+  type: config_object
+  mapping:
+    status:
+      label: Status
+      type:
+    booking_available:
+      label: Booking available
+      type: boolean
+    min_days_before_departure:
+      label: Minimal departure window in days
+      type: integer
+    min_hours_before_departure:
+      label: Minimal departure window in hours
+      description: Works if Minimal departure window in days is 0.
+      type: float
+    max_days_before_departure:
+      label: Maximal departure window in days
+      type: integer
+
+train_provider.settings:
+  type: config_object
+  mapping:
+    common_min_days_before_departure:
+      type: integer
+      label: 'Minimal number of days before departure'
+    common_min_hours_before_departure:
+      type: float
+      label: 'Minimal number of hours before departure'

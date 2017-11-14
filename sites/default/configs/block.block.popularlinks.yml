@@ -1,0 +1,28 @@
+uuid: 87e1ba31-f4f2-47da-9e31-baabdc4532e0
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.popular-links
+  module:
+    - rn_content
+    - system
+  theme:
+    - railninja
+third_party_settings:
+  rn_content:
+    classes: non-mobile
+id: popularlinks
+theme: railninja
+region: leaderboard
+weight: -11
+provider: null
+plugin: 'system_menu_block:popular-links'
+settings:
+  id: 'system_menu_block:popular-links'
+  label: 'Popular links'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

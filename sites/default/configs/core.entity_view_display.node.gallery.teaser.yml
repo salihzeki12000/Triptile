@@ -1,0 +1,21 @@
+uuid: 592fdcad-2033-4eaa-908b-488e2030b297
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.gallery.gallery_image
+    - node.type.gallery
+  module:
+    - user
+id: node.gallery.teaser
+targetEntityType: node
+bundle: gallery
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  gallery_image: true
+  langcode: true

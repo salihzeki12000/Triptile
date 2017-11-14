@@ -1,0 +1,35 @@
+uuid: 6e266489-794d-470f-a671-254ce1076d6e
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:cab955c2-594c-4d41-be06-9b63034afaa1'
+  module:
+    - block_content
+    - rn_content
+    - system
+  theme:
+    - railninja
+third_party_settings:
+  rn_content:
+    classes: ''
+id: ourprojects
+theme: railninja
+region: content
+weight: -20
+provider: null
+plugin: 'block_content:cab955c2-594c-4d41-be06-9b63034afaa1'
+settings:
+  id: 'block_content:cab955c2-594c-4d41-be06-9b63034afaa1'
+  label: 'Our projects'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /front
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,47 @@
+id: blog_image
+migration_group: content_page
+migration_tags:
+  - file
+  - image
+label: Blog image
+source:
+  plugin: blog_image
+  key: travelallrussia
+  constants:
+    file_source_uri: http://www.russiantrains.com/uploads/blog
+    file_dest_uri: public://migrated/blog
+process:
+  file_source:
+    plugin: concat
+    delimiter: /
+    source:
+      - constants/file_source_uri
+      - image
+  file_dest:
+    -
+      plugin: concat
+      delimiter: /
+      source:
+        - constants/file_dest_uri
+        - image
+    -
+      plugin: urlencode
+  filename: image
+  uri:
+    plugin: file_copy
+    source:
+      - '@file_source'
+      - '@file_dest'
+  uid:
+    plugin: default_value
+    default_value: 1
+  status:
+    plugin: default_value
+    default_value: 1
+destination:
+  plugin: entity:file
+migration_dependencies: {}
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

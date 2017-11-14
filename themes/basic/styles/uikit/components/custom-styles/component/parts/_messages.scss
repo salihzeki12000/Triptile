@@ -1,0 +1,79 @@
+$message-icon-width: 50px;
+
+.messages {
+  color: $message-color;
+  width: 100%;
+  @include border-radius(0);
+  position: relative;
+  padding: 0;
+  margin: 0;
+
+  code, pre, var, kbd, samp {
+    color: $base-color;
+  }
+
+  .icon {
+    background: rgba(255,255,255,0.35);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: $message-icon-width;
+    @include flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+      padding: 0;
+      font-size: 1.8rem;
+    }
+  }
+
+  .backtrace {
+    color: $color-black;
+  }
+
+  .messages__list {
+    margin-left: $message-icon-width;
+    padding: 15px;
+    overflow: visible;
+  }
+
+  &.messages--error {
+    background: $error-bg;
+    border-color: darken($error-bg,2%);
+
+    .icon {
+      &::before {
+        @include awesome-icon("\f057");
+      }
+    }
+  }
+
+  &.messages--warning {
+    background: $warning-bg;
+    border-color: darken($warning-bg,2%);
+
+    .icon {
+      &::before {
+        @include awesome-icon("\f071");
+      }
+    }
+    .messages__list {
+      a {
+        color: #c10017;
+      }
+    }
+  }
+
+  &.messages--status {
+    background: $status-bg;
+    border-color: darken($status-bg,2%);
+
+    .icon {
+      &::before {
+        @include awesome-icon("\f00c");
+      }
+    }
+  }
+}

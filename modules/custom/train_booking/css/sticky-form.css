@@ -1,0 +1,26 @@
+.fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transform: translateY(-100%);
+}
+
+.fixed.sticky {
+  transform: translateY(0);
+}
+
+@media all and (min-width: 1025px) {
+  .region.search {
+    height: 90px;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  .region.search {
+    height: 100px;
+  }
+}

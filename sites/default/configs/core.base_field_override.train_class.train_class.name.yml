@@ -1,0 +1,18 @@
+uuid: a05dd309-c24b-4352-beae-49585a4ed046
+langcode: en
+status: true
+dependencies:
+  module:
+    - train_base
+id: train_class.train_class.name
+field_name: name
+entity_type: train_class
+bundle: train_class
+label: Name
+description: 'The name of the Supplier entity.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

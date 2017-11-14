@@ -1,0 +1,16 @@
+uuid: 28a7ccbb-059b-47d1-b7c9-04d35af79999
+langcode: en
+status: true
+dependencies:
+  config:
+    - store.order_item_type.ticket
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+id: order_item.ticket
+target_entity_type_id: order_item
+target_bundle: ticket
+default_langcode: site_default
+language_alterable: false

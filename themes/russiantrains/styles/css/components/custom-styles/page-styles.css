@@ -1,0 +1,1584 @@
+@font-face {
+  .russiantrains {
+    font-family: Helvetica Neue;
+    src: url(../../../custom-fonts/HelveticaNeueLt.ttf);
+  }
+}
+@font-face {
+  .russiantrains {
+    font-family: "Myriad Pro";
+    font-style: normal;
+    src: url("../../../custom-fonts/MyriadPro-Regular.otf");
+  }
+}
+@font-face {
+  .russiantrains {
+    font-family: "Myriad Pro Italic";
+    font-style: italic;
+    src: url("../../../custom-fonts/myriad-pro-italic.ttf");
+  }
+}
+@font-face {
+  .russiantrains {
+    font-family: HelveticaLight;
+    src: url("../../../custom-fonts/HelveticaLight.ttf");
+  }
+}
+@font-face {
+  .russiantrains {
+    font-family: Helvetica Neue;
+    src: url("../../../custom-fonts/HelveticaNeueLt.ttf");
+  }
+}
+@font-face {
+  .russiantrains {
+    font-family: HelveticaLight;
+    src: url("../../../custom-fonts/HelveticaLight.ttf");
+  }
+}
+@font-face {
+  .russiantrains {
+    font-family: Myriad Pro;
+    src: url("../../../custom-fonts/MyriadPro-Regular.otf");
+  }
+}
+@font-face {
+  .russiantrains {
+    font-family: Reducto Light;
+    src: url("../../../custom-fonts/Reducto-Light-SSi-Light.ttf");
+  }
+}
+.russiantrains body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+}
+.russiantrains body a {
+  -o-transition: 0.4s linear;
+  -moz-transition: 0.4s linear;
+  -webkit-transition: 0.4s linear;
+  transition: 0.4s linear;
+  color: #4b4b4b;
+}
+.russiantrains body a:hover {
+  color: #656565;
+}
+.russiantrains body details {
+  color: #4b4b4b;
+}
+.russiantrains body details:hover {
+  color: #4b4b4b;
+}
+.russiantrains body details:hover[open] {
+  color: #4b4b4b;
+}
+@font-face {
+  .russiantrains {
+    font-family: Helvetica Neue;
+    src: url(../../../custom-fonts/HelveticaNeueLt.ttf);
+  }
+}
+@font-face {
+  .russiantrains {
+    font-family: "Myriad Pro";
+    font-style: normal;
+    src: url("../../../custom-fonts/MyriadPro-Regular.otf");
+  }
+}
+@font-face {
+  .russiantrains {
+    font-family: "Myriad Pro Italic";
+    font-style: italic;
+    src: url("../../../custom-fonts/myriad-pro-italic.ttf");
+  }
+}
+@font-face {
+  .russiantrains {
+    font-family: HelveticaLight;
+    src: url("../../../custom-fonts/HelveticaLight.ttf");
+  }
+}
+@font-face {
+  .russiantrains {
+    font-family: Helvetica Neue;
+    src: url("../../../custom-fonts/HelveticaNeueLt.ttf");
+  }
+}
+@font-face {
+  .russiantrains {
+    font-family: HelveticaLight;
+    src: url("../../../custom-fonts/HelveticaLight.ttf");
+  }
+}
+@font-face {
+  .russiantrains {
+    font-family: Myriad Pro;
+    src: url("../../../custom-fonts/MyriadPro-Regular.otf");
+  }
+}
+@font-face {
+  .russiantrains {
+    font-family: Reducto Light;
+    src: url("../../../custom-fonts/Reducto-Light-SSi-Light.ttf");
+  }
+}
+.russiantrains .page .header-container {
+  background: #ffffff;
+}
+.russiantrains .page .header-container nav {
+  margin: auto 0;
+}
+.russiantrains .page .header-container nav .menu.menu-level-1 {
+  justify-content: flex-end;
+  margin-left: 30px;
+  position: initial;
+  margin-top: 3px;
+  cursor: pointer;
+}
+@media all and (min-width: 1600px) {
+  .russiantrains .page .header-container nav .menu.menu-level-1 {
+    margin-left: 40px;
+  }
+}
+.russiantrains .page .header-container nav .menu.menu-level-1 .menu__item {
+  z-index: 0;
+  -o-transition: 0.01s linear;
+  -moz-transition: 0.01s linear;
+  -webkit-transition: 0.01s linear;
+  transition: 0.01s linear;
+}
+.russiantrains .page .header-container nav .menu.menu-level-1 .menu__item:hover {
+  z-index: 9999;
+  -webkit-transform: translate3d(0, 0, 2px);
+}
+.russiantrains .page .header-container nav .menu.menu-level-1 .menu__item:hover .menu-level-2 {
+  display: flex;
+}
+@media all and (min-width: 768px) and (max-width: 1240px) {
+  .russiantrains .page .header-container nav .menu.menu-level-1 {
+    margin-left: 20px;
+  }
+}
+.russiantrains .page .header-container nav .menu.menu-level-1 li {
+  position: relative;
+  float: none;
+}
+.russiantrains .page .header-container nav .menu.menu-level-1 li a {
+  text-transform: capitalize;
+  color: #070707;
+  font-size: 1rem;
+  line-height: 1rem;
+  padding: 0;
+  white-space: nowrap;
+}
+.russiantrains .page .header-container nav .menu.menu-level-1 li a::after {
+  display: none;
+}
+.russiantrains .page .header-container nav .menu.menu-level-1 li:hover a {
+  color: #4b4b4b;
+}
+.russiantrains .page .header-container nav .menu.menu-level-1 > li {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: -15px;
+  margin-bottom: -15px;
+}
+@media all and (min-width: 1600px) {
+  .russiantrains .page .header-container nav .menu.menu-level-1 > li {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+.russiantrains .page .header-container nav .menu.menu-level-1 > li:last-of-type {
+  margin-right: 15px;
+}
+@media all and (min-width: 1600px) {
+  .russiantrains .page .header-container nav .menu.menu-level-1 > li:last-of-type {
+    margin-right: 20px;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 1240px) {
+  .russiantrains .page .header-container nav .menu.menu-level-1 > li:last-of-type {
+    margin-right: 20px;
+  }
+}
+.russiantrains .page .header-container nav .menu.menu-level-1 > li:hover a, .russiantrains .page .header-container nav .menu.menu-level-1 > li.menu__item--active-trail a {
+  color: #4b4b4b;
+}
+.russiantrains .page .header-container nav .menu.menu-level-1 > li:hover > .li-inside-wrapper, .russiantrains .page .header-container nav .menu.menu-level-1 > li.menu__item--active-trail > .li-inside-wrapper {
+  border-bottom: 2px solid #ca0002;
+}
+.russiantrains .page .header-container nav .menu.menu-level-1 > li:hover .menu-level-2 li, .russiantrains .page .header-container nav .menu.menu-level-1 > li.menu__item--active-trail .menu-level-2 li {
+  border-bottom: none;
+}
+.russiantrains .page .header-container nav .menu.menu-level-1 > li:hover .menu-level-2 a, .russiantrains .page .header-container nav .menu.menu-level-1 > li.menu__item--active-trail .menu-level-2 a {
+  color: #000000;
+}
+.russiantrains .page .header-container nav .menu.menu-level-1 > li:hover .menu-level-2 a:hover, .russiantrains .page .header-container nav .menu.menu-level-1 > li.menu__item--active-trail .menu-level-2 a:hover {
+  color: #444444;
+}
+.russiantrains .page .header-container nav .menu.menu-level-1 > li:hover .menu-level-3 a, .russiantrains .page .header-container nav .menu.menu-level-1 > li.menu__item--active-trail .menu-level-3 a {
+  color: #777;
+  font-size: 0.875rem;
+}
+.russiantrains .page .header-container nav .menu.menu-level-1 > li:hover .menu-level-3 a:hover, .russiantrains .page .header-container nav .menu.menu-level-1 > li.menu__item--active-trail .menu-level-3 a:hover {
+  color: #5e5e5e;
+}
+.russiantrains .page .header-container nav .menu.menu-level-1 > li .li-inside-wrapper {
+  padding: 5px;
+  border-bottom: 2px solid transparent;
+}
+@media all and (min-width: 768px) and (max-width: 1240px) {
+  .russiantrains .page .header-container nav .menu.menu-level-1 > li {
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+  }
+}
+.russiantrains .page .header-container nav .menu.is-child li {
+  display: block;
+  width: auto;
+  min-width: 0;
+  padding-right: 45px;
+}
+.russiantrains .page .header-container nav .menu.is-child li a {
+  line-height: 120%;
+}
+.russiantrains .page .header-container nav .menu.is-child li a::after {
+  display: none;
+}
+.russiantrains .page .header-container nav .menu.menu-level-2 {
+  top: 100%;
+  width: auto;
+  min-height: 250px;
+  min-width: 250px;
+  align-items: flex-start;
+  background: #efefef;
+  padding: 30px 60px;
+  display: none;
+}
+.russiantrains .page .header-container nav .menu.menu-level-2 > li:last-of-type, .russiantrains .page .header-container nav .menu.menu-level-2 > li:last-of-type li {
+  padding-right: 0;
+}
+.russiantrains .page .header-container nav .menu.menu-level-3 {
+  position: initial;
+  visibility: visible;
+  opacity: 1;
+  display: block;
+  padding-top: 15px;
+}
+.russiantrains .page .header-container .mobile-menu-block {
+  display: none;
+}
+@media all and (min-width: 768px) and (max-width: 960px) {
+  .russiantrains .page .header-container .mobile-menu-block {
+    display: flex;
+    order: 3;
+  }
+}
+@media all and (max-width: 767px) {
+  .russiantrains .page .header-container .mobile-menu-block {
+    display: flex;
+  }
+}
+.russiantrains .page .header-container .mobile-menu-block .menu-hamburger {
+  width: 30px;
+  height: 30px;
+}
+.russiantrains .page .header-container .mobile-menu-block .menu-hamburger .icon {
+  background: url("../../../../images/mobile-menu.svg") no-repeat center;
+  background-size: 30px;
+  width: 100%;
+  height: 100%;
+}
+.russiantrains .page .header-container .user-block {
+  position: absolute;
+  bottom: 10px;
+  left: 100%;
+}
+@media all and (min-width: 768px) and (max-width: 1240px) {
+  .russiantrains .page .header-container .user-block {
+    position: initial;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 960px) {
+  .russiantrains .page .header-container .user-block {
+    order: 1;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 1240px) {
+  .russiantrains .page .header-container .user-block .user-settings {
+    position: initial;
+  }
+}
+.russiantrains .page .header-container .user-block .user-settings .icon {
+  display: none;
+}
+.russiantrains .page .header-container .user-block .user-settings .current-lang-currency {
+  position: relative;
+  left: auto;
+  color: #afacac;
+  font-family: "Myriad Pro", Arial, sans-serif;
+  font-size: 0.8125rem;
+  margin-left: 30px;
+  line-height: 100%;
+}
+@media all and (min-width: 1600px) {
+  .russiantrains .page .header-container .user-block .user-settings .current-lang-currency {
+    margin-left: 40px;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 1240px) {
+  .russiantrains .page .header-container .user-block .user-settings .current-lang-currency {
+    position: initial;
+    display: flex;
+    margin-left: 20px;
+  }
+}
+.russiantrains .page .header-container .user-block .user-settings .current-language {
+  background: url("../../../../images/flags-foot.png") no-repeat 0 0;
+  padding-left: 26px;
+}
+.russiantrains .page .header-container .user-block .user-settings .current-language.en {
+  background-position: 0 0;
+}
+.russiantrains .page .header-container .user-block .user-settings .current-language.ru {
+  background-position: 0 -13px;
+}
+.russiantrains .page .header-container .user-block .user-settings .current-language.es {
+  background-position: 0 -27px;
+}
+.russiantrains .page .header-container .user-block .user-settings .current-language.pt-br, .russiantrains .page .header-container .user-block .user-settings .current-language.pt-pt, .russiantrains .page .header-container .user-block .user-settings .current-language.pt {
+  background-position: 0 -41px;
+}
+.russiantrains .page .header-container .user-block .user-settings .current-language.it {
+  background-position: 0 -55px;
+}
+.russiantrains .page .header-container .user-block .user-settings .current-language.fr {
+  background-position: 0 -69px;
+}
+.russiantrains .page .header-container .user-block .user-settings .current-language.de {
+  background-position: 0 -83px;
+}
+.russiantrains .page .header-container .user-block .user-settings .current-language.zh-hans {
+  background-position: 0 -124px;
+}
+.russiantrains .page .header-container .user-block .user-settings .current-language.ja {
+  background-position: 0 -111px;
+}
+.russiantrains .page .header-container .user-block .user-settings .current-language.tr {
+  background-position: 0 -138px;
+}
+.russiantrains .page .header-container .user-block .user-settings .current-language.pl {
+  background-position: 0 -97px;
+}
+.russiantrains .page .header-container .user-block .user-settings .current-language.gb {
+  background-position: 0 -152px;
+}
+.russiantrains .page .header-container .user-block .user-settings .current-currency {
+  margin-left: 10px;
+  border-left: 1px solid #afacac;
+  padding-left: 10px;
+}
+.russiantrains .page .header-container .user-block .user-triangle {
+  display: none !important;
+}
+.russiantrains .page .header-container .user-block .user-blocks {
+  margin-top: 20px;
+  border-top: 1px solid #e1e0e0;
+}
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .russiantrains .page .header-container .user-block .user-blocks {
+    margin-top: 11px;
+    right: 0;
+  }
+}
+.russiantrains .page .header-container .user-block .user-blocks .currency-list .currency-item .label {
+  text-align: left;
+}
+.russiantrains .page .top-header {
+  padding: 10px 0;
+  justify-content: space-between;
+}
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .russiantrains .page .top-header {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+@media all and (max-width: 767px) {
+  .russiantrains .page .top-header {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+.russiantrains .page .top-header .pr-header__header-first {
+  flex-basis: 25%;
+  justify-content: flex-start;
+}
+@media all and (max-width: 767px) {
+  .russiantrains .page .top-header .pr-header__header-first {
+    flex-basis: 75%;
+  }
+}
+.russiantrains .page .top-header .pr-header__header-first .block-system-branding-block a {
+  color: transparent;
+}
+.russiantrains .page .top-header .pr-header__header-first .block-system-branding-block img {
+  width: 100%;
+  min-height: 20px;
+}
+@media all and (max-width: 767px) {
+  .russiantrains .page .top-header .pr-header__header-first .block-system-branding-block img {
+    max-width: 200px;
+  }
+}
+@media all and (max-width: 767px) {
+  .russiantrains .page .top-header .pr-header__header-first .block-system-branding-block {
+    display: flex;
+  }
+}
+.russiantrains .page .top-header .pr-header__header-second {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-basis: 75%;
+  position: relative;
+}
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .russiantrains .page .top-header .pr-header__header-second {
+    align-items: center;
+  }
+}
+@media all and (max-width: 767px) {
+  .russiantrains .page .top-header .pr-header__header-second {
+    flex-basis: 25%;
+  }
+  .russiantrains .page .top-header .pr-header__header-second > *:not(.mobile-menu-block) {
+    display: none;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 960px) {
+  .russiantrains .page .top-header .block-plugin-id--login-register-block {
+    order: 2;
+    margin: 0 20px;
+  }
+}
+.russiantrains .page .top-header .ca-btn {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  max-width: 200px;
+}
+@media all and (min-width: 768px) and (max-width: 960px) {
+  .russiantrains .page .top-header .ca-btn {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+.russiantrains .page .top-header .ca-btn.logged-in {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+@media all and (min-width: 768px) and (max-width: 960px) {
+  .russiantrains .page .top-header .ca-btn.logged-in {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+.russiantrains .page .site-branding__logo-link {
+  padding: 0;
+}
+.russiantrains .page footer .block-plugin-id--footer-icons .block__content {
+  justify-content: flex-start;
+  align-items: flex-end;
+  display: flex;
+  flex-flow: column wrap;
+}
+@media all and (max-width: 767px) {
+  .russiantrains .page footer .block-plugin-id--footer-icons .block__content {
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media all and (max-width: 767px) {
+  .russiantrains .page footer .block-plugin-id--footer-icons .footer-icon {
+    margin: 0 5px;
+  }
+}
+.russiantrains .page footer .grey-logo {
+  padding-bottom: 15px;
+}
+.russiantrains .page footer .grey-logo img {
+  -webkit-filter: brightness(200%) contrast(30%) grayscale(100%);
+  -moz-filter: brightness(200%) contrast(30%) grayscale(100%);
+  -ms-filter: brightness(200%) contrast(30%) grayscale(100%);
+  -o-filter: brightness(200%) contrast(30%) grayscale(100%);
+  filter: brightness(200%) contrast(30%) grayscale(100%);
+  max-width: 200px;
+}
+.russiantrains .page footer .block {
+  flex-basis: 24.5%;
+}
+@media all and (max-width: 767px) {
+  .russiantrains .page footer .block {
+    flex-basis: 100%;
+  }
+}
+.russiantrains .page footer .block.block-menu {
+  flex-basis: 32.5%;
+}
+.russiantrains .page footer .block.block-menu .block__title {
+  padding-top: 15px;
+  font-size: 0.875rem;
+}
+.russiantrains .page footer .block.block-plugin-id--footer-icons {
+  flex-basis: 10%;
+  padding-top: 15px;
+}
+.russiantrains .page footer .block.block-plugin-id--footer-icons .mail {
+  display: none;
+}
+@media all and (max-width: 767px) {
+  .russiantrains .page footer .block.block-plugin-id--footer-icons {
+    display: none;
+  }
+}
+.russiantrains .page footer .block.last-block {
+  margin: 0;
+  padding-bottom: 0;
+}
+@media all and (min-width: 961px) and (max-width: 1024px) {
+  .russiantrains .page footer .payment-options {
+    margin-right: 7px;
+  }
+}
+.russiantrains .popup-menu .block, .russiantrains .popup-menu .rm-block {
+  position: initial;
+  display: block;
+  width: 100%;
+}
+.russiantrains .popup-menu .rm-block__content {
+  position: relative;
+  visibility: visible;
+  opacity: 1;
+}
+@media all and (min-width: 768px) and (max-width: 960px) {
+  .russiantrains .popup-menu .user-block {
+    display: none;
+  }
+}
+.russiantrains .popup-menu .mobile-menu {
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+.russiantrains .popup-menu .mobile-menu > .block__content {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.russiantrains .popup-menu .menu {
+  transition: margin 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.russiantrains .popup-menu .menu li {
+  margin: 0;
+  width: 100%;
+}
+.russiantrains .popup-menu .menu li:not(:last-of-type) {
+  padding-bottom: 17.5px;
+}
+.russiantrains .popup-menu .menu li a {
+  padding: 0;
+  margin: 0;
+}
+.russiantrains .popup-menu .menu li:not(.menu__item--expanded) .open-arrow {
+  display: none;
+}
+.russiantrains .popup-menu .menu li .open-arrow {
+  width: 25px;
+  height: 25px;
+  -o-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  display: none;
+}
+.russiantrains .popup-menu .menu li.sub-level-opened {
+  padding-bottom: 0;
+}
+.russiantrains .popup-menu .menu li.sub-level-opened > .li-inside-wrapper > .open-arrow {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+.russiantrains .popup-menu .menu .li-inside-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.russiantrains .popup-menu .menu.menu-level-1 {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+@media all and (min-width: 768px) and (max-width: 960px) {
+  .russiantrains .popup-menu .menu.menu-level-1 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.russiantrains .popup-menu .menu.menu-level-1 li {
+  float: none;
+  width: 100%;
+  text-align: left;
+}
+.russiantrains .popup-menu .menu.menu-level-1 li a {
+  font-size: 1.6rem;
+  padding-bottom: 4.16667px;
+  border-bottom: 2px solid transparent;
+}
+.russiantrains .popup-menu .menu.menu-level-1 li .open-arrow {
+  background: url("../../../../images/next-1.svg") no-repeat 0 0;
+  background-size: 25px;
+}
+.russiantrains .popup-menu .menu.menu-level-1 > .sub-level-opened > .li-inside-wrapper a {
+  border-bottom: 2px solid #ca0002;
+}
+.russiantrains .popup-menu .menu.menu-level-2 {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+.russiantrains .popup-menu .menu.menu-level-2 li.sub-level-opened {
+  padding-bottom: 17.5px;
+}
+.russiantrains .popup-menu .menu.menu-level-2 li a {
+  font-size: 1.25rem;
+}
+.russiantrains .popup-menu .menu.menu-level-2 li .open-arrow {
+  background: url("../../../../images/next.svg") no-repeat center;
+  background-size: 25px;
+}
+.russiantrains .popup-menu .menu.menu-level-3 {
+  padding-bottom: 0;
+  padding-left: 12.5px;
+  padding-right: 12.5px;
+  padding-top: 17.5px;
+  padding-bottom: 17.5px;
+  margin-top: 35px;
+  margin-bottom: 17.5px;
+  border-top: 1px solid #cacaca;
+  border-bottom: 1px solid #cacaca;
+}
+.russiantrains .popup-menu .menu.menu-level-3 li a {
+  font-size: 1.25rem;
+  color: #6c6c6c;
+}
+.russiantrains .popup-menu .menu .is-child {
+  display: none;
+  -o-transition: 0.4s linear;
+  -moz-transition: 0.4s linear;
+  -webkit-transition: 0.4s linear;
+  transition: 0.4s linear;
+  width: 100%;
+  position: initial;
+  visibility: visible;
+  opacity: 1;
+  display: none;
+}
+.russiantrains .popup-menu .menu .is-child.opened {
+  display: flex;
+  flex-flow: row wrap;
+}
+.russiantrains .popup-menu .menu .is-child li:last-of-type {
+  padding-bottom: 0;
+}
+.russiantrains .popup-menu .ca-btn {
+  padding-top: 17.5px;
+  padding-bottom: 17.5px;
+  max-width: 200px;
+  text-align: center;
+  font-size: 1.25rem;
+}
+@media all and (max-width: 767px) {
+  .russiantrains .popup-menu .ca-btn {
+    max-width: 100%;
+  }
+}
+.russiantrains .popup-menu .sign-in-btn {
+  background: #6c6c6c;
+  color: #fff;
+  font-size: 1.25rem;
+  padding: 17.5px 50px;
+  text-align: center;
+}
+@media all and (min-width: 768px) and (max-width: 960px) {
+  .russiantrains .popup-menu .block-plugin-id--login-register-block {
+    display: none;
+  }
+}
+@media all and (max-width: 767px) {
+  .russiantrains .popup-menu .block-plugin-id--login-register-block {
+    padding-bottom: 30px;
+  }
+}
+.russiantrains.front .train-search-form-block {
+  max-height: 500px;
+}
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .russiantrains.front .train-search-form-block {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media all and (max-width: 767px) {
+  .russiantrains.front .train-search-form-block {
+    max-height: 100%;
+  }
+}
+.russiantrains.front .train-search-form-block .colorized {
+  background: rgba(21, 21, 21, 0.22);
+  width: 100%;
+  height: 100%;
+  max-height: 500px;
+}
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .russiantrains.front .train-search-form-block .colorized {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+@media all and (max-width: 767px) {
+  .russiantrains.front .train-search-form-block .colorized {
+    max-height: 100%;
+  }
+}
+.russiantrains.front .train-search-form-block .block__title {
+  font-family: "Reducto Light", Arial, sans-serif;
+  font-size: 2.0625rem;
+  font-weight: 300;
+  letter-spacing: 0.8px;
+  text-shadow: 1.1px 1.7px 1px rgba(0, 0, 0, 0.23);
+  text-transform: capitalize;
+}
+@media all and (max-width: 767px) {
+  .russiantrains.front .train-search-form-block .block__title {
+    padding-bottom: 15px;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+  }
+}
+.russiantrains.front .train-search-form-block .block__inner {
+  max-width: 1024px;
+}
+@media all and (max-width: 767px) {
+  .russiantrains.front .train-search-form-block .block__inner {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+.russiantrains.front .train-search-form-block .block__content {
+  max-width: 1024px;
+  padding-left: 0;
+  padding-right: 0;
+  background: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.russiantrains.front .train-search-form-block .search-form-switcher {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.875rem;
+  letter-spacing: 0.1px;
+}
+.russiantrains.front .train-search-form-block .search-form-switcher .active {
+  font-weight: bold;
+}
+@media all and (min-width: 1025px) {
+  .russiantrains.front .train-search-form-block .form-flex-container {
+    height: 77px;
+    align-items: stretch;
+  }
+}
+@media all and (min-width: 961px) and (max-width: 1024px) {
+  .russiantrains.front .train-search-form-block .form-flex-container {
+    height: 87px;
+    align-items: stretch;
+  }
+}
+@media all and (min-width: 481px) and (max-width: 767px) {
+  .russiantrains.front .train-search-form-block .form-flex-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.russiantrains.front .train-search-form-block label {
+  display: flex;
+  padding: 9.75px 17px 5.25px;
+  border: 1px solid #dcdcdc;
+  border-bottom: none;
+  background: #ffffff;
+  color: #a3a3a3;
+  font-size: 0.875rem;
+  font-weight: normal;
+}
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .russiantrains.front .train-search-form-block label {
+    padding: 9.75px 10px 5.25px;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 960px) {
+  .russiantrains.front .train-search-form-block label {
+    display: none;
+  }
+}
+@media all and (max-width: 767px) {
+  .russiantrains.front .train-search-form-block label {
+    display: none;
+  }
+}
+@media all and (min-width: 1025px) {
+  .russiantrains.front .train-search-form-block .swap-stations {
+    top: auto;
+    bottom: 11.25px;
+  }
+}
+@media all and (min-width: 961px) and (max-width: 1024px) {
+  .russiantrains.front .train-search-form-block .swap-stations {
+    top: auto;
+    bottom: 15px;
+  }
+}
+.russiantrains.front .train-search-form-block .selectize-control.single .selectize-input {
+  border-top: none;
+}
+@media all and (max-width: 767px) {
+  .russiantrains.front .train-search-form-block .selectize-control.single .selectize-input {
+    border-top: 1px solid #dcdcdc;
+  }
+}
+.russiantrains.front .train-search-form-block select, .russiantrains.front .train-search-form-block .travel-date-wrapper, .russiantrains.front .train-search-form-block .passengers-field {
+  border-top: none;
+}
+@media all and (max-width: 767px) {
+  .russiantrains.front .train-search-form-block select {
+    border-top: 1px solid #dcdcdc;
+  }
+}
+.russiantrains.front .train-search-form-block .passengers-wrapper label {
+  border: none;
+}
+.russiantrains.front .train-search-form-block .form-actions input[type="submit"] {
+  color: #fff;
+  background-color: #ff8a00;
+  cursor: pointer;
+  text-decoration: none;
+  -o-transition: 0.4s linear;
+  -moz-transition: 0.4s linear;
+  -webkit-transition: 0.4s linear;
+  transition: 0.4s linear;
+  font-weight: normal;
+  font-size: 1.125rem;
+}
+.russiantrains.front .train-search-form-block .form-actions input[type="submit"] a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: normal;
+}
+.russiantrains.front .train-search-form-block .form-actions input[type="submit"]:hover {
+  background: #ff961a;
+  color: #fff;
+  text-decoration: none;
+  -o-transition: 0.4s linear;
+  -moz-transition: 0.4s linear;
+  -webkit-transition: 0.4s linear;
+  transition: 0.4s linear;
+}
+.russiantrains.front .train-search-form-block .form-actions input[type="submit"]:hover a {
+  color: #fff;
+  text-decoration: none;
+}
+.russiantrains.front .train-search-form-block {
+  font-family: "Myriad Pro", Arial, sans-serif;
+}
+.russiantrains.front .train-search-form-block .form-flex-container .form-actions {
+  height: 100%;
+}
+.russiantrains.front .search {
+  position: relative;
+}
+.russiantrains.front #block-searchformawards {
+  position: absolute;
+  bottom: 25px;
+  right: 0;
+  left: 0;
+  margin: 0;
+}
+@media all and (max-width: 767px) {
+  .russiantrains.front #block-searchformawards {
+    display: none;
+  }
+}
+.russiantrains.front #block-searchformawards img {
+  -webkit-filter: brightness(200%) contrast(30%) grayscale(100%);
+  -moz-filter: brightness(200%) contrast(30%) grayscale(100%);
+  -ms-filter: brightness(200%) contrast(30%) grayscale(100%);
+  -o-filter: brightness(200%) contrast(30%) grayscale(100%);
+  filter: brightness(200%) contrast(30%) grayscale(100%);
+}
+.russiantrains.front #main-content .pr-main__content .block .block__inner {
+  padding: 90px 0;
+}
+.russiantrains.front #main-content .pr-main__content .block .block__title {
+  font-size: 1.85rem;
+  text-align: center;
+  font-weight: 300;
+  letter-spacing: 0.8px;
+}
+.russiantrains.front #main-content .pr-main__content .image-with-button-wrapper {
+  position: relative;
+  padding: 5px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  -o-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  display: flex;
+}
+.russiantrains.front #main-content .pr-main__content .image-with-button-wrapper .image-button {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  display: flex;
+  width: 160px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  color: #070707;
+  padding: 7.5px 34px;
+  background: rgba(255, 255, 255, 0.8);
+  -o-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .russiantrains.front #main-content .pr-main__content .image-with-button-wrapper .image-button {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+@media all and (max-width: 767px) {
+  .russiantrains.front #main-content .pr-main__content .image-with-button-wrapper .image-button {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.russiantrains.front #main-content .pr-main__content .image-with-button-wrapper img {
+  width: 100%;
+  -o-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .russiantrains.front #main-content .pr-main__content .image-with-button-wrapper img {
+    -webkit-filter: brightness(80%);
+    -moz-filter: brightness(80%);
+    -ms-filter: brightness(80%);
+    -o-filter: brightness(80%);
+    filter: brightness(80%);
+  }
+}
+@media all and (max-width: 767px) {
+  .russiantrains.front #main-content .pr-main__content .image-with-button-wrapper img {
+    -webkit-filter: brightness(80%);
+    -moz-filter: brightness(80%);
+    -ms-filter: brightness(80%);
+    -o-filter: brightness(80%);
+    filter: brightness(80%);
+  }
+}
+.russiantrains.front #main-content .pr-main__content .image-with-button-wrapper:hover .image-button {
+  visibility: visible;
+  opacity: 1;
+}
+.russiantrains.front #main-content .pr-main__content .image-with-button-wrapper:hover img {
+  -o-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transform: scale(1.05);
+  -webkit-filter: brightness(80%);
+  -moz-filter: brightness(80%);
+  -ms-filter: brightness(80%);
+  -o-filter: brightness(80%);
+  filter: brightness(80%);
+}
+.russiantrains.front #main-content .pr-main__content .image {
+  width: 100%;
+}
+.russiantrains.front #main-content .pr-main__content .awards a {
+  color: #000000;
+}
+.russiantrains.train-bookingpassenger-form .all-passengers-wrapper .passenger-form-header-wrapper .passenger-info::before {
+  display: none;
+}
+.russiantrains.train-bookingpassenger-form .all-passengers-wrapper .passenger-form-header-wrapper.adult .passenger-info.accepted::before, .russiantrains.train-bookingpassenger-form .all-passengers-wrapper .passenger-form-header-wrapper.child .passenger-info.accepted::before, .russiantrains.train-bookingpassenger-form .all-passengers-wrapper .passenger-form-header-wrapper.infant .passenger-info.accepted::before {
+  background: url("../../../../images/tick.svg") no-repeat 0 0;
+  background-size: 21px;
+  display: inline-block;
+}
+.russiantrains.train-bookingpassenger-form .service-title .title::before {
+  display: none;
+}
+.russiantrains.train-bookingpassenger-form .service-title.selected .title::before {
+  background: url("../../../../images/tick.svg") no-repeat 0 0;
+  background-size: 21px;
+  display: inline-block;
+}
+.russiantrains.train-bookingpassenger-form .sidebar .sidebar-container {
+  border-top: 1px solid #acacad;
+  border-bottom: 1px solid #acacad;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+.russiantrains.train-bookingpassenger-form .sidebar .order-details:not(:last-of-type) {
+  padding-bottom: 15px;
+}
+.russiantrains.train-bookingpassenger-form .sidebar .tax {
+  padding-top: 15px;
+  border-top: none;
+}
+.russiantrains.train-bookingpayment-form .train-booking-payment-form .sidebar .sidebar-container {
+  border-top: 1px solid #acacad;
+  border-bottom: 1px solid #acacad;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+.russiantrains.train-bookingpayment-form .train-booking-payment-form .sidebar .order-details:not(:last-of-type) {
+  padding-bottom: 15px;
+}
+.russiantrains.train-bookingpayment-form .train-booking-payment-form .sidebar .tax {
+  padding-top: 15px;
+  border-top: none;
+}
+.russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block {
+  max-height: 500px;
+}
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media all and (max-width: 767px) {
+  .russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block {
+    max-height: 100%;
+  }
+}
+.russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block .colorized {
+  background: rgba(21, 21, 21, 0.22);
+  width: 100%;
+  height: 100%;
+  max-height: 500px;
+}
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block .colorized {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+@media all and (max-width: 767px) {
+  .russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block .colorized {
+    max-height: 100%;
+  }
+}
+.russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block .block__title {
+  font-family: "Reducto Light", Arial, sans-serif;
+  font-size: 2.0625rem;
+  font-weight: 300;
+  letter-spacing: 0.8px;
+  text-shadow: 1.1px 1.7px 1px rgba(0, 0, 0, 0.23);
+  text-transform: capitalize;
+}
+@media all and (max-width: 767px) {
+  .russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block .block__title {
+    padding-bottom: 15px;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+  }
+}
+.russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block .block__inner {
+  max-width: 1024px;
+}
+@media all and (max-width: 767px) {
+  .russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block .block__inner {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+.russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block .block__content {
+  max-width: 1024px;
+  padding-left: 0;
+  padding-right: 0;
+  background: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block .search-form-switcher {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.875rem;
+  letter-spacing: 0.1px;
+}
+.russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block .search-form-switcher .active {
+  font-weight: bold;
+}
+@media all and (min-width: 1025px) {
+  .russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block .form-flex-container {
+    height: 77px;
+    align-items: stretch;
+  }
+}
+@media all and (min-width: 961px) and (max-width: 1024px) {
+  .russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block .form-flex-container {
+    height: 87px;
+    align-items: stretch;
+  }
+}
+@media all and (min-width: 481px) and (max-width: 767px) {
+  .russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block .form-flex-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block label {
+  display: flex;
+  padding: 9.75px 17px 5.25px;
+  border: 1px solid #dcdcdc;
+  border-bottom: none;
+  background: #ffffff;
+  color: #a3a3a3;
+  font-size: 0.875rem;
+  font-weight: normal;
+}
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block label {
+    padding: 9.75px 10px 5.25px;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 960px) {
+  .russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block label {
+    display: none;
+  }
+}
+@media all and (max-width: 767px) {
+  .russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block label {
+    display: none;
+  }
+}
+@media all and (min-width: 1025px) {
+  .russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block .swap-stations {
+    top: auto;
+    bottom: 11.25px;
+  }
+}
+@media all and (min-width: 961px) and (max-width: 1024px) {
+  .russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block .swap-stations {
+    top: auto;
+    bottom: 15px;
+  }
+}
+.russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block .selectize-control.single .selectize-input {
+  border-top: none;
+}
+@media all and (max-width: 767px) {
+  .russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block .selectize-control.single .selectize-input {
+    border-top: 1px solid #dcdcdc;
+  }
+}
+.russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block select, .russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block .travel-date-wrapper, .russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block .passengers-field {
+  border-top: none;
+}
+@media all and (max-width: 767px) {
+  .russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block select {
+    border-top: 1px solid #dcdcdc;
+  }
+}
+.russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block .passengers-wrapper label {
+  border: none;
+}
+.russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block .form-actions input[type="submit"] {
+  color: #fff;
+  background-color: #ff8a00;
+  cursor: pointer;
+  text-decoration: none;
+  -o-transition: 0.4s linear;
+  -moz-transition: 0.4s linear;
+  -webkit-transition: 0.4s linear;
+  transition: 0.4s linear;
+  font-weight: normal;
+  font-size: 1.125rem;
+}
+.russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block .form-actions input[type="submit"] a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: normal;
+}
+.russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block .form-actions input[type="submit"]:hover {
+  background: #ff961a;
+  color: #fff;
+  text-decoration: none;
+  -o-transition: 0.4s linear;
+  -moz-transition: 0.4s linear;
+  -webkit-transition: 0.4s linear;
+  transition: 0.4s linear;
+}
+.russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block .form-actions input[type="submit"]:hover a {
+  color: #fff;
+  text-decoration: none;
+}
+.russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block {
+  font-family: "Myriad Pro", Arial, sans-serif;
+}
+.russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block .form-flex-container .form-actions {
+  height: 100%;
+}
+.russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .search {
+  position: relative;
+}
+.russiantrains.page-node-type--train-page .page #main-content .info-page-search-form #block-searchformawards {
+  position: absolute;
+  bottom: 25px;
+  right: 0;
+  left: 0;
+  margin: 0;
+}
+@media all and (max-width: 767px) {
+  .russiantrains.page-node-type--train-page .page #main-content .info-page-search-form #block-searchformawards {
+    display: none;
+  }
+}
+.russiantrains.page-node-type--train-page .page #main-content .info-page-search-form #block-searchformawards img {
+  -webkit-filter: brightness(200%) contrast(30%) grayscale(100%);
+  -moz-filter: brightness(200%) contrast(30%) grayscale(100%);
+  -ms-filter: brightness(200%) contrast(30%) grayscale(100%);
+  -o-filter: brightness(200%) contrast(30%) grayscale(100%);
+  filter: brightness(200%) contrast(30%) grayscale(100%);
+}
+.russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .block__title, .russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .node__title {
+  font-family: "Reducto Light", Arial, sans-serif;
+  font-size: 2.0625rem;
+  font-weight: 300;
+  letter-spacing: 0.8px;
+  text-shadow: 1.1px 1.7px 1px rgba(0, 0, 0, 0.23);
+  text-transform: capitalize;
+  padding-top: 110px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+@media all and (min-width: 768px) and (max-width: 960px) {
+  .russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .block__title, .russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .node__title {
+    padding-top: 60px;
+  }
+}
+@media all and (max-width: 767px) {
+  .russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .block__title, .russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .node__title {
+    padding-top: 30px;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+.russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block {
+  padding-bottom: 190px;
+}
+@media all and (min-width: 768px) and (max-width: 960px) {
+  .russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block {
+    display: block;
+    padding-top: 60px;
+    padding-bottom: 120px;
+  }
+}
+@media all and (max-width: 767px) {
+  .russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block {
+    display: block;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+@media all and (min-width: 481px) and (max-width: 767px) {
+  .russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+.russiantrains.page-node-type--train-page .page #main-content .info-page-search-form .train-search-form-block .colorized {
+  background: transparent;
+}
+.russiantrains.train-bookingtimetable-form .save-search a, .russiantrains.train-bookingtimetable-form2 .save-search a {
+  background: transparent url("../../../../images/heart-in-like.svg") no-repeat center right;
+  background-size: 20px;
+  padding-right: 30px;
+}
+.russiantrains.train-bookingtimetable-form .save-search a:hover, .russiantrains.train-bookingtimetable-form2 .save-search a:hover {
+  background: transparent url("../../../../images/heart-in-like-active.svg") no-repeat center right;
+  background-size: 20px;
+}
+.russiantrains.entitytaxonomy-termcanonical .train-search-form-block, .russiantrains.page-node-type--blog .train-search-form-block {
+  max-height: 500px;
+}
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .russiantrains.entitytaxonomy-termcanonical .train-search-form-block, .russiantrains.page-node-type--blog .train-search-form-block {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media all and (max-width: 767px) {
+  .russiantrains.entitytaxonomy-termcanonical .train-search-form-block, .russiantrains.page-node-type--blog .train-search-form-block {
+    max-height: 100%;
+  }
+}
+.russiantrains.entitytaxonomy-termcanonical .train-search-form-block .colorized, .russiantrains.page-node-type--blog .train-search-form-block .colorized {
+  background: rgba(21, 21, 21, 0.22);
+  width: 100%;
+  height: 100%;
+  max-height: 500px;
+}
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .russiantrains.entitytaxonomy-termcanonical .train-search-form-block .colorized, .russiantrains.page-node-type--blog .train-search-form-block .colorized {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+@media all and (max-width: 767px) {
+  .russiantrains.entitytaxonomy-termcanonical .train-search-form-block .colorized, .russiantrains.page-node-type--blog .train-search-form-block .colorized {
+    max-height: 100%;
+  }
+}
+.russiantrains.entitytaxonomy-termcanonical .train-search-form-block .block__title, .russiantrains.page-node-type--blog .train-search-form-block .block__title {
+  font-family: "Reducto Light", Arial, sans-serif;
+  font-size: 2.0625rem;
+  font-weight: 300;
+  letter-spacing: 0.8px;
+  text-shadow: 1.1px 1.7px 1px rgba(0, 0, 0, 0.23);
+  text-transform: capitalize;
+}
+@media all and (max-width: 767px) {
+  .russiantrains.entitytaxonomy-termcanonical .train-search-form-block .block__title, .russiantrains.page-node-type--blog .train-search-form-block .block__title {
+    padding-bottom: 15px;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+  }
+}
+.russiantrains.entitytaxonomy-termcanonical .train-search-form-block .block__inner, .russiantrains.page-node-type--blog .train-search-form-block .block__inner {
+  max-width: 1024px;
+}
+@media all and (max-width: 767px) {
+  .russiantrains.entitytaxonomy-termcanonical .train-search-form-block .block__inner, .russiantrains.page-node-type--blog .train-search-form-block .block__inner {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+.russiantrains.entitytaxonomy-termcanonical .train-search-form-block .block__content, .russiantrains.page-node-type--blog .train-search-form-block .block__content {
+  max-width: 1024px;
+  padding-left: 0;
+  padding-right: 0;
+  background: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.russiantrains.entitytaxonomy-termcanonical .train-search-form-block .search-form-switcher, .russiantrains.page-node-type--blog .train-search-form-block .search-form-switcher {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.875rem;
+  letter-spacing: 0.1px;
+}
+.russiantrains.entitytaxonomy-termcanonical .train-search-form-block .search-form-switcher .active, .russiantrains.page-node-type--blog .train-search-form-block .search-form-switcher .active {
+  font-weight: bold;
+}
+@media all and (min-width: 1025px) {
+  .russiantrains.entitytaxonomy-termcanonical .train-search-form-block .form-flex-container, .russiantrains.page-node-type--blog .train-search-form-block .form-flex-container {
+    height: 77px;
+    align-items: stretch;
+  }
+}
+@media all and (min-width: 961px) and (max-width: 1024px) {
+  .russiantrains.entitytaxonomy-termcanonical .train-search-form-block .form-flex-container, .russiantrains.page-node-type--blog .train-search-form-block .form-flex-container {
+    height: 87px;
+    align-items: stretch;
+  }
+}
+@media all and (min-width: 481px) and (max-width: 767px) {
+  .russiantrains.entitytaxonomy-termcanonical .train-search-form-block .form-flex-container, .russiantrains.page-node-type--blog .train-search-form-block .form-flex-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.russiantrains.entitytaxonomy-termcanonical .train-search-form-block label, .russiantrains.page-node-type--blog .train-search-form-block label {
+  display: flex;
+  padding: 9.75px 17px 5.25px;
+  border: 1px solid #dcdcdc;
+  border-bottom: none;
+  background: #ffffff;
+  color: #a3a3a3;
+  font-size: 0.875rem;
+  font-weight: normal;
+}
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .russiantrains.entitytaxonomy-termcanonical .train-search-form-block label, .russiantrains.page-node-type--blog .train-search-form-block label {
+    padding: 9.75px 10px 5.25px;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 960px) {
+  .russiantrains.entitytaxonomy-termcanonical .train-search-form-block label, .russiantrains.page-node-type--blog .train-search-form-block label {
+    display: none;
+  }
+}
+@media all and (max-width: 767px) {
+  .russiantrains.entitytaxonomy-termcanonical .train-search-form-block label, .russiantrains.page-node-type--blog .train-search-form-block label {
+    display: none;
+  }
+}
+@media all and (min-width: 1025px) {
+  .russiantrains.entitytaxonomy-termcanonical .train-search-form-block .swap-stations, .russiantrains.page-node-type--blog .train-search-form-block .swap-stations {
+    top: auto;
+    bottom: 11.25px;
+  }
+}
+@media all and (min-width: 961px) and (max-width: 1024px) {
+  .russiantrains.entitytaxonomy-termcanonical .train-search-form-block .swap-stations, .russiantrains.page-node-type--blog .train-search-form-block .swap-stations {
+    top: auto;
+    bottom: 15px;
+  }
+}
+.russiantrains.entitytaxonomy-termcanonical .train-search-form-block .selectize-control.single .selectize-input, .russiantrains.page-node-type--blog .train-search-form-block .selectize-control.single .selectize-input {
+  border-top: none;
+}
+@media all and (max-width: 767px) {
+  .russiantrains.entitytaxonomy-termcanonical .train-search-form-block .selectize-control.single .selectize-input, .russiantrains.page-node-type--blog .train-search-form-block .selectize-control.single .selectize-input {
+    border-top: 1px solid #dcdcdc;
+  }
+}
+.russiantrains.entitytaxonomy-termcanonical .train-search-form-block select, .russiantrains.entitytaxonomy-termcanonical .train-search-form-block .travel-date-wrapper, .russiantrains.entitytaxonomy-termcanonical .train-search-form-block .passengers-field, .russiantrains.page-node-type--blog .train-search-form-block select, .russiantrains.page-node-type--blog .train-search-form-block .travel-date-wrapper, .russiantrains.page-node-type--blog .train-search-form-block .passengers-field {
+  border-top: none;
+}
+@media all and (max-width: 767px) {
+  .russiantrains.entitytaxonomy-termcanonical .train-search-form-block select, .russiantrains.page-node-type--blog .train-search-form-block select {
+    border-top: 1px solid #dcdcdc;
+  }
+}
+.russiantrains.entitytaxonomy-termcanonical .train-search-form-block .passengers-wrapper label, .russiantrains.page-node-type--blog .train-search-form-block .passengers-wrapper label {
+  border: none;
+}
+.russiantrains.entitytaxonomy-termcanonical .train-search-form-block .form-actions input[type="submit"], .russiantrains.page-node-type--blog .train-search-form-block .form-actions input[type="submit"] {
+  color: #fff;
+  background-color: #ff8a00;
+  cursor: pointer;
+  text-decoration: none;
+  -o-transition: 0.4s linear;
+  -moz-transition: 0.4s linear;
+  -webkit-transition: 0.4s linear;
+  transition: 0.4s linear;
+  font-weight: normal;
+  font-size: 1.125rem;
+}
+.russiantrains.entitytaxonomy-termcanonical .train-search-form-block .form-actions input[type="submit"] a, .russiantrains.page-node-type--blog .train-search-form-block .form-actions input[type="submit"] a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: normal;
+}
+.russiantrains.entitytaxonomy-termcanonical .train-search-form-block .form-actions input[type="submit"]:hover, .russiantrains.page-node-type--blog .train-search-form-block .form-actions input[type="submit"]:hover {
+  background: #ff961a;
+  color: #fff;
+  text-decoration: none;
+  -o-transition: 0.4s linear;
+  -moz-transition: 0.4s linear;
+  -webkit-transition: 0.4s linear;
+  transition: 0.4s linear;
+}
+.russiantrains.entitytaxonomy-termcanonical .train-search-form-block .form-actions input[type="submit"]:hover a, .russiantrains.page-node-type--blog .train-search-form-block .form-actions input[type="submit"]:hover a {
+  color: #fff;
+  text-decoration: none;
+}
+.russiantrains.entitytaxonomy-termcanonical .train-search-form-block, .russiantrains.page-node-type--blog .train-search-form-block {
+  font-family: "Myriad Pro", Arial, sans-serif;
+}
+.russiantrains.entitytaxonomy-termcanonical .train-search-form-block .form-flex-container .form-actions, .russiantrains.page-node-type--blog .train-search-form-block .form-flex-container .form-actions {
+  height: 100%;
+}
+.russiantrains.entitytaxonomy-termcanonical .search, .russiantrains.page-node-type--blog .search {
+  position: relative;
+}
+.russiantrains.entitytaxonomy-termcanonical #block-searchformawards, .russiantrains.page-node-type--blog #block-searchformawards {
+  position: absolute;
+  bottom: 25px;
+  right: 0;
+  left: 0;
+  margin: 0;
+}
+@media all and (max-width: 767px) {
+  .russiantrains.entitytaxonomy-termcanonical #block-searchformawards, .russiantrains.page-node-type--blog #block-searchformawards {
+    display: none;
+  }
+}
+.russiantrains.entitytaxonomy-termcanonical #block-searchformawards img, .russiantrains.page-node-type--blog #block-searchformawards img {
+  -webkit-filter: brightness(200%) contrast(30%) grayscale(100%);
+  -moz-filter: brightness(200%) contrast(30%) grayscale(100%);
+  -ms-filter: brightness(200%) contrast(30%) grayscale(100%);
+  -o-filter: brightness(200%) contrast(30%) grayscale(100%);
+  filter: brightness(200%) contrast(30%) grayscale(100%);
+}
+@media all and (min-width: 768px) and (max-width: 960px) {
+  .russiantrains.entitytaxonomy-termcanonical .blog-page-search-region .train-search-form-block, .russiantrains.page-node-type--blog .blog-page-search-region .train-search-form-block {
+    padding-top: 30px;
+  }
+}
+.russiantrains.entitytaxonomy-termcanonical .blog-page-search-region .train-search-form-block .block__inner .block__title, .russiantrains.page-node-type--blog .blog-page-search-region .train-search-form-block .block__inner .block__title {
+  font-family: "Reducto Light", Arial, sans-serif;
+  font-size: 2.0625rem;
+  font-weight: 300;
+  letter-spacing: 0.8px;
+  text-shadow: 1.1px 1.7px 1px rgba(0, 0, 0, 0.23);
+  text-transform: capitalize;
+}
+@media all and (min-width: 961px) and (max-width: 1024px) {
+  .russiantrains.entitytaxonomy-termcanonical .blog-page-search-region .train-search-form-block .block__inner .block__title, .russiantrains.page-node-type--blog .blog-page-search-region .train-search-form-block .block__inner .block__title {
+    padding-top: 90px;
+    padding-bottom: 15px;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 960px) {
+  .russiantrains.entitytaxonomy-termcanonical .blog-page-search-region .train-search-form-block .block__inner .block__title, .russiantrains.page-node-type--blog .blog-page-search-region .train-search-form-block .block__inner .block__title {
+    padding-top: 30px;
+    padding-bottom: 15px;
+  }
+}
+@media all and (max-width: 767px) {
+  .russiantrains.entitytaxonomy-termcanonical .blog-page-search-region .train-search-form-block .block__inner .block__title, .russiantrains.page-node-type--blog .blog-page-search-region .train-search-form-block .block__inner .block__title {
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+  }
+}

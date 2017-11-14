@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+  theme:
+    - russiantrains
+third_party_settings:
+  rn_content:
+    classes: ''
+id: footericons_2
+theme: russiantrains
+region: footer
+weight: -6
+provider: null
+plugin: footer_icons
+settings:
+  id: footer_icons
+  label: 'Footer icons'
+  provider: rn_content
+  label_display: '0'
+visibility: {  }

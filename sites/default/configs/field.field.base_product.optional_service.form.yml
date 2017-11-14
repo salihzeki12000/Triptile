@@ -1,0 +1,23 @@
+uuid: 08ba1063-65a5-458d-8fd2-0a20fd8afefe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.base_product.form
+    - store.base_product_type.optional_service
+  module:
+    - plugin
+_core:
+  default_config_hash: B_bFtOto9rLtn7d-OM9W2lTjJoiOk7PY5FhBs3bP-gs
+id: base_product.optional_service.form
+field_name: form
+entity_type: base_product
+bundle: optional_service
+label: Form
+description: 'Which form to use to collect data specific for the current product'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: 'plugin:field_form_type'

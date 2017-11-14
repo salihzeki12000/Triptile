@@ -1,0 +1,25 @@
+id: seat_type_translations
+migration_group: train_base
+migration_tags:
+  - translations
+label: SeatType translations
+source:
+  plugin: seat_type_translations
+  key: travelallrussia
+process:
+  id:
+    plugin: migration_lookup
+    source: id
+    migration: seat_type
+  langcode: lang
+  name: name
+destination:
+  plugin: entity:seat_type
+  translations: true
+migration_dependencies:
+  required:
+    - seat_type
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

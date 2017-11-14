@@ -1,0 +1,14 @@
+uuid: b274590f-ee12-4947-84d8-f6f1d75f4d7c
+langcode: en
+status: true
+dependencies: {  }
+name: search_form_image
+label: 'Search form image'
+effects:
+  52253739-a41a-4c04-89f4-cdc867474280:
+    uuid: 52253739-a41a-4c04-89f4-cdc867474280
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1920
+      height: 492

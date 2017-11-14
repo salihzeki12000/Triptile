@@ -1,0 +1,23 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = https://ibbykov@bitbucket.org/resultant/triptile.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+[branch "triptile"]
+	remote = origin
+	merge = refs/heads/triptile
+[branch "triptile-task-13108-1"]
+	remote = origin
+	merge = refs/heads/triptile-task-13108-1
+[branch "triptile-save-share"]
+	remote = origin
+	merge = refs/heads/triptile-save-share
+[branch "triptile-task-13108-fix"]
+	remote = origin
+	merge = refs/heads/triptile-task-13108-fix

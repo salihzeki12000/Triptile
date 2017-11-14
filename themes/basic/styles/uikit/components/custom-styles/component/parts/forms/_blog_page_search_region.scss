@@ -1,0 +1,77 @@
+.blog-page-search-region {
+  position: relative;
+  max-height: 490px;
+  overflow: hidden;
+
+  .train-search-form-block {
+    padding-bottom: 250px;
+    @include box-shadow(none);
+    background-color: rgba(21, 21, 21, 0.22);
+
+    @media #{$tablet-portrait} {
+      display: block;
+      padding-top: $v-padding*2;
+      padding-bottom: $v-padding*4;
+    }
+
+    @media #{$mobile} {
+      display: block;
+      padding-top: $v-padding;
+      padding-bottom: $v-padding;
+    }
+
+    .colorized {
+      background: transparent;
+    }
+
+    .block__inner {
+      .block__title {
+        display: block;
+        text-align: center;
+        color: $form-title-color;
+        text-transform: uppercase;
+        text-shadow: 0.6px 0.8px 1px rgba(0, 0, 0, 0.67);
+        font-family: $title-font-family;
+        font-size: 1.5625rem;
+        padding-top: 110px;
+        margin: 0;
+
+        @media #{$tablet-portrait} {
+          padding-top: $v-padding*2;
+        }
+
+        @media #{$mobile} {
+          @include v-padding(0);
+          @include side-padding($mobile-h-padding);
+        }
+      }
+    }
+
+    #train-booking-search-form {
+      @media #{$mobile} {
+        @include side-padding($mobile-h-padding);
+      }
+
+      .search-form-switcher {
+        display: block;
+
+        @media #{$mobile} {
+          @include side-padding(0);
+        }
+      }
+    }
+  }
+
+  .block-plugin-id--searchformawards {
+    position: absolute;
+    bottom: $v-padding/2;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+
+    @media #{$mobile} {
+      display: none;
+    }
+  }
+}

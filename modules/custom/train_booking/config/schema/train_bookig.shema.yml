@@ -1,0 +1,29 @@
+train_booking.settings:
+  type: config_object
+  mapping:
+    popular_stations:
+      type: sequence
+      label: 'Popular stations'
+      sequence:
+        type: integer
+        label: 'Station id'
+      label: 'Minimal number of hours before departure'
+    multileg_buffer_time_between_trains:
+      type: integer
+      label: 'Multileg buffer time between trains'
+    user_popular_stations_limit:
+      type: integer
+      label: 'User popular stations limit'
+    confidence_block:
+      type: mapping
+      label: 'Book with confidence'
+      mapping:
+        value:
+          type: text
+          label: 'Block value'
+        format:
+          type: string
+          label: 'Block format'
+    google_conversion_id:
+      type: string
+      label: Google conversion id for timetable

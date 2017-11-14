@@ -1,0 +1,91 @@
+form {
+  margin:    0 auto;
+  max-width: $container-width;
+
+  .form-required {
+    &::after {
+      color: $color-red;
+    }
+  }
+
+  // elements
+
+  .form-item {
+    margin: 0;
+    font-size: $base-font-size;
+  }
+
+  .form-actions {
+    margin: 0;
+  }
+
+  textarea, input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"] {
+    @include input-styles;
+    padding: $input-padding;
+    height: auto;
+    min-height: $input-min-height;
+    font-family: $base-font-family;
+
+    @media #{$tablet} {
+      padding: $input-v-padding $input-tablet-h-padding;
+    }
+
+    @media #{$tablet-portrait} {
+      padding: $input-tablet-v-padding $input-tablet-h-padding;
+    }
+
+    @media #{$mobile} {
+      padding: $input-mobile-v-padding $input-mobile-h-padding;
+    }
+  }
+
+  textarea {
+    font-family: $base-font-family;
+  }
+
+  select {
+    width: 100%;
+    @include input-styles;
+    @include side-padding($input-h-padding);
+    height: auto;
+    min-height: $input-min-height;
+    font-family: $base-font-family;
+
+    @media #{$tablet} {
+      @include side-padding($input-tablet-h-padding);
+    }
+
+    @media #{$mobile} {
+      @include side-padding($input-mobile-h-padding);
+      @include appearance;
+      @include v-padding($input-mobile-v-padding);
+      height: $input-min-height;
+      background: $color-white url("#{$path-to-images}/down-arrow.svg") no-repeat right $input-mobile-h-padding/2 center;
+      background-size: 16px;
+    }
+  }
+
+  .form-type-radio, .form-type-checkbox {
+    label {
+      &.option {
+        border: none;
+        background: none;
+      }
+    }
+  }
+
+  input, textarea {
+    &:focus {
+      @include placeholder;
+    }
+  }
+
+}
+.user-register-form {
+  input[type="password"], input[type="text"] {
+    padding: $input-padding-pass-eye;
+  }
+}
+
+@import "parts/ui/selectize";
+

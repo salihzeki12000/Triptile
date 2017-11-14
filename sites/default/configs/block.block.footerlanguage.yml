@@ -1,0 +1,25 @@
+uuid: f6395d61-33a1-4b7e-9479-32a62bfe70f6
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+  theme:
+    - railninja
+third_party_settings:
+  rn_content:
+    classes: ''
+id: footerlanguage
+theme: railninja
+region: footer
+weight: -13
+provider: null
+plugin: footerlanguage
+settings:
+  id: footerlanguage
+  label: 'Footer language'
+  provider: rn_content
+  label_display: visible
+  title_field: Language
+  field_subtitle: 'Select your language preferences'
+visibility: {  }

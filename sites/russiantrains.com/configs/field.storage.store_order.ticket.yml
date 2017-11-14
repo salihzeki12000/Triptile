@@ -1,0 +1,22 @@
+uuid: 61fc3807-16d5-4426-a4fe-a0ece9efd786
+langcode: en
+status: true
+dependencies:
+  module:
+    - store
+    - train_base
+_core:
+  default_config_hash: EYkQSPR4sSXDmGPoEFe9xbwMc9WtL3lGB6P9qjEhdDI
+id: store_order.ticket
+field_name: ticket
+entity_type: store_order
+type: entity_reference
+settings:
+  target_type: train_ticket
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

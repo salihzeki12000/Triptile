@@ -1,0 +1,24 @@
+uuid: 4694d90b-3044-4198-aa6e-e6d5e30dcf2c
+langcode: en
+status: false
+dependencies:
+  module:
+    - rn_content
+    - store
+  theme:
+    - railninja
+third_party_settings:
+  rn_content:
+    classes: ''
+id: currencylist
+theme: railninja
+region: leaderboard
+weight: -17
+provider: null
+plugin: currency_list
+settings:
+  id: currency_list
+  label: Currency
+  provider: store
+  label_display: visible
+visibility: {  }

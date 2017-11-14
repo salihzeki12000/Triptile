@@ -1,0 +1,26 @@
+id: blog_taxonomy_translations
+migration_group: content_page
+migration_tags:
+  - translations
+label: Blog taxonomy translations
+source:
+  plugin: blog_taxonomy_translations
+  key: travelallrussia
+process:
+  tid:
+    plugin: migration_lookup
+    migration: blog_taxonomy
+    source: slug
+  langcode: lang
+  name: title
+  description: meta_description
+destination:
+  plugin: entity:taxonomy_term
+  translations: true
+migration_dependencies:
+  required:
+    - blog_taxonomy
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

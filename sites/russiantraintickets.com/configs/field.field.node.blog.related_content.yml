@@ -1,0 +1,37 @@
+uuid: 6242c0b0-5d64-4129-a961-1a54e3e7e68e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.related_content
+    - node.type.article
+    - node.type.blog
+    - node.type.gallery
+    - node.type.page
+    - node.type.route_page
+    - node.type.train_page
+id: node.blog.related_content
+field_name: related_content
+entity_type: node
+bundle: blog
+label: 'Related content'
+description: 'Content related to blog post'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+      page: page
+      blog: blog
+      gallery: gallery
+      route_page: route_page
+      train_page: train_page
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: article
+field_type: entity_reference

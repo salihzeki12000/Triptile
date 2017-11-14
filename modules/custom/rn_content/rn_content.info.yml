@@ -1,0 +1,7 @@
+name: Content
+type: module
+description: Contains elements for layout
+core: 8.x
+package: Custom
+dependencies:
+  - content_translation

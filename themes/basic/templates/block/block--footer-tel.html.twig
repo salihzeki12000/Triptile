@@ -1,0 +1,32 @@
+{% extends "themes/basic/templates/block/block-footer-base.html.twig" %}
+
+ {% block footer_icon %}
+     <div class="footer-icon tel"></div>
+ {% endblock %}
+
+{% block footer_title %}
+  {{ content.footer_tel_field_title }}
+{% endblock %}
+
+ {% block footer_subtitle %}
+   {{ content.footer_tel_field_subtitle }}
+ {% endblock %}
+
+{% block footer_content %}
+    <div class="contacts">
+        <div class="phone">
+            {% for phone_number in content.footer_contacts.tel %}
+                <div class="item">
+                    {{ phone_number }}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="country">
+            {% for country in content.footer_contacts.country %}
+                <div class="item">
+                    {{ country }}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,27 @@
+uuid: dd28bbaa-b112-4947-bd7c-93c53d79d1c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.base_product.seat_type
+    - store.base_product_type.ticket_product
+_core:
+  default_config_hash: 7GWmjQ3tifgQSrKd6zaJv0vAAwgw-d4_c47rsZE1gfo
+id: base_product.ticket_product.seat_type
+field_name: seat_type
+entity_type: base_product
+bundle: ticket_product
+label: 'Seat type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: with_supplier
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

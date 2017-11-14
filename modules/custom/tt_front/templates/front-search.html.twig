@@ -1,0 +1,80 @@
+<div id="scrollto"></div>
+<div class="description-block">
+	{{'Lorem Triptile dolor sit amet, consectetur <br />adipiscing elit sed do eiusmod.'|t}}
+</div>
+<div ng-controller="FrontSearchController">
+	<div class="search-return" ng-click="returnFromMobileSearch()">{{'Return'|t}}</div>
+	<div class="search-wrapper" ng-class="getClassesForWrapper()">
+		<input type="text" name="where-go" class="form-text where-go" placeholder="{{'Where to go'|t}}"
+			   ng-focus="openSearchContainer('where')" hide-search="hideSearchContainer()" ng-model="searchText"
+			   ng-class="class.whereGo">
+		<div class="where-go-error search-error" ng-show="showError('whereGo')" ng-cloak>
+			{{'Please, select the city of arrival'|t}}
+		</div>
+		<div class="where-go-open" ng-class="class.whereGoOpen" hide-search="hideSearchContainer()"
+			 ng-show="showSearchContainerFunc('where')" ng-cloak>
+			<div class="select-region" ng-show="hideShowMobileRegion();">
+				<span class="not-found-text" ng-show="showNotFound()">
+					{{"We can't find this city. Please try again"|t}}
+				</span>
+				<span class="select-text" ng-click="setRegion('')">{{'Select a region'|t}}</span>
+				<div ng-repeat="(regionName, region) in regions" class="region-line region-[[regionName]]-europe"
+					 ng-click="setRegion(regionName)" ng-show="showRegions()"
+					 ng-class="{active: regionName == currentStep.selectRegion }">
+					[[ getRegionName(regionName) ]]
+					<span class="region-cities">
+						[[getRegionCitiesCount(regionName)]]
+					</span>
+				</div>
+			</div>
+			<div class="select-city" ng-show="showCities()">
+				<span class="select-text">{{'Select a city of arrival'|t}}</span>
+				<perfect-scrollbar class="scroller" wheel-propagation="true"
+								   wheel-speed="wheelSpeed" on-scroll="onScroll(scrollTop, scrollHeight)">
+					<div class="cities" ng-repeat="hub in getHubs() | orderBy: 'name' | filter :{'region':currentStep.selectRegion} | filter: searchText">
+						<div class="city-line city-[[hub.region]]-europe" ng-click="setHub(hub.name, hub.id)">
+							<span ng-bind-html="hub.name | highlight: searchText"></span>
+							<span class="country-name" ng-bind-html="hub.country_name | highlight: searchText">
+								[[hub.country_name]]
+							</span>
+						</div>
+					</div>
+				</perfect-scrollbar>
+			</div>
+		</div>
+
+		<input class="form-text when-go"
+			   placeholder="{{'When you go'|t}}"
+			   moment-picker="stringDate"
+			   locale="en"
+			   format="YYYY-MM-DD"
+			   start-view="month"
+			   min-date="minDateMoment"
+			   min-view="month"
+			   max-view="month"
+			   start-view="month"
+			   ng-model="momentDate"
+			   ng-class="class.whenGo"
+			   inline="true"
+			   ng-focus="openCalendar($event)"
+			   change="onDatePickerChange(newValue, oldValue)">
+		<div class="when-go-error search-error" ng-show="showError('whenGo')" ng-cloak>
+			{{'Please select the date of your trip'|t}}
+		</div>
+
+		<input type="text" name="who-go" pattern="\d*" placeholder="{{'Who goes'|t}}"
+			   class="form-text who-go" ng-focus="openSearchContainer('who')"
+			   hide-search="hideSearchContainer()" ng-class="class.whoGo" ng-model="currentStep.whoGoText" ng-change="changeWhoGo()">
+		<div class="who-go-error search-error" ng-show="showError('whoGo')" ng-cloak>
+			{{'Please select the number of travelers'|t}}
+		</div>
+		<div class="who-go-open ng-hide" hide-search="hideSearchContainer()"
+			 ng-show="showSearchContainerFunc('who')" ng-cloak>
+			<span class="minus" ng-click="whoMinus()" ng-dblclick=""></span>
+			<span class="count">[[currentStep.whoGo]]</span>
+			<span class="plus" ng-click="whoPlus()" ng-dblclick=""></span>
+		</div>
+
+		<button class="form-submit" ng-click="go('/{{ language }}/constructor')">{{'Search'|t}}</button>
+	</div>
+</div>

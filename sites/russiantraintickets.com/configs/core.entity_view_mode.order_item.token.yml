@@ -1,0 +1,12 @@
+uuid: 1944a8ff-6d7c-467e-84f7-e86995fc3c66
+langcode: en
+status: true
+dependencies:
+  module:
+    - store
+_core:
+  default_config_hash: 9_ktQXx1BWuiWk3vWByLGDo7FkHodxTv8kA741x9CDg
+id: order_item.token
+label: Token
+targetEntityType: order_item
+cache: true

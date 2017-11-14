@@ -1,0 +1,19 @@
+.train-bookingtimetable-form,
+.train-bookingtimetable-form2 {
+  .page {
+    @import "booking_page_parts/booking_search_form";
+    @import "booking_page_parts/timetable";
+
+    @media #{$mobile} {
+      #main-content {
+        .block {
+          @include side-padding(0);
+        }
+      }
+    }
+  }
+
+  @import "booking_page_parts/timetable/popup_filters";
+  @import "booking_page_parts/timetable/coach-class-gallery";
+  @import "booking_page_parts/timetable/save-search";
+}

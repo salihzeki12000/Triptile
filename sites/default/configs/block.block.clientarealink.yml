@@ -1,0 +1,24 @@
+uuid: 8f6aae67-1764-4067-9202-8a5a77362aa3
+langcode: en
+status: false
+dependencies:
+  module:
+    - rn_content
+  theme:
+    - railninja
+third_party_settings:
+  rn_content:
+    classes: only-mobile
+id: clientarealink
+theme: railninja
+region: leaderboard
+weight: -6
+provider: null
+plugin: clientarealink
+settings:
+  id: clientarealink
+  label: 'Client area link'
+  provider: rn_content
+  label_display: '0'
+  button_label: 'Your orders'
+visibility: {  }

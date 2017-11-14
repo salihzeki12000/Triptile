@@ -1,0 +1,99 @@
+plugin.plugin_configuration.payment_method.payment_method_base:
+  type: config_object
+  mapping:
+    status:
+      label: Status
+      type: boolean
+    weight:
+      label: Weight
+      type: integer
+    countries:
+      label: Countries
+      type: sequence
+      sequence:
+        - type: string
+    include_in_top:
+      label: Include in top if user country in in the country list
+      type: boolean
+    in_top_if_no_country:
+      label: In top if user country is not defined.
+      type: boolean
+
+plugin.plugin_configuration.payment_method.paysera:
+  type: plugin.plugin_configuration.payment_method.payment_method_base
+  mapping:
+    projectid:
+      type: string
+      label: Project id
+    display_payment_form_text:
+      type: boolean
+      label: Display payment form text.
+    payment_form_text:
+      type: mapping
+      mapping:
+        value:
+          type: text
+          label: Payment form text.
+        format:
+          type: string
+          label: Payment form text format.
+
+plugin.plugin_configuration.payment_method.credit_card:
+  type: plugin.plugin_configuration.payment_method.payment_method_base
+  mapping:
+    allowed_card_types:
+      label: Allowed card types
+      type: sequence
+      sequence:
+        - type: string
+
+plugin.plugin_configuration.payment_method.paypal:
+  type: plugin.plugin_configuration.payment_method.payment_method_base
+
+plugin.plugin_configuration.payment_method.invoice:
+  type: plugin.plugin_configuration.payment_method.payment_method_base
+
+plugin.plugin_configuration.payment_method.at_banks:
+  type: plugin.plugin_configuration.payment_method.paysera
+
+plugin.plugin_configuration.payment_method.de_banks:
+  type: plugin.plugin_configuration.payment_method.paysera
+
+plugin.plugin_configuration.payment_method.nl_banks:
+  type: plugin.plugin_configuration.payment_method.paysera
+
+plugin.plugin_configuration.payment_method.be_banks:
+  type: plugin.plugin_configuration.payment_method.paysera
+
+plugin.plugin_configuration.payment_method.gb_banks:
+  type: plugin.plugin_configuration.payment_method.paysera
+
+plugin.plugin_configuration.payment_method.poli:
+  type: plugin.plugin_configuration.payment_method.paysera
+
+plugin.plugin_configuration.payment_method.safetypay:
+  type: plugin.plugin_configuration.payment_method.paysera
+
+plugin.plugin_configuration.payment_method.giropay:
+  type: plugin.plugin_configuration.payment_method.paysera
+
+plugin.plugin_configuration.payment_method.instant_transfer:
+  type: plugin.plugin_configuration.payment_method.paysera
+
+plugin.plugin_configuration.payment_method.webmoney:
+  type: plugin.plugin_configuration.payment_method.paysera
+
+plugin.plugin_configuration.payment_method.cashu:
+  type: plugin.plugin_configuration.payment_method.paysera
+
+plugin.plugin_configuration.payment_method.akbank:
+  type: plugin.plugin_configuration.payment_method.paysera
+
+plugin.plugin_configuration.payment_method.garanti_bankasi:
+  type: plugin.plugin_configuration.payment_method.paysera
+
+plugin.plugin_configuration.payment_method.tr_trustpay:
+  type: plugin.plugin_configuration.payment_method.paysera
+
+plugin.plugin_configuration.payment_method.paysera_wallet:
+  type: plugin.plugin_configuration.payment_method.paysera

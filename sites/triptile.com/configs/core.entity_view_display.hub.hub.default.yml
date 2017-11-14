@@ -1,0 +1,104 @@
+uuid: 18b81f6c-2fe5-464f-a01d-9988c5e32105
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.hub.hub.field_image
+  module:
+    - geolocation
+    - image
+    - options
+    - text
+    - trip_base
+id: hub.hub.default
+targetEntityType: hub
+bundle: hub
+mode: default
+content:
+  country:
+    label: above
+    type: list_default
+    weight: -6
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  days:
+    label: above
+    type: number_integer
+    weight: -4
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    region: content
+  description:
+    label: above
+    type: text_default
+    weight: -9
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_image:
+    weight: -1
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  geolocation:
+    label: above
+    type: geolocation_latlng
+    weight: -8
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  name:
+    label: above
+    type: string
+    weight: -10
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  rating:
+    label: above
+    type: number_decimal
+    weight: -7
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    region: content
+  region:
+    label: above
+    type: list_default
+    weight: -5
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  start_point:
+    label: above
+    type: boolean
+    weight: -3
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    region: content
+  status:
+    label: above
+    type: boolean
+    weight: -2
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

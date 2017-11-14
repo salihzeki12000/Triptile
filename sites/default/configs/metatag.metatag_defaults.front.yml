@@ -1,0 +1,18 @@
+uuid: 4e1afac0-db46-480b-b569-751f639669f0
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: yBqw6UD3j0MM1yoDSVDif7nw4SNdoS2e385nw--3ysk
+id: front
+label: 'Front page'
+tags:
+  title: 'Book European Rail Tickets Like a Ninja | Rail.Ninja'
+  keywords: 'rail ninja, rail.ninja. railninja, book europe train tickets'
+  description: 'Rail.Ninja offers curated route planning and intuitive online booking system for Europe train journeys. Book European railway tickets like a ninja!'
+  shortlink: '[site:url]'
+  abstract: 'Rail.Ninja offers curated route planning and intuitive online booking system for Europe train journeys. Book European railway tickets like a ninja!'
+  canonical_url: '[site:url]'
+  og_site_name: 'Rail Ninja'
+  og_type: Travel
+  og_description: 'Rail.Ninja offers curated route planning & intuitive online booking system for Europe train journeys. Book European railway tickets like a ninja!'

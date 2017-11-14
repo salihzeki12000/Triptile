@@ -1,0 +1,65 @@
+$op-sidebar-width: $sidebar-width;
+$row-gap: $row-gap-width;
+
+.order-page {
+  width: 100%;
+  max-width: $container-width;
+  margin: $op-v-padding auto;
+
+  .title {
+    margin-bottom: $op-v-padding;
+  }
+
+  .order-page-inside {
+    @include flex;
+    justify-content: space-between;
+    font-family: $base-font-family;
+    font-size: 1rem;
+
+    @media #{$tablet-portrait} {
+      flex-flow: row wrap;
+    }
+
+    @media #{$mobile} {
+      flex-flow: row wrap;
+    }
+  }
+
+  .order-main {
+    flex-basis: 100% - $op-sidebar-width - $row-gap;
+  }
+
+  .order-sidebar {
+    flex-basis: $op-sidebar-width;
+  }
+
+  @media #{$tablet-portrait} {
+    .order-main  {
+      flex-basis: 100%;
+      order: 1;
+    }
+
+    .order-sidebar {
+      flex-basis: 100%;
+      order: 0;
+    }
+  }
+
+  @media #{$mobile} {
+    .order-main  {
+      flex-basis: 100%;
+      order: 1;
+    }
+
+    .order-sidebar {
+      flex-basis: 100%;
+      order: 0;
+    }
+  }
+
+  @import "order_page_parts/order-page-parts";
+  @import "order_page_parts/order-table";
+  @import "order_page_parts/order-page-pdf";
+  @import "order_page_parts/order-page-travelers";
+}
+

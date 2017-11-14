@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: translator
+label: Translator
+weight: 5
+is_admin: null
+permissions:
+  - 'allow recording translation files'

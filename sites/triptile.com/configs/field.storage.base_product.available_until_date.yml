@@ -1,0 +1,20 @@
+uuid: 805578d9-00ff-436e-9ac1-a10e92d1e4fa
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - store
+id: base_product.available_until_date
+field_name: available_until_date
+entity_type: base_product
+type: datetime
+settings:
+  datetime_type: datetime
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

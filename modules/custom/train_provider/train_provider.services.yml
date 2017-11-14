@@ -1,0 +1,15 @@
+services:
+  train_provider.train_searcher:
+    class: Drupal\train_provider\TrainSearcher
+    arguments: ["@plugin.manager.train_provider", "@config.factory"]
+
+  plugin.manager.train_provider:
+    class:  Drupal\train_provider\TrainProviderManager
+    parent: default_plugin_manager
+
+  cache.train_provider:
+    class: Drupal\Core\Cache\CacheBackendInterface
+    tags:
+      - { name: cache.bin }
+    factory: cache_factory:get
+    arguments: [train_provider]

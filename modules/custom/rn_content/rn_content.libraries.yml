@@ -1,0 +1,34 @@
+to-top:
+  version: 1.x
+  js:
+    js/to-top.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.ui
+    - core/jquery.ui.effects.slide
+
+dropdown-menu:
+  version: 1.x
+  css:
+    theme:
+      css/dropdown-menu.css: {}
+  js:
+    js/dropdown-menu.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.ui
+    - core/jquery.ui.effects.slide
+
+# Sliding blocks in footer
+slide-block:
+  version: 8.x-1.0
+  js:
+    js/slide-block.js: {}
+  css:
+    theme:
+      css/slide-block.css: { weight: 1000 }
+  dependencies:
+    - core/jquery
+    - core/jquery.ui
+    - core/jquery.ui.effects.slide
+

@@ -1,0 +1,22 @@
+uuid: 1fe56955-21fd-493e-a7e9-58296e183143
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - railninja
+_core:
+  default_config_hash: SHsuzFPbxn4rrv9v8xb-G5tjzPDAvstIEIvaKIkH6ik
+id: railninja_messages
+theme: railninja
+region: highlighted
+weight: -7
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

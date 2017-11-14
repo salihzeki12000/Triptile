@@ -1,0 +1,9 @@
+services:
+  rn_content.breadcrumb:
+    class: Drupal\rn_content\BreadcrumbBuilder
+    arguments: ['@router.request_context', '@access_manager', '@router', '@path_processor_manager', '@config.factory',  '@title_resolver', '@current_user', '@path.current', '@menu.active_trail', '@plugin.manager.menu.link']
+    tags:
+      - { name: breadcrumb_builder, priority: 1 }
+  rn_content.get_post_navigation:
+    class: Drupal\rn_content\BlogPostNavigation
+    arguments: ['@entity_type.manager']

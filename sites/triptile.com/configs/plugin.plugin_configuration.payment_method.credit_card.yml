@@ -1,0 +1,12 @@
+label: 'Credit card'
+status: true
+weight: 0
+allowed_card_types:
+  - visa
+  - mc
+  - discover
+dependencies:
+  module:
+    - payment
+_core:
+  default_config_hash: bRqaC-eOWDf-w01ruARVm3qk0EVoHMgqUgFYTux8bP8

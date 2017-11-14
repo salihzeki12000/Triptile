@@ -1,0 +1,37 @@
+uuid: d42254de-3702-4dfb-9d05-0c952c37959b
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration
+_core:
+  default_config_hash: _fmjoVNdOA2u78nqWvLvs2QmiRPeBRbF_NvuwyP2n9M
+id: coach_class_translations
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - translations
+migration_group: train_base
+label: 'CoachClass translations'
+source:
+  plugin: coach_class_translations
+  key: travelallrussia
+process:
+  id:
+    plugin: migration_lookup
+    source: id
+    migration: coach_class
+  langcode: lang
+  description/value: descr
+  description/format:
+    plugin: default_value
+    default_value: basic_html
+  name: name
+destination:
+  plugin: 'entity:coach_class'
+  translations: true
+migration_dependencies:
+  required:
+    - coach_class

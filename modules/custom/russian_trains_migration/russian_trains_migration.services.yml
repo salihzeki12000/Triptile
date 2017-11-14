@@ -1,0 +1,4 @@
+services:
+  russian_trains_migration.node_updater:
+    class: Drupal\russian_trains_migration\NodeUpdater
+    arguments: ['@entity_type.manager', '@file.usage']

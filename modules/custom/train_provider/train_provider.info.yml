@@ -1,0 +1,8 @@
+name: Train provider
+type: module
+description: Train provider
+dependencies:
+  - train_base
+  - store
+core: 8.x
+package: Custom

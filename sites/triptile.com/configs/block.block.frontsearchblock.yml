@@ -1,0 +1,26 @@
+uuid: f752b52d-3d7c-49cd-8db8-8ac94878f201
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - tt_front
+  theme:
+    - tt
+id: frontsearchblock
+theme: tt
+region: featured_top
+weight: -11
+provider: null
+plugin: front_search_block
+settings:
+  id: front_search_block
+  label: 'Plan your journey of life'
+  provider: tt_front
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

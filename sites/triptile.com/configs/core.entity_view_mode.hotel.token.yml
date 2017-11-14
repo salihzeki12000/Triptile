@@ -1,0 +1,10 @@
+uuid: 6e459d40-5731-41fd-bf11-fc3f133daf80
+langcode: en
+status: true
+dependencies:
+  module:
+    - trip_base
+id: hotel.token
+label: Token
+targetEntityType: hotel
+cache: true

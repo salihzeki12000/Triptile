@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - store.order_item_type.optional_service
+id: order_item.optional_service.name
+field_name: name
+entity_type: order_item
+bundle: optional_service
+label: Name
+description: 'The order item name.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

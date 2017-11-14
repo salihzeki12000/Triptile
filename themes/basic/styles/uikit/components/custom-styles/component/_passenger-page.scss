@@ -1,0 +1,177 @@
+$pas-sidebar-width: $sidebar-width;
+$row-gap: $row-gap-width;
+
+.train-bookingpassenger-form {
+
+  #main-content {
+    .block {
+      @media #{$mobile} {
+        @include side-padding(0);
+      }
+    }
+  }
+
+  .train-booking-passenger-form {
+    margin: $v-padding auto;
+    @include flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-family: $base-font-family;
+    font-size: 1rem;
+
+    @media #{$tablet-portrait} {
+      margin: 20px auto;
+    }
+
+    @media #{$mobile} {
+      margin: 0 auto;
+    }
+
+    .progress-bar-wrapper {
+      flex-basis: 100%;
+    }
+
+    .route-legs-wrapper {
+      flex-basis: 100% - $pas-sidebar-width - $row-gap;
+
+      @media #{$tablet-portrait} {
+        flex-basis: 100%;
+      }
+
+      @media #{$mobile} {
+        flex-basis: 100%;
+      }
+    }
+
+    .sidebar {
+      flex-basis: $pas-sidebar-width;
+
+      @media #{$tablet-portrait} {
+        flex-basis: 100%;
+      }
+
+      @media #{$mobile} {
+        flex-basis: 100%;
+        @include side-padding($pas-mobile-h-padding);
+      }
+    }
+
+    .form-actions {
+      flex-basis: 100% - $pas-sidebar-width - $row-gap;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-end;
+      align-items: center;
+      @include v-padding($pas-v-padding);
+
+      @media #{$tablet-portrait} {
+        flex-basis: 100%;
+      }
+
+      @media #{$mobile} {
+        flex-basis: 100%;
+        @include side-padding($pas-mobile-h-padding);
+      }
+
+      @media #{$mobile-portrait} {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-items: center;
+
+        input[type="submit"] {
+          flex-basis: 100%;
+          margin-left: 0;
+        }
+
+        .back {
+          margin-bottom: $pas-v-padding/2;
+        }
+      }
+    }
+
+    .form-item-notes {
+      margin-top: $pas-v-padding;
+    }
+
+    .form-item-email, .form-item-notes {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      & > * {
+        width: 100%;
+      }
+
+      label {
+        &:after {
+          display: none;
+        }
+      }
+
+      .description {
+        color: $pas-dark-note-color;
+        @include v-padding($pas-v-padding);
+        font-size: 1rem;
+        line-height: 120%;
+      }
+    }
+
+    .bottom-block {
+      border: $pas-border;
+      margin-top: $pas-v-padding;
+    }
+
+    .bottom-block-title {
+      padding: $pas-v-padding/2 $pas-h-padding;
+      border-bottom: $pas-border;
+      background: $pas-background-color;
+      font-size: 1.125rem;
+
+      @media #{$mobile} {
+        @include side-padding($pas-mobile-h-padding);
+      }
+    }
+
+    .bottom-block-fields {
+      padding: $pas-v-padding $pas-h-padding;
+
+      @media #{$mobile} {
+        @include side-padding($pas-mobile-h-padding);
+      }
+    }
+
+
+    .back {
+      @include btn-grey;
+      padding: $pas-button-v-padding $pas-button-h-padding;
+    }
+
+    .to-payment {
+      @include btn-red;
+      padding: $pas-button-v-padding $pas-button-h-padding;
+
+      @media #{$mobile} {
+        width: 100%;
+      }
+    }
+
+    .header {
+      background: $pas-background-color;
+      @include v-padding($pas-v-padding/2);
+      @include side-padding($pas-h-padding);
+      font-size: 1.125rem;
+
+      @media #{$mobile} {
+        @include side-padding($pas-mobile-h-padding);
+      }
+    }
+  }
+
+  @import "passenger_page_parts/leg_info";
+  @import "passenger_page_parts/sidebar";
+  @import "passenger_page_parts/passenger_table";
+  @import "passenger_page_parts/optional_services";
+}

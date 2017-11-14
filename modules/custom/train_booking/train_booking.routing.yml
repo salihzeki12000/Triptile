@@ -1,0 +1,162 @@
+train_booking.test_search:
+  path: '/test/search'
+  defaults:
+    _form: '\Drupal\train_booking\Form\SearchForm'
+  requirements:
+    _permission: 'access booking'
+
+train_booking.timetable_form:
+  path: '/trains/order/{session_id}/timetable'
+  defaults:
+    _form: '\Drupal\train_booking\Form\TimetableForm'
+    _title: 'Train Timetable'
+  requirements:
+    _permission: 'access booking'
+
+train_booking.timetable_form2:
+  path: '/trains/order/{session_id}/timetable2'
+  defaults:
+    _form: '\Drupal\train_booking\Form\TimetableForm'
+    _title: 'Train Timetable'
+  requirements:
+    _permission: 'access booking'
+
+train_booking.passenger_form:
+  path: '/trains/order/{session_id}/passenger'
+  defaults:
+    _form: '\Drupal\train_booking\Form\PassengerForm'
+    _title: 'Passenger Details'
+  requirements:
+    _permission: 'access booking'
+
+train_booking.payment_form:
+  path: '/trains/order/{session_id}/payment'
+  defaults:
+    _form: '\Drupal\train_booking\Form\PaymentForm'
+    _title: 'Payment Details'
+  requirements:
+    _permission: 'access booking'
+
+train_booking.payment.success:
+  path: '/trains/invoice/{invoice}/payment/{payment_method}/success'
+  defaults:
+    _controller: '\Drupal\train_booking\Controller\PaymentServiceUrlController::success'
+  requirements:
+    _permission: 'access booking'
+
+train_booking.payment.canceled:
+  path: '/trains/invoice/{invoice}/payment/{payment_method}/cancel'
+  defaults:
+    _controller: '\Drupal\train_booking\Controller\PaymentServiceUrlController::cancel'
+  requirements:
+    _permission: 'access booking'
+
+train_booking.payment.fail:
+  path: '/trains/invoice/{invoice}/payment/{payment_method}/fail'
+  defaults:
+    _controller: '\Drupal\train_booking\Controller\PaymentServiceUrlController::fail'
+  requirements:
+    _permission: 'access booking'
+
+# @todo make it more beautiful.
+train_booking.get_stations:
+  path: '/ajax/get_stations/{q}'
+  defaults:
+    _controller: '\Drupal\train_booking\Controller\AjaxController::getStations'
+    q: ''
+  requirements:
+    _permission: 'access booking'
+
+train_booking.tickets.download:
+  path: '/tickets/download/{order_hash}'
+  defaults:
+    _controller: '\Drupal\store\Controller\StoreOrderPage::userView'
+    _title: 'Order Details'
+  options:
+    parameters:
+      order_hash:
+        type: store_order
+  requirements:
+    _permission: 'view published store order entities'
+
+train_booking.config_form:
+  path: '/admin/admin/config/rail-ninja-config/train-booking-config'
+  defaults:
+    _form: '\Drupal\train_booking\Form\Admin\TrainBookingConfigForm'
+    _title: 'Train Booking settings'
+  requirements:
+    _permission: 'access train booking config'
+
+train_booking.stats:
+  path: '/admin/trains/statistic'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+  requirements:
+    _permission: 'access administration pages'
+
+train_booking.coach_class_gallery:
+  path: '/ajax/cc-gallery/{coach_class_id}'
+  defaults:
+    _controller: '\Drupal\train_booking\Controller\AjaxController::showGallery'
+  requirements:
+    _permission: 'access booking'
+
+train_booking.search_url_generator:
+  path: '/admin/trains/search-url-generator'
+  defaults:
+    _form: '\Drupal\train_booking\Form\Admin\SearchUrlGenerator'
+  requirements:
+    _permission: 'access search url generator'
+
+train_booking.booking_info:
+  path: /admin/store/store-order/{order_id}/info/leg/{info_leg}
+  defaults:
+    _title: 'Cancel Booking'
+    _controller: '\Drupal\train_booking\Controller\BookingHandlerController::getInfo'
+  requirements:
+    _permission: access booking info
+
+train_booking.cancel_booking:
+  path: /admin/store/store-order/{order_id}/cancel/leg/{cancel_leg}
+  defaults:
+    _title: 'Cancel Booking'
+    _controller: '\Drupal\train_booking\Controller\BookingHandlerController::cancelBooking'
+  requirements:
+    _permission: access cancel booking
+
+train_booking.cancel_ticket_booking:
+  path: /admin/store/store-order/{order_id}/cancel/leg/{cancel_leg}/ticket/{ticket_id}
+  defaults:
+    _title: 'Cancel Ticket Booking'
+    _controller: '\Drupal\train_booking\Controller\BookingHandlerController::cancelTicketBooking'
+  requirements:
+    _permission: access cancel booking
+
+train_booking.track_ticket_download:
+  path: '/track-ticket-download/{order_hash}'
+  defaults:
+    _title: 'Track Ticket Download'
+    _controller: '\Drupal\train_booking\Controller\AjaxController::trackTicketDownload'
+  options:
+    parameters:
+      order_hash:
+        type: store_order
+  requirements:
+    _permission: 'access booking'
+
+train_booking.save_search:
+  path: '/ajax/save-search'
+  defaults:
+    _controller: '\Drupal\train_booking\Controller\AjaxController::saveSearch'
+  requirements:
+    _permission: 'access booking'
+
+train_booking.export_csv:
+  path: '/admin/trains/export-csv'
+  defaults:
+    _form: '\Drupal\train_booking\Form\Admin\ExportCSVForm'
+    _title: 'Export CSV Form'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE

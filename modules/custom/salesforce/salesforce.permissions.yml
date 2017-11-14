@@ -1,0 +1,30 @@
+administer salesforce:
+  title: Administer salesforce integration
+add salesforce mapping object entities:
+  title: 'Create new Salesforce mapping object entities'
+
+synchronize objects from form:
+  title: 'Synchronize objects from form'
+
+administer salesforce mapping object entities:
+  title: 'Administer Salesforce mapping object entities'
+  description: 'Allow to access the administration form to configure Salesforce mapping object entities.'
+  restrict access: true
+
+delete salesforce mapping object entities:
+  title: 'Delete Salesforce mapping object entities'
+
+edit salesforce mapping object entities:
+  title: 'Edit Salesforce mapping object entities'
+
+access salesforce mapping object overview:
+  title: 'Access the Salesforce mapping object overview page'
+
+view published salesforce mapping object entities:
+  title: 'View published Salesforce mapping object entities'
+
+view unpublished salesforce mapping object entities:
+  title: 'View unpublished Salesforce mapping object entities'
+
+see salesforce conflict error:
+  title: 'See salesforce mapping object sync conflict error'

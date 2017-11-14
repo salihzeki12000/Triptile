@@ -1,0 +1,12 @@
+uuid: 556ec72d-c155-4035-b7f7-e02c4cc8e764
+langcode: en
+status: true
+dependencies: {  }
+id: thalys_5_15_days
+label: 'Thalys 5 - 15 days'
+price_rule_type: before_display
+condition: 'supplier == ''THA'' and order_depth >= 6 and order_depth <= 75'
+tax_type: fixed
+tax_value: !!float 37
+tax_value_currency: USD
+weight: '0'

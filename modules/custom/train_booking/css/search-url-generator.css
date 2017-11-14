@@ -1,0 +1,7 @@
+#edit-passengers-children-age .details-wrapper > .form-item,
+.search-url-generator .leg > .form-item {
+    display: inline-block;
+}
+#edit-passengers-children-age .details-wrapper > .form-item {
+    margin-right: 15px;
+}

@@ -1,0 +1,21 @@
+uuid: 379ee5e8-17e1-4c49-87cf-10204f15daa6
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.field_collection_item.field_collection_group_text_1
+    - field_collection.field_collection.field_collection_group
+  module:
+    - text
+id: field_collection_item.field_collection_group.field_collection_group_text_1
+field_name: field_collection_group_text_1
+entity_type: field_collection_item
+bundle: field_collection_group
+label: 'Text 1'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

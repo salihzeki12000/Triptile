@@ -1,0 +1,17 @@
+uuid: 80fcb45e-9197-4242-b2b3-a68b352ce4ed
+langcode: ru
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Tour
+type: tour
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,19 @@
+plugin.plugin_configuration.train_provider.amadeus_train_provider:
+  type: plugin.plugin_configuration.train_provider.train_provider_base
+  mapping:
+    live:
+      label: Live
+      type: boolean
+    reseller_code:
+      label: Resseler Code
+      type: text
+    username:
+      label: username
+      type: text
+    password:
+      label: Password
+      type: text
+    lang:
+      label: Language
+      type: text
+

@@ -1,0 +1,31 @@
+uuid: 323b1731-1325-473d-be75-2e8252dd68b1
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+    - system
+    - train_booking
+  theme:
+    - railninja
+third_party_settings:
+  rn_content:
+    classes: ''
+id: searchrouteblock
+theme: railninja
+region: search
+weight: -20
+provider: null
+plugin: search_route_block
+settings:
+  id: search_route_block
+  label: 'Book Train Tickets Online'
+  provider: train_booking
+  label_display: visible
+  image: '384'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/trains/order/*/passenger\r\n/trains/order/*/payment\r\n/order/*\r\n/user/*\r\n/invoice/*\r\n/payment/ecommpay/3ds"
+    negate: true
+    context_mapping: {  }

@@ -1,0 +1,436 @@
+<?php
+
+use Drupal\Core\Database\Database;
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Field\FieldStorageDefinitionInterface;
+use Drupal\Core\Field\Plugin\Field\FieldType\EntityReferenceItem;
+use Drupal\Core\Field\Plugin\Field\FieldType\IntegerItem;
+use Drupal\Core\Field\Plugin\Field\FieldType\StringItem;
+use Drupal\options\Plugin\Field\FieldType\ListStringItem;
+use Drupal\text\Plugin\Field\FieldType\TextLongItem;
+
+/**
+* Add 'min_child_age', 'max_child_age' fields to supplier entity.
+*/
+function train_base_update_8101(&$sandbox) {
+  drupal_flush_all_caches();
+  $entity_field_manager = \Drupal::service('entity_field.manager');
+  $field_storage_definitions = $entity_field_manager->getFieldStorageDefinitions('supplier');
+  if (isset($field_storage_definitions['min_child_age'])) {
+    $spec = IntegerItem::schema($field_storage_definitions['min_child_age']);
+    $schema = Database::getConnection()->schema();
+    $schema->addField('supplier_field_data', 'min_child_age', $spec['columns']['value']);
+  }
+  if (isset($field_storage_definitions['max_child_age'])) {
+    $spec = IntegerItem::schema($field_storage_definitions['max_child_age']);
+    $schema = Database::getConnection()->schema();
+    $schema->addField('supplier_field_data', 'max_child_age', $spec['columns']['value']);
+  }
+}
+
+/**
+ * Add 'citizenship', field to passenger entity.
+ */
+function train_base_update_8102(&$sandbox) {
+  drupal_flush_all_caches();
+  $entity_field_manager = \Drupal::service('entity_field.manager');
+  $field_storage_definitions = $entity_field_manager->getFieldStorageDefinitions('passenger');
+  if (isset($field_storage_definitions['citizenship'])) {
+    $spec = StringItem::schema($field_storage_definitions['citizenship']);
+    $schema = Database::getConnection()->schema();
+    $schema->addField('passenger', 'citizenship', $spec['columns']['value']);
+  }
+}
+
+/**
+ * Add 'title', field to passenger entity.
+ */
+function train_base_update_8103(&$sandbox) {
+  drupal_flush_all_caches();
+  $entity_field_manager = \Drupal::service('entity_field.manager');
+  $field_storage_definitions = $entity_field_manager->getFieldStorageDefinitions('passenger');
+  if (isset($field_storage_definitions['title'])) {
+    $spec = StringItem::schema($field_storage_definitions['title']);
+    $schema = Database::getConnection()->schema();
+    $schema->addField('passenger', 'title', $spec['columns']['value']);
+  }
+}
+
+/**
+ * Add 'train_number', 'train_name' fields to supplier entity.
+ */
+function train_base_update_8104(&$sandbox) {
+  drupal_flush_all_caches();
+  $entity_field_manager = \Drupal::service('entity_field.manager');
+  $field_storage_definitions = $entity_field_manager->getFieldStorageDefinitions('train_ticket');
+  if (isset($field_storage_definitions['train_number'])) {
+    $spec = StringItem::schema($field_storage_definitions['train_number']);
+    $schema = Database::getConnection()->schema();
+    $schema->addField('train_ticket', 'train_number', $spec['columns']['value']);
+  }
+  if (isset($field_storage_definitions['train_name'])) {
+    $spec = StringItem::schema($field_storage_definitions['train_name']);
+    $schema = Database::getConnection()->schema();
+    $schema->addField('train_ticket', 'train_name', $spec['columns']['value']);
+  }
+}
+
+/**
+ * Add for 'citizenship' field of passenger entity.
+ */
+function train_base_update_8105(&$sandbox) {
+  drupal_flush_all_caches();
+  $entity_field_manager = \Drupal::service('entity_field.manager');
+  $field_storage_definitions = $entity_field_manager->getFieldStorageDefinitions('passenger');
+  if (isset($field_storage_definitions['citizenship'])) {
+    $spec = ListStringItem::schema($field_storage_definitions['citizenship']);
+    $schema = Database::getConnection()->schema();
+    $schema->dropField('passenger', 'citizenship');
+    $schema->addField('passenger', 'citizenship', $spec['columns']['value']);
+  }
+}
+
+/**
+ * Update for 'title' field of passenger entity.
+ */
+function train_base_update_8106(&$sandbox) {
+  drupal_flush_all_caches();
+  $entity_field_manager = \Drupal::service('entity_field.manager');
+  $field_storage_definitions = $entity_field_manager->getFieldStorageDefinitions('passenger');
+  if (isset($field_storage_definitions['title'])) {
+    $spec = ListStringItem::schema($field_storage_definitions['title']);
+    $schema = Database::getConnection()->schema();
+    $schema->dropField('passenger', 'title');
+    $schema->addField('passenger', 'title', $spec['columns']['value']);
+  }
+}
+
+/**
+ * Add 'vid' into the index of store order entity.
+ */
+function train_base_update_8107(&$sandbox) {
+  drupal_flush_all_caches();
+  $entity_field_manager = \Drupal::service('entity_field.manager');
+  $field_storage_definitions = $entity_field_manager->getFieldStorageDefinitions('store_order');
+  if (isset($field_storage_definitions['vid'])) {
+    $spec = IntegerItem::schema($field_storage_definitions['vid']);
+    $keys = [
+      'fields' => ['vid' => $spec['columns']['value']],
+      'indexes' => ['vid' => ['vid']],
+    ];
+    $schema = Database::getConnection()->schema();
+    $schema->addField('store_order', 'vid', $spec['columns']['value'], $keys);
+  }
+}
+
+/**
+ * Add revisionable parts of store order entity.
+ */
+function train_base_update_8108(&$sandbox) {
+  drupal_flush_all_caches();
+  $entity_type_manager = \Drupal::service('entity_type.manager');
+  $storage = $entity_type_manager->getStorage('store_order');
+  $interface = $entity_type_manager->getDefinition('store_order');
+  $storage->onEntityTypeCreate($interface);
+}
+
+/**
+ * Add change_station to ticket entity.
+ */
+function train_base_update_8109(&$sandbox) {
+  drupal_flush_all_caches();
+  $entity_field_manager = \Drupal::service('entity_field.manager');
+  $field_storage_definitions = $entity_field_manager->getFieldStorageDefinitions('train_ticket');
+  if (isset($field_storage_definitions['change_station'])) {
+    $spec = EntityReferenceItem::schema($field_storage_definitions['change_station']);
+    $schema = Database::getConnection()->schema();
+    $schema->addField('train_ticket', 'change_station', $spec['columns']['target_id']);
+  }
+}
+
+/**
+ * Add Message field to train entity.
+ */
+function train_base_update_8110(&$sandbox) {
+  drupal_flush_all_caches();
+  $entity_field_manager = \Drupal::service('entity_field.manager');
+  $field_storage_definitions = $entity_field_manager->getFieldStorageDefinitions('train');
+  if (isset($field_storage_definitions['message'])) {
+    $spec = TextLongItem::schema($field_storage_definitions['message']);
+    $schema = Database::getConnection()->schema();
+    $schema->addField('train_field_data', 'message__value', $spec['columns']['value']);
+    $schema->addField('train_field_data', 'message__format', $spec['columns']['format']);
+  }
+}
+
+/**
+ * Add leg_number to ticket entity.
+ */
+function train_base_update_8111(&$sandbox) {
+  drupal_flush_all_caches();
+  $entity_field_manager = \Drupal::service('entity_field.manager');
+  $field_storage_definitions = $entity_field_manager->getFieldStorageDefinitions('train_ticket');
+  if (isset($field_storage_definitions['leg_number'])) {
+    $spec = IntegerItem::schema($field_storage_definitions['leg_number']);
+    $schema = Database::getConnection()->schema();
+    $schema->addField('train_ticket', 'leg_number', $spec['columns']['value']);
+  }
+}
+
+/**
+ * Add email to supplier entity.
+ */
+function train_base_update_8112(&$sandbox) {
+  drupal_flush_all_caches();
+  $email = BaseFieldDefinition::create('email')
+    ->setLabel(t('Email'))
+    ->setDisplayOptions('view', array(
+      'label' => 'above',
+      'type' => 'email_mailto',
+      'weight' => -4,
+    ))
+    ->setDisplayOptions('form', array(
+      'type' => 'email_default',
+      'weight' => -4,
+    ))
+    ->setDisplayConfigurable('form', TRUE)
+    ->setDisplayConfigurable('view', TRUE);
+
+  \Drupal::entityDefinitionUpdateManager()->installFieldStorageDefinition('email', 'supplier', 'train_base', $email);
+}
+
+/**
+ * Add create_payable_invoice to supplier entity.
+ */
+function train_base_update_8301(&$sandbox) {
+  drupal_flush_all_caches();
+  $createPayableInvoice = BaseFieldDefinition::create('boolean')
+    ->setLabel(t('Create a payable invoice'))
+    ->setDescription(t('Should we create a payable invoice for order with this supplier?'))
+    ->setDefaultValue(TRUE)
+    ->setDisplayOptions('view', array(
+      'label' => 'above',
+      'type' => 'boolean',
+      'weight' => -4,
+    ))
+    ->setDisplayOptions('form', array(
+      'type' => 'boolean_checkbox',
+      'weight' => -4,
+    ))
+    ->setDisplayConfigurable('form', TRUE)
+    ->setDisplayConfigurable('view', TRUE);
+
+  \Drupal::entityDefinitionUpdateManager()->installFieldStorageDefinition('create_payable_invoice', 'supplier', 'train_base', $createPayableInvoice);
+}
+
+/**
+ * Add running_balance_id to supplier entity.
+ */
+function train_base_update_8302(&$sandbox) {
+  drupal_flush_all_caches();
+  $runningBalanceId = BaseFieldDefinition::create('string')
+    ->setLabel(t('Running balance ID'))
+    ->setSettings([
+      'max_length' => 50,
+      'text_processing' => 0,
+    ])
+    ->setDisplayOptions('view', [
+      'label' => 'above',
+      'type' => 'string',
+      'weight' => -4,
+    ])
+    ->setDisplayOptions('form', [
+      'type' => 'string_textfield',
+      'weight' => -4,
+    ])
+    ->setDisplayConfigurable('form', true)
+    ->setDisplayConfigurable('view', true);
+
+  \Drupal::entityDefinitionUpdateManager()->installFieldStorageDefinition('running_balance_id', 'supplier', 'train_base', $runningBalanceId);
+}
+
+/**
+ * Install new entity - TrainBrand
+ * Add train_brand to coach class and train entity
+ */
+function train_base_update_8303(&$sandbox) {
+  drupal_flush_all_caches();
+
+  $trainEntityTypeId = 'train';
+  $coachClassEntityTypeId = 'coach_class';
+  $trainBrandEntityTypeId = 'train_brand';
+
+  $trainBrandEntityType = Drupal::service('entity_type.manager')
+    ->getStorage($trainBrandEntityTypeId)
+    ->getEntityType()
+  ;
+
+  $updateManager = Drupal::entityDefinitionUpdateManager();
+
+  try {
+    $updateManager->installEntityType($trainBrandEntityType);
+  } catch (\LogicException $exception) {
+    // Купируем ошибку "The database connection is not serializable..."
+    //
+    // Все, что нужно, данная функция уже сделала, ошибка возникает
+    // уже после создания нужных таблиц и по сути ни на что не влияет
+  }
+
+  $trainDefName = 'train_brand';
+  $coachClassDefName = 'train_brand';
+
+  $entityFieldManager = Drupal::service('entity_field.manager');
+
+  $trainDefinition = $entityFieldManager->getFieldStorageDefinitions($trainEntityTypeId)[$trainDefName] ?? null;
+  $coachClassDefinition = $entityFieldManager->getFieldStorageDefinitions($coachClassEntityTypeId)[$coachClassDefName] ?? null;
+
+  if (isset($trainDefinition)) {
+    $updateManager->installFieldStorageDefinition($trainDefName, $trainEntityTypeId, $trainBrandEntityTypeId, $trainDefinition);
+  }
+
+  if (isset($trainDefinition)) {
+    $updateManager->installFieldStorageDefinition($coachClassDefName, $coachClassEntityTypeId, $trainBrandEntityTypeId, $coachClassDefinition);
+  }
+}
+
+/**
+ * Uninstall TrainBrand from CoachClass entity.
+ */
+function train_base_update_8304(&$sandbox) {
+  drupal_flush_all_caches();
+  /** @var \Drupal\Core\Entity\EntityStorageInterface $coachClassStorage */
+  $coachClassStorage = \Drupal::service('entity_type.manager')->getStorage('coach_class');
+  $query = $coachClassStorage->getQuery();
+  $query->exists('train_brand');
+  $entityIds = $query->execute();
+  if ($entityIds) {
+    $coachClasses = $coachClassStorage->loadMultiple($entityIds);
+    /** @var \Drupal\train_base\Entity\CoachClass $coachClass */
+    foreach ($coachClasses as $coachClass) {
+      $coachClass->train_brand = null;
+      $coachClass->save();
+    }
+  }
+  $updateManager = Drupal::entityDefinitionUpdateManager();
+  $trainBrand = $updateManager->getFieldStorageDefinition('train_brand', 'coach_class');
+  $updateManager->uninstallFieldStorageDefinition($trainBrand);
+}
+
+/**
+ * Install TrainBrand to CoachClass entity.
+ */
+function train_base_update_8305(&$sandbox) {
+  drupal_flush_all_caches();
+  $updateManager = Drupal::entityDefinitionUpdateManager();
+
+  $trainBrand = BaseFieldDefinition::create('entity_reference')
+    ->setLabel(t('Brand'))
+    ->setDescription(t('Reference to a Train brand.'))
+    ->setSetting('target_type', 'train_brand')
+    ->setSetting('handler', 'default')
+    ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
+    ->setDisplayOptions('view', [
+      'label' => 'hidden',
+      'weight' => 1,
+    ])
+    ->setDisplayOptions('form', [
+      'type' => 'entity_reference_autocomplete',
+      'weight' => 1,
+      'settings' => [
+        'match_operator' => 'CONTAINS',
+        'size' => '60',
+        'autocomplete_type' => 'tags',
+        'placeholder' => '',
+      ],
+    ])
+    ->setDisplayConfigurable('form', TRUE)
+    ->setDisplayConfigurable('view', TRUE);
+
+  $updateManager->installFieldStorageDefinition('train_brand', 'coach_class', 'train_base', $trainBrand);
+}
+
+/**
+ * Install CarService to TrainTicket entity.
+ */
+function train_base_update_8306(&$sandbox) {
+  drupal_flush_all_caches();
+  $updateManager = Drupal::entityDefinitionUpdateManager();
+
+  $carService = BaseFieldDefinition::create('entity_reference')
+    ->setLabel(t('Car service'))
+    ->setDescription(t('Reference to a Car service.'))
+    ->setSetting('target_type', 'car_service')
+    ->setSetting('handler', 'only_enabled')
+    ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
+    ->setDisplayOptions('view', [
+      'label' => 'above',
+      'weight' => -1,
+    ])
+    ->setDisplayOptions('form', [
+      'type' => 'entity_reference_autocomplete',
+      'weight' => -1,
+      'settings' => [
+        'match_operator' => 'CONTAINS',
+        'size' => '60',
+        'autocomplete_type' => 'tags',
+        'placeholder' => '',
+      ],
+    ])
+    ->setDisplayConfigurable('form', true)
+    ->setDisplayConfigurable('view', true);
+
+  $updateManager->installFieldStorageDefinition('car_service', 'train_ticket', 'train_base', $carService);
+}
+
+/**
+ * Install maximal order depth to Supplier entity.
+ */
+function train_base_update_8307(&$sandbox) {
+  drupal_flush_all_caches();
+  $updateManager = Drupal::entityDefinitionUpdateManager();
+
+  $maxOrderDepth = BaseFieldDefinition::create('integer')
+    ->setLabel(t('Maximal order depth'))
+    ->setSettings(['min' => 0])
+    ->setDisplayOptions('view', [
+      'label' => 'above',
+      'type' => 'number_integer',
+      'weight' => -4,
+    ])
+    ->setDisplayOptions('form', [
+      'type' => 'number',
+      'weight' => -4,
+    ])
+    ->setDisplayConfigurable('form', true)
+    ->setDisplayConfigurable('view', true);
+
+  $updateManager->installFieldStorageDefinition('max_order_depth', 'supplier', 'train_base', $maxOrderDepth);
+}
+
+/**
+ * Install currency to Supplier entity.
+ */
+function train_base_update_8308(&$sandbox) {
+  $service_currency_option = \Drupal::service('currency.form_helper')->getCurrencyOptions();
+  drupal_flush_all_caches();
+  $updateManager = Drupal::entityDefinitionUpdateManager();
+
+  $currency = BaseFieldDefinition::create('list_string')
+    ->setLabel(t('Salesforce account currency'))
+    ->setSettings([
+      'allowed_values' => $service_currency_option,
+    ])
+    ->setDisplayOptions('view', [
+      'label' => 'above',
+      'type' => 'string',
+      'weight' => -4,
+    ])
+    ->setDisplayOptions('form', [
+      'type' => 'options_select',
+      'weight' => -4,
+    ])
+    ->setDisplayConfigurable('form', true)
+    ->setDisplayConfigurable('view', true);
+
+  $updateManager->installFieldStorageDefinition('currency', 'supplier', 'train_base', $currency);
+}

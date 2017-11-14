@@ -1,0 +1,152 @@
+search-form:
+  version: 1.x
+  css:
+    theme:
+      css/style.css: {}
+  js:
+    js/search_form.js: {}
+    js/autofocus.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/jquery.ui.datepicker
+    - core/jquery.ui.slider
+    - core/jquery.ui.dialog
+    - master/spinner
+    - master/selectize-drupal
+    - core/jquery.ui.touch-punch
+
+timetable-form:
+  css:
+    theme:
+      css/style.css: {}
+  js:
+    js/timetable_form.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/jquery.ui.datepicker
+    - core/jquery.ui.slider
+    - core/jquery.ui.dialog
+    - core/drupal.ajax
+    - master/spinner
+    - master/selectize-drupal
+    - core/jquery.ui.touch-punch
+    - train_booking/ecommerce
+    - locale/translations
+
+passenger-form:
+  css:
+    theme:
+      css/style.css: {}
+  js:
+    js/passenger_form.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal.ajax
+    - master/selectize-drupal
+    - train_booking/ecommerce
+
+payment-form:
+  js:
+    js/payment_form.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal.form
+
+thank-you-page:
+  css:
+    theme:
+      css/thank-you-page.css: {}
+  js:
+    js/thank_you_page.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - train_booking/ecommerce
+    - locale/translations
+
+tickets-download:
+  js:
+    js/tickets-download.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupalSettings
+    - core/drupal.ajax
+    - train_booking/ecommerce
+
+open-ticket:
+  js:
+    js/open-ticket.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+
+sticky-form:
+  version: 1.x
+  css:
+    theme:
+      css/sticky-form.css: {}
+  js:
+    js/sticky-form.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+
+scroll-form:
+  version: 1.x
+  js:
+    js/scroll-form.js: {}
+  dependencies:
+    - train_booking/search-form
+
+scroll-to-table:
+  version: 1.x
+  js:
+    js/scroll-to-table.js: {}
+
+scroll-to-ticket:
+  version: 1.x
+  js:
+    js/scroll-to-ticket.js: {}
+
+save-passenger-details:
+  version: 1.x
+  js:
+    js/save-passenger-details.js: {}
+
+scroll-to-train:
+  version: 1.x
+  js:
+    js/scroll-to-train.js: {}
+
+scroll-to-payment-form:
+  version: 1.x
+  js:
+    js/scroll-to-payment-form.js: {}
+
+
+close-modal-dialog:
+  version: 1.x
+  js:
+    js/close-modal-dialog.js: {}
+
+move-multileg-popup:
+  version: 1.x
+  js:
+    js/move-multileg-popup.js: {}
+
+search-url-generator:
+  css:
+    theme:
+      css/search-url-generator.css: {}
+
+ecommerce:
+  version: 1.x
+  js:
+    js/ecommerce.js: {}
+  dependencies:
+    - core/jquery

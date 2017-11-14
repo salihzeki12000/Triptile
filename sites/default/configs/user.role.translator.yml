@@ -1,0 +1,10 @@
+uuid: f13806d9-866c-46de-b8d6-09a33e1fc4f8
+langcode: en
+status: true
+dependencies: {  }
+id: translator
+label: Translator
+weight: 5
+is_admin: null
+permissions:
+  - 'allow recording translation files'

@@ -1,0 +1,15 @@
+uuid: c414757d-ebf4-4cb3-9c00-393a43840268
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration
+_core:
+  default_config_hash: HJKNO3F6ZxmgnbINANghn6gSWQiEZjWwLrzNyGDu6Ic
+id: store
+label: Store
+description: 'Migrate entities, which declared in store module.'
+source_type: 'RussianTrains database'
+module: null
+shared_configuration: null

@@ -1,0 +1,46 @@
+id: train_ticket
+migration_group: train_base
+label: TrainTicket
+source:
+  plugin: train_ticket
+  key: travelallrussia
+process:
+  departure_datetime: departure_datetime
+  arrival_datetime: arrival_datetime
+  departure_station: departure_station
+  arrival_station: arrival_station
+  train_number: train_number
+  leg_number: leg
+  train_class:
+    plugin: migration_lookup
+    migration: train_class
+    source: train_class_id
+  coach_class:
+    plugin: migration_lookup
+    migration: coach_class
+    source: coach_class_id
+  seat_type:
+    plugin: migration_lookup
+    migration: seat_type
+    source: seat_class_id
+  passenger:
+    plugin: iterator
+    source: passenger
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: passenger
+        source: passenger_id
+destination:
+  plugin: entity:train_ticket
+migration_dependencies:
+  required:
+    - train_class
+    - coach_class
+    - seat_type
+  optional:
+    - passenger
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

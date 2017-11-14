@@ -1,0 +1,10 @@
+uuid: 81c6de31-cb3e-40dd-981b-b763ff8a7564
+langcode: en
+status: true
+dependencies:
+  module:
+    - train_base
+id: supplier.token
+label: Token
+targetEntityType: supplier
+cache: true

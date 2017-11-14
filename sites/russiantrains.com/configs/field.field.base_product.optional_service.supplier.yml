@@ -1,0 +1,27 @@
+uuid: 7b222719-9b59-4f7b-82b4-7fdd42bd2b62
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.base_product.supplier
+    - store.base_product_type.optional_service
+_core:
+  default_config_hash: CAkzLeuORCtnOMy12K0J3jtGyBTCtqw0LzAtr5C6-8E
+id: base_product.optional_service.supplier
+field_name: supplier
+entity_type: base_product
+bundle: optional_service
+label: Supplier
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: only_enabled
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

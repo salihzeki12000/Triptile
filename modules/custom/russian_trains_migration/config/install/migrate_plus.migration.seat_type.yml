@@ -1,0 +1,31 @@
+id: seat_type
+migration_group: train_base
+migration_tags:
+  - russian_trains_light
+label: SeatType
+source:
+  plugin: seat_type
+  key: travelallrussia
+process:
+  langcode: lang
+  code: code
+  capacity: capacity
+  name: name
+  status: enabled
+  supplier:
+    plugin: migration
+    migration: supplier
+    source: supplier_id
+  'description/value': int_descr
+  'description/format':
+    plugin: default_value
+    default_value: basic_html
+destination:
+  plugin: entity:seat_type
+migration_dependencies:
+  required:
+    - supplier
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

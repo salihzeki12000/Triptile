@@ -1,0 +1,6 @@
+name: Custom front
+description: Creates blocks and functions for front page
+package: Custom
+
+type: module
+core: 8.x

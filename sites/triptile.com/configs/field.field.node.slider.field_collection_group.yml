@@ -1,0 +1,25 @@
+uuid: 36bf37d9-7c76-44d8-9644-40a0383aef62
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_collection_group
+    - node.type.slider
+  module:
+    - field_collection
+id: node.slider.field_collection_group
+field_name: field_collection_group
+entity_type: node
+bundle: slider
+label: 'Content group'
+description: ''
+required: false
+translatable: false
+default_value:
+  - {  }
+  - {  }
+  - {  }
+  - {  }
+default_value_callback: ''
+settings: {  }
+field_type: field_collection

@@ -1,0 +1,94 @@
+<div class="leg-info-wrapper" data-coach-class-id="{{ coach_class_id }}" data-price="{{ price }}" data-ga="{{ profit }}"
+     data-currency-code="{{ currency_code }}" data-passengers-count="{{ count_of_tickets }}" data-coach-class-name="{{ coach_class }}">
+  <div class="leg-info-header">
+    <div class="stations">
+      <span class="departure value">
+        {{ departure_station_city }} <span class="train-station">{{ departure_station }}</span>
+      </span>
+      <span class="arrival value">
+        {{ arrival_station_city }} <span class="train-station">{{ arrival_station }}</span>
+      </span>
+    </div>
+    <div class="train">
+      #{{ train_number }} {{ train_name }} - {{ train_class }}
+    </div>
+    <div class="open-ticket ticket-trigger">
+        <span class="label-open">
+          {% trans with {'context': 'Train Booking Route Leg Info'} %}
+          Open ticket
+          {% endtrans %}
+        </span>
+        <span class="label-close">
+          {% trans with {'context': 'Train Booking Route Leg Info'} %}
+          Close ticket
+          {% endtrans %}
+        </span>
+    </div>
+  </div>
+
+  <div class="leg-info-body">
+    <div class="column dates">
+      <div class="info-title">
+        {% trans with {'context': 'Train Booking Route Leg Info'} %}
+          Departure / Arrival date
+        {% endtrans %}
+      </div>
+      {% if departure_arrival_dates and departure_arrival_weekdays %}
+        <div class="middle">
+          <span class="number">
+            {{ departure_arrival_dates }}
+          </span>
+        </div>
+      {% elseif departure_date_month and arrival_date_month and departure_arrival_year %}
+        <div class="middle">
+          <span class="number">
+            {{ departure_date_month }} - {{ arrival_date_month }} <span class="help-info">{{ departure_arrival_year }}</span>
+          </span>
+        </div>
+      {% elseif departure_date and arrival_date %}
+        <div class="middle">
+          <span class="number">
+            {{ departure_date }}
+          </span>
+        </div>
+        <div class="bottom">
+          <span class="number">
+            {{ arrival_date }}
+          </span>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="column time departure-info">
+      <div class="info-title">
+        {% trans with {'context': 'Train Booking Route Leg Info'} %}
+          Departure time
+        {% endtrans %}
+      </div>
+      <div class="middle">
+        <span class="number">
+          {{ departure_time }}
+        </span>
+        <span class="help-info">
+          {{ departure_time_zone }}
+        </span>
+      </div>
+    </div>
+
+    <div class="column time arrival-info">
+      <div class="info-title">
+        {% trans with {'context': 'Train Booking Route Leg Info'} %}
+          Arrival time
+        {% endtrans %}
+      </div>
+      <div class="middle">
+        <span class="number">
+          {{ arrival_time }}
+        </span>
+        <span class="help-info">
+          {{ arrival_time_zone }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

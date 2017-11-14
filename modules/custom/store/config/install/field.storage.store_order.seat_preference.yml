@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - store
+    - train_base
+id: store_order.seat_preference
+field_name: seat_preference
+entity_type: store_order
+type: entity_reference
+settings:
+  target_type: seat_preference
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,26 @@
+payment.merchant_router_rule.*:
+  type: config_entity
+  label: 'Merchant router rule config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    weight:
+     type: integer
+     label: 'Weight'
+    payment_method:
+      type: string
+      label: 'Payment method'
+    condition:
+      type: string
+      label: 'Condition'
+    merchants:
+      type: sequence
+      label: 'Merchants'
+      sequence:
+        - type: string
+    uuid:
+      type: string

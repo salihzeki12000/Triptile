@@ -1,0 +1,12 @@
+uuid: af5f2db8-787f-4d13-b3d7-8680fce82470
+langcode: en
+status: true
+dependencies: {  }
+id: flat_fee
+label: 'Flat fee for ALL'
+price_rule_type: before_display
+condition: 'true'
+tax_type: fixed
+tax_value: !!float 30
+tax_value_currency: USD
+weight: '0'

@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * @file
+ * Contains local_train_provider.module..
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function local_train_provider_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the local_train_provider module.
+    case 'help.page.local_train_provider':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Local train provider') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_inline_entity_form_table_fields_alter().
+ */
+function local_train_provider_inline_entity_form_table_fields_alter(&$fields, $context) {
+  if ($context['parent_entity_type'] == 'timetable_entry' && $context['field_name'] == 'product') {
+    $fields['price'] = [
+      'type' => 'field',
+      'label' => t('Price'),
+      'weight' => 1,
+    ];
+    $fields['translate'] = array(
+      'type' => 'callback',
+      'label' => '',
+      'weight' => 10,
+      'callback' => 'master_inline_entity_form_translate_link_callback',
+      'callback_arguments' => [
+        'text' => null,
+        'target' => '_blank',
+      ],
+    );
+  }
+}

@@ -1,0 +1,26 @@
+id: car_service
+migration_group: train_base
+migration_tags:
+  - russian_trains_light
+label: CarService
+source:
+  plugin: car_service
+  key: travelallrussia
+process:
+  langcode: lang
+  code: code
+  name: name
+  'supplier_mapping/target_id':
+    plugin: migration_lookup
+    migration: supplier
+    source: supplier_id
+  'supplier_mapping/code': code
+  description: int_descr
+  status: enabled
+destination:
+  plugin: entity:car_service
+migration_dependencies: {}
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

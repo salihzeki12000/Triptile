@@ -1,0 +1,74 @@
+$icon-size: 75px;
+
+.short-route-info {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.train-info-block {
+  flex-basis: 24%;
+  width: 24%;
+  text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+
+  @media #{$mobile} {
+    flex-basis: 100%;
+    width: 100%;
+  }
+
+  &:not(:last-of-type) {
+    @media #{$mobile} {
+      padding-bottom: $v-padding;
+    }
+  }
+
+  & > div {
+    flex-basis: 100%;
+    width: 100%;
+  }
+}
+
+.icon {
+  height: $icon-size + 5px;
+}
+
+.route {
+  .icon {
+    background: url("#{$path-to-images}/signpost.png") no-repeat top center;
+  }
+}
+
+.distance {
+  .icon {
+    background: url("#{$path-to-images}/points.png") no-repeat top center;
+  }
+}
+
+.time {
+  .icon {
+    background: url("#{$path-to-images}/24-hrs.png") no-repeat top center;
+  }
+}
+
+.departures {
+  .icon {
+    background: url("#{$path-to-images}/calendar.png") no-repeat top center;
+  }
+}
+
+.block-title {
+  font-size: 1.375rem;
+  @include v-padding($v-padding/2);
+  line-height: 170%;
+}
+
+.block-text {
+  color: $tp-body-color;
+  font-size: 1.125rem;
+  line-height: 150%;
+}
+

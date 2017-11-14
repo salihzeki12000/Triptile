@@ -1,0 +1,27 @@
+id: salesforce_mapping_object_user
+migration_group: salesforce
+label: SalesforceMappingObject User
+source:
+  plugin: salesforce_mapping_object_user
+  key: travelallrussia
+process:
+  record_id: sforce_id
+  salesforce_object: sforce_type
+  entity_id: destination_user_id
+  entity_type_id:
+    plugin: default_value
+    default_value: user
+  tries:
+    plugin: default_value
+    default_value: 0
+  created: changed
+  changed: changed
+destination:
+  plugin: entity:salesforce_mapping_object
+migration_dependencies:
+  optional:
+    - user
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

@@ -1,0 +1,23 @@
+uuid: 907234e8-64ab-457f-a5be-7b959ff4a85c
+langcode: en
+status: true
+dependencies:
+  module:
+    - rn_content
+  theme:
+    - railninja
+third_party_settings:
+  rn_content:
+    classes: ''
+id: mobilemenublock
+theme: railninja
+region: header_third
+weight: -18
+provider: null
+plugin: mobilemenublock
+settings:
+  id: mobilemenublock
+  label: 'Mobile menu block'
+  provider: rn_content
+  label_display: '0'
+visibility: {  }

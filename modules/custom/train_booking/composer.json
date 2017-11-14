@@ -1,0 +1,14 @@
+{
+  "name": "drupal/train_booking",
+  "type": "drupal-module",
+  "description": "Train booking pages",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/train_booking",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/train_booking",
+    "source": "http://cgit.drupalcode.org/train_booking"
+  },
+  "require": { }
+}

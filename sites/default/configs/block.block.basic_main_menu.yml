@@ -1,0 +1,26 @@
+uuid: adafb837-03d4-4ba8-a7cf-88b38c4774bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - basic
+_core:
+  default_config_hash: pQERLRYJhTrl4t86BdciKsVqyug5KpEu-nA3889ro8A
+id: basic_main_menu
+theme: basic
+region: navbar
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main menu'
+  provider: system
+  label_display: '1'
+  level: 1
+  depth: 0
+visibility: {  }

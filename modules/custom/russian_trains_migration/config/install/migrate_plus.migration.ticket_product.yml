@@ -1,0 +1,39 @@
+id: ticket_product
+migration_group: store
+migration_tags: { }
+label: Ticket product
+source:
+  plugin: ticket_product
+  key: travelallrussia
+process:
+  type:
+    plugin: default_value
+    default_value: ticket_product
+  name:
+    plugin: default_value
+    default_value: 'RT migration'
+  status: enabled
+  'price/number': supplier_price
+  'price/currency_code': supplier_currency
+  coach_class:
+    plugin: migration_lookup
+    source: car_class_id
+    migration: coach_class
+  seat_type:
+    plugin: migration_lookup
+    source: seat_class_id
+    migration: seat_type
+  site:
+    plugin: default_value
+    default_value: 'RT'
+destination:
+  plugin: entity:base_product
+  bundle: ticket_product
+migration_dependencies:
+  required:
+    - coach_class
+    - seat_type
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

@@ -1,0 +1,35 @@
+uuid: 8a2b0dd5-53b1-4a7e-acca-83a48349a83e
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.user_invoices
+  module:
+    - rn_content
+    - system
+    - views
+  theme:
+    - railninja
+third_party_settings:
+  rn_content:
+    classes: ''
+id: views_block__user_invoices_user_invoices_block
+theme: railninja
+region: content
+weight: -10
+provider: null
+plugin: 'views_block:user_invoices-user_invoices_block'
+settings:
+  id: 'views_block:user_invoices-user_invoices_block'
+  label: 'My invoices'
+  provider: views
+  label_display: visible
+  views_label: 'My invoices'
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: /user/%user
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,14 @@
+{
+  "name": "drupal/rn_content",
+  "type": "drupal-module",
+  "description": "Contains elements for layout",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/rn_content",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/rn_content",
+    "source": "http://cgit.drupalcode.org/rn_content"
+  },
+  "require": { }
+}

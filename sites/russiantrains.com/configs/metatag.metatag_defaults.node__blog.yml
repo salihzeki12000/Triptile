@@ -1,0 +1,12 @@
+uuid: 9bb77187-2ac6-42e9-93cb-f6990d8508fd
+langcode: en
+status: true
+dependencies: {  }
+id: node__blog
+label: 'Content: Blog'
+tags:
+  title: '[node:title] - [node:blog_categories] | Russiantrains.com'
+  description: '[node:summary]'
+  og_title: '[node:title]'
+  og_description: '[node:summary]'
+  og_url: '[node:url]'

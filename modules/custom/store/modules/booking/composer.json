@@ -1,0 +1,14 @@
+{
+  "name": "drupal/booking",
+  "type": "drupal-module",
+  "description": "Booking pages and logic",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/booking",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/booking",
+    "source": "http://cgit.drupalcode.org/booking"
+  },
+  "require": { }
+}

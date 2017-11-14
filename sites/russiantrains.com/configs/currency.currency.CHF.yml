@@ -1,0 +1,20 @@
+alternativeSigns:
+  - SFr.
+  - FS
+currencyCode: CHF
+currencyNumber: '756'
+label: CHF
+roundingStep: 0.01
+sign: Fr.
+subunits: 100
+status: true
+usages:
+  -
+    start: '1799-03-17'
+    end: null
+    countryCode: CH
+  -
+    start: '1921-02-01'
+    end: null
+    countryCode: LI
+uuid: 51107759-8666-4b2f-9bdd-669157955b65

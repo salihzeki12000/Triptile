@@ -1,0 +1,23 @@
+uuid: 9a0f103d-552b-4d9e-8fc6-18b1ace0fa21
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access booking'
+  - 'access comments'
+  - 'access content'
+  - 'access shortcuts'
+  - payment.access_payment_page
+  - 'post comments'
+  - 'search content'
+  - 'skip comment approval'
+  - 'use text format basic_html'
+  - 'use text format full_html_for_administrator'
+  - 'view published invoice entities'
+  - 'view published store order entities'

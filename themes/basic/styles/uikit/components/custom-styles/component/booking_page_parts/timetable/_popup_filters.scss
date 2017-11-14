@@ -1,0 +1,120 @@
+$left-column-width: 40%;
+$right-column-width: 50%;
+
+.popup-filters {
+  @import "timetable_filters";
+  top: 0 !important;
+
+  .filters {
+    display: flex !important;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding-top: $dialog-v-padding;
+
+    .time-tip {
+      display: none;
+    }
+
+    .filter-container {
+      flex-basis: 50%;
+
+      @media #{$mobile-portrait} {
+        flex-basis: 100%;
+        border-bottom: $tt-border;
+        margin-bottom: $dialog-v-padding;
+      }
+    }
+
+    .price, .departure, .arrival {
+      padding-bottom: $dialog-v-padding;
+
+      .title {
+        padding-bottom: 22px;
+      }
+    }
+
+    .price {
+      order: 2;
+    }
+
+    .departure {
+      order: 4;
+    }
+
+    .arrival {
+      order: 5;
+      margin-left: $right-column-width;
+
+      @media #{$mobile} {
+        margin-left: 0;
+      }
+    }
+
+    .stars, .car-type {
+      flex-basis: $left-column-width;
+      padding-bottom: $dialog-v-padding;
+      border-bottom: $tt-border;
+
+      @media #{$mobile-portrait} {
+        flex-basis: 100%;
+      }
+    }
+
+    .stars {
+      order: 1;
+    }
+
+    .car-type {
+      order: 3;
+    }
+
+    .form-type-checkbox {
+      margin: 0;
+
+      input[type=checkbox] {
+        justify-content: flex-start;
+      }
+    }
+
+    .reset-filters-wrapper {
+      order: 6;
+      margin-left: $right-column-width;
+
+      @media #{$mobile} {
+        margin-left: 0;
+        border: none;
+        @media #{$mobile-landscape} {
+          order: 4;
+          flex-basis: $left-column-width;
+          margin-top: 35px;
+          @include btn-grey;
+          padding: 15px;
+        }
+
+        @media #{$mobile-portrait} {
+          flex-basis: 100%;
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  .ui-dialog-buttonpane {
+    @include v-padding($dialog-v-padding);
+
+    .ui-dialog-buttonset {
+      button {
+        @media #{$mobile-portrait} {
+          flex-basis: 100%;
+        }
+      }
+    }
+  }
+
+
+}
+

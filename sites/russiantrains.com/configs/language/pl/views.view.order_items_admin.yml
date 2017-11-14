@@ -1,0 +1,26 @@
+display:
+  default:
+    display_title: Główny
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Zastosuj
+          reset_button_label: Resetuj
+          exposed_sorts_label: 'Sortuj po'
+          sort_asc_label: Rosnąco
+          sort_desc_label: Malejąco
+      fields:
+        name:
+          separator: ', '
+        price__number:
+          separator: ', '
+        quantity:
+          separator: ', '
+        price_components:
+          separator: ', '
+      arguments:
+        id:
+          exception:
+            title: Wszystko
+  block_1:
+    display_title: Blok

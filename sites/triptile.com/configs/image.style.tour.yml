@@ -1,0 +1,14 @@
+uuid: ecca936a-5ddb-4dd0-8b1e-8036f1a24a8e
+langcode: ru
+status: true
+dependencies: {  }
+name: tour
+label: tour
+effects:
+  df258c05-8bc9-47a4-81f2-b47591a155bd:
+    uuid: df258c05-8bc9-47a4-81f2-b47591a155bd
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 300
+      height: 175

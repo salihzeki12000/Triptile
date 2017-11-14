@@ -1,0 +1,14 @@
+{
+  "name": "drupal/store",
+  "type": "drupal-module",
+  "description": "Store products, orders, invoices, payments, price rule.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/store",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/store",
+    "source": "http://cgit.drupalcode.org/store"
+  },
+  "require": { }
+}

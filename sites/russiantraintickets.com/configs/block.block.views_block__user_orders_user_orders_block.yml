@@ -1,0 +1,35 @@
+uuid: 51fa847f-2be3-4039-b60a-045e5c734a4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.user_orders
+  module:
+    - rn_content
+    - system
+    - views
+  theme:
+    - russiantraintickets
+third_party_settings:
+  rn_content:
+    classes: ''
+id: views_block__user_orders_user_orders_block
+theme: russiantraintickets
+region: content
+weight: -5
+provider: null
+plugin: 'views_block:user_orders-user_orders_block'
+settings:
+  id: 'views_block:user_orders-user_orders_block'
+  label: 'My orders'
+  provider: views
+  label_display: visible
+  views_label: 'My orders'
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: /user/%user
+    negate: false
+    context_mapping: {  }

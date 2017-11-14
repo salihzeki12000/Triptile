@@ -1,0 +1,17 @@
+{% extends "themes/basic/templates/block/block-footer-base.html.twig" %}
+
+ {% block footer_icon %}
+     <div class="footer-icon mail"></div>
+ {% endblock %}
+
+{% block footer_title %}
+  {{ content.footer_mail_field_title }}
+{% endblock %}
+
+ {% block footer_subtitle %}
+   {{ content.footer_mail_field_subtitle }}
+ {% endblock %}
+
+{% block footer_content %}
+  {{ content }}
+{% endblock %}

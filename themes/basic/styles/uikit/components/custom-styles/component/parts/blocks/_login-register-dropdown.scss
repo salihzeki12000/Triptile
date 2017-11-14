@@ -1,0 +1,132 @@
+$icon-size-map: (
+  default: 21px,
+  tablet: 30px,
+);
+
+@mixin profile-icon($device) {
+  $icon-size: map-get($icon-size-map, $device);
+  cursor: pointer;
+  width: $icon-size;
+  height: $icon-size;
+  background: transparent url("#{$path-to-images}/ninja-profile.png") no-repeat 0 0;
+  background-size: $icon-size;
+}
+
+.block-plugin-id--login-register-dropdown {
+
+  .login-register-block {
+    margin-right: $h-padding;
+  }
+
+  .login-register-dropdown {
+    @include profile-icon(default);
+
+    @media #{$tablet-portrait} {
+      @include profile-icon(tablet);
+    }
+
+    @media #{$mobile} {
+      display: none;
+    }
+  }
+
+  .dropdown-container {
+    z-index: 99;
+    -webkit-transform: translate3d(0,0,1px);
+    position: absolute;
+    top: 100%;
+    right: 0;
+
+    @media #{$tablet} {
+      right: $tablet-h-padding;
+    }
+
+    @media #{$mobile} {
+      display: flex;
+      position: initial;
+      width: 100%;
+    }
+  }
+
+  .login-register-triangle {
+    &::before {
+      width: 0;
+      height: 0;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-bottom: 16px solid $lrd-bg;
+      content: '';
+      position: absolute;
+      right: 107px;
+      top: -16px;
+
+      @media #{$tablet-portrait} {
+        right: 46px;
+      }
+    }
+
+    @media #{$mobile} {
+      display: none;
+    }
+  }
+
+  .login-register-buttons {
+    background: $lrd-bg;
+    width: 170px;
+    @include box-shadow(0 1px 1px rgba(0, 0, 0, 0.3));
+    padding: 23px 26px 26px;
+
+    @media #{$mobile} {
+      width: 100%;
+      height: auto;
+      @include box-shadow(none);
+      padding: 0;
+    }
+  }
+
+  .my-account-buttons-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-transform: capitalize;
+
+    @media #{$mobile} {
+      padding-bottom: $mobile-menu-v-padding;
+    }
+
+    li {
+      line-height: 2rem;
+
+      @media #{$mobile} {
+        margin-bottom: $mobile-menu-v-padding/2;
+      }
+
+      div, a {
+        color: $lrd-link-color;
+        font-size: 1.125rem;
+        font-family: $helvetica-family;
+        cursor: pointer;
+        @include transition;
+
+        @media #{$mobile} {
+          @include btn-grey;
+          @include v-padding($mobile-menu-v-padding/3);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        &:hover {
+          color: $lrd-link-hover-color;
+        }
+      }
+    }
+
+    #sign-up-btn, .sign-out-link {
+      @media #{$mobile} {
+        @include colored-btn($color-white, $color-black);
+      }
+    }
+  }
+
+}

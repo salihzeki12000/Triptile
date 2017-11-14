@@ -1,0 +1,19 @@
+rail_ninja.config_list:
+  title: 'Rail Ninja config list'
+  description: 'Rail Ninja config list'
+  route_name: rail_ninja.config_list
+  parent: system.admin_config
+  weight: -33
+
+master.config:
+  title: 'Master config'
+  description: 'Master config'
+  route_name: master.config_form
+  parent: rail_ninja.config_list
+
+master.entity_configs:
+  route_name: master.entity_configs
+  parent: system.admin
+  description: 'Provide menu for custom entities configs.'
+  title: Entity configs
+  weight: -8

@@ -1,0 +1,12 @@
+uuid: da7deac4-0cc9-4a72-9000-b9faf912a7e3
+langcode: en
+status: true
+dependencies:
+  module:
+    - store
+_core:
+  default_config_hash: 72SRnEpvYUbVQ7cH5rh6-e3tc33EL-Q4gO6c-_0VFK0
+id: base_product.token
+label: Token
+targetEntityType: base_product
+cache: true

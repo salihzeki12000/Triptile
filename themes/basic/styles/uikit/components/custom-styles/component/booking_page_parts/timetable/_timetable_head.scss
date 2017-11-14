@@ -1,0 +1,372 @@
+.train-table-header {
+  border: $tt-border;
+  border-bottom-width: 0;
+
+  @include head-stations;
+
+  .route-info-wrapper {
+    @include flex;
+    flex-flow: row wrap;
+    width: 100%;
+    height: 100%;
+    align-items: stretch;
+    justify-content: space-between;
+    padding: $tt-v-padding $tt-h-padding;
+  }
+
+  .results-wrapper{
+    flex-basis: 100% - $tt-head-dates-width;
+    padding-right: $tt-h-padding;
+  }
+
+  .dates-wrapper {
+    flex-basis: $tt-head-dates-width;
+    padding-left: $tt-h-padding;
+    border-left: $tt-border;
+  }
+
+  .inline-dates {
+    font-size: 1.1875rem;
+    display: none;
+  }
+
+
+  $setting-icon-size: 28px;
+
+  .item-helper {
+    display: none;
+    justify-content: flex-end;
+    color: $tt-dark-note-color;
+    font-size: $tt-small-size;
+    cursor: pointer;
+
+    &.search-wrapper {
+      align-self: flex-start;
+    }
+
+    &.filters-wrapper {
+      align-self: flex-end;
+    }
+
+    .text {
+      padding: 5px 10px;
+    }
+
+    .filters-icon {
+      width: $setting-icon-size;
+      height: $setting-icon-size * 1.148;
+      background: transparent url("#{$path-to-images}/filters.svg") no-repeat 0 0;
+    }
+
+    .setting-icon {
+      width: $setting-icon-size;
+      height: $setting-icon-size;
+      background: transparent url("../../../images/setting-icon.svg") no-repeat center center;
+      background-size: $setting-icon-size;
+    }
+  }
+
+  .results-wrapper, .dates-wrapper {
+    height: 100%;
+  }
+
+  .stations, .dates-value, .inline-dates {
+    padding-bottom: $tt-v-padding/2;
+  }
+
+  .dates-value {
+    font-size: $tt-head-dates-font-size;
+    @include flex;
+    flex-direction: row;
+    align-items: baseline;
+  }
+
+  .results, .dates {
+    @include flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    flex-direction: row;
+  }
+
+  .results, .dates-day {
+    color: $tt-light-note-color;
+    font-size: $tt-small-size;
+  }
+
+  .results {
+    .quantity-label {
+      padding-right: 0.3rem;
+    }
+
+    .sorting-type {
+      color: $tt-active-sort-color;
+      display: inline-flex;
+      align-items: center;
+      @include arrow-up($tt-light-note-color);
+
+      &.opened {
+        @include arrow-down($tt-light-note-color);
+      }
+    }
+  }
+
+  .timetable-header {
+    width: 100%;
+    @include flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: $tt-v-padding/2 $tt-h-padding;
+    background: $tt-head-bg-color;
+    color: $tt-head-color;
+    font-size: $tt-small-size;
+    border-top: $tt-border;
+  }
+
+  .sorting-row, .column-names {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .column-names {
+    .time-wrapper {
+      flex-basis: $tt-time-width;
+
+      .time-cols-wrapper {
+        @include flex;
+        justify-content: space-between;
+        align-items: stretch;
+        max-width: $tt-time-max-width;
+
+        & > div {
+          flex-basis: 75px;
+        }
+      }
+    }
+
+    .right-column {
+      flex-basis: 100% - $tt-time-width;
+      @include flex;
+      align-items: flex-start;
+    }
+
+    .price-wrapper {
+      flex-basis: 100% - $tt-button-width;
+      @include side-padding($tt-price-h-padding);
+    }
+
+    .save-search-wrapper {
+      flex-basis: $tt-button-width;
+    }
+  }
+
+  .sorting-row {
+    div {
+      cursor: pointer;
+
+      &.active {
+        color: $tt-active-sort-color;
+
+        &::after {
+          font-size: 1rem;
+          margin-left: 7px;
+        }
+
+        &[data-sort-direction="asc"] {
+          &::after {
+            @include awesome-icon("\f0d8");
+          }
+        }
+
+        &[data-sort-direction="desc"] {
+          &::after {
+            @include awesome-icon("\f0d7");
+          }
+        }
+      }
+    }
+  }
+
+
+
+  @media #{$tablet-portrait} {
+    .results-wrapper {
+      padding-right: 25px;
+    }
+
+    .icons-wrapper {
+      @include flex;
+      flex-flow: row wrap;
+      justify-content: flex-end;
+      align-items: flex-end;
+
+      & > div {
+        flex-basis: 100%;
+      }
+    }
+
+    .item-helper {
+      @include flex;
+    }
+
+    .inline-dates {
+      @include flex;
+    }
+
+    .dates-wrapper {
+      display: none;
+    }
+
+    .item-helper {
+      @include flex;
+    }
+
+    .results-wrapper {
+      flex-basis: auto;
+    }
+  }
+
+  @media #{$mobile} {
+
+    .results-wrapper {
+      flex-basis: 100%;
+      padding-right: 0;
+    }
+
+    .timetable-header {
+      @include side-padding($tt-mobile-h-padding);
+    }
+
+    .item-helper{
+      @include flex;
+    }
+
+    .inline-dates {
+      @include flex;
+    }
+
+    .dates-wrapper {
+      display: none;
+    }
+
+    .timetable-header {
+      display: none;
+
+      &.active-sorting {
+        @include flex;
+      }
+    }
+
+    .stations, .inline-dates, .results {
+      @include side-padding($tt-mobile-h-padding);
+    }
+
+    .results {
+      @include v-padding(15px);
+      border-top: $tt-border;
+    }
+
+    .route-info-wrapper {
+      @include side-padding(0);
+      position: relative;
+    }
+
+    @media #{$mobile-landscape} {
+
+      .icons-wrapper {
+        .item-helper {
+          position: absolute;
+          right: $tt-mobile-h-padding;
+        }
+
+        .search-wrapper {
+          top: $tt-v-padding;
+
+          .text {
+            display: none;
+          }
+        }
+
+        .filters-wrapper {
+          bottom: 10px;
+        }
+      }
+
+      .route-info-wrapper {
+        padding-bottom: 0;
+      }
+    }
+
+    $icon-size: 24px;
+
+    @media #{$mobile-portrait} {
+
+      .sorting-row {
+        flex-direction: column;
+        align-items: flex-start;
+
+        & > div {
+          @include v-padding(10px);
+        }
+      }
+
+      .timetable-header {
+        margin-top: 0;
+      }
+
+      .stations {
+        padding-top: $tt-v-padding/2;
+      }
+
+      .route-info-wrapper {
+        @include v-padding(0);
+      }
+
+      .results-wrapper {
+        order: 1;
+      }
+
+      .icons-wrapper {
+        @include flex;
+        flex-basis: 100%;
+        justify-content: flex-end;
+        align-items: center;
+        padding: $tt-v-padding/2 $tt-mobile-h-padding;
+        border-bottom: $tt-border;
+        order: 0;
+        background: $tt-item-helper-bg;
+
+        .item-helper {
+          align-items: center;
+        }
+
+        .filters-icon {
+          width: $icon-size / 1.148;
+          height: $icon-size;
+          background-size: $icon-size / 1.148;
+        }
+
+        .setting-icon {
+          width: $icon-size;
+          height: $icon-size;
+          background-size: $icon-size;
+        }
+
+        .text {
+          padding: 0 $tt-mobile-h-padding/2;
+        }
+
+        .search-wrapper {
+          justify-content: flex-start;
+          border-right: $tt-border;
+          padding-right: $tt-mobile-h-padding/2;
+        }
+
+        .filters-wrapper {
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "drupal/rn_user",
+  "type": "drupal-module",
+  "description": "Extends default user module",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/rn_user",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/rn_user",
+    "source": "http://cgit.drupalcode.org/rn_user"
+  },
+  "require": { }
+}

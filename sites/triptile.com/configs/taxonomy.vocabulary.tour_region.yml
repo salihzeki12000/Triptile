@@ -1,0 +1,9 @@
+uuid: fb2f7883-c6b7-4d7a-8fae-3aa6e29ff0e8
+langcode: en
+status: true
+dependencies: {  }
+name: 'Tour region'
+vid: tour_region
+description: ''
+hierarchy: 0
+weight: 0

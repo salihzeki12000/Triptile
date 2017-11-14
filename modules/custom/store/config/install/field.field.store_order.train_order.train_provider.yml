@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.store_order.train_provider
+    - store.store_order_type.train_order
+id: store_order.train_order.train_provider
+field_name: train_provider
+entity_type: store_order
+bundle: train_order
+label: 'Train Provider'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

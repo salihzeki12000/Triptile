@@ -1,0 +1,10 @@
+uuid: 87b00f92-47e5-4ef8-9d5d-fd0d8efa571e
+langcode: en
+status: true
+dependencies:
+  module:
+    - tt_config
+id: trip_order.token
+label: Token
+targetEntityType: trip_order
+cache: true

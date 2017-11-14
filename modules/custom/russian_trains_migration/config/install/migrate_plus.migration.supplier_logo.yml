@@ -1,0 +1,47 @@
+id: supplier_logo
+migration_group: train_base
+migration_tags:
+  - file
+  - image
+label: Supplier Logo
+source:
+  plugin: supplier_logo
+  key: travelallrussia
+  constants:
+    file_source_uri: http://www.russiantrains.com/uploads/trains/logos
+    file_dest_uri: public://train_base/supplier_logo
+process:
+  file_source:
+    plugin: concat
+    delimiter: /
+    source:
+      - constants/file_source_uri
+      - logo_image
+  file_dest:
+    -
+      plugin: concat
+      delimiter: /
+      source:
+        - constants/file_dest_uri
+        - logo_image
+    -
+      plugin: urlencode
+  filename: logo_image
+  uri:
+    plugin: file_copy
+    source:
+      - '@file_source'
+      - '@file_dest'
+  uid:
+    plugin: default_value
+    default_value: 1
+  status:
+    plugin: default_value
+    default_value: 1
+destination:
+  plugin: entity:file
+migration_dependencies: {}
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

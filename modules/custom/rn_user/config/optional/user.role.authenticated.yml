@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies: {  }
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access booking'
+  - 'access comments'
+  - 'access content'
+  - 'access shortcuts'
+  - 'access site-wide contact form'
+  - payment.access_payment_page
+  - 'post comments'
+  - 'search content'
+  - 'skip comment approval'
+  - 'use text format basic_html'
+  - 'use text format full_html_for_administrator'
+  - 'view published invoice entities'
+  - 'view published store order entities'

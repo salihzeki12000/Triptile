@@ -1,0 +1,20 @@
+uuid: ad0d10e3-5052-41ef-993e-e4f1ac561eaa
+langcode: en
+status: true
+dependencies:
+  module:
+    - store
+_core:
+  default_config_hash: zNMTlJLPD7EyfI4hYZUszvn1i7mRPGimFxdI_CV7Z4o
+id: base_product.third_step
+field_name: third_step
+entity_type: base_product
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

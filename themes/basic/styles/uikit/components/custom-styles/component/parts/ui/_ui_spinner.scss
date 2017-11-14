@@ -1,0 +1,51 @@
+// spinner
+
+.ui-spinner {
+  display: block;
+  @include border-radius(0);
+  padding: 0;
+  border: $input-border;
+  font-family: $base-font-family;
+  font-size: 1rem;
+  position: relative;
+
+  .ui-spinner-input {
+    border: none;
+    margin: 0;
+    @include border-radius(0);
+    text-align: center;
+    font-size: $spinner-font-size;
+    padding: 7px $input-h-padding;
+
+    @media #{$mobile} {
+      @include v-padding($input-mobile-v-padding + 5px);
+    }
+  }
+
+  .ui-spinner-button {
+    display: none;
+  }
+
+  .spinner-button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border: none;
+    background: none;
+    height: 100%;
+    @include flex;
+    align-items: center;
+    padding: 0 15px;
+    cursor: pointer;
+
+    &.up {
+      right:0;
+      background: $input-bg url("#{$path-to-images}/plus.svg") no-repeat center center;
+    }
+
+    &.down {
+      left: 0;
+      background: $input-bg url("#{$path-to-images}/minus.svg") no-repeat center center;
+    }
+  }
+}

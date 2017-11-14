@@ -1,0 +1,20 @@
+rail_ninja.config_list:
+  path: '/admin/config/rail-ninja-config'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+  requirements:
+    _permission: 'access rail ninja config'
+
+master.config_form:
+  path: '/admin/config/rail-ninja-config/master-config'
+  defaults:
+    _form: '\Drupal\master\Form\Admin\MasterConfigForm'
+  requirements:
+    _permission: 'access master config'
+
+master.entity_configs:
+  path: '/admin/entity-configs'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+  requirements:
+    _permission: 'access administration pages'

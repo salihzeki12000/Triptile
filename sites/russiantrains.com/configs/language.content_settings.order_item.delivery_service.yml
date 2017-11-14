@@ -1,0 +1,18 @@
+uuid: 11f4371d-cead-4c81-869c-28c6585a8be3
+langcode: en
+status: true
+dependencies:
+  config:
+    - store.order_item_type.delivery_service
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+_core:
+  default_config_hash: xo-4S6NNb6dI_LDZdd6_soO1JSWjlF5KzHiJsQd_ko0
+id: order_item.delivery_service
+target_entity_type_id: order_item
+target_bundle: delivery_service
+default_langcode: site_default
+language_alterable: false

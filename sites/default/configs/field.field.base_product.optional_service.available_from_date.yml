@@ -1,0 +1,23 @@
+uuid: 8a6e4e3f-5ba8-47c1-9a28-806bd92bb2a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.base_product.available_from_date
+    - store.base_product_type.optional_service
+  module:
+    - datetime
+_core:
+  default_config_hash: kicN_Xp0WcJa54az-P5bUU-V1kJcGUSsf5olZXzepNs
+id: base_product.optional_service.available_from_date
+field_name: available_from_date
+entity_type: base_product
+bundle: optional_service
+label: 'Available from date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

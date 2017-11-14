@@ -1,0 +1,56 @@
+.overview-view-block {
+
+  @media #{$tablet} {
+    @include side-padding(0);
+  }
+
+  @media #{$mobile} {
+    @include side-padding(0);
+  }
+
+  .block-head {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    & > div {
+      flex-basis: 45%;
+
+      @media #{$mobile-portrait} {
+        flex-basis: 100%;
+      }
+    }
+
+    .long-title {
+      flex-basis: 100%;
+    }
+
+    .head-button {
+      text-align: right;
+
+      @media #{$mobile-landscape} {
+        @include v-padding($input-v-padding);
+        margin-bottom: $v-padding;
+
+      }
+
+      @media #{$mobile-portrait} {
+        display: flex;
+        @include v-padding(0);
+        margin-bottom: $v-padding;
+      }
+
+    }
+
+    .view-all {
+      width: auto;
+      @include colored-btn($up-btn-color, $up-btn-bg);
+      padding: $input-v-padding $input-h-padding*2;
+
+      @media #{$mobile-portrait} {
+        width: 100%;
+      }
+    }
+  }
+}

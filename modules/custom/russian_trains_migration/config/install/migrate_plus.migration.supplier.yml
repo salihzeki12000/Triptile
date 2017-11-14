@@ -1,0 +1,38 @@
+id: supplier
+migration_group: train_base
+migration_tags:
+  - russian_trains_light
+label: Supplier
+source:
+  plugin: supplier
+  key: travelallrussia
+process:
+  langcode: lang
+  code: code
+  name: name
+  status: enabled
+  'logo/target_id':
+    plugin: migration_lookup
+    migration: supplier_logo
+    source: logo_image
+  'logo/alt': name
+  min_child_age:
+    plugin: default_value
+    default_value: 0
+  max_child_age:
+    plugin: default_value
+    default_value: 12
+  passenger_form_type:
+    plugin: default_value
+    default_value:
+      plugin_id: dead_easy_form
+      plugin_configuration: {}
+destination:
+  plugin: entity:supplier
+migration_dependencies:
+  required:
+    - supplier_logo
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

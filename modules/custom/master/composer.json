@@ -1,0 +1,16 @@
+{
+  "name": "drupal/master",
+  "type": "drupal-module",
+  "description": "Contains base classes and logic for the whole project",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/master",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/master",
+    "source": "http://cgit.drupalcode.org/master"
+  },
+  "require": {
+    "geoip2/geoip2": "~2.0"
+  }
+}

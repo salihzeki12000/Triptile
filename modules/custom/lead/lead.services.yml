@@ -1,0 +1,4 @@
+services:
+  lead.user_metadata:
+    class: Drupal\lead\UserMetaData
+    arguments: ['@request_stack']

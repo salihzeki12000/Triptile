@@ -1,0 +1,95 @@
+// selectize
+
+.selectize-control {
+  @include flex;
+  align-items: center;
+  height: 100%;
+
+  &.single {
+    .selectize-input {
+      @include box-shadow(none);
+      @include border-radius(0);
+      background-image: none;
+      background-color: $input-bg;
+      border: $input-border;
+      @include side-padding($input-h-padding);
+      min-height: $input-min-height;
+      height: $input-min-height;
+      @include flex;
+      flex-flow: column wrap;
+      align-items: center;
+      justify-content: center;
+
+      @media #{$tablet} {
+        @include side-padding($input-tablet-h-padding);
+      }
+
+      @media #{$mobile} {
+        @include side-padding($input-mobile-h-padding);
+
+        &::after {
+          top: 50%;
+        }
+      }
+
+      .item {
+        @include gradient-input;
+      }
+
+      & > input {
+        @include input-styles;
+        width: 100% !important;
+      }
+
+      &::before {
+        display: none;
+      }
+
+      &::after {
+        right: 12px;
+        border: none;
+        width: 13px;
+        height: 9px;
+        background: transparent url("#{$path-to-images}/#{$misc-icons}") no-repeat 0 0;
+        cursor: pointer;
+      }
+
+      &.dropdown-active {
+        height: 100%;
+      }
+
+      &.input-active {
+        .item {
+          display: none;
+        }
+
+        input {
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  .selectize-dropdown, .selectize-input {
+    @include input-styles;
+  }
+
+  .selectize-dropdown-content {
+
+    div {
+      @include side-padding($input-h-padding);
+      height: $input-min-height;
+      word-wrap: normal;
+      display: flex;
+      align-items: center;
+
+      &.active {
+        background: $active-item-bg;
+      }
+
+      @media #{$tablet} {
+        @include side-padding($input-tablet-h-padding);
+      }
+    }
+  }
+}

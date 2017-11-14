@@ -1,0 +1,27 @@
+uuid: 408d4272-6782-43d1-881e-c29f936eed4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.base_product.train_class
+    - store.base_product_type.optional_service
+_core:
+  default_config_hash: 42mQhnrQgBUNYKyRPz0dBDx9_ZPO_4xXZvCWEMYK5Xg
+id: base_product.optional_service.train_class
+field_name: train_class
+entity_type: base_product
+bundle: optional_service
+label: 'Train class'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: with_supplier
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

@@ -1,0 +1,8 @@
+
+rn_content.front_page_front:
+  path: '/front'
+  defaults:
+    _controller: '\Drupal\rn_content\Controller\FrontPage::front'
+    _title: 'Rail.Ninja'
+  requirements:
+    _permission: 'access content'

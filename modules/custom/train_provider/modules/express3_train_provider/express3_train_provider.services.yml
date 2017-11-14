@@ -1,0 +1,4 @@
+services:
+  express3_train_provider.long_cache:
+    class: Drupal\express3_train_provider\LongCache
+    arguments: ["@entity_type.manager", "@plugin.manager.train_provider", "@config.factory", "@database"]

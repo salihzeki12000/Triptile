@@ -1,0 +1,22 @@
+uuid: fb02e954-fdb7-41ae-83a0-0fd12706c4e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.route_page
+  module:
+    - text
+id: node.route_page.body
+field_name: body
+entity_type: node
+bundle: route_page
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

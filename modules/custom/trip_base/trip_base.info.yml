@@ -1,0 +1,12 @@
+name: Trip base
+type: module
+description: Contains triptile base entities and features
+core: 8.x
+package: Triptile
+dependencies:
+  - master
+  - salesforce
+  - store
+  - address
+  - geolocation
+  - options

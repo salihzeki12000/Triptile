@@ -1,0 +1,15 @@
+uuid: c927bbc7-747b-40c7-8afa-0e28b59a4811
+langcode: en
+status: true
+dependencies:
+  module:
+    - content_translation
+    - train_base
+third_party_settings:
+  content_translation:
+    enabled: false
+id: supplier.supplier
+target_entity_type_id: supplier
+target_bundle: supplier
+default_langcode: site_default
+language_alterable: false

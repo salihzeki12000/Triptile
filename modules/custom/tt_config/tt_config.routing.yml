@@ -1,0 +1,91 @@
+tt_config.region_country:
+  path: '/region-country/get.json'
+  defaults:
+    _controller: '\Drupal\tt_config\Controller\RegionCountry::get_json'
+  methods: [GET]
+  requirements:
+    _permission: 'access content'
+
+tt_config.recommended:
+  path: '/recommended/hub/{point_1}/get.json'
+  defaults:
+    _controller: '\Drupal\tt_config\Controller\Recommended::get_json'
+  requirements:
+    _permission: 'access content'
+
+tt_config.load_hubs:
+  path: '/load/hubs/get.json'
+  defaults:
+    _controller: '\Drupal\tt_config\Controller\LoadEntities::hubs'
+  requirements:
+    _permission: 'access content'
+
+tt_config.load_one_hub:
+  path: '/load/hub/{hub_id}/get.json'
+  defaults:
+    _controller: '\Drupal\tt_config\Controller\LoadEntities::oneHub'
+  requirements:
+    _permission: 'access content'
+
+tt_config.load_hotels_by_hub:
+  path: '/load/hotels/hub/{hub_id}/get.json'
+  defaults:
+    _controller: '\Drupal\tt_config\Controller\LoadEntities::hotelsByHub'
+  requirements:
+    _permission: 'access content'
+
+tt_config.load_transfers_by_hub:
+  path: '/load/transfers/hub/{hub_id}/get.json'
+  defaults:
+    _controller: '\Drupal\tt_config\Controller\LoadEntities::transfersByHub'
+  requirements:
+    _permission: 'access content'
+
+tt_config.load_activities_by_hub:
+  path: '/load/activities/hub/{hub_id}/get.json'
+  defaults:
+    _controller: '\Drupal\tt_config\Controller\LoadEntities::activitiesByHub'
+  requirements:
+    _permission: 'access content'
+
+tt_config.load_connections_by_hub:
+  path: '/load/connections/hub/{hub_id}/get.json'
+  defaults:
+    _controller: '\Drupal\tt_config\Controller\LoadEntities::connectionsByHub'
+  requirements:
+    _permission: 'access content'
+
+tt_config.save_order:
+  path: '/save/order'
+  defaults:
+    _controller: '\Drupal\tt_config\Controller\SaveOrder::save'
+  requirements:
+    _permission: 'access content'
+
+tt_config.load_order:
+  path: '/load/order/{hash}/get.json'
+  defaults:
+    _controller: '\Drupal\tt_config\Controller\LoadEntities::loadOrder'
+  requirements:
+    _permission: 'access content'
+
+tt_config.export_save_share:
+  path: '/export/save-share'
+  defaults:
+    _controller: '\Drupal\tt_config\Controller\ExportLead::saveAndShare'
+  requirements:
+    _permission: 'access content'
+
+tt_config.export_book_now:
+  path: '/export/book-now'
+  defaults:
+    _controller: '\Drupal\tt_config\Controller\ExportLead::bookNow'
+  requirements:
+    _permission: 'access content'
+
+tt_config.export_subscribe:
+  path: '/export/subscribe'
+  defaults:
+    _controller: '\Drupal\tt_config\Controller\ExportLead::subscribe'
+  requirements:
+    _permission: 'access content'

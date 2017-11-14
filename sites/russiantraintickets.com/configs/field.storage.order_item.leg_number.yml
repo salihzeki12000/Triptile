@@ -1,0 +1,22 @@
+uuid: d8f31f43-fae7-4c24-98be-619b0a7d41d4
+langcode: en
+status: true
+dependencies:
+  module:
+    - store
+_core:
+  default_config_hash: 4vStGaKmp_JnYQcw_AW6AUXNBkHg8Krx1SplvMIyfd0
+id: order_item.leg_number
+field_name: leg_number
+entity_type: order_item
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

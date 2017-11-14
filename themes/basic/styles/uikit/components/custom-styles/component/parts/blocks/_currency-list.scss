@@ -1,0 +1,54 @@
+$sign-width: 20%;
+
+.currency-list {
+  width: 100%;
+  @include flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: flex-start;
+
+  .currency-item {
+    flex-basis: 30%;
+    @include flex;
+    flex-flow: row nowrap;
+    font-size: $base-font-size;
+
+    @media #{$mobile} {
+      @media #{$mobile-landscape} {
+        flex-basis: 49%;
+      }
+      @media #{$mobile-portrait} {
+        flex-basis: 100%;
+      }
+    }
+
+    .sign {
+      text-align: center;
+      width: $sign-width;
+    }
+
+    .label {
+      width: 100% - $sign-width;
+    }
+
+    a {
+      color: $currency-list-color;
+      text-decoration: none;
+      @include transition;
+    }
+
+    &.active {
+      a {
+        color: $currency-active-color;
+      }
+    }
+
+    &:hover {
+      a {
+        color: $currency-active-color;
+        text-decoration: none;
+      }
+    }
+  }
+}

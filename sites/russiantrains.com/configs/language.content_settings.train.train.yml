@@ -1,0 +1,15 @@
+uuid: 0cf7df07-33f1-4bdf-9faa-a6cae4a26239
+langcode: en
+status: true
+dependencies:
+  module:
+    - content_translation
+    - train_base
+third_party_settings:
+  content_translation:
+    enabled: true
+id: train.train
+target_entity_type_id: train
+target_bundle: train
+default_langcode: site_default
+language_alterable: false

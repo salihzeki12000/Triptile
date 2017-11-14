@@ -1,0 +1,167 @@
+.order-info-wrapper {
+
+  .order-info-header,
+  .order-info-body {
+    padding: $op-v-padding $op-h-padding;
+
+    @media #{$mobile} {
+      @include side-padding($op-mobile-h-padding);
+    }
+
+    @media #{$mobile-portrait} {
+      @include v-padding($op-v-padding/2);
+    }
+  }
+
+  /****** HEAD ******/
+
+  .order-info-header {
+    @include flex;
+    flex-flow: row wrap;
+    width: 100%;
+    height: 100%;
+    align-items: stretch;
+    justify-content: space-between;
+    background: $op-head-bg-color;
+    border-bottom: $op-border;
+  }
+
+  .order-info-header-left {
+    flex-basis: 100% - $op-head-dates-width;
+    padding-right: $op-h-padding;
+
+    @media #{$mobile-portrait} {
+      flex-basis: 100%;
+      padding-right: 0;
+      padding-bottom: $op-v-padding/2;
+    }
+  }
+
+  .order-info-header-right {
+    flex-basis: $op-head-dates-width;
+    padding-left: $op-h-padding;
+    border-left: $op-border;
+    position: relative;
+
+    @media #{$mobile-portrait} {
+      flex-basis: 100%;
+      padding-left: 0;
+      border-left: none;
+    }
+  }
+
+  @include head-stations;
+
+  .stations {
+    padding-bottom: $op-v-padding/2;
+  }
+
+  .count {
+    @include flex;
+    flex-direction: row;
+    align-items: baseline;
+    padding-bottom: $op-v-padding/2;
+    font-size: $op-head-dates-font-size;
+  }
+
+  .open-ticket {
+    display: none;
+  }
+
+  .open-ticket {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: $op-dark-note-color;
+    font-size: $op-small-size;
+    cursor: pointer;
+
+    &:hover {
+      columns: $op-light-note-color;
+      @include transition;
+    }
+
+    &::after {
+      @include awesome-icon("\f107");
+      color: $op-light-note-color;
+      font-size: 1.2rem;
+      margin-left: 7px;
+    }
+
+    @media #{$mobile-portrait} {
+      @include flex;
+    }
+  }
+
+  &.opened {
+    .open-ticket {
+      &::after {
+        @include awesome-icon("\f106");
+      }
+    }
+  }
+
+  /****** END OF HEAD ******/
+
+  /****** BODY ******/
+
+  .order-info-body {
+    @include flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @media #{$mobile-portrait} {
+      display: none;
+    }
+  }
+
+  &.opened {
+    .order-info-body {
+
+      @media #{$mobile-portrait} {
+        @include flex;
+      }
+    }
+  }
+
+  .column {
+    flex-basis: calc(100%/3);
+    padding-right: 3%;
+
+    @media #{$mobile-portrait} {
+      flex-basis: 100%;
+      @include side-padding(0);
+    }
+  }
+
+  @media #{$mobile-portrait} {
+    .dates, .departure-info {
+      padding-bottom: $op-v-padding;
+    }
+  }
+
+  .info-title {
+    font-size: $op-small-size;
+    color: $op-light-note-color;
+  }
+
+  .middle {
+    @include v-padding($op-v-padding/1.5);
+
+    @media #{$mobile-portrait} {
+      flex-basis: 100%;
+      @include v-padding($op-v-padding/2);
+    }
+  }
+
+  .number {
+    font-size: 1.625rem;
+
+    @media #{$mobile} {
+      font-size: 1.5rem;
+    }
+  }
+
+  /****** END OF BODY ******/
+}

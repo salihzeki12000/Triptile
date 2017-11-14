@@ -1,0 +1,18 @@
+uuid: 552a60f3-906c-4c83-81cc-5f28475fc708
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.train_review
+id: comment.train_review.mail
+field_name: mail
+entity_type: comment
+bundle: train_review
+label: Email
+description: 'The comment author''s email address.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

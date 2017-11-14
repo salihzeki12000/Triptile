@@ -1,0 +1,10 @@
+0000000000000000000000000000000000000000 e55de971a363584fa1500e8e269582385ba4e667 deweb-ss <sergey.shumskiy@scbali.com> 1502951467 +0300	branch: Created from HEAD
+e55de971a363584fa1500e8e269582385ba4e667 4e9038ccf91b77b44538b69a705d0e47473585f1 deweb-ss <sergey.shumskiy@scbali.com> 1502952932 +0300	commit: Correct sorting connections by overall rating = sum rating + hub rating
+4e9038ccf91b77b44538b69a705d0e47473585f1 3399414771fd62379bb02fa63eca0bbb7eb3b095 deweb-ss <sergey.shumskiy@scbali.com> 1502960457 +0300	commit: Hotel: the amount is multiplied by the number of nights. If more than 1 day is selected, day = day - 1. Else, day = 1.
+3399414771fd62379bb02fa63eca0bbb7eb3b095 ffa48cecb454d3e6ee26d83c4147f55b431906e4 deweb-ss <sergey.shumskiy@scbali.com> 1502960702 +0300	commit: Changed recommendedHubsCount to 15 element.
+ffa48cecb454d3e6ee26d83c4147f55b431906e4 25213b07118394a0a213f7aab3ff6bfc30fad9f6 deweb-ss <sergey.shumskiy@scbali.com> 1502984027 +0300	commit: Floating unit on screens in 13".
+25213b07118394a0a213f7aab3ff6bfc30fad9f6 494c4177532aaf8d5575a8f1b6b43bf8cdb20737 deweb-ss <sergey.shumskiy@scbali.com> 1502984559 +0300	commit: Floating unit on screens in 13" -> add max-width = 1076px
+494c4177532aaf8d5575a8f1b6b43bf8cdb20737 444d016543b3731b838aac7e21227dc19eb9ce9a deweb-ss <sergey.shumskiy@scbali.com> 1502986688 +0300	commit: Floating unit on screens in 13" -> add button 'Save & Share'
+444d016543b3731b838aac7e21227dc19eb9ce9a 6e5ed54acef6a28fb4224da03cee9c91984617dc deweb-ss <sergey.shumskiy@scbali.com> 1503034451 +0300	pull origin triptile: Fast-forward
+6e5ed54acef6a28fb4224da03cee9c91984617dc f6ca6a2a6e0319d2cd8c6dad2fef29f5679a7414 deweb-ss <sergey.shumskiy@scbali.com> 1503059107 +0300	commit: new sort for recommended Hubs.
+f6ca6a2a6e0319d2cd8c6dad2fef29f5679a7414 935d0552e72cf1c7a8a77b44cfb3d4f79ff0864b deweb-ss <sergey.shumskiy@scbali.com> 1503059150 +0300	merge origin/triptile-task-13108-fix: Merge made by the 'recursive' strategy.

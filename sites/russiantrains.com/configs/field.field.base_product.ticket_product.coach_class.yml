@@ -1,0 +1,27 @@
+uuid: f82fcb6c-d02a-49db-83bf-8bfcbcba39aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.base_product.coach_class
+    - store.base_product_type.ticket_product
+_core:
+  default_config_hash: 8yOr1_mvhUinS3W7miwenfU324Q3Spi1s547LSc8YLk
+id: base_product.ticket_product.coach_class
+field_name: coach_class
+entity_type: base_product
+bundle: ticket_product
+label: 'Coach class'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: with_supplier
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

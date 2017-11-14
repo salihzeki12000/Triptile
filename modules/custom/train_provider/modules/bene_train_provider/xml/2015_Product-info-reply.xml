@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Body>
+      <product-info-reply xmlns="http://bene-ws.b-rail.be/rail1/2007-06-13/types">
+         <user-data>
+            <user-name>XXX_BENEUSER</user-name>
+            <password/>
+            <language code="nl_NL">Nederlands</language>
+            <distributor>XX</distributor>
+            <user-related-data>Training</user-related-data>
+         </user-data>
+         <product>
+            <taco domain="I" tariff-group="THA" tic="MFDA2"/>
+            <info-section>
+               <section-label infotype="Restitutievoorwaarden"/>
+               <section-text>50% kosten bij annulering voor vertrek van de trein (en tot 1 uur na vertrek in het vertrekstation). Daarna 100% kosten.</section-text>
+            </info-section>
+            <info-section>
+               <section-label infotype="Reisvoorwaarden"/>
+               <section-text>Minimaal 1 dag voor vertrek boeken.</section-text>
+            </info-section>
+            <info-section>
+               <section-label infotype="Omboekingsvoorwaarden"/>
+               <section-text>1x toegestaan t/m 1 dag vóór vertrek van de trein. Omboeken naar een lager of hoger tarief is mogelijk, het eventuele prijsverschil met het best beschikbare tarief wordt verrekend.</section-text>
+            </info-section>
+            <product-feature>
+               <comfort-class>2</comfort-class>
+               <is-refundable>Y</is-refundable>
+               <is-changeable>Y</is-changeable>
+               <carrier-description supplier="THA">Thalys</carrier-description>
+               <EBS>false</EBS>
+               <ESN>false</ESN>
+            </product-feature>
+         </product>
+         <product>
+            <taco domain="I" tariff-group="THA" tic="MFEA1"/>
+            <info-section>
+               <section-label infotype="Reisvoorwaarden"/>
+               <section-text>Minimaal 1 dag voor vertrek boeken.</section-text>
+            </info-section>
+            <info-section>
+               <section-label infotype="Restitutievoorwaarden"/>
+               <section-text>50% kosten bij annulering voor vertrek van de trein (en tot 1 uur na vertrek in het vertrekstation). Daarna 100% kosten.</section-text>
+            </info-section>
+            <info-section>
+               <section-label infotype="Omboekingsvoorwaarden"/>
+               <section-text>1x toegestaan t/m 1 dag vóór vertrek van de trein. Omboeken naar een lager of hoger tarief is mogelijk, het eventuele prijsverschil met het best beschikbare tarief wordt verrekend.</section-text>
+            </info-section>
+            <product-feature>
+               <comfort-class>1</comfort-class>
+               <is-refundable>Y</is-refundable>
+               <is-changeable>Y</is-changeable>
+               <carrier-description supplier="THA">Thalys</carrier-description>
+               <EBS>false</EBS>
+               <ESN>false</ESN>
+            </product-feature>
+         </product>
+      </product-info-reply>
+   </soapenv:Body>
+</soapenv:Envelope>

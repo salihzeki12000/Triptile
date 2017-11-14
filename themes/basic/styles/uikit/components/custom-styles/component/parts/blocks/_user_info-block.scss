@@ -1,0 +1,75 @@
+$label-width: 20%;
+$label-tablet-width: 30%;
+$label-mobile-width: 35%;
+$gap: 2%;
+
+.block-plugin-id--userinfoblock {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  .block__inner {
+    padding: 0;
+    width: 100%;
+  }
+
+  .block__content {
+    padding: $up-table-v-padding $up-table-h-padding;
+  }
+
+  .user-row {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .label {
+    flex-basis: $label-width;
+
+    @media #{$tablet-portrait} {
+      flex-basis: $label-tablet-width;
+    }
+
+    @media #{$mobile} {
+      flex-basis: $label-mobile-width;
+    }
+  }
+
+  .value {
+    flex-basis: 100% - $label-width - $gap;
+
+    @media #{$tablet-portrait} {
+      flex-basis: 100% - $label-tablet-width - $gap;
+    }
+
+    @media #{$mobile} {
+      flex-basis: 100% - $label-mobile-width - $gap;
+    }
+  }
+
+  .edit-link {
+    width: 100%;
+    text-align: right;
+
+    a {
+      color: $up-ui-link-color;
+
+      &::before {
+        content: '';
+        width: 1rem;
+        height: 1rem;
+        display: inline-block;
+        background: url("#{$path-to-images}/pencil-edit-button.svg") no-repeat center bottom;
+        background-size: 0.9rem;
+        margin-right: 7px;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

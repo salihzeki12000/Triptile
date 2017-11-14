@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains train_provider.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function train_provider_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the train_provider module.
+    case 'help.page.train_provider':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Train providers') . '</p>';
+      return $output;
+
+    default:
+  }
+}

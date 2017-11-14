@@ -1,0 +1,50 @@
+alternativeSigns: {  }
+currencyCode: AUD
+currencyNumber: '036'
+label: AUD
+roundingStep: 0.01
+sign: $A
+subunits: 100
+status: true
+usages:
+  -
+    start: '1966-02-14'
+    end: null
+    countryCode: AU
+  -
+    start: '1966-02-14'
+    end: null
+    countryCode: CC
+  -
+    start: '1966-02-14'
+    end: null
+    countryCode: CX
+  -
+    start: '1967-02-16'
+    end: null
+    countryCode: HM
+  -
+    start: '1966-02-14'
+    end: null
+    countryCode: KI
+  -
+    start: '1966-02-14'
+    end: null
+    countryCode: NF
+  -
+    start: '1966-02-14'
+    end: null
+    countryCode: NR
+  -
+    start: '1966-02-14'
+    end: '1975-09-16'
+    countryCode: PG
+  -
+    start: '1966-02-14'
+    end: '1978-06-30'
+    countryCode: SB
+  -
+    start: '1966-02-14'
+    end: null
+    countryCode: TV
+uuid: 01b2e63d-5ca0-4132-b9e3-66335334acd5

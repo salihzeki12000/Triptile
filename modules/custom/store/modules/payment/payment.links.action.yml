@@ -1,0 +1,12 @@
+entity.merchant.add_form:
+  route_name: 'entity.merchant.add_form'
+  title: 'Add Merchant'
+  appears_on:
+    - entity.merchant.collection
+
+entity.merchant_router_rule.add_form:
+  route_name: 'entity.merchant_router_rule.add_form'
+  title: 'Add Merchant router rule'
+  appears_on:
+    - entity.merchant_router_rule.collection
+

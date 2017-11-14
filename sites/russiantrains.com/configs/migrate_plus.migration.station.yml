@@ -1,0 +1,33 @@
+uuid: 2c899147-f6ab-496d-be17-d14cfabff564
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration
+_core:
+  default_config_hash: f13EAVP9qh8k5oeJu_oy1Wtj8ObgLY6oXwu0ERE3wsg
+id: station
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - russian_trains_light
+migration_group: train_base
+label: Station
+source:
+  plugin: station
+  key: travelallrussia
+process:
+  langcode: lang
+  name: name
+  status: enabled
+  address/country_code: country
+  geolocation/lat: latitude
+  geolocation/lng: longitude
+  timezone: timezone
+  supplier_mapping/target_id: supplier_id
+  supplier_mapping/code: code
+destination:
+  plugin: 'entity:station'
+migration_dependencies: {  }

@@ -1,0 +1,158 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.store_order.train_order.coach_scheme
+    - field.field.store_order.train_order.pdf_file
+    - field.field.store_order.train_order.seat_preference
+    - field.field.store_order.train_order.ticket
+    - field.field.store_order.train_order.ticket_issue_date
+    - field.field.store_order.train_order.train_provider
+    - field.field.store_order.train_order.trip_type
+    - field.field.store_order.train_order.user_note
+    - store.store_order_type.train_order
+  module:
+    - datetime
+    - file
+    - store
+id: store_order.train_order.default
+targetEntityType: store_order
+bundle: train_order
+mode: default
+content:
+  coach_scheme:
+    weight: 11
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  currency:
+    type: string_textfield
+    weight: -7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  internal_note:
+    type: string_textarea
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  langcode:
+    type: language_select
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  language:
+    type: language_select
+    weight: -7
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  name:
+    type: string_textfield
+    weight: -4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  number:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  order_total:
+    type: price_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  owner:
+    type: entity_reference_autocomplete
+    weight: 7
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  pdf_file:
+    weight: 10
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  seat_preference:
+    weight: 9
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  site:
+    type: options_select
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  status:
+    type: options_select
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  ticket:
+    weight: 12
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  ticket_issue_date:
+    weight: 13
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  trip_type:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  user_id:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  user_note:
+    weight: 8
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+hidden:
+  train_provider: true

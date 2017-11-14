@@ -1,0 +1,20 @@
+uuid: fca8efcb-3c64-4c10-afc3-cd7a590f4fee
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.blog_categories
+field_name: blog_categories
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,307 @@
+<?php
+
+/**
+ * @file
+ * Contains rn_user.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Render\BubbleableMetadata;
+use Drupal\block\Entity\Block;
+use Drupal\Core\Block\BlockPluginInterface;
+use Drupal\user\Entity\User;
+use Drupal\Core\Url;
+use Drupal\Core\Link;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_help().
+ */
+function rn_user_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the rn_user module.
+    case 'help.page.rn_user':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Extends default user module') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_entity_type_build().
+ */
+function rn_user_entity_type_build(array &$entity_types) {
+  if (isset($entity_types['user'])) {
+    $entity_types['user']->setClass('Drupal\rn_user\Entity\User')
+      ->setFormClass('default', 'Drupal\rn_user\Form\UserForm');
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function rn_user_theme($existing, $type, $theme, $path) {
+  $themes['current_lang_currency'] = [
+    'render element' => 'elements',
+    'variables' => [
+      'currentLanguageCode' => NULL,
+      'currentCurrencyCode' => NULL,
+    ],
+  ];
+
+  return $themes;
+}
+
+function rn_user_menu_local_tasks_alter(&$data, $route_name) {
+  if (isset($data['tabs']['0']['entity.user.canonical'])) {
+    $data['tabs']['0']['entity.user.canonical']['#link']['title'] = t('Overview');
+  }
+  if (isset($data['tabs']['0']['entity.user.edit_form'])) {
+    $data['tabs']['0']['entity.user.edit_form']['#link']['title'] = t('Profile');
+    $data['tabs']['0']['entity.user.edit_form']['#weight'] = 100;
+  }
+}
+
+function rn_user_token_info() {
+  $user['full_name'] = [
+    'name' => t('Full name'),
+    'description' => t("User first name and last name or 'Valued customer'."),
+  ];
+  return [
+    'tokens' => ['user' => $user],
+  ];
+}
+
+/**
+ * Implements hook_tokens().
+ */
+function rn_user_tokens($type, $tokens, array $data, array $options, BubbleableMetadata $bubbleable_metadata) {
+  $replacements = array();
+  if ($type == 'user') {
+    foreach ($tokens as $name => $original) {
+      // Find the desired token by name
+      switch ($name) {
+        case 'full_name':
+          if (!empty($data['user'])) {
+            /* @var \Drupal\rn_user\Entity\User $user */
+            $user = $data['user'];
+            $first_name = $user->getFirstName();
+            $last_name = $user->getLastName();
+            if (empty($first_name) && empty($last_name)) {
+              $full_name = t('Valued customer');
+            }
+            else {
+              if (empty($last_name)) {
+                $full_name = $first_name;
+              }
+              elseif (empty($first_name)) {
+                $full_name = $last_name;
+              }
+              else {
+                $full_name = $first_name . ' ' . $last_name;
+              }
+            }
+            $replacements[$original] = $full_name;
+            break;
+          }
+      }
+    }
+  }
+  // Return the replacements.
+  return $replacements;
+}
+
+function rn_user_preprocess_user(&$variables) {
+  $block = Block::load('views_block__user_orders_user_orders_block');
+  if ($block) {
+    $variables['my_orders'] = \Drupal::entityTypeManager()
+      ->getViewBuilder('block')
+      ->view($block);
+  }
+  $block = Block::load('views_block__user_invoices_user_invoices_block');
+  if ($block) {
+    $variables['my_invoices'] = \Drupal::entityTypeManager()
+      ->getViewBuilder('block')
+      ->view($block);
+  }
+}
+
+function rn_user_block_view_alter(array &$build, BlockPluginInterface $block) {
+  switch ($block->getMachineNameSuggestion()) {
+    case 'views_block__user_orders_user_orders_block':
+      $build['#pre_render'][] = '_rn_user_views_block__user_orders_user_orders_block_pre_render';
+      break;
+    case 'views_block__user_invoices_user_invoices_block':
+      $build['#pre_render'][] = '_rn_user_views_block__user_invoices_user_invoices_block_pre_render';
+      break;
+  }
+}
+
+/**
+ * Pre-render callback for block views_block__user_orders_user_orders_block.
+ *
+ * Adds View all orders link to block.
+ */
+function _rn_user_views_block__user_orders_user_orders_block_pre_render(array $build) {
+  /** @var \Drupal\views\ViewExecutable $view */
+  $result = $build['content']['#view']->result;
+  if(!empty($result)) {
+    $build['content']['view_all'] = _rn_user_get_views_block_link(_rn_user_get_params('order'));
+  }
+  return $build;
+}
+
+/**
+ * Pre-render callback for block views_block__user_invoices_user_invoices_block.
+ *
+ * Adds View all invoices link to block.
+ */
+function _rn_user_views_block__user_invoices_user_invoices_block_pre_render(array $build) {
+  $result = $build['content']['#view']->result;
+  if(!empty($result)) {
+    $build['content']['view_all'] = _rn_user_get_views_block_link(_rn_user_get_params('invoice'));
+  }
+  return $build;
+}
+
+function _rn_user_get_views_block_link($params) {
+  $current_user = \Drupal::currentUser()->id();
+  $url = Url::fromRoute($params['route'], array('user' => $current_user));
+  $link_options = array(
+    'attributes' => array(
+      'class' => array(
+        $params['class'],
+        'view-all',
+      ),
+    ),
+  );
+  $url->setOptions($link_options);
+  return Link::fromTextAndUrl($params['text'], $url)->toRenderable();
+}
+
+function _rn_user_get_params($type) {
+  switch ($type) {
+    case 'invoice':
+      $params = [
+        'route' => 'view.user_invoices.my_invoices',
+        'class' => 'user-invoices-link',
+        'text' => t('View all invoices')
+      ];
+      break;
+    case 'order':
+      $params = [
+        'route' => 'view.user_orders.my_orders',
+        'class' => 'user-orders-link',
+        'text' => t('View all orders')
+      ];
+      break;
+  }
+
+  return $params;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function rn_user_form_user_register_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  // Disable name field
+  $form['account']['name']['#access'] = FALSE;
+  // Adding a random name to bypass the scan
+  $random = new \Drupal\Component\Utility\Random();
+  $form['account']['name']['#default_value'] = $random->name();
+
+  array_unshift($form['actions']['submit']['#submit'], '_rn_user_autofill_username_in_register_form');
+}
+
+/**
+ * Callback to set name from e-mail field.
+ */
+function _rn_user_autofill_username_in_register_form(array &$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  $mail = $form_state->getValue('mail');
+  $form_state->setValue('name', $mail);
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function rn_user_form_user_login_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  // Allow login with email.
+  array_unshift($form['#validate'], '_rn_user_user_login_form_validate');
+
+  // Change the field label.
+  $form['name']['#title'] = t('Email address');
+}
+
+/**
+ * Callback to check for a valid email for login.
+ */
+function _rn_user_user_login_form_validate(array &$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  if (!$form_state->isValueEmpty('name') && \Drupal::service('email.validator')->isValid($form_state->getValue('name'))) {
+    // Try to find a user name for this email.
+    if ($user = user_load_by_mail($form_state->getValue('name'))) {
+      $form_state->setValue('name', $user->getUsername());
+    }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function rn_user_form_user_pass_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  // Override the description.
+  unset($form['mail']['#markup']);
+  // Change the field label.
+  $form['name']['#title'] = t('Email address');
+}
+
+
+/*
+* Implementation of hook_element_info_alter().
+*/
+function rn_user_element_info_alter(&$types) {
+  if (isset($types['password_confirm'])) {
+    $types['password_confirm']['#process'][] = 'rn_user_form_process_password_confirm_rn';
+  }
+}
+
+/**
+ * Form element process handler for client-side password validation.
+ *
+ * This #process handler is automatically invoked for 'password_confirm' form
+ * elements to add the JavaScript and string translations for dynamic password
+ * validation.
+ */
+function rn_user_form_process_password_confirm_rn($element) {
+  $password_settings = [
+    'confirmTitle' => t(''),
+    'confirmSuccess' => t('Passwords match'),
+    'confirmFailure' => t('Your passwords do not match'),
+    'showStrengthIndicator' => FALSE,
+  ];
+
+  if (\Drupal::config('user.settings')->get('password_strength')) {
+    $password_settings['showStrengthIndicator'] = TRUE;
+    $password_settings += [
+      'strengthTitle' => t(''),
+      'hasWeaknesses' => t('Recommendations to make your password stronger:'),
+      'tooShort' => t('Make it at least 12 characters'),
+      'addLowerCase' => t('Add lowercase letters'),
+      'addUpperCase' => t('Add uppercase letters'),
+      'addNumbers' => t('Add numbers'),
+      'addPunctuation' => t('Add punctuation'),
+      'sameAsUsername' => t('Make it different from your username'),
+      'weak' => t('Your password is WEAK'),
+      'fair' => t('Your password is FAIR'),
+      'good' => t('Your password is GOOD'),
+      'strong' => t('Your password is STRONG'),
+      'username' => \Drupal::currentUser()->getUsername(),
+    ];
+  }
+
+  $element['#attached']['drupalSettings']['password'] = $password_settings;
+
+  return $element;
+}

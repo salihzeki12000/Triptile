@@ -1,0 +1,23 @@
+id: passenger
+migration_group: train_base
+label: Passenger
+source:
+  plugin: passenger
+  key: travelallrussia
+process:
+  first_name: first_name
+  last_name: last_name
+  gender: gender
+  citizenship: citizenship
+  id_number: id_number
+  dob: date_of_birth
+  uid: destination_user_id
+destination:
+  plugin: entity:passenger
+migration_dependencies:
+  optional:
+    - user
+dependencies:
+  enforced:
+    module:
+      - russian_trains_migration

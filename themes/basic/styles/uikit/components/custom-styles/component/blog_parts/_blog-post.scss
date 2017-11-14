@@ -1,0 +1,191 @@
+.page-node-type--blog {
+
+  .page {
+    #main-content {
+      article {
+        margin: 0 auto;
+
+        h1 {
+          font-size: 1.875rem;
+          @include v-padding(0);
+          margin: 0;
+        }
+      }
+
+      .node-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        @include v-padding($v-padding*1.5, 0);
+
+        @media #{$mobile} {
+          padding-top: $v-padding;
+          flex-flow: row wrap;
+        }
+      }
+
+      .node-title-wrapper, .social-icons-wrapper {
+        @media #{$mobile} {
+          flex-basis: 100%;
+          width:      100%;
+        }
+      }
+
+      .social-icons-wrapper {
+        padding-left: $h-padding;
+
+        @media #{$mobile} {
+          padding-left: 0;
+          padding-bottom: $blog-v-padding;
+        }
+
+        .social-icons-container {
+          @media #{$mobile} {
+            justify-content: center;
+          }
+        }
+
+        .block {
+          @media #{$tablet} {
+            padding-right: 0;
+          }
+        }
+      }
+
+      .node__meta {
+        margin: 0;
+      }
+
+      .node__submitted {
+        @include v-padding($blog-v-padding, $blog-v-padding + 5px);
+
+        @media #{$mobile} {
+          @include v-padding($blog-v-padding);
+        }
+
+        .node__pubdate {
+          color: $blog-description-color;
+          font-size: 1rem;
+          display: flex;
+          align-content: center;
+
+          &::before {
+            width: $blog-calendar-size;
+            height: $blog-calendar-size;
+            content: '';
+            display: inline-flex;
+            background: url("#{$path-to-images}/calendar.svg") no-repeat center center;
+            background-size: $blog-calendar-size;
+            margin-right: 7px;
+          }
+        }
+      }
+    }
+  }
+
+  .blog-image {
+    padding-bottom: $v-padding;
+
+    @media #{$mobile} {
+      padding-bottom: $blog-v-padding;
+    }
+
+    figure {
+      margin: 0;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .body {
+    border-bottom: 1px solid $blog-post-line-color;
+    padding-bottom: $v-padding*2;
+
+    @media #{$mobile} {
+      padding-bottom: $v-padding;
+    }
+  }
+
+  .related-content {
+    @include v-padding($v-padding*2, $v-padding*2.5);
+    @include side-padding($blog-v-padding);
+
+    @media #{$mobile} {
+      @include v-padding($v-padding);
+      @include side-padding(0);
+    }
+
+    .field-name-related-content {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      @media #{$mobile} {
+        flex-flow: row wrap;
+        justify-content: center;
+      }
+    }
+
+    .field__items {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      @media #{$mobile} {
+        flex-flow: column wrap;
+        align-items: center;
+        width: 100%;
+      }
+    }
+
+    .field__label {
+      font-family: $title-font-family;
+      font-size: 1.375rem;
+      font-weight: normal;
+      padding-right: $h-padding;
+      white-space: nowrap;
+      @include v-padding(8px);
+
+      @media #{$mobile} {
+        flex-basis: 100%;
+        padding: 0 0 $v-padding;
+      }
+    }
+
+    .field__item {
+      display: inline-flex;
+      margin: 0 $blog-v-padding/2 $blog-v-padding/2;
+      @include v-padding(7px);
+      border: 1px solid $blog-related-content-color;
+      @include border-radius(20px);
+
+      @media #{$mobile} {
+        flex-basis: 100%;
+        margin: 8px 0;
+        @include side-padding($blog-v-padding/2);
+      }
+
+      .field__item-wrapper {
+        text-align: center;
+      }
+
+      a {
+        color: $blog-related-content-color;
+        padding: 8px 22px;
+        @include transition;
+
+        &:hover {
+          color: $blog-text-color;
+        }
+      }
+
+
+    }
+  }
+
+  @import "blog-post-navigation";
+  @import "../parts/blocks/social-icons";
+}
